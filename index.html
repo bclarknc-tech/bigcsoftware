@@ -159,6 +159,127 @@
     </style>
 </head>
 <body>
+<canvas id="bg-canvas"></canvas>
+<style>
+    #bg-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        background: #010102;
+        pointer-events: none;
+    }
+</style>
+<script>
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+
+let w, h;
+let polygons = [];
+
+function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resize);
+resize();
+
+class Polygon {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        this.x = Math.random() * w;
+        this.y = Math.random() * h;
+        this.size = 50 + Math.random() * 150;
+        this.vertices = 4 + Math.floor(Math.random() * 3);
+        this.rotation = Math.random() * Math.PI * 2;
+        this.rotSpeed = (Math.random() - 0.5) * 0.002;
+        this.vx = (Math.random() - 0.5) * 0.2;
+        this.vy = (Math.random() - 0.5) * 0.2;
+        this.opacity = 0;
+        this.maxOpacity = 0.03 + Math.random() * 0.08;
+        this.fadeSpeed = 0.0005 + Math.random() * 0.001;
+        this.fadingIn = true;
+        
+        // Generate vertex offsets for a "parcel" look
+        this.points = [];
+        for(let i=0; i<this.vertices; i++) {
+            let angle = (i / this.vertices) * Math.PI * 2;
+            let r = this.size * (0.8 + Math.random() * 0.4);
+            this.points.push({
+                x: Math.cos(angle) * r,
+                y: Math.sin(angle) * r
+            });
+        }
+    }
+
+    update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.rotation += this.rotSpeed;
+
+        if (this.fadingIn) {
+            this.opacity += this.fadeSpeed;
+            if (this.opacity >= this.maxOpacity) this.fadingIn = false;
+        } else {
+            this.opacity -= this.fadeSpeed;
+            if (this.opacity <= 0) this.init();
+        }
+
+        // Wrap around screen
+        if (this.x < -200) this.x = w + 200;
+        if (this.x > w + 200) this.x = -200;
+        if (this.y < -200) this.y = h + 200;
+        if (this.y > h + 200) this.y = -200;
+    }
+
+    draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        
+        ctx.beginPath();
+        ctx.moveTo(this.points[0].x, this.points[0].y);
+        for(let i=1; i<this.points.length; i++) {
+            ctx.lineTo(this.points[i].x, this.points[i].y);
+        }
+        ctx.closePath();
+        
+        ctx.strokeStyle = `rgba(113, 112, 255, ${this.opacity})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        
+        // Subtle glow at the center
+        ctx.fillStyle = `rgba(113, 112, 255, ${this.opacity * 0.5})`;
+        ctx.beginPath();
+        ctx.arc(0, 0, 1, 0, Math.PI * 2);
+        ctx.fill();
+        
+        ctx.restore();
+    }
+}
+
+for(let i=0; i<20; i++) {
+    polygons.push(new Polygon());
+}
+
+function animate() {
+    ctx.clearRect(0, 0, w, h);
+    polygons.forEach(p => {
+        p.update();
+        p.draw();
+    });
+    requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
 
 <nav>
     <div class="container" style="display:flex; width: 100%; align-items:center; justify-content:space-between;">
