@@ -343,21 +343,28 @@
 
     class Polygon {
         constructor() { this.init(); this.y = Math.random() * h; }
-        init() {
+                init() {
             this.x = Math.random() * w; this.y = -200;
-            this.size = 50 + Math.random() * 150;
-            this.vertices = 4 + Math.floor(Math.random() * 3);
+            this.size = 80 + Math.random() * 200;
+            this.vertices = 4; // ALWAYS 4 sides for parcels
             this.rotation = Math.random() * Math.PI * 2;
-            this.rotSpeed = (Math.random() - 0.5) * 0.002;
-            this.vx = (Math.random() - 0.5) * 0.2;
-            this.vy = 0.2 + Math.random() * 0.5;
+            this.rotSpeed = (Math.random() - 0.5) * 0.001;
+            this.vx = (Math.random() - 0.5) * 0.15;
+            this.vy = 0.1 + Math.random() * 0.4;
             this.opacity = 0; this.maxOpacity = 0.3 + Math.random() * 0.4;
             this.fadeSpeed = 0.001; this.fadingIn = true;
             this.points = [];
-            for(let i=0; i<this.vertices; i++) {
-                let angle = (i / this.vertices) * Math.PI * 2;
-                let r = this.size * (0.8 + Math.random() * 0.4);
-                this.points.push({ x: Math.cos(angle) * r, y: Math.sin(angle) * r });
+            
+            // Generate a real irregular quadrilateral (parcel shape)
+            // Instead of perfect angles, we vary the radius and angle per point
+            for(let i=0; i<4; i++) {
+                let baseAngle = (i / 4) * Math.PI * 2;
+                let angleVar = (Math.random() - 0.5) * 0.6; // Push corners around
+                let radiusVar = 0.6 + Math.random() * 0.8; // Vary side lengths
+                this.points.push({ 
+                    x: Math.cos(baseAngle + angleVar) * (this.size * radiusVar), 
+                    y: Math.sin(baseAngle + angleVar) * (this.size * radiusVar) 
+                });
             }
         }
         update() {
