@@ -28,7 +28,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: transparent;
+            background-color: #010102; /* Fallback */
             color: var(--color-text-primary);
             font-family: 'Inter', system-ui, sans-serif;
             -webkit-font-smoothing: antialiased;
@@ -37,7 +37,46 @@
             overflow-x: hidden;
         }
 
-        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+        /* --- THE BACKGROUND STACK --- */
+        .bg-wrapper {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            pointer-events: none;
+            overflow: hidden;
+            background: #010102;
+        }
+        
+        .bg-image {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.25;
+            filter: brightness(0.6) saturate(0.5) contrast(1.2);
+        }
+
+        .bg-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(1, 1, 2, 0.4) 0%, rgba(1, 1, 2, 1) 90%);
+        }
+
+        .bg-grid {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 1px 1px, rgba(113, 112, 255, 0.1) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        #bg-canvas {
+            position: absolute;
+            inset: 0;
+        }
+
+        /* --- THE CONTENT --- */
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; position: relative; z-index: 10; }
 
         nav {
             height: 64px;
@@ -47,7 +86,7 @@
             border-bottom: 1px solid var(--color-border-subtle);
             position: sticky;
             top: 0;
-            background: rgba(1, 1, 2, 0.8);
+            background: rgba(1, 1, 2, 0.85);
             backdrop-filter: blur(12px);
             z-index: 100;
         }
@@ -55,19 +94,7 @@
         .logo { font-weight: 600; font-size: 18px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit; }
         .logo-box { width: 24px; height: 24px; background: var(--color-brand); border-radius: 4px; }
 
-        .btn {
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
+        .btn { padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
         .btn-primary { background: var(--color-brand); color: white; border: none; }
         .btn-primary:hover { background: var(--color-accent); box-shadow: 0 0 20px rgba(113, 112, 255, 0.3); }
         .btn-ghost { background: rgba(255, 255, 255, 0.03); color: var(--color-text-primary); border: 1px solid var(--color-border); }
@@ -88,23 +115,12 @@
 
         .hero-sub { font-size: 20px; color: var(--color-text-secondary); max-width: 800px; margin: 0 auto 40px; }
 
-        .use-cases {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            margin-top: 40px;
-        }
-        .use-case-tag {
-            padding: 12px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--color-border-subtle);
-            border-radius: 8px;
-            font-size: 13px;
-            color: var(--color-text-secondary);
-        }
+        .use-cases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
+        .use-case-tag { padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border-subtle); border-radius: 8px; font-size: 13px; color: var(--color-text-secondary); }
 
         .tax-section {
-            background: var(--color-surface-low);
+            background: rgba(1, 1, 2, 0.6);
+            backdrop-filter: blur(10px);
             border: 1px solid var(--color-border);
             border-radius: 24px;
             padding: 48px;
@@ -119,21 +135,14 @@
         .stat-value { font-size: 40px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px; }
         .stat-label { color: var(--color-text-secondary); font-size: 16px; }
 
-        .cad-preview {
-            background: #111;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 24px;
-            position: relative;
-        }
+        .cad-preview { background: #111; border: 1px solid #333; border-radius: 8px; padding: 24px; position: relative; }
         .cad-text {
-            font-family: "Times New Roman", Times, serif; /* As requested: Times New Roman / Simplex Vibe */
+            font-family: "Times New Roman", Times, serif;
             color: #fff;
             font-size: 18px;
             line-height: 1.4;
             border-left: 2px solid var(--color-brand);
             padding-left: 20px;
-            /* text-transform: uppercase; */
         }
 
         .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 80px; }
@@ -145,10 +154,10 @@
         code { font-family: 'JetBrains Mono', monospace; color: var(--color-accent); font-size: 13px; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px; }
 
         .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
-        .price-card { border: 1px solid var(--color-border); padding: 32px; border-radius: 12px; text-align: left; position: relative; }
-        .price-card.featured { border-color: var(--color-brand); background: rgba(94, 106, 210, 0.03); }
+        .price-card { border: 1px solid var(--color-border); padding: 32px; border-radius: 12px; text-align: left; position: relative; background: rgba(1, 1, 2, 0.4); backdrop-filter: blur(8px); }
+        .price-card.featured { border-color: var(--color-brand); background: rgba(94, 106, 210, 0.05); }
         .price-val { font-size: 32px; font-weight: 600; margin: 16px 0; }
-        .price-tier { font-size: 12px; /* text-transform: uppercase; */ letter-spacing: 0.1em; color: var(--color-text-muted); }
+        .price-tier { font-size: 12px; letter-spacing: 0.1em; color: var(--color-text-muted); }
         .price-features { list-style: none; font-size: 14px; color: var(--color-text-secondary); margin-bottom: 24px; }
         .price-features li { margin-bottom: 8px; display: flex; gap: 8px; }
 
@@ -156,239 +165,22 @@
             h1 { font-size: 40px; }
             .tax-section, .feature-grid, .pricing-grid, .use-cases { grid-template-columns: 1fr; }
         }
-    
-    #bg-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: -2;
-        background: #010102;
-        pointer-events: none;
-    }
-    .tech-overlay {
-        position: fixed;
-        inset: 0;
-        z-index: -3;
-        background-image: 
-            linear-gradient(to bottom, rgba(1, 1, 2, 0.7), rgba(1, 1, 2, 0.8)),
-            url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop'); /* Circuit board high-tech shot */
-        background-size: cover;
-        background-position: center;
-        opacity: 0.8; /* Higher visibility */
-    }
-    .grid-mesh {
-        position: fixed;
-        inset: 0;
-        z-index: -1;
-        background-image: 
-            linear-gradient(rgba(113, 112, 255, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(113, 112, 255, 0.1) 1px, transparent 1px);
-        background-size: 50px 50px;
-        opacity: 0.2;
-    }
-    .vignette {
-        position: fixed;
-        inset: 0;
-        z-index: -1;
-        background: radial-gradient(circle, transparent 40%, rgba(1, 1, 2, 0.9) 100%);
-        pointer-events: none;
-    }
-    /* Scanning effect */
-    .scan-line {
-        position: fixed;
-        top: -100px;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        background: linear-gradient(to bottom, transparent, rgba(113, 112, 255, 0.05), transparent);
-        z-index: -1;
-        animation: scan 8s linear infinite;
-    }
-    @keyframes scan {
-        from { transform: translateY(0); }
-        to { transform: translateY(120vh); }
-    }
-
     </style>
 </head>
 <body>
-    <div class="tech-overlay"></div>
-    <div class="grid-mesh"></div>
-    <div class="vignette"></div>
-    <div class="scan-line"></div>
-<canvas id="bg-canvas"></canvas>
-<style>
-    #bg-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: -2;
-        background: #010102;
-        pointer-events: none;
-    }
-    .tech-overlay {
-        position: fixed;
-        inset: 0;
-        z-index: -3;
-        background-image: 
-            linear-gradient(to bottom, rgba(1, 1, 2, 0.7), rgba(1, 1, 2, 0.8)),
-            url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop'); /* Circuit board high-tech shot */
-        background-size: cover;
-        background-position: center;
-        opacity: 0.8; /* Higher visibility */
-    }
-    .grid-mesh {
-        position: fixed;
-        inset: 0;
-        z-index: -1;
-        background-image: 
-            linear-gradient(rgba(113, 112, 255, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(113, 112, 255, 0.1) 1px, transparent 1px);
-        background-size: 50px 50px;
-        opacity: 0.2;
-    }
-    .vignette {
-        position: fixed;
-        inset: 0;
-        z-index: -1;
-        background: radial-gradient(circle, transparent 40%, rgba(1, 1, 2, 0.9) 100%);
-        pointer-events: none;
-    }
-    /* Scanning effect */
-    .scan-line {
-        position: fixed;
-        top: -100px;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        background: linear-gradient(to bottom, transparent, rgba(113, 112, 255, 0.05), transparent);
-        z-index: -1;
-        animation: scan 8s linear infinite;
-    }
-    @keyframes scan {
-        from { transform: translateY(0); }
-        to { transform: translateY(120vh); }
-    }
 
-    </style>
-<script>
-const canvas = document.getElementById('bg-canvas');
-const ctx = canvas.getContext('2d');
-
-let w, h;
-let polygons = [];
-
-function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-}
-
-window.addEventListener('resize', resize);
-resize();
-
-class Polygon {
-    constructor() {
-        this.init();
-    }
-
-    init() {
-        this.x = Math.random() * w;
-        this.y = Math.random() * h;
-        this.size = 50 + Math.random() * 150;
-        this.vertices = 4 + Math.floor(Math.random() * 3);
-        this.rotation = Math.random() * Math.PI * 2;
-        this.rotSpeed = (Math.random() - 0.5) * 0.002;
-        this.vx = (Math.random() - 0.5) * 0.2;
-        this.vy = (Math.random() - 0.5) * 0.2;
-        this.opacity = 0;
-        this.maxOpacity = 0.08 + Math.random() * 0.15;
-        this.fadeSpeed = 0.0005 + Math.random() * 0.001;
-        this.fadingIn = true;
-        
-        // Generate vertex offsets for a "parcel" look
-        this.points = [];
-        for(let i=0; i<this.vertices; i++) {
-            let angle = (i / this.vertices) * Math.PI * 2;
-            let r = this.size * (0.8 + Math.random() * 0.4);
-            this.points.push({
-                x: Math.cos(angle) * r,
-                y: Math.sin(angle) * r
-            });
-        }
-    }
-
-    update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        this.rotation += this.rotSpeed;
-
-        if (this.fadingIn) {
-            this.opacity += this.fadeSpeed;
-            if (this.opacity >= this.maxOpacity) this.fadingIn = false;
-        } else {
-            this.opacity -= this.fadeSpeed;
-            if (this.opacity <= 0) this.init();
-        }
-
-        // Wrap around screen
-        if (this.x < -200) this.x = w + 200;
-        if (this.x > w + 200) this.x = -200;
-        if (this.y < -200) this.y = h + 200;
-        if (this.y > h + 200) this.y = -200;
-    }
-
-    draw() {
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(this.rotation);
-        
-        ctx.beginPath();
-        ctx.moveTo(this.points[0].x, this.points[0].y);
-        for(let i=1; i<this.points.length; i++) {
-            ctx.lineTo(this.points[i].x, this.points[i].y);
-        }
-        ctx.closePath();
-        
-        ctx.strokeStyle = `rgba(113, 112, 255, ${this.opacity * 1.5})`;
-        ctx.lineWidth = 1;
-        ctx.stroke();
-        
-        // Subtle glow at the center
-        ctx.fillStyle = `rgba(113, 112, 255, ${this.opacity * 0.5})`;
-        ctx.beginPath();
-        ctx.arc(0, 0, 1, 0, Math.PI * 2);
-        ctx.fill();
-        
-        ctx.restore();
-    }
-}
-
-for(let i=0; i<20; i++) {
-    polygons.push(new Polygon());
-}
-
-function animate() {
-    ctx.clearRect(0, 0, w, h);
-    polygons.forEach(p => {
-        p.update();
-        p.draw();
-    });
-    requestAnimationFrame(animate);
-}
-
-animate();
-</script>
-
+<div class="bg-wrapper">
+    <div class="bg-image"></div>
+    <div class="bg-overlay"></div>
+    <div class="bg-grid"></div>
+    <canvas id="bg-canvas"></canvas>
+</div>
 
 <nav>
     <div class="container" style="display:flex; width: 100%; align-items:center; justify-content:space-between;">
         <a href="/" class="logo">
             <div class="logo-box"></div>
-            BIGCS
+            BIGCS <span style="font-weight: 300; font-size: 12px; margin-left: 8px; opacity: 0.5;">by Big C's Products Company</span>
         </a>
         <div class="actions">
             <a href="#pricing" class="btn btn-primary">Start Free Trial</a>
@@ -414,7 +206,6 @@ animate();
         </div>
     </section>
 
-    
     <!-- VIDEO EXPERIENCE SECTION -->
     <section id="demo" style="margin-top: 120px; text-align: center;">
         <div class="badge">See it in Action</div>
@@ -422,7 +213,6 @@ animate();
         
         <div style="max-width: 900px; margin: 0 auto; position: relative; border-radius: 16px; border: 1px solid var(--color-border); background: var(--color-surface-low); padding: 12px; box-shadow: 0 40px 100px rgba(0,0,0,0.5);">
             <div style="aspect-ratio: 16/9; background: #000; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative;">
-                <!-- This is where Brian will embed the final video. Using a placeholder for now. -->
                 <video id="main-demo-video" width="100%" height="100%" poster="assets/video-placeholder.jpg" controls style="display: block;">
                     <source src="assets/bigcs-demo.mp4" type="video/mp4">
                     Your browser does not support the video tag.
@@ -436,7 +226,8 @@ animate();
         </div>
         <p style="margin-top: 32px; color: var(--color-text-secondary); font-size: 14px; font-family: 'JetBrains Mono';">Recorded in 4K | 60FPS Experience</p>
     </section>
-<section class="tax-section">
+
+    <section class="tax-section">
         <div class="stat-card">
             <div class="stat-value">Targeted Acquisition</div>
             <div class="stat-label">Stop searching one-by-one. Use our <b>Radius & Window</b> commands to capture every owner name and mailing address in a specific area instantly.</div>
@@ -523,15 +314,59 @@ animate();
     <p style="color: var(--color-text-muted); font-size: 13px;">© 2026 Big C's Products Company. All rights reserved.</p>
 </footer>
 
+<script>
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    let w, h, polygons = [];
+    function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resize);
+    resize();
 
-    <script>
-        const video = document.getElementById('main-demo-video');
-        const overlay = document.getElementById('video-overlay');
-        if (video && overlay) {
-            video.onplay = () => { overlay.style.opacity = '0'; };
-            video.onpause = () => { overlay.style.opacity = '1'; };
+    class Polygon {
+        constructor() { this.init(); this.y = Math.random() * h; }
+        init() {
+            this.x = Math.random() * w; this.y = -200;
+            this.size = 50 + Math.random() * 150;
+            this.vertices = 4 + Math.floor(Math.random() * 3);
+            this.rotation = Math.random() * Math.PI * 2;
+            this.rotSpeed = (Math.random() - 0.5) * 0.002;
+            this.vx = (Math.random() - 0.5) * 0.2;
+            this.vy = 0.2 + Math.random() * 0.5;
+            this.opacity = 0; this.maxOpacity = 0.1 + Math.random() * 0.2;
+            this.fadeSpeed = 0.001; this.fadingIn = true;
+            this.points = [];
+            for(let i=0; i<this.vertices; i++) {
+                let angle = (i / this.vertices) * Math.PI * 2;
+                let r = this.size * (0.8 + Math.random() * 0.4);
+                this.points.push({ x: Math.cos(angle) * r, y: Math.sin(angle) * r });
+            }
         }
-    </script>
-    </body>
-    
+        update() {
+            this.x += this.vx; this.y += this.vy; this.rotation += this.rotSpeed;
+            if (this.fadingIn) { this.opacity += this.fadeSpeed; if (this.opacity >= this.maxOpacity) this.fadingIn = false; }
+            else { this.opacity -= this.fadeSpeed * 0.5; if (this.opacity <= 0) this.init(); }
+            if (this.y > h + 200) this.init();
+        }
+        draw() {
+            ctx.save(); ctx.translate(this.x, this.y); ctx.rotate(this.rotation);
+            ctx.beginPath(); ctx.moveTo(this.points[0].x, this.points[0].y);
+            for(let i=1; i<this.points.length; i++) { ctx.lineTo(this.points[i].x, this.points[i].y); }
+            ctx.closePath();
+            ctx.strokeStyle = `rgba(113, 112, 255, ${this.opacity})`;
+            ctx.lineWidth = 1; ctx.stroke();
+            ctx.restore();
+        }
+    }
+    for(let i=0; i<15; i++) polygons.push(new Polygon());
+    function animate() { ctx.clearRect(0, 0, w, h); polygons.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
+    animate();
+
+    const video = document.getElementById('main-demo-video');
+    const overlay = document.getElementById('video-overlay');
+    if (video && overlay) {
+        video.onplay = () => { overlay.style.opacity = '0'; };
+        video.onpause = () => { overlay.style.opacity = '1'; };
+    }
+</script>
+</body>
 </html>
