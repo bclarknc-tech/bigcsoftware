@@ -133,7 +133,7 @@
             line-height: 1.4;
             border-left: 2px solid var(--color-brand);
             padding-left: 20px;
-            text-transform: uppercase;
+            /* text-transform: uppercase; */
         }
 
         .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 80px; }
@@ -148,7 +148,7 @@
         .price-card { border: 1px solid var(--color-border); padding: 32px; border-radius: 12px; text-align: left; position: relative; }
         .price-card.featured { border-color: var(--color-brand); background: rgba(94, 106, 210, 0.03); }
         .price-val { font-size: 32px; font-weight: 600; margin: 16px 0; }
-        .price-tier { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-muted); }
+        .price-tier { font-size: 12px; /* text-transform: uppercase; */ letter-spacing: 0.1em; color: var(--color-text-muted); }
         .price-features { list-style: none; font-size: 14px; color: var(--color-text-secondary); margin-bottom: 24px; }
         .price-features li { margin-bottom: 8px; display: flex; gap: 8px; }
 
@@ -156,9 +156,42 @@
             h1 { font-size: 40px; }
             .tax-section, .feature-grid, .pricing-grid, .use-cases { grid-template-columns: 1fr; }
         }
+    
+    #bg-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        background: #010102;
+        pointer-events: none;
+    }
+    .tech-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-image: 
+            linear-gradient(rgba(1, 1, 2, 0.9), rgba(1, 1, 2, 0.9)),
+            url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.4;
+        filter: saturate(0.5);
+    }
+    .grid-mesh {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-image: radial-gradient(circle at 2px 2px, rgba(113, 112, 255, 0.05) 1px, transparent 0);
+        background-size: 40px 40px;
+    }
+
     </style>
 </head>
 <body>
+    <div class="tech-overlay"></div>
+    <div class="grid-mesh"></div>
 <canvas id="bg-canvas"></canvas>
 <style>
     #bg-canvas {
@@ -171,7 +204,38 @@
         background: radial-gradient(circle at center, #08090a 0%, #010102 100%);
         pointer-events: none;
     }
-</style>
+
+    #bg-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        background: #010102;
+        pointer-events: none;
+    }
+    .tech-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-image: 
+            linear-gradient(rgba(1, 1, 2, 0.9), rgba(1, 1, 2, 0.9)),
+            url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.4;
+        filter: saturate(0.5);
+    }
+    .grid-mesh {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-image: radial-gradient(circle at 2px 2px, rgba(113, 112, 255, 0.05) 1px, transparent 0);
+        background-size: 40px 40px;
+    }
+
+    </style>
 <script>
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
@@ -346,9 +410,9 @@ animate();
             <p style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 16px;">Pick a point (or define a radius)...</p>
             <div class="cad-text">
                 N/F<br>
-                JOHN DOE<br>
-                MAILING: 123 MAIN STREET<br>
-                ANYTOWN, NC 28000<br>
+                John D. Smith<br>
+                Mailing: 555 Blueprint Way<br>
+                Charlotte, NC 28202<br>
                 PID: 045-122-09
             </div>
             <p style="font-size: 11px; color: var(--color-accent); margin-top: 16px; font-family: 'JetBrains Mono';">Injection Complete. Coordinate system verified (NAD83).</p>
