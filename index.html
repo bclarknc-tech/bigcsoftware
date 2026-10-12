@@ -163,28 +163,52 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        z-index: -1;
+        z-index: -2;
         background: #010102;
         pointer-events: none;
     }
     .tech-overlay {
         position: fixed;
         inset: 0;
-        z-index: -1;
+        z-index: -3;
         background-image: 
-            linear-gradient(rgba(1, 1, 2, 0.9), rgba(1, 1, 2, 0.9)),
-            url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+            linear-gradient(to bottom, rgba(1, 1, 2, 0.7), rgba(1, 1, 2, 0.8)),
+            url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop'); /* Circuit board high-tech shot */
         background-size: cover;
         background-position: center;
-        opacity: 0.4;
-        filter: saturate(0.5);
+        opacity: 0.8; /* Higher visibility */
     }
     .grid-mesh {
         position: fixed;
         inset: 0;
         z-index: -1;
-        background-image: radial-gradient(circle at 2px 2px, rgba(113, 112, 255, 0.05) 1px, transparent 0);
-        background-size: 40px 40px;
+        background-image: 
+            linear-gradient(rgba(113, 112, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(113, 112, 255, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+        opacity: 0.2;
+    }
+    .vignette {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background: radial-gradient(circle, transparent 40%, rgba(1, 1, 2, 0.9) 100%);
+        pointer-events: none;
+    }
+    /* Scanning effect */
+    .scan-line {
+        position: fixed;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(to bottom, transparent, rgba(113, 112, 255, 0.05), transparent);
+        z-index: -1;
+        animation: scan 8s linear infinite;
+    }
+    @keyframes scan {
+        from { transform: translateY(0); }
+        to { transform: translateY(120vh); }
     }
 
     </style>
@@ -192,6 +216,8 @@
 <body>
     <div class="tech-overlay"></div>
     <div class="grid-mesh"></div>
+    <div class="vignette"></div>
+    <div class="scan-line"></div>
 <canvas id="bg-canvas"></canvas>
 <style>
     #bg-canvas {
@@ -200,39 +226,52 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        z-index: -1;
-        background: radial-gradient(circle at center, #08090a 0%, #010102 100%);
-        pointer-events: none;
-    }
-
-    #bg-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1;
+        z-index: -2;
         background: #010102;
         pointer-events: none;
     }
     .tech-overlay {
         position: fixed;
         inset: 0;
-        z-index: -1;
+        z-index: -3;
         background-image: 
-            linear-gradient(rgba(1, 1, 2, 0.9), rgba(1, 1, 2, 0.9)),
-            url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+            linear-gradient(to bottom, rgba(1, 1, 2, 0.7), rgba(1, 1, 2, 0.8)),
+            url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop'); /* Circuit board high-tech shot */
         background-size: cover;
         background-position: center;
-        opacity: 0.4;
-        filter: saturate(0.5);
+        opacity: 0.8; /* Higher visibility */
     }
     .grid-mesh {
         position: fixed;
         inset: 0;
         z-index: -1;
-        background-image: radial-gradient(circle at 2px 2px, rgba(113, 112, 255, 0.05) 1px, transparent 0);
-        background-size: 40px 40px;
+        background-image: 
+            linear-gradient(rgba(113, 112, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(113, 112, 255, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+        opacity: 0.2;
+    }
+    .vignette {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background: radial-gradient(circle, transparent 40%, rgba(1, 1, 2, 0.9) 100%);
+        pointer-events: none;
+    }
+    /* Scanning effect */
+    .scan-line {
+        position: fixed;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(to bottom, transparent, rgba(113, 112, 255, 0.05), transparent);
+        z-index: -1;
+        animation: scan 8s linear infinite;
+    }
+    @keyframes scan {
+        from { transform: translateY(0); }
+        to { transform: translateY(120vh); }
     }
 
     </style>
