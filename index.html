@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BIGCS | Direct-to-CAD Parcel Injection for NC Surveyors. Stop retyping GIS data.">
-    <title>BIGCS | Stop Retyping. Start Surveying.</title>
+    <meta name="description" content="BIGCS | Direct-to-CAD Parcel Data Injection. Capture owners, addresses, and geometry across 50+ States.">
+    <title>BIGCS | Land Intelligence. Injected.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -76,9 +76,9 @@
         .badge { display: inline-flex; padding: 4px 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--color-border-subtle); border-radius: 99px; font-size: 12px; color: var(--color-text-secondary); margin-bottom: 24px; }
         
         h1 {
-            font-size: 72px;
+            font-size: 64px;
             font-weight: 510;
-            line-height: 1.0;
+            line-height: 1.1;
             letter-spacing: -0.04em;
             margin-bottom: 24px;
             background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.7) 100%);
@@ -86,7 +86,22 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .hero-sub { font-size: 20px; color: var(--color-text-secondary); max-width: 700px; margin: 0 auto 40px; }
+        .hero-sub { font-size: 20px; color: var(--color-text-secondary); max-width: 800px; margin: 0 auto 40px; }
+
+        .use-cases {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 40px;
+        }
+        .use-case-tag {
+            padding: 12px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--color-border-subtle);
+            border-radius: 8px;
+            font-size: 13px;
+            color: var(--color-text-secondary);
+        }
 
         .tax-section {
             background: var(--color-surface-low);
@@ -101,8 +116,25 @@
         }
 
         .stat-card { text-align: left; }
-        .stat-value { font-size: 48px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px; }
+        .stat-value { font-size: 40px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px; }
         .stat-label { color: var(--color-text-secondary); font-size: 16px; }
+
+        .cad-preview {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 24px;
+            position: relative;
+        }
+        .cad-text {
+            font-family: "Times New Roman", Times, serif; /* As requested: Times New Roman / Simplex Vibe */
+            color: #fff;
+            font-size: 18px;
+            line-height: 1.4;
+            border-left: 2px solid var(--color-brand);
+            padding-left: 20px;
+            text-transform: uppercase;
+        }
 
         .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 80px; }
         .card { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--color-border-subtle); padding: 32px; border-radius: 12px; transition: 0.2s; }
@@ -121,8 +153,8 @@
         .price-features li { margin-bottom: 8px; display: flex; gap: 8px; }
 
         @media (max-width: 768px) {
-            h1 { font-size: 48px; }
-            .tax-section, .feature-grid, .pricing-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 40px; }
+            .tax-section, .feature-grid, .pricing-grid, .use-cases { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -142,56 +174,62 @@
 
 <main class="container">
     <section class="hero">
-        <div class="badge">Built for North Carolina Land Surveyors</div>
-        <h1>Stop Retyping.<br>Start Surveying.</h1>
-        <p class="hero-sub">Point-pick any parcel. BIGCS injects clean geometry and owner metadata directly into your CAD drawing at true NC State Plane coordinates.</p>
-        <div class="hero-actions">
-            <a href="#pricing" class="btn btn-primary" style="padding: 12px 24px;">Eliminate the Busywork →</a>
+        <div class="badge">Professional Land Intelligence v0.1</div>
+        <h1>Instant Parcel Injection.<br>Direct to CAD.</h1>
+        <p class="hero-sub">The master tool for anyone who works the land. Point-pick any parcel to inject clean geometry and owner data directly into your drawing. No retyping, no exporting, no busywork.</p>
+        
+        <div class="use-cases">
+            <div class="use-case-tag">Surveyors</div>
+            <div class="use-case-tag">Civil Engineers</div>
+            <div class="use-case-tag">Developers</div>
+            <div class="use-case-tag">Realtors & Investors</div>
+        </div>
+
+        <div class="hero-actions" style="margin-top: 40px;">
+            <a href="#pricing" class="btn btn-primary" style="padding: 12px 24px;">Get the Competitive Edge →</a>
         </div>
     </section>
 
     <section class="tax-section">
         <div class="stat-card">
-            <div class="stat-value">10 Minutes</div>
-            <div class="stat-label">The "Retype Tax" per parcel. Manual lookup, copy-paste, and formatting is a drain on your firm.</div>
+            <div class="stat-value">Targeted Acquisition</div>
+            <div class="stat-label">Stop searching one-by-one. Use our <b>Radius & Window</b> commands to capture every owner name and mailing address in a specific area instantly.</div>
             <div style="margin-top: 24px;">
-                <p style="color: var(--color-text-secondary);">If your crew does 30 parcels a week, you're losing <b>5 hours every week</b> to manual entry. BIGCS takes that back.</p>
+                <p style="color: var(--color-text-secondary);">Whether you're building a project site or sending out <b>offer-to-purchase letters</b>, BIGCS pulls the raw data from 50+ States and Territories and lands it in your CAD environment.</p>
             </div>
         </div>
-        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px;">
+        <div class="cad-preview">
             <code style="display: block; margin-bottom: 12px; opacity: 0.7;">Command: G2C</code>
-            <p style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 16px;">Pick a point inside the parcel...</p>
-            <div style="border-left: 2px solid var(--color-brand); padding-left: 16px;">
-                <p style="font-size: 13px; font-family: 'JetBrains Mono'; color: var(--color-text-primary);">
-                    N/F<br>
-                    JOHN DOE & JANE SMITH<br>
-                    DB 1234 PG 567<br>
-                    PC 15 FILE 234<br>
-                    PID: 045-122-09
-                </p>
+            <p style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 16px;">Pick a point (or define a radius)...</p>
+            <div class="cad-text">
+                N/F<br>
+                BIG C'S PRODUCTS COMPANY<br>
+                MAILING: PO BOX 2431<br>
+                INDIAN TRAIL, NC 28079<br>
+                PID: 045-122-09
             </div>
-            <p style="font-size: 12px; color: var(--color-accent); margin-top: 16px; font-family: 'JetBrains Mono';">Injection Complete. Coordinate system verified.</p>
+            <p style="font-size: 11px; color: var(--color-accent); margin-top: 16px; font-family: 'JetBrains Mono';">Injection Complete. Coordinate system verified (NAD83).</p>
         </div>
     </section>
 
     <section class="feature-grid">
         <div class="card">
-            <h3>Direct CAD Injection</h3>
-            <p>Runs as a LISP routine inside AutoCAD, Civil 3D, and Carlson. No exporting or importing files—just pick and draw.</p>
+            <h3>Automated Mailing Lists</h3>
+            <p>Perfect for developers and realtors. Define a search window and instantly generate a CAD-based list of every property owner and their mailing address.</p>
         </div>
         <div class="card">
-            <h3>Clean Ownership Text</h3>
-            <p>Our engine automatically handles "dirty" GIS data. Formats names, strips leading zeros, and handles "Et Al" markers with precision.</p>
+            <h3>Multi-State Coverage</h3>
+            <p>Not limited by borders. Access parcel geometry and metadata for 50 US States, DC, PR, and Territories via live TIGERweb integration.</p>
         </div>
         <div class="card">
-            <h3>Boundary Traverse</h3>
-            <p>Includes a dedicated COGO module for rapid boundary resolution and adjacent parcel mapping across county lines.</p>
+            <h3>Professional Standards</h3>
+            <p>Built by surveyors, for professionals. Handles "dirty" GIS data, strips leading zeros, and formats entity names for professional submission.</p>
         </div>
     </section>
 
     <section id="pricing" style="margin-top: 120px; text-align: center;">
-        <div class="badge">Simple Geography-Based Pricing</div>
-        <h2 style="font-size: 40px; margin-bottom: 40px;">Professional Coverage Tiers</h2>
+        <div class="badge">Transparent Seat-Based Pricing</div>
+        <h2 style="font-size: 40px; margin-bottom: 40px;">Choose Your Coverage</h2>
         
         <div class="pricing-grid">
             <div class="price-card">
@@ -199,47 +237,36 @@
                 <div class="price-val">$29.99<span style="font-size: 16px; color: var(--color-text-muted);">/mo</span></div>
                 <ul class="price-features">
                     <li>✓ 1 Seat</li>
-                    <li>✓ 1 Anchor County</li>
+                    <li>✓ 1 Active County</li>
+                    <li>✓ Standard Parcel Injection</li>
                     <li>✓ LISP & Python Engine</li>
-                    <li>✓ Standard Updates</li>
                 </ul>
-                <a href="#" class="btn btn-ghost" style="width: 100%; justify-content: center;">Choose Wedge</a>
+                <a href="#" class="btn btn-ghost" style="width: 100%; justify-content: center;">Start Now</a>
             </div>
             
             <div class="price-card featured">
-                <div class="price-tier">Local 5 Pack</div>
+                <div class="price-tier">Travel Ring (5 Pack)</div>
                 <div class="price-val">$59.99<span style="font-size: 16px; color: var(--color-text-muted);">/mo</span></div>
                 <ul class="price-features">
                     <li>✓ 1 Seat</li>
-                    <li>✓ 5 Customer-Selected Counties</li>
-                    <li>✓ Travel Ring Coverage</li>
+                    <li>✓ 5 Selected Counties</li>
+                    <li>✓ Radius & Window Search</li>
                     <li>✓ Priority Support</li>
                 </ul>
-                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">Best Value</a>
+                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">Most Popular</a>
             </div>
             
             <div class="price-card">
-                <div class="price-tier">Statewide (NC)</div>
+                <div class="price-tier">National / Statewide</div>
                 <div class="price-val">$99.99<span style="font-size: 16px; color: var(--color-text-muted);">/mo</span></div>
                 <ul class="price-features">
                     <li>✓ 1 Seat</li>
-                    <li>✓ All Released NC Counties</li>
-                    <li>✓ Priority Feature Requests</li>
-                    <li>✓ Multi-State Beta Access</li>
+                    <li>✓ Unlimited Access</li>
+                    <li>✓ Multi-State Database</li>
+                    <li>✓ Custom API & Style Access</li>
                 </ul>
-                <a href="#" class="btn btn-ghost" style="width: 100%; justify-content: center;">Go Statewide</a>
+                <a href="#" class="btn btn-ghost" style="width: 100%; justify-content: center;">Go Pro</a>
             </div>
-        </div>
-    </section>
-
-    <section style="margin-top: 120px; border-top: 1px solid var(--color-border-subtle); padding-top: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px;">
-        <div>
-            <h3 style="font-size: 24px; margin-bottom: 16px;">Coordinate Confidence</h3>
-            <p style="color: var(--color-text-secondary);">BIGCS works in North Carolina State Plane (NAD83/2011) by default. It projects geometry on-the-fly to match your active drawing, ensuring that what you pick in GIS lands exactly where it belongs in CAD.</p>
-        </div>
-        <div>
-            <h3 style="font-size: 24px; margin-bottom: 16px;">Platform Compatible</h3>
-            <p style="color: var(--color-text-secondary);">Built to support the professional surveying stack. Tested and verified on AutoCAD 2020+, Civil 3D, Carlson-on-AutoCAD, and IntelliCAD environments.</p>
         </div>
     </section>
 </main>
