@@ -28,7 +28,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--color-bg);
+            background-color: transparent;
             color: var(--color-text-primary);
             font-family: 'Inter', system-ui, sans-serif;
             -webkit-font-smoothing: antialiased;
@@ -168,7 +168,7 @@
         width: 100vw;
         height: 100vh;
         z-index: -1;
-        background: #010102;
+        background: radial-gradient(circle at center, #08090a 0%, #010102 100%);
         pointer-events: none;
     }
 </style>
@@ -202,7 +202,7 @@ class Polygon {
         this.vx = (Math.random() - 0.5) * 0.2;
         this.vy = (Math.random() - 0.5) * 0.2;
         this.opacity = 0;
-        this.maxOpacity = 0.03 + Math.random() * 0.08;
+        this.maxOpacity = 0.08 + Math.random() * 0.15;
         this.fadeSpeed = 0.0005 + Math.random() * 0.001;
         this.fadingIn = true;
         
@@ -250,7 +250,7 @@ class Polygon {
         }
         ctx.closePath();
         
-        ctx.strokeStyle = `rgba(113, 112, 255, ${this.opacity})`;
+        ctx.strokeStyle = `rgba(113, 112, 255, ${this.opacity * 1.5})`;
         ctx.lineWidth = 1;
         ctx.stroke();
         
