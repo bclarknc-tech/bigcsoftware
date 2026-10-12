@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BIGCS | Boundary Intelligence for GIS, CAD & Survey. Powered by Big C's Products Company.">
+    <title>BIGCS | Boundary Intelligence for GIS, CAD & Survey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Linear-inspired Color Palette */
+            --color-bg: #010102;
+            --color-surface-low: #08090a;
+            --color-surface: #0f1011;
+            --color-surface-high: #191a1b;
+            --color-text-primary: #f7f8f8;
+            --color-text-secondary: #8a8f98;
+            --color-text-muted: #62666d;
+            --color-brand: #5e6ad2;
+            --color-accent: #7170ff;
+            --color-border: rgba(255, 255, 255, 0.08);
+            --color-border-subtle: rgba(255, 255, 255, 0.05);
+            
+            /* Spacing */
+            --space-base: 8px;
+            --max-width: 1100px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text-primary);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-feature-settings: "cv01", "ss03";
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* --- Components --- */
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        nav {
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--color-border-subtle);
+            position: sticky;
+            top: 0;
+            background: rgba(1, 1, 2, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-box {
+            width: 24px;
+            height: 24px;
+            background: var(--color-brand);
+            border-radius: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-text-primary);
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--color-brand);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent);
+            box-shadow: 0 0 20px rgba(113, 112, 255, 0.3);
+        }
+
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-border);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        /* --- Hero --- */
+
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(94, 106, 210, 0.15) 0%, rgba(1, 1, 2, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .badge {
+            display: inline-flex;
+            padding: 4px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--color-border-subtle);
+            border-radius: 99px;
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 72px;
+            font-weight: 510;
+            line-height: 1.0;
+            letter-spacing: -0.04em;
+            margin-bottom: 24px;
+            background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-sub {
+            font-size: 20px;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            letter-spacing: -0.01em;
+        }
+
+        /* --- Grid Surface --- */
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 80px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border-subtle);
+            padding: 32px;
+            border-radius: 12px;
+            text-align: left;
+            transition: border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--color-border);
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-brand);
+        }
+
+        .card h3 {
+            font-size: 18px;
+            font-weight: 510;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* --- Interface Surface --- */
+
+        .product-preview {
+            margin-top: 80px;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            background: var(--color-surface-low);
+            padding: 8px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+        }
+
+        .mock-window {
+            background: var(--color-surface);
+            border-radius: 6px;
+            aspect-ratio: 16/10;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mock-header {
+            height: 40px;
+            border-bottom: 1px solid var(--color-border-subtle);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 8px;
+        }
+
+        .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-border); }
+
+        .mock-body {
+            flex: 1;
+            display: flex;
+        }
+
+        .mock-sidebar {
+            width: 200px;
+            border-right: 1px solid var(--color-border-subtle);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mock-line { height: 8px; background: rgba(255,255,255,0.03); border-radius: 4px; }
+        .mock-line.short { width: 60%; }
+
+        .mock-content {
+            flex: 1;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .mock-block { background: rgba(255,255,255,0.02); border: 1px solid var(--color-border-subtle); border-radius: 8px; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 48px; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--color-accent);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container" style="display:flex; width: 100%; align-items:center; justify-content:space-between;">
+        <div class="logo">
+            <div class="logo-box"></div>
+            BIGCS <span style="font-weight: 300; font-size: 12px; margin-left: 8px; opacity: 0.5;">by Big C's Products Company</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Platform</a>
+            <a href="#">Solutions</a>
+            <a href="#">Developers</a>
+            <a href="#">Pricing</a>
+        </div>
+        <div class="actions">
+            <a href="#" class="btn btn-ghost" style="margin-right: 12px;">Sign in</a>
+            <a href="#" class="btn btn-primary">Join Beta</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <section class="hero">
+        <div class="badge">Introducing Boundary Intelligence v1.0</div>
+        <h1>Engineered for the<br>New Era of Surveying.</h1>
+        <p class="hero-sub">The unified platform for GIS, CAD, and Surveying. High-fidelity boundary intelligence that works at the speed of light.</p>
+        <div class="hero-actions">
+            <a href="#" class="btn btn-primary" style="padding: 12px 24px;">Get Started For Free →</a>
+            <p style="margin-top: 16px; font-size: 12px; color: var(--color-text-muted);">Press <code>/</code> to search or <code>K</code> for shortcuts</p>
+        </div>
+
+        <div class="product-preview">
+            <div class="mock-window">
+                <div class="mock-header">
+                    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                    <div style="flex:1"></div>
+                    <code style="opacity: 0.5">bigcs_boundary_solve_v1.py</code>
+                </div>
+                <div class="mock-body">
+                    <div class="mock-sidebar">
+                        <div class="mock-line"></div>
+                        <div class="mock-line short"></div>
+                        <div style="margin-top: 12px" class="mock-line"></div>
+                        <div class="mock-line"></div>
+                        <div class="mock-line short"></div>
+                    </div>
+                    <div class="mock-content">
+                        <div class="mock-block"></div>
+                        <div class="mock-block"></div>
+                        <div class="mock-block" style="grid-column: span 2;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-grid">
+        <div class="card">
+            <div class="card-icon">B</div>
+            <h3>Boundary Solves</h3>
+            <p>Advanced algorithmic processing for boundary resolution that reduces manual CAD hours by 60%.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">I</div>
+            <h3>Intelligence Sync</h3>
+            <p>Real-time data flow between field survey crews and office GIS systems. Never lose a coordinate again.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">G</div>
+            <h3>GIS Native</h3>
+            <p>Direct integration with ArcGIS and QGIS. Move from raw survey data to professional maps in minutes.</p>
+        </div>
+    </section>
+
+    <section id="workflow" style="margin-top: 160px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+            <div>
+                <div class="badge">The Bridge</div>
+                <h2 style="font-size: 40px; line-height: 1.1; margin-bottom: 24px;">The CAD to GIS<br>Gap, Finally Closed.</h2>
+                <p style="color: var(--color-text-secondary); font-size: 18px; margin-bottom: 32px;">Stop rebuilding your data. BIGCS acts as a live bi-directional bridge between your AutoCAD/Civil3D drawings and your ESRI/ArcGIS environments.</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 24px;">
+                    <div style="display: flex; gap: 16px;">
+                        <div style="flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: rgba(113, 112, 255, 0.1); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">1</div>
+                        <div>
+                            <h4 style="font-size: 16px; margin-bottom: 4px;">Smart Attribution</h4>
+                            <p style="font-size: 14px; color: var(--color-text-muted);">Automatically map CAD layers to GIS feature classes with custom schema logic.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px;">
+                        <div style="flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: rgba(113, 112, 255, 0.1); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">2</div>
+                        <div>
+                            <h4 style="font-size: 16px; margin-bottom: 4px;">Topology Validation</h4>
+                            <p style="font-size: 14px; color: var(--color-text-muted);">Identify and fix gaps, overlaps, and slivers in real-time during the conversion.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px;">
+                        <div style="flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: rgba(113, 112, 255, 0.1); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">3</div>
+                        <div>
+                            <h4 style="font-size: 16px; margin-bottom: 4px;">Cloud Sync</h4>
+                            <p style="font-size: 14px; color: var(--color-text-muted);">Push updates from the drawing board directly to the web map for instant stakeholder viewing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: var(--color-surface-low); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: radial-gradient(circle, rgba(94, 106, 210, 0.1) 0%, transparent 70%);"></div>
+                <code style="display: block; margin-bottom: 16px; opacity: 0.7;">$ bigcs sync --from=civil3d --to=arcgis_online</code>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div style="height: 12px; background: rgba(255,255,255,0.05); border-radius: 6px; width: 90%;"></div>
+                    <div style="height: 12px; background: rgba(255,255,255,0.05); border-radius: 6px; width: 75%;"></div>
+                    <div style="height: 12px; background: var(--color-brand); border-radius: 6px; width: 40%; margin-top: 8px;"></div>
+                    <div style="height: 12px; background: rgba(255,255,255,0.05); border-radius: 6px; width: 85%;"></div>
+                </div>
+                <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--color-border-subtle); display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 12px; color: var(--color-text-muted);">Conversion Progress</span>
+                    <span style="font-size: 12px; color: var(--color-accent); font-family: 'JetBrains Mono';">94% Complete</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" style="margin-top: 120px; text-align: center;">
+        <div class="badge">Pricing Plans</div>
+        <h2 style="font-size: 48px; margin-bottom: 60px;">Scalable Intelligence for Every Crew.</h2>
+        
+        <div class="feature-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="card">
+                <div style="font-size: 12px; color: var(--color-text-muted); margin-bottom: 8px;">SOLO</div>
+                <h3 style="font-size: 24px;">$99<span style="font-size: 14px; color: var(--color-text-muted);">/mo</span></h3>
+                <p style="margin: 20px 0;">Perfect for independent surveyors needing boundary solve automation.</p>
+                <ul style="list-style: none; text-align: left; font-size: 13px; color: var(--color-text-secondary); padding: 0;">
+                    <li style="margin-bottom: 8px;">✓ 50 Boundary Solves / mo</li>
+                    <li style="margin-bottom: 8px;">✓ Standard GIS Export</li>
+                    <li style="margin-bottom: 8px;">✓ Email Support</li>
+                </ul>
+                <a href="#" class="btn btn-ghost" style="width: 100%; justify-content: center; margin-top: 24px;">Get Started</a>
+            </div>
+            
+            <div class="card" style="border-color: var(--color-brand); background: rgba(94, 106, 210, 0.03);">
+                <div style="font-size: 12px; color: var(--color-brand); margin-bottom: 8px; font-weight: 600;">PROFESSIONAL</div>
+                <h3 style="font-size: 24px;">$299<span style="font-size: 14px; color: var(--color-text-muted);">/mo</span></h3>
+                <p style="margin: 20px 0;">For survey firms running multiple field crews and office GIS teams.</p>
+                <ul style="list-style: none; text-align: left; font-size: 13px; color: var(--color-text-secondary); padding: 0;">
+                    <li style="margin-bottom: 8px;">✓ Unlimited Boundary Solves</li>
+                    <li style="margin-bottom: 8px;">✓ Real-time Intelligence Sync</li>
+                    <li style="margin-bottom: 8px;">✓ CAD-to-GIS Bridge</li>
+                    <li style="margin-bottom: 8px;">✓ Priority Support</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 24px;">Start Free Trial</a>
+            </div>
+            
+            <div class="card">
+                <div style="font-size: 12px; color: var(--color-text-muted); margin-bottom: 8px;">ENTERPRISE</div>
+                <h3 style="font-size: 24px;">Custom</h3>
+                <p style="margin: 20px 0;">Bespoke solutions for municipal GIS departments and large infra projects.</p>
+                <ul style="list-style: none; text-align: left; font-size: 13px; color: var(--color-text-secondary); padding: 0;">
+                    <li style="margin-bottom: 8px;">✓ White-label API Access</li>
+                    <li style="margin-bottom: 8px;">✓ On-premise Deployment</li>
+                    <li style="margin-bottom: 8px;">✓ Dedicated Account Manager</li>
+                </ul>
+                <a href="#" class="btn btn-ghost" style="width: 100%; justify-content: center; margin-top: 24px;">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer style="margin-top: 120px; padding: 60px 0; border-top: 1px solid var(--color-border-subtle); text-align:center;">
+    <p style="color: var(--color-text-muted); font-size: 13px;">© 2026 Big C's Products Company. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
