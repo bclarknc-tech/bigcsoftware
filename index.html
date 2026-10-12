@@ -11,89 +11,66 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-bg: #010102;
-            --color-surface-low: #08090a;
-            --color-surface: #0f1011;
-            --color-surface-high: #191a1b;
-            --color-text-primary: #f7f8f8;
-            --color-text-secondary: #8a8f98;
-            --color-text-muted: #62666d;
+            --color-bg: #010105;
             --color-brand: #5e6ad2;
             --color-accent: #7170ff;
-            --color-border: rgba(255, 255, 255, 0.08);
-            --color-border-subtle: rgba(255, 255, 255, 0.05);
+            --color-text-primary: #ffffff;
+            --color-text-secondary: #e0e0e0;
+            --color-border: rgba(255, 255, 255, 0.2);
             --max-width: 1100px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: #010102; /* Fallback */
+            background-color: var(--color-bg);
             color: var(--color-text-primary);
             font-family: 'Inter', system-ui, sans-serif;
-            -webkit-font-smoothing: antialiased;
-            font-feature-settings: "cv01", "ss03";
             line-height: 1.5;
             overflow-x: hidden;
         }
 
-        /* --- THE BACKGROUND STACK (Deep Space Tech) --- */
-        .bg-wrapper {
+        /* --- THE BACKGROUND STACK: IMPOSSIBLE TO MISS --- */
+        .bg-layer {
             position: fixed;
             inset: 0;
-            z-index: -10;
+            z-index: -100;
             pointer-events: none;
-            overflow: hidden;
-            background: #010103;
+            background: #000;
         }
-        
+
         .bg-image {
             position: absolute;
             inset: 0;
-            background-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4b519?q=80&w=2000&auto=format&fit=crop'); /* High-res Deep Space/Nebula */
+            background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop'); /* Bright Circuitry */
             background-size: cover;
             background-position: center;
-            opacity: 0.6; /* Way brighter */
-            filter: contrast(1.1) saturate(1.2);
-        }
-
-        .bg-overlay {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(1, 1, 3, 0.2) 0%, rgba(1, 1, 3, 0.7) 100%);
+            opacity: 0.8;
+            filter: contrast(1.5) brightness(0.6);
         }
 
         .bg-grid {
             position: absolute;
             inset: 0;
             background-image: 
-                linear-gradient(rgba(113, 112, 255, 0.2) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(113, 112, 255, 0.2) 1px, transparent 1px);
+                linear-gradient(rgba(113, 112, 255, 0.3) 2px, transparent 2px),
+                linear-gradient(90deg, rgba(113, 112, 255, 0.3) 2px, transparent 2px);
             background-size: 80px 80px;
-            opacity: 0.4; /* Stronger Grid */
+            opacity: 1;
         }
 
-        .stars {
+        .stars-glow {
             position: absolute;
             inset: 0;
-            background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px);
-            background-size: 200px 200px;
-            opacity: 0.15;
-            animation: move-stars 100s linear infinite;
-        }
-
-        @keyframes move-stars {
-            from { background-position: 0 0; }
-            to { background-position: 1000px 1000px; }
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%);
         }
 
         #bg-canvas {
             position: absolute;
             inset: 0;
-            opacity: 0.8;
         }
 
-        /* --- THE CONTENT --- */
+        /* --- CONTENT CONTAINERS: SEMI-TRANSPARENT TO SHOW BACKGROUND --- */
         .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; position: relative; z-index: 10; }
 
         nav {
@@ -101,97 +78,65 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid var(--color-border-subtle);
-            position: sticky;
-            top: 0;
-            background: rgba(1, 1, 2, 0.85);
-            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky; top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
             z-index: 100;
         }
 
-        .logo { font-weight: 600; font-size: 18px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit; }
-        .logo-box { width: 24px; height: 24px; background: var(--color-brand); border-radius: 4px; }
+        .logo { font-weight: 600; font-size: 18px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: #fff; }
+        .logo-box { width: 24px; height: 24px; background: var(--color-brand); border-radius: 4px; box-shadow: 0 0 15px var(--color-brand); }
 
-        .btn { padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
-        .btn-primary { background: var(--color-brand); color: white; border: none; }
-        .btn-primary:hover { background: var(--color-accent); box-shadow: 0 0 20px rgba(113, 112, 255, 0.3); }
-        .btn-ghost { background: rgba(255, 255, 255, 0.03); color: var(--color-text-primary); border: 1px solid var(--color-border); }
+        .btn { padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: var(--color-brand); color: white; border: none; box-shadow: 0 0 20px rgba(94, 106, 210, 0.5); }
+        .btn-primary:hover { background: var(--color-accent); transform: translateY(-1px); }
 
-        .hero { padding: 120px 0 80px; text-align: center; }
-        .badge { display: inline-flex; padding: 4px 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--color-border-subtle); border-radius: 99px; font-size: 12px; color: var(--color-text-secondary); margin-bottom: 24px; }
+        .hero { padding: 140px 0 100px; text-align: center; }
+        .badge { display: inline-flex; padding: 6px 16px; background: var(--color-brand); border-radius: 99px; font-size: 12px; color: white; margin-bottom: 32px; font-weight: 700; letter-spacing: 0.05em; }
         
         h1 {
-            font-size: 64px;
-            font-weight: 510;
-            line-height: 1.1;
-            letter-spacing: -0.04em;
-            margin-bottom: 24px;
-            background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.7) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 72px; font-weight: 800; line-height: 1.1; letter-spacing: -0.05em; margin-bottom: 24px;
+            text-shadow: 0 0 40px rgba(255,255,255,0.3);
         }
 
-        .hero-sub { font-size: 20px; color: var(--color-text-secondary); max-width: 800px; margin: 0 auto 40px; }
+        .hero-sub { font-size: 22px; color: #ccc; max-width: 800px; margin: 0 auto 50px; text-shadow: 0 2px 10px #000; }
 
-        .use-cases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
-        .use-case-tag { padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border-subtle); border-radius: 8px; font-size: 13px; color: var(--color-text-secondary); }
+        .use-cases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .use-case-tag { padding: 15px; background: rgba(0,0,0,0.7); border: 1px solid var(--color-border); border-radius: 12px; font-size: 14px; color: #fff; font-weight: 600; text-align: center; backdrop-filter: blur(10px); }
 
         .tax-section {
-            background: rgba(1, 1, 2, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--color-border);
-            border-radius: 24px;
-            padding: 48px;
-            margin-top: 80px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
+            background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(15px); border: 1px solid var(--color-border); border-radius: 24px;
+            padding: 60px; margin-top: 100px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.5);
         }
 
-        .stat-card { text-align: left; }
-        .stat-value { font-size: 40px; font-weight: 600; color: var(--color-accent); margin-bottom: 8px; }
-        .stat-label { color: var(--color-text-secondary); font-size: 16px; }
+        .stat-value { font-size: 50px; font-weight: 800; color: var(--color-accent); margin-bottom: 10px; }
+        .stat-label { color: #fff; font-size: 18px; font-weight: 500; }
 
-        .cad-preview { background: #111; border: 1px solid #333; border-radius: 8px; padding: 24px; position: relative; }
+        .cad-preview { background: #000; border: 3px solid #333; border-radius: 12px; padding: 40px; box-shadow: 0 0 50px rgba(113, 112, 255, 0.2); }
         .cad-text {
-            font-family: "Times New Roman", Times, serif;
-            color: #fff;
-            font-size: 18px;
-            line-height: 1.4;
-            border-left: 2px solid var(--color-brand);
-            padding-left: 20px;
+            font-family: "Times New Roman", Times, serif; color: #00ff00; /* Neon Green for high visibility */
+            font-size: 22px; line-height: 1.5; border-left: 4px solid var(--color-brand); padding-left: 24px;
         }
 
-        .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 80px; }
-        .card { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--color-border-subtle); padding: 32px; border-radius: 12px; transition: 0.2s; }
-        .card:hover { border-color: var(--color-border); }
-        .card h3 { font-size: 18px; margin-bottom: 12px; }
-        .card p { font-size: 14px; color: var(--color-text-secondary); }
+        .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 100px; }
+        .card { background: rgba(0, 0, 0, 0.7); border: 1px solid var(--color-border); padding: 40px; border-radius: 16px; backdrop-filter: blur(10px); }
+        .card h3 { font-size: 22px; margin-bottom: 15px; color: #fff; }
 
-        code { font-family: 'JetBrains Mono', monospace; color: var(--color-accent); font-size: 13px; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 80px; }
+        .price-card { border: 1px solid var(--color-border); padding: 40px; border-radius: 20px; background: rgba(0,0,0,0.8); backdrop-filter: blur(15px); }
+        .price-card.featured { border: 3px solid var(--color-brand); box-shadow: 0 0 30px rgba(94, 106, 210, 0.3); }
 
-        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
-        .price-card { border: 1px solid var(--color-border); padding: 32px; border-radius: 12px; text-align: left; position: relative; background: rgba(1, 1, 2, 0.4); backdrop-filter: blur(8px); }
-        .price-card.featured { border-color: var(--color-brand); background: rgba(94, 106, 210, 0.05); }
-        .price-val { font-size: 32px; font-weight: 600; margin: 16px 0; }
-        .price-tier { font-size: 12px; letter-spacing: 0.1em; color: var(--color-text-muted); }
-        .price-features { list-style: none; font-size: 14px; color: var(--color-text-secondary); margin-bottom: 24px; }
-        .price-features li { margin-bottom: 8px; display: flex; gap: 8px; }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 40px; }
-            .tax-section, .feature-grid, .pricing-grid, .use-cases { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 768px) { h1 { font-size: 48px; } .tax-section, .feature-grid, .pricing-grid, .use-cases { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-<div class="bg-wrapper">
+<div class="bg-layer">
     <div class="bg-image"></div>
-    <div class="bg-overlay"></div>
     <div class="bg-grid"></div>
-    <div class="stars"></div>
+    <div class="stars-glow"></div>
     <canvas id="bg-canvas"></canvas>
 </div>
 
@@ -199,200 +144,129 @@
     <div class="container" style="display:flex; width: 100%; align-items:center; justify-content:space-between;">
         <a href="/" class="logo">
             <div class="logo-box"></div>
-            BIGCS <span style="font-weight: 300; font-size: 12px; margin-left: 8px; opacity: 0.5;">by Big C's Products Company</span>
+            BIGCS <span style="font-weight: 300; font-size: 13px; margin-left: 10px; color: #aaa;">by Big C's Products Company</span>
         </a>
         <div class="actions">
-            <a href="#pricing" class="btn btn-primary">Start Free Trial</a>
+            <a href="#pricing" class="btn btn-primary">Try it Free</a>
         </div>
     </div>
 </nav>
 
 <main class="container">
     <section class="hero">
-        <div class="badge">Professional Land Intelligence v0.1</div>
-        <h1>Instant Parcel Injection.<br>Direct to CAD.</h1>
-        <p class="hero-sub">The master tool for anyone who works the land. Point-pick any parcel to inject clean geometry and owner data directly into your drawing. No retyping, no exporting, no busywork.</p>
+        <div class="badge">SYSTEM READY v0.1</div>
+        <h1>Instant Parcel Injection.</h1>
+        <p class="hero-sub">Point-pick any parcel to inject clean geometry and owner data directly into your CAD drawing. No retyping. No errors.</p>
         
         <div class="use-cases">
             <div class="use-case-tag">Surveyors</div>
             <div class="use-case-tag">Civil Engineers</div>
             <div class="use-case-tag">Developers</div>
-            <div class="use-case-tag">Realtors & Investors</div>
-        </div>
-
-        <div class="hero-actions" style="margin-top: 40px;">
-            <a href="#pricing" class="btn btn-primary" style="padding: 12px 24px;">Get the Competitive Edge →</a>
+            <div class="use-case-tag">Investors</div>
         </div>
     </section>
 
-    <!-- VIDEO EXPERIENCE SECTION -->
-    <section id="demo" style="margin-top: 120px; text-align: center;">
-        <div class="badge">See it in Action</div>
-        <h2 style="font-size: 40px; margin-bottom: 48px; background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.7) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">High-Fidelity Data Injection.</h2>
-        
-        <div style="max-width: 900px; margin: 0 auto; position: relative; border-radius: 16px; border: 1px solid var(--color-border); background: var(--color-surface-low); padding: 12px; box-shadow: 0 40px 100px rgba(0,0,0,0.5);">
-            <div style="aspect-ratio: 16/9; background: #000; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative;">
-                <video id="main-demo-video" width="100%" height="100%" poster="assets/video-placeholder.jpg" controls style="display: block;">
+    <!-- VIDEO PLACEHOLDER -->
+    <section id="demo" style="margin-top: 100px; text-align: center;">
+        <div style="max-width: 900px; margin: 0 auto; border: 2px solid var(--color-border); border-radius: 20px; overflow: hidden; box-shadow: 0 0 100px #000;">
+            <div style="aspect-ratio: 16/9; background: #000; display: flex; align-items: center; justify-content: center;">
+                 <video id="main-demo-video" width="100%" height="100%" controls style="display: block;">
                     <source src="assets/bigcs-demo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
-                <div id="video-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; transition: opacity 0.3s; pointer-events: none;">
-                    <div style="width: 80px; height: 80px; background: var(--color-brand); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(94, 106, 210, 0.5);">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                </div>
             </div>
         </div>
-        <p style="margin-top: 32px; color: var(--color-text-secondary); font-size: 14px; font-family: 'JetBrains Mono';">Recorded in 4K | 60FPS Experience</p>
     </section>
 
     <section class="tax-section">
         <div class="stat-card">
             <div class="stat-value">Targeted Acquisition</div>
-            <div class="stat-label">Stop searching one-by-one. Use our <b>Radius & Window</b> commands to capture every owner name and mailing address in a specific area instantly.</div>
-            <div style="margin-top: 24px;">
-                <p style="color: var(--color-text-secondary);">Whether you're building a project site or sending out <b>offer-to-purchase letters</b>, BIGCS pulls the raw data from 50+ States and Territories and lands it in your CAD environment.</p>
-            </div>
+            <div class="stat-label">Define a <b>Radius</b> and capture every owner and address in the area instantly.</div>
+            <p style="color: #bbb; margin-top: 30px; font-size: 18px;">Automate your offer-to-purchase letters. BIGCS handles the data extraction so you can focus on the deal.</p>
         </div>
         <div class="cad-preview">
-            <code style="display: block; margin-bottom: 12px; opacity: 0.7;">Command: G2C</code>
-            <p style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: 16px;">Pick a point (or define a radius)...</p>
             <div class="cad-text">
                 N/F<br>
-                John D. Smith<br>
+                JOHN D. SMITH<br>
                 DB 14256 PG 198<br>
                 MB 42 PG 12<br>
                 PID: 045-122-09<br>
-                555 Blueprint Way<br>
-                Charlotte, NC 28202
+                555 BLUEPRINT WAY<br>
+                CHARLOTTE, NC 28202
             </div>
-            <p style="font-size: 11px; color: var(--color-accent); margin-top: 16px; font-family: 'JetBrains Mono';">Injection Complete. Coordinate system verified (NAD83).</p>
         </div>
     </section>
 
-    <section class="feature-grid">
-        <div class="card">
-            <h3>Automated Mailing Lists</h3>
-            <p>Perfect for developers and realtors. Define a search window and instantly generate a CAD-based list of every property owner and their mailing address.</p>
-        </div>
-        <div class="card">
-            <h3>Multi-State Coverage</h3>
-            <p>Not limited by borders. Access parcel geometry and metadata for 50 US States, DC, PR, and Territories via live TIGERweb integration.</p>
-        </div>
-        <div class="card">
-            <h3>Professional Standards</h3>
-            <p>Built by surveyors, for professionals. Handles "dirty" GIS data, strips leading zeros, and formats entity names for professional submission.</p>
-        </div>
-    </section>
-
-    <section id="pricing" style="margin-top: 120px; text-align: center;">
-        <div class="badge">Transparent Seat-Based Pricing</div>
-        <h2 style="font-size: 40px; margin-bottom: 40px;">Choose Your Coverage</h2>
-        
+    <section id="pricing" style="margin-top: 150px; text-align: center; padding-bottom: 150px;">
+        <h2 style="font-size: 50px; margin-bottom: 60px;">Pricing Plans</h2>
         <div class="pricing-grid">
             <div class="price-card">
-                <div class="price-tier">Single County</div>
-                <div class="price-val">$29.99<span style="font-size: 16px; color: var(--color-text-muted);">/mo</span></div>
-                <ul class="price-features">
-                    <li>✓ 1 Seat</li>
-                    <li>✓ 1 Active County</li>
-                    <li>✓ Standard Parcel Injection</li>
-                    <li>✓ LISP & Python Engine</li>
-                </ul>
-                <a href="#" class="btn btn-ghost" style="width: 100%; justify-content: center;">Start Now</a>
+                <div style="text-transform: uppercase; font-size: 13px; font-weight: 700; color: #888;">Single County</div>
+                <div style="font-size: 40px; font-weight: 800; margin: 20px 0;">$29.99<span style="font-size: 16px; color: #666;">/mo</span></div>
+                <a href="#" class="btn btn-primary" style="width:100%; justify-content:center;">Get Started</a>
             </div>
-            
             <div class="price-card featured">
-                <div class="price-tier">Travel Ring (5 Pack)</div>
-                <div class="price-val">$59.99<span style="font-size: 16px; color: var(--color-text-muted);">/mo</span></div>
-                <ul class="price-features">
-                    <li>✓ 1 Seat</li>
-                    <li>✓ 5 Selected Counties</li>
-                    <li>✓ Radius & Window Search</li>
-                    <li>✓ Priority Support</li>
-                </ul>
-                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">Most Popular</a>
+                <div style="text-transform: uppercase; font-size: 13px; font-weight: 700; color: var(--color-brand);">Travel Ring</div>
+                <div style="font-size: 40px; font-weight: 800; margin: 20px 0;">$59.99<span style="font-size: 16px; color: #666;">/mo</span></div>
+                <a href="#" class="btn btn-primary" style="width:100%; justify-content:center;">Best Value</a>
             </div>
-            
             <div class="price-card">
-                <div class="price-tier">National / Statewide</div>
-                <div class="price-val">$99.99<span style="font-size: 16px; color: var(--color-text-muted);">/mo</span></div>
-                <ul class="price-features">
-                    <li>✓ 1 Seat</li>
-                    <li>✓ Unlimited Access</li>
-                    <li>✓ Multi-State Database</li>
-                    <li>✓ Custom API & Style Access</li>
-                </ul>
-                <a href="#" class="btn btn-ghost" style="width: 100%; justify-content: center;">Go Pro</a>
+                <div style="text-transform: uppercase; font-size: 13px; font-weight: 700; color: #888;">National</div>
+                <div style="font-size: 40px; font-weight: 800; margin: 20px 0;">$99.99<span style="font-size: 16px; color: #666;">/mo</span></div>
+                <a href="#" class="btn btn-primary" style="width:100%; justify-content:center;">Go National</a>
             </div>
         </div>
     </section>
 </main>
 
-<footer style="margin-top: 120px; padding: 60px 0; border-top: 1px solid var(--color-border-subtle); text-align:center;">
-    <p style="color: var(--color-text-muted); font-size: 13px;">© 2026 Big C's Products Company. All rights reserved.</p>
+<footer style="padding: 100px 0; border-top: 1px solid var(--color-border); text-align:center; background: rgba(0,0,0,0.9);">
+    <p style="color: #666;">© 2026 Big C's Products Company. All rights reserved.</p>
 </footer>
 
 <script>
     const canvas = document.getElementById('bg-canvas');
     const ctx = canvas.getContext('2d');
-    let w, h, polygons = [];
+    let w, h, parcels = [];
     function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
     window.addEventListener('resize', resize);
     resize();
 
-    class Polygon {
+    class Parcel {
         constructor() { this.init(); this.y = Math.random() * h; }
-                init() {
-            this.x = Math.random() * w; this.y = -200;
-            this.size = 80 + Math.random() * 200;
-            this.vertices = 4; // ALWAYS 4 sides for parcels
+        init() {
+            this.x = Math.random() * w; this.y = -400;
+            this.size = 150 + Math.random() * 250;
             this.rotation = Math.random() * Math.PI * 2;
-            this.rotSpeed = (Math.random() - 0.5) * 0.001;
-            this.vx = (Math.random() - 0.5) * 0.15;
-            this.vy = 0.1 + Math.random() * 0.4;
-            this.opacity = 0; this.maxOpacity = 0.3 + Math.random() * 0.4;
-            this.fadeSpeed = 0.001; this.fadingIn = true;
+            this.rotSpeed = (Math.random() - 0.5) * 0.005;
+            this.vy = 1 + Math.random() * 2; // FASTER
+            this.opacity = 0.6 + Math.random() * 0.4; // BRIGHTER
             this.points = [];
-            
-            // Generate a real irregular quadrilateral (parcel shape)
-            // Instead of perfect angles, we vary the radius and angle per point
             for(let i=0; i<4; i++) {
-                let baseAngle = (i / 4) * Math.PI * 2;
-                let angleVar = (Math.random() - 0.5) * 0.6; // Push corners around
-                let radiusVar = 0.6 + Math.random() * 0.8; // Vary side lengths
-                this.points.push({ 
-                    x: Math.cos(baseAngle + angleVar) * (this.size * radiusVar), 
-                    y: Math.sin(baseAngle + angleVar) * (this.size * radiusVar) 
-                });
+                let baseAngle = (i/4) * Math.PI * 2;
+                let av = (Math.random()-0.5) * 1.0;
+                let rv = 0.5 + Math.random() * 1.2;
+                this.points.push({ x: Math.cos(baseAngle+av) * (this.size*rv), y: Math.sin(baseAngle+av) * (this.size*rv) });
             }
         }
         update() {
-            this.x += this.vx; this.y += this.vy; this.rotation += this.rotSpeed;
-            if (this.fadingIn) { this.opacity += this.fadeSpeed; if (this.opacity >= this.maxOpacity) this.fadingIn = false; }
-            else { this.opacity -= this.fadeSpeed * 0.5; if (this.opacity <= 0) this.init(); }
-            if (this.y > h + 200) this.init();
+            this.y += this.vy; this.rotation += this.rotSpeed;
+            if (this.y > h + 400) this.init();
         }
         draw() {
             ctx.save(); ctx.translate(this.x, this.y); ctx.rotate(this.rotation);
             ctx.beginPath(); ctx.moveTo(this.points[0].x, this.points[0].y);
-            for(let i=1; i<this.points.length; i++) { ctx.lineTo(this.points[i].x, this.points[i].y); }
+            for(let i=1; i<this.points.length; i++) ctx.lineTo(this.points[i].x, this.points[i].y);
             ctx.closePath();
-            ctx.strokeStyle = `rgba(113, 112, 255, ${this.opacity * 2.5})`;
-            ctx.lineWidth = 1; ctx.stroke();
+            ctx.strokeStyle = `rgba(113, 112, 255, ${this.opacity})`;
+            ctx.lineWidth = 4; // THICK BOLD LINES
+            ctx.stroke();
+            ctx.fillStyle = `rgba(113, 112, 255, 0.2)`;
+            ctx.fill();
             ctx.restore();
         }
     }
-    for(let i=0; i<15; i++) polygons.push(new Polygon());
-    function animate() { ctx.clearRect(0, 0, w, h); polygons.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
+    for(let i=0; i<10; i++) parcels.push(new Parcel());
+    function animate() { ctx.clearRect(0,0,w,h); parcels.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
     animate();
-
-    const video = document.getElementById('main-demo-video');
-    const overlay = document.getElementById('video-overlay');
-    if (video && overlay) {
-        video.onplay = () => { overlay.style.opacity = '0'; };
-        video.onpause = () => { overlay.style.opacity = '1'; };
-    }
 </script>
 </body>
 </html>
