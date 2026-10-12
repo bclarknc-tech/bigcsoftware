@@ -190,7 +190,29 @@
         </div>
     </section>
 
-    <section class="tax-section">
+    
+    <!-- VIDEO EXPERIENCE SECTION -->
+    <section id="demo" style="margin-top: 120px; text-align: center;">
+        <div class="badge">See it in Action</div>
+        <h2 style="font-size: 40px; margin-bottom: 48px; background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.7) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">High-Fidelity Data Injection.</h2>
+        
+        <div style="max-width: 900px; margin: 0 auto; position: relative; border-radius: 16px; border: 1px solid var(--color-border); background: var(--color-surface-low); padding: 12px; box-shadow: 0 40px 100px rgba(0,0,0,0.5);">
+            <div style="aspect-ratio: 16/9; background: #000; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative;">
+                <!-- This is where Brian will embed the final video. Using a placeholder for now. -->
+                <video id="main-demo-video" width="100%" height="100%" poster="assets/video-placeholder.jpg" controls style="display: block;">
+                    <source src="assets/bigcs-demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div id="video-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; transition: opacity 0.3s; pointer-events: none;">
+                    <div style="width: 80px; height: 80px; background: var(--color-brand); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(94, 106, 210, 0.5);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="margin-top: 32px; color: var(--color-text-secondary); font-size: 14px; font-family: 'JetBrains Mono';">Recorded in 4K | 60FPS Experience</p>
+    </section>
+<section class="tax-section">
         <div class="stat-card">
             <div class="stat-value">Targeted Acquisition</div>
             <div class="stat-label">Stop searching one-by-one. Use our <b>Radius & Window</b> commands to capture every owner name and mailing address in a specific area instantly.</div>
@@ -275,5 +297,15 @@
     <p style="color: var(--color-text-muted); font-size: 13px;">© 2026 Big C's Products Company. All rights reserved.</p>
 </footer>
 
-</body>
+
+    <script>
+        const video = document.getElementById('main-demo-video');
+        const overlay = document.getElementById('video-overlay');
+        if (video && overlay) {
+            video.onplay = () => { overlay.style.opacity = '0'; };
+            video.onpause = () => { overlay.style.opacity = '1'; };
+        }
+    </script>
+    </body>
+    
 </html>
