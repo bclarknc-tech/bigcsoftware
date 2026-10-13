@@ -1,315 +1,110 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BIGCS | Direct-to-CAD Parcel Data Injection. Capture owners, addresses, and geometry across 50+ States.">
-    <title>BIGCS | Land Intelligence. Injected.</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --color-bg: #010108;
-            --color-brand: #5e6ad2;
-            --color-accent: #7170ff;
-            --color-text-primary: #ffffff;
-            --color-text-secondary: #e0e0e0;
-            --color-border: rgba(255, 255, 255, 0.2);
-            --max-width: 1100px;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background-color: var(--color-bg);
-            color: var(--color-text-primary);
-            font-family: 'Inter', system-ui, sans-serif;
-            line-height: 1.5;
-            overflow-x: hidden;
-        }
-
-        /* --- THE HOLOGRAPHIC BACKGROUND --- */
-        .bg-layer {
-            position: fixed;
-            inset: 0;
-            z-index: -100;
-            pointer-events: none;
-            background: #000;
-        }
-
-        .bg-hologram {
-            position: absolute;
-            inset: 0;
-            background-image: 
-                radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%),
-                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'); /* Digital World Hologram */
-            background-size: cover;
-            background-position: center;
-            opacity: 0.75;
-            filter: contrast(1.2) brightness(0.8) saturate(1.1);
-        }
-
-        .bg-grid {
-            position: absolute;
-            inset: 0;
-            background-image: 
-                linear-gradient(rgba(113, 112, 255, 0.15) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(113, 112, 255, 0.15) 1px, transparent 1px);
-            background-size: 60px 60px;
-        }
-
-        .stars {
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(white, rgba(255,255,255,0.4) 2px, transparent 40px);
-            background-size: 200px 200px;
-            opacity: 0.2;
-            animation: move-stars 150s linear infinite;
-        }
-
-        @keyframes move-stars {
-            from { background-position: 0 0; }
-            to { background-position: 1000px 1000px; }
-        }
-
-        .scan-line {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(transparent, rgba(113, 112, 255, 0.03), transparent);
-            animation: scan 10s linear infinite;
-        }
-        @keyframes scan { from { transform: translateY(-100%); } to { transform: translateY(100%); } }
-
-        /* --- UI ELEMENTS --- */
-        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; position: relative; z-index: 10; }
-
-        nav {
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--color-border);
-            position: sticky; top: 0;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(20px);
-            z-index: 100;
-        }
-
-        .logo { font-weight: 600; font-size: 18px; display: flex; align-items: center; gap: 8px; text-decoration: none; color: #fff; }
-        .logo-box { width: 24px; height: 24px; background: var(--color-brand); border-radius: 4px; box-shadow: 0 0 15px var(--color-brand); }
-
-        .btn { padding: 10px 22px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
-        .btn-primary { background: var(--color-brand); color: white; border: none; box-shadow: 0 0 30px rgba(94, 106, 210, 0.4); }
-        .btn-primary:hover { background: var(--color-accent); transform: translateY(-1px); }
-
-        .hero { padding: 160px 0 100px; text-align: center; }
-        .badge { display: inline-flex; padding: 6px 16px; background: var(--color-brand); border-radius: 99px; font-size: 11px; color: white; margin-bottom: 32px; font-weight: 700; letter-spacing: 0.1em; }
-        
-        h1 {
-            font-size: 72px; font-weight: 800; line-height: 1.1; letter-spacing: -0.05em; margin-bottom: 24px;
-            text-shadow: 0 0 40px rgba(0,0,0,0.5);
-        }
-
-        .hero-sub { font-size: 22px; color: #ccc; max-width: 800px; margin: 0 auto 50px; text-shadow: 0 2px 10px #000; }
-
-        .use-cases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-        .use-case-tag { padding: 15px; background: rgba(0,0,0,0.6); border: 1px solid var(--color-border); border-radius: 12px; font-size: 14px; color: #fff; font-weight: 600; text-align: center; backdrop-filter: blur(10px); }
-
-        .tax-section {
-            background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(15px); border: 1px solid var(--color-border); border-radius: 24px;
-            padding: 60px; margin-top: 120px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center;
-            box-shadow: 0 20px 100px rgba(0,0,0,0.7);
-        }
-
-        .stat-value { font-size: 52px; font-weight: 800; color: var(--color-accent); margin-bottom: 10px; }
-        .stat-label { color: #fff; font-size: 18px; font-weight: 600; }
-
-        .cad-preview { background: #000; border: 2px solid #333; border-radius: 12px; padding: 40px; box-shadow: 0 0 60px rgba(113, 112, 255, 0.1); }
-        .cad-text {
-            font-family: "Times New Roman", Times, serif; color: #e5c07b; /* Neon Green */
-            font-size: 24px; line-height: 1.5; border-left: 4px solid var(--color-brand); padding-left: 24px;
-        }
-
-        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 80px; }
-        .price-card { border: 1px solid var(--color-border); padding: 40px; border-radius: 20px; background: rgba(0,0,0,0.8); backdrop-filter: blur(15px); transition: transform 0.3s; }
-        .price-card:hover { transform: translateY(-5px); border-color: var(--color-brand); }
-        .price-card.featured { border: 3px solid var(--color-brand); box-shadow: 0 0 40px rgba(94, 106, 210, 0.3); }
-
-        @media (max-width: 768px) { 
-            h1 { font-size: 38px !important; line-height: 1.2 !important; } 
-            h2 { font-size: 28px !important; margin-bottom: 30px !important; }
-            .hero { padding: 60px 0 40px !important; }
-            .hero-sub { font-size: 16px !important; }
-            .features-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
-            .tax-section { grid-template-columns: 1fr !important; padding: 25px !important; margin-top: 40px !important; }
-            .pricing-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
-            .use-cases { grid-template-columns: 1fr 1fr !important; } /* 2 columns on small screens */
-            .bg-hologram { background-attachment: scroll !important; } /* Fix performance on mobile */
-            .cad-text { font-size: 14px !important; }
-            .stat-value { font-size: 32px !important; }
-        } 
-            h2 { font-size: 32px !important; }
-            .hero { padding: 80px 0 60px; }
-            .hero-sub { font-size: 18px; margin-bottom: 30px; }
-            .tax-section, .pricing-grid, .use-cases, .features-grid { grid-template-columns: 1fr !important; } 
-            .tax-section { padding: 30px; gap: 30px; margin-top: 60px; }
-            #features { margin-top: 80px !important; }
-            .card { padding: 24px; }
-            .cad-preview { padding: 20px; }
-            .cad-text { font-size: 16px; padding-left: 16px; }
-            .use-case-tag { font-size: 12px; padding: 10px; }
-        } .tax-section, .pricing-grid, .use-cases { grid-template-columns: 1fr; } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIGCS | County GIS Parcels in Carlson &amp; AutoCAD for Surveyors</title>
+<meta name="description" content="BIGCS brings county GIS parcels, owner, deed and plat labels into Carlson and AutoCAD-based CAD. Built by licensed land surveyors. NC and SC counties today. Join the beta.">
+<link rel="canonical" href="https://bigcsoftware.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BIGCS">
+<meta property="og:title" content="BIGCS | County GIS Parcels in Carlson &amp; AutoCAD for Surveyors">
+<meta property="og:description" content="BIGCS brings county GIS parcels, owner, deed and plat labels into Carlson and AutoCAD-based CAD. Built by licensed land surveyors. NC and SC counties today. Join the beta.">
+<meta property="og:url" content="https://bigcsoftware.com/">
+<meta property="og:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BIGCS | County GIS Parcels in Carlson &amp; AutoCAD for Surveyors">
+<meta name="twitter:description" content="BIGCS brings county GIS parcels, owner, deed and plat labels into Carlson and AutoCAD-based CAD. Built by licensed land surveyors. NC and SC counties today. Join the beta.">
+<meta name="twitter:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-
-<div class="bg-layer">
-    <div class="bg-hologram"></div>
-    <div class="bg-grid"></div>
-    <div class="stars"></div>
-    <div class="scan-line"></div>
-</div>
-
+<div class="bg-layer"><div class="bg-hologram"></div><div class="bg-grid"></div></div>
 <nav>
-    <div class="container" style="display:flex; width: 100%; align-items:center; justify-content:space-between;">
-        <a href="/" class="logo">
-            <div class="logo-box"></div>
-            BIGCS <span style="font-weight: 300; font-size: 12px; margin-left: 10px; color: #888;">| Boundary Intelligence for GIS, CAD & Survey</span>
-        </a>
-        <div class="actions">
-            <a href="#pricing" class="btn btn-primary">Try it Free</a>
-        </div>
-    </div>
+<div class="container nav-inner">
+<a href="/" class="logo"><span class="logo-box"></span>BIGCS <small>| Boundary Intelligence for GIS, CAD &amp; Survey</small></a>
+<div class="nav-links"><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/#about">About</a><a href="mailto:support@bigcsoftware.com?subject=BIGCS%20beta%20access" class="btn btn-primary">Request beta access</a></div>
+</div>
 </nav>
-
 <main class="container">
-    <section class="hero">
-        <div class="badge">SYSTEM READY v1.3</div>
-        <h1>Instant Parcel Injection.</h1>
-        <p class="hero-sub">Point-pick any parcel to inject clean geometry and owner data directly into your CAD drawing. No retyping. No errors.</p>
-        
-        <div class="use-cases">
-            <div class="use-case-tag">Surveyors</div>
-            <div class="use-case-tag">Civil Engineers</div>
-            <div class="use-case-tag">Developers</div>
-            <div class="use-case-tag">Investors</div>
-        </div>
-    </section>
-
-    <!-- VIDEO PLACEHOLDER -->
-    <section id="demo" style="margin-top: 100px; text-align: center;">
-        <div style="max-width: 900px; margin: 0 auto; border: 2px solid var(--color-border); border-radius: 20px; overflow: hidden; box-shadow: 0 40px 100px #000;">
-            <div style="aspect-ratio: 16/9; background: #000; display: flex; align-items: center; justify-content: center;">
-                 <video id="main-demo-video" width="100%" height="100%" controls style="display: block;">
-                    <source src="assets/bigcs-demo.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </section>
-    <!-- FEATURES SECTION -->
-    <section id="features" style="margin-top: 160px;">
-        <div style="text-align: center; margin-bottom: 80px;">
-            <div class="badge">The Production Engine</div>
-            <h2 style="font-size: 52px; font-weight: 800; background: linear-gradient(180deg, #fff 0%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Built for Speed.</h2>
-            <p style="color: #bbb; font-size: 20px; max-width: 700px; margin: 20px auto;">Stop fighting with GIS portals. BIGCS turns public records into physical CAD entities in seconds.</p>
-        </div>
-
-        <div class="features-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-            <!-- Feature 1: The G2C Command -->
-            <div class="card">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                    <div style="width: 40px; height: 40px; background: var(--color-brand); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono'; font-weight: 800;">>_</div>
-                    <h3 style="font-size: 24px; color: white;">The Point-Pick Injection</h3>
-                </div>
-                <p style="color: #ccc; line-height: 1.6; margin-bottom: 25px;">Type <code>G2C</code> and pick any point inside a parcel. BIGCS queries the live REST endpoints, cleans the metadata, and entmakes the parcel and owner text at true coordinates. No file conversion required.</p>
-                <div style="background: rgba(0,0,0,0.4); border: 1px solid #333; padding: 15px; border-radius: 8px;">
-                    <code style="color: #7170ff; display: block; margin-bottom: 5px;">; Command: G2C</code>
-                    <code style="color: #888;">; Searching Mecklenburg County...</code>
-                    <code style="color: #e5c07b;">; Success: 1 Parcel, 1 MTEXT Injected.</code>
-                </div>
-            </div>
-
-            <!-- Feature 2: Automation for Realtors/Developers -->
-            <div class="card">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                    <div style="width: 40px; height: 40px; background: #10b981; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px;">✉️</div>
-                    <h3 style="font-size: 24px; color: white;">Targeted Mailing Lists</h3>
-                </div>
-                <p style="color: #ccc; line-height: 1.6; margin-bottom: 25px;">Built for acquisition. Use the <code>Radius</code> or <code>Window</code> search to capture every owner name and mailing address in a target area. Perfect for sending <b>Offer to Purchase</b> letters with 100% data accuracy.</p>
-                <ul style="list-style: none; padding: 0; font-size: 14px; color: #aaa;">
-                    <li style="margin-bottom: 8px;">✓ Accurate Mailing vs Physical Address</li>
-                    <li style="margin-bottom: 8px;">✓ Bulk Export to CSV for Mail Merge</li>
-                    <li style="margin-bottom: 8px;">✓ Native State Plane Positioning</li>
-                </ul>
-            </div>
-
-            <!-- Feature 3: Clean Record Data -->
-            <div class="card">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                    <div style="width: 40px; height: 40px; background: #ffc400; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #000; font-weight: 800;">DB</div>
-                    <h3 style="font-size: 24px; color: white;">Deep Record Intelligence</h3>
-                </div>
-                <p style="color: #ccc; line-height: 1.6;">Most tools stop at the owner name. BIGCS reaches into the underlying database to pull <b>Deed Book, Page, Map Book,</b> and <b>PID</b>. It automatically strips leading zeros and formats "Et Al" markers to professional standards.</p>
-            </div>
-
-            <!-- Feature 4: Platform Agnostic -->
-            <div class="card">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                    <div style="width: 40px; height: 40px; background: #8a8f98; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800;">CAD</div>
-                    <h3 style="font-size: 24px; color: white;">The Universal Bridge</h3>
-                </div>
-                <p style="color: #ccc; line-height: 1.6;">Built to run in your environment. Full support for <b>AutoCAD 2020+, Civil 3D, Carlson-on-AutoCAD,</b> and <b>IntelliCAD</b>. A single LISP loader handles the entire configuration for your firm.</p>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="tax-section">
-        <div class="stat-card">
-            <div class="stat-value">Targeted Acquisition</div>
-            <div class="stat-label">Define a <b>Radius</b> and capture every owner and address in the area instantly.</div>
-            <p style="color: #bbb; margin-top: 30px; font-size: 18px;">Automate your offer-to-purchase letters. BIGCS handles the data extraction so you can focus on the deal.</p>
-        </div>
-        <div class="cad-preview">
-            <div class="cad-text">
-                N/F<br>
-                John D. Smith<br>
-                DB 14256 PG 198<br>
-                MB 42 PG 12<br>
-                PID: 045-122-09<br>
-                555 Blueprint Way<br>
-                Charlotte, NC 28202
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing" style="margin-top: 150px; text-align: center; padding-bottom: 150px;">
-        <h2 style="font-size: 50px; margin-bottom: 60px; text-shadow: 0 0 20px rgba(0,0,0,0.8);">Pricing Plans</h2>
-        <div class="pricing-grid">
-            <div class="price-card">
-                <div style="text-transform: uppercase; font-size: 13px; font-weight: 700; color: #888;">Single County</div>
-                <div style="font-size: 40px; font-weight: 800; margin: 20px 0;">$29.99<span style="font-size: 16px; color: #666;">/mo</span></div>
-                <a href="#" class="btn btn-primary" style="width:100%; justify-content:center;">Get Started</a>
-            </div>
-            <div class="price-card featured">
-                <div style="text-transform: uppercase; font-size: 13px; font-weight: 700; color: var(--color-brand);">Travel Ring</div>
-                <div style="font-size: 40px; font-weight: 800; margin: 20px 0;">$59.99<span style="font-size: 16px; color: #666;">/mo</span></div>
-                <a href="#" class="btn btn-primary" style="width:100%; justify-content:center;">Best Value</a>
-            </div>
-            <div class="price-card">
-                <div style="text-transform: uppercase; font-size: 13px; font-weight: 700; color: #888;">National</div>
-                <div style="font-size: 40px; font-weight: 800; margin: 20px 0;">$99.99<span style="font-size: 16px; color: #666;">/mo</span></div>
-                <a href="#" class="btn btn-primary" style="width:100%; justify-content:center;">Go National</a>
-            </div>
-        </div>
-    </section>
+<section class="hero" style="margin-top:0">
+<div class="badge">Now in beta</div>
+<h1>County GIS parcels, straight into your CAD drawing.</h1>
+<p class="hero-sub">BIGCS is a Carlson add-in that pulls parcel boundaries plus owner, deed and plat labels from county GIS into your drawing at true coordinates, so you stop retyping record info. Built by licensed land surveyors.</p>
+<div class="hero-ctas"><a href="mailto:support@bigcsoftware.com?subject=BIGCS%20beta%20access" class="btn btn-primary">Request beta access</a><a href="#features" class="btn btn-ghost">See the features</a></div>
+<div class="use-cases"><div class="use-case-tag primary">Surveyors</div><div class="use-case-tag">Civil Engineers</div><div class="use-case-tag">Realtors &amp; Developers</div><div class="use-case-tag">GIS / CAD Users</div></div>
+</section>
+<section id="demo">
+<div class="demo"><video controls preload="none" poster="assets/demo-poster.jpg" playsinline><source src="assets/bigcs-demo.mp4" type="video/mp4">Your browser can't play this video.</video></div>
+</section>
+<section id="features">
+<div class="section-head"><div class="badge">Features</div><h2>What BIGCS does</h2><p>Public records into real CAD entities: linework, text and properties you can work with.</p></div>
+<div class="features-grid">
+<div class="card"><div class="icon">PCL</div><h3>Parcel boundaries + owner labels</h3><p>Pick a point inside a parcel and BIGCS draws the boundary with owner, deed book/page, plat book/page and PIN text at true coordinates, straight from county GIS.</p><p><code>BCS</code></p></div>
+<div class="card"><div class="icon">Aa</div><h3>Custom label styles</h3><p>Set line order, SHX or TrueType fonts, text height and justification (left, center, right and more), saved as reusable styles.</p><p><code>BCSST</code></p></div>
+<div class="card"><div class="icon">T</div><h3>Text-only insert</h3><p>Place just the owner and record labels without the parcel linework, as a setting or its own command.</p><p><code>BCSTXT</code></p></div>
+<div class="card"><div class="icon">BND</div><h3>State &amp; county boundaries</h3><p>Draw state and county lines on demand. BIGCS remembers your last state and county, and the county list is type-to-search.</p><p><code>BCSBND</code></p></div>
+<div class="card"><div class="icon">RD</div><h3>Road centerlines</h3><p>Pick an area to bring in road centerlines on their own layer, with the road name stored in the object properties, not as clutter text.</p></div>
+<div class="card"><div class="icon">&#9651;</div><h3>Survey monuments</h3><p>Plot published control monuments in a picked area, with links back to the official datasheet.</p></div>
+<div class="card"><div class="icon">FZ</div><h3>FEMA flood zones</h3><p>Bring in FEMA flood zone areas with a link to the flood map in each object's properties.</p></div>
+<div class="card"><div class="icon">ADJ</div><h3>Adjoiner table</h3><p>Build a table of adjoining owners with deed and plat references, useful for surveyors, engineers, realtors and developers.</p><p><code>BCSADJ</code></p></div>
+<div class="card"><div class="icon">&#8981;</div><h3>Find by address or PIN</h3><p>Jump to a parcel by site address or parcel number, alongside point-pick and area selection.</p></div>
+<div class="card"><div class="icon">&#8635;</div><h3>Refresh</h3><p>Re-pull a parcel from the county source to update labels when records change.</p><p><code>BCSREF</code></p></div>
+<div class="card"><div class="icon">SRC</div><h3>Source &amp; date stamp</h3><p>Each object records which GIS source it came from and when it was pulled.</p></div>
+<div class="card"><div class="icon">&#9993;</div><h3>BIGCS Letters add-on</h3><p>Pick owners and a letter type (offer, mailer, notice of upcoming work) and produce letters outside of CAD.</p><p><code>BCSLTR</code></p></div>
+</div>
+</section>
+<section id="commands">
+<div class="section-head"><h2>Commands</h2><p>BCS commands, with the original G2C and GIS2CAD names still working.</p></div>
+<table class="cmd-table">
+<tr><th>Command</th><th>Also works as</th><th>What it does</th></tr>
+<tr><td class="cmd">BCS</td><td class="cmd">G2C, GIS2CAD</td><td>Insert parcels: boundary + owner/deed/plat labels. Locate by Pick, Lat/Lon, State Plane N/E, Address or PIN; mode Single, Adjoiners, Radius or Window.</td></tr>
+<tr><td class="cmd">BCSTXT</td><td class="cmd">G2CTXT, GIS2CADTXT</td><td>Same as BCS but labels only, no parcel boundary.</td></tr>
+<tr><td class="cmd">BCSADJ</td><td class="cmd">G2CADJ, GIS2CADADJ</td><td>Adjoiner table placed in the drawing, plus a CSV saved beside the drawing.</td></tr>
+<tr><td class="cmd">BCSREF</td><td class="cmd">G2CREF, GIS2CADREF</td><td>Refresh every BIGCS label from county GIS by its stored PIN; updates text and date stamp and saves a CSV of changes.</td></tr>
+<tr><td class="cmd">BCSLTR</td><td class="cmd">G2CLTR, GIS2CADLTR</td><td>Open BIGCS Letters (separate window) using the drawing's adjoiner CSV.</td></tr>
+<tr><td class="cmd">BCSBND</td><td class="cmd">G2CBND, GIS2CADBOUNDS</td><td>Boundaries window: state/county borders, NGS and state monuments, road centerlines, easements/ROW and flood zones, by county or a picked area.</td></tr>
+<tr><td class="cmd">BCSST</td><td class="cmd">G2CST, GIS2CADSTYLE</td><td>Label style editor: line order, wording, fonts, justification, layers, live preview.</td></tr>
+<tr><td class="cmd">BCSLOAD</td><td class="cmd">G2CLOAD, GIS2CADLOAD</td><td>Load an already-generated BIGCS result file (.lsp), e.g. from a batch run.</td></tr>
+</table>
+</section>
+<section class="tax-section">
+<div>
+<div class="stat-value">Coverage &amp; compatibility</div>
+<p style="color:#ddd;font-size:17px">Coverage today: <strong>NC and SC counties</strong>, with more on the way. Data comes as-is from each county's public GIS. BIGCS never adjusts or datum-shifts it.</p>
+<p style="color:#ddd;font-size:17px;margin-top:14px">Tested on <strong>Carlson 2025 on IntelliCAD</strong>. Carlson on AutoCAD is in beta testing.</p>
+</div>
+<div class="cad-preview"><div class="cad-text">N/F<br>JOHN D. SMITH<br>DB 14256 PG 198<br>MB 42 PG 12<br>PIN: 045-122-09<br>555 SAMPLE WAY<br>CHARLOTTE, NC 28202</div><p class="caption">Sample label with fictional data. Line order, fonts and justification are configurable.</p></div>
+</section>
+<section id="pricing" style="text-align:center">
+<div class="section-head"><h2>Pricing</h2><p>Per seat (user), billed monthly. <strong>Beta pricing, subject to change.</strong></p></div>
+<div class="toggle" role="group" aria-label="Billing period"><button type="button" aria-pressed="true">Monthly</button><button type="button" aria-pressed="false" disabled title="Yearly billing coming soon">Yearly (coming soon)</button></div>
+<div class="pricing-grid">
+<div class="price-card"><div class="tier">Local</div><div class="price">Starting at $29.99<span style="font-size:15px;color:#999">/mo</span></div><p>1 seat, 1 to 2 counties.</p><a href="mailto:support@bigcsoftware.com?subject=BIGCS%20beta%20-%20Local" class="btn btn-primary" style="width:100%">Join the beta</a></div>
+<div class="price-card featured"><div class="tier">Regional</div><div class="price">Starting at $59.99<span style="font-size:15px;color:#999">/mo</span></div><p>Per seat, up to 6 counties.</p><a href="mailto:support@bigcsoftware.com?subject=BIGCS%20beta%20-%20Regional" class="btn btn-primary" style="width:100%">Join the beta</a></div>
+<div class="price-card"><div class="tier">Statewide</div><div class="price">Starting at $299<span style="font-size:15px;color:#999">/mo</span></div><p>Per seat, every supported county in one state.</p><a href="mailto:support@bigcsoftware.com?subject=BIGCS%20beta%20-%20Statewide" class="btn btn-primary" style="width:100%">Join the beta</a></div>
+</div>
+<p class="caption" style="margin-top:20px">Beta pricing, subject to change. Coverage today: NC and SC counties.</p>
+</section>
+<section id="about" class="about">
+<div><div class="badge">About</div><h2>Built by surveyors</h2>
+<p style="color:#ddd;font-size:17px">BIGCS is built by licensed land surveyors to cut out the research and retyping that comes with every boundary job. It is published by Big C's Products, LLC.</p></div>
+<div class="notice"><h3>BIGCS is not a survey</h3><p>Parcel lines and record data come as-is from county GIS and are approximate. Always check recorded deeds and plats, and use a licensed surveyor when boundaries matter. <a href="/disclaimer.html">Full disclaimer</a></p></div>
+</section>
 </main>
-
-<footer style="padding: 100px 0; border-top: 1px solid var(--color-border); text-align:center; background: rgba(0,0,0,0.9);">
-    <p style="color: #444; font-size: 11px;">© 2026 BIGCS. All rights reserved.</p>
+<footer>
+<div class="container">
+<div class="links"><a href="/">Home</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:support@bigcsoftware.com">Contact</a></div>
+<p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources and is not survey-grade. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
+<p>Big C's Products, LLC &middot; <a href="mailto:support@bigcsoftware.com">support@bigcsoftware.com</a></p>
+<p>AutoCAD and Civil 3D are trademarks of Autodesk, Inc. Carlson is a trademark of Carlson Software, Inc. IntelliCAD is a trademark of the IntelliCAD Technology Consortium. BIGCS is not affiliated with or endorsed by these companies.</p>
+<p>&copy; 2026 Big C's Products, LLC. All rights reserved.</p>
+</div>
 </footer>
-
 </body>
 </html>
