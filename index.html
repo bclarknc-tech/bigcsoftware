@@ -138,7 +138,18 @@
         .price-card.featured { border: 3px solid var(--color-brand); box-shadow: 0 0 40px rgba(94, 106, 210, 0.3); }
 
         @media (max-width: 768px) { 
-            h1 { font-size: 42px; } 
+            h1 { font-size: 38px !important; line-height: 1.2 !important; } 
+            h2 { font-size: 28px !important; margin-bottom: 30px !important; }
+            .hero { padding: 60px 0 40px !important; }
+            .hero-sub { font-size: 16px !important; }
+            .features-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+            .tax-section { grid-template-columns: 1fr !important; padding: 25px !important; margin-top: 40px !important; }
+            .pricing-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+            .use-cases { grid-template-columns: 1fr 1fr !important; } /* 2 columns on small screens */
+            .bg-hologram { background-attachment: scroll !important; } /* Fix performance on mobile */
+            .cad-text { font-size: 14px !important; }
+            .stat-value { font-size: 32px !important; }
+        } 
             h2 { font-size: 32px !important; }
             .hero { padding: 80px 0 60px; }
             .hero-sub { font-size: 18px; margin-bottom: 30px; }
@@ -201,7 +212,7 @@
     <section id="features" style="margin-top: 160px;">
         <div style="text-align: center; margin-bottom: 80px;">
             <div class="badge">The Production Engine</div>
-            <h2 style="font-size: 52px; font-weight: 800; background: linear-gradient(180deg, #fff 0%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Built for Production.</h2>
+            <h2 style="font-size: 52px; font-weight: 800; background: linear-gradient(180deg, #fff 0%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Built for Speed.</h2>
             <p style="color: #bbb; font-size: 20px; max-width: 700px; margin: 20px auto;">Stop fighting with GIS portals. BIGCS turns public records into physical CAD entities in seconds.</p>
         </div>
 
