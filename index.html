@@ -137,7 +137,19 @@
         .price-card:hover { transform: translateY(-5px); border-color: var(--color-brand); }
         .price-card.featured { border: 3px solid var(--color-brand); box-shadow: 0 0 40px rgba(94, 106, 210, 0.3); }
 
-        @media (max-width: 768px) { h1 { font-size: 48px; } .tax-section, .pricing-grid, .use-cases { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { 
+            h1 { font-size: 42px; } 
+            h2 { font-size: 32px !important; }
+            .hero { padding: 80px 0 60px; }
+            .hero-sub { font-size: 18px; margin-bottom: 30px; }
+            .tax-section, .pricing-grid, .use-cases, .features-grid { grid-template-columns: 1fr !important; } 
+            .tax-section { padding: 30px; gap: 30px; margin-top: 60px; }
+            #features { margin-top: 80px !important; }
+            .card { padding: 24px; }
+            .cad-preview { padding: 20px; }
+            .cad-text { font-size: 16px; padding-left: 16px; }
+            .use-case-tag { font-size: 12px; padding: 10px; }
+        } .tax-section, .pricing-grid, .use-cases { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -189,11 +201,11 @@
     <section id="features" style="margin-top: 160px;">
         <div style="text-align: center; margin-bottom: 80px;">
             <div class="badge">The Production Engine</div>
-            <h2 style="font-size: 52px; font-weight: 800; background: linear-gradient(180deg, #fff 0%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Built for Throughput.</h2>
+            <h2 style="font-size: 52px; font-weight: 800; background: linear-gradient(180deg, #fff 0%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Built for Production.</h2>
             <p style="color: #bbb; font-size: 20px; max-width: 700px; margin: 20px auto;">Stop fighting with GIS portals. BIGCS turns public records into physical CAD entities in seconds.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+        <div class="features-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
             <!-- Feature 1: The G2C Command -->
             <div class="card">
                 <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
