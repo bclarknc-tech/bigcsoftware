@@ -45,15 +45,15 @@ var BIGCS_PLANS = {
   },
   state: {
     monthly: {
-      label: "$199.99",
+      label: "$169.99",
       suffix: "/mo",
-      alt: "Or $1,999.90/yr (2 months free).",
+      alt: "Or $1,699.90/yr (2 months free).",
       url: STRIPE_PAYMENT_LINKS["state-monthly"]
     },
     yearly: {
-      label: "$1,999.90",
+      label: "$1,699.90",
       suffix: "/yr",
-      alt: "2 months free. That's 10 months at $199.99.",
+      alt: "2 months free. That's 10 months at $169.99.",
       url: STRIPE_PAYMENT_LINKS["state-yearly"]
     }
   }
