@@ -10,8 +10,8 @@ var STRIPE_PAYMENT_LINKS = {
   "2c-yearly": "https://buy.stripe.com/test_eVq4gsbVH59cbHC1VLgjC01",
   "6c-monthly": "https://buy.stripe.com/test_4gMfZa7FrdFIdPK2ZPgjC02",
   "6c-yearly": "https://buy.stripe.com/test_7sY8wI6Bn7hk2729odgjC03",
-  "state-monthly": "https://buy.stripe.com/test_fZu9AM7FrdFIcLG57XgjC04",
-  "state-yearly": "https://buy.stripe.com/test_cNi4gs6BndFIaDygQFgjC05"
+  "state-monthly": "https://buy.stripe.com/test_00w7sE8Jv9ps272gQFgjC06",
+  "state-yearly": "https://buy.stripe.com/test_5kQ14ggbXatw5jedEtgjC07"
 };
 
 var BIGCS_PLANS = {
