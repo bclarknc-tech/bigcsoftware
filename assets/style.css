@@ -10,7 +10,8 @@ nav{height:64px;display:flex;align-items:center;border-bottom:1px solid var(--bo
 .nav-inner{display:flex;width:100%;align-items:center;justify-content:space-between;gap:16px}
 .logo{font-weight:600;font-size:18px;display:flex;align-items:center;gap:8px;text-decoration:none;color:#fff}
 .logo-box{width:24px;height:24px;background:var(--brand);border-radius:4px;box-shadow:0 0 15px var(--brand)}
-.logo small{font-weight:300;font-size:12px;margin-left:10px;color:#999}
+.logo-text{display:flex;flex-direction:column;line-height:1.1}
+.logo small{font-weight:400;font-size:11px;letter-spacing:.02em;margin-top:2px;color:#999;white-space:nowrap}
 .nav-links{display:flex;gap:20px;align-items:center}
 .nav-links a{color:#ddd;text-decoration:none;font-size:14px}
 .btn{padding:10px 22px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none}
@@ -96,6 +97,7 @@ h1{font-size:38px;line-height:1.2}h2{font-size:28px}
 .most-popular{letter-spacing:.04em}
 .tax-section{padding:25px}.use-cases{grid-template-columns:1fr 1fr}
 .cad-text{font-size:15px}.stat-value{font-size:28px}
-.nav-links a:not(.btn),.logo small{display:none}
+.nav-links a:not(.btn){display:none}
+.logo small{font-size:9px;letter-spacing:0}.nav-inner .btn{white-space:nowrap;padding:9px 14px}
 section{margin-top:70px}}
 @media (max-width:768px){.cmd-table td,.cmd-table th{padding:8px;font-size:12px}}
