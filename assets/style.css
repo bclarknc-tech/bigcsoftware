@@ -103,3 +103,13 @@ h1{font-size:38px;line-height:1.2}h2{font-size:28px}
 .logo small{font-size:9px;letter-spacing:0}.nav-inner .btn{white-space:nowrap;padding:9px 14px}
 section{margin-top:70px}}
 @media (max-width:768px){.cmd-table td,.cmd-table th{padding:8px;font-size:12px}}
+.tier-wrap{max-width:760px;margin:0 auto;background:rgba(0,0,0,.6);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.tier-table{width:100%;border-collapse:collapse;font-size:16px}
+.tier-table th,.tier-table td{padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.08);text-align:right}
+.tier-table th:first-child{text-align:left}
+.tier-table thead th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#bbb;font-weight:600;background:rgba(255,255,255,.03)}
+.tier-table tbody th{font-weight:700}.tier-table small{display:block;font-weight:400;font-size:12px;color:#999;margin-top:2px}
+.tier-table td{font-weight:700;font-size:18px;white-space:nowrap}.tier-table td span{font-size:13px;color:#999;font-weight:400}
+.tier-table tr.feat{background:rgba(94,106,210,.18)}.tier-table tr.feat th{color:#fff}
+.tier-cta{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;flex-wrap:wrap}.tier-cta p{color:#aaa;font-size:14px}
+@media (max-width:700px){.tier-table th,.tier-table td{padding:12px 10px}.tier-table td{font-size:15px}.tier-table td span{font-size:11px}.tier-table thead .save-pill{display:none}.tier-cta{justify-content:center;text-align:center}.tier-cta .btn{width:100%}}
