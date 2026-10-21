@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>County Coverage | BIGCS</title>
+<meta name="description" content="Which states and counties BIGCS covers, and which parcel fields each county provides.">
+<link rel="canonical" href="https://bigcsoftware.com/coverage.html">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BIGCS">
+<meta property="og:title" content="County Coverage | BIGCS">
+<meta property="og:description" content="Which states and counties BIGCS covers, and which parcel fields each county provides.">
+<meta property="og:url" content="https://bigcsoftware.com/coverage.html">
+<meta property="og:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="County Coverage | BIGCS">
+<meta name="twitter:description" content="Which states and counties BIGCS covers, and which parcel fields each county provides.">
+<meta name="twitter:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="bg-layer"><div class="bg-hologram"></div><div class="bg-grid"></div></div>
+<nav>
+<div class="container nav-inner">
+<a href="/" class="logo"><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="BIGCS Software seal" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
+<div class="nav-links"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/coverage.html" aria-current="page">Coverage</a><a href="/#about">About</a><a href="/pricing.html" class="btn btn-primary">See pricing</a></div>
+</div>
+</nav>
+<main class="container cov">
+<h1>County coverage</h1>
+<p class="cov-lead">BIGCS pulls parcel data from each county's public GIS. Pick a state to see which fields each county provides. Plans are the same in every state. <a href="/pricing.html">See pricing</a>.</p>
+<div class="cov-tabs" role="tablist" id="cov-tabs"></div>
+<div id="cov-panel"></div>
+<p class="cov-note">Data comes from each county's public GIS and is provided for reference only, without warranty. Coverage changes as counties update their services. Always confirm against the recorded deeds and plats.</p>
+</main>
+<script src="/assets/coverage-data.js"></script>
+<script>
+(function(){
+var D=window.BIGCS_COVERAGE,order=["NC","SC","GA","TX","IN","MI","IL"],F=[["o","Owner"],["d","Deed Book/Page"],["p","Plat reference"],["i","Parcel ID"],["z","Zoning"]];
+var tabs=document.getElementById("cov-tabs"),panel=document.getElementById("cov-panel");
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function badge(st){return st==="beta"?'<span class="cov-badge beta">Beta</span>':'<span class="cov-badge soon">Coming soon / in development</span>'}
+function show(k){
+  var s=D[k];[].forEach.call(tabs.children,function(b){b.setAttribute("aria-selected",b.dataset.k===k)});
+  var h='<div class="cov-head"><h2>'+esc(s.name)+'</h2>'+badge(s.status)+'</div>';
+  h+=s.status==="beta"?'<p class="cov-sub">BIGCS is in beta in North Carolina.</p>':'<h3>Counties in development</h3><p class="cov-sub">We are building out '+esc(s.name)+'. These counties are in development and are not yet released.</p>';
+  h+='<div class="cov-wrap"><table class="cov-table"><thead><tr><th>County</th>'+F.map(function(f){return"<th>"+f[1]+"</th>"}).join("")+'</tr></thead><tbody>';
+  s.counties.forEach(function(c){h+='<tr><td><strong>'+esc(c.n)+'</strong>'+(c.a?'<span class="cov-src">'+esc(c.a)+'</span>':'')+'</td>'+F.map(function(f){return c[f[0]]?'<td data-l="'+f[1]+'" class="y" aria-label="Yes">&#10003;</td>':'<td data-l="'+f[1]+'" class="n" aria-label="No">&ndash;</td>'}).join("")+'</tr>'});
+  panel.innerHTML=h+'</tbody></table></div>';
+  if(history.replaceState)history.replaceState(null,"","#"+k.toLowerCase());
+}
+order.forEach(function(k){var b=document.createElement("button");b.type="button";b.role="tab";b.dataset.k=k;b.className="cov-tab "+D[k].status;b.innerHTML=esc(D[k].name)+'<small>'+(D[k].status==="beta"?"Beta":"Coming soon")+'</small>';b.onclick=function(){show(k)};tabs.appendChild(b)});
+var h=(location.hash||"").slice(1).toUpperCase();show(D[h]?h:"NC");
+})();
+</script>
+<footer>
+<div class="container">
+<div class="links"><a href="/">Home</a><a href="/pricing.html">Pricing</a><a href="/coverage.html">Coverage</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:support@bigcsoftware.com">Contact</a></div>
+<p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources and is not survey-grade. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
+<p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:support@bigcsoftware.com">support@bigcsoftware.com</a></p>
+<p>AutoCAD and Civil 3D are trademarks of Autodesk, Inc. Carlson is a trademark of Carlson Software, Inc. IntelliCAD is a trademark of the IntelliCAD Technology Consortium. BIGCS is not affiliated with or endorsed by these companies.</p>
+<p>&copy; 2026 BIGCS. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>
