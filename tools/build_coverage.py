@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Build assets/coverage-data.js from the county coverage CSV.
+"""Statuses: available (all counties listed), beta and soon (only counties with owner + parcel ID).
+Build assets/coverage-data.js from the county coverage CSV.
 Usage: python3 tools/build_coverage.py path/to/coverage_by_county.csv
 Only public-safe fields are emitted (no statuses, gap notes or raw sources)."""
 import csv, json, re, sys, pathlib
 
-STATES = {"NC": ("North Carolina", "beta"), "SC": ("South Carolina", "soon"), "GA": ("Georgia", "soon"),
-          "TX": ("Texas", "soon"), "IN": ("Indiana", "soon"), "MI": ("Michigan", "soon"), "IL": ("Illinois", "soon")}
+STATES = {"NC": ("North Carolina", "available"), "SC": ("South Carolina", "beta"), "GA": ("Georgia", "beta"),
+          "TX": ("Texas", "beta"), "IN": ("Indiana", "soon"), "MI": ("Michigan", "soon"), "IL": ("Illinois", "soon")}
 FIELDS = [("owner", "o"), ("deed_book_page", "d"), ("plat_ref", "p"), ("parcel_id", "i"), ("zoning", "z")]
 STATEWIDE = {"txgio": "Texas Geographic Information Office (TxGIO)", "nconemap": "NC OneMap"}
 
@@ -33,7 +34,7 @@ def main(path):
     for r in csv.DictReader(open(path, newline="")):
         s = out.get(r["state"])
         if not s: continue
-        if s["status"] != "beta" and not (r["owner"] == "Y" and r["parcel_id"] == "Y"): continue
+        if s["status"] != "available" and not (r["owner"] == "Y" and r["parcel_id"] == "Y"): continue
         row = {"n": r["county"]}
         row.update({k: r[f] == "Y" for f, k in FIELDS})
         a = agency(r["county"], r["source"].strip())

@@ -106,11 +106,11 @@ section{margin-top:70px}}
 .cov{padding:60px 24px 40px}.cov h1{font-size:46px}.cov-lead{color:var(--muted);max-width:760px;margin-bottom:28px}
 .cov-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
 .cov-tab{background:rgba(0,0,0,.6);border:1px solid var(--border);color:#fff;border-radius:8px;padding:8px 14px;font:600 14px Inter,sans-serif;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;line-height:1.2}
-.cov-tab small{font-weight:400;font-size:11px;color:#999}.cov-tab.beta small{color:var(--gold)}
+.cov-tab small{font-weight:400;font-size:11px;color:#999}.cov-tab.available small{color:#7ee2a8}.cov-tab.beta small{color:var(--gold)}
 .cov-tab[aria-selected=true]{border-color:var(--accent);background:rgba(94,106,210,.25)}
 .cov-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.cov-head h2{font-size:32px;margin:0}
 .cov-badge{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:99px}
-.cov-badge.beta{background:var(--gold);color:#000}.cov-badge.soon{border:1px solid var(--border);color:#ddd}
+.cov-badge.available{background:#2fbf71;color:#000}.cov-badge.beta{background:transparent;border:1px solid var(--gold);color:var(--gold)}.cov-badge.soon{border:1px solid var(--border);color:#ddd}
 .cov h3{margin-top:18px;font-size:18px}.cov-sub{color:var(--muted);margin:8px 0 16px;font-size:14px}
 .cov-wrap{background:rgba(0,0,0,.6);border:1px solid var(--border);border-radius:12px;overflow:hidden}
 .cov-table{width:100%;border-collapse:collapse;font-size:14px}

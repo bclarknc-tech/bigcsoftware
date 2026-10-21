@@ -45,17 +45,18 @@
 var D=window.BIGCS_COVERAGE,order=["NC","SC","GA","TX","IN","MI","IL"],F=[["o","Owner"],["d","Deed Book/Page"],["p","Plat reference"],["i","Parcel ID"],["z","Zoning"]];
 var tabs=document.getElementById("cov-tabs"),panel=document.getElementById("cov-panel");
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-function badge(st){return st==="beta"?'<span class="cov-badge beta">Beta</span>':'<span class="cov-badge soon">Coming soon / in development</span>'}
+var L={available:"Available",beta:"Beta",soon:"Coming soon / in development"},S={available:"Available",beta:"Beta",soon:"Coming soon"};
+function badge(st){return '<span class="cov-badge '+st+'">'+L[st]+'</span>'}
 function show(k){
   var s=D[k];[].forEach.call(tabs.children,function(b){b.setAttribute("aria-selected",b.dataset.k===k)});
   var h='<div class="cov-head"><h2>'+esc(s.name)+'</h2>'+badge(s.status)+'</div>';
-  h+=s.status==="beta"?'<p class="cov-sub">BIGCS is in beta in North Carolina.</p>':'<h3>Counties in development</h3><p class="cov-sub">We are building out '+esc(s.name)+'. These counties are in development and are not yet released.</p>';
+  h+=s.status==="available"?'<p class="cov-sub">BIGCS is available in '+esc(s.name)+'.</p>':s.status==="beta"?'<h3>Counties in beta</h3><p class="cov-sub">Beta: counties listed are working in beta.</p>':'<h3>Counties in development</h3><p class="cov-sub">We are building out '+esc(s.name)+'. These counties are in development and are not yet released.</p>';
   h+='<div class="cov-wrap"><table class="cov-table"><thead><tr><th>County</th>'+F.map(function(f){return"<th>"+f[1]+"</th>"}).join("")+'</tr></thead><tbody>';
   s.counties.forEach(function(c){h+='<tr><td><strong>'+esc(c.n)+'</strong>'+(c.a?'<span class="cov-src">'+esc(c.a)+'</span>':'')+'</td>'+F.map(function(f){return c[f[0]]?'<td data-l="'+f[1]+'" class="y" aria-label="Yes">&#10003;</td>':'<td data-l="'+f[1]+'" class="n" aria-label="No">&ndash;</td>'}).join("")+'</tr>'});
   panel.innerHTML=h+'</tbody></table></div>';
   if(history.replaceState)history.replaceState(null,"","#"+k.toLowerCase());
 }
-order.forEach(function(k){var b=document.createElement("button");b.type="button";b.role="tab";b.dataset.k=k;b.className="cov-tab "+D[k].status;b.innerHTML=esc(D[k].name)+'<small>'+(D[k].status==="beta"?"Beta":"Coming soon")+'</small>';b.onclick=function(){show(k)};tabs.appendChild(b)});
+order.forEach(function(k){var b=document.createElement("button");b.type="button";b.role="tab";b.dataset.k=k;b.className="cov-tab "+D[k].status;b.innerHTML=esc(D[k].name)+'<small>'+S[D[k].status]+'</small>';b.onclick=function(){show(k)};tabs.appendChild(b)});
 var h=(location.hash||"").slice(1).toUpperCase();show(D[h]?h:"NC");
 })();
 </script>
