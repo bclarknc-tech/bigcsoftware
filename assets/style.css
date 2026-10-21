@@ -113,3 +113,19 @@ section{margin-top:70px}}
 .tier-table tr.feat{background:rgba(94,106,210,.18)}.tier-table tr.feat th{color:#fff}
 .tier-cta{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;flex-wrap:wrap}.tier-cta p{color:#aaa;font-size:14px}
 @media (max-width:700px){.tier-table th,.tier-table td{padding:12px 10px}.tier-table td{font-size:15px}.tier-table td span{font-size:11px}.tier-table thead .save-pill{display:none}.tier-cta{justify-content:center;text-align:center}.tier-cta .btn{width:100%}}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.btn-sm{padding:7px 12px;font-size:13px;white-space:nowrap}.tier-table td.act{text-align:right;padding-left:8px}
+.form-wrap{max-width:720px;margin:0 auto 80px}
+.interest-form{background:rgba(0,0,0,.6);border:1px solid var(--border);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:16px}
+.interest-form label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:#ddd;flex:1}
+.interest-form input,.interest-form select,.interest-form textarea{font:400 15px Inter,sans-serif;color:#fff;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;padding:11px 12px;width:100%}
+.interest-form select option{background:#0a0a14}
+.interest-form input:focus,.interest-form select:focus,.interest-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(113,112,255,.25)}
+.f-row{display:flex;gap:16px}.req{color:var(--gold)}.opt{color:#888;font-weight:400}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.interest-form .btn{align-self:flex-start;padding:12px 32px}
+.f-status{font-size:14px;min-height:1em}.f-status.ok{color:#7ee2a8}.f-status.err{color:#ff9b9b}
+.f-fallback{text-align:center;margin-top:16px;color:#aaa;font-size:14px}
+@media (max-width:700px){.f-row{flex-direction:column}.interest-form{padding:20px}.interest-form .btn{align-self:stretch}
+.tier-table thead{display:none}.tier-table tr{display:grid;grid-template-columns:1fr auto auto;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)}
+.tier-table th,.tier-table td{border:0}.tier-table td.act{grid-column:1/-1;padding:0 10px 14px}.tier-table td.act .btn{width:100%}}

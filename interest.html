@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get in touch | BIGCS</title>
+<meta name="description" content="Tell us which BIGCS plan and counties you are interested in, and we will be in touch.">
+<link rel="canonical" href="https://bigcsoftware.com/interest.html">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BIGCS">
+<meta property="og:title" content="Get in touch | BIGCS">
+<meta property="og:description" content="Tell us which BIGCS plan and counties you are interested in, and we will be in touch.">
+<meta property="og:url" content="https://bigcsoftware.com/interest.html">
+<meta property="og:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Get in touch | BIGCS">
+<meta name="twitter:description" content="Tell us which BIGCS plan and counties you are interested in, and we will be in touch.">
+<meta name="twitter:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="bg-layer"><div class="bg-hologram"></div><div class="bg-grid"></div></div>
+<nav>
+<div class="container nav-inner">
+<a href="/" class="logo"><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="BIGCS Software seal" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
+<div class="nav-links"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/#about">About</a><a href="/pricing.html" class="btn btn-primary">See pricing</a></div>
+</div>
+</nav>
+<main class="container"><section class="page-hero" style="padding-bottom:30px">
+<div class="badge">Get in touch</div>
+<h1>Interested in BIGCS?</h1>
+<p class="hero-sub">Tell us what you need and we'll reach out. See <a href="/pricing.html">pricing</a> for all plans.</p>
+</section>
+<section class="form-wrap">
+<form id="interest-form" class="interest-form" action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY_PLACEHOLDER">
+<input type="hidden" name="subject" id="f-subject" value="BIGCS interest">
+<input type="hidden" name="from_name" value="bigcsoftware.com interest form">
+<input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="f-row"><label><span class="lt">Name <span class="req">*</span></span><input type="text" name="name" required autocomplete="name"></label>
+<label><span class="lt">Company</span><input type="text" name="company" autocomplete="organization"></label></div>
+<div class="f-row"><label><span class="lt">Email <span class="req">*</span></span><input type="email" name="email" required autocomplete="email"></label>
+<label><span class="lt">Phone <span class="opt">(optional)</span></span><input type="tel" name="phone" autocomplete="tel"></label></div>
+<div class="f-row"><label><span class="lt">State</span><select name="state"><option value="">Select a state</option><option>NC</option><option>SC</option><option>GA</option><option>TX</option><option>IN</option><option>MI</option><option>IL</option><option>Other</option></select></label>
+<label><span class="lt">Plan</span><select name="plan" id="f-plan"><option value="">Select a plan</option><option value="1 County" data-slug="1-county">1 County</option><option value="4 Counties" data-slug="4-counties">4 Counties</option><option value="8 Counties" data-slug="8-counties">8 Counties</option><option value="12 Counties" data-slug="12-counties">12 Counties</option><option value="16 Counties" data-slug="16-counties">16 Counties</option><option value="20 Counties" data-slug="20-counties">20 Counties</option><option value="Whole State" data-slug="whole-state">Whole State</option><option value="Letters &amp; Door Hangers add-on" data-slug="letters-addon">Letters &amp; Door Hangers add-on</option><option value="Not sure yet" data-slug="not-sure">Not sure yet</option></select></label></div>
+<label><span class="lt">Counties of interest</span><input type="text" name="counties" placeholder="e.g. Wake, Johnston, Harnett"></label>
+<label><span class="lt">Message</span><textarea name="message" rows="5"></textarea></label>
+<button type="submit" class="btn btn-primary" id="f-submit">Send</button>
+<p class="f-status" id="f-status" role="status" aria-live="polite"></p>
+</form>
+<p class="f-fallback">Prefer email? <a href="mailto:support@bigcsoftware.com?subject=BIGCS%20interest">support@bigcsoftware.com</a></p>
+</section>
+</main>
+<script>
+(function(){
+var f=document.getElementById("interest-form"),sel=document.getElementById("f-plan"),subj=document.getElementById("f-subject"),st=document.getElementById("f-status"),btn=document.getElementById("f-submit");
+var slug=new URLSearchParams(location.search).get("plan");
+if(slug)[].forEach.call(sel.options,function(o){if(o.dataset.slug===slug)sel.value=o.value});
+function upd(){subj.value="BIGCS interest: "+(sel.value||"general")}sel.onchange=upd;upd();
+f.addEventListener("submit",function(e){
+  e.preventDefault();upd();btn.disabled=true;st.className="f-status";st.textContent="Sending...";
+  fetch(f.action,{method:"POST",headers:{"Accept":"application/json"},body:new FormData(f)})
+  .then(function(r){return r.json().then(function(j){if(!r.ok||!j.success)throw 0})})
+  .then(function(){f.reset();upd();st.className="f-status ok";st.textContent="Thanks, we'll be in touch soon."})
+  .catch(function(){st.className="f-status err";st.innerHTML='Sorry, that did not go through. Please email <a href="mailto:support@bigcsoftware.com?subject=BIGCS%20interest">support@bigcsoftware.com</a>.'})
+  .then(function(){btn.disabled=false});
+});
+})();
+</script>
+<footer>
+<div class="container">
+<div class="links"><a href="/">Home</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:support@bigcsoftware.com">Contact</a></div>
+<p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources and is not survey-grade. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
+<p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:support@bigcsoftware.com">support@bigcsoftware.com</a></p>
+<p>AutoCAD and Civil 3D are trademarks of Autodesk, Inc. Carlson is a trademark of Carlson Software, Inc. IntelliCAD is a trademark of the IntelliCAD Technology Consortium. BIGCS is not affiliated with or endorsed by these companies.</p>
+<p>&copy; 2026 BIGCS. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>
