@@ -49,6 +49,7 @@
 <div class="card"><div class="icon">Aa</div><h3>Custom label styles</h3><p>Set line order, SHX or TrueType fonts, text height and justification (left, center, right and more), saved as reusable styles.</p><p><code>BCSST</code></p></div>
 <div class="card"><div class="icon">T</div><h3>Text-only insert</h3><p>Place just the owner and record labels without the parcel linework, as a setting or its own command.</p><p><code>BCSTXT</code></p></div>
 <div class="card"><div class="icon">BND</div><h3>State &amp; county boundaries</h3><p>Draw state and county lines on demand. BIGCS remembers your last state and county, and the county list is type-to-search.</p><p><code>BCSBND</code></p></div>
+<div class="card"><div class="icon">BLD</div><h3>Building footprints (Beta)</h3><p>Draw building outlines as closed polylines in your drawing's coordinate system, with no datum shift. Pick a window or a parcel (50 ft buffer by default), or a whole county with confirmation, up to 20,000 buildings. Source: NC Emergency Management statewide building footprints (NC OneMap), about 5.4 million buildings in all 100 NC counties. NC only for now. Outlines only: no labels, area or height. Included in every plan.</p><p><code>BCSBLDG</code></p></div>
 <div class="card"><div class="icon">RD</div><h3>Road centerlines</h3><p>Pick an area to bring in road centerlines on their own layer, with the road name stored in the object properties, not as clutter text.</p></div>
 <div class="card"><div class="icon">&#9651;</div><h3>Survey monuments</h3><p>Plot published control monuments in a picked area, with links back to the official datasheet.</p></div>
 <div class="card"><div class="icon">FZ</div><h3>FEMA flood zones</h3><p>Bring in FEMA flood zone areas with a link to the flood map in each object's properties.</p></div>
@@ -68,7 +69,8 @@
 <tr><td class="cmd">BCSADJ</td><td class="cmd">G2CADJ, GIS2CADADJ</td><td>Adjoiner table placed in the drawing, plus a CSV saved beside the drawing.</td></tr>
 <tr><td class="cmd">BCSREF</td><td class="cmd">G2CREF, GIS2CADREF</td><td>Refresh every BIGCS label from county GIS by its stored PIN; updates text and date stamp and saves a CSV of changes.</td></tr>
 <tr><td class="cmd">BCSLTR</td><td class="cmd">G2CLTR, GIS2CADLTR</td><td>Open BIGCS Letters (separate window) using the drawing's adjoiner CSV.</td></tr>
-<tr><td class="cmd">BCSBND</td><td class="cmd">G2CBND, GIS2CADBOUNDS</td><td>Boundaries window: state/county borders, NGS and state monuments, road centerlines, easements/ROW and flood zones, by county or a picked area.</td></tr>
+<tr><td class="cmd">BCSMAP</td><td class="cmd">BCSBND, G2CBND, GIS2CADBOUNDS</td><td>Map Layers window (formerly Boundaries): state/county borders, NGS and state monuments, road centerlines, easements/ROW and flood zones, by county or a picked area. Includes Draw Building Footprints (Beta).</td></tr>
+<tr><td class="cmd">BCSBLDG</td><td class="cmd"></td><td>Building footprints (Beta, NC only): Window or Parcel (50 ft buffer by default). Draws closed polylines on layer BIGCS-BLDG; set layer, color and linetype in BCSST.</td></tr>
 <tr><td class="cmd">BCSST</td><td class="cmd">G2CST, GIS2CADSTYLE</td><td>Label style editor: line order, wording, fonts, justification, layers, live preview.</td></tr>
 <tr><td class="cmd">BCSLOAD</td><td class="cmd">G2CLOAD, GIS2CADLOAD</td><td>Load an already-generated BIGCS result file (.lsp), e.g. from a batch run.</td></tr>
 </table>
