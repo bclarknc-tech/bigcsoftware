@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>County Coverage | BIGCS</title>
+<meta name="description" content="See which counties BIGCS covers in each state, and what data is available in each county: owner, PIN, deed, plat, roads and control.">
+<link rel="canonical" href="https://bigcsoftware.com/coverage.html">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BIGCS">
+<meta property="og:title" content="BIGCS | County GIS Parcels in Carlson &amp; IntelliCAD for Surveyors">
+<meta property="og:description" content="BIGCS brings county GIS parcels, owner, deed and plat labels into Carlson, IntelliCAD and full AutoCAD. Built by licensed land surveyors. NC counties today, SC coming soon. See plans and pricing.">
+<meta property="og:url" content="https://bigcsoftware.com/">
+<meta property="og:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BIGCS | County GIS Parcels in Carlson &amp; IntelliCAD for Surveyors">
+<meta name="twitter:description" content="BIGCS brings county GIS parcels, owner, deed and plat labels into Carlson, IntelliCAD and full AutoCAD. Built by licensed land surveyors. NC counties today, SC coming soon. See plans and pricing.">
+<meta name="twitter:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+.cov-tools{margin:18px 0}.cov-tools input{width:100%;max-width:420px;padding:10px 12px;border-radius:8px;border:1px solid #445;background:#0e1420;color:#eee;font-size:16px}
+.cov-state{margin:10px 0;border:1px solid #2a3344;border-radius:10px;background:rgba(10,16,28,.7)}
+.cov-state summary{cursor:pointer;padding:12px 14px;font-weight:600;font-size:18px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.badge{font-size:12px;padding:2px 8px;border-radius:999px;font-weight:600}.badge.available{background:#1f6f3f;color:#fff}.badge.beta{background:#7a5b10;color:#fff}.badge.coming-soon{background:#3a4458;color:#ddd}
+.cnt{font-size:13px;color:#9aa;font-weight:400}.tbl{overflow-x:auto;padding:0 10px 10px}
+.cov-state table{width:100%;border-collapse:collapse;font-size:14px}.cov-state th,.cov-state td{padding:6px 8px;border-bottom:1px solid #222b3a;text-align:center}
+.cov-state tbody th{text-align:left;font-weight:400}.cov-state thead th:first-child{text-align:left}
+td.y{color:#4cd07d}td.n{color:#667}td.u{color:#887}.yr{display:inline-block;font-size:11px;background:#5a4410;color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px}
+</style>
+</head>
+<body>
+<div class="bg-layer"><div class="bg-hologram"></div><div class="bg-grid"></div></div>
+<nav>
+<div class="container nav-inner">
+<a href="/" class="logo"><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="BIGCS Software seal" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
+<div class="nav-links"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/#about">About</a><a href="/coverage.html">Coverage</a><a href="/pricing.html" class="btn btn-primary">See pricing</a></div>
+</div>
+</nav>
+<main class="container">
+<section class="hero" style="margin-top:0"><h1>County coverage</h1>
+<p class="hero-sub">What BIGCS can bring into your drawing, county by county. &#10003; = available, &ndash; = not available, ? = not yet reported. Where a county's data comes from an older copy, the year is shown next to the county name.</p>
+<p style="color:#ddd">Data comes as-is from each county's public GIS. BIGCS never adjusts or datum-shifts it. Coverage changes as counties update their systems.</p></section>
+<div class="cov-tools"><input id="q" type="search" placeholder="Search counties (e.g. Wake)" aria-label="Search counties"></div>
+<div id="cov">
+<!--STATES-->
+</div>
+<p id="none" style="display:none">No counties match.</p>
+<script>
+(function(){var q=document.getElementById('q');q.addEventListener('input',function(){var v=q.value.trim().toLowerCase(),any=false;
+document.querySelectorAll('.cov-state').forEach(function(d){var n=0;d.querySelectorAll('tbody tr').forEach(function(r){var m=!v||r.dataset.c.indexOf(v)>-1;r.style.display=m?'':'none';if(m)n++;});
+d.style.display=n?'':'none';if(v&&n)d.open=true;if(n)any=true;});document.getElementById('none').style.display=any?'none':'';});})();
+</script>
+</main>
+<footer>
+<div class="container">
+<div class="links"><a href="/">Home</a><a href="/pricing.html">Pricing</a><a href="/coverage.html">Coverage</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:support@bigcsoftware.com">Contact</a></div>
+<p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources and is not survey-grade. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
+<p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:support@bigcsoftware.com">support@bigcsoftware.com</a></p>
+<p>AutoCAD and Civil 3D are trademarks of Autodesk, Inc. Carlson is a trademark of Carlson Software, Inc. IntelliCAD is a trademark of the IntelliCAD Technology Consortium. BIGCS is not affiliated with or endorsed by these companies.</p>
+<p>&copy; 2026 BIGCS. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>
