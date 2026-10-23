@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Parcel Demo | BIGCS</title>
+<meta name="description" content="Tap a parcel in Union County, NC and see the county GIS data BIGCS pulls into your CAD drawing: owner, PIN, acreage, deed, plat and tax value.">
+<link rel="canonical" href="https://bigcsoftware.com/demo.html">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BIGCS">
+<meta property="og:title" content="BIGCS | County GIS Parcels in Carlson &amp; IntelliCAD for Surveyors">
+<meta property="og:description" content="BIGCS brings county GIS parcels, owner, deed and plat labels into Carlson, IntelliCAD and full AutoCAD. Built by licensed land surveyors. NC counties today, SC coming soon. See plans and pricing.">
+<meta property="og:url" content="https://bigcsoftware.com/">
+<meta property="og:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BIGCS | County GIS Parcels in Carlson &amp; IntelliCAD for Surveyors">
+<meta name="twitter:description" content="BIGCS brings county GIS parcels, owner, deed and plat labels into Carlson, IntelliCAD and full AutoCAD. Built by licensed land surveyors. NC counties today, SC coming soon. See plans and pricing.">
+<meta name="twitter:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+.demo-wrap{position:relative;border:1px solid #2a3344;border-radius:12px;overflow:hidden;background:#0a101c}
+#map{height:62vh;min-height:380px;max-height:640px;width:100%}
+.demo-bar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 10px;align-items:center}
+.demo-bar input{flex:1 1 200px;min-height:44px;padding:10px 12px;border-radius:8px;border:1px solid #445;background:#0e1420;color:#eee;font-size:16px}
+.demo-bar button{min-height:44px;padding:10px 16px;font-size:15px;border-radius:8px;cursor:pointer}
+#msg{position:absolute;top:8px;left:8px;z-index:900;background:rgba(10,16,28,.88);color:#ddd;padding:6px 10px;border-radius:6px;font-size:13px;pointer-events:none}
+#panel{display:none;margin-top:12px;border:1px solid #2a3344;border-radius:12px;background:rgba(10,16,28,.9);padding:14px 16px;color:#eee}
+#panel h3{margin:0 0 8px;font-size:18px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+#close{min-width:44px;min-height:44px;font-size:22px;background:none;border:1px solid #445;border-radius:8px;color:#eee;cursor:pointer}
+#panel table{width:100%;border-collapse:collapse;font-size:15px}#panel td{padding:8px 6px;border-bottom:1px solid #222b3a;vertical-align:top;word-break:break-word}
+#panel td:first-child{color:#9aa;width:36%}
+.demo-note{font-size:13px;color:#aab;margin-top:10px}
+.demo-cta{margin:26px 0;padding:20px;border:1px solid #2a3344;border-radius:12px;background:rgba(10,16,28,.7);text-align:center}
+.demo-cta .btn{min-height:44px;display:inline-flex;align-items:center}
+.leaflet-control-layers-toggle{width:44px!important;height:44px!important}.leaflet-touch .leaflet-bar a{width:40px;height:40px;line-height:40px}
+@media(max-width:600px){#map{height:55vh;min-height:320px}#panel table{font-size:15px}}
+</style></head>
+<body>
+<div class="bg-layer"><div class="bg-hologram"></div><div class="bg-grid"></div></div>
+<nav>
+<div class="container nav-inner">
+<a href="/" class="logo"><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="BIGCS Software seal" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
+<div class="nav-links"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/#about">About</a><a href="/coverage.html">Coverage</a><a href="/demo.html" aria-current="page">Live demo</a><a href="/pricing.html" class="btn btn-primary">See pricing</a></div>
+</div>
+</nav>
+<main class="container">
+<section class="hero" style="margin-top:0"><h1>See the data BIGCS pulls into your CAD drawing</h1>
+<p class="hero-sub">This live demo reads Union County, NC public GIS. Tap any parcel, or search a PIN, to see the owner, PIN, acreage, deed book and page, plat reference and tax value. That is the information BIGCS labels in your drawing.</p></section>
+<div class="demo-bar"><input id="pin" type="search" inputmode="numeric" placeholder="Search a Union County PIN (e.g. 09147001)" aria-label="Search by PIN"><button id="go" class="btn btn-primary">Find PIN</button></div>
+<div class="demo-wrap"><div id="map" role="application" aria-label="Parcel map"></div><div id="msg">Loading parcels…</div></div>
+<div id="panel" aria-live="polite"><h3><span id="ptitle">Parcel</span><button id="close" aria-label="Close parcel details">&times;</button></h3><div id="info"></div></div>
+<p class="demo-note"><strong>Not a survey.</strong> This demo shows county GIS records as published by Union County, NC. Parcel lines are approximate, for reference only, and may not match legal boundaries. Verify ownership and recording information with the Register of Deeds.</p>
+<div class="demo-cta"><h2 style="margin-top:0">Want this in your drawings?</h2><p>Tell us what you work in and which counties you need.</p><a class="btn btn-primary" href="/interest.html">Get on the list</a></div>
+</main>
+<footer>
+<div class="container">
+<div class="links"><a href="/">Home</a><a href="/pricing.html">Pricing</a><a href="/coverage.html">Coverage</a><a href="/demo.html">Live demo</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:support@bigcsoftware.com">Contact</a></div>
+<p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources and is not survey-grade. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
+<p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:support@bigcsoftware.com">support@bigcsoftware.com</a></p>
+<p>AutoCAD and Civil 3D are trademarks of Autodesk, Inc. Carlson is a trademark of Carlson Software, Inc. IntelliCAD is a trademark of the IntelliCAD Technology Consortium. BIGCS is not affiliated with or endorsed by these companies.</p>
+<p>&copy; 2026 BIGCS. All rights reserved.</p>
+</div>
+</footer>
+<script>
+const SVC='https://gis.unioncountync.gov/server/rest/services/OperationalLayers/MapServer';
+const PARCELS=SVC+'/215', FLOOD=SVC+'/203';
+const FIELDS='PID,CURR_NAME1,CURR_NAME2,PHYSSTRADD,mapped_acres,gross_acres,s1_DEED_BOOK,s1_DEED_PAGE,PLAT_BOOK,PLAT_PAGE,LEGDESC_1,FMV_LAND,FMV_IMPRV,FMV_TOTAL';
+const map=L.map('map',{zoomControl:false,tap:true}).setView([34.985,-80.55],16);
+L.control.zoom({position:'bottomright'}).addTo(map);
+const street=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:20,maxNativeZoom:19,attribution:'&copy; OpenStreetMap'});
+const sat=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:20,maxNativeZoom:19,attribution:'Esri World Imagery'});
+sat.addTo(map);L.control.layers({'Satellite':sat,'Streets':street}).addTo(map);
+let current=null;
+const DEF={color:'#ffd400',weight:1.5,fillOpacity:.05},SEL={color:'#00e5ff',weight:3,fillOpacity:.3,fillColor:'#00e5ff'};
+const layer=L.geoJSON(null,{style:()=>DEF,onEachFeature:(f,l)=>{byPid[f.properties.PID]=l;l.on('click',()=>show(f,l))}}).addTo(map);
+const loaded=new Set(),byPid={};
+function msg(t){const m=document.getElementById('msg');m.textContent=t;m.style.display=t?'block':'none'}
+async function load(){
+  if(map.getZoom()<16){msg('Zoom in to load parcels');return}
+  const b=map.getBounds();msg('Loading parcels…');
+  const p=new URLSearchParams({geometry:[b.getWest(),b.getSouth(),b.getEast(),b.getNorth()].join(','),geometryType:'esriGeometryEnvelope',inSR:4326,spatialRel:'esriSpatialRelIntersects',outFields:FIELDS,outSR:4326,returnGeometry:true,f:'geojson'});
+  try{const g=await (await fetch(PARCELS+'/query?'+p)).json();
+    (g.features||[]).filter(f=>!loaded.has(f.properties.PID)).forEach(f=>{loaded.add(f.properties.PID);layer.addData(f)});msg('Tap a parcel')}
+  catch(e){msg('County GIS is not responding right now. Please try again later.')}
+}
+map.on('moveend',load);load();
+const UP=/\b(Llc|Inc|Lp|Llp|Pllc|Ii|Iii|Iv|Jre|Nc|Sc|Us|Usa|Dba|Pa|Hoa|Pc)\b/g;
+function tcase(s){return (s||'').toLowerCase().replace(/\b\w/g,c=>c.toUpperCase()).replace(UP,x=>x.toUpperCase())}
+function esc(s){return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function plat(a){
+  if(a.PLAT_BOOK) return `PB ${a.PLAT_BOOK}${a.PLAT_PAGE?' PG '+a.PLAT_PAGE:''}`;
+  const m=(a.LEGDESC_1||'').match(/\bPC\s*([A-Z])\s*,?\s*FILE\s*#?\s*(\d+[A-Z]?)/i);
+  return m?`PC ${m[1].toUpperCase()} File ${m[2]}`:'—';
+}
+function owner(a){return [a.CURR_NAME1,a.CURR_NAME2].filter(Boolean).map(tcase).join(' & ')||'—'}
+function money(v){return v==null?'—':'$'+Math.round(v).toLocaleString()}
+function deed(a){return a.s1_DEED_BOOK?`DB ${a.s1_DEED_BOOK} PG ${a.s1_DEED_PAGE}`:'—'}
+async function flood(f){
+  try{const rings=f.geometry.type==='Polygon'?f.geometry.coordinates:f.geometry.coordinates.flat();
+   const p=new URLSearchParams({geometry:JSON.stringify({rings,spatialReference:{wkid:4326}}),geometryType:'esriGeometryPolygon',inSR:4326,spatialRel:'esriSpatialRelIntersects',outFields:'Label',returnGeometry:false,f:'json'});
+   const r=await (await fetch(FLOOD+'/query',{method:'POST',body:p})).json();
+   const z=[...new Set((r.features||[]).map(x=>x.attributes.Label).filter(Boolean))];return z.length?z.join(', '):'None mapped'}catch(e){return 'Unavailable'}
+}
+async function show(f,l){
+  const a=f.properties;
+  if(current)current.setStyle(DEF);current=l;if(l)l.setStyle(SEL);
+  const ac=a.gross_acres??a.mapped_acres;
+  const rows=[['Owner',owner(a)],['PIN',a.PID],['Site address',tcase(a.PHYSSTRADD)||'—'],['Acres',ac!=null?Number(ac).toFixed(3):'—'],['Deed',deed(a)],['Plat',plat(a)],['Tax value',money(a.FMV_TOTAL)],['Flood zone','Checking…']];
+  const render=()=>{document.getElementById('ptitle').textContent='Parcel '+a.PID;document.getElementById('info').innerHTML='<table>'+rows.map(r=>`<tr><td>${r[0]}</td><td>${esc(r[1])}</td></tr>`).join('')+'</table><p class="demo-note">County GIS record, not a survey.</p>'};
+  render();const p=document.getElementById('panel');p.style.display='block';
+  if(window.innerWidth<800)p.scrollIntoView({behavior:'smooth',block:'nearest'});
+  rows[7][1]=await flood(f);render();
+}
+document.getElementById('close').onclick=()=>{document.getElementById('panel').style.display='none';if(current)current.setStyle(DEF);current=null};
+async function findPin(pin){
+  pin=(pin||'').replace(/[^0-9A-Za-z]/g,'');if(!pin)return;
+  msg('Searching PIN '+pin+'…');
+  try{const g=await (await fetch(PARCELS+'/query?'+new URLSearchParams({where:`PID='${pin}'`,outFields:FIELDS,returnGeometry:true,outSR:4326,f:'geojson'}))).json();
+    const f=(g.features||[])[0];if(!f){msg('No parcel found for PIN '+pin);return}
+    if(!loaded.has(f.properties.PID)){loaded.add(f.properties.PID);layer.addData(f)}
+    map.fitBounds(L.geoJSON(f).getBounds(),{maxZoom:18});show(f,byPid[f.properties.PID]);msg('')}
+  catch(e){msg('County GIS is not responding right now. Please try again later.')}
+}
+document.getElementById('go').onclick=()=>findPin(document.getElementById('pin').value);
+document.getElementById('pin').addEventListener('keydown',e=>{if(e.key==='Enter')findPin(e.target.value)});
+const qp=new URLSearchParams(location.search).get('pin');if(qp){document.getElementById('pin').value=qp;findPin(qp)}
+</script>
+</body>
+</html>
