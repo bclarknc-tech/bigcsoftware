@@ -4,7 +4,7 @@ Usage: python3 tools/build_coverage.py path/to/coverage_by_county.csv
 Columns: state, county, owner, PIN, deed, plat, roads, control (yes/partial/no),
 data source, data year, older_copy. Only public-safe fields are published
 (no hostnames or internal review statuses).
-control_scope (county/statewide) and year_type (data/tax year) are optional.
+state_control and ngs_control are yes/no.
 Older-copy label comes only from the older_copy flag. Tax years show as "YYYY tax year"."""
 import csv, html, sys, pathlib, datetime, re
 
@@ -17,7 +17,7 @@ AVAILABLE = {"NC"}          # everything else: Coming soon (matches site copy)
 ORDER = ["NC", "SC"]        # then alphabetical by state name
 # Public names for known statewide sources (hostname -> agency).
 AGENCY = {("NE", "statewide copy"): "University of Nebraska", ("OH", "gis.ohiodnr.gov"): "Ohio DNR"}
-COLS = [("owner","Owner"),("PIN","PIN"),("deed","Deed"),("plat","Plat"),("roads","Roads"),("control","Control")]
+COLS = [("owner","Owner"),("PIN","PIN"),("deed","Deed"),("plat","Plat"),("roads","Roads"),("state_control","State Control"),("ngs_control","NGS Control")]
 NOW = datetime.date.today().year
 
 def cell(v):
@@ -26,13 +26,6 @@ def cell(v):
     if v == "partial": return '<td class="p" title="Partial: some parcels or part of the county">Partial</td>'
     if v == "no": return '<td class="n" title="No">&ndash;</td>'
     return '<td class="u" title="Not reported">?</td>'
-
-def ctrl(r):
-    if (r.get("control") or "").strip().lower() == "yes" and (r.get("control_scope") or "").strip().lower() == "statewide":
-        return '<td class="s" title="Points come from a statewide source only">Statewide</td>'
-    if (r.get("control") or "").strip().lower() == "yes":
-        return '<td class="s" title="The county publishes its own survey control points">County</td>'
-    return cell(r.get("control"))
 
 def agency(st, src):
     kind = src.split(" [")[0].strip()
@@ -60,7 +53,7 @@ def main(path):
                 a = agency(code, r.get("data source") or "")
                 tag = f'<span class="old">Older copy ({old}){", " + html.escape(a) if a else ""}</span>'
             body.append(f'<tr data-c="{html.escape(r["county"].lower())}"><th scope="row">{html.escape(r["county"])}{tag}</th>'
-                        + "".join(ctrl(r) if k == "control" else cell(r.get(k)) for k, _ in COLS) + "</tr>")
+                        + "".join(cell(r.get(k)) for k, _ in COLS) + "</tr>")
         cls = label.lower().replace(" ", "-")
         parts.append(f'<details class="cov-state" id="st-{code.lower()}"><summary>'
                      f'<span>{NAMES.get(code, code)}</span> <span class="badge {cls}">{label}</span> <span class="cnt">{len(rs)} counties</span></summary>'
