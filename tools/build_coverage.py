@@ -1,52 +1,67 @@
 #!/usr/bin/env python3
 """Build coverage.html from the county coverage CSV.
 Usage: python3 tools/build_coverage.py path/to/coverage_by_county.csv
-Optional CSV columns used when present: roads, control, year (or data_year), source_name.
-Only public-safe fields are published (no internal status, gap notes or raw URLs)."""
-import csv, html, sys, pathlib, datetime
+Columns: state, county, owner, PIN, deed, plat, roads, control (yes/partial/no),
+data source, data year, older_copy. Only public-safe fields are published
+(no hostnames or internal review statuses).
+Older-copy label: shown when older_copy is flagged, or when data year is
+OLD_YEAR or earlier. Data years later than the current year are not shown."""
+import csv, html, sys, pathlib, datetime, re
 
-# Keep labels consistent with the rest of the site (NC available, SC coming soon).
-STATES = [("NC", "North Carolina", "Available"), ("SC", "South Carolina", "Coming soon"),
-          ("GA", "Georgia", "Coming soon"), ("TX", "Texas", "Coming soon"),
-          ("IN", "Indiana", "Coming soon"), ("MI", "Michigan", "Coming soon"),
-          ("IL", "Illinois", "Coming soon"), ("NE", "Nebraska", "Coming soon")]
-COLS = [("owner", "Owner"), ("parcel_id", "PIN"), ("deed_book_page", "Deed"),
-        ("plat_ref", "Plat"), ("roads", "Roads"), ("control", "Control")]
-THIS_YEAR = datetime.date.today().year
+NAMES = {"AL":"Alabama","AR":"Arkansas","DE":"Delaware","FL":"Florida","GA":"Georgia","IA":"Iowa","IL":"Illinois",
+ "IN":"Indiana","KS":"Kansas","KY":"Kentucky","LA":"Louisiana","MD":"Maryland","MI":"Michigan","MN":"Minnesota",
+ "MO":"Missouri","MS":"Mississippi","NC":"North Carolina","NE":"Nebraska","NJ":"New Jersey","NY":"New York",
+ "OH":"Ohio","OK":"Oklahoma","PA":"Pennsylvania","SC":"South Carolina","TN":"Tennessee","TX":"Texas",
+ "VA":"Virginia","WI":"Wisconsin","WV":"West Virginia"}
+AVAILABLE = {"NC"}          # everything else: Coming soon (matches site copy)
+ORDER = ["NC", "SC"]        # then alphabetical by state name
+# Public names for known statewide sources (hostname -> agency).
+AGENCY = {("NE", "statewide copy"): "University of Nebraska", ("OH", "gis.ohiodnr.gov"): "Ohio DNR"}
+COLS = [("owner","Owner"),("PIN","PIN"),("deed","Deed"),("plat","Plat"),("roads","Roads"),("control","Control")]
+OLD_YEAR = 2023
+NOW = datetime.date.today().year
 
-def cell(r, k):
-    v = (r.get(k) or "").strip().upper()
-    if v == "Y": return '<td class="y" title="Available">&#10003;</td>'
-    if v == "N": return '<td class="n" title="Not available">&ndash;</td>'
-    return '<td class="u" title="Not yet reported">?</td>'
+def cell(v):
+    v = (v or "").strip().lower()
+    if v == "yes": return '<td class="y" title="Yes">&#10003;</td>'
+    if v == "partial": return '<td class="p" title="Partial: some parcels or part of the county">Partial</td>'
+    if v == "no": return '<td class="n" title="No">&ndash;</td>'
+    return '<td class="u" title="Not reported">?</td>'
+
+def agency(st, src):
+    kind = src.split(" [")[0].strip()
+    host = (re.findall(r"\[([^\]]+)\]", src) or [""])[0]
+    return AGENCY.get((st, host)) or AGENCY.get((st, kind))
 
 def main(path):
     rows = list(csv.DictReader(open(path, newline="", encoding="utf-8-sig")))
     by = {}
     for r in rows: by.setdefault(r["state"].strip(), []).append(r)
-    known = {s for s, _, _ in STATES}
-    states = STATES + [(s, s, "Coming soon") for s in sorted(by) if s not in known]
+    codes = [c for c in ORDER if c in by] + sorted((c for c in by if c not in ORDER), key=lambda c: NAMES.get(c, c))
     parts = []
-    for code, name, label in states:
-        rs = sorted(by.get(code, []), key=lambda r: r["county"])
-        if not rs: continue
+    for code in codes:
+        rs = sorted(by[code], key=lambda r: r["county"])
+        label = "Available" if code in AVAILABLE else "Coming soon"
         body = []
         for r in rs:
-            yr = (r.get("year") or r.get("data_year") or "").strip()
-            note = ""
-            if yr and yr.isdigit() and int(yr) < THIS_YEAR:
-                src = (r.get("source_name") or "").strip()
-                note = f' <span class="yr">{html.escape(yr)} copy{(" ("+html.escape(src)+")") if src else ""}</span>'
-            body.append(f'<tr data-c="{html.escape(r["county"].lower())}"><th scope="row">{html.escape(r["county"])}{note}</th>'
-                        + "".join(cell(r, k) for k, _ in COLS) + "</tr>")
+            yr = (r.get("data year") or "").strip()
+            if not yr.isdigit() or int(yr) > NOW: yr = ""
+            m = re.search(r"\((\d{4})\)", r.get("older_copy") or "")
+            old = m.group(1) if m else (yr if yr and int(yr) <= OLD_YEAR else "")
+            tag = ""
+            if old:
+                a = agency(code, r.get("data source") or "")
+                tag = f'<span class="old">Older copy ({old}){", " + html.escape(a) if a else ""}</span>'
+            body.append(f'<tr data-c="{html.escape(r["county"].lower())}"><th scope="row">{html.escape(r["county"])}{tag}</th>'
+                        + "".join(cell(r.get(k)) for k, _ in COLS) + f'<td class="dy">{yr}</td></tr>')
         cls = label.lower().replace(" ", "-")
-        parts.append(f'<details class="cov-state" {"open" if label=="Available" else ""}><summary><span>{name}</span> '
-                     f'<span class="badge {cls}">{label}</span> <span class="cnt">{len(rs)} counties</span></summary>'
-                     f'<div class="tbl"><table><thead><tr><th>County</th>' + "".join(f"<th>{h}</th>" for _, h in COLS)
-                     + "</tr></thead><tbody>" + "".join(body) + "</tbody></table></div></details>")
+        parts.append(f'<details class="cov-state" id="st-{code.lower()}"><summary>'
+                     f'<span>{NAMES.get(code, code)}</span> <span class="badge {cls}">{label}</span> <span class="cnt">{len(rs)} counties</span></summary>'
+                     '<div class="tbl"><table><thead><tr><th>County</th>' + "".join(f"<th>{h}</th>" for _, h in COLS)
+                     + "<th>Data year</th></tr></thead><tbody>" + "".join(body) + "</tbody></table></div></details>")
+        print(code, len(rs), "older:", sum('class="old"' in b for b in body))
     root = pathlib.Path(__file__).resolve().parent.parent
     tpl = (root / "tools" / "coverage_template.html").read_text()
     (root / "coverage.html").write_text(tpl.replace("<!--STATES-->", "\n".join(parts)))
-    for code, *_ in states: print(code, len(by.get(code, [])))
 
 if __name__ == "__main__": main(sys.argv[1])
