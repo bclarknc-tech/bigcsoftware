@@ -4,9 +4,9 @@ Usage: python3 tools/build_coverage.py path/to/coverage_by_county.csv
 Columns: state, county, owner, PIN, deed, plat, roads, control (yes/partial/no),
 data source, data year, older_copy. Only public-safe fields are published
 (no hostnames or internal review statuses).
-control_scope (county/statewide) and year_type (data/tax year) are optional.
+state_control and ngs_control are yes/no.
 Older-copy label comes only from the older_copy flag. Tax years show as "YYYY tax year"."""
-import csv, html, sys, pathlib, datetime, re
+import csv, html, sys, pathlib, datetime, re, collections
 
 NAMES = {"AL":"Alabama","AR":"Arkansas","DE":"Delaware","FL":"Florida","GA":"Georgia","IA":"Iowa","IL":"Illinois",
  "IN":"Indiana","KS":"Kansas","KY":"Kentucky","LA":"Louisiana","MD":"Maryland","MI":"Michigan","MN":"Minnesota",
@@ -17,7 +17,7 @@ AVAILABLE = {"NC"}          # everything else: Coming soon (matches site copy)
 ORDER = ["NC", "SC"]        # then alphabetical by state name
 # Public names for known statewide sources (hostname -> agency).
 AGENCY = {("NE", "statewide copy"): "University of Nebraska", ("OH", "gis.ohiodnr.gov"): "Ohio DNR"}
-COLS = [("owner","Owner"),("PIN","PIN"),("deed","Deed"),("plat","Plat"),("roads","Roads"),("control","Control")]
+COLS = [("owner","Owner"),("PIN","PIN"),("deed","Deed"),("plat","Plat"),("roads","Roads"),("state_control","State Control"),("ngs_control","NGS Control")]
 NOW = datetime.date.today().year
 
 def cell(v):
@@ -27,10 +27,9 @@ def cell(v):
     if v == "no": return '<td class="n" title="No">&ndash;</td>'
     return '<td class="u" title="Not reported">?</td>'
 
-def ctrl(r):
-    if (r.get("control") or "").strip().lower() == "yes" and (r.get("control_scope") or "").strip().lower() == "statewide":
-        return '<td class="s" title="Statewide control network">Statewide</td>'
-    return cell(r.get("control"))
+def srcs(rs, col, empty):
+    c = collections.Counter((r.get(col) or "").strip() or empty for r in rs)
+    return html.escape("; ".join(v if len(c) == 1 else f"{v} ({n})" for v, n in c.most_common()))
 
 def agency(st, src):
     kind = src.split(" [")[0].strip()
@@ -58,12 +57,14 @@ def main(path):
                 a = agency(code, r.get("data source") or "")
                 tag = f'<span class="old">Older copy ({old}){", " + html.escape(a) if a else ""}</span>'
             body.append(f'<tr data-c="{html.escape(r["county"].lower())}"><th scope="row">{html.escape(r["county"])}{tag}</th>'
-                        + "".join(ctrl(r) if k == "control" else cell(r.get(k)) for k, _ in COLS) + f'<td class="dy">{yr}</td></tr>')
+                        + "".join(cell(r.get(k)) for k, _ in COLS)
+                        + f'<td class="src">{html.escape((r.get("parcel_source_name") or "").strip() or "None found")}</td></tr>')
         cls = label.lower().replace(" ", "-")
         parts.append(f'<details class="cov-state" id="st-{code.lower()}"><summary>'
                      f'<span>{NAMES.get(code, code)}</span> <span class="badge {cls}">{label}</span> <span class="cnt">{len(rs)} counties</span></summary>'
+                     f'<p class="ctl">State control: {srcs(rs, "state_control_source", "None")}. NGS: {srcs(rs, "ngs_source", "None")}.</p>'
                      '<div class="tbl"><table><thead><tr><th>County</th>' + "".join(f"<th>{h}</th>" for _, h in COLS)
-                     + "<th>Data year</th></tr></thead><tbody>" + "".join(body) + "</tbody></table></div></details>")
+                     + "<th>Source</th></tr></thead><tbody>" + "".join(body) + "</tbody></table></div></details>")
         print(code, len(rs), "older:", sum('class="old"' in b for b in body))
     root = pathlib.Path(__file__).resolve().parent.parent
     tpl = (root / "tools" / "coverage_template.html").read_text()
