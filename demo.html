@@ -98,7 +98,9 @@ function esc(s){return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt
 function plat(a){
   if(a.PLAT_BOOK) return `PB ${a.PLAT_BOOK}${a.PLAT_PAGE?' PG '+a.PLAT_PAGE:''}`;
   const m=(a.LEGDESC_1||'').match(/\bPC\s*([A-Z])\s*,?\s*FILE\s*#?\s*(\d+[A-Z]?)/i);
-  return m?`PC ${m[1].toUpperCase()} File ${m[2]}`:'—';
+  if(m) return `PC ${m[1].toUpperCase()} File ${m[2]}`;
+  const o=(a.LEGDESC_1||'').match(/\bOPC\s*([A-Z])\s*-?\s*(\d+[A-Z]?)\b/i);
+  return o?`PC ${o[1].toUpperCase()} File ${o[2]}`:'—';
 }
 function owner(a){return [a.CURR_NAME1,a.CURR_NAME2].filter(Boolean).map(tcase).join(' & ')||'—'}
 function money(v){return v==null?'—':'$'+Math.round(v).toLocaleString()}
