@@ -29,7 +29,9 @@ def cell(v):
 
 def ctrl(r):
     if (r.get("control") or "").strip().lower() == "yes" and (r.get("control_scope") or "").strip().lower() == "statewide":
-        return '<td class="s" title="Statewide control network">Statewide</td>'
+        return '<td class="s" title="Points come from a statewide source only">Statewide</td>'
+    if (r.get("control") or "").strip().lower() == "yes":
+        return '<td class="s" title="The county publishes its own survey control points">County</td>'
     return cell(r.get("control"))
 
 def agency(st, src):
@@ -58,12 +60,12 @@ def main(path):
                 a = agency(code, r.get("data source") or "")
                 tag = f'<span class="old">Older copy ({old}){", " + html.escape(a) if a else ""}</span>'
             body.append(f'<tr data-c="{html.escape(r["county"].lower())}"><th scope="row">{html.escape(r["county"])}{tag}</th>'
-                        + "".join(ctrl(r) if k == "control" else cell(r.get(k)) for k, _ in COLS) + f'<td class="dy">{yr}</td></tr>')
+                        + "".join(ctrl(r) if k == "control" else cell(r.get(k)) for k, _ in COLS) + "</tr>")
         cls = label.lower().replace(" ", "-")
         parts.append(f'<details class="cov-state" id="st-{code.lower()}"><summary>'
                      f'<span>{NAMES.get(code, code)}</span> <span class="badge {cls}">{label}</span> <span class="cnt">{len(rs)} counties</span></summary>'
                      '<div class="tbl"><table><thead><tr><th>County</th>' + "".join(f"<th>{h}</th>" for _, h in COLS)
-                     + "<th>Data year</th></tr></thead><tbody>" + "".join(body) + "</tbody></table></div></details>")
+                     + "</tr></thead><tbody>" + "".join(body) + "</tbody></table></div></details>")
         print(code, len(rs), "older:", sum('class="old"' in b for b in body))
     root = pathlib.Path(__file__).resolve().parent.parent
     tpl = (root / "tools" / "coverage_template.html").read_text()
