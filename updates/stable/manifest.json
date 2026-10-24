@@ -1,0 +1,51 @@
+{
+ "product": "BIGCS",
+ "version": "1.1.0-rc5",
+ "min_version": "1.1.0-rc1",
+ "released": "2026-10-24",
+ "notes": "Baseline: BIGCS 1.1.0-rc5",
+ "files": [
+  {
+   "path": "counties/nc.json",
+   "sha256": "867170c6d0c2e847919efbb0b392c6bddb80858e7a4d03275efde70649b8ab52",
+   "size": 255589,
+   "url": "files/1.1.0-rc5/counties/nc.json"
+  },
+  {
+   "path": "counties/sc.json",
+   "sha256": "2a1fb0f8cb10204ef98fd2a76210bf7152b031feea3ebfc311ffb925baa43eaf",
+   "size": 63829,
+   "url": "files/1.1.0-rc5/counties/sc.json"
+  },
+  {
+   "path": "counties/ga.json",
+   "sha256": "139c42f8d3cb22742a1b559ed9319ee56ce65a0bcd83f6dd8e85331fd6609c6f",
+   "size": 140708,
+   "url": "files/1.1.0-rc5/counties/ga.json"
+  },
+  {
+   "path": "counties/va.json",
+   "sha256": "f178b598da51484f25e6704c6511641d81c57be6364c9a3f6033432b0e9310b5",
+   "size": 149806,
+   "url": "files/1.1.0-rc5/counties/va.json"
+  },
+  {
+   "path": "counties/tn.json",
+   "sha256": "55014c8c14473bdabde87d58345ee603660a5dd7e168ed38896a49f997f00010",
+   "size": 187178,
+   "url": "files/1.1.0-rc5/counties/tn.json"
+  },
+  {
+   "path": "styles/bigcs_default.json",
+   "sha256": "28ddf801b292f95a8be94aca07e5c17ef6f57c27d59737897f65f464a3a54c7a",
+   "size": 1768,
+   "url": "files/1.1.0-rc5/styles/bigcs_default.json"
+  },
+  {
+   "path": "styles/generic_style.json",
+   "sha256": "fa1f00392efe8b9978548f4d5ac22a899831427219b3748913497b1d288dd7b5",
+   "size": 1905,
+   "url": "files/1.1.0-rc5/styles/generic_style.json"
+  }
+ ]
+}

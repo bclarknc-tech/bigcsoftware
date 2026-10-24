@@ -1,0 +1,2267 @@
+{
+ "_meta": {
+  "state": "SC",
+  "target_wkid": 6570,
+  "statewide_owner_pid_layer": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Lexington_Richland_Web_Map_WFL1/FeatureServer/18",
+  "forestry_geometry_layers": [
+   "https://services9.arcgis.com/MvVEDRWecTZBD2xl/arcgis/rest/services/Parcels_Piedmont/FeatureServer/0",
+   "https://services9.arcgis.com/MvVEDRWecTZBD2xl/arcgis/rest/services/Parcels_Coastal/FeatureServer/0",
+   "https://services9.arcgis.com/MvVEDRWecTZBD2xl/arcgis/rest/services/Parcels_PeeDee/FeatureServer/0"
+  ],
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PB {plat_book} PG {plat_page}",
+   "PID:{pid}"
+  ],
+  "status_legend": {
+   "ok": "owner+deed+PID live-verified",
+   "partial": "owner+PID (no deed) or subset coverage",
+   "missing": "no owner source",
+   "unverified": "endpoint unreachable at test time"
+  },
+  "default_epsg": 6570,
+  "epsg_choices": [
+   6570,
+   2273
+  ],
+  "detect": {
+   "local": "SC"
+  },
+  "onemap_url": null,
+  "release": true
+ },
+ "counties": {
+  "Abbeville": {
+   "status": "ready_for_review",
+   "source": "state_rfa",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Lexington_Richland_Web_Map_WFL1/FeatureServer/18",
+   "layer_id": 18,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Ownership"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "T_Map_Number",
+    "acres": "Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://services9.arcgis.com/MvVEDRWecTZBD2xl/arcgis/rest/services/Parcels_Piedmont/FeatureServer/0",
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Aiken": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.cityofaikensc.gov/arcgis/rest/services/BaseMap/MapServer/20",
+   "layer_id": 20,
+   "native_sr": {
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": "SaleBookPage",
+    "plat_ref": null,
+    "pid": "PARCEL_ASR",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": "PLATBOOK",
+    "plat_page": "PLATPAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "towns_only",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "City of Aiken",
+     "url": "https://gis.cityofaikensc.gov/arcgis/rest/services/PublicGIS/MapServer/5",
+     "code": "ZoningID",
+     "desc": "ZoneGen"
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "288-00-05-013",
+    "roads_in_county": 13939,
+    "ngs_marks_in_county": 479,
+    "warnings": []
+   }
+  },
+  "Allendale": {
+   "status": "ready_for_review",
+   "source": "state_rfa",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Lexington_Richland_Web_Map_WFL1/FeatureServer/18",
+   "layer_id": 18,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Ownership"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "T_Map_Number",
+    "acres": "Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://services9.arcgis.com/MvVEDRWecTZBD2xl/arcgis/rest/services/Parcels_Coastal/FeatureServer/0",
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Anderson": {
+   "status": "ready_for_review",
+   "source": "state_rfa",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Lexington_Richland_Web_Map_WFL1/FeatureServer/18",
+   "layer_id": 18,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Ownership"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "T_Map_Number",
+    "acres": "Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://services9.arcgis.com/MvVEDRWecTZBD2xl/arcgis/rest/services/Parcels_Piedmont/FeatureServer/0",
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Bamberg": {
+   "status": "ready_for_review",
+   "source": "state_rfa",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Lexington_Richland_Web_Map_WFL1/FeatureServer/18",
+   "layer_id": 18,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Ownership"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "T_Map_Number",
+    "acres": "Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://services9.arcgis.com/MvVEDRWecTZBD2xl/arcgis/rest/services/Parcels_Coastal/FeatureServer/0",
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Barnwell": {
+   "status": "blocked",
+   "source": "state_rfa",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Lexington_Richland_Web_Map_WFL1/FeatureServer/18",
+   "layer_id": 18,
+   "native_sr": null,
+   "fields": {
+    "owner": [],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "T_Map_Number",
+    "acres": "Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://services9.arcgis.com/MvVEDRWecTZBD2xl/arcgis/rest/services/Parcels_Coastal/FeatureServer/0",
+   "data_coverage": "missing",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Beaufort": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.beaufortcountysc.gov/server/rest/services/EnerGov/MapServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "latestWkid": 2273
+   },
+   "fields": {
+    "owner": [
+     "GisFile_Owner1",
+     "GisFile_Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "GisFile_PIN",
+    "acres": null,
+    "deed_book": "GisFile_Book",
+    "deed_page": "GisFile_Page",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county+towns",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "Town of Port Royal",
+     "url": "https://gis.beaufortcountysc.gov/server/rest/services/ToprData/MapServer/0",
+     "code": "CODE",
+     "desc": "DISTRICT"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "Beaufort County",
+     "url": "https://gis.beaufortcountysc.gov/server/rest/services/Zoning/MapServer/9",
+     "code": "FBCode",
+     "desc": "CodeName"
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "M100 012 000 0011 0001",
+    "roads_in_county": 5292,
+    "ngs_marks_in_county": 1000,
+    "warnings": [
+     "3 overlapping features; using the first (OneMap can carry duplicates)"
+    ]
+   }
+  },
+  "Berkeley": {
+   "status": "ready_for_review",
+   "source": "county",
+   "url": "https://gis.berkeleycountysc.gov/arcgis/rest/services/internet/MapServer/5",
+   "layer_id": 5,
+   "native_sr": {
+    "latestWkid": 2273
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "plat_ref": "Plat",
+    "pid": "O_TMS",
+    "acres": "TotalAcres",
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county+towns",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "City of Goose Creek",
+     "url": "https://gis.berkeleycountysc.gov/arcgis/rest/services/internet/MapServer/47",
+     "code": "ZONE"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "City of Hanahan",
+     "url": "https://gis.berkeleycountysc.gov/arcgis/rest/services/internet/MapServer/48",
+     "code": "ZONE"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "Town of Moncks Corner",
+     "url": "https://gis.berkeleycountysc.gov/arcgis/rest/services/internet/MapServer/49",
+     "code": "ZONE"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "Town of Summerville",
+     "url": "https://gis.berkeleycountysc.gov/arcgis/rest/services/custom/New_Parcel_Zoning/MapServer/6",
+     "code": "ZONE"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "Berkeley County",
+     "url": "https://gis.berkeleycountysc.gov/arcgis/rest/services/internet/MapServer/46",
+     "code": "ZONE"
+    }
+   ]
+  },
+  "Calhoun": {
+   "status": "blocked",
+   "source": "county",
+   "url": "https://gis.aecomonline.net/arcgis/rest/services/CalhounCO/Parcel/MapServer/2",
+   "layer_id": 2,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Name1",
+     "Name2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "data_coverage": "unverified",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Charleston": {
+   "status": "ready_for_review",
+   "source": "county",
+   "url": "https://gisccapps.charlestoncounty.org/arcgis/rest/services/CDC/CDC_ParcelMap/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "latestWkid": 2273
+   },
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": "DEED_BOOK_PAGE",
+    "plat_ref": "PLAT_BOOK_PAGE",
+    "pid": "PID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county+towns",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "City of Charleston",
+     "url": "https://gisccapps.charlestoncounty.org/arcgis/rest/services/GIS_VIEWER/Internal_Website/MapServer/37",
+     "code": "ZONE_BASE"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "City of North Charleston",
+     "url": "https://gisccapps.charlestoncounty.org/arcgis/rest/services/GIS_VIEWER/Internal_Website/MapServer/40",
+     "code": "ZONECODE",
+     "desc": "ZONEDESC"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "Town of Mount Pleasant",
+     "url": "https://gisccapps.charlestoncounty.org/arcgis/rest/services/GIS_VIEWER/Internal_Website/MapServer/46",
+     "code": "ZONINGVALU",
+     "skip": [
+      "AWENDAW",
+      "COUNTY",
+      "STREET",
+      "UND"
+     ]
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "Town of Awendaw",
+     "url": "https://gisccapps.charlestoncounty.org/arcgis/rest/services/GIS_VIEWER/Internal_Website/MapServer/50",
+     "code": "ZONING"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "City of Folly Beach",
+     "url": "https://gisccapps.charlestoncounty.org/arcgis/rest/services/FOLLY/FollyViewer/MapServer/19",
+     "code": "zoning"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "Charleston County",
+     "url": "https://gisccapps.charlestoncounty.org/arcgis/rest/services/ENERGOV/energov_css/MapServer/7",
+     "code": "ZONING",
+     "skip": [
+      "MUNI"
+     ]
+    }
+   ]
+  },
+  "Cherokee": {
+   "status": "ready_for_review",
+   "source": "state_rfa",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Lexington_Richland_Web_Map_WFL1/FeatureServer/18",
+   "layer_id": 18,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Ownership"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "T_Map_Number",
+    "acres": "Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://services9.arcgis.com/MvVEDRWecTZBD2xl/arcgis/rest/services/Parcels_Piedmont/FeatureServer/0",
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Chester": {
+   "status": "ready_for_review",
+   "source": "state_rfa",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Lexington_Richland_Web_Map_WFL1/FeatureServer/18",
+   "layer_id": 18,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Ownership"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "T_Map_Number",
+    "acres": "Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://services9.arcgis.com/MvVEDRWecTZBD2xl/arcgis/rest/services/Parcels_Piedmont/FeatureServer/0",
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county_only",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "Chester County",
+     "url": "https://services7.arcgis.com/jBeGgtzv02uT84fC/arcgis/rest/services/ChesterZoning/FeatureServer/0",
+     "code": "Zoning"
+    }
+   ]
+  },
+  "Chesterfield": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services7.arcgis.com/jBeGgtzv02uT84fC/arcgis/rest/services/ChesterFieldParcels/FeatureServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "taxName"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "taxMapNumb",
+    "acres": null,
+    "deed_book": "taxDeedBoo",
+    "deed_page": "taxDeedPag",
+    "plat_book": "taxPlatBoo",
+    "plat_page": "taxPlatPag"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": [],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "086 000 000 085",
+    "roads_in_county": 6568,
+    "ngs_marks_in_county": 284,
+    "warnings": []
+   }
+  },
+  "Clarendon": {
+   "status": "ready_for_review",
+   "source": "county",
+   "url": "https://gis.clarendoncountysc.gov/server/rest/services/Hosted/Clarendon_County_Map_WFL1/FeatureServer/9",
+   "layer_id": 9,
+   "native_sr": {
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "owner_name",
+     "owner_cont"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "tms",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Colleton": {
+   "status": "ready_for_review",
+   "source": "county",
+   "url": "https://services1.arcgis.com/m0cnLGKdhwao8WvM/arcgis/rest/services/Public_Data/FeatureServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "latestWkid": 2273
+   },
+   "fields": {
+    "owner": [
+     "OwnerName1",
+     "OwnerName2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county_only",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "Colleton County",
+     "url": "https://services1.arcgis.com/m0cnLGKdhwao8WvM/arcgis/rest/services/WebDataLayers/FeatureServer/0",
+     "code": "ZONING_CLA",
+     "desc": "Zoning_Des",
+     "skip": [
+      "COTTAGEVILLE",
+      "EDISTO BAY",
+      "SMOAKS",
+      "WALTERBORO",
+      "WILLIAMS",
+      "UNKNOWN"
+     ]
+    }
+   ]
+  },
+  "Darlington": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services5.arcgis.com/8FJikaProY6O3ncx/arcgis/rest/services/PARCELS/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "latestWkid": 2273
+   },
+   "fields": {
+    "owner": [
+     "Name_1",
+     "Name_2_1"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "MBP",
+    "acres": null,
+    "deed_book": "Deed_Book",
+    "deed_page": "Deed_Page_",
+    "plat_book": "Plat_Book",
+    "plat_page": "Plat_Page"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county+towns",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "City of Hartsville",
+     "url": "https://services5.arcgis.com/8FJikaProY6O3ncx/arcgis/rest/services/HARTSVILLE_ZONING/FeatureServer/0",
+     "code": "ZONE"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "City of Darlington",
+     "url": "https://services5.arcgis.com/8FJikaProY6O3ncx/arcgis/rest/services/DARLINGTON_ZONING/FeatureServer/0",
+     "code": "ZONE"
+    },
+    {
+     "type": "parcel_field",
+     "field": "ZONE",
+     "jurisdiction": "Darlington County"
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "063-00-01-016",
+    "roads_in_county": 10384,
+    "ngs_marks_in_county": 174,
+    "warnings": []
+   }
+  },
+  "Dillon": {
+   "status": "ready_for_review",
+   "source": "state_rfa",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Lexington_Richland_Web_Map_WFL1/FeatureServer/18",
+   "layer_id": 18,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Ownership"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "T_Map_Number",
+    "acres": "Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://services9.arcgis.com/MvVEDRWecTZBD2xl/arcgis/rest/services/Parcels_PeeDee/FeatureServer/0",
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Dorchester": {
+   "status": "ready_for_review",
+   "source": "county",
+   "url": "https://gisportal.dorchestercounty.net/hosting/rest/services/General_Data/Parcels_Public/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "latestWkid": 2273
+   },
+   "fields": {
+    "owner": [
+     "OWNER"
+    ],
+    "deed_ref": "DEED",
+    "plat_ref": "PLAT",
+    "pid": "TMS",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county+towns",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "Town of Summerville",
+     "url": "https://gis.berkeleycountysc.gov/arcgis/rest/services/custom/New_Parcel_Zoning/MapServer/6",
+     "code": "ZONE"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "City of North Charleston",
+     "url": "https://gisccapps.charlestoncounty.org/arcgis/rest/services/GIS_VIEWER/Internal_Website/MapServer/40",
+     "code": "ZONECODE",
+     "desc": "ZONEDESC"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "Dorchester County",
+     "url": "https://gisportal.dorchestercounty.net/hosting/rest/services/Zoning_Public/MapServer/0",
+     "code": "ZONECLASS",
+     "skip": [
+      "MUNI",
+      "HARLEYVILL",
+      "ST GEORGE"
+     ]
+    }
+   ]
+  },
+  "Edgefield": {
+   "status": "ready_for_review",
+   "source": "county",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Edgefield_McCormick_Greenwood_Web_Map_WFL1/FeatureServer/9",
+   "layer_id": 9,
+   "native_sr": {
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Name",
+     "Name_2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": null,
+    "deed_book": "Deed_Book",
+    "deed_page": "Deed_Page",
+    "plat_book": "Plat_Book",
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Fairfield": {
+   "status": "blocked",
+   "source": "state_rfa",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Lexington_Richland_Web_Map_WFL1/FeatureServer/18",
+   "layer_id": 18,
+   "native_sr": null,
+   "fields": {
+    "owner": [],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "T_Map_Number",
+    "acres": "Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://services9.arcgis.com/MvVEDRWecTZBD2xl/arcgis/rest/services/Parcels_Piedmont/FeatureServer/0",
+   "data_coverage": "missing",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Florence": {
+   "status": "ready_for_review",
+   "source": "county",
+   "url": "https://arc2000.florenceco.org/ArcGIS/rest/services/Florence_County_Maps_WebMercator/MapServer/5",
+   "layer_id": 5,
+   "native_sr": {
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNERNAME",
+     "ADD1"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "TMS",
+    "acres": "CALCULATED_ACREAGE",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county+towns",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "City of Lake City",
+     "url": "https://arc2000.florenceco.org/ArcGIS/rest/services/Planning/MapServer/1",
+     "code": "ZONECODE"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "Florence County",
+     "url": "https://arc2000.florenceco.org/ArcGIS/rest/services/ZoningMap/MapServer/0",
+     "code": "ZONECODE",
+     "jurisdiction_field": "JURISDICTION",
+     "skip": [
+      "CITY ZONING",
+      "UNZONED"
+     ],
+     "jurisdiction_map": {
+      "CITY OF FLORENCE": "City of Florence",
+      "CITY OF JOHNSONVILLE": "City of Johnsonville",
+      "CITY OF LAKE CITY": "City of Lake City",
+      "FLORENCE COUNTY": "Florence County",
+      "TOWN OF COWARD": "Town of Coward",
+      "TOWN OF OLANTA": "Town of Olanta",
+      "TOWN OF PAMPLICO": "Town of Pamplico",
+      "TOWN OF QUINBY": "Town of Quinby",
+      "TOWN OF SCRANTON": "Town of Scranton",
+      "TOWN OF TIMMONSVILLE": "Town of Timmonsville"
+     }
+    }
+   ]
+  },
+  "Georgetown": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis1.georgetowncountysc.org/server/rest/services/GCGIS_Export/MapServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "latestWkid": 3361
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": "LegalReference",
+    "plat_ref": "PLAT",
+    "pid": "TMS",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": [],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "01-0101-001-00-00",
+    "roads_in_county": 5556,
+    "ngs_marks_in_county": 950,
+    "warnings": []
+   }
+  },
+  "Greenville": {
+   "status": "fixed_pending_review",
+   "source": "city",
+   "url": "https://citygis.greenvillesc.gov/arcgis/rest/services/AddressSearch/Property/MapServer/3",
+   "layer_id": 3,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "OWNAM1",
+     "OWNAM2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "TACRES",
+    "deed_book": "CUBOOK",
+    "deed_page": "CUPAGE",
+    "plat_book": "PLTBK1",
+    "plat_page": "PPAGE1"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county+towns",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "City of Greenville",
+     "url": "https://citygis.greenvillesc.gov/arcgis/rest/services/GeneralData/GeneralData/MapServer/13",
+     "code": "ZONING"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "Greenville County",
+     "url": "https://www.gcgis.org/arcgiscw2/rest/services/Community_Development/CommDev_Data/MapServer/28",
+     "code": "ZONING",
+     "jurisdiction_field": "JCODE",
+     "skip": [
+      "UNZONED"
+     ],
+     "jurisdiction_map": {
+      "45045": "Greenville County",
+      "30850": "City of Greenville",
+      "30985": "City of Greer",
+      "45115": "City of Mauldin",
+      "66580": "City of Simpsonville",
+      "27070": "City of Fountain Inn",
+      "72430": "City of Travelers Rest"
+     }
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "B011000303200",
+    "roads_in_county": 17222,
+    "ngs_marks_in_county": 636,
+    "warnings": []
+   }
+  },
+  "Greenwood": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://www.greenwoodsc.gov/arcgis/rest/services/Operational_Layers/CAMA/MapServer/9",
+   "layer_id": 9,
+   "native_sr": {
+    "latestWkid": 3361
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": "Deed",
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county+towns",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "Greenwood County",
+     "url": "https://www.greenwoodsc.gov/arcgis/rest/services/Other_Services/DataShare/MapServer/10",
+     "code": "IMS_LABEL",
+     "jurisdiction_field": "JURISDICTION",
+     "jurisdiction_map": {
+      "COUNTY": "Greenwood County",
+      "GREENWOOD": "City of Greenwood",
+      "NINETY SIX": "Town of Ninety Six",
+      "NINETY-SIX": "Town of Ninety Six",
+      "WARE SHOALS": "Town of Ware Shoals"
+     }
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "6913-674-230",
+    "roads_in_county": 4087,
+    "ngs_marks_in_county": 172,
+    "warnings": []
+   }
+  },
+  "Hampton": {
+   "status": "ready_for_review",
+   "source": "county",
+   "url": "https://services8.arcgis.com/6eabNhFouHU5vuYk/arcgis/rest/services/Parcels_Published_view/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "latestWkid": 2273
+   },
+   "fields": {
+    "owner": [
+     "Name1",
+     "Name2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_polygons_TMS",
+    "acres": null,
+    "deed_book": "Deed_Book",
+    "deed_page": "Deed_Page",
+    "plat_book": "Plat_Book",
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Horry": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gisportal.horrycounty.org/server/rest/services/ClosedData/ParcelLandRecords/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "latestWkid": 3361
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PINtext",
+    "acres": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county+towns",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "City of Myrtle Beach",
+     "url": "https://terra.cityofmyrtlebeach.com/server/rest/services/ZONING_DISTRICTS_MB/MapServer/0",
+     "code": "ZONING_DIS"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "Horry County",
+     "url": "https://gisportal.horrycounty.org/server/rest/services/CodeEnforcement/EnerGovEnterpriseProjection/MapServer/8",
+     "code": "ZoningCode"
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "39308040324",
+    "roads_in_county": 9287,
+    "ngs_marks_in_county": 1187,
+    "warnings": [
+     "2 overlapping features; using the first (OneMap can carry duplicates)"
+    ]
+   }
+  },
+  "Jasper": {
+   "status": "ready_for_review",
+   "source": "county",
+   "url": "https://gis.jaspercountysc.gov/server/rest/services/DataSharing/DataSharing_MIL1/MapServer/4",
+   "layer_id": 4,
+   "native_sr": {
+    "latestWkid": 2273
+   },
+   "fields": {
+    "owner": [
+     "CAMA_Table_Name",
+     "CAMA_Table_Name_2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "DBO_Parcels_TaxPIN",
+    "acres": null,
+    "deed_book": "CAMA_Table_Deed_Book",
+    "deed_page": "CAMA_Table_Deed_Page",
+    "plat_book": "CAMA_Table_Plat_Book",
+    "plat_page": "CAMA_Table_Plat_Page"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county_only",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "Jasper County",
+     "url": "https://gis.jaspercountysc.gov/server/rest/services/Zoning_Tiles/MapServer/0",
+     "code": "Zoning",
+     "desc": "ZoningDesc"
+    }
+   ]
+  },
+  "Kershaw": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Fairfield_Kershaw_Richland_Map_WFL1/FeatureServer/7",
+   "layer_id": 7,
+   "native_sr": {
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "taxOwner1",
+     "taxOwner2"
+    ],
+    "deed_ref": "taxDeedBoo",
+    "plat_ref": null,
+    "pid": "PRSNTP_ID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": "taxPlatBoo",
+    "plat_page": "taxPlatPag"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": [],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "002-00-00-005",
+    "roads_in_county": 5656,
+    "ngs_marks_in_county": 292,
+    "warnings": []
+   }
+  },
+  "Lancaster": {
+   "status": "ready_for_review",
+   "source": "county",
+   "url": "https://services3.arcgis.com/rJcpRneDUBgTeCT3/arcgis/rest/services/LC_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAME",
+     "O_NAME_CON"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "ACRES",
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE",
+    "plat_book": "PLAT_BOOK",
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county+towns",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "City of Lancaster",
+     "url": "https://services3.arcgis.com/rJcpRneDUBgTeCT3/arcgis/rest/services/LC_CityofLancasterZoning/FeatureServer/0",
+     "code": "ZONE_"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "Town of Van Wyck",
+     "url": "https://services3.arcgis.com/rJcpRneDUBgTeCT3/arcgis/rest/services/Van_Wyck_Zoning_3_1_2023_1/FeatureServer/0",
+     "code": "Zoning"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "Lancaster County",
+     "url": "https://services3.arcgis.com/rJcpRneDUBgTeCT3/arcgis/rest/services/LC_Zoning/FeatureServer/0",
+     "code": "Zoning",
+     "skip": [
+      "CITY",
+      "HSPRGS",
+      "KER",
+      "M"
+     ]
+    }
+   ]
+  },
+  "Laurens": {
+   "status": "ready_for_review",
+   "source": "county",
+   "url": "https://laurenscountygis.org/arcgis/rest/services/Pebble/TaxParcel/MapServer/5",
+   "layer_id": 5,
+   "native_sr": {
+    "latestWkid": 6570
+   },
+   "fields": {
+    "owner": [
+     "Name1",
+     "Name2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "TMS",
+    "acres": null,
+    "deed_book": "Deed_Book",
+    "deed_page": "Deed_Page",
+    "plat_book": "Plat_Book",
+    "plat_page": "Plat_Page"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Lee": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services5.arcgis.com/zg6ovB2KKN8L0zFv/arcgis/rest/services/Web_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "CAMA_TEMP_Name"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_Polygons_PID",
+    "acres": null,
+    "deed_book": "CAMA_TEMP_Deed_Book",
+    "deed_page": "CAMA_TEMP_Deed_Page",
+    "plat_book": "CAMA_TEMP_Plat_Book",
+    "plat_page": "CAMA_TEMP_Plat_Page"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": [],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "036-00-00-077-000",
+    "roads_in_county": 4382,
+    "ngs_marks_in_county": 88,
+    "warnings": []
+   }
+  },
+  "Lexington": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://maps.lex-co.com/agstserver/rest/services/Property/MapServer/4",
+   "layer_id": 4,
+   "native_sr": {
+    "latestWkid": 2273
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "TMS",
+    "acres": null,
+    "deed_book": "CAMA_DeedBook",
+    "deed_page": "CAMA_DeedPage",
+    "plat_book": "CAMA_PlatBook",
+    "plat_page": "CAMA_PlatPage"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county+towns",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "City of Columbia",
+     "url": "https://gis.columbiasc.gov/cola/rest/services/EnerGov/EnergovInformationPublic/MapServer/20",
+     "code": "ZoningDistrict",
+     "skip": [
+      "0"
+     ]
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "City of West Columbia",
+     "url": "https://maps.lex-co.com/agstserver/rest/services/PlanZoning/MapServer/8",
+     "code": "Zoning",
+     "desc": "Description"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "City of Cayce",
+     "url": "https://maps.lex-co.com/agstserver/rest/services/PlanZoning/MapServer/12",
+     "code": "Zoning",
+     "desc": "Description"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "Town of Chapin",
+     "url": "https://maps.lex-co.com/agstserver/rest/services/PlanZoning/MapServer/15",
+     "code": "ZoningCode",
+     "desc": "ZoningName"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "Lexington County",
+     "url": "https://maps.lex-co.com/agstserver/rest/services/PlanZoning/MapServer/6",
+     "code": "NameAbbr",
+     "desc": "Name",
+     "skip": [
+      "BBL",
+      "COL",
+      "GAS",
+      "GIL",
+      "IRM",
+      "LEX",
+      "PEL",
+      "PNR",
+      "SCG",
+      "SPD",
+      "SUM",
+      "SWN"
+     ]
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "005200-04-076",
+    "roads_in_county": 19192,
+    "ngs_marks_in_county": 903,
+    "warnings": [
+     "zoning server skipped (City of Columbia): Expecting value: line 1 column 1 (char 0)"
+    ]
+   }
+  },
+  "Marion": {
+   "status": "ready_for_review",
+   "source": "state_rfa",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Lexington_Richland_Web_Map_WFL1/FeatureServer/18",
+   "layer_id": 18,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Ownership"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "T_Map_Number",
+    "acres": "Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://services9.arcgis.com/MvVEDRWecTZBD2xl/arcgis/rest/services/Parcels_PeeDee/FeatureServer/0",
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Marlboro": {
+   "status": "ready_for_review",
+   "source": "state_rfa",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Lexington_Richland_Web_Map_WFL1/FeatureServer/18",
+   "layer_id": 18,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Ownership"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "T_Map_Number",
+    "acres": "Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://services9.arcgis.com/MvVEDRWecTZBD2xl/arcgis/rest/services/Parcels_PeeDee/FeatureServer/0",
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "McCormick": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Edgefield_McCormick_Greenwood_Web_Map_WFL1/FeatureServer/7",
+   "layer_id": 7,
+   "native_sr": {
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "taxName",
+     "taxName2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": null,
+    "deed_book": "taxDeedBoo",
+    "deed_page": "taxDeedPag",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": [],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "232-00-00-004.",
+    "roads_in_county": 1686,
+    "ngs_marks_in_county": 197,
+    "warnings": []
+   }
+  },
+  "Newberry": {
+   "status": "ready_for_review",
+   "source": "state_rfa",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Lexington_Richland_Web_Map_WFL1/FeatureServer/18",
+   "layer_id": 18,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Ownership"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "T_Map_Number",
+    "acres": "Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://services9.arcgis.com/MvVEDRWecTZBD2xl/arcgis/rest/services/Parcels_Piedmont/FeatureServer/0",
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Oconee": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://arcserver2.oconeesc.com/arcgis/rest/services/PARCELDATA_owner/MapServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "latestWkid": 2273
+   },
+   "fields": {
+    "owner": [
+     "current_owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "TMS_NUMBER",
+    "acres": null,
+    "deed_book": "deed_book",
+    "deed_page": "deed_page",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county_only",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "Oconee County",
+     "url": "https://arcserver2.oconeesc.com/arcgis/rest/services/ZoningMap/MapServer/1",
+     "code": "ZONING",
+     "desc": "Descript"
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "036-00-04-031",
+    "roads_in_county": 5523,
+    "ngs_marks_in_county": 248,
+    "warnings": []
+   }
+  },
+  "Orangeburg": {
+   "status": "ready_for_review",
+   "source": "county",
+   "url": "https://services2.arcgis.com/bUKn95BqgpYYTnx3/arcgis/rest/services/Main_Public_Tax_Parcel_Map_WFL1/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "owner1"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "parcel_id",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": "PLATBK",
+    "plat_page": "PLATPG"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county_only",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "Orangeburg County",
+     "url": "https://services2.arcgis.com/bUKn95BqgpYYTnx3/arcgis/rest/services/Main_Public_Tax_Parcel_Map_WFL1/FeatureServer/33",
+     "code": "ZONINGNAME",
+     "skip": [
+      "NA-Area inside City Limits",
+      "S-Streets"
+     ]
+    }
+   ]
+  },
+  "Pickens": {
+   "status": "ready_for_review",
+   "source": "county",
+   "url": "https://services1.arcgis.com/59960rq18IxUcAVI/arcgis/rest/services/Pickens_Open_data/FeatureServer/6",
+   "layer_id": 6,
+   "native_sr": {
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "NAME1",
+     "NAME2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "CalcAcres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county+towns",
+   "zoning_sources": [
+    {
+     "type": "parcel_field",
+     "field": "ZONINGCODE",
+     "jurisdiction": "Pickens County (parcel record)",
+     "desc_field": "ZONINGDESC",
+     "skip": [
+      "Not Zoned",
+      "NZ"
+     ]
+    }
+   ]
+  },
+  "Richland": {
+   "status": "fixed_pending_review",
+   "source": "state_rfa",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Lexington_Richland_Web_Map_WFL1/FeatureServer/8",
+   "layer_id": 8,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "NAME1",
+     "NAME2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "TMS",
+    "acres": "acreage",
+    "deed_book": "Deed_Bk",
+    "deed_page": "Deed_Pg",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "towns_only",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "City of Columbia",
+     "url": "https://gis.columbiasc.gov/cola/rest/services/EnerGov/EnergovInformationPublic/MapServer/20",
+     "code": "ZoningDistrict",
+     "skip": [
+      "0"
+     ]
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "R00200-01-02",
+    "roads_in_county": 19777,
+    "ngs_marks_in_county": 632,
+    "warnings": []
+   }
+  },
+  "Saluda": {
+   "status": "ready_for_review",
+   "source": "county",
+   "url": "https://saludacountysc.net/arcgis/rest/services/ParcelViewers/PublicWebsite_Pro/MapServer/4",
+   "layer_id": 4,
+   "native_sr": {
+    "latestWkid": 2273
+   },
+   "fields": {
+    "owner": [
+     "SDE.DBO.AssessorData.Name",
+     "SDE.DBO.AssessorData.Name_2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "SDE.DBO.Parcels.TaxMapNumber",
+    "acres": null,
+    "deed_book": "SDE.DBO.AssessorData.Deed_Book",
+    "deed_page": "SDE.DBO.AssessorData.Deed_Page",
+    "plat_book": "SDE.DBO.AssessorData.Plat_Book",
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Spartanburg": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://maps.spartanburgcounty.org/server/rest/services/GIS/CAMA_Parcels/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "latestWkid": 3361
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "MAPNUMBER",
+    "acres": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county_only",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "Spartanburg County",
+     "url": "https://maps.spartanburgcounty.org/server/rest/services/EnerGov/Display_Map/MapServer/12",
+     "code": "District"
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "7-17-02-041.00",
+    "roads_in_county": 9727,
+    "ngs_marks_in_county": 981,
+    "warnings": []
+   }
+  },
+  "Sumter": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.sumter-sc.com/server/rest/services/BaseMaps/Sumter_City_County/MapServer/7",
+   "layer_id": 7,
+   "native_sr": {
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "owner_name"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "parcel_number",
+    "acres": null,
+    "deed_book": "deed_book",
+    "deed_page": "deed_page",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "county+towns",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "Sumter County / City of Sumter",
+     "url": "https://gis.sumter-sc.com/server/rest/services/Planning/Zoning/MapServer/0",
+     "code": "ZONECLASS",
+     "desc": "ZONEDESC"
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "144-00-03-001",
+    "roads_in_county": 9473,
+    "ngs_marks_in_county": 301,
+    "warnings": []
+   }
+  },
+  "Union": {
+   "status": "ready_for_review",
+   "source": "county",
+   "url": "https://services6.arcgis.com/xQgypOVdY84tFTiW/arcgis/rest/services/UNION_SC_PARCELS_WFL1/FeatureServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Name",
+     "Address_1"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ParcelID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "data_coverage": "partial",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": []
+  },
+  "Williamsburg": {
+   "status": "fixed_pending_review",
+   "source": "state_rfa",
+   "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Georgetown_Williamsburg_Web_Map_WFL1/FeatureServer/4",
+   "layer_id": 4,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "taxName"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": null,
+    "deed_book": "taxDeedBoo",
+    "deed_page": "taxDeedPag",
+    "plat_book": "taxPlatBoo",
+    "plat_page": "taxPlatPag"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads (see top-level roads)",
+   "zoning_status": "none",
+   "zoning_sources": [],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "3606-33-0876",
+    "roads_in_county": 6764,
+    "ngs_marks_in_county": 479,
+    "warnings": []
+   }
+  },
+  "York": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services1.arcgis.com/2AGLxyiJoNiVHKwq/arcgis/rest/services/Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": "NONE",
+    "plat_ref": "NONE",
+    "pid": "TAXMAPID",
+    "acres": "deededacres",
+    "deed_book": "TransferBook",
+    "deed_page": "TransferPage",
+    "plat_book": "PlatBook",
+    "plat_page": "PlatPage",
+    "address": "PropertyAddress",
+    "mail": [
+     "MailAddr1",
+     "MailAddr2",
+     "MailApt",
+     "MailCity",
+     "MailState",
+     "MailZip"
+    ]
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "plat_format": "PB {book} PG {page}",
+   "plat_prefix": "PB",
+   "template": "default",
+   "rod": {
+    "name": "York County SC Register of Deeds",
+    "search_url": "https://search.yorkdeeds.com/",
+    "bookpage_url": null
+   },
+   "data_coverage": "ok",
+   "control_ref": "statewide: SC Geodetic Survey monuments + NGS datasheets (see top-level control)",
+   "roads_ref": "statewide: SCDOT State Maintained Roads + York NG911 Streets (see top-level roads)",
+   "roads": {
+    "name": "York County NG911 Streets",
+    "agency": "York County SC GIS",
+    "url": "https://services1.arcgis.com/2AGLxyiJoNiVHKwq/arcgis/rest/services/Streets/FeatureServer/0",
+    "count": 18077,
+    "layer": "V-ROAD-CNTR",
+    "color": 8,
+    "name_fields": [
+     "ST_PREMOD",
+     "ST_PREDIR",
+     "ST_PRETYP",
+     "ST_PRESEP",
+     "ST_NAME",
+     "ST_POSTYP",
+     "ST_POSDIR",
+     "ST_POSMOD"
+    ],
+    "fields": {
+     "legacy": "ST_DIR_NAM",
+     "class": "F_CLASS",
+     "speed": "MPH",
+     "oneway": "ONEWAY",
+     "agency": "ST_OWNER",
+     "id": "RCL_NGUID"
+    },
+    "verified": "2026-10-12"
+   },
+   "zoning_status": "county+towns",
+   "zoning_sources": [
+    {
+     "type": "layer",
+     "jurisdiction": "City of Rock Hill",
+     "url": "https://services1.arcgis.com/2AGLxyiJoNiVHKwq/arcgis/rest/services/Rock Hill Zoning/FeatureServer/0",
+     "code": "ZONE"
+    },
+    {
+     "type": "layer",
+     "jurisdiction": "York County",
+     "url": "https://services1.arcgis.com/2AGLxyiJoNiVHKwq/arcgis/rest/services/York County Zoning (regions)/FeatureServer/0",
+     "code": "zone"
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6570,
+    "pid": "5020101009",
+    "roads_in_county": 6887,
+    "ngs_marks_in_county": 240,
+    "warnings": []
+   }
+  }
+ },
+ "control": {
+  "state_source": true,
+  "agency": "SC Geodetic Survey (SC Revenue & Fiscal Affairs Office)",
+  "sources": [
+   {
+    "name": "SC Geodetic Survey county-boundary monuments",
+    "agency": "SC Revenue & Fiscal Affairs Office (SC Geodetic Survey)",
+    "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/Survey_Monuments_CBApp/FeatureServer/1",
+    "count": 167,
+    "native_sr": 6570,
+    "datum": "NAD83/2011 (as published; no shift applied)",
+    "fields": {
+     "name": "POINTNAME",
+     "desc": "DESCRIPTION",
+     "north": "NORTHING",
+     "east": "EASTING",
+     "lat": "LAT",
+     "lon": "LONG",
+     "project": "ProjectName",
+     "photo": "MonumentURL_1",
+     "link": "ProjectWebsite"
+    },
+    "live_test": "2026-10-16: 167 points; sample 'Abbe_Ande 1' (1\" rebar w/ cap, set) N 870262.315 E 1474098.144, native SR 6570 = drawing SR, no transform",
+    "layer": "V-SURV-CTRL"
+   },
+   {
+    "name": "SC OCRM beachfront monuments",
+    "agency": "SC Revenue & Fiscal Affairs Office / SCDES OCRM",
+    "url": "https://services9.arcgis.com/RvqSyw3diI7dTKo5/arcgis/rest/services/OCRM_Monuments/FeatureServer/0",
+    "count": 73,
+    "native_sr": 6570,
+    "datum": "as published (no shift applied)",
+    "fields": {
+     "name": "Station_Na",
+     "beach": "Beach_Isla",
+     "north": "Final_Nort",
+     "east": "Final_East",
+     "elev": "Final_Elev"
+    },
+    "live_test": "2026-10-16: 73 points, native SR 6570",
+    "coverage": "coastal counties only (Horry, Georgetown, Charleston, Colleton, Beaufort)",
+    "layer": "V-SURV-CTRL"
+   }
+  ],
+  "finding": "No public SCGS control-station service found. rfa.sc.gov/gisdata/locate sends users to NGS DSWorld / NGS datasheet search. Only SCGS REST service found is county boundary polygons. SCGS beachfront (OCRM) monument inventory exists as Phase 1-3 maps on rfa.sc.gov/resources/geodetic; no queryable endpoint confirmed.",
+  "live_test": "n/a",
+  "checked": "2026-10-16",
+  "ngs": {
+   "ngs_datasheet_url": "https://www.ngs.noaa.gov/cgi-bin/ds_mark.prl?PidBox={PID}",
+   "note": "NGS covers all states; PID links state records to NGS datasheets. Not re-surveyed here."
+  },
+  "datum_shifts_applied": false,
+  "finding_2026_10_12": "Rechecked: still no public SC Geodetic Survey station service; NGS (Draw NGS Monuments) covers SC.",
+  "finding_2026_10_16": "Found two public SC Geodetic Survey point layers on the RFA ArcGIS org (county-boundary monuments, OCRM beach monuments). Both served natively in EPSG 6570. NGS datasheets remain the statewide fallback."
+ },
+ "roads": {
+  "name": "SCDOT State Maintained Roads",
+  "agency": "SC Department of Transportation",
+  "url": "https://gis.scdot.org/hosting/rest/services/State_Maintained_Roads_PUBLIC/FeatureServer/5",
+  "layer": "V-ROAD-CNTR",
+  "color": 8,
+  "name_fields": [
+   "STREET_NAM"
+  ],
+  "fields": {
+   "legacy": "ROUTE_ID",
+   "class": "FEATURE_TY",
+   "oneway": "ONEWAY",
+   "id": "ROUTE_LRS"
+  },
+  "notes": "State-maintained roads only (no county/city streets). Counties with their own centerline layer override this (York: NG911 Streets).",
+  "verified": "2026-10-12",
+  "checked_2026_10_16": "Rechecked: SCDOT Hosted/GIS_Other_Roads has only 178 segments (York), so it is not a statewide local-road layer. No public statewide SC NG911 centerline layer found. Local streets are still a gap except York."
+ }
+}
