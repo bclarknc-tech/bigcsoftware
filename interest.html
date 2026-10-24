@@ -63,7 +63,7 @@
 <button type="submit" class="btn btn-primary" id="f-submit">Send</button>
 <p class="f-status" id="f-status" role="status" aria-live="polite"></p>
 </form>
-<p class="f-fallback">Prefer email? <a href="mailto:support@bigcsoftware.com?subject=BIGCS%20interest">support@bigcsoftware.com</a></p>
+<p class="f-fallback">Prefer email? <a href="mailto:sales@bigcsoftware.com?subject=BIGCS%20interest">sales@bigcsoftware.com</a></p>
 </section>
 </main>
 <script>
@@ -77,16 +77,16 @@ f.addEventListener("submit",function(e){
   fetch(f.action,{method:"POST",headers:{"Accept":"application/json"},body:new FormData(f)})
   .then(function(r){return r.json().then(function(j){if(!r.ok||!j.success)throw 0})})
   .then(function(){f.reset();upd();st.className="f-status ok";st.textContent="Thanks, we'll be in touch soon."})
-  .catch(function(){st.className="f-status err";st.innerHTML='Sorry, that did not go through. Please email <a href="mailto:support@bigcsoftware.com?subject=BIGCS%20interest">support@bigcsoftware.com</a>.'})
+  .catch(function(){st.className="f-status err";st.innerHTML='Sorry, that did not go through. Please email <a href="mailto:sales@bigcsoftware.com?subject=BIGCS%20interest">sales@bigcsoftware.com</a>.'})
   .then(function(){btn.disabled=false});
 });
 })();
 </script>
 <footer>
 <div class="container">
-<div class="links"><a href="/">Home</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:support@bigcsoftware.com">Contact</a></div>
+<div class="links"><a href="/">Home</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:sales@bigcsoftware.com">Contact</a></div>
 <p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources and is not survey-grade. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
-<p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:support@bigcsoftware.com">support@bigcsoftware.com</a></p>
+<p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a></p>
 <p>AutoCAD and Civil 3D are trademarks of Autodesk, Inc. Carlson is a trademark of Carlson Software, Inc. IntelliCAD is a trademark of the IntelliCAD Technology Consortium. BIGCS is not affiliated with or endorsed by these companies.</p>
 <p>&copy; 2026 BIGCS. All rights reserved.</p>
 </div>
