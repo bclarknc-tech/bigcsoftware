@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ68FN8YPT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TZ68FN8YPT');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Install help | BIGCS</title>
+<meta name="description" content="Install help for BIGCS: what to do when Windows shows "Windows protected your PC".">
+<link rel="canonical" href="https://bigcsoftware.com/install-help.html">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BIGCS">
+<meta property="og:title" content="Install help | BIGCS">
+<meta property="og:description" content="Install help for BIGCS: what to do when Windows shows "Windows protected your PC".">
+<meta property="og:url" content="https://bigcsoftware.com/install-help.html">
+<meta property="og:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Install help | BIGCS">
+<meta name="twitter:description" content="Install help for BIGCS: what to do when Windows shows "Windows protected your PC".">
+<meta name="twitter:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="bg-layer"><div class="bg-hologram"></div><div class="bg-grid"></div></div>
+<nav>
+<div class="container nav-inner">
+<a href="/" class="logo"><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="BIGCS Software seal" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
+<div class="nav-links"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/#about">About</a><a href="/pricing.html" class="btn btn-primary">See pricing</a></div>
+</div>
+</nav>
+<main class="container"><article class="legal"><h1>Install help</h1>
+<h2>Windows shows "Windows protected your PC" when I run the installer</h2>
+<p>This is normal for new software. Windows SmartScreen shows this message for installers from a publisher it has not seen many downloads from yet. BIGCS is new, so it has not built up that reputation. The message does not mean anything is wrong with the file.</p>
+<p>To continue the install:</p>
+<ol>
+<li>On the blue "Windows protected your PC" screen, click <strong>More info</strong>.</li>
+<li>Click <strong>Run anyway</strong>.</li>
+<li>Follow the installer as usual.</li>
+</ol>
+<h2>Check your download (optional)</h2>
+<p>If you want to confirm the file is the one we published, compare its SHA-256 checksum to the checksum file that comes with the download. In PowerShell, run:</p>
+<p><code>Get-FileHash "C:\path\to\your\BIGCS installer.exe" -Algorithm SHA256</code></p>
+<p>The value it prints should match the one in the checksum file exactly. If it does not, do not run the installer. Download it again, or email us.</p>
+<h2>Still stuck?</h2>
+<p>Email <a href="mailto:support@bigcsoftware.com">support@bigcsoftware.com</a> with what Windows shows on your screen and we will help.</p>
+<p>BIGCS Support</p>
+</article></main>
+<footer>
+<div class="container">
+<div class="links"><a href="/">Home</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/install-help.html">Refunds</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:support@bigcsoftware.com">Contact</a></div>
+<p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources and is not survey-grade. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
+<p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:support@bigcsoftware.com">support@bigcsoftware.com</a></p>
+<p>AutoCAD and Civil 3D are trademarks of Autodesk, Inc. Carlson is a trademark of Carlson Software, Inc. IntelliCAD is a trademark of the IntelliCAD Technology Consortium. BIGCS is not affiliated with or endorsed by these companies.</p>
+<p>&copy; 2026 BIGCS. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>
