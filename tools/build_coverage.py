@@ -13,7 +13,7 @@ NAMES = {"AL":"Alabama","AR":"Arkansas","DE":"Delaware","FL":"Florida","GA":"Geo
  "MO":"Missouri","MS":"Mississippi","NC":"North Carolina","NE":"Nebraska","NJ":"New Jersey","NY":"New York",
  "OH":"Ohio","OK":"Oklahoma","PA":"Pennsylvania","SC":"South Carolina","TN":"Tennessee","TX":"Texas",
  "VA":"Virginia","WI":"Wisconsin","WV":"West Virginia"}
-AVAILABLE = {"NC"}          # everything else: Coming soon (matches site copy)
+AVAILABLE = {"NC", "SC", "GA", "VA", "TN"}   # everything else: Coming soon (matches site copy)
 ORDER = ["NC", "SC"]        # then alphabetical by state name
 # Public names for known statewide sources (hostname -> agency).
 AGENCY = {("NE", "statewide copy"): "University of Nebraska", ("OH", "gis.ohiodnr.gov"): "Ohio DNR"}
