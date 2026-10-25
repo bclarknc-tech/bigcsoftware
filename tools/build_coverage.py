@@ -17,7 +17,7 @@ AVAILABLE = {"NC", "SC", "GA", "VA", "TN"}   # everything else: Coming soon (mat
 ORDER = ["NC", "SC"]        # then alphabetical by state name
 # Public names for known statewide sources (hostname -> agency).
 AGENCY = {("NE", "statewide copy"): "University of Nebraska", ("OH", "gis.ohiodnr.gov"): "Ohio DNR"}
-COLS = [("owner","Owner"),("PIN","PIN"),("deed","Deed"),("plat","Plat"),("roads","Roads"),("state_control","State Control"),("ngs_control","NGS Control")]
+COLS = [("owner","Owner"),("PIN","PIN"),("deed","Deed"),("plat","Plat"),("roads","Roads"),("buildings","Buildings"),("state_control","State Control"),("ngs_control","NGS Control")]
 NOW = datetime.date.today().year
 
 def cell(v):
@@ -39,7 +39,9 @@ def agency(st, src):
 def main(path):
     rows = list(csv.DictReader(open(path, newline="", encoding="utf-8-sig")))
     by = {}
-    for r in rows: by.setdefault(r["state"].strip(), []).append(r)
+    for r in rows:
+        r["buildings"] = "yes" if r["state"].strip() == "NC" else "no"   # footprints: NC only today
+        by.setdefault(r["state"].strip(), []).append(r)
     codes = [c for c in ORDER if c in by] + sorted((c for c in by if c not in ORDER), key=lambda c: NAMES.get(c, c))
     parts = []
     for code in codes:
