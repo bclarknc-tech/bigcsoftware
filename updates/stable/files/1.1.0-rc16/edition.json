@@ -1,0 +1,13 @@
+{
+  "license_required": true,
+  "disclaimer": true,
+  "license_server": "https://bigcs-license.bigcs.workers.dev",
+  "customer_portal": "",
+  "offline_grace_days": 14,
+  "cad_support": [
+    "Carlson",
+    "IntelliCAD",
+    "AutoCAD"
+  ],
+  "customer_portal_note": "No online billing portal yet. Customers email support@bigcsoftware.com to change or cancel."
+}
