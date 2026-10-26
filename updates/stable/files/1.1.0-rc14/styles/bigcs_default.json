@@ -1,0 +1,103 @@
+{
+  "name": "bigcs_default",
+  "description": "BIGCS default label format",
+  "lines": [
+    {
+      "type": "prefix",
+      "on": true,
+      "text": "N/F"
+    },
+    {
+      "type": "owners",
+      "on": true
+    },
+    {
+      "type": "deed",
+      "on": true,
+      "template": "DB {book} PG {page}",
+      "missing": "No Deed Book Found or Provided"
+    },
+    {
+      "type": "plat",
+      "on": true
+    },
+    {
+      "type": "pid",
+      "on": true,
+      "template": "PID:{pid}"
+    },
+    {
+      "type": "acreage",
+      "on": false,
+      "template": "{acres:.2f} AC"
+    },
+    {
+      "type": "address",
+      "on": false,
+      "template": "{address}"
+    },
+    {
+      "type": "custom",
+      "on": false,
+      "text": ""
+    }
+  ],
+  "plat_templates": {
+    "cabinet": null,
+    "plat_book": null,
+    "map_book": null,
+    "other": null
+  },
+  "names": {
+    "order": "first_last",
+    "case": "title",
+    "second_owner_prefix": "& ",
+    "et_al": "Et al.",
+    "acronyms": [
+      "AME",
+      "DBA",
+      "DOT",
+      "HOA",
+      "II",
+      "III",
+      "IV",
+      "JRE",
+      "LLLP",
+      "LLP",
+      "LP",
+      "NA",
+      "NC",
+      "NCDOT",
+      "PA",
+      "PLLC",
+      "POA",
+      "RV",
+      "SC",
+      "TV",
+      "UMC",
+      "USA",
+      "YMCA",
+      "YWCA"
+    ]
+  },
+  "separators": {
+    "join_lines": null
+  },
+  "cad": {
+    "parcel_layer": "GIS-PARCEL",
+    "text_layer": "S-PL_TEXT",
+    "parcel_color": 7,
+    "text_color": 7,
+    "text_height": 3.2,
+    "text_style": "L80",
+    "justification": "middle_center",
+    "rotate": "horizontal",
+    "box": false,
+    "box_layer": "S-PL_TEXT",
+    "box_padding": 1.0,
+    "mask": false,
+    "mask_scale": 1.25,
+    "char_ratio": 0.9375,
+    "width_margin": 1.1
+  }
+}

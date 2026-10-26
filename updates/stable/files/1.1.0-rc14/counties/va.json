@@ -1,0 +1,6475 @@
+{
+ "_meta": {
+  "state": "VA",
+  "target_wkid": 6593,
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PB {plat_book} PG {plat_page}",
+   "PID:{pid}"
+  ],
+  "statewide_geometry_layer": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+  "status_legend": {
+   "ok": "owner+deed+PID live-verified",
+   "partial": "owner+PID (no deed) or subset coverage",
+   "missing": "no owner source found yet",
+   "unverified": "endpoint unreachable at test time"
+  },
+  "default_epsg": 6593,
+  "epsg_choices": [
+   6593,
+   6595,
+   2283,
+   2284
+  ],
+  "target_options": {
+   "north": 6593,
+   "south": 6595
+  },
+  "detect": {
+   "local": "VA",
+   "name_field": "namelsad"
+  },
+  "onemap_url": null,
+  "release": true
+ },
+ "counties": {
+  "Accomack County": {
+   "fips": "51001",
+   "status": "partial",
+   "source": "county",
+   "url": "https://maps.civ.quest/arcgis/rest/services/Accomack/Public/FeatureServer/6",
+   "layer_id": 6,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "GPIN",
+    "acres": "Acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": "PlatBook",
+    "plat_page": "PlatPage"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 48496,
+   "owner_nonnull": 47712,
+   "pid_nonnull": 48426,
+   "deed_nonnull": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Albemarle County": {
+   "fips": "51003",
+   "status": "partial",
+   "source": "county_agol",
+   "url": "https://services2.arcgis.com/OS21qeuPwRnS7y5V/arcgis/rest/services/County_Online/FeatureServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "GIS_ParcelInfo_View_Owner",
+     "GIS_ParcelInfo_View_Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "GIS_ParcelInfo_View_ParcelID",
+    "acres": "GIS_ParcelInfo_View_LotSize",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 47963,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Alexandria City": {
+   "fips": "51510",
+   "status": "partial",
+   "source": "county_agol",
+   "url": "https://services2.arcgis.com/ChYV69FhfjwkvRmy/arcgis/rest/services/Alexandria_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME",
+     "OWNERNAME2"
+    ],
+    "deed_ref": "INSTRUMENT",
+    "plat_ref": "PLAT",
+    "pid": "PID_RE",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 47414,
+   "owner_nonnull": 47290,
+   "pid_nonnull": 47350,
+   "deed_nonnull": 2231,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Alleghany County": {
+   "fips": "51005",
+   "status": "ok",
+   "source": "county",
+   "url": "https://www.webgis.net/arcgis/rest/services/VA/AlleghanyCo_WebGIS/MapServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "OWNER"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "MAP_PIN",
+    "acres": "MACRE",
+    "deed_book": "MDBOOK",
+    "deed_page": "MDPAGE",
+    "plat_book": "MPBOOK",
+    "plat_page": "MPPAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 19120,
+   "owner_nonnull": 18679,
+   "pid_nonnull": 19107,
+   "deed_nonnull": 18577,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Amelia County": {
+   "fips": "51007",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Amherst County": {
+   "fips": "51009",
+   "status": "partial",
+   "source": "county",
+   "url": "https://services8.arcgis.com/TvqqWejphpVuqRec/arcgis/rest/services/Amherst_WL_P/FeatureServer/30",
+   "layer_id": 30,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "MLNAM"
+    ],
+    "deed_ref": "DeedBookPage",
+    "plat_ref": "PlatBookPage",
+    "pid": "GIS_ACCOUNT",
+    "acres": "MACRE_",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false,
+    "trustee_suffix": "strict"
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>\\d+)\\s*/\\s*(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "plat_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>\\d+)\\s*/\\s*(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "record_count": 26228,
+   "deed_nonnull": 14009,
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Appomattox County": {
+   "fips": "51011",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Arlington County": {
+   "fips": "51013",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Augusta County": {
+   "fips": "51015",
+   "status": "partial",
+   "source": "county",
+   "url": "https://gis.co.augusta.va.us/arcgis/rest/services/Parcel_Test_2/MapServer/1",
+   "layer_id": 1,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "CAMRA.OWNERNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "parcels.GPIN",
+    "acres": "CAMRA.ACREAGE",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 42798,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Bath County": {
+   "fips": "51017",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Bedford County": {
+   "fips": "51019",
+   "status": "partial",
+   "source": "county",
+   "url": "https://webgis.bedfordcountyva.gov/arcgis/rest/services/OpenData/OpenDataProperty/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": "document",
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "LegalAc",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 50936,
+   "owner_nonnull": 49917,
+   "pid_nonnull": 50924,
+   "deed_nonnull": 42110,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Bedford Town": {
+   "fips": "5105544",
+   "status": "partial",
+   "source": "county",
+   "url": "https://webgis.bedfordcountyva.gov/arcgis/rest/services/OpenData/OpenDataTownofBedford/MapServer/5",
+   "layer_id": 5,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Owner1"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "GPIN",
+    "acres": "LegalAc",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 5122,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Bland County": {
+   "fips": "51021",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 7192,
+   "owner_nonnull": 7100,
+   "pid_nonnull": 7100,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Bland County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Bland County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Botetourt County": {
+   "fips": "51023",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://www.webgis.net/arcgis/rest/services/VA/BotetourtCo_WebGIS/MapServer/23",
+   "layer_id": 23,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": "Doc1Ref",
+    "plat_ref": null,
+    "pid": "TaxAcct",
+    "acres": "LegalAc",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 21446,
+   "owner_nonnull": 20971,
+   "pid_nonnull": 20981,
+   "deed_nonnull": 1470,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "1-6",
+    "roads_in_county": 3826,
+    "ngs_marks_in_county": 189,
+    "warnings": [
+     "county status is 'partial' - check output against the county notes"
+    ]
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Bristol City": {
+   "fips": "51520",
+   "status": "ok",
+   "source": "county_agol",
+   "url": "https://services9.arcgis.com/Vhoecg08noPQ7wRF/arcgis/rest/services/Parcels_2026_MAR_Att/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "Acreage",
+    "deed_book": "DEED_BK",
+    "deed_page": "DEED_PG",
+    "plat_book": "PLAT_BK",
+    "plat_page": "PLAT_PG"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 13597,
+   "owner_nonnull": 13445,
+   "pid_nonnull": 13597,
+   "deed_nonnull": 11342,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Brunswick County": {
+   "fips": "51025",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 20571,
+   "owner_nonnull": 20403,
+   "pid_nonnull": 20571,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Brunswick County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Brunswick County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Buchanan County": {
+   "fips": "51027",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://www.webgis.net/arcgis/rest/services/VA/Buchanan/MapServer/11",
+   "layer_id": 11,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "OWNER"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "GPIN",
+    "acres": "ACRES",
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE",
+    "plat_book": "PLAT_BOOK",
+    "plat_page": "PLAT_PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 20779,
+   "owner_nonnull": 19331,
+   "pid_nonnull": 20335,
+   "deed_nonnull": 19331,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "4691-99-1508",
+    "roads_in_county": 3246,
+    "ngs_marks_in_county": 157,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Buckingham County": {
+   "fips": "51029",
+   "status": "partial",
+   "source": "county_agol",
+   "url": "https://services6.arcgis.com/cGI8zn9Oo7U9dF6z/arcgis/rest/services/Parcels_Buckingham_2020/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "ACREAGE",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 13251,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Buena Vista City": {
+   "fips": "51530",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Campbell County": {
+   "fips": "51031",
+   "status": "partial",
+   "source": "county",
+   "url": "https://gis.co.campbell.va.us/arcgis/rest/services/Public_Data/Parcel_Ownership/MapServer/0",
+   "layer_id": 0,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "NAME1"
+    ],
+    "deed_ref": "INSTRUMENT",
+    "plat_ref": null,
+    "pid": "ALTPIN",
+    "acres": "LEGALACREA",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 39190,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Caroline County": {
+   "fips": "51033",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://maps.civ.quest/arcgis/rest/services/Caroline/caroline/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "map_pin",
+    "acres": null,
+    "deed_book": "LS_BOOK",
+    "deed_page": "LS_PAGE",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 24090,
+   "owner_nonnull": 23889,
+   "pid_nonnull": 24090,
+   "deed_nonnull": 23449,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "107-A-10",
+    "roads_in_county": 3339,
+    "ngs_marks_in_county": 251,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Carroll County": {
+   "fips": "51035",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 34740,
+   "owner_nonnull": 34546,
+   "pid_nonnull": 34651,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Carroll County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Carroll County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Charles City County": {
+   "fips": "51036",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services5.arcgis.com/7ELQsoO4nWXrJNri/arcgis/rest/services/Parcels_with_Sales_Valuation_and_Reports/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Owner_Line1",
+     "Owner_Line2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "MAP_PIN",
+    "acres": "Acreage",
+    "deed_book": "Deed_Book",
+    "deed_page": "Deed_Page",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 6514,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "7-4-A-8",
+    "roads_in_county": 496,
+    "ngs_marks_in_county": 151,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Charlotte County": {
+   "fips": "51037",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://maps.civ.quest/arcgis/rest/services/Charlotte/Public/FeatureServer/7",
+   "layer_id": 7,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OwnerName",
+     "OwnerName2"
+    ],
+    "deed_ref": "deedbookpage",
+    "plat_ref": null,
+    "pid": "Map_Pin",
+    "acres": "acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 15767,
+   "owner_nonnull": 15277,
+   "pid_nonnull": 15761,
+   "deed_nonnull": 13951,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "1-A-1",
+    "roads_in_county": 1985,
+    "ngs_marks_in_county": 71,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Charlottesville City": {
+   "fips": "51540",
+   "status": "partial",
+   "source": "county",
+   "url": "https://gis.charlottesville.org/server/rest/services/GISViewer/LayersDevUpdate/MapServer/12",
+   "layer_id": 12,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "CurrentOwner",
+     "CurrentOwner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "GPIN",
+    "acres": "Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 15803,
+   "owner_nonnull": 15785,
+   "pid_nonnull": 15803,
+   "deed_nonnull": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Chesapeake City": {
+   "fips": "51550",
+   "status": "ok",
+   "source": "county",
+   "url": "https://maps.civ.quest/arcgis/rest/services/Chesapeake/Public/FeatureServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "CURRENTOWNER"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": "LEGALACRES",
+    "deed_book": "DEEDBOOK",
+    "deed_page": "DEEDPAGE",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 92472,
+   "owner_nonnull": 92468,
+   "pid_nonnull": 92468,
+   "deed_nonnull": 92468,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Chesterfield County": {
+   "fips": "51041",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services3.arcgis.com/TsynfzBSE6sXfoLq/ArcGIS/rest/services/Cadastral/FeatureServer/3",
+   "layer_id": 3,
+   "native_sr": {
+    "wkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "GPIN",
+    "acres": "DeededAcres",
+    "deed_book": "Deed_Book",
+    "deed_page": "Page",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 146864,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "6646627446",
+    "roads_in_county": 25594,
+    "ngs_marks_in_county": 194,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Clarke County": {
+   "fips": "51043",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Colonial Beach Town": {
+   "fips": "5118400",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Colonial Heights City": {
+   "fips": "51570",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 7650,
+   "owner_nonnull": 7561,
+   "pid_nonnull": 7650,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Colonial Heights City'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Colonial Heights City'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Covington City": {
+   "fips": "51580",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 6607,
+   "owner_nonnull": 5458,
+   "pid_nonnull": 6607,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Covington City'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Covington City'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Craig County": {
+   "fips": "51045",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://www.webgis.net/arcgis/rest/services/VA/Craig_WebGIS/MapServer/10",
+   "layer_id": 10,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "OwnerName1",
+     "OwnerName2"
+    ],
+    "deed_ref": "Legal_3",
+    "plat_ref": null,
+    "pid": "parcel_id",
+    "acres": "tax_legal_acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": "platbook",
+    "plat_page": "platpage"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 7325,
+   "owner_nonnull": 7214,
+   "pid_nonnull": 7192,
+   "deed_nonnull": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*DB\\s*(?P<book>\\d+)\\s*/\\s*(?P<page>\\d+)\\s*$"
+    },
+    {
+     "re": "^\\s*WB\\s*(?P<book>[A-Z0-9]+)\\s*/\\s*(?P<page>\\d+)\\s*$",
+     "format": "will"
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "000336",
+    "roads_in_county": 1158,
+    "ngs_marks_in_county": 22,
+    "warnings": [
+     "county status is 'partial' - check output against the county notes"
+    ]
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Culpeper County": {
+   "fips": "51047",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://www.webgis.net/arcgis/rest/services/VA/CulpeperWebGIS_Pro_new/MapServer/202",
+   "layer_id": 202,
+   "native_sr": {
+    "wkid": 102746,
+    "latestWkid": 2283
+   },
+   "fields": {
+    "owner": [
+     "Owner_Full_Name",
+     "CoOwner_Full_Name"
+    ],
+    "deed_ref": null,
+    "plat_ref": "Plat_Reference",
+    "pid": "PINFormat",
+    "acres": "Acres",
+    "deed_book": "Book",
+    "deed_page": "Page",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 18760,
+   "owner_nonnull": 17806,
+   "pid_nonnull": 18758,
+   "deed_nonnull": 17806,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6593,
+    "pid": "2-15",
+    "roads_in_county": 4649,
+    "ngs_marks_in_county": 222,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Culpeper Town": {
+   "fips": "5120752",
+   "status": "ok",
+   "source": "county_agol",
+   "url": "https://services1.arcgis.com/umAze4B28rywBpwB/arcgis/rest/services/Address_Parcel_Join_(VIEW)/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Owner_Full",
+     "CoOwner_Fu"
+    ],
+    "deed_ref": null,
+    "plat_ref": "Plat_Refer",
+    "pid": "PIN",
+    "acres": "Acres",
+    "deed_book": "Book",
+    "deed_page": "Page",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 9631,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Cumberland County": {
+   "fips": "51049",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Danville City": {
+   "fips": "51590",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.danvilleva.gov/server/rest/services/OpenGov/MapServer/4",
+   "layer_id": 4,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "MAPNUM",
+    "acres": "ACRES",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 25341,
+   "owner_nonnull": 25242,
+   "pid_nonnull": 25214,
+   "deed_nonnull": 24533,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "2505-001-000011.000",
+    "roads_in_county": 4081,
+    "ngs_marks_in_county": 0,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Dickenson County": {
+   "fips": "51051",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Dinwiddie County": {
+   "fips": "51053",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 19704,
+   "owner_nonnull": 19590,
+   "pid_nonnull": 19704,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Dinwiddie County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Dinwiddie County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Emporia City": {
+   "fips": "51595",
+   "status": "partial",
+   "source": "county",
+   "url": "https://maps.civ.quest/arcgis/rest/services/Emporia/Public/FeatureServer/5",
+   "layer_id": 5,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OwnerName2",
+     "OwnerName"
+    ],
+    "deed_ref": "OwnrDeed",
+    "plat_ref": null,
+    "pid": "MAP_PIN",
+    "acres": "Acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 5371,
+   "owner_nonnull": 5359,
+   "pid_nonnull": 5371,
+   "deed_nonnull": 5110,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Essex County": {
+   "fips": "51057",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 10033,
+   "owner_nonnull": 9900,
+   "pid_nonnull": 10033,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Essex County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Essex County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Fairfax City": {
+   "fips": "51600",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Fairfax County": {
+   "fips": "51059",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Falls Church City": {
+   "fips": "51610",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Farmville Town": {
+   "fips": "5127440",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Fauquier County": {
+   "fips": "51061",
+   "status": "ok",
+   "source": "county_agol",
+   "url": "https://services.arcgis.com/oAoeYJ1kqmAwcEC2/arcgis/rest/services/Tax_Parcels_DL/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "OWNERNME1",
+     "Co_Owner2"
+    ],
+    "deed_ref": "CURRENTOWN",
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": "ACREAGE",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 36214,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Floyd County": {
+   "fips": "51063",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 14848,
+   "owner_nonnull": 14788,
+   "pid_nonnull": 14848,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Floyd County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Floyd County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Fluvanna County": {
+   "fips": "51065",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://www.webgis.net/arcgis/rest/services/VA/Fluvanna_WebGIS/MapServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "MLNAM"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PINFormat",
+    "acres": "MACRE_",
+    "deed_book": "MDBOOK",
+    "deed_page": "MDPAGE",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 16818,
+   "owner_nonnull": 16691,
+   "pid_nonnull": 16817,
+   "deed_nonnull": 8425,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "1-A-A8",
+    "roads_in_county": 2385,
+    "ngs_marks_in_county": 84,
+    "warnings": [
+     "county status is 'partial' - check output against the county notes"
+    ]
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Franklin City": {
+   "fips": "51620",
+   "status": "partial",
+   "source": "county",
+   "url": "https://maps.civ.quest/arcgis/rest/services/Franklin/Public/FeatureServer/4",
+   "layer_id": 4,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "REM_OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID_TEXT",
+    "acres": "GIS_ACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 5056,
+   "owner_nonnull": 5023,
+   "pid_nonnull": 5056,
+   "deed_nonnull": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Franklin County": {
+   "fips": "51067",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services9.arcgis.com/AzdpqVmJ5GjGWCoI/arcgis/rest/services/FranklinCoVA_TaxParcels_View/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "owner_name"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "acreage",
+    "deed_book": "deed_book",
+    "deed_page": "deed_page",
+    "plat_book": "plat_book",
+    "plat_page": "plat_page"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 49475,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "0050009900",
+    "roads_in_county": 5271,
+    "ngs_marks_in_county": 75,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Frederick County": {
+   "fips": "51069",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://fredcogis.fcva.us/maps/rest/services/FC_GIS/FC_Data/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102746,
+    "latestWkid": 2283
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAME",
+     "OWNER_NA_1"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "ACREAGE",
+    "deed_book": "BOOK_INSTR",
+    "deed_page": "PAGE",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 51676,
+   "owner_nonnull": 51676,
+   "pid_nonnull": 51676,
+   "deed_nonnull": 50991,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6593,
+    "pid": "28 A 176",
+    "roads_in_county": 6763,
+    "ngs_marks_in_county": 90,
+    "warnings": [
+     "county status is 'partial' - check output against the county notes"
+    ]
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Fredericksburg City": {
+   "fips": "51630",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 8832,
+   "owner_nonnull": 8781,
+   "pid_nonnull": 8831,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Fredericksburg City'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Fredericksburg City'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Galax City": {
+   "fips": "51640",
+   "status": "partial",
+   "source": "county",
+   "url": "https://www.webgis.net/arcgis/rest/services/VA/Galax_WebGIS/MapServer/13",
+   "layer_id": 13,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "OwnerName1",
+     "OwnerName2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ALT_PIN",
+    "acres": "legal_acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": "platbook",
+    "plat_page": "platpage"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 3830,
+   "owner_nonnull": 3719,
+   "pid_nonnull": 3830,
+   "deed_nonnull": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Giles County": {
+   "fips": "51071",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 14258,
+   "owner_nonnull": 13915,
+   "pid_nonnull": 13915,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Giles County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Giles County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Gloucester County": {
+   "fips": "51073",
+   "status": "partial",
+   "source": "county",
+   "url": "https://gis.gloucesterva.gov/server/rest/services/GISweb/Hosted_Public_Site_Web_Layer/FeatureServer/58",
+   "layer_id": 58,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "OWN",
+     "COWN"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "GPIN",
+    "acres": "ACRES",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 25299,
+   "owner_nonnull": 25226,
+   "pid_nonnull": 25127,
+   "deed_nonnull": 25230,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Goochland County": {
+   "fips": "51075",
+   "status": "partial",
+   "source": "county",
+   "url": "https://gis.co.goochland.va.us/arcgis/rest/services/EnerGov_Services/EnerGov_GIS_Web_Services/MapServer/8",
+   "layer_id": 8,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "CurrentOwner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "GPIN",
+    "acres": "Calc_Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 17908,
+   "owner_nonnull": 17889,
+   "pid_nonnull": 17908,
+   "deed_nonnull": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Grayson County": {
+   "fips": "51077",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://www.webgis.net/arcgis/rest/services/VA/GraysonCo_WebGIS1/MapServer/19",
+   "layer_id": 19,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "MLNAM"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "LABEL",
+    "acres": "MACRE_",
+    "deed_book": "MDBOOK",
+    "deed_page": "MDPAGE",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 18799,
+   "owner_nonnull": 18756,
+   "pid_nonnull": 18799,
+   "deed_nonnull": 18352,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_will_book_regex": "^\\d{1,2}$",
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "10-A-1",
+    "roads_in_county": 4024,
+    "ngs_marks_in_county": 31,
+    "warnings": [
+     "county status is 'partial' - check output against the county notes"
+    ]
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Greene County": {
+   "fips": "51079",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://www.webgis.net/arcgis/rest/services/VA/GreeneCo_WebGIS/MapServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 102746,
+    "latestWkid": 2283
+   },
+   "fields": {
+    "owner": [
+     "RENAME",
+     "RENAM2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "REACRE",
+    "deed_book": "REDBK",
+    "deed_page": "REDPG",
+    "plat_book": "REPLBK",
+    "plat_page": "REPLPG"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 11908,
+   "owner_nonnull": 11772,
+   "pid_nonnull": 11907,
+   "deed_nonnull": 5698,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6593,
+    "pid": "5-A-1",
+    "roads_in_county": 1679,
+    "ngs_marks_in_county": 60,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Greensville County": {
+   "fips": "51081",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Halifax County": {
+   "fips": "51083",
+   "status": "ok",
+   "source": "county_agol",
+   "url": "https://services.arcgis.com/O8ZpeBC0xLM5nL34/arcgis/rest/services/TaxParcel_HAL_ALL/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "OWNER_OF_RECORD",
+     "CO_OWNER_OF_RECORD"
+    ],
+    "deed_ref": "BOOK_PAGE_1",
+    "plat_ref": null,
+    "pid": "MAP_PRN",
+    "acres": "TOTACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 38209,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Hampton City": {
+   "fips": "51650",
+   "status": "partial",
+   "source": "county",
+   "url": "https://webgis2.hampton.gov/server/rest/services/Web/Parcel_RM/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "GIS.DBO.RealMaster.Owner1",
+     "GIS.DBO.RealMaster.Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "GIS.DBO.RealMaster.PIN",
+    "acres": "GIS.DBO.RealMaster.LegalAc",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 51797,
+   "owner_nonnull": 51793,
+   "pid_nonnull": 51793,
+   "deed_nonnull": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Hanover County": {
+   "fips": "51085",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services2.arcgis.com/sKZWgJlU6SekCzQV/arcgis/rest/services/Hanover_County_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "OWN_NAME1",
+     "OWN_NAME2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "GPIN",
+    "acres": "LOT_ACRES",
+    "deed_book": "DEED_BOOK_",
+    "deed_page": "DEED_BOOK1",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 51608,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "7719-35-3626",
+    "roads_in_county": 7740,
+    "ngs_marks_in_county": 116,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Harrisonburg City": {
+   "fips": "51660",
+   "status": "partial",
+   "source": "county",
+   "url": "https://gis.harrisonburgva.gov/arcgis/rest/services/CityServices/MyParcelTaxData/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102746,
+    "latestWkid": 2283
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": "Acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 13583,
+   "owner_nonnull": 13486,
+   "pid_nonnull": 13488,
+   "deed_nonnull": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Henrico County": {
+   "fips": "51087",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Henry County": {
+   "fips": "51089",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 54486,
+   "owner_nonnull": 54121,
+   "pid_nonnull": 54300,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Henry County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Henry County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Highland County": {
+   "fips": "51091",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Hopewell City": {
+   "fips": "51670",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 10498,
+   "owner_nonnull": 10371,
+   "pid_nonnull": 10435,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Hopewell City'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Hopewell City'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Isle of Wight County": {
+   "fips": "51093",
+   "status": "partial",
+   "source": "county_agol",
+   "url": "https://services.arcgis.com/Dc6hhMQCpvLlOmSY/arcgis/rest/services/IOW_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "NAME1",
+     "NAME2"
+    ],
+    "deed_ref": null,
+    "plat_ref": "PLAT_REFER",
+    "pid": "parcel_num",
+    "acres": "AcresDrawn",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 22276,
+   "owner_nonnull": 22124,
+   "pid_nonnull": 22124,
+   "deed_nonnull": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "James City County": {
+   "fips": "51095",
+   "status": "partial",
+   "source": "county",
+   "url": "https://property.jamescitycountyva.gov/arcgis/rest/services/JCC/GIS_Data/FeatureServer/17",
+   "layer_id": 17,
+   "native_sr": {
+    "wkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": "Plat",
+    "pid": "PIN",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 36478,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "King George County": {
+   "fips": "51099",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "King William County": {
+   "fips": "51101",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 13156,
+   "owner_nonnull": 13072,
+   "pid_nonnull": 13156,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'King William County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'King William County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "King and Queen County": {
+   "fips": "51097",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Lancaster County": {
+   "fips": "51103",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Lee County": {
+   "fips": "51105",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Lexington City": {
+   "fips": "51678",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Loudoun County": {
+   "fips": "51107",
+   "status": "partial",
+   "source": "county_agol",
+   "url": "https://services1.arcgis.com/MxjRokvPm7bjslyR/arcgis/rest/services/Stacked_Parcels_Owner/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 2924,
+    "latestWkid": 2924
+   },
+   "fields": {
+    "owner": [
+     "OWNER"
+    ],
+    "deed_ref": null,
+    "plat_ref": "PA_PLAT_NUM",
+    "pid": "PA_MCPI",
+    "acres": "PA_GIS_ACRE",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 154274,
+   "owner_nonnull": 154274,
+   "pid_nonnull": 154274,
+   "deed_nonnull": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Louisa County": {
+   "fips": "51109",
+   "status": "partial",
+   "source": "county",
+   "url": "https://services.arcgis.com/JpCRGiMdPvzLX1GI/arcgis/rest/services/Louisa_WL_P/FeatureServer/25",
+   "layer_id": 25,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "Acres",
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false,
+    "trustee_suffix": "strict"
+   },
+   "record_count": 36525,
+   "owner_nonnull": 35348,
+   "deed_nonnull": 32103,
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Lunenburg County": {
+   "fips": "51111",
+   "status": "partial",
+   "source": "county_vendor",
+   "url": "https://services.arcgis.com/4fG3YBzBoefRGq66/arcgis/rest/services/Lunenburg_MapInsights_Prod/FeatureServer/8",
+   "layer_id": 8,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "Account_Name"
+    ],
+    "deed_ref": "Deed",
+    "plat_ref": null,
+    "pid": "Map_Number",
+    "acres": "Total_Acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*DB-(?P<book>\\d+)-(?P<page>\\d+[A-Z]?)\\s*$"
+    }
+   ],
+   "record_count": 16370,
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Lynchburg City": {
+   "fips": "51680",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://mapviewer.lynchburgva.gov/ArcGIS/rest/services/OpenData/ODPDynamic/MapServer/41",
+   "layer_id": 41,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": "Doc1Ref",
+    "plat_ref": null,
+    "pid": "Parcel_ID",
+    "acres": "LegalAc",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 32622,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>\\d+)\\s+(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "26607013",
+    "roads_in_county": 4840,
+    "ngs_marks_in_county": 146,
+    "warnings": [
+     "county status is 'partial' - check output against the county notes"
+    ],
+    "ngs_marks_window_pick": 194
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Madison County": {
+   "fips": "51113",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://www.webgis.net/arcgis/rest/services/VA/MadisonCo_WebGIS1/MapServer/22",
+   "layer_id": 22,
+   "native_sr": {
+    "wkid": 102746,
+    "latestWkid": 2283
+   },
+   "fields": {
+    "owner": [
+     "AMNAME",
+     "AMNAM2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN2",
+    "acres": "AMAACR",
+    "deed_book": "AMDBK",
+    "deed_page": "AMDPG",
+    "plat_book": "AMPBK",
+    "plat_page": "AMPPG"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 9812,
+   "owner_nonnull": 9776,
+   "pid_nonnull": 9812,
+   "deed_nonnull": 6955,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6593,
+    "pid": "12-4",
+    "roads_in_county": 1604,
+    "ngs_marks_in_county": 77,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Manassas City": {
+   "fips": "51683",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 17621,
+   "owner_nonnull": 13300,
+   "pid_nonnull": 17470,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Manassas City'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Manassas City'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Manassas Park City": {
+   "fips": "51685",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 4767,
+   "owner_nonnull": 4748,
+   "pid_nonnull": 4767,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Manassas Park City'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Manassas Park City'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Martinsville City": {
+   "fips": "51690",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 11226,
+   "owner_nonnull": 11110,
+   "pid_nonnull": 11110,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Martinsville City'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Martinsville City'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Mathews County": {
+   "fips": "51115",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Mecklenburg County": {
+   "fips": "51117",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 38426,
+   "owner_nonnull": 37963,
+   "pid_nonnull": 38426,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Mecklenburg County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Mecklenburg County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Middlesex County": {
+   "fips": "51119",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services9.arcgis.com/UrElc2PRESEUr5jw/arcgis/rest/services/Parcels/FeatureServer/14",
+   "layer_id": 14,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "OwnerName",
+     "CoOwnerName"
+    ],
+    "deed_ref": "book_page",
+    "plat_ref": null,
+    "pid": "TaxMapNo",
+    "acres": "LegalAcreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 13982,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "43 18 9",
+    "roads_in_county": 2351,
+    "ngs_marks_in_county": 147,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Montgomery County": {
+   "fips": "51121",
+   "status": "ok",
+   "source": "county_agol",
+   "url": "https://services9.arcgis.com/Wl3c8iIqFcIDE29g/arcgis/rest/services/Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "plat_ref": "PLATBK_PG",
+    "pid": "PARCEL_ID",
+    "acres": "ACRES",
+    "deed_book": "DEEDBOOK",
+    "deed_page": "DEEDPAGE",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 45151,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Nelson County": {
+   "fips": "51125",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "New Kent County": {
+   "fips": "51127",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Newport News City": {
+   "fips": "51700",
+   "status": "partial",
+   "source": "regional",
+   "url": "https://geo.hrsd.com/hrgeo/rest/services/regionalgis/HRGeo_Parcels_Public/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 2925,
+    "latestWkid": 2925
+   },
+   "fields": {
+    "owner": [
+     "OWNERNME1"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 54440,
+   "owner_nonnull": 54372,
+   "pid_nonnull": 54440,
+   "deed_nonnull": null,
+   "layer_filter": "FIPS = '700'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "FIPS = '700'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Norfolk City": {
+   "fips": "51710",
+   "status": "partial",
+   "source": "regional",
+   "url": "https://geo.hrsd.com/hrgeo/rest/services/regionalgis/HRGeo_Parcels_Public/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 2925,
+    "latestWkid": 2925
+   },
+   "fields": {
+    "owner": [
+     "OWNERNME1"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 67349,
+   "owner_nonnull": 66843,
+   "pid_nonnull": 67349,
+   "deed_nonnull": null,
+   "layer_filter": "FIPS = '710'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "FIPS = '710'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Northampton County": {
+   "fips": "51131",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://maps.civ.quest/arcgis/rest/services/Northampton/Public/FeatureServer/4",
+   "layer_id": 4,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OwnerName1",
+     "OwnerName2"
+    ],
+    "deed_ref": null,
+    "plat_ref": "Plat",
+    "pid": "MAP_PIN",
+    "acres": "Land_Acres",
+    "deed_book": "Book",
+    "deed_page": "Page",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 16398,
+   "owner_nonnull": 16323,
+   "pid_nonnull": 16383,
+   "deed_nonnull": 9382,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "1-A-5",
+    "roads_in_county": 2946,
+    "ngs_marks_in_county": 289,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Northumberland County": {
+   "fips": "51133",
+   "status": "partial",
+   "source": "county_agol",
+   "url": "https://services1.arcgis.com/QHK2l9cSYhemgg5s/arcgis/rest/services/Northumberland_WellRecords_2000/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "Owner_Name"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": "Acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 6867,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Norton City": {
+   "fips": "51720",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 4150,
+   "owner_nonnull": 3933,
+   "pid_nonnull": 4150,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Norton City'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Norton City'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Nottoway County": {
+   "fips": "51135",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Orange County": {
+   "fips": "51137",
+   "status": "partial",
+   "source": "county",
+   "url": "https://gis.orangecountyva.gov/arcgis/rest/services/WebLogistics/Orange_WL_Concise/MapServer/41",
+   "layer_id": 41,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "AccountName"
+    ],
+    "deed_ref": "Deed",
+    "plat_ref": "Plat",
+    "pid": "PIN",
+    "acres": "TotalAcres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 22618,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Page County": {
+   "fips": "51139",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Patrick County": {
+   "fips": "51141",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 23387,
+   "owner_nonnull": 22336,
+   "pid_nonnull": 23207,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Patrick County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Patrick County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Petersburg City": {
+   "fips": "51730",
+   "status": "ok",
+   "source": "county",
+   "url": "https://maps.civ.quest/arcgis/rest/services/Petersburg/Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 2925,
+    "latestWkid": 2925
+   },
+   "fields": {
+    "owner": [
+     "Owner",
+     "Owner_2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_Num",
+    "acres": "Legal_Acre",
+    "deed_book": "Deed_Book",
+    "deed_page": "Deed_Page",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 15164,
+   "owner_nonnull": 14721,
+   "pid_nonnull": 14722,
+   "deed_nonnull": 14715,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Pittsylvania County": {
+   "fips": "51143",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.danvilleva.gov/server/rest/services/Explorer/PW_Explorer/MapServer/78",
+   "layer_id": 78,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "ACCOUNT_NAME1",
+     "ACCOUNT_NAME2"
+    ],
+    "deed_ref": "PC_CURR_OWNER_BK_PG",
+    "plat_ref": null,
+    "pid": "GPIN",
+    "acres": "TOTAL_ACREAGE",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 61042,
+   "owner_nonnull": 60776,
+   "pid_nonnull": 61042,
+   "deed_nonnull": 60776,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "2535-57-9711",
+    "roads_in_county": 4280,
+    "ngs_marks_in_county": 297,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Poquoson City": {
+   "fips": "51735",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://maps.civ.quest/arcgis/rest/services/Poquoson/Vision/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "OWNRNAME"
+    ],
+    "deed_ref": "OWNRDEED",
+    "plat_ref": null,
+    "pid": "MAP_PIN",
+    "acres": "TOTLACRE",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 5586,
+   "owner_nonnull": 5549,
+   "pid_nonnull": 5573,
+   "deed_nonnull": 5398,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "12-25-1",
+    "roads_in_county": 610,
+    "ngs_marks_in_county": 0,
+    "warnings": [
+     "county status is 'partial' - check output against the county notes"
+    ]
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Portsmouth City": {
+   "fips": "51740",
+   "status": "partial",
+   "source": "regional",
+   "url": "https://geo.hrsd.com/hrgeo/rest/services/regionalgis/HRGeo_Parcels_Public/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 2925,
+    "latestWkid": 2925
+   },
+   "fields": {
+    "owner": [
+     "OWNERNME1"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 36616,
+   "owner_nonnull": 36615,
+   "pid_nonnull": 36616,
+   "deed_nonnull": null,
+   "layer_filter": "FIPS = '740'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "FIPS = '740'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Powhatan County": {
+   "fips": "51145",
+   "status": "partial",
+   "source": "county_agol",
+   "url": "https://services5.arcgis.com/nip9boeHfv9Av5yj/arcgis/rest/services/Tax_Parcels_Vision/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "REM_OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "GPIN",
+    "acres": "PRC_TTL_LND_AREA_ACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 16103,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Prince Edward County": {
+   "fips": "51147",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Prince George County": {
+   "fips": "51149",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Prince William County": {
+   "fips": "51153",
+   "status": "ok",
+   "source": "county",
+   "url": "https://gisweb.pwcva.gov/arcgis/rest/services/OpenData/OpenData/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102746,
+    "latestWkid": 2283
+   },
+   "fields": {
+    "owner": [
+     "CAMA_OWNER_CUR"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "GPIN",
+    "acres": "DEED_ACREAGE",
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 159926,
+   "owner_nonnull": 155912,
+   "pid_nonnull": 159926,
+   "deed_nonnull": 63680,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_book_rules": [
+    {
+     "book": "^WB\\s*(\\d+)$",
+     "format": "WB {book} PG {page}"
+    }
+   ],
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Pulaski County": {
+   "fips": "51155",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Radford City": {
+   "fips": "51750",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 10469,
+   "owner_nonnull": 10452,
+   "pid_nonnull": 10450,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Radford City'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Radford City'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Rappahannock County": {
+   "fips": "51157",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Richmond City": {
+   "fips": "51760",
+   "status": "partial",
+   "source": "county_agol",
+   "url": "https://services1.arcgis.com/k3vhq11XkBNeeOfM/arcgis/rest/services/Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 76932,
+   "owner_nonnull": 76931,
+   "pid_nonnull": 76932,
+   "deed_nonnull": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Richmond County": {
+   "fips": "51159",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Roanoke City": {
+   "fips": "51770",
+   "status": "partial",
+   "source": "county",
+   "url": "https://gis03.roanokeva.gov/arcgis/rest/services/Public/Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNER",
+     "OWNER2"
+    ],
+    "deed_ref": "DOCNUM1",
+    "plat_ref": null,
+    "pid": "TAXID",
+    "acres": "LEGALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 44490,
+   "owner_nonnull": 44485,
+   "pid_nonnull": 44490,
+   "deed_nonnull": 44263,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Roanoke County": {
+   "fips": "51161",
+   "status": "partial",
+   "source": "county_agol",
+   "url": "https://services1.arcgis.com/VlZ73DcE2ya6FnSK/arcgis/rest/services/Parcels_Hosted/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "Owner1_LastAndFirst",
+     "Owner2_LastAndFirst"
+    ],
+    "deed_ref": "SaleLegalReference1",
+    "plat_ref": null,
+    "pid": "ParcelID",
+    "acres": "Calc_Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 47541,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Rockbridge County": {
+   "fips": "51163",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://www.webgis.net/arcgis/rest/services/VA/RockbridgeCo_WebGIS/MapServer/11",
+   "layer_id": 11,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "REM_OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "REM_ALT_PRCL_ID",
+    "acres": "CALCACRES",
+    "deed_book": "MDBOOK",
+    "deed_page": "MDPAGE",
+    "plat_book": "platbook",
+    "plat_page": "platpage"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 27612,
+   "owner_nonnull": 26924,
+   "pid_nonnull": 26924,
+   "deed_nonnull": 9184,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "100 A 1A",
+    "roads_in_county": 4370,
+    "ngs_marks_in_county": 186,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Rockingham County": {
+   "fips": "51165",
+   "status": "partial",
+   "source": "county",
+   "url": "https://services8.arcgis.com/QO97GSOxsVD4VHDy/arcgis/rest/services/VisionParcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102746,
+    "latestWkid": 2283
+   },
+   "fields": {
+    "owner": [
+     "name"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "TaxMapNumber",
+    "acres": "total_acres",
+    "deed_book": "deed_book",
+    "deed_page": "deed_page",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false,
+    "trustee_suffix": "strict"
+   },
+   "record_count": 50538,
+   "owner_nonnull": 50313,
+   "deed_nonnull": 50340,
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Russell County": {
+   "fips": "51167",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 33089,
+   "owner_nonnull": 29528,
+   "pid_nonnull": 33089,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Russell County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Russell County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Salem City": {
+   "fips": "51775",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services7.arcgis.com/RL8aZgZHmJOdyNXk/arcgis/rest/services/TaxParcels/FeatureServer/5",
+   "layer_id": 5,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "owner"
+    ],
+    "deed_ref": "deed_book_ref",
+    "plat_ref": null,
+    "pid": "tax_map_number",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>\\d+)-(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "record_count": 10765,
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "100-3-1",
+    "roads_in_county": 2545,
+    "ngs_marks_in_county": 34,
+    "warnings": [
+     "county status is 'partial' - check output against the county notes"
+    ],
+    "ngs_marks_window_pick": 35
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Scott County": {
+   "fips": "51169",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 19302,
+   "owner_nonnull": 18924,
+   "pid_nonnull": 19302,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Scott County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Scott County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Shenandoah County": {
+   "fips": "51171",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 34969,
+   "owner_nonnull": 34595,
+   "pid_nonnull": 34808,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Shenandoah County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Shenandoah County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Smyth County": {
+   "fips": "51173",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 36014,
+   "owner_nonnull": 35549,
+   "pid_nonnull": 36014,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Smyth County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Smyth County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Southampton County": {
+   "fips": "51175",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Spotsylvania County": {
+   "fips": "51177",
+   "status": "partial",
+   "source": "county",
+   "url": "https://gis.spotsylvania.va.us/arcgis/rest/services/EagleView/Parcel_View/MapServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102746,
+    "latestWkid": 2283
+   },
+   "fields": {
+    "owner": [
+     "FULLNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "GPIN",
+    "acres": "LANDAREA",
+    "deed_book": "BOOKNUM",
+    "deed_page": "PAGE",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 69449,
+   "owner_nonnull": 69449,
+   "pid_nonnull": 69449,
+   "deed_nonnull": 55378,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_book_require_re": "^\\s*\\d+\\s*$",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Stafford County": {
+   "fips": "51179",
+   "status": "partial",
+   "source": "county",
+   "url": "https://gismapping.stafford.va.us/arcgis/rest/services/GoGov_Basemap/MapServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 4269,
+    "latestWkid": 4269
+   },
+   "fields": {
+    "owner": [
+     "Owner1"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRCLID",
+    "acres": "LegalAc",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 62931,
+   "owner_nonnull": 61087,
+   "pid_nonnull": 62708,
+   "deed_nonnull": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Staunton City": {
+   "fips": "51790",
+   "status": "partial",
+   "source": "county_agol",
+   "url": "https://services.arcgis.com/bp3MWUdz4OBPF6xz/arcgis/rest/services/Tax_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "OWNER_N"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 11894,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Suffolk City": {
+   "fips": "51800",
+   "status": "partial",
+   "source": "regional",
+   "url": "https://geo.hrsd.com/hrgeo/rest/services/regionalgis/HRGeo_Parcels_Public/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 2925,
+    "latestWkid": 2925
+   },
+   "fields": {
+    "owner": [
+     "OWNERNME1"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 45301,
+   "owner_nonnull": 45107,
+   "pid_nonnull": 45300,
+   "deed_nonnull": null,
+   "layer_filter": "FIPS = '800'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "FIPS = '800'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Surry County": {
+   "fips": "51181",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://maps.civ.quest/arcgis/rest/services/Surry/Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Account_Name",
+     "Account_Name2"
+    ],
+    "deed_ref": null,
+    "plat_ref": "Plat",
+    "pid": "MAP_PIN",
+    "acres": "GIS_Acres",
+    "deed_book": "Deed_Book",
+    "deed_page": "Deed_Page",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 8910,
+   "owner_nonnull": 6682,
+   "pid_nonnull": 6785,
+   "deed_nonnull": 6582,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "37-1-A",
+    "roads_in_county": 766,
+    "ngs_marks_in_county": 130,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Sussex County": {
+   "fips": "51183",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 10487,
+   "owner_nonnull": 10231,
+   "pid_nonnull": 10487,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Sussex County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Sussex County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Tazewell County": {
+   "fips": "51185",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Virginia Beach City": {
+   "fips": "51810",
+   "status": "partial",
+   "source": "regional",
+   "url": "https://geo.hrsd.com/hrgeo/rest/services/regionalgis/HRGeo_Parcels_Public/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 2925,
+    "latestWkid": 2925
+   },
+   "fields": {
+    "owner": [
+     "OWNERNME1"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 156742,
+   "owner_nonnull": 156682,
+   "pid_nonnull": 156741,
+   "deed_nonnull": null,
+   "layer_filter": "FIPS = '810'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "FIPS = '810'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Warren County": {
+   "fips": "51187",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Washington County": {
+   "fips": "51191",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 39459,
+   "owner_nonnull": 38834,
+   "pid_nonnull": 38834,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Washington County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Washington County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Waynesboro City": {
+   "fips": "51820",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 15014,
+   "owner_nonnull": 14957,
+   "pid_nonnull": 14963,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Waynesboro City'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Waynesboro City'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Westmoreland County": {
+   "fips": "51193",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 27366,
+   "owner_nonnull": 21781,
+   "pid_nonnull": 27366,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Westmoreland County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Westmoreland County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Williamsburg City": {
+   "fips": "51830",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services1.arcgis.com/96Dq0JXOtjNW10pz/arcgis/rest/services/Williamsburg_Property_Information_Publish_Service_WFL1/FeatureServer/10",
+   "layer_id": 10,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": "Deed",
+    "plat_ref": "Plat",
+    "pid": "PID",
+    "acres": "DeededAcres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 4716,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?:DB\\s*)?(?P<book>\\d+)\\s+(?:PG\\s*)?(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "plat_ref_patterns": [
+    {
+     "re": "^\\s*(?:PB\\s*)?(?P<book>\\d+)\\s+(?:PG\\s*)?(?P<page>\\d+)(?:-\\d+)?\\s*$"
+    },
+    {
+     "re": "^\\s*(?P<book>\\d+)-(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "582-05-00-B1",
+    "roads_in_county": 1034,
+    "ngs_marks_in_county": 0,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Winchester City": {
+   "fips": "51840",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 9965,
+   "owner_nonnull": 9965,
+   "pid_nonnull": 9965,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Winchester City'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Winchester City'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Wise County": {
+   "fips": "51195",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 38217,
+   "owner_nonnull": 37444,
+   "pid_nonnull": 38177,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Wise County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Wise County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Wythe County": {
+   "fips": "51197",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://services.dwr.virginia.gov/arcgis/rest/services/Projects/VA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26917,
+    "latestWkid": 26917
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 29085,
+   "owner_nonnull": 28539,
+   "pid_nonnull": 28539,
+   "deed_nonnull": null,
+   "layer_filter": "LOCALITY = 'Wythe County'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "LOCALITY = 'Wythe County'",
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "York County": {
+   "fips": "51199",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://maps.yorkcounty.gov/arcgis/rest/services/AGOservices/Landrecords_Service/FeatureServer/7",
+   "layer_id": 7,
+   "native_sr": {
+    "wkid": 102747,
+    "latestWkid": 2284
+   },
+   "fields": {
+    "owner": [
+     "ownerName",
+     "ownerCOLine"
+    ],
+    "deed_ref": "deed",
+    "plat_ref": null,
+    "pid": "GPIN",
+    "acres": "GISacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Parcels/FeatureServer/0",
+   "record_count": 28521,
+   "owner_nonnull": 28438,
+   "pid_nonnull": 28521,
+   "deed_nonnull": 27022,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6595,
+    "pid": "C21a-0372-2795",
+    "roads_in_county": 4581,
+    "ngs_marks_in_county": 274,
+    "warnings": [
+     "county status is 'partial' - check output against the county notes"
+    ]
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  }
+ },
+ "control": {
+  "state_source": false,
+  "agency": "VDOT Survey Support (maintains networks); VGIN checked",
+  "sources": [],
+  "finding": "No public statewide VA control service found. Local leads only (untested): Arlington od_Survey_Control_Monument_points FeatureServer, Chesapeake Public_Works/Survey_Controls MapServer (PTNUM links recovery sheet), Prince William GTS/Grid/MapServer/4, Portsmouth Geodetic_Control_Network, Richmond, King George, James City.",
+  "live_test": "n/a",
+  "checked": "2026-10-11",
+  "ngs": {
+   "ngs_datasheet_url": "https://www.ngs.noaa.gov/cgi-bin/ds_mark.prl?PidBox={PID}",
+   "note": "NGS covers all states; PID links state records to NGS datasheets. Not re-surveyed here."
+  },
+  "datum_shifts_applied": false
+ },
+ "roads": {
+  "name": "VGIN Virginia Road Centerlines (VBMP RCL)",
+  "agency": "Virginia Geographic Information Network (VGIN) / VDEM, with local governments and VDOT",
+  "type": "ArcGIS REST FeatureServer",
+  "url": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VBMP_RCL/FeatureServer/5",
+  "layer": "V-ROAD-CNTR",
+  "color": 8,
+  "native_sr": "EPSG:3857 (Web Mercator; service wkid 102100 / latestWkid 3857)",
+  "count": 660386,
+  "count_virginia_only": 659441,
+  "county_filter": "MFIPS = 5-digit state+county FIPS string (e.g. '51179' = Stafford, '51760' = Richmond City). 133 VA localities present (95 counties + 38 cities) plus one 7-char code '5120752'. Also FIPS_L / FIPS_R per side. Layer includes some border-state segments (MFIPS 11xxx/21xxx/24xxx/37xxx...), so filter MFIPS LIKE '51%' for VA-only.",
+  "name_fields": [
+   "ST_PREMD",
+   "ST_PREDIR",
+   "ST_NAME",
+   "ST_SUFFIX",
+   "ST_SUFFDIR",
+   "ST_PSTMD"
+  ],
+  "full_name_field": "ST_FULL",
+  "route_fields": [
+   "VDOT_RNUM",
+   "VDOT_RTYP",
+   "VDOT_RNAM"
+  ],
+  "fields": {
+   "id": "RCL_ID",
+   "local_id": "LOCAL_ID",
+   "vdot_id": "VDOT_ID",
+   "county": "MFIPS",
+   "class": "MTFCC",
+   "vdot_fc": "VDOT_FC",
+   "speed": "SPEED_MPH",
+   "oneway": "ONE_WAY",
+   "dual_carriageway": "DUAL_CW",
+   "seg_type": "SEG_TYPE",
+   "exists": "SEG_EXISTS",
+   "addr": [
+    "ADD_LF",
+    "ADD_LT",
+    "ADD_RF",
+    "ADD_RT"
+   ],
+   "zip": [
+    "ZIP_L",
+    "ZIP_R"
+   ],
+   "geo_effective": "GEO_EFFDT",
+   "geo_edit": "GEO_ED",
+   "name_edit": "ST_ED",
+   "aadt": "VDOT_AADT"
+  },
+  "mtfcc_breakdown": {
+   "S1100": 8298,
+   "S1100HOV": 620,
+   "S1200PRI": 65358,
+   "S1200LOC": 55872,
+   "S1400": 517361,
+   "S1630": 7548,
+   "S1640": 440,
+   "S1710": 125,
+   "S1730": 534,
+   "S1740": 2363,
+   "S1780": 1504,
+   "S1820": 315,
+   "S2000": 2,
+   "S9999": 46
+  },
+  "max_record_count": 2000,
+  "pagination": true,
+  "data_year": 2026,
+  "vintage": "Dynamic dataset, re-extracted quarterly by VGIN. Live max GEO_ED / ST_ED = 2026-09-21; max GEO_EFFDT = 2026-09-15; min GEO_EFFDT = 2017-03-13.",
+  "live_test": "OK 2026-10-12: where MFIPS='51179' AND ST_FULL LIKE 'Garrisonville%' returned OBJECTID 111296 / RCL_ID 646726 / ST_FULL 'Garrisonville Rd' / MTFCC S1200LOC / VDOT_RNUM 610 (SC) / VDOT_RNAM R-VA089SC00610WB / 35 mph, polyline geometry in 3857; layer count 660386 (659441 with MFIPS LIKE '51%')",
+  "use_terms": "Copyright: Virginia Geographic Information Network (VGIN). VGIN's RCL description (as republished on Roanoke County / Campbell County mirrors of this dataset) says: RCL geometry is public domain; minimal attribution (RCL Public) is public domain; geocoding fields (RCL Master) are restricted, contact VGIN for those. The VGIN service itself shows no license text beyond the copyright line.",
+  "standard": "VITA ITRM OTH 703-00 Road Centerline Geospatial Data Standard: https://vginmaps.vdem.virginia.gov/download/standards/VAOTH703_VirginiaRCLDataStandardOTH70300.pdf",
+  "verified": "2026-10-12",
+  "notes": "Statewide local streets + highways (not highway-only). Layer 5 ('< 50,000', minScale 1:50,000) and layer 4 ('> 49,999') are the same full 660,386-feature set split only by display scale; scale limits do not affect REST queries. No datum shift applied; data recorded as served in Web Mercator. The user still picks the output CRS (VA North 6593 / South 6595).",
+  "alt_sources": [
+   {
+    "name": "VBMP RCL - Limited Access and Primaries",
+    "type": "ArcGIS REST FeatureServer",
+    "url": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VBMP_RCL/FeatureServer/1",
+    "native_sr": "EPSG:3857",
+    "count": 74276,
+    "note": "Subset: MTFCC S1100, S1100HOV, S1200PRI only. Same schema."
+   },
+   {
+    "name": "VBMP RCL - Ramps and Local Main Arteries",
+    "type": "ArcGIS REST FeatureServer",
+    "url": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VBMP_RCL/FeatureServer/2",
+    "native_sr": "EPSG:3857",
+    "count": 63420,
+    "note": "Display subset. Same schema."
+   },
+   {
+    "name": "VBMP RCL - full set (small-scale display copy)",
+    "type": "ArcGIS REST FeatureServer",
+    "url": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VBMP_RCL/FeatureServer/4",
+    "native_sr": "EPSG:3857",
+    "count": 660386,
+    "note": "Identical feature count to layer 5; use as backup endpoint."
+   },
+   {
+    "name": "VBMP RCL MapServer",
+    "type": "ArcGIS REST MapServer",
+    "url": "https://vginmaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VBMP_RCL/MapServer",
+    "note": "Listed in VA_Base_Layers folder; MapServer twin of the FeatureServer (not separately queried)."
+   }
+  ]
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Added 2026-10-25; not CAD-tested.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}

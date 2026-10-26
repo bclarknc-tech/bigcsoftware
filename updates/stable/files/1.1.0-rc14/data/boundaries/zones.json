@@ -1,0 +1,6641 @@
+{
+ "note": "US State Plane zones (NAD83 and NAD83(2011); US ft, intl ft, m) from the EPSG database",
+ "zones": {
+  "KY": [
+   {
+    "epsg": 2246,
+    "name": "NAD83 / Kentucky North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -85.96,
+     37.71,
+     -82.47,
+     39.15
+    ]
+   },
+   {
+    "epsg": 2247,
+    "name": "NAD83 / Kentucky South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -89.57,
+     36.49,
+     -81.95,
+     38.17
+    ]
+   },
+   {
+    "epsg": 2205,
+    "name": "NAD83 / Kentucky North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -85.96,
+     37.71,
+     -82.47,
+     39.15
+    ]
+   },
+   {
+    "epsg": 3088,
+    "name": "NAD83 / Kentucky Single Zone",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -89.57,
+     36.49,
+     -81.95,
+     39.15
+    ]
+   },
+   {
+    "epsg": 26980,
+    "name": "NAD83 / Kentucky South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -89.57,
+     36.49,
+     -81.95,
+     38.17
+    ]
+   },
+   {
+    "epsg": 6471,
+    "name": "NAD83(2011) / Kentucky North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -85.96,
+     37.71,
+     -82.47,
+     39.15
+    ]
+   },
+   {
+    "epsg": 6475,
+    "name": "NAD83(2011) / Kentucky South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -89.57,
+     36.49,
+     -81.95,
+     38.17
+    ]
+   },
+   {
+    "epsg": 6470,
+    "name": "NAD83(2011) / Kentucky North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -85.96,
+     37.71,
+     -82.47,
+     39.15
+    ]
+   },
+   {
+    "epsg": 6472,
+    "name": "NAD83(2011) / Kentucky Single Zone",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -89.57,
+     36.49,
+     -81.95,
+     39.15
+    ]
+   },
+   {
+    "epsg": 6474,
+    "name": "NAD83(2011) / Kentucky South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -89.57,
+     36.49,
+     -81.95,
+     38.17
+    ]
+   }
+  ],
+  "AZ": [
+   {
+    "epsg": 26949,
+    "name": "NAD83 / Arizona Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -113.35,
+     31.33,
+     -110.44,
+     37.01
+    ]
+   },
+   {
+    "epsg": 2223,
+    "name": "NAD83 / Arizona Central (ft)",
+    "datum": "NAD83",
+    "unit": "intl ft",
+    "bbox": [
+     -113.35,
+     31.33,
+     -110.44,
+     37.01
+    ]
+   },
+   {
+    "epsg": 26948,
+    "name": "NAD83 / Arizona East",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -111.71,
+     31.33,
+     -109.04,
+     37.01
+    ]
+   },
+   {
+    "epsg": 2222,
+    "name": "NAD83 / Arizona East (ft)",
+    "datum": "NAD83",
+    "unit": "intl ft",
+    "bbox": [
+     -111.71,
+     31.33,
+     -109.04,
+     37.01
+    ]
+   },
+   {
+    "epsg": 26950,
+    "name": "NAD83 / Arizona West",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -114.81,
+     32.05,
+     -112.52,
+     37.0
+    ]
+   },
+   {
+    "epsg": 2224,
+    "name": "NAD83 / Arizona West (ft)",
+    "datum": "NAD83",
+    "unit": "intl ft",
+    "bbox": [
+     -114.81,
+     32.05,
+     -112.52,
+     37.0
+    ]
+   },
+   {
+    "epsg": 6404,
+    "name": "NAD83(2011) / Arizona Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -113.35,
+     31.33,
+     -110.44,
+     37.01
+    ]
+   },
+   {
+    "epsg": 6405,
+    "name": "NAD83(2011) / Arizona Central (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -113.35,
+     31.33,
+     -110.44,
+     37.01
+    ]
+   },
+   {
+    "epsg": 6406,
+    "name": "NAD83(2011) / Arizona East",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -111.71,
+     31.33,
+     -109.04,
+     37.01
+    ]
+   },
+   {
+    "epsg": 6407,
+    "name": "NAD83(2011) / Arizona East (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -111.71,
+     31.33,
+     -109.04,
+     37.01
+    ]
+   },
+   {
+    "epsg": 6408,
+    "name": "NAD83(2011) / Arizona West",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -114.81,
+     32.05,
+     -112.52,
+     37.0
+    ]
+   },
+   {
+    "epsg": 6409,
+    "name": "NAD83(2011) / Arizona West (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -114.81,
+     32.05,
+     -112.52,
+     37.0
+    ]
+   }
+  ],
+  "CA": [
+   {
+    "epsg": 2225,
+    "name": "NAD83 / California zone 1 (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -124.45,
+     39.59,
+     -119.99,
+     42.01
+    ]
+   },
+   {
+    "epsg": 2226,
+    "name": "NAD83 / California zone 2 (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -124.06,
+     38.02,
+     -119.54,
+     40.16
+    ]
+   },
+   {
+    "epsg": 2227,
+    "name": "NAD83 / California zone 3 (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -123.02,
+     36.73,
+     -117.83,
+     38.71
+    ]
+   },
+   {
+    "epsg": 2228,
+    "name": "NAD83 / California zone 4 (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -122.01,
+     35.78,
+     -115.62,
+     37.58
+    ]
+   },
+   {
+    "epsg": 2229,
+    "name": "NAD83 / California zone 5 (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -121.42,
+     32.76,
+     -114.12,
+     35.81
+    ]
+   },
+   {
+    "epsg": 2230,
+    "name": "NAD83 / California zone 6 (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -118.15,
+     32.53,
+     -114.42,
+     34.08
+    ]
+   },
+   {
+    "epsg": 26941,
+    "name": "NAD83 / California zone 1",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -124.45,
+     39.59,
+     -119.99,
+     42.01
+    ]
+   },
+   {
+    "epsg": 26942,
+    "name": "NAD83 / California zone 2",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -124.06,
+     38.02,
+     -119.54,
+     40.16
+    ]
+   },
+   {
+    "epsg": 26943,
+    "name": "NAD83 / California zone 3",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -123.02,
+     36.73,
+     -117.83,
+     38.71
+    ]
+   },
+   {
+    "epsg": 26944,
+    "name": "NAD83 / California zone 4",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -122.01,
+     35.78,
+     -115.62,
+     37.58
+    ]
+   },
+   {
+    "epsg": 26945,
+    "name": "NAD83 / California zone 5",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -121.42,
+     32.76,
+     -114.12,
+     35.81
+    ]
+   },
+   {
+    "epsg": 26946,
+    "name": "NAD83 / California zone 6",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -118.15,
+     32.53,
+     -114.42,
+     34.08
+    ]
+   },
+   {
+    "epsg": 6416,
+    "name": "NAD83(2011) / California zone 1 (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -124.45,
+     39.59,
+     -119.99,
+     42.01
+    ]
+   },
+   {
+    "epsg": 6418,
+    "name": "NAD83(2011) / California zone 2 (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -124.06,
+     38.02,
+     -119.54,
+     40.16
+    ]
+   },
+   {
+    "epsg": 6420,
+    "name": "NAD83(2011) / California zone 3 (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -123.02,
+     36.73,
+     -117.83,
+     38.71
+    ]
+   },
+   {
+    "epsg": 6422,
+    "name": "NAD83(2011) / California zone 4 (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -122.01,
+     35.78,
+     -115.62,
+     37.58
+    ]
+   },
+   {
+    "epsg": 6424,
+    "name": "NAD83(2011) / California zone 5 (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -121.42,
+     32.76,
+     -114.12,
+     35.81
+    ]
+   },
+   {
+    "epsg": 6426,
+    "name": "NAD83(2011) / California zone 6 (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -118.15,
+     32.53,
+     -114.42,
+     34.08
+    ]
+   },
+   {
+    "epsg": 6415,
+    "name": "NAD83(2011) / California zone 1",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -124.45,
+     39.59,
+     -119.99,
+     42.01
+    ]
+   },
+   {
+    "epsg": 6417,
+    "name": "NAD83(2011) / California zone 2",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -124.06,
+     38.02,
+     -119.54,
+     40.16
+    ]
+   },
+   {
+    "epsg": 6419,
+    "name": "NAD83(2011) / California zone 3",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -123.02,
+     36.73,
+     -117.83,
+     38.71
+    ]
+   },
+   {
+    "epsg": 6421,
+    "name": "NAD83(2011) / California zone 4",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -122.01,
+     35.78,
+     -115.62,
+     37.58
+    ]
+   },
+   {
+    "epsg": 6423,
+    "name": "NAD83(2011) / California zone 5",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -121.42,
+     32.76,
+     -114.12,
+     35.81
+    ]
+   },
+   {
+    "epsg": 6425,
+    "name": "NAD83(2011) / California zone 6",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -118.15,
+     32.53,
+     -114.42,
+     34.08
+    ]
+   }
+  ],
+  "CO": [
+   {
+    "epsg": 2232,
+    "name": "NAD83 / Colorado Central (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -109.06,
+     38.14,
+     -102.04,
+     40.09
+    ]
+   },
+   {
+    "epsg": 2231,
+    "name": "NAD83 / Colorado North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -109.06,
+     39.56,
+     -102.04,
+     41.01
+    ]
+   },
+   {
+    "epsg": 2233,
+    "name": "NAD83 / Colorado South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -109.06,
+     36.98,
+     -102.04,
+     38.68
+    ]
+   },
+   {
+    "epsg": 26954,
+    "name": "NAD83 / Colorado Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -109.06,
+     38.14,
+     -102.04,
+     40.09
+    ]
+   },
+   {
+    "epsg": 26953,
+    "name": "NAD83 / Colorado North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -109.06,
+     39.56,
+     -102.04,
+     41.01
+    ]
+   },
+   {
+    "epsg": 26955,
+    "name": "NAD83 / Colorado South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -109.06,
+     36.98,
+     -102.04,
+     38.68
+    ]
+   },
+   {
+    "epsg": 6428,
+    "name": "NAD83(2011) / Colorado Central (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -109.06,
+     38.14,
+     -102.04,
+     40.09
+    ]
+   },
+   {
+    "epsg": 6430,
+    "name": "NAD83(2011) / Colorado North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -109.06,
+     39.56,
+     -102.04,
+     41.01
+    ]
+   },
+   {
+    "epsg": 6432,
+    "name": "NAD83(2011) / Colorado South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -109.06,
+     36.98,
+     -102.04,
+     38.68
+    ]
+   },
+   {
+    "epsg": 6427,
+    "name": "NAD83(2011) / Colorado Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -109.06,
+     38.14,
+     -102.04,
+     40.09
+    ]
+   },
+   {
+    "epsg": 6429,
+    "name": "NAD83(2011) / Colorado North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -109.06,
+     39.56,
+     -102.04,
+     41.01
+    ]
+   },
+   {
+    "epsg": 6431,
+    "name": "NAD83(2011) / Colorado South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -109.06,
+     36.98,
+     -102.04,
+     38.68
+    ]
+   }
+  ],
+  "CT": [
+   {
+    "epsg": 2234,
+    "name": "NAD83 / Connecticut (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -73.73,
+     40.98,
+     -71.78,
+     42.05
+    ]
+   },
+   {
+    "epsg": 26956,
+    "name": "NAD83 / Connecticut",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -73.73,
+     40.98,
+     -71.78,
+     42.05
+    ]
+   },
+   {
+    "epsg": 6434,
+    "name": "NAD83(2011) / Connecticut (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -73.73,
+     40.98,
+     -71.78,
+     42.05
+    ]
+   },
+   {
+    "epsg": 6433,
+    "name": "NAD83(2011) / Connecticut",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -73.73,
+     40.98,
+     -71.78,
+     42.05
+    ]
+   }
+  ],
+  "DE": [
+   {
+    "epsg": 2235,
+    "name": "NAD83 / Delaware (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -75.8,
+     38.44,
+     -74.97,
+     39.85
+    ]
+   },
+   {
+    "epsg": 26957,
+    "name": "NAD83 / Delaware",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -75.8,
+     38.44,
+     -74.97,
+     39.85
+    ]
+   },
+   {
+    "epsg": 6436,
+    "name": "NAD83(2011) / Delaware (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -75.8,
+     38.44,
+     -74.97,
+     39.85
+    ]
+   },
+   {
+    "epsg": 6435,
+    "name": "NAD83(2011) / Delaware",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -75.8,
+     38.44,
+     -74.97,
+     39.85
+    ]
+   }
+  ],
+  "FL": [
+   {
+    "epsg": 2236,
+    "name": "NAD83 / Florida East (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -82.33,
+     24.41,
+     -79.97,
+     30.83
+    ]
+   },
+   {
+    "epsg": 2238,
+    "name": "NAD83 / Florida North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -87.63,
+     29.21,
+     -82.04,
+     31.01
+    ]
+   },
+   {
+    "epsg": 2237,
+    "name": "NAD83 / Florida West (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -83.34,
+     26.27,
+     -81.13,
+     29.6
+    ]
+   },
+   {
+    "epsg": 26958,
+    "name": "NAD83 / Florida East",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -82.33,
+     24.41,
+     -79.97,
+     30.83
+    ]
+   },
+   {
+    "epsg": 26960,
+    "name": "NAD83 / Florida North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -87.63,
+     29.21,
+     -82.04,
+     31.01
+    ]
+   },
+   {
+    "epsg": 26959,
+    "name": "NAD83 / Florida West",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -83.34,
+     26.27,
+     -81.13,
+     29.6
+    ]
+   },
+   {
+    "epsg": 6438,
+    "name": "NAD83(2011) / Florida East (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -82.33,
+     24.41,
+     -79.97,
+     30.83
+    ]
+   },
+   {
+    "epsg": 6441,
+    "name": "NAD83(2011) / Florida North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -87.63,
+     29.21,
+     -82.04,
+     31.01
+    ]
+   },
+   {
+    "epsg": 6443,
+    "name": "NAD83(2011) / Florida West (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -83.34,
+     26.27,
+     -81.13,
+     29.6
+    ]
+   },
+   {
+    "epsg": 6437,
+    "name": "NAD83(2011) / Florida East",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -82.33,
+     24.41,
+     -79.97,
+     30.83
+    ]
+   },
+   {
+    "epsg": 6440,
+    "name": "NAD83(2011) / Florida North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -87.63,
+     29.21,
+     -82.04,
+     31.01
+    ]
+   },
+   {
+    "epsg": 6442,
+    "name": "NAD83(2011) / Florida West",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -83.34,
+     26.27,
+     -81.13,
+     29.6
+    ]
+   }
+  ],
+  "GA": [
+   {
+    "epsg": 2239,
+    "name": "NAD83 / Georgia East (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -83.47,
+     30.36,
+     -80.77,
+     34.68
+    ]
+   },
+   {
+    "epsg": 2240,
+    "name": "NAD83 / Georgia West (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -85.61,
+     30.62,
+     -82.99,
+     35.01
+    ]
+   },
+   {
+    "epsg": 26966,
+    "name": "NAD83 / Georgia East",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -83.47,
+     30.36,
+     -80.77,
+     34.68
+    ]
+   },
+   {
+    "epsg": 26967,
+    "name": "NAD83 / Georgia West",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -85.61,
+     30.62,
+     -82.99,
+     35.01
+    ]
+   },
+   {
+    "epsg": 6445,
+    "name": "NAD83(2011) / Georgia East (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -83.47,
+     30.36,
+     -80.77,
+     34.68
+    ]
+   },
+   {
+    "epsg": 6447,
+    "name": "NAD83(2011) / Georgia West (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -85.61,
+     30.62,
+     -82.99,
+     35.01
+    ]
+   },
+   {
+    "epsg": 6444,
+    "name": "NAD83(2011) / Georgia East",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -83.47,
+     30.36,
+     -80.77,
+     34.68
+    ]
+   },
+   {
+    "epsg": 6446,
+    "name": "NAD83(2011) / Georgia West",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -85.61,
+     30.62,
+     -82.99,
+     35.01
+    ]
+   }
+  ],
+  "ID": [
+   {
+    "epsg": 2242,
+    "name": "NAD83 / Idaho Central (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -115.3,
+     41.99,
+     -112.67,
+     45.7
+    ]
+   },
+   {
+    "epsg": 2241,
+    "name": "NAD83 / Idaho East (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -113.24,
+     41.99,
+     -111.04,
+     44.75
+    ]
+   },
+   {
+    "epsg": 2243,
+    "name": "NAD83 / Idaho West (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -117.24,
+     41.99,
+     -114.32,
+     49.01
+    ]
+   },
+   {
+    "epsg": 26969,
+    "name": "NAD83 / Idaho Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -115.3,
+     41.99,
+     -112.67,
+     45.7
+    ]
+   },
+   {
+    "epsg": 26968,
+    "name": "NAD83 / Idaho East",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -113.24,
+     41.99,
+     -111.04,
+     44.75
+    ]
+   },
+   {
+    "epsg": 26970,
+    "name": "NAD83 / Idaho West",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -117.24,
+     41.99,
+     -114.32,
+     49.01
+    ]
+   },
+   {
+    "epsg": 6449,
+    "name": "NAD83(2011) / Idaho Central (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -115.3,
+     41.99,
+     -112.67,
+     45.7
+    ]
+   },
+   {
+    "epsg": 6451,
+    "name": "NAD83(2011) / Idaho East (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -113.24,
+     41.99,
+     -111.04,
+     44.75
+    ]
+   },
+   {
+    "epsg": 6453,
+    "name": "NAD83(2011) / Idaho West (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -117.24,
+     41.99,
+     -114.32,
+     49.01
+    ]
+   },
+   {
+    "epsg": 6448,
+    "name": "NAD83(2011) / Idaho Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -115.3,
+     41.99,
+     -112.67,
+     45.7
+    ]
+   },
+   {
+    "epsg": 6450,
+    "name": "NAD83(2011) / Idaho East",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -113.24,
+     41.99,
+     -111.04,
+     44.75
+    ]
+   },
+   {
+    "epsg": 6452,
+    "name": "NAD83(2011) / Idaho West",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -117.24,
+     41.99,
+     -114.32,
+     49.01
+    ]
+   }
+  ],
+  "MD": [
+   {
+    "epsg": 2248,
+    "name": "NAD83 / Maryland (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -79.49,
+     37.97,
+     -74.97,
+     39.73
+    ]
+   },
+   {
+    "epsg": 26985,
+    "name": "NAD83 / Maryland",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -79.49,
+     37.97,
+     -74.97,
+     39.73
+    ]
+   },
+   {
+    "epsg": 6488,
+    "name": "NAD83(2011) / Maryland (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -79.49,
+     37.97,
+     -74.97,
+     39.73
+    ]
+   },
+   {
+    "epsg": 6487,
+    "name": "NAD83(2011) / Maryland",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -79.49,
+     37.97,
+     -74.97,
+     39.73
+    ]
+   }
+  ],
+  "MA": [
+   {
+    "epsg": 2250,
+    "name": "NAD83 / Massachusetts Island (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -70.91,
+     41.19,
+     -69.89,
+     41.51
+    ]
+   },
+   {
+    "epsg": 2249,
+    "name": "NAD83 / Massachusetts Mainland (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -73.5,
+     41.46,
+     -69.86,
+     42.89
+    ]
+   },
+   {
+    "epsg": 26987,
+    "name": "NAD83 / Massachusetts Island",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -70.91,
+     41.19,
+     -69.89,
+     41.51
+    ]
+   },
+   {
+    "epsg": 26986,
+    "name": "NAD83 / Massachusetts Mainland",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -73.5,
+     41.46,
+     -69.86,
+     42.89
+    ]
+   },
+   {
+    "epsg": 6490,
+    "name": "NAD83(2011) / Massachusetts Island (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -70.91,
+     41.19,
+     -69.89,
+     41.51
+    ]
+   },
+   {
+    "epsg": 6492,
+    "name": "NAD83(2011) / Massachusetts Mainland (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -73.5,
+     41.46,
+     -69.86,
+     42.89
+    ]
+   },
+   {
+    "epsg": 6489,
+    "name": "NAD83(2011) / Massachusetts Island",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -70.91,
+     41.19,
+     -69.89,
+     41.51
+    ]
+   },
+   {
+    "epsg": 6491,
+    "name": "NAD83(2011) / Massachusetts Mainland",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -73.5,
+     41.46,
+     -69.86,
+     42.89
+    ]
+   }
+  ],
+  "MI": [
+   {
+    "epsg": 26989,
+    "name": "NAD83 / Michigan Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -87.06,
+     43.8,
+     -82.27,
+     45.92
+    ]
+   },
+   {
+    "epsg": 2252,
+    "name": "NAD83 / Michigan Central (ft)",
+    "datum": "NAD83",
+    "unit": "intl ft",
+    "bbox": [
+     -87.06,
+     43.8,
+     -82.27,
+     45.92
+    ]
+   },
+   {
+    "epsg": 26988,
+    "name": "NAD83 / Michigan North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -90.42,
+     45.08,
+     -83.44,
+     48.32
+    ]
+   },
+   {
+    "epsg": 2251,
+    "name": "NAD83 / Michigan North (ft)",
+    "datum": "NAD83",
+    "unit": "intl ft",
+    "bbox": [
+     -90.42,
+     45.08,
+     -83.44,
+     48.32
+    ]
+   },
+   {
+    "epsg": 26990,
+    "name": "NAD83 / Michigan South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -87.2,
+     41.69,
+     -82.13,
+     44.22
+    ]
+   },
+   {
+    "epsg": 2253,
+    "name": "NAD83 / Michigan South (ft)",
+    "datum": "NAD83",
+    "unit": "intl ft",
+    "bbox": [
+     -87.2,
+     41.69,
+     -82.13,
+     44.22
+    ]
+   },
+   {
+    "epsg": 6493,
+    "name": "NAD83(2011) / Michigan Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -87.06,
+     43.8,
+     -82.27,
+     45.92
+    ]
+   },
+   {
+    "epsg": 6494,
+    "name": "NAD83(2011) / Michigan Central (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -87.06,
+     43.8,
+     -82.27,
+     45.92
+    ]
+   },
+   {
+    "epsg": 6495,
+    "name": "NAD83(2011) / Michigan North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -90.42,
+     45.08,
+     -83.44,
+     48.32
+    ]
+   },
+   {
+    "epsg": 6496,
+    "name": "NAD83(2011) / Michigan North (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -90.42,
+     45.08,
+     -83.44,
+     48.32
+    ]
+   },
+   {
+    "epsg": 6498,
+    "name": "NAD83(2011) / Michigan South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -87.2,
+     41.69,
+     -82.13,
+     44.22
+    ]
+   },
+   {
+    "epsg": 6499,
+    "name": "NAD83(2011) / Michigan South (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -87.2,
+     41.69,
+     -82.13,
+     44.22
+    ]
+   }
+  ],
+  "MS": [
+   {
+    "epsg": 2254,
+    "name": "NAD83 / Mississippi East (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -89.97,
+     30.01,
+     -88.09,
+     35.01
+    ]
+   },
+   {
+    "epsg": 2255,
+    "name": "NAD83 / Mississippi West (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -91.65,
+     31.0,
+     -89.37,
+     35.01
+    ]
+   },
+   {
+    "epsg": 26994,
+    "name": "NAD83 / Mississippi East",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -89.97,
+     30.01,
+     -88.09,
+     35.01
+    ]
+   },
+   {
+    "epsg": 26995,
+    "name": "NAD83 / Mississippi West",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -91.65,
+     31.0,
+     -89.37,
+     35.01
+    ]
+   },
+   {
+    "epsg": 6507,
+    "name": "NAD83(2011) / Mississippi East (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -89.97,
+     30.01,
+     -88.09,
+     35.01
+    ]
+   },
+   {
+    "epsg": 6510,
+    "name": "NAD83(2011) / Mississippi West (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -91.65,
+     31.0,
+     -89.37,
+     35.01
+    ]
+   },
+   {
+    "epsg": 6506,
+    "name": "NAD83(2011) / Mississippi East",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -89.97,
+     30.01,
+     -88.09,
+     35.01
+    ]
+   },
+   {
+    "epsg": 6509,
+    "name": "NAD83(2011) / Mississippi West",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -91.65,
+     31.0,
+     -89.37,
+     35.01
+    ]
+   }
+  ],
+  "MT": [
+   {
+    "epsg": 32100,
+    "name": "NAD83 / Montana",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -116.07,
+     44.35,
+     -104.04,
+     49.01
+    ]
+   },
+   {
+    "epsg": 2256,
+    "name": "NAD83 / Montana (ft)",
+    "datum": "NAD83",
+    "unit": "intl ft",
+    "bbox": [
+     -116.07,
+     44.35,
+     -104.04,
+     49.01
+    ]
+   },
+   {
+    "epsg": 6514,
+    "name": "NAD83(2011) / Montana",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -116.07,
+     44.35,
+     -104.04,
+     49.01
+    ]
+   },
+   {
+    "epsg": 6515,
+    "name": "NAD83(2011) / Montana (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -116.07,
+     44.35,
+     -104.04,
+     49.01
+    ]
+   }
+  ],
+  "NM": [
+   {
+    "epsg": 2258,
+    "name": "NAD83 / New Mexico Central (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -107.73,
+     31.78,
+     -104.84,
+     37.0
+    ]
+   },
+   {
+    "epsg": 2257,
+    "name": "NAD83 / New Mexico East (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -105.72,
+     32.0,
+     -102.99,
+     37.0
+    ]
+   },
+   {
+    "epsg": 2259,
+    "name": "NAD83 / New Mexico West (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -109.06,
+     31.33,
+     -106.32,
+     37.0
+    ]
+   },
+   {
+    "epsg": 32113,
+    "name": "NAD83 / New Mexico Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -107.73,
+     31.78,
+     -104.84,
+     37.0
+    ]
+   },
+   {
+    "epsg": 32112,
+    "name": "NAD83 / New Mexico East",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -105.72,
+     32.0,
+     -102.99,
+     37.0
+    ]
+   },
+   {
+    "epsg": 32114,
+    "name": "NAD83 / New Mexico West",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -109.06,
+     31.33,
+     -106.32,
+     37.0
+    ]
+   },
+   {
+    "epsg": 6529,
+    "name": "NAD83(2011) / New Mexico Central (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -107.73,
+     31.78,
+     -104.84,
+     37.0
+    ]
+   },
+   {
+    "epsg": 6531,
+    "name": "NAD83(2011) / New Mexico East (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -105.72,
+     32.0,
+     -102.99,
+     37.0
+    ]
+   },
+   {
+    "epsg": 6533,
+    "name": "NAD83(2011) / New Mexico West (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -109.06,
+     31.33,
+     -106.32,
+     37.0
+    ]
+   },
+   {
+    "epsg": 6528,
+    "name": "NAD83(2011) / New Mexico Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -107.73,
+     31.78,
+     -104.84,
+     37.0
+    ]
+   },
+   {
+    "epsg": 6530,
+    "name": "NAD83(2011) / New Mexico East",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -105.72,
+     32.0,
+     -102.99,
+     37.0
+    ]
+   },
+   {
+    "epsg": 6532,
+    "name": "NAD83(2011) / New Mexico West",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -109.06,
+     31.33,
+     -106.32,
+     37.0
+    ]
+   }
+  ],
+  "NY": [
+   {
+    "epsg": 2261,
+    "name": "NAD83 / New York Central (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -77.75,
+     41.99,
+     -75.06,
+     44.41
+    ]
+   },
+   {
+    "epsg": 2260,
+    "name": "NAD83 / New York East (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -75.87,
+     40.88,
+     -73.23,
+     45.02
+    ]
+   },
+   {
+    "epsg": 2263,
+    "name": "NAD83 / New York Long Island (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -74.26,
+     40.47,
+     -71.8,
+     41.3
+    ]
+   },
+   {
+    "epsg": 2262,
+    "name": "NAD83 / New York West (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -79.77,
+     41.99,
+     -77.36,
+     43.64
+    ]
+   },
+   {
+    "epsg": 32116,
+    "name": "NAD83 / New York Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -77.75,
+     41.99,
+     -75.06,
+     44.41
+    ]
+   },
+   {
+    "epsg": 32115,
+    "name": "NAD83 / New York East",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -75.87,
+     40.88,
+     -73.23,
+     45.02
+    ]
+   },
+   {
+    "epsg": 32118,
+    "name": "NAD83 / New York Long Island",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -74.26,
+     40.47,
+     -71.8,
+     41.3
+    ]
+   },
+   {
+    "epsg": 32117,
+    "name": "NAD83 / New York West",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -79.77,
+     41.99,
+     -77.36,
+     43.64
+    ]
+   },
+   {
+    "epsg": 6535,
+    "name": "NAD83(2011) / New York Central (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -77.75,
+     41.99,
+     -75.06,
+     44.41
+    ]
+   },
+   {
+    "epsg": 6537,
+    "name": "NAD83(2011) / New York East (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -75.87,
+     40.88,
+     -73.23,
+     45.02
+    ]
+   },
+   {
+    "epsg": 6539,
+    "name": "NAD83(2011) / New York Long Island (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -74.26,
+     40.47,
+     -71.8,
+     41.3
+    ]
+   },
+   {
+    "epsg": 6541,
+    "name": "NAD83(2011) / New York West (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -79.77,
+     41.99,
+     -77.36,
+     43.64
+    ]
+   },
+   {
+    "epsg": 6534,
+    "name": "NAD83(2011) / New York Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -77.75,
+     41.99,
+     -75.06,
+     44.41
+    ]
+   },
+   {
+    "epsg": 6536,
+    "name": "NAD83(2011) / New York East",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -75.87,
+     40.88,
+     -73.23,
+     45.02
+    ]
+   },
+   {
+    "epsg": 6538,
+    "name": "NAD83(2011) / New York Long Island",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -74.26,
+     40.47,
+     -71.8,
+     41.3
+    ]
+   },
+   {
+    "epsg": 6540,
+    "name": "NAD83(2011) / New York West",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -79.77,
+     41.99,
+     -77.36,
+     43.64
+    ]
+   }
+  ],
+  "NC": [
+   {
+    "epsg": 2264,
+    "name": "NAD83 / North Carolina (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -84.33,
+     33.83,
+     -75.38,
+     36.59
+    ]
+   },
+   {
+    "epsg": 32119,
+    "name": "NAD83 / North Carolina",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -84.33,
+     33.83,
+     -75.38,
+     36.59
+    ]
+   },
+   {
+    "epsg": 6543,
+    "name": "NAD83(2011) / North Carolina (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -84.33,
+     33.83,
+     -75.38,
+     36.59
+    ]
+   },
+   {
+    "epsg": 6542,
+    "name": "NAD83(2011) / North Carolina",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -84.33,
+     33.83,
+     -75.38,
+     36.59
+    ]
+   }
+  ],
+  "ND": [
+   {
+    "epsg": 32120,
+    "name": "NAD83 / North Dakota North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -104.07,
+     47.15,
+     -96.83,
+     49.01
+    ]
+   },
+   {
+    "epsg": 2265,
+    "name": "NAD83 / North Dakota North (ft)",
+    "datum": "NAD83",
+    "unit": "intl ft",
+    "bbox": [
+     -104.07,
+     47.15,
+     -96.83,
+     49.01
+    ]
+   },
+   {
+    "epsg": 32121,
+    "name": "NAD83 / North Dakota South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -104.05,
+     45.93,
+     -96.55,
+     47.83
+    ]
+   },
+   {
+    "epsg": 2266,
+    "name": "NAD83 / North Dakota South (ft)",
+    "datum": "NAD83",
+    "unit": "intl ft",
+    "bbox": [
+     -104.05,
+     45.93,
+     -96.55,
+     47.83
+    ]
+   },
+   {
+    "epsg": 6544,
+    "name": "NAD83(2011) / North Dakota North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -104.07,
+     47.15,
+     -96.83,
+     49.01
+    ]
+   },
+   {
+    "epsg": 6545,
+    "name": "NAD83(2011) / North Dakota North (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -104.07,
+     47.15,
+     -96.83,
+     49.01
+    ]
+   },
+   {
+    "epsg": 6546,
+    "name": "NAD83(2011) / North Dakota South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -104.05,
+     45.93,
+     -96.55,
+     47.83
+    ]
+   },
+   {
+    "epsg": 6547,
+    "name": "NAD83(2011) / North Dakota South (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -104.05,
+     45.93,
+     -96.55,
+     47.83
+    ]
+   }
+  ],
+  "OK": [
+   {
+    "epsg": 2267,
+    "name": "NAD83 / Oklahoma North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -103.0,
+     35.27,
+     -94.42,
+     37.01
+    ]
+   },
+   {
+    "epsg": 2268,
+    "name": "NAD83 / Oklahoma South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -100.0,
+     33.62,
+     -94.42,
+     35.57
+    ]
+   },
+   {
+    "epsg": 32124,
+    "name": "NAD83 / Oklahoma North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -103.0,
+     35.27,
+     -94.42,
+     37.01
+    ]
+   },
+   {
+    "epsg": 32125,
+    "name": "NAD83 / Oklahoma South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -100.0,
+     33.62,
+     -94.42,
+     35.57
+    ]
+   },
+   {
+    "epsg": 6553,
+    "name": "NAD83(2011) / Oklahoma North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -103.0,
+     35.27,
+     -94.42,
+     37.01
+    ]
+   },
+   {
+    "epsg": 6555,
+    "name": "NAD83(2011) / Oklahoma South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -100.0,
+     33.62,
+     -94.42,
+     35.57
+    ]
+   },
+   {
+    "epsg": 6552,
+    "name": "NAD83(2011) / Oklahoma North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -103.0,
+     35.27,
+     -94.42,
+     37.01
+    ]
+   },
+   {
+    "epsg": 6554,
+    "name": "NAD83(2011) / Oklahoma South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -100.0,
+     33.62,
+     -94.42,
+     35.57
+    ]
+   }
+  ],
+  "OR": [
+   {
+    "epsg": 32126,
+    "name": "NAD83 / Oregon North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -124.17,
+     43.95,
+     -116.47,
+     46.26
+    ]
+   },
+   {
+    "epsg": 2269,
+    "name": "NAD83 / Oregon North (ft)",
+    "datum": "NAD83",
+    "unit": "intl ft",
+    "bbox": [
+     -124.17,
+     43.95,
+     -116.47,
+     46.26
+    ]
+   },
+   {
+    "epsg": 32127,
+    "name": "NAD83 / Oregon South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -124.6,
+     41.98,
+     -116.9,
+     44.56
+    ]
+   },
+   {
+    "epsg": 2270,
+    "name": "NAD83 / Oregon South (ft)",
+    "datum": "NAD83",
+    "unit": "intl ft",
+    "bbox": [
+     -124.6,
+     41.98,
+     -116.9,
+     44.56
+    ]
+   },
+   {
+    "epsg": 6787,
+    "name": "NAD83(2011) / Oregon Baker zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -118.15,
+     44.6,
+     -117.37,
+     45.19
+    ]
+   },
+   {
+    "epsg": 6786,
+    "name": "NAD83(2011) / Oregon Baker zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -118.15,
+     44.6,
+     -117.37,
+     45.19
+    ]
+   },
+   {
+    "epsg": 6799,
+    "name": "NAD83(2011) / Oregon Bend-Burns zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -120.95,
+     43.34,
+     -118.8,
+     44.28
+    ]
+   },
+   {
+    "epsg": 6798,
+    "name": "NAD83(2011) / Oregon Bend-Burns zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -120.95,
+     43.34,
+     -118.8,
+     44.28
+    ]
+   },
+   {
+    "epsg": 6791,
+    "name": "NAD83(2011) / Oregon Bend-Klamath Falls zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -122.45,
+     41.88,
+     -120.77,
+     43.89
+    ]
+   },
+   {
+    "epsg": 6790,
+    "name": "NAD83(2011) / Oregon Bend-Klamath Falls zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -122.45,
+     41.88,
+     -120.77,
+     43.89
+    ]
+   },
+   {
+    "epsg": 6795,
+    "name": "NAD83(2011) / Oregon Bend-Redmond-Prineville zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -121.88,
+     43.76,
+     -119.79,
+     44.98
+    ]
+   },
+   {
+    "epsg": 6794,
+    "name": "NAD83(2011) / Oregon Bend-Redmond-Prineville zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -121.88,
+     43.76,
+     -119.79,
+     44.98
+    ]
+   },
+   {
+    "epsg": 8312,
+    "name": "NAD83(2011) / Oregon Burns-Harper zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -118.61,
+     43.49,
+     -117.49,
+     44.19
+    ]
+   },
+   {
+    "epsg": 8311,
+    "name": "NAD83(2011) / Oregon Burns-Harper zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -118.61,
+     43.49,
+     -117.49,
+     44.19
+    ]
+   },
+   {
+    "epsg": 8314,
+    "name": "NAD83(2011) / Oregon Canyon City-Burns zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -119.22,
+     43.52,
+     -118.52,
+     44.36
+    ]
+   },
+   {
+    "epsg": 8313,
+    "name": "NAD83(2011) / Oregon Canyon City-Burns zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -119.22,
+     43.52,
+     -118.52,
+     44.36
+    ]
+   },
+   {
+    "epsg": 6803,
+    "name": "NAD83(2011) / Oregon Canyonville-Grants Pass zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -123.83,
+     42.49,
+     -122.43,
+     43.24
+    ]
+   },
+   {
+    "epsg": 6802,
+    "name": "NAD83(2011) / Oregon Canyonville-Grants Pass zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -123.83,
+     42.49,
+     -122.43,
+     43.24
+    ]
+   },
+   {
+    "epsg": 8316,
+    "name": "NAD83(2011) / Oregon Coast Range North zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -123.81,
+     45.4,
+     -123.01,
+     45.98
+    ]
+   },
+   {
+    "epsg": 8315,
+    "name": "NAD83(2011) / Oregon Coast Range North zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -123.81,
+     45.4,
+     -123.01,
+     45.98
+    ]
+   },
+   {
+    "epsg": 6843,
+    "name": "NAD83(2011) / Oregon Coast zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -124.84,
+     41.89,
+     -123.35,
+     46.4
+    ]
+   },
+   {
+    "epsg": 6842,
+    "name": "NAD83(2011) / Oregon Coast zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -124.84,
+     41.89,
+     -123.35,
+     46.4
+    ]
+   },
+   {
+    "epsg": 6807,
+    "name": "NAD83(2011) / Oregon Columbia River East zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -122.05,
+     45.49,
+     -118.89,
+     46.08
+    ]
+   },
+   {
+    "epsg": 6806,
+    "name": "NAD83(2011) / Oregon Columbia River East zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -122.05,
+     45.49,
+     -118.89,
+     46.08
+    ]
+   },
+   {
+    "epsg": 6811,
+    "name": "NAD83(2011) / Oregon Columbia River West zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -124.33,
+     45.17,
+     -121.47,
+     46.56
+    ]
+   },
+   {
+    "epsg": 6810,
+    "name": "NAD83(2011) / Oregon Columbia River West zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -124.33,
+     45.17,
+     -121.47,
+     46.56
+    ]
+   },
+   {
+    "epsg": 6815,
+    "name": "NAD83(2011) / Oregon Cottage Grove-Canyonville zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -123.96,
+     42.82,
+     -122.4,
+     43.88
+    ]
+   },
+   {
+    "epsg": 6814,
+    "name": "NAD83(2011) / Oregon Cottage Grove-Canyonville zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -123.96,
+     42.82,
+     -122.4,
+     43.88
+    ]
+   },
+   {
+    "epsg": 8318,
+    "name": "NAD83(2011) / Oregon Dayville-Prairie City zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -119.89,
+     44.24,
+     -118.61,
+     44.94
+    ]
+   },
+   {
+    "epsg": 8317,
+    "name": "NAD83(2011) / Oregon Dayville-Prairie City zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -119.89,
+     44.24,
+     -118.61,
+     44.94
+    ]
+   },
+   {
+    "epsg": 8320,
+    "name": "NAD83(2011) / Oregon Denio-Burns zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -119.41,
+     41.88,
+     -117.67,
+     43.54
+    ]
+   },
+   {
+    "epsg": 8319,
+    "name": "NAD83(2011) / Oregon Denio-Burns zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -119.41,
+     41.88,
+     -117.67,
+     43.54
+    ]
+   },
+   {
+    "epsg": 6819,
+    "name": "NAD83(2011) / Oregon Dufur-Madras zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -121.95,
+     44.63,
+     -120.46,
+     45.55
+    ]
+   },
+   {
+    "epsg": 6818,
+    "name": "NAD83(2011) / Oregon Dufur-Madras zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -121.95,
+     44.63,
+     -120.46,
+     45.55
+    ]
+   },
+   {
+    "epsg": 6823,
+    "name": "NAD83(2011) / Oregon Eugene zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -123.8,
+     43.74,
+     -122.18,
+     44.71
+    ]
+   },
+   {
+    "epsg": 6822,
+    "name": "NAD83(2011) / Oregon Eugene zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -123.8,
+     43.74,
+     -122.18,
+     44.71
+    ]
+   },
+   {
+    "epsg": 6827,
+    "name": "NAD83(2011) / Oregon Grants Pass-Ashland zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -123.95,
+     41.88,
+     -122.37,
+     42.85
+    ]
+   },
+   {
+    "epsg": 6826,
+    "name": "NAD83(2011) / Oregon Grants Pass-Ashland zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -123.95,
+     41.88,
+     -122.37,
+     42.85
+    ]
+   },
+   {
+    "epsg": 6831,
+    "name": "NAD83(2011) / Oregon Gresham-Warm Springs zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -122.43,
+     45.02,
+     -121.68,
+     45.55
+    ]
+   },
+   {
+    "epsg": 6830,
+    "name": "NAD83(2011) / Oregon Gresham-Warm Springs zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -122.43,
+     45.02,
+     -121.68,
+     45.55
+    ]
+   },
+   {
+    "epsg": 8322,
+    "name": "NAD83(2011) / Oregon Halfway zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -117.61,
+     44.61,
+     -116.63,
+     45.28
+    ]
+   },
+   {
+    "epsg": 8321,
+    "name": "NAD83(2011) / Oregon Halfway zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -117.61,
+     44.61,
+     -116.63,
+     45.28
+    ]
+   },
+   {
+    "epsg": 6835,
+    "name": "NAD83(2011) / Oregon La Grande zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -118.17,
+     45.13,
+     -117.14,
+     45.8
+    ]
+   },
+   {
+    "epsg": 6834,
+    "name": "NAD83(2011) / Oregon La Grande zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -118.17,
+     45.13,
+     -117.14,
+     45.8
+    ]
+   },
+   {
+    "epsg": 8324,
+    "name": "NAD83(2011) / Oregon Medford-Diamond Lake zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -122.73,
+     42.53,
+     -121.71,
+     43.34
+    ]
+   },
+   {
+    "epsg": 8323,
+    "name": "NAD83(2011) / Oregon Medford-Diamond Lake zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -122.73,
+     42.53,
+     -121.71,
+     43.34
+    ]
+   },
+   {
+    "epsg": 8326,
+    "name": "NAD83(2011) / Oregon Mitchell zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -120.56,
+     44.38,
+     -119.82,
+     44.78
+    ]
+   },
+   {
+    "epsg": 8325,
+    "name": "NAD83(2011) / Oregon Mitchell zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -120.56,
+     44.38,
+     -119.82,
+     44.78
+    ]
+   },
+   {
+    "epsg": 6558,
+    "name": "NAD83(2011) / Oregon North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -124.17,
+     43.95,
+     -116.47,
+     46.26
+    ]
+   },
+   {
+    "epsg": 6559,
+    "name": "NAD83(2011) / Oregon North (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -124.17,
+     43.95,
+     -116.47,
+     46.26
+    ]
+   },
+   {
+    "epsg": 8328,
+    "name": "NAD83(2011) / Oregon North Central zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -121.79,
+     44.89,
+     -119.03,
+     45.95
+    ]
+   },
+   {
+    "epsg": 8327,
+    "name": "NAD83(2011) / Oregon North Central zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -121.79,
+     44.89,
+     -119.03,
+     45.95
+    ]
+   },
+   {
+    "epsg": 8330,
+    "name": "NAD83(2011) / Oregon Ochoco Summit zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -121.01,
+     44.21,
+     -120.31,
+     44.61
+    ]
+   },
+   {
+    "epsg": 8329,
+    "name": "NAD83(2011) / Oregon Ochoco Summit zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -121.01,
+     44.21,
+     -120.31,
+     44.61
+    ]
+   },
+   {
+    "epsg": 6839,
+    "name": "NAD83(2011) / Oregon Ontario zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -117.9,
+     43.41,
+     -116.7,
+     44.65
+    ]
+   },
+   {
+    "epsg": 6838,
+    "name": "NAD83(2011) / Oregon Ontario zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -117.9,
+     43.41,
+     -116.7,
+     44.65
+    ]
+   },
+   {
+    "epsg": 8332,
+    "name": "NAD83(2011) / Oregon Owyhee zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -118.14,
+     41.88,
+     -116.85,
+     43.54
+    ]
+   },
+   {
+    "epsg": 8331,
+    "name": "NAD83(2011) / Oregon Owyhee zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -118.14,
+     41.88,
+     -116.85,
+     43.54
+    ]
+   },
+   {
+    "epsg": 6847,
+    "name": "NAD83(2011) / Oregon Pendleton zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -119.36,
+     45.46,
+     -118.17,
+     46.02
+    ]
+   },
+   {
+    "epsg": 6846,
+    "name": "NAD83(2011) / Oregon Pendleton zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -119.36,
+     45.46,
+     -118.17,
+     46.02
+    ]
+   },
+   {
+    "epsg": 6851,
+    "name": "NAD83(2011) / Oregon Pendleton-La Grande zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -118.64,
+     45.13,
+     -118.09,
+     45.64
+    ]
+   },
+   {
+    "epsg": 6850,
+    "name": "NAD83(2011) / Oregon Pendleton-La Grande zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -118.64,
+     45.13,
+     -118.09,
+     45.64
+    ]
+   },
+   {
+    "epsg": 8334,
+    "name": "NAD83(2011) / Oregon Pilot Rock-Ukiah zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -119.65,
+     44.99,
+     -118.11,
+     46.04
+    ]
+   },
+   {
+    "epsg": 8333,
+    "name": "NAD83(2011) / Oregon Pilot Rock-Ukiah zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -119.65,
+     44.99,
+     -118.11,
+     46.04
+    ]
+   },
+   {
+    "epsg": 6855,
+    "name": "NAD83(2011) / Oregon Portland zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -123.53,
+     45.23,
+     -122.11,
+     46.01
+    ]
+   },
+   {
+    "epsg": 6854,
+    "name": "NAD83(2011) / Oregon Portland zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -123.53,
+     45.23,
+     -122.11,
+     46.01
+    ]
+   },
+   {
+    "epsg": 8336,
+    "name": "NAD83(2011) / Oregon Prairie City-Brogan zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -118.77,
+     44.16,
+     -117.48,
+     45.02
+    ]
+   },
+   {
+    "epsg": 8335,
+    "name": "NAD83(2011) / Oregon Prairie City-Brogan zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -118.77,
+     44.16,
+     -117.48,
+     45.02
+    ]
+   },
+   {
+    "epsg": 8338,
+    "name": "NAD83(2011) / Oregon Riley-Lakeview zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -120.97,
+     41.88,
+     -119.15,
+     43.45
+    ]
+   },
+   {
+    "epsg": 8337,
+    "name": "NAD83(2011) / Oregon Riley-Lakeview zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -120.97,
+     41.88,
+     -119.15,
+     43.45
+    ]
+   },
+   {
+    "epsg": 6859,
+    "name": "NAD83(2011) / Oregon Salem zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -123.73,
+     44.32,
+     -121.89,
+     45.3
+    ]
+   },
+   {
+    "epsg": 6858,
+    "name": "NAD83(2011) / Oregon Salem zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -123.73,
+     44.32,
+     -121.89,
+     45.3
+    ]
+   },
+   {
+    "epsg": 6863,
+    "name": "NAD83(2011) / Oregon Santiam Pass zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -122.51,
+     44.1,
+     -121.69,
+     44.66
+    ]
+   },
+   {
+    "epsg": 6862,
+    "name": "NAD83(2011) / Oregon Santiam Pass zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -122.51,
+     44.1,
+     -121.69,
+     44.66
+    ]
+   },
+   {
+    "epsg": 8340,
+    "name": "NAD83(2011) / Oregon Siskiyou Pass zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -122.71,
+     41.95,
+     -121.96,
+     42.46
+    ]
+   },
+   {
+    "epsg": 8339,
+    "name": "NAD83(2011) / Oregon Siskiyou Pass zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -122.71,
+     41.95,
+     -121.96,
+     42.46
+    ]
+   },
+   {
+    "epsg": 6560,
+    "name": "NAD83(2011) / Oregon South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -124.6,
+     41.98,
+     -116.9,
+     44.56
+    ]
+   },
+   {
+    "epsg": 6561,
+    "name": "NAD83(2011) / Oregon South (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -124.6,
+     41.98,
+     -116.9,
+     44.56
+    ]
+   },
+   {
+    "epsg": 8342,
+    "name": "NAD83(2011) / Oregon Ukiah-Fox zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -119.35,
+     44.52,
+     -118.64,
+     45.21
+    ]
+   },
+   {
+    "epsg": 8341,
+    "name": "NAD83(2011) / Oregon Ukiah-Fox zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -119.35,
+     44.52,
+     -118.64,
+     45.21
+    ]
+   },
+   {
+    "epsg": 8344,
+    "name": "NAD83(2011) / Oregon Wallowa zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -118.16,
+     45.27,
+     -116.42,
+     46.05
+    ]
+   },
+   {
+    "epsg": 8343,
+    "name": "NAD83(2011) / Oregon Wallowa zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -118.16,
+     45.27,
+     -116.42,
+     46.05
+    ]
+   },
+   {
+    "epsg": 8346,
+    "name": "NAD83(2011) / Oregon Warner Highway zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -120.42,
+     41.95,
+     -119.3,
+     42.43
+    ]
+   },
+   {
+    "epsg": 8345,
+    "name": "NAD83(2011) / Oregon Warner Highway zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -120.42,
+     41.95,
+     -119.3,
+     42.43
+    ]
+   },
+   {
+    "epsg": 8348,
+    "name": "NAD83(2011) / Oregon Willamette Pass zone (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -122.26,
+     42.99,
+     -121.48,
+     44.18
+    ]
+   },
+   {
+    "epsg": 8347,
+    "name": "NAD83(2011) / Oregon Willamette Pass zone (m)",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -122.26,
+     42.99,
+     -121.48,
+     44.18
+    ]
+   }
+  ],
+  "PA": [
+   {
+    "epsg": 2271,
+    "name": "NAD83 / Pennsylvania North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -80.53,
+     40.6,
+     -74.7,
+     42.53
+    ]
+   },
+   {
+    "epsg": 2272,
+    "name": "NAD83 / Pennsylvania South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -80.53,
+     39.71,
+     -74.72,
+     41.18
+    ]
+   },
+   {
+    "epsg": 32128,
+    "name": "NAD83 / Pennsylvania North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -80.53,
+     40.6,
+     -74.7,
+     42.53
+    ]
+   },
+   {
+    "epsg": 32129,
+    "name": "NAD83 / Pennsylvania South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -80.53,
+     39.71,
+     -74.72,
+     41.18
+    ]
+   },
+   {
+    "epsg": 6563,
+    "name": "NAD83(2011) / Pennsylvania North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -80.53,
+     40.6,
+     -74.7,
+     42.53
+    ]
+   },
+   {
+    "epsg": 6565,
+    "name": "NAD83(2011) / Pennsylvania South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -80.53,
+     39.71,
+     -74.72,
+     41.18
+    ]
+   },
+   {
+    "epsg": 6562,
+    "name": "NAD83(2011) / Pennsylvania North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -80.53,
+     40.6,
+     -74.7,
+     42.53
+    ]
+   },
+   {
+    "epsg": 6564,
+    "name": "NAD83(2011) / Pennsylvania South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -80.53,
+     39.71,
+     -74.72,
+     41.18
+    ]
+   }
+  ],
+  "SC": [
+   {
+    "epsg": 32133,
+    "name": "NAD83 / South Carolina",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -83.36,
+     32.05,
+     -78.52,
+     35.21
+    ]
+   },
+   {
+    "epsg": 2273,
+    "name": "NAD83 / South Carolina (ft)",
+    "datum": "NAD83",
+    "unit": "intl ft",
+    "bbox": [
+     -83.36,
+     32.05,
+     -78.52,
+     35.21
+    ]
+   },
+   {
+    "epsg": 6569,
+    "name": "NAD83(2011) / South Carolina",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -83.36,
+     32.05,
+     -78.52,
+     35.21
+    ]
+   },
+   {
+    "epsg": 6570,
+    "name": "NAD83(2011) / South Carolina (ft)",
+    "datum": "NAD83(2011)",
+    "unit": "intl ft",
+    "bbox": [
+     -83.36,
+     32.05,
+     -78.52,
+     35.21
+    ]
+   }
+  ],
+  "TN": [
+   {
+    "epsg": 2274,
+    "name": "NAD83 / Tennessee (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -90.31,
+     34.98,
+     -81.65,
+     36.68
+    ]
+   },
+   {
+    "epsg": 32136,
+    "name": "NAD83 / Tennessee",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -90.31,
+     34.98,
+     -81.65,
+     36.68
+    ]
+   },
+   {
+    "epsg": 6576,
+    "name": "NAD83(2011) / Tennessee (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -90.31,
+     34.98,
+     -81.65,
+     36.68
+    ]
+   },
+   {
+    "epsg": 6575,
+    "name": "NAD83(2011) / Tennessee",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -90.31,
+     34.98,
+     -81.65,
+     36.68
+    ]
+   }
+  ],
+  "TX": [
+   {
+    "epsg": 2277,
+    "name": "NAD83 / Texas Central (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -106.66,
+     29.78,
+     -93.5,
+     32.27
+    ]
+   },
+   {
+    "epsg": 2275,
+    "name": "NAD83 / Texas North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -103.03,
+     34.3,
+     -99.99,
+     36.5
+    ]
+   },
+   {
+    "epsg": 2276,
+    "name": "NAD83 / Texas North Central (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -103.07,
+     31.72,
+     -94.0,
+     34.58
+    ]
+   },
+   {
+    "epsg": 2279,
+    "name": "NAD83 / Texas South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -100.2,
+     25.83,
+     -96.85,
+     28.21
+    ]
+   },
+   {
+    "epsg": 2278,
+    "name": "NAD83 / Texas South Central (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -105.0,
+     27.78,
+     -93.76,
+     30.67
+    ]
+   },
+   {
+    "epsg": 32139,
+    "name": "NAD83 / Texas Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -106.66,
+     29.78,
+     -93.5,
+     32.27
+    ]
+   },
+   {
+    "epsg": 32137,
+    "name": "NAD83 / Texas North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -103.03,
+     34.3,
+     -99.99,
+     36.5
+    ]
+   },
+   {
+    "epsg": 32138,
+    "name": "NAD83 / Texas North Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -103.07,
+     31.72,
+     -94.0,
+     34.58
+    ]
+   },
+   {
+    "epsg": 32141,
+    "name": "NAD83 / Texas South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -100.2,
+     25.83,
+     -96.85,
+     28.21
+    ]
+   },
+   {
+    "epsg": 32140,
+    "name": "NAD83 / Texas South Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -105.0,
+     27.78,
+     -93.76,
+     30.67
+    ]
+   },
+   {
+    "epsg": 6578,
+    "name": "NAD83(2011) / Texas Central (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -106.66,
+     29.78,
+     -93.5,
+     32.27
+    ]
+   },
+   {
+    "epsg": 6582,
+    "name": "NAD83(2011) / Texas North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -103.03,
+     34.3,
+     -99.99,
+     36.5
+    ]
+   },
+   {
+    "epsg": 6584,
+    "name": "NAD83(2011) / Texas North Central (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -103.07,
+     31.72,
+     -94.0,
+     34.58
+    ]
+   },
+   {
+    "epsg": 6586,
+    "name": "NAD83(2011) / Texas South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -100.2,
+     25.83,
+     -96.85,
+     28.21
+    ]
+   },
+   {
+    "epsg": 6588,
+    "name": "NAD83(2011) / Texas South Central (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -105.0,
+     27.78,
+     -93.76,
+     30.67
+    ]
+   },
+   {
+    "epsg": 6577,
+    "name": "NAD83(2011) / Texas Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -106.66,
+     29.78,
+     -93.5,
+     32.27
+    ]
+   },
+   {
+    "epsg": 6581,
+    "name": "NAD83(2011) / Texas North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -103.03,
+     34.3,
+     -99.99,
+     36.5
+    ]
+   },
+   {
+    "epsg": 6583,
+    "name": "NAD83(2011) / Texas North Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -103.07,
+     31.72,
+     -94.0,
+     34.58
+    ]
+   },
+   {
+    "epsg": 6585,
+    "name": "NAD83(2011) / Texas South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -100.2,
+     25.83,
+     -96.85,
+     28.21
+    ]
+   },
+   {
+    "epsg": 6587,
+    "name": "NAD83(2011) / Texas South Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -105.0,
+     27.78,
+     -93.76,
+     30.67
+    ]
+   }
+  ],
+  "UT": [
+   {
+    "epsg": 3566,
+    "name": "NAD83 / Utah Central (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -114.05,
+     38.49,
+     -109.04,
+     41.08
+    ]
+   },
+   {
+    "epsg": 3560,
+    "name": "NAD83 / Utah North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -114.04,
+     40.55,
+     -109.04,
+     42.01
+    ]
+   },
+   {
+    "epsg": 3567,
+    "name": "NAD83 / Utah South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -114.05,
+     36.99,
+     -109.04,
+     38.58
+    ]
+   },
+   {
+    "epsg": 32143,
+    "name": "NAD83 / Utah Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -114.05,
+     38.49,
+     -109.04,
+     41.08
+    ]
+   },
+   {
+    "epsg": 2281,
+    "name": "NAD83 / Utah Central (ft)",
+    "datum": "NAD83",
+    "unit": "intl ft",
+    "bbox": [
+     -114.05,
+     38.49,
+     -109.04,
+     41.08
+    ]
+   },
+   {
+    "epsg": 32142,
+    "name": "NAD83 / Utah North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -114.04,
+     40.55,
+     -109.04,
+     42.01
+    ]
+   },
+   {
+    "epsg": 2280,
+    "name": "NAD83 / Utah North (ft)",
+    "datum": "NAD83",
+    "unit": "intl ft",
+    "bbox": [
+     -114.04,
+     40.55,
+     -109.04,
+     42.01
+    ]
+   },
+   {
+    "epsg": 32144,
+    "name": "NAD83 / Utah South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -114.05,
+     36.99,
+     -109.04,
+     38.58
+    ]
+   },
+   {
+    "epsg": 2282,
+    "name": "NAD83 / Utah South (ft)",
+    "datum": "NAD83",
+    "unit": "intl ft",
+    "bbox": [
+     -114.05,
+     36.99,
+     -109.04,
+     38.58
+    ]
+   },
+   {
+    "epsg": 6625,
+    "name": "NAD83(2011) / Utah Central (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -114.05,
+     38.49,
+     -109.04,
+     41.08
+    ]
+   },
+   {
+    "epsg": 6626,
+    "name": "NAD83(2011) / Utah North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -114.04,
+     40.55,
+     -109.04,
+     42.01
+    ]
+   },
+   {
+    "epsg": 6627,
+    "name": "NAD83(2011) / Utah South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -114.05,
+     36.99,
+     -109.04,
+     38.58
+    ]
+   },
+   {
+    "epsg": 6619,
+    "name": "NAD83(2011) / Utah Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -114.05,
+     38.49,
+     -109.04,
+     41.08
+    ]
+   },
+   {
+    "epsg": 6620,
+    "name": "NAD83(2011) / Utah North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -114.04,
+     40.55,
+     -109.04,
+     42.01
+    ]
+   },
+   {
+    "epsg": 6621,
+    "name": "NAD83(2011) / Utah South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -114.05,
+     36.99,
+     -109.04,
+     38.58
+    ]
+   }
+  ],
+  "VA": [
+   {
+    "epsg": 2283,
+    "name": "NAD83 / Virginia North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -80.06,
+     37.77,
+     -76.51,
+     39.46
+    ]
+   },
+   {
+    "epsg": 2284,
+    "name": "NAD83 / Virginia South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -83.68,
+     36.54,
+     -75.31,
+     38.28
+    ]
+   },
+   {
+    "epsg": 32146,
+    "name": "NAD83 / Virginia North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -80.06,
+     37.77,
+     -76.51,
+     39.46
+    ]
+   },
+   {
+    "epsg": 32147,
+    "name": "NAD83 / Virginia South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -83.68,
+     36.54,
+     -75.31,
+     38.28
+    ]
+   },
+   {
+    "epsg": 6593,
+    "name": "NAD83(2011) / Virginia North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -80.06,
+     37.77,
+     -76.51,
+     39.46
+    ]
+   },
+   {
+    "epsg": 6595,
+    "name": "NAD83(2011) / Virginia South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -83.68,
+     36.54,
+     -75.31,
+     38.28
+    ]
+   },
+   {
+    "epsg": 6592,
+    "name": "NAD83(2011) / Virginia North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -80.06,
+     37.77,
+     -76.51,
+     39.46
+    ]
+   },
+   {
+    "epsg": 6594,
+    "name": "NAD83(2011) / Virginia South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -83.68,
+     36.54,
+     -75.31,
+     38.28
+    ]
+   }
+  ],
+  "WA": [
+   {
+    "epsg": 2285,
+    "name": "NAD83 / Washington North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -124.79,
+     47.08,
+     -117.02,
+     49.05
+    ]
+   },
+   {
+    "epsg": 2286,
+    "name": "NAD83 / Washington South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -124.4,
+     45.54,
+     -116.91,
+     47.61
+    ]
+   },
+   {
+    "epsg": 32148,
+    "name": "NAD83 / Washington North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -124.79,
+     47.08,
+     -117.02,
+     49.05
+    ]
+   },
+   {
+    "epsg": 32149,
+    "name": "NAD83 / Washington South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -124.4,
+     45.54,
+     -116.91,
+     47.61
+    ]
+   },
+   {
+    "epsg": 6597,
+    "name": "NAD83(2011) / Washington North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -124.79,
+     47.08,
+     -117.02,
+     49.05
+    ]
+   },
+   {
+    "epsg": 6599,
+    "name": "NAD83(2011) / Washington South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -124.4,
+     45.54,
+     -116.91,
+     47.61
+    ]
+   },
+   {
+    "epsg": 6596,
+    "name": "NAD83(2011) / Washington North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -124.79,
+     47.08,
+     -117.02,
+     49.05
+    ]
+   },
+   {
+    "epsg": 6598,
+    "name": "NAD83(2011) / Washington South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -124.4,
+     45.54,
+     -116.91,
+     47.61
+    ]
+   }
+  ],
+  "WI": [
+   {
+    "epsg": 2288,
+    "name": "NAD83 / Wisconsin Central (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -92.89,
+     43.98,
+     -86.25,
+     45.8
+    ]
+   },
+   {
+    "epsg": 2287,
+    "name": "NAD83 / Wisconsin North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -92.89,
+     45.37,
+     -88.05,
+     47.31
+    ]
+   },
+   {
+    "epsg": 2289,
+    "name": "NAD83 / Wisconsin South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -91.43,
+     42.48,
+     -86.95,
+     44.33
+    ]
+   },
+   {
+    "epsg": 32153,
+    "name": "NAD83 / Wisconsin Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -92.89,
+     43.98,
+     -86.25,
+     45.8
+    ]
+   },
+   {
+    "epsg": 32152,
+    "name": "NAD83 / Wisconsin North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -92.89,
+     45.37,
+     -88.05,
+     47.31
+    ]
+   },
+   {
+    "epsg": 32154,
+    "name": "NAD83 / Wisconsin South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -91.43,
+     42.48,
+     -86.95,
+     44.33
+    ]
+   },
+   {
+    "epsg": 6605,
+    "name": "NAD83(2011) / Wisconsin Central (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -92.89,
+     43.98,
+     -86.25,
+     45.8
+    ]
+   },
+   {
+    "epsg": 6607,
+    "name": "NAD83(2011) / Wisconsin North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -92.89,
+     45.37,
+     -88.05,
+     47.31
+    ]
+   },
+   {
+    "epsg": 6609,
+    "name": "NAD83(2011) / Wisconsin South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -91.43,
+     42.48,
+     -86.95,
+     44.33
+    ]
+   },
+   {
+    "epsg": 6879,
+    "name": "NAD83(2011) / Wisconsin Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -92.89,
+     43.98,
+     -86.25,
+     45.8
+    ]
+   },
+   {
+    "epsg": 6606,
+    "name": "NAD83(2011) / Wisconsin North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -92.89,
+     45.37,
+     -88.05,
+     47.31
+    ]
+   },
+   {
+    "epsg": 6608,
+    "name": "NAD83(2011) / Wisconsin South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -91.43,
+     42.48,
+     -86.95,
+     44.33
+    ]
+   }
+  ],
+  "IN": [
+   {
+    "epsg": 2965,
+    "name": "NAD83 / Indiana East (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -86.59,
+     37.95,
+     -84.78,
+     41.77
+    ]
+   },
+   {
+    "epsg": 2966,
+    "name": "NAD83 / Indiana West (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -88.1,
+     37.77,
+     -86.24,
+     41.77
+    ]
+   },
+   {
+    "epsg": 26973,
+    "name": "NAD83 / Indiana East",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -86.59,
+     37.95,
+     -84.78,
+     41.77
+    ]
+   },
+   {
+    "epsg": 26974,
+    "name": "NAD83 / Indiana West",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -88.1,
+     37.77,
+     -86.24,
+     41.77
+    ]
+   },
+   {
+    "epsg": 6459,
+    "name": "NAD83(2011) / Indiana East (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -86.59,
+     37.95,
+     -84.78,
+     41.77
+    ]
+   },
+   {
+    "epsg": 6461,
+    "name": "NAD83(2011) / Indiana West (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -88.1,
+     37.77,
+     -86.24,
+     41.77
+    ]
+   },
+   {
+    "epsg": 6458,
+    "name": "NAD83(2011) / Indiana East",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -86.59,
+     37.95,
+     -84.78,
+     41.77
+    ]
+   },
+   {
+    "epsg": 6460,
+    "name": "NAD83(2011) / Indiana West",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -88.1,
+     37.77,
+     -86.24,
+     41.77
+    ]
+   }
+  ],
+  "ME": [
+   {
+    "epsg": 26847,
+    "name": "NAD83 / Maine East (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -70.03,
+     43.88,
+     -66.91,
+     47.47
+    ]
+   },
+   {
+    "epsg": 26848,
+    "name": "NAD83 / Maine West (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -71.09,
+     43.04,
+     -69.26,
+     46.58
+    ]
+   },
+   {
+    "epsg": 3463,
+    "name": "NAD83 / Maine CS2000 Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -70.03,
+     43.75,
+     -68.33,
+     47.47
+    ]
+   },
+   {
+    "epsg": 3072,
+    "name": "NAD83 / Maine CS2000 East",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -68.58,
+     44.18,
+     -66.91,
+     47.37
+    ]
+   },
+   {
+    "epsg": 3074,
+    "name": "NAD83 / Maine CS2000 West",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -71.09,
+     43.07,
+     -69.6,
+     46.58
+    ]
+   },
+   {
+    "epsg": 26983,
+    "name": "NAD83 / Maine East",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -70.03,
+     43.88,
+     -66.91,
+     47.47
+    ]
+   },
+   {
+    "epsg": 26984,
+    "name": "NAD83 / Maine West",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -71.09,
+     43.04,
+     -69.26,
+     46.58
+    ]
+   },
+   {
+    "epsg": 6484,
+    "name": "NAD83(2011) / Maine East (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -70.03,
+     43.88,
+     -66.91,
+     47.47
+    ]
+   },
+   {
+    "epsg": 6486,
+    "name": "NAD83(2011) / Maine West (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -71.09,
+     43.04,
+     -69.26,
+     46.58
+    ]
+   },
+   {
+    "epsg": 6480,
+    "name": "NAD83(2011) / Maine CS2000 Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -70.03,
+     43.75,
+     -68.33,
+     47.47
+    ]
+   },
+   {
+    "epsg": 6481,
+    "name": "NAD83(2011) / Maine CS2000 East",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -68.58,
+     44.18,
+     -66.91,
+     47.37
+    ]
+   },
+   {
+    "epsg": 6482,
+    "name": "NAD83(2011) / Maine CS2000 West",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -71.09,
+     43.07,
+     -69.6,
+     46.58
+    ]
+   },
+   {
+    "epsg": 6483,
+    "name": "NAD83(2011) / Maine East",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -70.03,
+     43.88,
+     -66.91,
+     47.47
+    ]
+   },
+   {
+    "epsg": 6485,
+    "name": "NAD83(2011) / Maine West",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -71.09,
+     43.04,
+     -69.26,
+     46.58
+    ]
+   }
+  ],
+  "IA": [
+   {
+    "epsg": 3417,
+    "name": "NAD83 / Iowa North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -96.65,
+     41.85,
+     -90.15,
+     43.51
+    ]
+   },
+   {
+    "epsg": 3418,
+    "name": "NAD83 / Iowa South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -96.14,
+     40.36,
+     -90.14,
+     42.04
+    ]
+   },
+   {
+    "epsg": 26975,
+    "name": "NAD83 / Iowa North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -96.65,
+     41.85,
+     -90.15,
+     43.51
+    ]
+   },
+   {
+    "epsg": 26976,
+    "name": "NAD83 / Iowa South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -96.14,
+     40.36,
+     -90.14,
+     42.04
+    ]
+   },
+   {
+    "epsg": 6463,
+    "name": "NAD83(2011) / Iowa North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -96.65,
+     41.85,
+     -90.15,
+     43.51
+    ]
+   },
+   {
+    "epsg": 6465,
+    "name": "NAD83(2011) / Iowa South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -96.14,
+     40.36,
+     -90.14,
+     42.04
+    ]
+   },
+   {
+    "epsg": 6462,
+    "name": "NAD83(2011) / Iowa North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -96.65,
+     41.85,
+     -90.15,
+     43.51
+    ]
+   },
+   {
+    "epsg": 6464,
+    "name": "NAD83(2011) / Iowa South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -96.14,
+     40.36,
+     -90.14,
+     42.04
+    ]
+   }
+  ],
+  "KS": [
+   {
+    "epsg": 3419,
+    "name": "NAD83 / Kansas North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -102.06,
+     38.52,
+     -94.58,
+     40.01
+    ]
+   },
+   {
+    "epsg": 3420,
+    "name": "NAD83 / Kansas South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -102.05,
+     36.99,
+     -94.6,
+     38.88
+    ]
+   },
+   {
+    "epsg": 26977,
+    "name": "NAD83 / Kansas North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -102.06,
+     38.52,
+     -94.58,
+     40.01
+    ]
+   },
+   {
+    "epsg": 26978,
+    "name": "NAD83 / Kansas South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -102.05,
+     36.99,
+     -94.6,
+     38.88
+    ]
+   },
+   {
+    "epsg": 6467,
+    "name": "NAD83(2011) / Kansas North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -102.06,
+     38.52,
+     -94.58,
+     40.01
+    ]
+   },
+   {
+    "epsg": 6469,
+    "name": "NAD83(2011) / Kansas South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -102.05,
+     36.99,
+     -94.6,
+     38.88
+    ]
+   },
+   {
+    "epsg": 6466,
+    "name": "NAD83(2011) / Kansas North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -102.06,
+     38.52,
+     -94.58,
+     40.01
+    ]
+   },
+   {
+    "epsg": 6468,
+    "name": "NAD83(2011) / Kansas South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -102.05,
+     36.99,
+     -94.6,
+     38.88
+    ]
+   }
+  ],
+  "NV": [
+   {
+    "epsg": 3422,
+    "name": "NAD83 / Nevada Central (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -118.19,
+     36.0,
+     -114.99,
+     41.0
+    ]
+   },
+   {
+    "epsg": 3421,
+    "name": "NAD83 / Nevada East (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -117.01,
+     34.99,
+     -114.03,
+     42.0
+    ]
+   },
+   {
+    "epsg": 3423,
+    "name": "NAD83 / Nevada West (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -120.0,
+     36.95,
+     -116.99,
+     42.0
+    ]
+   },
+   {
+    "epsg": 32108,
+    "name": "NAD83 / Nevada Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -118.19,
+     36.0,
+     -114.99,
+     41.0
+    ]
+   },
+   {
+    "epsg": 32107,
+    "name": "NAD83 / Nevada East",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -117.01,
+     34.99,
+     -114.03,
+     42.0
+    ]
+   },
+   {
+    "epsg": 32109,
+    "name": "NAD83 / Nevada West",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -120.0,
+     36.95,
+     -116.99,
+     42.0
+    ]
+   },
+   {
+    "epsg": 6519,
+    "name": "NAD83(2011) / Nevada Central (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -118.19,
+     36.0,
+     -114.99,
+     41.0
+    ]
+   },
+   {
+    "epsg": 6521,
+    "name": "NAD83(2011) / Nevada East (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -117.01,
+     34.99,
+     -114.03,
+     42.0
+    ]
+   },
+   {
+    "epsg": 6523,
+    "name": "NAD83(2011) / Nevada West (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -120.0,
+     36.95,
+     -116.99,
+     42.0
+    ]
+   },
+   {
+    "epsg": 6518,
+    "name": "NAD83(2011) / Nevada Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -118.19,
+     36.0,
+     -114.99,
+     41.0
+    ]
+   },
+   {
+    "epsg": 6520,
+    "name": "NAD83(2011) / Nevada East",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -117.01,
+     34.99,
+     -114.03,
+     42.0
+    ]
+   },
+   {
+    "epsg": 6522,
+    "name": "NAD83(2011) / Nevada West",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -120.0,
+     36.95,
+     -116.99,
+     42.0
+    ]
+   }
+  ],
+  "NJ": [
+   {
+    "epsg": 3424,
+    "name": "NAD83 / New Jersey (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -75.6,
+     38.87,
+     -73.88,
+     41.36
+    ]
+   },
+   {
+    "epsg": 32111,
+    "name": "NAD83 / New Jersey",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -75.6,
+     38.87,
+     -73.88,
+     41.36
+    ]
+   },
+   {
+    "epsg": 6527,
+    "name": "NAD83(2011) / New Jersey (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -75.6,
+     38.87,
+     -73.88,
+     41.36
+    ]
+   },
+   {
+    "epsg": 6526,
+    "name": "NAD83(2011) / New Jersey",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -75.6,
+     38.87,
+     -73.88,
+     41.36
+    ]
+   }
+  ],
+  "AR": [
+   {
+    "epsg": 3433,
+    "name": "NAD83 / Arkansas North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -94.62,
+     34.67,
+     -89.64,
+     36.5
+    ]
+   },
+   {
+    "epsg": 3434,
+    "name": "NAD83 / Arkansas South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -94.48,
+     33.01,
+     -90.4,
+     35.1
+    ]
+   },
+   {
+    "epsg": 26951,
+    "name": "NAD83 / Arkansas North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -94.62,
+     34.67,
+     -89.64,
+     36.5
+    ]
+   },
+   {
+    "epsg": 26952,
+    "name": "NAD83 / Arkansas South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -94.48,
+     33.01,
+     -90.4,
+     35.1
+    ]
+   },
+   {
+    "epsg": 6411,
+    "name": "NAD83(2011) / Arkansas North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -94.62,
+     34.67,
+     -89.64,
+     36.5
+    ]
+   },
+   {
+    "epsg": 6413,
+    "name": "NAD83(2011) / Arkansas South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -94.48,
+     33.01,
+     -90.4,
+     35.1
+    ]
+   },
+   {
+    "epsg": 6410,
+    "name": "NAD83(2011) / Arkansas North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -94.62,
+     34.67,
+     -89.64,
+     36.5
+    ]
+   },
+   {
+    "epsg": 6412,
+    "name": "NAD83(2011) / Arkansas South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -94.48,
+     33.01,
+     -90.4,
+     35.1
+    ]
+   }
+  ],
+  "IL": [
+   {
+    "epsg": 3435,
+    "name": "NAD83 / Illinois East (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -89.27,
+     37.06,
+     -87.02,
+     42.5
+    ]
+   },
+   {
+    "epsg": 3436,
+    "name": "NAD83 / Illinois West (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -91.52,
+     36.97,
+     -88.92,
+     42.51
+    ]
+   },
+   {
+    "epsg": 26971,
+    "name": "NAD83 / Illinois East",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -89.27,
+     37.06,
+     -87.02,
+     42.5
+    ]
+   },
+   {
+    "epsg": 26972,
+    "name": "NAD83 / Illinois West",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -91.52,
+     36.97,
+     -88.92,
+     42.51
+    ]
+   },
+   {
+    "epsg": 6455,
+    "name": "NAD83(2011) / Illinois East (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -89.27,
+     37.06,
+     -87.02,
+     42.5
+    ]
+   },
+   {
+    "epsg": 6457,
+    "name": "NAD83(2011) / Illinois West (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -91.52,
+     36.97,
+     -88.92,
+     42.51
+    ]
+   },
+   {
+    "epsg": 6454,
+    "name": "NAD83(2011) / Illinois East",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -89.27,
+     37.06,
+     -87.02,
+     42.5
+    ]
+   },
+   {
+    "epsg": 6456,
+    "name": "NAD83(2011) / Illinois West",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -91.52,
+     36.97,
+     -88.92,
+     42.51
+    ]
+   }
+  ],
+  "NH": [
+   {
+    "epsg": 3437,
+    "name": "NAD83 / New Hampshire (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -72.56,
+     42.69,
+     -70.63,
+     45.31
+    ]
+   },
+   {
+    "epsg": 32110,
+    "name": "NAD83 / New Hampshire",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -72.56,
+     42.69,
+     -70.63,
+     45.31
+    ]
+   },
+   {
+    "epsg": 6525,
+    "name": "NAD83(2011) / New Hampshire (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -72.56,
+     42.69,
+     -70.63,
+     45.31
+    ]
+   },
+   {
+    "epsg": 6524,
+    "name": "NAD83(2011) / New Hampshire",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -72.56,
+     42.69,
+     -70.63,
+     45.31
+    ]
+   }
+  ],
+  "RI": [
+   {
+    "epsg": 3438,
+    "name": "NAD83 / Rhode Island (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -71.85,
+     41.13,
+     -71.08,
+     42.02
+    ]
+   },
+   {
+    "epsg": 32130,
+    "name": "NAD83 / Rhode Island",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -71.85,
+     41.13,
+     -71.08,
+     42.02
+    ]
+   },
+   {
+    "epsg": 6568,
+    "name": "NAD83(2011) / Rhode Island (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -71.85,
+     41.13,
+     -71.08,
+     42.02
+    ]
+   },
+   {
+    "epsg": 6567,
+    "name": "NAD83(2011) / Rhode Island",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -71.85,
+     41.13,
+     -71.08,
+     42.02
+    ]
+   }
+  ],
+  "LA": [
+   {
+    "epsg": 3451,
+    "name": "NAD83 / Louisiana North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -94.05,
+     30.85,
+     -90.86,
+     33.03
+    ]
+   },
+   {
+    "epsg": 3453,
+    "name": "NAD83 / Louisiana Offshore (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -93.38,
+     25.58,
+     -86.53,
+     29.35
+    ]
+   },
+   {
+    "epsg": 3452,
+    "name": "NAD83 / Louisiana South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -93.94,
+     28.85,
+     -88.75,
+     31.07
+    ]
+   },
+   {
+    "epsg": 26981,
+    "name": "NAD83 / Louisiana North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -94.05,
+     30.85,
+     -90.86,
+     33.03
+    ]
+   },
+   {
+    "epsg": 32199,
+    "name": "NAD83 / Louisiana Offshore",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -93.38,
+     25.58,
+     -86.53,
+     29.35
+    ]
+   },
+   {
+    "epsg": 26982,
+    "name": "NAD83 / Louisiana South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -93.94,
+     28.85,
+     -88.75,
+     31.07
+    ]
+   },
+   {
+    "epsg": 6477,
+    "name": "NAD83(2011) / Louisiana North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -94.05,
+     30.85,
+     -90.86,
+     33.03
+    ]
+   },
+   {
+    "epsg": 6479,
+    "name": "NAD83(2011) / Louisiana South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -93.94,
+     28.85,
+     -88.75,
+     31.07
+    ]
+   },
+   {
+    "epsg": 6476,
+    "name": "NAD83(2011) / Louisiana North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -94.05,
+     30.85,
+     -90.86,
+     33.03
+    ]
+   },
+   {
+    "epsg": 6478,
+    "name": "NAD83(2011) / Louisiana South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -93.94,
+     28.85,
+     -88.75,
+     31.07
+    ]
+   }
+  ],
+  "SD": [
+   {
+    "epsg": 4457,
+    "name": "NAD83 / South Dakota North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -104.07,
+     44.14,
+     -96.45,
+     45.95
+    ]
+   },
+   {
+    "epsg": 3455,
+    "name": "NAD83 / South Dakota South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -104.06,
+     42.48,
+     -96.43,
+     44.79
+    ]
+   },
+   {
+    "epsg": 32134,
+    "name": "NAD83 / South Dakota North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -104.07,
+     44.14,
+     -96.45,
+     45.95
+    ]
+   },
+   {
+    "epsg": 32135,
+    "name": "NAD83 / South Dakota South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -104.06,
+     42.48,
+     -96.43,
+     44.79
+    ]
+   },
+   {
+    "epsg": 6572,
+    "name": "NAD83(2011) / South Dakota North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -104.07,
+     44.14,
+     -96.45,
+     45.95
+    ]
+   },
+   {
+    "epsg": 6574,
+    "name": "NAD83(2011) / South Dakota South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -104.06,
+     42.48,
+     -96.43,
+     44.79
+    ]
+   },
+   {
+    "epsg": 6571,
+    "name": "NAD83(2011) / South Dakota North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -104.07,
+     44.14,
+     -96.45,
+     45.95
+    ]
+   },
+   {
+    "epsg": 6573,
+    "name": "NAD83(2011) / South Dakota South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -104.06,
+     42.48,
+     -96.43,
+     44.79
+    ]
+   }
+  ],
+  "OH": [
+   {
+    "epsg": 3734,
+    "name": "NAD83 / Ohio North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -84.81,
+     40.1,
+     -80.51,
+     42.33
+    ]
+   },
+   {
+    "epsg": 3735,
+    "name": "NAD83 / Ohio South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -84.83,
+     38.4,
+     -80.7,
+     40.36
+    ]
+   },
+   {
+    "epsg": 32122,
+    "name": "NAD83 / Ohio North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -84.81,
+     40.1,
+     -80.51,
+     42.33
+    ]
+   },
+   {
+    "epsg": 32123,
+    "name": "NAD83 / Ohio South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -84.83,
+     38.4,
+     -80.7,
+     40.36
+    ]
+   },
+   {
+    "epsg": 6549,
+    "name": "NAD83(2011) / Ohio North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -84.81,
+     40.1,
+     -80.51,
+     42.33
+    ]
+   },
+   {
+    "epsg": 6551,
+    "name": "NAD83(2011) / Ohio South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -84.83,
+     38.4,
+     -80.7,
+     40.36
+    ]
+   },
+   {
+    "epsg": 6548,
+    "name": "NAD83(2011) / Ohio North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -84.81,
+     40.1,
+     -80.51,
+     42.33
+    ]
+   },
+   {
+    "epsg": 6550,
+    "name": "NAD83(2011) / Ohio South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -84.83,
+     38.4,
+     -80.7,
+     40.36
+    ]
+   }
+  ],
+  "WY": [
+   {
+    "epsg": 3736,
+    "name": "NAD83 / Wyoming East (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -106.33,
+     40.99,
+     -104.05,
+     45.01
+    ]
+   },
+   {
+    "epsg": 3737,
+    "name": "NAD83 / Wyoming East Central (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -108.63,
+     40.99,
+     -106.0,
+     45.01
+    ]
+   },
+   {
+    "epsg": 3739,
+    "name": "NAD83 / Wyoming West (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -111.06,
+     40.99,
+     -109.04,
+     44.67
+    ]
+   },
+   {
+    "epsg": 3738,
+    "name": "NAD83 / Wyoming West Central (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -111.06,
+     40.99,
+     -107.5,
+     45.01
+    ]
+   },
+   {
+    "epsg": 32155,
+    "name": "NAD83 / Wyoming East",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -106.33,
+     40.99,
+     -104.05,
+     45.01
+    ]
+   },
+   {
+    "epsg": 32156,
+    "name": "NAD83 / Wyoming East Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -108.63,
+     40.99,
+     -106.0,
+     45.01
+    ]
+   },
+   {
+    "epsg": 32158,
+    "name": "NAD83 / Wyoming West",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -111.06,
+     40.99,
+     -109.04,
+     44.67
+    ]
+   },
+   {
+    "epsg": 32157,
+    "name": "NAD83 / Wyoming West Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -111.06,
+     40.99,
+     -107.5,
+     45.01
+    ]
+   },
+   {
+    "epsg": 6612,
+    "name": "NAD83(2011) / Wyoming East (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -106.33,
+     40.99,
+     -104.05,
+     45.01
+    ]
+   },
+   {
+    "epsg": 6614,
+    "name": "NAD83(2011) / Wyoming East Central (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -108.63,
+     40.99,
+     -106.0,
+     45.01
+    ]
+   },
+   {
+    "epsg": 6616,
+    "name": "NAD83(2011) / Wyoming West (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -111.06,
+     40.99,
+     -109.04,
+     44.67
+    ]
+   },
+   {
+    "epsg": 6618,
+    "name": "NAD83(2011) / Wyoming West Central (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -111.06,
+     40.99,
+     -107.5,
+     45.01
+    ]
+   },
+   {
+    "epsg": 6611,
+    "name": "NAD83(2011) / Wyoming East",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -106.33,
+     40.99,
+     -104.05,
+     45.01
+    ]
+   },
+   {
+    "epsg": 6613,
+    "name": "NAD83(2011) / Wyoming East Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -108.63,
+     40.99,
+     -106.0,
+     45.01
+    ]
+   },
+   {
+    "epsg": 6615,
+    "name": "NAD83(2011) / Wyoming West",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -111.06,
+     40.99,
+     -109.04,
+     44.67
+    ]
+   },
+   {
+    "epsg": 6617,
+    "name": "NAD83(2011) / Wyoming West Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -111.06,
+     40.99,
+     -107.5,
+     45.01
+    ]
+   }
+  ],
+  "HI": [
+   {
+    "epsg": 3759,
+    "name": "NAD83 / Hawaii zone 3 (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -158.33,
+     21.2,
+     -157.61,
+     21.75
+    ]
+   },
+   {
+    "epsg": 26961,
+    "name": "NAD83 / Hawaii zone 1",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -156.1,
+     18.87,
+     -154.74,
+     20.33
+    ]
+   },
+   {
+    "epsg": 26962,
+    "name": "NAD83 / Hawaii zone 2",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -157.36,
+     20.45,
+     -155.93,
+     21.26
+    ]
+   },
+   {
+    "epsg": 26963,
+    "name": "NAD83 / Hawaii zone 3",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -158.33,
+     21.2,
+     -157.61,
+     21.75
+    ]
+   },
+   {
+    "epsg": 26964,
+    "name": "NAD83 / Hawaii zone 4",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -159.85,
+     21.81,
+     -159.23,
+     22.29
+    ]
+   },
+   {
+    "epsg": 26965,
+    "name": "NAD83 / Hawaii zone 5",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -160.3,
+     21.73,
+     -159.99,
+     22.07
+    ]
+   }
+  ],
+  "VT": [
+   {
+    "epsg": 5646,
+    "name": "NAD83 / Vermont (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -73.44,
+     42.72,
+     -71.5,
+     45.03
+    ]
+   },
+   {
+    "epsg": 32145,
+    "name": "NAD83 / Vermont",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -73.44,
+     42.72,
+     -71.5,
+     45.03
+    ]
+   },
+   {
+    "epsg": 6590,
+    "name": "NAD83(2011) / Vermont (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -73.44,
+     42.72,
+     -71.5,
+     45.03
+    ]
+   },
+   {
+    "epsg": 6589,
+    "name": "NAD83(2011) / Vermont",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -73.44,
+     42.72,
+     -71.5,
+     45.03
+    ]
+   }
+  ],
+  "AL": [
+   {
+    "epsg": 26929,
+    "name": "NAD83 / Alabama East",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -86.79,
+     30.99,
+     -84.89,
+     35.0
+    ]
+   },
+   {
+    "epsg": 26930,
+    "name": "NAD83 / Alabama West",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -88.48,
+     30.14,
+     -86.3,
+     35.02
+    ]
+   },
+   {
+    "epsg": 9748,
+    "name": "NAD83(2011) / Alabama East (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -86.79,
+     30.99,
+     -84.89,
+     35.0
+    ]
+   },
+   {
+    "epsg": 9749,
+    "name": "NAD83(2011) / Alabama West (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -88.48,
+     30.14,
+     -86.3,
+     35.02
+    ]
+   },
+   {
+    "epsg": 6355,
+    "name": "NAD83(2011) / Alabama East",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -86.79,
+     30.99,
+     -84.89,
+     35.0
+    ]
+   },
+   {
+    "epsg": 6356,
+    "name": "NAD83(2011) / Alabama West",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -88.48,
+     30.14,
+     -86.3,
+     35.02
+    ]
+   }
+  ],
+  "AK": [
+   {
+    "epsg": 26931,
+    "name": "NAD83 / Alaska zone 1",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -141.0,
+     54.61,
+     -129.99,
+     60.35
+    ]
+   },
+   {
+    "epsg": 26940,
+    "name": "NAD83 / Alaska zone 10",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     172.42,
+     51.3,
+     -164.84,
+     54.34
+    ]
+   },
+   {
+    "epsg": 26932,
+    "name": "NAD83 / Alaska zone 2",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -144.01,
+     59.72,
+     -140.98,
+     70.16
+    ]
+   },
+   {
+    "epsg": 26933,
+    "name": "NAD83 / Alaska zone 3",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -148.0,
+     59.72,
+     -144.0,
+     70.38
+    ]
+   },
+   {
+    "epsg": 26934,
+    "name": "NAD83 / Alaska zone 4",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -152.01,
+     59.11,
+     -147.99,
+     70.63
+    ]
+   },
+   {
+    "epsg": 26935,
+    "name": "NAD83 / Alaska zone 5",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -156.0,
+     55.72,
+     -151.86,
+     71.28
+    ]
+   },
+   {
+    "epsg": 26936,
+    "name": "NAD83 / Alaska zone 6",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -160.0,
+     54.89,
+     -155.99,
+     71.4
+    ]
+   },
+   {
+    "epsg": 26937,
+    "name": "NAD83 / Alaska zone 7",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -164.01,
+     54.32,
+     -160.0,
+     70.74
+    ]
+   },
+   {
+    "epsg": 26938,
+    "name": "NAD83 / Alaska zone 8",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -168.26,
+     54.34,
+     -164.0,
+     69.05
+    ]
+   },
+   {
+    "epsg": 26939,
+    "name": "NAD83 / Alaska zone 9",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -173.16,
+     56.49,
+     -168.0,
+     65.82
+    ]
+   },
+   {
+    "epsg": 6394,
+    "name": "NAD83(2011) / Alaska zone 1",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -141.0,
+     54.61,
+     -129.99,
+     60.35
+    ]
+   },
+   {
+    "epsg": 6403,
+    "name": "NAD83(2011) / Alaska zone 10",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     172.42,
+     51.3,
+     -164.84,
+     54.34
+    ]
+   },
+   {
+    "epsg": 6395,
+    "name": "NAD83(2011) / Alaska zone 2",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -144.01,
+     59.72,
+     -140.98,
+     70.16
+    ]
+   },
+   {
+    "epsg": 6396,
+    "name": "NAD83(2011) / Alaska zone 3",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -148.0,
+     59.72,
+     -144.0,
+     70.38
+    ]
+   },
+   {
+    "epsg": 6397,
+    "name": "NAD83(2011) / Alaska zone 4",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -152.01,
+     59.11,
+     -147.99,
+     70.63
+    ]
+   },
+   {
+    "epsg": 6398,
+    "name": "NAD83(2011) / Alaska zone 5",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -156.0,
+     55.72,
+     -151.86,
+     71.28
+    ]
+   },
+   {
+    "epsg": 6399,
+    "name": "NAD83(2011) / Alaska zone 6",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -160.0,
+     54.89,
+     -155.99,
+     71.4
+    ]
+   },
+   {
+    "epsg": 6400,
+    "name": "NAD83(2011) / Alaska zone 7",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -164.01,
+     54.32,
+     -160.0,
+     70.74
+    ]
+   },
+   {
+    "epsg": 6401,
+    "name": "NAD83(2011) / Alaska zone 8",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -168.26,
+     54.34,
+     -164.0,
+     69.05
+    ]
+   },
+   {
+    "epsg": 6402,
+    "name": "NAD83(2011) / Alaska zone 9",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -173.16,
+     56.49,
+     -168.0,
+     65.82
+    ]
+   }
+  ],
+  "MN": [
+   {
+    "epsg": 26850,
+    "name": "NAD83 / Minnesota Central (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -96.86,
+     45.28,
+     -92.29,
+     47.48
+    ]
+   },
+   {
+    "epsg": 26849,
+    "name": "NAD83 / Minnesota North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -97.22,
+     46.64,
+     -89.49,
+     49.38
+    ]
+   },
+   {
+    "epsg": 26851,
+    "name": "NAD83 / Minnesota South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -96.85,
+     43.49,
+     -91.21,
+     45.59
+    ]
+   },
+   {
+    "epsg": 26992,
+    "name": "NAD83 / Minnesota Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -96.86,
+     45.28,
+     -92.29,
+     47.48
+    ]
+   },
+   {
+    "epsg": 26991,
+    "name": "NAD83 / Minnesota North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -97.22,
+     46.64,
+     -89.49,
+     49.38
+    ]
+   },
+   {
+    "epsg": 26993,
+    "name": "NAD83 / Minnesota South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -96.85,
+     43.49,
+     -91.21,
+     45.59
+    ]
+   },
+   {
+    "epsg": 6501,
+    "name": "NAD83(2011) / Minnesota Central (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -96.86,
+     45.28,
+     -92.29,
+     47.48
+    ]
+   },
+   {
+    "epsg": 6503,
+    "name": "NAD83(2011) / Minnesota North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -97.22,
+     46.64,
+     -89.49,
+     49.38
+    ]
+   },
+   {
+    "epsg": 6505,
+    "name": "NAD83(2011) / Minnesota South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -96.85,
+     43.49,
+     -91.21,
+     45.59
+    ]
+   },
+   {
+    "epsg": 6500,
+    "name": "NAD83(2011) / Minnesota Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -96.86,
+     45.28,
+     -92.29,
+     47.48
+    ]
+   },
+   {
+    "epsg": 6502,
+    "name": "NAD83(2011) / Minnesota North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -97.22,
+     46.64,
+     -89.49,
+     49.38
+    ]
+   },
+   {
+    "epsg": 6504,
+    "name": "NAD83(2011) / Minnesota South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -96.85,
+     43.49,
+     -91.21,
+     45.59
+    ]
+   }
+  ],
+  "MO": [
+   {
+    "epsg": 26997,
+    "name": "NAD83 / Missouri Central",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -93.79,
+     36.48,
+     -91.41,
+     40.61
+    ]
+   },
+   {
+    "epsg": 26996,
+    "name": "NAD83 / Missouri East",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -91.97,
+     35.98,
+     -89.1,
+     40.61
+    ]
+   },
+   {
+    "epsg": 26998,
+    "name": "NAD83 / Missouri West",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -95.77,
+     36.48,
+     -93.48,
+     40.59
+    ]
+   },
+   {
+    "epsg": 6511,
+    "name": "NAD83(2011) / Missouri Central",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -93.79,
+     36.48,
+     -91.41,
+     40.61
+    ]
+   },
+   {
+    "epsg": 6512,
+    "name": "NAD83(2011) / Missouri East",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -91.97,
+     35.98,
+     -89.1,
+     40.61
+    ]
+   },
+   {
+    "epsg": 6513,
+    "name": "NAD83(2011) / Missouri West",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -95.77,
+     36.48,
+     -93.48,
+     40.59
+    ]
+   }
+  ],
+  "NE": [
+   {
+    "epsg": 26852,
+    "name": "NAD83 / Nebraska (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -104.06,
+     39.99,
+     -95.3,
+     43.01
+    ]
+   },
+   {
+    "epsg": 32104,
+    "name": "NAD83 / Nebraska",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -104.06,
+     39.99,
+     -95.3,
+     43.01
+    ]
+   },
+   {
+    "epsg": 6880,
+    "name": "NAD83(2011) / Nebraska (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -104.06,
+     39.99,
+     -95.3,
+     43.01
+    ]
+   },
+   {
+    "epsg": 6516,
+    "name": "NAD83(2011) / Nebraska",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -104.06,
+     39.99,
+     -95.3,
+     43.01
+    ]
+   }
+  ],
+  "PR": [
+   {
+    "epsg": 32161,
+    "name": "NAD83 / Puerto Rico & Virgin Is.",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -68.49,
+     14.92,
+     -63.88,
+     21.86
+    ]
+   },
+   {
+    "epsg": 6566,
+    "name": "NAD83(2011) / Puerto Rico and Virgin Is.",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -67.97,
+     17.62,
+     -64.51,
+     18.57
+    ]
+   }
+  ],
+  "WV": [
+   {
+    "epsg": 26853,
+    "name": "NAD83 / West Virginia North (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -81.76,
+     38.76,
+     -77.72,
+     40.64
+    ]
+   },
+   {
+    "epsg": 26854,
+    "name": "NAD83 / West Virginia South (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -82.65,
+     37.2,
+     -79.05,
+     39.17
+    ]
+   },
+   {
+    "epsg": 32150,
+    "name": "NAD83 / West Virginia North",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -81.76,
+     38.76,
+     -77.72,
+     40.64
+    ]
+   },
+   {
+    "epsg": 32151,
+    "name": "NAD83 / West Virginia South",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -82.65,
+     37.2,
+     -79.05,
+     39.17
+    ]
+   },
+   {
+    "epsg": 6601,
+    "name": "NAD83(2011) / West Virginia North (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -81.76,
+     38.76,
+     -77.72,
+     40.64
+    ]
+   },
+   {
+    "epsg": 6603,
+    "name": "NAD83(2011) / West Virginia South (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -82.65,
+     37.2,
+     -79.05,
+     39.17
+    ]
+   },
+   {
+    "epsg": 6600,
+    "name": "NAD83(2011) / West Virginia North",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -81.76,
+     38.76,
+     -77.72,
+     40.64
+    ]
+   },
+   {
+    "epsg": 6602,
+    "name": "NAD83(2011) / West Virginia South",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -82.65,
+     37.2,
+     -79.05,
+     39.17
+    ]
+   }
+  ],
+  "DC": [
+   {
+    "epsg": 2248,
+    "name": "NAD83 / Maryland (ftUS)",
+    "datum": "NAD83",
+    "unit": "US ft",
+    "bbox": [
+     -79.49,
+     37.97,
+     -74.97,
+     39.73
+    ]
+   },
+   {
+    "epsg": 26985,
+    "name": "NAD83 / Maryland",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -79.49,
+     37.97,
+     -74.97,
+     39.73
+    ]
+   },
+   {
+    "epsg": 6488,
+    "name": "NAD83(2011) / Maryland (ftUS)",
+    "datum": "NAD83(2011)",
+    "unit": "US ft",
+    "bbox": [
+     -79.49,
+     37.97,
+     -74.97,
+     39.73
+    ]
+   },
+   {
+    "epsg": 6487,
+    "name": "NAD83(2011) / Maryland",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -79.49,
+     37.97,
+     -74.97,
+     39.73
+    ]
+   }
+  ],
+  "VI": [
+   {
+    "epsg": 32161,
+    "name": "NAD83 / Puerto Rico & Virgin Is.",
+    "datum": "NAD83",
+    "unit": "m",
+    "bbox": [
+     -68.49,
+     14.92,
+     -63.88,
+     21.86
+    ]
+   },
+   {
+    "epsg": 6566,
+    "name": "NAD83(2011) / Puerto Rico and Virgin Is.",
+    "datum": "NAD83(2011)",
+    "unit": "m",
+    "bbox": [
+     -67.97,
+     17.62,
+     -64.51,
+     18.57
+    ]
+   }
+  ],
+  "QLD": [
+   {
+    "epsg": 7856,
+    "name": "GDA2020 / MGA zone 56",
+    "datum": "GDA2020",
+    "unit": "m",
+    "bbox": [
+     150.0,
+     -29.2,
+     154.0,
+     -9.0
+    ]
+   },
+   {
+    "epsg": 7855,
+    "name": "GDA2020 / MGA zone 55",
+    "datum": "GDA2020",
+    "unit": "m",
+    "bbox": [
+     144.0,
+     -29.2,
+     150.0,
+     -9.0
+    ]
+   },
+   {
+    "epsg": 7854,
+    "name": "GDA2020 / MGA zone 54",
+    "datum": "GDA2020",
+    "unit": "m",
+    "bbox": [
+     137.99,
+     -29.2,
+     144.0,
+     -9.0
+    ]
+   }
+  ]
+ }
+}

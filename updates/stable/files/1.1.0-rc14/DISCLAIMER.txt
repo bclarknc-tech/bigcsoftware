@@ -1,0 +1,15 @@
+BIGCS DISCLAIMER
+
+BIGCS IS NOT A SURVEY.
+BIGCS shows county GIS data as each county serves it, with no warranty that it is accurate, complete or current. It does not replace a licensed surveyor's field work, the deed, or the recorded plat.
+- Check positions, owner names, deed and plat references, and zoning against the official records.
+- BIGCS applies no datum shifts. You are responsible for choosing the coordinate system.
+- Zoning is for information only. Confirm it with the jurisdiction.
+- You are responsible for following your state board's rules.
+- Our liability is limited as stated in the license agreement, up to the fees you paid in the last 12 months.
+
+By clicking "I Agree," you accept the BIGCS License Agreement and Disclaimer.
+
+BIGCS draws county GIS data as each county serves it. It is not a survey and doesn't replace a licensed surveyor's field work, the deed or the recorded plat. Nothing is guaranteed accurate, complete or current. Verify positions, owners, deed and plat references and zoning against the official records. No datum shifts are applied; you choose the coordinate system (default NAD83(2011) NC State Plane, US feet, EPSG 6543). Zoning is informational; confirm it with the jurisdiction. You're responsible for your state board's rules. Liability is limited as stated in the License Agreement.
+
+Support: support@bigcsoftware.com - bigcsoftware.com
