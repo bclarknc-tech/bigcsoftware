@@ -1,0 +1,103 @@
+{
+  "name": "generic_style",
+  "description": "Sample alternate company style: ALL CAPS, no N/F, deed spelled out",
+  "lines": [
+    {
+      "type": "prefix",
+      "on": false,
+      "text": "N/F"
+    },
+    {
+      "type": "owners",
+      "on": true
+    },
+    {
+      "type": "deed",
+      "on": true,
+      "template": "DEED BOOK {book}, PAGE {page}",
+      "missing": "DEED REFERENCE NOT FOUND"
+    },
+    {
+      "type": "plat",
+      "on": true
+    },
+    {
+      "type": "pid",
+      "on": true,
+      "template": "PIN {pid}"
+    },
+    {
+      "type": "acreage",
+      "on": true,
+      "template": "{acres:.2f} AC"
+    },
+    {
+      "type": "address",
+      "on": false,
+      "template": "{address}"
+    },
+    {
+      "type": "custom",
+      "on": false,
+      "text": ""
+    }
+  ],
+  "plat_templates": {
+    "cabinet": "PLAT CABINET {cab}, FILE {file}",
+    "plat_book": "PLAT BOOK {book}, PAGE {page}",
+    "map_book": "MAP BOOK {book}, PAGE {page}",
+    "other": null
+  },
+  "names": {
+    "order": "first_last",
+    "case": "upper",
+    "second_owner_prefix": "AND ",
+    "et_al": "ET AL",
+    "acronyms": [
+      "AME",
+      "DBA",
+      "DOT",
+      "HOA",
+      "II",
+      "III",
+      "IV",
+      "JRE",
+      "LLLP",
+      "LLP",
+      "LP",
+      "NA",
+      "NC",
+      "NCDOT",
+      "PA",
+      "PLLC",
+      "POA",
+      "RV",
+      "SC",
+      "TV",
+      "UMC",
+      "USA",
+      "YMCA",
+      "YWCA"
+    ]
+  },
+  "separators": {
+    "join_lines": null
+  },
+  "cad": {
+    "parcel_layer": "V-PROP-LINE",
+    "text_layer": "V-PROP-TEXT",
+    "parcel_color": 7,
+    "text_color": 2,
+    "text_height": 2.5,
+    "text_style": "Standard",
+    "justification": "middle_center",
+    "rotate": "longest_edge",
+    "box": true,
+    "box_layer": "V-PROP-TEXT",
+    "box_padding": 1.0,
+    "mask": true,
+    "mask_scale": 1.25,
+    "char_ratio": 0.9375,
+    "width_margin": 1.1
+  }
+}
