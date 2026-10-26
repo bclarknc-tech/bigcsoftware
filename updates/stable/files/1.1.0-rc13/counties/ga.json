@@ -1,0 +1,6729 @@
+{
+ "_meta": {
+  "state": "GA",
+  "target_wkid": 6445,
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PB {plat_book} PG {plat_page}",
+   "PID:{pid}"
+  ],
+  "status_legend": {
+   "ok": "owner+deed+PID live-verified",
+   "partial": "owner+PID (no deed) or subset coverage",
+   "missing": "no owner source found yet",
+   "unverified": "endpoint unreachable at test time"
+  },
+  "default_epsg": 6445,
+  "epsg_choices": [
+   6445,
+   6447,
+   2239,
+   2240
+  ],
+  "target_options": {
+   "east": 6445,
+   "west": 6447
+  },
+  "detect": {
+   "local": "GA"
+  },
+  "onemap_url": null,
+  "release": true
+ },
+ "counties": {
+  "Appling": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Atkinson": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://www.sgrcmaps.com/alma/rest/services/Atkinson/PropertyInformation/MapServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102666,
+    "latestWkid": 2239
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 4716,
+   "owner_nonnull": 4660,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Bacon": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://www.sgrcmaps.com/arcgis/rest/services/Alma/PropertyInformation/MapServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Baker": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Baldwin": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services7.arcgis.com/Da8HZMsU25Hzzob3/arcgis/rest/services/PA_Survey_Data/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "Deed_Acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 21810,
+   "owner_nonnull": 21765,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads": {
+    "name": "Baldwin County Road Centerlines",
+    "agency": "Baldwin County GIS Department (Baldwin County Board of Commissioners)",
+    "url": "https://services7.arcgis.com/Da8HZMsU25Hzzob3/arcgis/rest/services/ROADS_layer/FeatureServer/0",
+    "layer": "V-ROAD-CNTR",
+    "color": 8,
+    "name_fields": [
+     "ROAD_NAME"
+    ],
+    "fields": {},
+    "count": 1104,
+    "verified": "2026-10-25",
+    "notes": "County-published centerline layer (public, no token; service description: 'active working road centerline layer for Baldwin County, Ga as of 2026. Baldwin County GIS Department'). Left as served; the server projects to the drawing EPSG. No datum shift. Only a road name field (no class/speed)."
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Banks": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Barrow": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services7.arcgis.com/Za9Nk6CPIPbvR1t7/arcgis/rest/services/Barrow_Parcels_w_WinGAP/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "lastname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_no",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 35234,
+   "owner_nonnull": 34801,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Bartow": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://www.bartowgis.org/arcgis/rest/services/AGOServices/BartowLand/FeatureServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 63684,
+   "owner_nonnull": 63325,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Ben Hill": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://www.sgrcmaps.com/alma/rest/services/BenHill/Property/MapServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 11549,
+   "owner_nonnull": 11549,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Berrien": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://www.sgrcmaps.com/arcgis/rest/services/Berrien/TaxParcelBoundaries/MapServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME",
+     "FIRSTNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 10742,
+   "owner_nonnull": 10658,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Bibb": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services2.arcgis.com/zPFLSOZ5HzUzzTQb/ArcGIS/rest/services/ParcelsCAMA/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME"
+    ],
+    "deed_ref": "DEEDPAGE",
+    "plat_ref": "PLOTPAGE",
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 68828,
+   "owner_nonnull": 68814,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6447,
+    "pid": "N1300370",
+    "roads_in_county": 7258,
+    "ngs_marks_in_county": 282,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Bleckley": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Brantley": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services3.arcgis.com/86pyA5PND5NdokIc/arcgis/rest/services/Brantley_Parcels_view/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "lastname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 13301,
+   "owner_nonnull": 13301,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Brooks": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://www.sgrcmaps.com/alma/rest/services/Brooks/Boundaries/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 10037,
+   "owner_nonnull": 10037,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Bryan": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://bryangis.bryan-county.org/arcgis/rest/services/PropertyDetails/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102666,
+    "latestWkid": 2239
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 23200,
+   "owner_nonnull": 22304,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Bulloch": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services6.arcgis.com/XxfLDid4CNOqpdhy/arcgis/rest/services/Bullochparcels_CAMA/FeatureServer/1189",
+   "layer_id": 1189,
+   "native_sr": {
+    "wkid": 102666,
+    "latestWkid": 2239
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "ACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 37969,
+   "owner_nonnull": 37848,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Burke": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services1.arcgis.com/YwCV9A7cLN6cgxhP/arcgis/rest/services/Parcel_Regions_w_WinGAP_2026_05_20/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102666,
+    "latestWkid": 2239
+   },
+   "fields": {
+    "owner": [
+     "lastname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 17416,
+   "owner_nonnull": 17387,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Butts": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://wfs.schneidercorp.com/arcgis/rest/services/ButtsCountyGA_WFS/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "_v_ON"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 13595,
+   "owner_nonnull": 13442,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Calhoun": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Camden": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services3.arcgis.com/feUM6sTOP0Mfde8s/ArcGIS/rest/services/2025_Tax_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "lastname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "parcel_no",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 33177,
+   "owner_nonnull": 33056,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Candler": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Carroll": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Catoosa": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Charlton": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://services2.arcgis.com/PYn6bWCjT6bhw1z3/arcgis/rest/services/Charlton_GA_Parcel/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Chatham": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://pub.sagis.org/arcgis/rest/services/OpenData/Parcels/MapServer/27",
+   "layer_id": 27,
+   "native_sr": {
+    "wkid": 102666,
+    "latestWkid": 2239
+   },
+   "fields": {
+    "owner": [
+     "Owner",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "Acres",
+    "deed_book": "Sale_Book",
+    "deed_page": "Sale_Page",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "record_count": 125326,
+   "owner_nonnull": 124952,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads": {
+    "name": "SAGIS Road Centerlines",
+    "agency": "SAGIS (Savannah Area GIS, Chatham County)",
+    "url": "https://pub.sagis.org/arcgis/rest/services/OpenData/Transportation/MapServer/1",
+    "layer": "V-ROAD-CNTR",
+    "color": 8,
+    "name_fields": [
+     "FULLNAME"
+    ],
+    "fields": {
+     "class": "RD_CLASS",
+     "speed": "SpeedLimit",
+     "oneway": "ONEWAY",
+     "id": "GlobalID"
+    },
+    "count": 25847,
+    "verified": "2026-10-24",
+    "notes": "County-published centerline layer (public, no token). Left as served; the server projects to the drawing EPSG. No datum shift. E911 addressing centerlines (SOURCE PSAP)."
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6445,
+    "pid": "20743 03046",
+    "roads_in_county": 25842,
+    "ngs_marks_in_county": 606,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Chattahoochee": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/ArcGIS/rest/services/ParcelsChattCo/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner_name"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_num",
+    "acres": "Total_acre",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 1785,
+   "owner_nonnull": 1781,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Chattooga": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/arcgis/rest/services/Chattooga_Web_Map_2025_WFL1/FeatureServer/3",
+   "layer_id": 3,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "parcel_no",
+    "acres": "Acres_1",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 14409,
+   "owner_nonnull": 13753,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Cherokee": {
+   "status": "ok",
+   "source": "county",
+   "url": "https://gis.cherokeecountyga.gov/arcgis/rest/services/MainLayersPRO/MapServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "OWNER"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "TIN",
+    "acres": "Acreage",
+    "deed_book": "DEEDBOOK",
+    "deed_page": "DEEDPAGE",
+    "plat_book": "PlatBook",
+    "plat_page": "PlatPage"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "record_count": 116029,
+   "owner_nonnull": 115264,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Clarke": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services2.arcgis.com/xSEULKvB31odt3XQ/arcgis/rest/services/Parcel/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "ACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 41989,
+   "owner_nonnull": 41841,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads": {
+    "name": "Athens-Clarke County Street Centerline",
+    "agency": "Athens-Clarke County Unified Government GIS",
+    "url": "https://enigma.accgov.com/server/rest/services/Street_Centerline/FeatureServer/0",
+    "layer": "V-ROAD-CNTR",
+    "color": 8,
+    "name_fields": [
+     "ROAD_NAME"
+    ],
+    "fields": {
+     "class": "CLASSIFICA",
+     "speed": "MPH",
+     "oneway": "ONEWAY",
+     "id": "SEGMENTID"
+    },
+    "count": 6328,
+    "verified": "2026-10-24",
+    "notes": "County-published centerline layer (public, no token). Left as served; the server projects to the drawing EPSG. No datum shift."
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Clay": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/arcgis/rest/services/Clay_County_Parcels_10_23/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26916,
+    "latestWkid": 26916
+   },
+   "fields": {
+    "owner": [
+     "lastname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 3063,
+   "owner_nonnull": 3051,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Clayton": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services7.arcgis.com/TuQ8KXxdnKZCJwrs/arcgis/rest/services/Clayton_County_Flint_River_Planning_Data_WFL1/FeatureServer/5",
+   "layer_id": 5,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "ownernme"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "parcelid",
+    "acres": "acerage",
+    "deed_book": "currentdeedbook",
+    "deed_page": "currentdeedpage",
+    "plat_book": "platbook",
+    "plat_page": "platpage"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 71779,
+   "owner_nonnull": 71779,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6447,
+    "pid": "04207 209009",
+    "roads_in_county": 8283,
+    "ngs_marks_in_county": 53,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Clinch": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Cobb": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://gis.cobbcounty.org/gisserver/rest/services/tax/taxassessorsdaily/mapserver/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAM1",
+     "OWNER_NAM2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "ACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 279784,
+   "owner_nonnull": 278845,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads": {
+    "name": "Cobb County Georgia Roads",
+    "agency": "Cobb County GIS (Open Data)",
+    "url": "https://gis.cobbcounty.gov/gisserver/rest/services/openData/OpenDataCobbRoadsPublic/MapServer/0",
+    "layer": "V-ROAD-CNTR",
+    "color": 8,
+    "name_fields": [
+     "FULL_NAME"
+    ],
+    "fields": {
+     "class": "FUNCTIONALCLASS"
+    },
+    "count": 41511,
+    "verified": "2026-10-24",
+    "notes": "County-published centerline layer (public, no token). Left as served; the server projects to the drawing EPSG. No datum shift."
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Coffee": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://www.sgrcmaps.com/alma/rest/services/Coffee/CoffeeBackgroundLayers/MapServer/2",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Colquitt": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Columbia": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.columbiacountyga.gov/host/rest/services/PublicAccess/LandData/MapServer/1003",
+   "layer_id": 1003,
+   "native_sr": {
+    "wkid": 102666,
+    "latestWkid": 2239
+   },
+   "fields": {
+    "owner": [
+     "Tax_OwnerName1",
+     "Tax_OwnerName2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ParcelNum",
+    "acres": "Tax_Deed_Acreage",
+    "deed_book": "Tax_Deed_Book",
+    "deed_page": "Tax_Deed_Page",
+    "plat_book": "Tax_Plat_Book",
+    "plat_page": "Tax_Plat_Page"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "record_count": 68972,
+   "owner_nonnull": 68843,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6445,
+    "pid": "051 2462",
+    "roads_in_county": 4432,
+    "ngs_marks_in_county": 129,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Cook": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://www.sgrcmaps.com/alma/rest/services/Cook/Cook_Parcels/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "lastname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 10432,
+   "owner_nonnull": 10432,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Coweta": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://coweta-gis-web.coweta.ga.us/arcgis/rest/services/Hosted/ParcelPropertyValues/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "ownername",
+     "additionalownerinfo"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "parcel_id",
+    "acres": "acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 64060,
+   "owner_nonnull": 64060,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads": {
+    "name": "Coweta County Roads",
+    "agency": "Coweta County GIS",
+    "url": "https://services1.arcgis.com/AaPyNbrJpNGryRqh/arcgis/rest/services/Roads/FeatureServer/0",
+    "layer": "V-ROAD-CNTR",
+    "color": 8,
+    "name_fields": [
+     "road_name"
+    ],
+    "fields": {
+     "class": "func_class",
+     "speed": "speed",
+     "oneway": "one_way",
+     "agency": "maint_by",
+     "id": "globalid"
+    },
+    "count": 8872,
+    "verified": "2026-10-24",
+    "notes": "County-published centerline layer (public, no token). Left as served; the server projects to the drawing EPSG. No datum shift."
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Crawford": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Crisp": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/ArcGIS/rest/services/CrispParcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "lastname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 12351,
+   "owner_nonnull": 12308,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Dade": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://services.arcgis.com/UnTXoPXBYERF0OH6/arcgis/rest/services/Dade_Parcels_2020LLLT/FeatureServer/5",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Dawson": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/ArcGIS/rest/services/Dawson_Webmap_WFL1/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "Acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 19599,
+   "owner_nonnull": 19365,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "DeKalb": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://dcgis.dekalbcountyga.gov/mapping/rest/services/TaxParcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNERNME1",
+     "OWNERNME2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": "ACREAGE",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": "PLAT_BOOK_NUMBER",
+    "plat_page": "PLAT_PAGE_NUMBER"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 246208,
+   "owner_nonnull": 245702,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Decatur": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Dodge": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Dooly": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services9.arcgis.com/x9uoDq5JB3OouaRv/arcgis/rest/services/Parcel_Regions_w_WinGAP/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "lastname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 7344,
+   "owner_nonnull": 7344,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Dougherty": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services6.arcgis.com/VKHi8CC6pMIyYUIs/arcgis/rest/services/Parcels_Public_View/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "Name"
+    ],
+    "deed_ref": "Deed",
+    "plat_ref": "Plat",
+    "pid": "ParcelNum",
+    "acres": "TotalAcerage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 38007,
+   "owner_nonnull": 37567,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6447,
+    "pid": "000MM/00006/024",
+    "roads_in_county": 2944,
+    "ngs_marks_in_county": 439,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Douglas": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://maps.douglascountyga.gov/arcgis/rest/services/CountyLayers/Parcels/MapServer/15",
+   "layer_id": 15,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ParcelNo",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 55100,
+   "owner_nonnull": 54762,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads_candidate": {
+    "url": "https://services.arcgis.com/S5A11uZvQ48OH97O/arcgis/rest/services/Road_Centerlines/FeatureServer/0",
+    "found": "2026-10-24"
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Early": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Echols": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services5.arcgis.com/HA2thkMWRBDb77XN/arcgis/rest/services/Echols_Tax_Parcels/FeatureServer/11",
+   "layer_id": 11,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 2206,
+   "owner_nonnull": 2162,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Effingham": {
+   "status": "ok",
+   "source": "county",
+   "url": "https://services5.arcgis.com/9Z9r3rLUCq0SjsRb/arcgis/rest/services/Effingham_County_GA_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME"
+    ],
+    "deed_ref": "DEEDPAGE",
+    "plat_ref": "PLOTPAGE",
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 32941,
+   "owner_nonnull": 32941,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "plat_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>\\d+)\\s+(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Elbert": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Emanuel": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services8.arcgis.com/oi3j4zWzPc3hzTpc/arcgis/rest/services/Emanuel_Parcels_view/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "lastname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 15107,
+   "owner_nonnull": 15107,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Evans": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Fannin": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Fayette": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services5.arcgis.com/Hg5aLg4LtSINzVWa/arcgis/rest/services/TaxParcels_public/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNERNME1",
+     "OWNERNME2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": "STATEDAREA",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 46021,
+   "owner_nonnull": 45634,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Floyd": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services2.arcgis.com/nV67H1IJR8GS6SAA/arcgis/rest/services/CurrentParcels_2_view/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "OWNERNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 50273,
+   "owner_nonnull": 49759,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Forsyth": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://geo.forsythco.com/gis/rest/services/Public/Tax_Parcel/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads": {
+    "name": "Forsyth County Road Centerline",
+    "agency": "GIS Department, Forsyth County Georgia",
+    "url": "https://geo.forsythco.com/gis2/rest/services/Public/Road_Centerline/FeatureServer/0",
+    "layer": "V-ROAD-CNTR",
+    "color": 8,
+    "name_fields": [
+     "FullStName"
+    ],
+    "fields": {
+     "class": "MapClass",
+     "speed": "SpeedLimit",
+     "oneway": "OneWay",
+     "route": "Shield",
+     "id": "GlobalID"
+    },
+    "count": 13863,
+    "verified": "2026-10-24",
+    "notes": "County-published centerline layer (public, no token). Left as served; the server projects to the drawing EPSG. No datum shift."
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Franklin": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://wfs.schneidercorp.com/arcgis/rest/services/FranklinCountyGA_WFS/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102666,
+    "latestWkid": 2239
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ParcelNo",
+    "acres": "Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 17125,
+   "owner_nonnull": 16893,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Fulton": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services1.arcgis.com/AQDHTHDrZzfsFsB5/arcgis/rest/services/Tax_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ParcelID",
+    "acres": "LandAcres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 373306,
+   "owner_nonnull": 373210,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Gilmer": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Glascock": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Glynn": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services.arcgis.com/5iWzb1srkjPDXmpL/arcgis/rest/services/CAMA_Data_2026/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102666,
+    "latestWkid": 2239
+   },
+   "fields": {
+    "owner": [
+     "OWNDAT"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": "LEGDAT7",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 46500,
+   "owner_nonnull": 45255,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Gordon": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Grady": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://wfs.schneidercorp.com/arcgis/rest/services/GradyCountyGA_WFS/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "_v_ON"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 14476,
+   "owner_nonnull": 14405,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Greene": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services7.arcgis.com/QbbsWI5nIfBp4cMB/arcgis/rest/services/Parcel_Regions_w_WinGAP_view/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "lastname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 17735,
+   "owner_nonnull": 17735,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads": {
+    "name": "Greene County Road Centerlines",
+    "agency": "Greene County Board of Commissioners",
+    "url": "https://services7.arcgis.com/QbbsWI5nIfBp4cMB/arcgis/rest/services/Road_Centerlines_view/FeatureServer/0",
+    "layer": "V-ROAD-CNTR",
+    "color": 8,
+    "name_fields": [
+     "FULL_NAME"
+    ],
+    "fields": {
+     "agency": "MAINTND_BY"
+    },
+    "count": 2610,
+    "verified": "2026-10-24",
+    "notes": "County-published centerline layer (public, no token). Left as served; the server projects to the drawing EPSG. No datum shift."
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Gwinnett": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services3.arcgis.com/RfpmnkSAQleRbndX/arcgis/rest/services/Property_and_Tax/FeatureServer/3",
+   "layer_id": 3,
+   "native_sr": null,
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": "DOC1REF",
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "LEGALAC",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 315003,
+   "owner_nonnull": 315003,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads": {
+    "name": "Gwinnett County Street Centerlines",
+    "agency": "Gwinnett County GIS",
+    "url": "https://services3.arcgis.com/RfpmnkSAQleRbndX/arcgis/rest/services/GwinnettTransportation/FeatureServer/2",
+    "layer": "V-ROAD-CNTR",
+    "color": 8,
+    "name_fields": [
+     "FULLNAME"
+    ],
+    "fields": {
+     "class": "ROADCLASS",
+     "speed": "SPEED_LIMIT",
+     "oneway": "ONEWAYDIR",
+     "id": "GLOBALID"
+    },
+    "count": 41397,
+    "verified": "2026-10-24",
+    "notes": "County-published centerline layer (public, no token). Left as served; the server projects to the drawing EPSG. No datum shift."
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Habersham": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://wfs.schneidercorp.com/arcgis/rest/services/HabershamCountyGA_WFS/MapServer/4",
+   "layer_id": 4,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "Name1",
+     "Name2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel",
+    "acres": "AcresUnit",
+    "deed_book": "DeedB",
+    "deed_page": "DeedP",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "record_count": 24413,
+   "owner_nonnull": 23692,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6447,
+    "pid": "029 158",
+    "roads_in_county": 2160,
+    "ngs_marks_in_county": 100,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Hall": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://hallgis.hallcounty.org/arcgis/rest/services/Assessors_Web_Service/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "OWNER"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "CALC_ACRE",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 92175,
+   "owner_nonnull": 88377,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Hancock": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Haralson": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Harris": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/ArcGIS/rest/services/Parcels4_2026_HUB/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 21044,
+   "owner_nonnull": 20954,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Hart": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Heard": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Henry": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://arcgis.co.henry.ga.us/server/rest/services/Addresses__Parcels__Roads__Cities_MIL1/MapServer/5",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Houston": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/ArcGIS/rest/services/HoustonCoParcels_withOwner/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 68166,
+   "owner_nonnull": 67891,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Irwin": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://www.sgrcmaps.com/alma/rest/services/Irwin/ParcelInformation/MapServer/5",
+   "layer_id": 5,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 7073,
+   "owner_nonnull": 6921,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Jackson": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services8.arcgis.com/bcbi4lYRFOsss0F5/ArcGIS/rest/services/jackson_baselayers/FeatureServer/9",
+   "layer_id": 9,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 45049,
+   "owner_nonnull": 42765,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Jasper": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Jeff Davis": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/ArcGIS/rest/services/Jeff_Davis_Web_Map_2025_WFL1/FeatureServer/5",
+   "layer_id": 5,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "Acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 8427,
+   "owner_nonnull": 8300,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Jefferson": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/arcgis/rest/services/Jefferson_Web_Map_2024_WFL1/FeatureServer/3",
+   "layer_id": 3,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 12003,
+   "owner_nonnull": 11971,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Jenkins": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Johnson": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services1.arcgis.com/ue5fMdTkPeHLCobS/arcgis/rest/services/Johnson_GA_Parcels_gdb/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "owner_name"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "parcel_id",
+    "acres": "acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 5854,
+   "owner_nonnull": 5813,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Jones": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Lamar": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Lanier": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://www.sgrcmaps.com/alma/rest/services/Lanier/Parcels/MapServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 5968,
+   "owner_nonnull": 5889,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Laurens": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/arcgis/rest/services/Laurens_Web_Map_WFL1/FeatureServer/5",
+   "layer_id": 5,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "Acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 30018,
+   "owner_nonnull": 29851,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads_candidate": {
+    "url": "https://services8.arcgis.com/XxLBcrikqFM0vkoy/arcgis/rest/services/Streets/FeatureServer/0",
+    "found": "2026-10-24"
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Lee": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads_candidate": {
+    "url": "https://services7.arcgis.com/xWHrkwYCAX9v0Owj/arcgis/rest/services/Roads/FeatureServer/9",
+    "found": "2026-10-24"
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Liberty": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://gis.libertycountyga.gov/arcgis/rest/services/ParcelsService/MapServer/15",
+   "layer_id": 15,
+   "native_sr": {
+    "wkid": 102666,
+    "latestWkid": 2239
+   },
+   "fields": {
+    "owner": [
+     "Owner_Name"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_Number",
+    "acres": "Acreage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 29510,
+   "owner_nonnull": 28684,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Lincoln": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Long": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://portal.segrass.org/crcarcgis/rest/services/Long/Property_Data/MapServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Lowndes": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://www.valorgis.com/arcgis/rest/services/Valor/Parcels/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": "CAB_PAGE",
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 66316,
+   "owner_nonnull": 66316,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Lumpkin": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Macon": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/ArcGIS/rest/services/Parcels12_2018/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_Num",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 8798,
+   "owner_nonnull": 8798,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Madison": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Marion": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "McDuffie": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "McIntosh": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/ArcGIS/rest/services/McIntosh_Web_Map_2025_WFL1/FeatureServer/5",
+   "layer_id": 5,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "Acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 13269,
+   "owner_nonnull": 12212,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Meriwether": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services9.arcgis.com/Xv8vRekQ4FVHSSIe/arcgis/rest/services/MeriwetherParcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "lastname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 16511,
+   "owner_nonnull": 16511,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Miller": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Mitchell": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Monroe": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Montgomery": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Morgan": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services9.arcgis.com/mr2xH531NAL4tt7e/arcgis/rest/services/Parcels_Wingap/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 12987,
+   "owner_nonnull": 12932,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads_candidate": {
+    "url": "https://services9.arcgis.com/mr2xH531NAL4tt7e/arcgis/rest/services/RoadCenterline/FeatureServer/0",
+    "found": "2026-10-24"
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Murray": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Muscogee": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://ccggisprod.columbusga.org/server/rest/services/TaxAssessors/CurrentYearCAMA_Internal/MapServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "Owner_Name",
+     "CoOwner_Name"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "TaxPIN",
+    "acres": "GISAcreage",
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_book": "PlatBook",
+    "plat_page": "PlatPage"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "record_count": 70372,
+   "owner_nonnull": 69878,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6447,
+    "pid": "002 002 005",
+    "roads_in_county": 6727,
+    "ngs_marks_in_county": 157,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Newton": {
+   "status": "ok",
+   "source": "county",
+   "url": "https://services1.arcgis.com/qTQ6qYkHpxlu0G82/arcgis/rest/services/Newton_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "OwnersName",
+     "OwnersNa00"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TotalAcres",
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_book": "PlatBook",
+    "plat_page": "PlatPage"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 45755,
+   "owner_nonnull": 45755,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads": {
+    "name": "GIO Georgia NG911 Road Centerlines (Newton)",
+    "agency": "Georgia Geospatial Information Office (GIO)",
+    "url": "https://portal.gio.georgia.gov/server/rest/services/Hosted/Road_Centerlines_view/FeatureServer/0",
+    "layer": "V-ROAD-CNTR",
+    "color": 8,
+    "name_fields": [
+     "st_premod",
+     "st_predir",
+     "st_pretyp",
+     "st_presep",
+     "st_name",
+     "st_postyp",
+     "st_posdir",
+     "st_posmod"
+    ],
+    "fields": {
+     "id": "rcl_nguid"
+    },
+    "count": 6875,
+    "verified": "2026-10-24",
+    "notes": "County-published centerline layer (public, no token). Left as served; the server projects to the drawing EPSG. No datum shift. NG911 schema; the statewide GIO view still holds Newton County only (rechecked 2026-10-24)."
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Oconee": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://ocgis.oconee.ga.us/server/rest/services/Services_Public/Parcel_Fabric_Public/FeatureServer/2",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Oglethorpe": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Paulding": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services1.arcgis.com/qTQ6qYkHpxlu0G82/arcgis/rest/services/ga_paulding_shp/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "owner",
+     "owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "parcelnumb",
+    "acres": "gisacre",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 68018,
+   "owner_nonnull": 68018,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Peach": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Pickens": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Pierce": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://www.sgrcmaps.com/alma/rest/services/Pierce/ParcelInformation/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102666,
+    "latestWkid": 2239
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 12893,
+   "owner_nonnull": 12800,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Pike": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Polk": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Pulaski": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Putnam": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads_candidate": {
+    "url": "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/arcgis/rest/services/Putnam_County_Roads/FeatureServer/10",
+    "found": "2026-10-24"
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Quitman": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Rabun": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Randolph": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Richmond": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gismap.augustaga.gov/arcgis/rest/services/Map_LayersTS/MapServer/316",
+   "layer_id": 316,
+   "native_sr": {
+    "wkid": 102666,
+    "latestWkid": 2239
+   },
+   "fields": {
+    "owner": [
+     "own1"
+    ],
+    "deed_ref": "deedpage",
+    "plat_ref": "platpage",
+    "pid": "pin",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": null,
+   "record_count": 84925,
+   "owner_nonnull": 84524,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>\\d+(?:-[A-Z]|[A-Z])?)\\s+(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "plat_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>\\d+(?:-[A-Z]|[A-Z]| [A-Z])?)\\s+(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6445,
+    "pid": "013-4-190-00-0",
+    "roads_in_county": 7094,
+    "ngs_marks_in_county": 275,
+    "warnings": []
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Rockdale": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://services.arcgis.com/Tbke9ca9DhtF4VIx/ArcGIS/rest/services/Parcel_Polygons_working/FeatureServer/0",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads": {
+    "name": "Rockdale County / Conyers Road Centerlines (Roads_Authoritative)",
+    "agency": "Rockdale County GIS",
+    "url": "https://services.arcgis.com/Tbke9ca9DhtF4VIx/arcgis/rest/services/Roads_Authoritative/FeatureServer/1",
+    "layer": "V-ROAD-CNTR",
+    "color": 8,
+    "name_fields": [
+     "ROADNAME"
+    ],
+    "fields": {
+     "class": "RoadClass",
+     "speed": "SPEED_LMT",
+     "oneway": "oneway",
+     "agency": "Jurisdicti"
+    },
+    "count": 5243,
+    "verified": "2026-10-24",
+    "notes": "County-published centerline layer (public, no token). Left as served; the server projects to the drawing EPSG. No datum shift."
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Schley": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Screven": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://portal.segrass.org/crcarcgis/rest/services/Screven/Property_Data/MapServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 103027,
+    "latestWkid": 6445
+   },
+   "fields": {
+    "owner": [
+     "lastname",
+     "firstname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "Deed_Acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 10943,
+   "owner_nonnull": 10877,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Seminole": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Spalding": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services1.arcgis.com/qTQ6qYkHpxlu0G82/arcgis/rest/services/ga_spalding_shp/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "parcelnumb",
+    "acres": "gisacre",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 32161,
+   "owner_nonnull": 32161,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Stephens": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Stewart": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/ArcGIS/rest/services/Parcels2022/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "lastname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 4068,
+   "owner_nonnull": 3946,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Sumter": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/arcgis/rest/services/Sumter_Lake_Subrecords_2026_WFL1/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 16367,
+   "owner_nonnull": 16241,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Talbot": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/arcgis/rest/services/Parcels2025/FeatureServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 26916,
+    "latestWkid": 26916
+   },
+   "fields": {
+    "owner": [
+     "lastname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 6692,
+   "owner_nonnull": 6625,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Taliaferro": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Tattnall": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Taylor": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/ArcGIS/rest/services/Taylor_Web_Map_2025_WFL1/FeatureServer/6",
+   "layer_id": 6,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "Acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 6417,
+   "owner_nonnull": 6279,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Telfair": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/ArcGIS/rest/services/Telfair_2025_WFL1/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "Acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 8871,
+   "owner_nonnull": 8859,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Terrell": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Thomas": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Tift": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://www.sgrcmaps.com/alma/rest/services/Tift/Tift_Parcels/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ParcelNum",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 19194,
+   "owner_nonnull": 19194,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Toombs": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Towns": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Treutlen": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Troup": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services6.arcgis.com/WjqAE1SlQxuk7dsk/arcgis/rest/services/Troup_County_GA_Parcel_Feature_Layer/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "owner",
+     "ownername"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "parcelnumb",
+    "acres": "gisacre",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 35511,
+   "owner_nonnull": 35511,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "roads_candidate": {
+    "url": "https://services.arcgis.com/V4Y8xIvXuYJiVZwF/arcgis/rest/services/Road_Centerlines/FeatureServer/0",
+    "found": "2026-10-24"
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Turner": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://www.sgrcmaps.com/alma/rest/services/Turner/TurnerParcels/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "lastname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 5714,
+   "owner_nonnull": 5714,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Twiggs": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/arcgis/rest/services/Twiggs_County_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "LASTNAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_NO",
+    "acres": "TOTALACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 7069,
+   "owner_nonnull": 7027,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Union": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/ArcGIS/rest/services/Union_Web_Map_2026_WFL1/FeatureServer/24",
+   "layer_id": 24,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "Acres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 24391,
+   "owner_nonnull": 24229,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Upson": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Walker": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services.arcgis.com/UnTXoPXBYERF0OH6/arcgis/rest/services/Walker_Parcels_2026LLLT/FeatureServer/4",
+   "layer_id": 4,
+   "native_sr": {
+    "wkid": 26916,
+    "latestWkid": 26916
+   },
+   "fields": {
+    "owner": [
+     "ownerName"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "Parcel_No",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 7811,
+   "owner_nonnull": 7811,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Walton": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Ware": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Warren": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Washington": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services6.arcgis.com/FB9Ru5YZzGgQFf4I/arcgis/rest/services/205851_4_v2_WFL1/FeatureServer/4",
+   "layer_id": 4,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "owner",
+     "owner2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "parcelnumb",
+    "acres": "gisacre",
+    "deed_book": "book",
+    "deed_page": "page",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 12966,
+   "owner_nonnull": 12195,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "ship_ready": {
+    "tested": "2026-10-24",
+    "epsg": 6445,
+    "pid": "046 030",
+    "roads_in_county": 830,
+    "ngs_marks_in_county": 130,
+    "warnings": [
+     "county status is 'partial' - check output against the county notes"
+    ]
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Wayne": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Webster": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Wheeler": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "White": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Whitfield": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://gis.whitfieldcountyga.com/server/rest/services/TaxAssessMapping/MapServer/11",
+   "layer_id": 11,
+   "native_sr": {
+    "wkid": 102667,
+    "latestWkid": 2240
+   },
+   "fields": {
+    "owner": [
+     "lastname"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_FUL",
+    "acres": "totalacres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "record_count": 46685,
+   "owner_nonnull": 45960,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Wilcox": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Wilkes": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Wilkinson": {
+   "status": "partial",
+   "source": "county",
+   "url": "https://services1.arcgis.com/ue5fMdTkPeHLCobS/arcgis/rest/services/Wilkinson_GA_gdb/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ParcelID",
+    "acres": "DeededAcres",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 7849,
+   "owner_nonnull": 7731,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  },
+  "Worth": {
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "geometry_fallback": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "USA Structures (FEMA / ORNL)"
+  }
+ },
+ "control": {
+  "state_source": false,
+  "agency": "none (Georgia has no state geodetic survey office; GDOT checked)",
+  "sources": [],
+  "finding": "No statewide GA control service. GDOT egisp.dot.ga.gov REST did not respond / lists no control layer. County-level leads only (untested): Forsyth https://geo.forsythco.com/gis/rest/services/Public/Public_SurveyMonument/MapServer",
+  "live_test": "n/a",
+  "checked": "2026-10-11",
+  "ngs": {
+   "ngs_datasheet_url": "https://www.ngs.noaa.gov/cgi-bin/ds_mark.prl?PidBox={PID}",
+   "note": "NGS covers all states; PID links state records to NGS datasheets. Not re-surveyed here."
+  },
+  "datum_shifts_applied": false
+ },
+ "roads": {
+  "name": "GA GIS Clearinghouse / ITOS Common Roads and Streets",
+  "agency": "Georgia GIS Clearinghouse (ITOS / UGA) — DLG-F Road Basemap extract",
+  "type": "ArcGIS REST FeatureServer",
+  "url": "https://maps.itos.uga.edu/arcgis/rest/services/FrameWork/Transportation/FeatureServer/13",
+  "layer": "V-ROAD-CNTR",
+  "color": 8,
+  "native_sr": "EPSG:4326 (WGS84 geographic; service wkid 4326)",
+  "count": 390632,
+  "county_filter": "COUNTY_CODE (3-digit FIPS without leading state; e.g. 121 = Fulton)",
+  "name_fields": [
+   "ROAD_NAME"
+  ],
+  "route_fields": [
+   "ROUTE_TYPE",
+   "ROUTE_NUMBER",
+   "ROUTE_SUFFIX",
+   "ROUTE_SEQUENCE"
+  ],
+  "fields": {
+   "id": "RCLINK",
+   "class": "FUNCTIONAL_CLASS",
+   "oneway": "ONE_WAY",
+   "speed": "SPEED_LIMIT",
+   "ownership": "OWNERSHIP",
+   "county": "COUNTY_CODE",
+   "gdot_district": "GDOT_DISTRICT",
+   "display": "Display"
+  },
+  "sibling_layers": {
+   "note": "Same DLG-F basemap split for display; Common Roads (13) is local streets. Higher classes live in sibling FeatureServer layers.",
+   "6_Interstates": 5158,
+   "8_Major_Highways": 26392,
+   "9_Highways": 40423,
+   "10_Primary_Arterial": 46715,
+   "11_Secondary_Arterial": 25732,
+   "12_Major_Roads": 74140
+  },
+  "alt_sources": [
+   {
+    "name": "GDOT Statewide LRS Network",
+    "type": "ArcGIS REST MapServer",
+    "url": "https://rnhp.dot.ga.gov/hosting/rest/services/GDOT_Network_LRSN/MapServer/0",
+    "native_sr": "wkid 102604 (NAD83 Georgia State Plane North, meters)",
+    "note": "Current GDOT LRS; ROUTE_CODE / SYSTEM_CODE / COUNTY — no street name field. Prefer ITOS for labeled centerlines.",
+    "live_test": "OK 2026-10-12: OBJECTID 6 ROUTE_CODE 00000600 SYSTEM_CODE 1"
+   },
+   {
+    "name": "GIO Georgia Road Centerlines (NG911 view)",
+    "type": "ArcGIS REST FeatureServer",
+    "url": "https://portal.gio.georgia.gov/server/rest/services/Hosted/Road_Centerlines_view/FeatureServer/0",
+    "native_sr": "EPSG:4326",
+    "count": 6875,
+    "note": "Official GIO NG911-schema centerlines (st_name / fullstnm / gdot_id) but public view is Newton County only as of 2026-10-16 — not statewide yet. Re-checked count=6875.",
+    "last_check": "2026-10-16"
+   }
+  ],
+  "use_terms": "Georgia GIS Clearinghouse: no warranty expressed or implied; distribution does not constitute a warranty. Source metadata: Georgia DLG-F Road Basemap (Dec 2013 extract). Cite Georgia GIS Clearinghouse / ITOS.",
+  "vintage": "December 2013 (layer description); not edge-matched across counties; boundary duplicates possible",
+  "live_test": "OK 2026-10-12: where ROAD_NAME LIKE 'Main%' AND COUNTY_CODE='121' returned MAIN STREET / ROUTE_NUMBER 0729 / RCLINK 1213072903; statewide count 390632",
+  "verified": "2026-10-12",
+  "notes": "No datum shift applied (data left as served in 4326). Prefer this over GDOT LRS for street labels. When GIO publishes statewide NG911 RCLs, switch primary to that.",
+  "ng911_last_check": "2026-10-16 5:05 AM ET: GIO Road_Centerlines_view and Road_Centerlines_2_view both 6,875 (Newton only, layer last edited 2026-03-16), unchanged"
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Added 2026-10-25; not CAD-tested.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}
