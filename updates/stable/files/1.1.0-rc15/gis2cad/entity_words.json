@@ -1,0 +1,23 @@
+{
+  "_about": "Owner names containing any of these words are printed as organizations: county word order and spelling kept, Title Case, acronyms kept uppercase, never reordered like a person's name. 'words' match anywhere in the name. 'phrases' are multi-word matches. 'surname_words' are also common family names (PARK, TEMPLE, LODGE...), so they only count when they are not in the surname position (first word for LAST FIRST names, last word for natural-order names). A label style can extend or trim this list under names: entity_words, entity_surname_words, not_entity_words.",
+  "words": [
+    "TRUST", "TRUSTEE", "TRUSTEES", "INC", "LLC", "L.L.C", "CORP", "CORPORATION", "COMPANY", "CO", "BANK", "LP",
+    "LLP", "LLLP", "PLLC", "L.P", "L.L.P", "L.L.L.P", "P.L.L.C", "LTD", "ASSOC", "ASSN", "ASSOCIATION", "ASSOCIATES", "PROPERTIES", "PROPERTY", "HOLDINGS", "INVESTMENTS",
+    "INVESTMENT", "PARTNERS", "PARTNERSHIP", "DEVELOPMENT", "DEVELOPERS", "ENTERPRISES", "ENTERPRISE", "GROUP", "FARM", "FARMS", "REALTY", "HOMES",
+    "BUILDERS", "VENTURES", "MANAGEMENT", "STORES", "SUPPLY", "SERVICES", "MOTORS", "RENTALS", "APARTMENTS", "CONDOMINIUM", "CONDOMINIUMS", "TOWNHOMES",
+    "HOA", "POA", "CHURCH", "CHURCHES", "MINISTRIES", "MINISTRY", "TABERNACLE", "CONGREGATION", "PARISH", "DIOCESE", "CATHEDRAL", "SYNAGOGUE",
+    "MOSQUE", "FELLOWSHIP", "ASSEMBLY", "BAPTIST", "METHODIST", "PRESBYTERIAN", "LUTHERAN", "EPISCOPAL", "PENTECOSTAL", "CATHOLIC", "MISSIONARY", "UNIVERSITY",
+    "COLLEGE", "SCHOOL", "SCHOOLS", "ACADEMY", "INSTITUTE", "SEMINARY", "CEMETERY", "HOSPITAL", "CLUB", "FOUNDATION", "SOCIETY", "CONSERVANCY",
+    "MUSEUM", "LIBRARY", "CITY", "COUNTY", "STATE", "TOWN", "TOWNSHIP", "BOROUGH", "COMMONWEALTH", "UNITED", "DEPT", "DEPARTMENT",
+    "AUTHORITY", "COMMISSION", "COMMISSIONERS", "BOARD", "DISTRICT", "AGENCY", "GOVERNMENT", "FEDERAL", "MUNICIPAL", "PARKWAY", "AIRPORT", "RAILROAD",
+    "RAILWAY", "UTILITIES", "UTILITY", "ELECTRIC", "COOPERATIVE", "HEIRS", "ESTATE", "YMCA", "YWCA", "HOMEOWNERS", "CONDOS", "COUNTIES",
+    "HEALTH", "PUBLIC"
+  ],
+  "phrases": [
+    "STATE OF", "UNITED STATES", "BOARD OF", "FIRE DEPT", "FIRE DEPARTMENT", "VOLUNTEER FIRE", "RESCUE SQUAD", "HOUSING AUTHORITY", "PROPERTY OWNERS", "PROP OWNERS", "TOWNHOME OWNERS", "LOT OWNERS",
+    "CREDIT UNION", "PARK & REC", "PARK AND REC", "PARKS & REC", "PARKS AND REC", "U S A", "U S OF A"
+  ],
+  "surname_words": [
+    "PARK", "TEMPLE", "CHAPEL", "LODGE", "LEAGUE"
+  ]
+}
