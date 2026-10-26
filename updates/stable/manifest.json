@@ -1,51 +1,519 @@
 {
  "product": "BIGCS",
- "version": "1.1.0-rc5",
- "min_version": "1.1.0-rc1",
- "released": "2026-10-24",
- "notes": "Baseline: BIGCS 1.1.0-rc5",
+ "version": "1.1.0-rc13",
+ "min_version": "1.1.0-rc5",
+ "released": "2026-10-25",
+ "notes": "BIGCS 1.1.0-rc13: county data, building footprints, styles, boundaries, engine and CAD menu files.",
  "files": [
   {
-   "path": "counties/nc.json",
-   "sha256": "867170c6d0c2e847919efbb0b392c6bddb80858e7a4d03275efde70649b8ab52",
-   "size": 255589,
-   "url": "files/1.1.0-rc5/counties/nc.json"
+   "path": "DISCLAIMER.txt",
+   "sha256": "70a052f208c05a843d248269f0f6144235cbb3135e796973ed21f7a71c025567",
+   "size": 1405,
+   "url": "files/1.1.0-rc13/DISCLAIMER.txt"
   },
   {
-   "path": "counties/sc.json",
-   "sha256": "2a1fb0f8cb10204ef98fd2a76210bf7152b031feea3ebfc311ffb925baa43eaf",
-   "size": 63829,
-   "url": "files/1.1.0-rc5/counties/sc.json"
+   "path": "cad/BCS_ADJ16.bmp",
+   "sha256": "b4ce8557a1e3bdf0b7931d7eb39005da48109e70ac4bacd21b3c5b3c771cdc4e",
+   "size": 822,
+   "url": "files/1.1.0-rc13/cad/BCS_ADJ16.bmp"
+  },
+  {
+   "path": "cad/BCS_ADJ32.bmp",
+   "sha256": "6372010cad0ef0642ac915453c4a1987dcc9b132420701d2c3c9bcd737210c13",
+   "size": 3126,
+   "url": "files/1.1.0-rc13/cad/BCS_ADJ32.bmp"
+  },
+  {
+   "path": "cad/BCS_BND16.bmp",
+   "sha256": "e62ff7402c6bdfed4a68f2984005cb7706cb4fc4822cfacdc42695a5263cfa52",
+   "size": 822,
+   "url": "files/1.1.0-rc13/cad/BCS_BND16.bmp"
+  },
+  {
+   "path": "cad/BCS_BND32.bmp",
+   "sha256": "a683eb76ae0ab31d8f5daf9fef4c269abfe97b2362b6e6ed174c2f47382d7347",
+   "size": 3126,
+   "url": "files/1.1.0-rc13/cad/BCS_BND32.bmp"
+  },
+  {
+   "path": "cad/BCS_LOAD16.bmp",
+   "sha256": "6323bfd0ced26c90d8598b8a0ce35b2086439c3a0728ac79bf17e65d227be1e6",
+   "size": 822,
+   "url": "files/1.1.0-rc13/cad/BCS_LOAD16.bmp"
+  },
+  {
+   "path": "cad/BCS_LOAD32.bmp",
+   "sha256": "66002041a1beffc7cfc55bdee6ebbfc96d9f964cf192952ce3a6ebbf004cc3ab",
+   "size": 3126,
+   "url": "files/1.1.0-rc13/cad/BCS_LOAD32.bmp"
+  },
+  {
+   "path": "cad/BCS_LTR16.bmp",
+   "sha256": "16c27b9403f93180e07c75a1c38762d00a2f952cdeefa6716fd1c2d6911c44a0",
+   "size": 822,
+   "url": "files/1.1.0-rc13/cad/BCS_LTR16.bmp"
+  },
+  {
+   "path": "cad/BCS_LTR32.bmp",
+   "sha256": "5763ae9c75a667b16ed02950a9e1db4dd1dc422206ee63073e532aff050ffca2",
+   "size": 3126,
+   "url": "files/1.1.0-rc13/cad/BCS_LTR32.bmp"
+  },
+  {
+   "path": "cad/BCS_MAP16.bmp",
+   "sha256": "f005fe024aba4ab241c7335c952c6d9c4b9c4f26f2d7a95ff2412b8a61ee9abb",
+   "size": 822,
+   "url": "files/1.1.0-rc13/cad/BCS_MAP16.bmp"
+  },
+  {
+   "path": "cad/BCS_MAP32.bmp",
+   "sha256": "fe5496d960e869822cae03a0358b9f2a2de5308db1cc615b5d3badcc10368f28",
+   "size": 3126,
+   "url": "files/1.1.0-rc13/cad/BCS_MAP32.bmp"
+  },
+  {
+   "path": "cad/BCS_PAR16.bmp",
+   "sha256": "d91567e116d0b5afc2e9230a6e14b4799728aeb6c4917063a2e83f3bc6a88103",
+   "size": 822,
+   "url": "files/1.1.0-rc13/cad/BCS_PAR16.bmp"
+  },
+  {
+   "path": "cad/BCS_PAR32.bmp",
+   "sha256": "a077575c55be8252429c5e4f11a23413f5328c52428dfa9b9c6b602a409f5af4",
+   "size": 3126,
+   "url": "files/1.1.0-rc13/cad/BCS_PAR32.bmp"
+  },
+  {
+   "path": "cad/BCS_REF16.bmp",
+   "sha256": "d8a77b48656bc860fe21015c58f6e5a5799ac8a0222f06099d595f31ea080557",
+   "size": 822,
+   "url": "files/1.1.0-rc13/cad/BCS_REF16.bmp"
+  },
+  {
+   "path": "cad/BCS_REF32.bmp",
+   "sha256": "578cbff069fa922b6f0fb69bd5fd079ed9ba629339c6bb79a9dde629c83716d7",
+   "size": 3126,
+   "url": "files/1.1.0-rc13/cad/BCS_REF32.bmp"
+  },
+  {
+   "path": "cad/BCS_STY16.bmp",
+   "sha256": "80f921963207dfbb1d92449aa5fe4b05f799367b35b56e18b87f71d459e38840",
+   "size": 822,
+   "url": "files/1.1.0-rc13/cad/BCS_STY16.bmp"
+  },
+  {
+   "path": "cad/BCS_STY32.bmp",
+   "sha256": "5ce3a9fb6786678bea987eaf4c81f9b83df3d255fac078e9325ebdc989de1acc",
+   "size": 3126,
+   "url": "files/1.1.0-rc13/cad/BCS_STY32.bmp"
+  },
+  {
+   "path": "cad/BCS_TXT16.bmp",
+   "sha256": "899b39f3caf87215eae76cae6cb92b2cbc70838e91c624dcfd2b5ffae1711b86",
+   "size": 822,
+   "url": "files/1.1.0-rc13/cad/BCS_TXT16.bmp"
+  },
+  {
+   "path": "cad/BCS_TXT32.bmp",
+   "sha256": "6d70b56a62bf4b8693ac91c76a9dbe29b896bf972379f468bc4f610ed41d882b",
+   "size": 3126,
+   "url": "files/1.1.0-rc13/cad/BCS_TXT32.bmp"
+  },
+  {
+   "path": "cad/BIGCS.lsp.tpl",
+   "sha256": "9a806597f5fad5f8e29a340ed2749169868cfddce6a1cf9ecea9e201ace3daa2",
+   "size": 2277,
+   "url": "files/1.1.0-rc13/cad/BIGCS.lsp.tpl"
+  },
+  {
+   "path": "cad/BIGCS.mnu.tpl",
+   "sha256": "be1e5b0649b8ee2af9d48244df0f2adf70ffefbde0211c67de84fe8b60b6aa3e",
+   "size": 3531,
+   "url": "files/1.1.0-rc13/cad/BIGCS.mnu.tpl"
+  },
+  {
+   "path": "cad/BIGCS_menu.lsp",
+   "sha256": "09010533a6e281c0b0132fb16e39d2df2b1c50243e86ccf6b6aacf429bb6db88",
+   "size": 7225,
+   "url": "files/1.1.0-rc13/cad/BIGCS_menu.lsp"
+  },
+  {
+   "path": "cad/README_Toolbar.txt",
+   "sha256": "4dce37517dba8066ba980e41fbfb12d3047af7b065dbff7be2a0fc1d23cc5191",
+   "size": 328,
+   "url": "files/1.1.0-rc13/cad/README_Toolbar.txt"
+  },
+  {
+   "path": "cad/gis2cad.lsp",
+   "sha256": "8c9d9b83f2bf8b6c574ea29049a1035e65fff547e518892f70af2f226eb70820",
+   "size": 32900,
+   "url": "files/1.1.0-rc13/cad/gis2cad.lsp"
   },
   {
    "path": "counties/ga.json",
-   "sha256": "139c42f8d3cb22742a1b559ed9319ee56ce65a0bcd83f6dd8e85331fd6609c6f",
-   "size": 140708,
-   "url": "files/1.1.0-rc5/counties/ga.json"
+   "sha256": "a88a0ef43fedd80ad1d85b2386587ad00a2186f9f28edd05ed40cb97cb19d8be",
+   "size": 151405,
+   "url": "files/1.1.0-rc13/counties/ga.json"
   },
   {
-   "path": "counties/va.json",
-   "sha256": "f178b598da51484f25e6704c6511641d81c57be6364c9a3f6033432b0e9310b5",
-   "size": 149806,
-   "url": "files/1.1.0-rc5/counties/va.json"
+   "path": "counties/nc.json",
+   "sha256": "a820630dadc721e0b37599605fa6280dfe1f85d0a13f75d1252e873ee14c4cc9",
+   "size": 255673,
+   "url": "files/1.1.0-rc13/counties/nc.json"
+  },
+  {
+   "path": "counties/sc.json",
+   "sha256": "193b6f1888b47c63b516b02533e908a0ea6bb082ca2ebd7ef5307bc0aced3ec0",
+   "size": 67044,
+   "url": "files/1.1.0-rc13/counties/sc.json"
   },
   {
    "path": "counties/tn.json",
-   "sha256": "55014c8c14473bdabde87d58345ee603660a5dd7e168ed38896a49f997f00010",
-   "size": 187178,
-   "url": "files/1.1.0-rc5/counties/tn.json"
+   "sha256": "2ccb8ba7301e3ddf4490b364cb1d5a3d9c37e3e7198efdd1befcf732f1dbc966",
+   "size": 193088,
+   "url": "files/1.1.0-rc13/counties/tn.json"
+  },
+  {
+   "path": "counties/va.json",
+   "sha256": "ce4b027731cb9ac41912e809b19ec9e8c76a61cf67bfad71da7e9f17222b4ed1",
+   "size": 161889,
+   "url": "files/1.1.0-rc13/counties/va.json"
+  },
+  {
+   "path": "data/boundaries/counties_GA.json",
+   "sha256": "e2fbca6b6a69a7bf2a202d4017a4dd3f0a62c49b5303de0f19113e7621d82279",
+   "size": 1031771,
+   "url": "files/1.1.0-rc13/data/boundaries/counties_GA.json"
+  },
+  {
+   "path": "data/boundaries/counties_NC.json",
+   "sha256": "2c63b221df6daa452cc7ca08112760c72f903ab6b7207167375ca0d79e2fc7ac",
+   "size": 840659,
+   "url": "files/1.1.0-rc13/data/boundaries/counties_NC.json"
+  },
+  {
+   "path": "data/boundaries/counties_SC.json",
+   "sha256": "e54fd935444fc713614230aea65257b8b0044cc20fdddaa32ef47f2dc5b9e547",
+   "size": 548343,
+   "url": "files/1.1.0-rc13/data/boundaries/counties_SC.json"
+  },
+  {
+   "path": "data/boundaries/counties_TN.json",
+   "sha256": "b2fe3650d0d75e513face61e70baa0188c80095d713ca27d44ea1a5b422218f0",
+   "size": 719050,
+   "url": "files/1.1.0-rc13/data/boundaries/counties_TN.json"
+  },
+  {
+   "path": "data/boundaries/counties_VA.json",
+   "sha256": "b7642acb25b4781c03f9e815b9d0a120f053f95a59bd5a776a1fd884a3cc1d42",
+   "size": 1002770,
+   "url": "files/1.1.0-rc13/data/boundaries/counties_VA.json"
+  },
+  {
+   "path": "data/boundaries/county_index.json",
+   "sha256": "ea4feb55424669bb6da73b65039159b0f9633e8c0ba73562ea1c329cddf2da83",
+   "size": 229743,
+   "url": "files/1.1.0-rc13/data/boundaries/county_index.json"
+  },
+  {
+   "path": "data/boundaries/states.json",
+   "sha256": "f6e2517b74338eb0050da283f184270d609481b534cc7c79bfe33ef69ccc2cad",
+   "size": 6717929,
+   "url": "files/1.1.0-rc13/data/boundaries/states.json"
+  },
+  {
+   "path": "data/boundaries/zones.json",
+   "sha256": "bac927f0a7fb577dcc79fce7564eacaa50e4c56f087cd366dfa7b2a485bddc5f",
+   "size": 103920,
+   "url": "files/1.1.0-rc13/data/boundaries/zones.json"
+  },
+  {
+   "path": "edition.json",
+   "sha256": "c115815e4a768574c51463f01c4ec0691644149d8bc5bfbbc3cfdee76d6b6b6c",
+   "size": 360,
+   "url": "files/1.1.0-rc13/edition.json"
+  },
+  {
+   "path": "gis2cad/__init__.pyc",
+   "sha256": "479f0af78e62f1a8d1eade29acf88c2667a4740895abdcdd129d118e2292eee5",
+   "size": 142,
+   "url": "files/1.1.0-rc13/gis2cad/__init__.pyc"
+  },
+  {
+   "path": "gis2cad/__main__.pyc",
+   "sha256": "e7f66a10285a2c98788616b408802149c19cea431bedfd0dfbea20cad9bda341",
+   "size": 238,
+   "url": "files/1.1.0-rc13/gis2cad/__main__.pyc"
+  },
+  {
+   "path": "gis2cad/adjtable.pyc",
+   "sha256": "aac5a4b6e1c5fa7be9db4f66bfdd837987d16f0b991e54baac1fe0e15aa94078",
+   "size": 16003,
+   "url": "files/1.1.0-rc13/gis2cad/adjtable.pyc"
+  },
+  {
+   "path": "gis2cad/arcgis.pyc",
+   "sha256": "24819d6daade29718ab29aa06ed1a3626f79d7298874fd822f201a47ead017d9",
+   "size": 14201,
+   "url": "files/1.1.0-rc13/gis2cad/arcgis.pyc"
+  },
+  {
+   "path": "gis2cad/area.pyc",
+   "sha256": "188bb52f27595e81402a18e878cabcf25088b15b5c2794c54c3ffff1d8dc9a1b",
+   "size": 15394,
+   "url": "files/1.1.0-rc13/gis2cad/area.pyc"
+  },
+  {
+   "path": "gis2cad/bounds.pyc",
+   "sha256": "0966e4ed731be2b04953c209c95cb3d579d4caae5b384c14d45122f902288e50",
+   "size": 30750,
+   "url": "files/1.1.0-rc13/gis2cad/bounds.pyc"
+  },
+  {
+   "path": "gis2cad/bounds_gui.pyc",
+   "sha256": "27412abe80994d22bd6ecd7c74cb5c1cdc1bcd7ac875c4e3c22dade97a3332bc",
+   "size": 32532,
+   "url": "files/1.1.0-rc13/gis2cad/bounds_gui.pyc"
+  },
+  {
+   "path": "gis2cad/buildings.pyc",
+   "sha256": "590f21db6e0ffd794a85ab88654261bb2f607c88f3d482ce59bd226d2b6f7083",
+   "size": 11732,
+   "url": "files/1.1.0-rc13/gis2cad/buildings.pyc"
+  },
+  {
+   "path": "gis2cad/bulk.pyc",
+   "sha256": "5dcc0f2666a5f3817584bf42c09b13fc3bdc0cac359ca14517e418cd8d7a65f6",
+   "size": 4209,
+   "url": "files/1.1.0-rc13/gis2cad/bulk.pyc"
+  },
+  {
+   "path": "gis2cad/cli.pyc",
+   "sha256": "c0fabd328524813d98299d01d4079623588045d4d7c51b6635e5fca330c17cf1",
+   "size": 51966,
+   "url": "files/1.1.0-rc13/gis2cad/cli.pyc"
+  },
+  {
+   "path": "gis2cad/config.pyc",
+   "sha256": "5f46a2ff687d4a97fee95dded7ffcb73a30aa910d75e5d48a690be2606956b81",
+   "size": 17707,
+   "url": "files/1.1.0-rc13/gis2cad/config.pyc"
+  },
+  {
+   "path": "gis2cad/control.pyc",
+   "sha256": "107e28ad9ae0e8d0bc96a14a6d95e4fa9789e8724ffcc5ade0ca74b7fca838a0",
+   "size": 20691,
+   "url": "files/1.1.0-rc13/gis2cad/control.pyc"
+  },
+  {
+   "path": "gis2cad/dxf.pyc",
+   "sha256": "0f35865e9a4b3de43cdb9a7bc2b9f50b85cf6be2bf5aea4e1025a07d9d287f5e",
+   "size": 4131,
+   "url": "files/1.1.0-rc13/gis2cad/dxf.pyc"
+  },
+  {
+   "path": "gis2cad/ed25519.pyc",
+   "sha256": "cbe249ef321a31439dc64dfeba706fe2c0acb509427a4b7e7861dea3b82e44d0",
+   "size": 5580,
+   "url": "files/1.1.0-rc13/gis2cad/ed25519.pyc"
+  },
+  {
+   "path": "gis2cad/engine.pyc",
+   "sha256": "7ff042b636094852d12dd386c90f85014d01535b05991c79d6d4b4f27b55a437",
+   "size": 81663,
+   "url": "files/1.1.0-rc13/gis2cad/engine.pyc"
+  },
+  {
+   "path": "gis2cad/entity_words.json",
+   "sha256": "2786c24fccd8ea257ec496a93fb92a8bcd4d8d239cdbe36b38782581d05cb719",
+   "size": 2473,
+   "url": "files/1.1.0-rc13/gis2cad/entity_words.json"
+  },
+  {
+   "path": "gis2cad/find.pyc",
+   "sha256": "b6ae3d64cfb3fc1a2c7d0cd7606586ecccb8ddd124b90016405649aaf23ab3eb",
+   "size": 24933,
+   "url": "files/1.1.0-rc13/gis2cad/find.pyc"
+  },
+  {
+   "path": "gis2cad/flood.pyc",
+   "sha256": "87e447976c6a2f22d6142db720b9a5453d361d39913e5fe50520fa9fe94df616",
+   "size": 12883,
+   "url": "files/1.1.0-rc13/gis2cad/flood.pyc"
+  },
+  {
+   "path": "gis2cad/geom.pyc",
+   "sha256": "1d986d434db6abb7d596555a2db03c8783aee90d9bee57012207d85a98e02b09",
+   "size": 2253,
+   "url": "files/1.1.0-rc13/gis2cad/geom.pyc"
+  },
+  {
+   "path": "gis2cad/hydro.pyc",
+   "sha256": "6bdb7e3f0d58826c6eb25990e020fc0eea92e855916a33db8a38ba4ae9c5e947",
+   "size": 18388,
+   "url": "files/1.1.0-rc13/gis2cad/hydro.pyc"
+  },
+  {
+   "path": "gis2cad/letters.pyc",
+   "sha256": "4b58281678d927f9e73b60ca47570fc3ada0c2be13ed90a0999a01190dc4399c",
+   "size": 49956,
+   "url": "files/1.1.0-rc13/gis2cad/letters.pyc"
+  },
+  {
+   "path": "gis2cad/letters_gui.pyc",
+   "sha256": "da35d1d544d3d1fb3bd62fe7bdc953053786ad76ee216ec770a5e35e2c4bec13",
+   "size": 24953,
+   "url": "files/1.1.0-rc13/gis2cad/letters_gui.pyc"
+  },
+  {
+   "path": "gis2cad/license.pyc",
+   "sha256": "25171468aa991f181da69c274957fd1da3e6cda3b4ffbc052e7c0362d307c61c",
+   "size": 14042,
+   "url": "files/1.1.0-rc13/gis2cad/license.pyc"
+  },
+  {
+   "path": "gis2cad/licsrv.pyc",
+   "sha256": "6e8f60921fd6bf0245cc122507ab2baa15463261f0d07d5810a92281486bfc3b",
+   "size": 18600,
+   "url": "files/1.1.0-rc13/gis2cad/licsrv.pyc"
+  },
+  {
+   "path": "gis2cad/lisp.pyc",
+   "sha256": "ca18e145cb04967b3e77ff7d14f6abb530e3ce68505b612bf3b040b9bc68a34f",
+   "size": 8295,
+   "url": "files/1.1.0-rc13/gis2cad/lisp.pyc"
+  },
+  {
+   "path": "gis2cad/lock.pyc",
+   "sha256": "09371044bffc02b566126b417a3cb83fb45286aecfffacbed79bf4a4871b2228",
+   "size": 29418,
+   "url": "files/1.1.0-rc13/gis2cad/lock.pyc"
+  },
+  {
+   "path": "gis2cad/lookup.pyc",
+   "sha256": "443507953b7bad637e40eb7517f55396f30fda5a7ff8ad71f5a11342e20e50ff",
+   "size": 11046,
+   "url": "files/1.1.0-rc13/gis2cad/lookup.pyc"
+  },
+  {
+   "path": "gis2cad/overlay.pyc",
+   "sha256": "c8969aa857930077a245fc126e32077b5276b2619e6595033466741a134a8210",
+   "size": 7445,
+   "url": "files/1.1.0-rc13/gis2cad/overlay.pyc"
+  },
+  {
+   "path": "gis2cad/pin_formats.json",
+   "sha256": "ae70545fda37cbc7dc14f4ab54b384af0d9ffc87bbb3b5a9b8334bb71f910290",
+   "size": 971945,
+   "url": "files/1.1.0-rc13/gis2cad/pin_formats.json"
+  },
+  {
+   "path": "gis2cad/pinhint.pyc",
+   "sha256": "42483eb5e3769567bdb42b99f4a38fbebe4a1859f79a9d64c7a74984c8429bcd",
+   "size": 5582,
+   "url": "files/1.1.0-rc13/gis2cad/pinhint.pyc"
+  },
+  {
+   "path": "gis2cad/refresh.pyc",
+   "sha256": "167fa6ed38a814485cf0ebdc1aafa105eb584842acb4e2ad4a27e0ee4212e05f",
+   "size": 8294,
+   "url": "files/1.1.0-rc13/gis2cad/refresh.pyc"
+  },
+  {
+   "path": "gis2cad/roadrow.pyc",
+   "sha256": "78761eed2ef052eb54202ad21282c79756117b9d8a11f9e7b1d1bf9dd5763a1e",
+   "size": 14188,
+   "url": "files/1.1.0-rc13/gis2cad/roadrow.pyc"
+  },
+  {
+   "path": "gis2cad/roads.pyc",
+   "sha256": "4e531178c45ee9ef5496ae2675e524b71ea5ca593ddfe4c17fa2c468dff8e3e8",
+   "size": 28687,
+   "url": "files/1.1.0-rc13/gis2cad/roads.pyc"
+  },
+  {
+   "path": "gis2cad/stamp.pyc",
+   "sha256": "3ed4d7db767a9bda676c38e17a5c2a11f0f1d4e30f609fe0e65a588ebec3f543",
+   "size": 3509,
+   "url": "files/1.1.0-rc13/gis2cad/stamp.pyc"
+  },
+  {
+   "path": "gis2cad/style.pyc",
+   "sha256": "0d49bdcfcfa15c691d3ab3e4792f38e082cddb8571f5d0e6d09aa3f234902837",
+   "size": 36058,
+   "url": "files/1.1.0-rc13/gis2cad/style.pyc"
+  },
+  {
+   "path": "gis2cad/style_fields.pyc",
+   "sha256": "a9c01ab6aaa1ba25dc6fb714c4ce58013b63b1d7e5c26ab5ee682eb4d3eaacd5",
+   "size": 9086,
+   "url": "files/1.1.0-rc13/gis2cad/style_fields.pyc"
+  },
+  {
+   "path": "gis2cad/style_gui.pyc",
+   "sha256": "fbcb07b3be875a611eee0efc56e9714c91bc0dc3d8e276eb540b09de4b5097ed",
+   "size": 51824,
+   "url": "files/1.1.0-rc13/gis2cad/style_gui.pyc"
+  },
+  {
+   "path": "gis2cad/text.pyc",
+   "sha256": "f7ae40393dc8844be479800b7aab54c26076511beb3aff9437f21251499462b7",
+   "size": 50252,
+   "url": "files/1.1.0-rc13/gis2cad/text.pyc"
+  },
+  {
+   "path": "gis2cad/tkstyle.pyc",
+   "sha256": "0aeb5d0b6b14d4b49157c1a34954e6cf857949fcd9223b7d9b68b2b9470234d0",
+   "size": 1866,
+   "url": "files/1.1.0-rc13/gis2cad/tkstyle.pyc"
+  },
+  {
+   "path": "gis2cad/tn_names.pyc",
+   "sha256": "35a9f644d4231e24ac29b33160c737f1b3d640c411cfaed003ce4e58d2d4476c",
+   "size": 15632,
+   "url": "files/1.1.0-rc13/gis2cad/tn_names.pyc"
+  },
+  {
+   "path": "gis2cad/tx_names.pyc",
+   "sha256": "ec3b3bcc15c4b8654d3e5389e13d1b98fea13adf2bdec3aee76bf08fc057afc4",
+   "size": 14732,
+   "url": "files/1.1.0-rc13/gis2cad/tx_names.pyc"
+  },
+  {
+   "path": "gis2cad/update.pyc",
+   "sha256": "c81a6ee7d26c2770450c11b04aea78042c0dbaebf5666c7b63ee46e5009cc8f2",
+   "size": 18981,
+   "url": "files/1.1.0-rc13/gis2cad/update.pyc"
+  },
+  {
+   "path": "gis2cad/winplace.pyc",
+   "sha256": "5f1b23febd2b020ffaf4c07ed7be8acc13d34e8927a90d5a368fc643b3f1ae45",
+   "size": 13733,
+   "url": "files/1.1.0-rc13/gis2cad/winplace.pyc"
+  },
+  {
+   "path": "gis2cad/zoning.pyc",
+   "sha256": "5d9f2541b9c05844884a09c7edca350707872b626ecb34e6046c38979715dc7d",
+   "size": 9805,
+   "url": "files/1.1.0-rc13/gis2cad/zoning.pyc"
+  },
+  {
+   "path": "gis2cad/zoning_fmt.pyc",
+   "sha256": "a9108e1ef6ad5e7c779a2e68ba8ddf2c6dbab5bf7400909eb89ce8c31a919704",
+   "size": 3235,
+   "url": "files/1.1.0-rc13/gis2cad/zoning_fmt.pyc"
   },
   {
    "path": "styles/bigcs_default.json",
    "sha256": "28ddf801b292f95a8be94aca07e5c17ef6f57c27d59737897f65f464a3a54c7a",
    "size": 1768,
-   "url": "files/1.1.0-rc5/styles/bigcs_default.json"
+   "url": "files/1.1.0-rc13/styles/bigcs_default.json"
   },
   {
    "path": "styles/generic_style.json",
    "sha256": "fa1f00392efe8b9978548f4d5ac22a899831427219b3748913497b1d288dd7b5",
    "size": 1905,
-   "url": "files/1.1.0-rc5/styles/generic_style.json"
+   "url": "files/1.1.0-rc13/styles/generic_style.json"
   }
  ]
 }
