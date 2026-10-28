@@ -36,7 +36,7 @@ f.addEventListener("submit",function(ev){ev.preventDefault();
   var LBL={name:"your full name",email:"your work email",company:"your company name",phone:"your phone number",state:"your state",county:"your county",consent:"your agreement to be contacted",source:"how you heard about us"};
   fetch(TRIAL_ENDPOINT_URL,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
   .then(function(r){return r.json().catch(function(){return {}}).then(function(j){
-    if(r.ok&&j.status==="ok"){var l=recent();l.push(Date.now());localStorage.setItem(RL,JSON.stringify(l));var em=data.email.replace(/[<>&"]/g,"");f.reset();cSel.disabled=true;
+    if(r.ok&&j.status==="ok"){if(typeof window.gtag==="function")window.gtag("event","generate_lead",{form:"trial",state:String(data.state||"")});var l=recent();l.push(Date.now());localStorage.setItem(RL,JSON.stringify(l));var em=data.email.replace(/[<>&"]/g,"");f.reset();cSel.disabled=true;
       msg("ok","Thanks. We've received your request. A confirmation email is on its way to "+em+", and we'll reply there. Check your spam folder if you don't see it.");return}
     var s=j.status||"";
     if(r.status===429||s==="rate_limited")throw "Too many requests from your connection right now. Please try again later, or email "+MAIL+".";
