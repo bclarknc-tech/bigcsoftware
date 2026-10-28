@@ -77,7 +77,7 @@ f.addEventListener("submit",function(e){
   e.preventDefault();upd();btn.disabled=true;st.className="f-status";st.textContent="Sending...";
   fetch(f.action,{method:"POST",headers:{"Accept":"application/json"},body:new FormData(f)})
   .then(function(r){return r.json().then(function(j){if(!r.ok||!j.success)throw 0})})
-  .then(function(){f.reset();upd();st.className="f-status ok";st.textContent="Thanks, we'll be in touch soon."})
+  .then(function(){if(typeof window.gtag==="function")window.gtag("event","generate_lead",{form:"interest"});f.reset();upd();st.className="f-status ok";st.textContent="Thanks, we'll be in touch soon."})
   .catch(function(){st.className="f-status err";st.innerHTML='Sorry, that did not go through. Please email <a href="mailto:sales@bigcsoftware.com?subject=BIGCS%20interest">sales@bigcsoftware.com</a>.'})
   .then(function(){btn.disabled=false});
 });
@@ -92,5 +92,6 @@ f.addEventListener("submit",function(e){
 <p>&copy; 2026 BIGCS. All rights reserved.</p>
 </div>
 </footer>
+<script src="/assets/ga-events.js" defer></script>
 </body>
 </html>
