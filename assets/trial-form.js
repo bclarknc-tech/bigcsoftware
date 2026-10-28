@@ -1,7 +1,7 @@
 (function(){
-// ===== CONFIG: replace both placeholders before launch. While either is a placeholder, the form never submits. =====
-var TRIAL_ENDPOINT_URL="PLACEHOLDER_TRIAL_ENDPOINT_URL";   // Worker endpoint that receives trial requests (POST JSON)
-var TURNSTILE_SITE_KEY="PLACEHOLDER_TURNSTILE_SITE_KEY";   // Cloudflare Turnstile site key (invisible/managed)
+// ===== CONFIG. If either value is set back to a "PLACEHOLDER..." string, the form never submits. =====
+var TRIAL_ENDPOINT_URL="https://bigcs-license.bigcs.workers.dev/v1/trial/request"; // Worker endpoint (POST JSON)
+var TURNSTILE_SITE_KEY="0x4AAAAAAFpF0eX9jM5cZmgJ";   // Cloudflare Turnstile site key (invisible)
 // ======================================================================================================
 var LIVE=TRIAL_ENDPOINT_URL.indexOf("PLACEHOLDER")<0&&TURNSTILE_SITE_KEY.indexOf("PLACEHOLDER")<0;
 var MAIL='<a href="mailto:sales@bigcsoftware.com?subject=BIGCS%20trial%20request">sales@bigcsoftware.com</a>';
@@ -32,10 +32,17 @@ f.addEventListener("submit",function(ev){ev.preventDefault();
   if(!tsToken){msg("err","Still checking your browser. Please wait a moment and try again.");return}
   btn.disabled=true;msg("","Sending...");
   var data={};new FormData(f).forEach(function(v,k){data[k]=v});data.email=data.email.trim().toLowerCase();data["cf-turnstile-response"]=tsToken;
+  var FAIL="Couldn't send that. Email "+MAIL+" to ask about a trial.";
+  var LBL={name:"your full name",email:"your work email",company:"your company name",phone:"your phone number",state:"your state",county:"your county",consent:"your agreement to be contacted",source:"how you heard about us"};
   fetch(TRIAL_ENDPOINT_URL,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
-  .then(function(r){if(r.status===429)throw "rl";if(!r.ok)throw 0;
-    var l=recent();l.push(Date.now());localStorage.setItem(RL,JSON.stringify(l));var em=data.email.replace(/[<>&"]/g,"");f.reset();cSel.disabled=true;
-    msg("ok","Thanks. We've received your request and will reply by email to "+em+". Check your spam folder if you don't see it.")})
-  .catch(function(x){msg("err",x==="rl"?"Too many requests from your connection right now. Please try again later, or email "+MAIL+".":"Sorry, that did not go through. Please email "+MAIL+".")})
+  .then(function(r){return r.json().catch(function(){return {}}).then(function(j){
+    if(r.ok&&j.status==="ok"){var l=recent();l.push(Date.now());localStorage.setItem(RL,JSON.stringify(l));var em=data.email.replace(/[<>&"]/g,"");f.reset();cSel.disabled=true;
+      msg("ok","Thanks. We've received your request and will reply by email to "+em+". Check your spam folder if you don't see it.");return}
+    var s=j.status||"";
+    if(r.status===429||s==="rate_limited")throw "Too many requests from your connection right now. Please try again later, or email "+MAIL+".";
+    if(s==="invalid"&&j.fields&&j.fields.length)throw "Please check "+j.fields.map(function(k){return LBL[k]||k}).join(", ")+".";
+    if(s==="turnstile_failed"||s==="turnstile_missing")throw "We couldn't confirm your browser. Please reload the page and try again, or email "+MAIL+".";
+    throw FAIL;})})
+  .catch(function(x){msg("err",typeof x==="string"?x:FAIL)})
   .then(function(){btn.disabled=false;tsToken="";if(window.turnstile)try{turnstile.reset()}catch(e){}});});
 })();
