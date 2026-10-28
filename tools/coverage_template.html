@@ -70,6 +70,7 @@ td.src{text-align:left!important;font-size:11px;color:#aab;min-width:160px;max-w
 <!--STATES-->
 </div>
 <p id="none" style="display:none">No counties match.</p>
+<p class="cov-owner-note" style="color:#ddd;margin-top:18px">Owner names come from each county's public GIS records. Most print cleanly, but some counties publish names that are abbreviated, cut off or out of order, and those print the way the county stores them. Always confirm owner names with the official records.</p>
 <script>
 (function(){var q=document.getElementById('q');q.addEventListener('input',function(){var v=q.value.trim().toLowerCase(),any=false;
 document.querySelectorAll('.cov-state').forEach(function(d){var n=0;d.querySelectorAll('tbody tr').forEach(function(r){var m=!v||r.dataset.c.indexOf(v)>-1;r.style.display=m?'':'none';if(m)n++;});

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ68FN8YPT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TZ68FN8YPT');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ask about a trial | BIGCS</title>
+<meta name="description" content="Ask about a BIGCS trial for one county. Each request is reviewed by hand.">
+<link rel="canonical" href="https://bigcsoftware.com/trial.html">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BIGCS">
+<meta property="og:title" content="Ask about a trial | BIGCS">
+<meta property="og:description" content="Ask about a BIGCS trial for one county. Each request is reviewed by hand.">
+<meta property="og:url" content="https://bigcsoftware.com/trial.html">
+<meta property="og:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ask about a trial | BIGCS">
+<meta name="twitter:description" content="Ask about a BIGCS trial for one county. Each request is reviewed by hand.">
+<meta name="twitter:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="bg-layer"><div class="bg-hologram"></div><div class="bg-grid"></div></div>
+<nav>
+<div class="container nav-inner">
+<a href="/" class="logo"><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="BIGCS Software seal" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
+<div class="nav-links"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/#about">About</a><a href="/faq.html">FAQ</a><a href="/pricing.html" class="btn btn-primary">See pricing</a></div>
+</div>
+</nav>
+<main class="container"><section class="page-hero" style="padding-bottom:30px">
+<div class="badge">Trial</div>
+<h1>Ask about a trial</h1>
+<p class="hero-sub">Would you like to see BIGCS work with your own parcels? Tell us who you are and which county you work in. Every trial request is reviewed by hand, and we'll reply by email. Sending this form doesn't start a trial or sign you up for anything.</p>
+<p class="hero-sub">Want to see it first? <a href="/#demo">Watch the demo</a> or check <a href="/coverage.html">county coverage</a>.</p>
+</section>
+<section class="form-wrap">
+<form id="trial-form" class="interest-form" method="POST" novalidate>
+<input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="f-row"><label><span class="lt">Full name <span class="req">*</span></span><input type="text" name="name" id="t-name" maxlength="100" required autocomplete="name"></label>
+<label><span class="lt">Company name <span class="req">*</span></span><input type="text" name="company" id="t-company" maxlength="120" required autocomplete="organization"><small class="opt">If you work on your own, enter your business name.</small></label></div>
+<div class="f-row"><label><span class="lt">Work email <span class="req">*</span></span><input type="email" name="email" id="t-email" maxlength="254" required autocomplete="email"></label>
+<label><span class="lt">Phone number <span class="opt">(optional)</span></span><input type="tel" name="phone" id="t-phone" maxlength="30" autocomplete="tel"><small class="opt">Only used if we need to reach you about your request.</small></label></div>
+<div class="f-row"><label><span class="lt">State <span class="req">*</span></span><select name="state" id="t-state" required><option value="">Select a state</option><option>NC</option><option>SC</option><option>GA</option><option>VA</option><option>TN</option></select></label>
+<label><span class="lt">County <span class="req">*</span></span><select name="county" id="t-county" required disabled><option value="">Select a state first</option></select></label></div>
+<label><span class="lt">How did you hear about us? <span class="opt">(optional)</span></span><select name="source"><option value="">Select one</option><option>Search</option><option>Colleague</option><option>Social media</option><option>Trade show</option><option>Other</option></select></label>
+<label class="f-check" style="display:flex;flex-direction:row;gap:10px;align-items:flex-start;font-weight:400"><input type="checkbox" name="consent" id="t-consent" required style="width:auto;margin-top:4px"><span>I agree that BIGCS Software may use these details to review my trial request and contact me about it. We don't sell or share your information. See our <a href="/privacy.html">Privacy Policy</a>.</span></label>
+<div class="cf-turnstile" id="t-turnstile"></div>
+<button type="submit" class="btn btn-primary" id="t-submit">Ask about a trial</button>
+<p class="f-status" id="t-status" role="status" aria-live="polite"></p>
+</form>
+<p class="f-fallback">Prefer email? <a href="mailto:sales@bigcsoftware.com?subject=BIGCS%20trial%20request">sales@bigcsoftware.com</a></p>
+</section>
+</main>
+<script src="/assets/trial-counties.js"></script>
+<script src="/assets/trial-form.js"></script>
+<footer>
+<div class="container">
+<div class="links"><a href="/">Home</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/install-help.html">Install help</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:sales@bigcsoftware.com">Contact</a></div>
+<p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources and is not survey-grade. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
+<p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a></p>
+<p>AutoCAD and Civil 3D are trademarks of Autodesk, Inc. Carlson is a trademark of Carlson Software, Inc. IntelliCAD is a trademark of the IntelliCAD Technology Consortium. BIGCS is not affiliated with or endorsed by these companies.</p>
+<p>&copy; 2026 BIGCS. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>
