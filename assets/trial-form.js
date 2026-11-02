@@ -20,7 +20,7 @@ function check(){var v=function(id){return document.getElementById(id).value.tri
   var n=v("t-name");if(n.length<2)e.push("your full name");
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v("t-email")))e.push("a valid work email");
   if(v("t-company").length<2)e.push("your company name");
-  var p=v("t-phone");if(p){var d=p.replace(/\s*(x|ext\.?)\s*\d+$/i,"");var ok=/^\+\d{8,15}$/.test(d.replace(/[\s().-]/g,""))||/^1?\d{10}$/.test(d.replace(/[\s().+-]/g,""));if(!ok)e.push("a valid phone number, or leave it blank");}
+  var p=document.getElementById("t-phone")?v("t-phone"):"";if(p){var d=p.replace(/\s*(x|ext\.?)\s*\d+$/i,"");var ok=/^\+\d{8,15}$/.test(d.replace(/[\s().-]/g,""))||/^1?\d{10}$/.test(d.replace(/[\s().+-]/g,""));if(!ok)e.push("a valid phone number, or leave it blank");}
   if(!sSel.value)e.push("a state");if(!cSel.value)e.push("a county");
   if(!document.getElementById("t-consent").checked)e.push("your agreement to be contacted");return e}
 f.addEventListener("submit",function(ev){ev.preventDefault();

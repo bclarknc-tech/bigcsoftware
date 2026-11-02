@@ -129,3 +129,5 @@ section{margin-top:70px}}
 @media (max-width:700px){.f-row{flex-direction:column}.interest-form{padding:20px}.interest-form .btn{align-self:stretch}
 .tier-table thead{display:none}.tier-table tr{display:grid;grid-template-columns:1fr auto auto;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)}
 .tier-table th,.tier-table td{border:0}.tier-table td.act{grid-column:1/-1;padding:0 10px 14px}.tier-table td.act .btn{width:100%}}
+
+.hero-brand{font-size:17px;color:var(--muted);margin:0 0 10px;letter-spacing:.3px}
