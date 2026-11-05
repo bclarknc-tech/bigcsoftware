@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ68FN8YPT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TZ68FN8YPT');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Label Adjoiners in Carlson with County GIS | BIGCS</title>
+<meta name="description" content="Step-by-step: bring county GIS parcels into Carlson, IntelliCAD or AutoCAD and label adjoiners with owner, deed book and page, and plat references.">
+<link rel="canonical" href="https://bigcsoftware.com/howto-label-adjoiners.html">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="BIGCS">
+<meta property="og:title" content="How to Label Adjoiners in Carlson | BIGCS">
+<meta property="og:description" content="Step-by-step: bring county GIS parcels into Carlson, IntelliCAD or AutoCAD and label adjoiners with owner, deed book and page, and plat references.">
+<meta property="og:url" content="https://bigcsoftware.com/howto-label-adjoiners.html">
+<meta property="og:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Label Adjoiners in Carlson | BIGCS">
+<meta name="twitter:description" content="Step-by-step: bring county GIS parcels into Carlson, IntelliCAD or AutoCAD and label adjoiners with owner, deed book and page, and plat references.">
+<meta name="twitter:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>#howto h2{font-size:26px;margin:32px 0 10px}#howto p{margin:0 0 12px;color:#ddd;font-size:17px}</style>
+</head>
+<body>
+<div class="bg-layer"><div class="bg-hologram"></div><div class="bg-grid"></div></div>
+<nav>
+<div class="container nav-inner">
+<a href="/" class="logo"><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="BIGCS Software seal" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
+<div class="nav-links"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/#about">About</a><a href="/faq.html">FAQ</a><a href="/pricing.html" class="btn btn-primary">See pricing</a></div>
+</div>
+</nav>
+<main class="container">
+<article id="howto" style="max-width:820px;margin:0 auto">
+<div class="section-head"><div class="badge">How-to</div><h1>How to Label Adjoiners in Carlson</h1>
+<p>Every boundary job needs the adjoiners on the drawing: who owns the land next door, and where their deed and plat are recorded. Here is how to pull that from county GIS and label it in Carlson, IntelliCAD or full AutoCAD with BIGCS, instead of retyping it from the county site.</p></div>
+
+<h2>1. Set your label style once</h2>
+<p>Run <code>BCSST</code> to open the label style editor. Set the line order, wording, SHX or TrueType fonts, text height, justification and layers, with a live preview. Styles are saved and reused, so your adjoiner labels come out in your own CAD standards on every job.</p>
+
+<h2>2. Find the subject parcel</h2>
+<p>Run <code>BCS</code> (<code>G2C</code> and <code>GIS2CAD</code> also work). Locate the parcel by Pick, Lat/Lon, State Plane N/E, Address or PIN. If you have the PIN from the deed or the tax card, that is the quickest way to land on the right parcel.</p>
+
+<h2>3. Pick the adjoiners</h2>
+<p>Choose the Adjoiners mode in <code>BCS</code>. BIGCS draws the parcel boundaries at true coordinates, straight from county GIS. Data comes as-is from each county's public GIS. BIGCS never adjusts or datum-shifts it.</p>
+
+<h2>4. Check the labels</h2>
+<p>Each adjoiner gets a label with the owner, deed book/page, plat book/page and PIN, in the style you set. A label looks like this:</p>
+<div class="cad-preview"><div class="cad-text">N/F<br>JOHN D. SMITH<br>DB 14256 PG 198<br>MB 42 PG 12<br>PIN: 045-122-09<br>555 SAMPLE WAY<br>CHARLOTTE, NC 28202</div><p class="caption">Sample label with fictional data. Line order, fonts and justification are configurable.</p></div>
+<p>Need only the text, without the parcel linework? Use <code>BCSTXT</code>. Each object also records which GIS source it came from and when it was pulled.</p>
+<p><strong>Labels come straight from each county's public GIS. Always confirm against the recorded deeds and plats.</strong></p>
+
+<h2>5. Build the adjoiner table</h2>
+<p>Run <code>BCSADJ</code> to place a table of adjoining owners with deed and plat references in the drawing. A CSV is saved beside the drawing too.</p>
+
+<h2>6. Refresh when records change</h2>
+<p>Run <code>BCSREF</code> to refresh every BIGCS label from county GIS by its stored PIN. It updates the text and date stamp and saves a CSV of changes.</p>
+
+<h2>7. Letters and door hangers (add-on)</h2>
+<p>With the Letters &amp; Door Hangers add-on, <code>BCSLTR</code> opens BIGCS Letters in a separate window using the drawing's adjoiner CSV. Pick owners and a letter type (offer, mailer, notice of upcoming work) and produce letters outside of CAD.</p>
+
+<h2>Where it works</h2>
+<p>Runs in Carlson, IntelliCAD and full AutoCAD. Counties in 15 states today: NC, SC, GA, VA, TN, WV, TX, MS, AR, MO, NY, OH, AL, WI and MN. <a href="/coverage.html">See what each county has</a>.</p>
+
+<div class="notice"><h3>BIGCS is not a survey</h3><p>Parcel lines and record data come as-is from county GIS and are approximate. Always check recorded deeds and plats, and use a licensed surveyor when boundaries matter. <a href="/disclaimer.html">Full disclaimer</a></p></div>
+
+<div style="text-align:center;margin:36px 0">
+<p><strong>BIGCS Software: Boundary Intelligence for GIS, CAD &amp; Survey</strong></p>
+<p>Want to try it on your own jobs? Trials are available on request.</p>
+<a class="btn btn-primary" href="/trial.html"><span style="background:#FFEB3B;color:#1a1a1a;padding:1px 6px;border-radius:4px">Ask about a trial</span></a> <a class="btn btn-ghost" href="/#features">See the features</a>
+</div>
+</article>
+</main>
+<footer>
+<div class="container">
+<div class="links"><a href="/">Home</a><a href="/pricing.html">Pricing</a><a href="/faq.html">FAQ</a><a href="/coverage.html">Coverage</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/install-help.html">Install help</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:sales@bigcsoftware.com">Contact</a></div>
+<p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources and is not survey-grade. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
+<p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a></p>
+<p>AutoCAD and Civil 3D are trademarks of Autodesk, Inc. Carlson is a trademark of Carlson Software, Inc. IntelliCAD is a trademark of the IntelliCAD Technology Consortium. BIGCS is not affiliated with or endorsed by these companies.</p>
+<p>&copy; 2026 BIGCS. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>
