@@ -19,13 +19,13 @@ var BIGCS_PLANS = {
     monthly: {
       label: "$49.99",
       suffix: "/mo",
-      alt: "Or $499.90/yr (2 months free).",
+      alt: "Or $499.90/yr (save 2 months).",
       url: STRIPE_PAYMENT_LINKS["2c-monthly"]
     },
     yearly: {
       label: "$499.90",
       suffix: "/yr",
-      alt: "2 months free. That's 10 months at $49.99.",
+      alt: "Save 2 months. That's 10 months at $49.99.",
       url: STRIPE_PAYMENT_LINKS["2c-yearly"]
     }
   },
@@ -33,13 +33,13 @@ var BIGCS_PLANS = {
     monthly: {
       label: "$99.99",
       suffix: "/mo",
-      alt: "Or $999.90/yr (2 months free).",
+      alt: "Or $999.90/yr (save 2 months).",
       url: STRIPE_PAYMENT_LINKS["6c-monthly"]
     },
     yearly: {
       label: "$999.90",
       suffix: "/yr",
-      alt: "2 months free. That's 10 months at $99.99.",
+      alt: "Save 2 months. That's 10 months at $99.99.",
       url: STRIPE_PAYMENT_LINKS["6c-yearly"]
     }
   },
@@ -47,13 +47,13 @@ var BIGCS_PLANS = {
     monthly: {
       label: "$169.99",
       suffix: "/mo",
-      alt: "Or $1,699.90/yr (2 months free).",
+      alt: "Or $1,699.90/yr (save 2 months).",
       url: STRIPE_PAYMENT_LINKS["state-monthly"]
     },
     yearly: {
       label: "$1,699.90",
       suffix: "/yr",
-      alt: "2 months free. That's 10 months at $169.99.",
+      alt: "Save 2 months. That's 10 months at $169.99.",
       url: STRIPE_PAYMENT_LINKS["state-yearly"]
     }
   }

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ68FN8YPT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TZ68FN8YPT');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIGCS Commands for Carlson, IntelliCAD and AutoCAD</title>
+<meta name="description" content="BCS commands for parcel labels, adjoiner tables, map layers and label styles in Carlson, IntelliCAD and AutoCAD. G2C and GIS2CAD names still work.">
+<link rel="canonical" href="https://bigcsoftware.com/commands.html">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BIGCS">
+<meta property="og:title" content="Commands | BIGCS">
+<meta property="og:description" content="BCS commands for parcel labels, adjoiner tables, map layers and label styles in Carlson, IntelliCAD and AutoCAD. G2C and GIS2CAD names still work.">
+<meta property="og:url" content="https://bigcsoftware.com/commands.html">
+<meta property="og:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Commands | BIGCS">
+<meta name="twitter:description" content="BCS commands for parcel labels, adjoiner tables, map layers and label styles in Carlson, IntelliCAD and AutoCAD. G2C and GIS2CAD names still work.">
+<meta name="twitter:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="bg-layer"><div class="bg-hologram"></div><div class="bg-grid"></div></div>
+<nav>
+<div class="container nav-inner">
+<a href="/" class="logo"><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="BIGCS Software seal" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
+<div class="nav-links"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/coverage.html">Coverage</a><a href="/faq.html">FAQ</a><a href="/trial.html" class="btn btn-primary">Start trial</a><a href="/pricing.html" class="btn btn-ghost">Buy</a></div>
+</div>
+</nav>
+<main class="container">
+<section class="page-hero">
+<div class="badge">Commands</div>
+<h1>Command list</h1>
+<p class="hero-sub">BCS commands, with the original G2C and GIS2CAD names still working. Each object records which GIS source it came from and when it was pulled. Runs in Carlson, IntelliCAD and full AutoCAD.</p>
+</section>
+<section id="commands">
+<table class="cmd-table">
+<tr><th>Command</th><th>Also works as</th><th>What it does</th></tr>
+<tr><td class="cmd">BCS</td><td class="cmd">G2C, GIS2CAD</td><td>Insert parcels: boundary + owner/deed/plat labels. Locate by Pick, Lat/Lon, State Plane N/E, Address or PIN; mode Single, Adjoiners, Radius or Window.</td></tr>
+<tr><td class="cmd">BCSTXT</td><td class="cmd">G2CTXT, GIS2CADTXT</td><td>Same as BCS but labels only, no parcel boundary.</td></tr>
+<tr><td class="cmd">BCSADJ</td><td class="cmd">G2CADJ, GIS2CADADJ</td><td>Adjoiner table placed in the drawing, plus a CSV saved beside the drawing.</td></tr>
+<tr><td class="cmd">BCSREF</td><td class="cmd">G2CREF, GIS2CADREF</td><td>Refresh every BIGCS label from county GIS by its stored PIN; updates text and date stamp and saves a CSV of changes.</td></tr>
+<tr><td class="cmd">BCSLTR</td><td class="cmd">G2CLTR, GIS2CADLTR</td><td>Open BIGCS Letters (separate window) using the drawing's adjoiner CSV.</td></tr>
+<tr><td class="cmd">BCSMAP</td><td class="cmd">BCSBND, G2CBND, GIS2CADBOUNDS</td><td>Map Layers window (formerly Boundaries): state/county borders, NGS and state monuments, road centerlines, easements/ROW and flood zones, by county or a picked area. Includes Draw Building Footprints (Beta).</td></tr>
+<tr><td class="cmd">BCSBLDG</td><td class="cmd"></td><td>Building footprints (Beta, NC only): Window or Parcel (50 ft buffer by default). Draws closed polylines on layer BIGCS-BLDG; set layer, color and linetype in BCSST.</td></tr>
+<tr><td class="cmd">BCSST</td><td class="cmd">G2CST, GIS2CADSTYLE</td><td>Label style editor: line order, wording, fonts, justification, layers, live preview.</td></tr>
+<tr><td class="cmd">BCSLOAD</td><td class="cmd">G2CLOAD, GIS2CADLOAD</td><td>Load an already-generated BIGCS result file (.lsp), e.g. from a batch run.</td></tr>
+</table>
+<p class="checkout-note">Counties in 15 states today: NC, SC, GA, VA, TN, WV, TX, MS, AR, MO, NY, OH, AL, WI and MN. <a href="/coverage.html">See what each county has</a>. <a href="/">Back to the home page</a>.</p>
+<div class="notice" style="margin-top:28px"><h3>BIGCS is not a survey</h3><p>Parcel lines and record data come as-is from county GIS and are approximate. Always check recorded deeds and plats, and use a licensed surveyor when boundaries matter. <a href="/disclaimer.html">Full disclaimer</a></p></div>
+</section>
+</main>
+<footer>
+<div class="container">
+<div class="links"><a href="/">Home</a><a href="/commands.html">Commands</a><a href="/pricing.html">Pricing</a><a href="/faq.html">FAQ</a><a href="/coverage.html">Coverage</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/install-help.html">Install help</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:sales@bigcsoftware.com">Contact</a></div>
+<p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources and is not survey-grade. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
+<p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a></p>
+<p>AutoCAD and Civil 3D are trademarks of Autodesk, Inc. Carlson is a trademark of Carlson Software, Inc. IntelliCAD is a trademark of the IntelliCAD Technology Consortium. BIGCS is not affiliated with or endorsed by these companies.</p>
+<p>&copy; 2026 BIGCS. All rights reserved.</p>
+</div>
+</footer>
+<script src="/assets/ga-events.js" defer></script>
+</body>
+</html>
