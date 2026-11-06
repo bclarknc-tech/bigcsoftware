@@ -54,89 +54,75 @@
 }
 </script>
 </head>
-<body>
+<body class="home">
 <div class="bg-layer"><div class="bg-hologram"></div><div class="bg-grid"></div></div>
 <nav>
 <div class="container nav-inner">
 <a href="/" class="logo"><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="BIGCS Software seal" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
-<div class="nav-links"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/#about">About</a><a href="/faq.html">FAQ</a><a href="/trial.html">Trial</a><a href="/pricing.html" class="btn btn-primary">See pricing</a></div>
+<div class="nav-links"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/coverage.html">Coverage</a><a href="/faq.html">FAQ</a><a href="/trial.html" class="btn btn-primary">Start trial</a><a href="/pricing.html" class="btn btn-ghost">Buy</a></div>
 </div>
 </nav>
 <main class="container">
-<section class="hero" style="margin-top:0">
+<div class="home-top">
+<div class="hero-copy">
 <h1>County GIS parcels, straight into your CAD drawing.</h1>
-<p class="hero-sub">BIGCS is a Carlson add-in that pulls parcel boundaries plus owner, deed and plat labels from county GIS into your drawing at true coordinates, so you stop retyping record info. Tested by licensed surveyors.</p>
-<div class="hero-ctas"><a href="/pricing.html" class="btn btn-primary">See pricing</a><a href="/trial.html" class="btn btn-primary"><span style="background:#FFEB3B;color:#1a1a1a;padding:1px 6px;border-radius:4px">Ask about a trial</span></a><a href="#features" class="btn btn-primary">See the features</a></div>
-<div class="use-cases"><div class="use-case-tag primary">Surveyors</div><div class="use-case-tag">Civil Engineers</div><div class="use-case-tag">Realtors &amp; Developers</div><div class="use-case-tag">GIS / CAD Users</div></div>
+<p class="hero-sub">Owner, deed and plat labels at true coordinates, in your own CAD standards. No obligation.</p>
+<div class="hero-ctas"><a href="/trial.html" class="btn btn-primary">Start trial</a><a href="/pricing.html" class="btn btn-ghost">See pricing</a><a href="/coverage.html" class="btn btn-ghost">Coverage</a></div>
+</div>
+<div class="demo" id="demo"><video controls playsinline preload="metadata" poster="assets/bigcs-demo-poster-v3.jpg"><source src="assets/bigcs-demo-v3.mp4" type="video/mp4">Your browser can't play this video.</video></div>
+<section class="proof" aria-label="Where BIGCS runs">
+<p class="proof-hosts">Runs in <strong>Carlson</strong> · <strong>IntelliCAD</strong> · <strong>AutoCAD</strong></p>
+<ul class="state-chips">
+<li>NC</li><li>SC</li><li>GA</li><li>VA</li><li>TN</li><li>WV</li><li>TX</li><li>MS</li><li>AR</li><li>MO</li><li>NY</li><li>OH</li><li>AL</li><li>WI</li><li>MN</li>
+</ul>
+<p class="proof-note">Tested by licensed surveyors. Counties in 15 states today.</p>
 </section>
-<section id="demo">
-<div class="demo"><video controls playsinline preload="metadata" poster="assets/bigcs-demo-poster-v3.jpg"><source src="assets/bigcs-demo-v3.mp4" type="video/mp4">Your browser can't play this video.</video></div>
-</section>
-<section id="features">
-<div class="section-head"><div class="badge">Features</div><h2>What BIGCS does</h2><p>Public records into real CAD entities: linework, text and properties you can work with.</p></div>
+<section id="features" class="outcomes">
+<div class="section-head"><h2>What you get</h2><p>Six outcomes for the drawing. Command names live on the <a href="/commands.html">command list</a>.</p></div>
 <div class="features-grid">
-<div class="card"><div class="icon">PCL</div><h3>Parcel boundaries + owner labels</h3><p>Pick a point inside a parcel and BIGCS draws the boundary with owner, deed book/page, plat book/page and PIN text at true coordinates, straight from county GIS.</p><p><code>BCS</code></p></div>
-<div class="card"><div class="icon">Aa</div><h3>Custom label styles</h3><p>Set line order, SHX or TrueType fonts, text height and justification (left, center, right and more), saved as reusable styles.</p><p><code>BCSST</code></p></div>
-<div class="card"><div class="icon">T</div><h3>Text-only insert</h3><p>Place just the owner and record labels without the parcel linework, as a setting or its own command.</p><p><code>BCSTXT</code></p></div>
-<div class="card"><div class="icon">BND</div><h3>State &amp; county boundaries</h3><p>Draw state and county lines on demand. BIGCS remembers your last state and county, and the county list is type-to-search.</p><p><code>BCSBND</code></p></div>
-<div class="card"><div class="icon">BLD</div><h3>Building footprints (Beta)</h3><p>Draw building outlines as closed polylines in your drawing's coordinate system, with no datum shift. Pick a window or a parcel (50 ft buffer by default), or a whole county with confirmation, up to 20,000 buildings. Source: NC Emergency Management statewide building footprints (NC OneMap), about 5.4 million buildings in all 100 NC counties. NC only for now. Outlines only: no labels, area or height. Included in every plan.</p><p><code>BCSBLDG</code></p></div>
-<div class="card"><div class="icon">RD</div><h3>Road centerlines</h3><p>Pick an area to bring in road centerlines on their own layer, with the road name stored in the object properties, not as clutter text.</p></div>
-<div class="card"><div class="icon">&#9651;</div><h3>Survey monuments</h3><p>Plot published control monuments in a picked area, with links back to the official datasheet.</p></div>
-<div class="card"><div class="icon">FZ</div><h3>FEMA flood zones</h3><p>Bring in FEMA flood zone areas with a link to the flood map in each object's properties.</p></div>
-<div class="card"><div class="icon">ADJ</div><h3>Adjoiner table</h3><p>Build a table of adjoining owners with deed and plat references, useful for surveyors, engineers, realtors and developers.</p><p><code>BCSADJ</code></p></div>
-<div class="card"><div class="icon">&#8981;</div><h3>Find by address or PIN</h3><p>Jump to a parcel by site address or parcel number, alongside point-pick and area selection.</p></div>
-<div class="card"><div class="icon">&#8635;</div><h3>Refresh</h3><p>Re-pull a parcel from the county source to update labels when records change.</p><p><code>BCSREF</code></p></div>
-<div class="card"><div class="icon">SRC</div><h3>Source &amp; date stamp</h3><p>Each object records which GIS source it came from and when it was pulled.</p></div>
-<div class="card"><div class="icon">&#9993;</div><h3>BIGCS Letters add-on</h3><p>Pick owners and a letter type (offer, mailer, notice of upcoming work) and produce letters outside of CAD.</p><p><code>BCSLTR</code></p></div>
+<div class="card"><div class="icon">PCL</div><h3>Parcels and labels</h3><p>Pick a point inside a parcel. BIGCS draws the boundary with owner, deed book/page, plat book/page and PIN text at true coordinates, straight from county GIS.</p></div>
+<div class="card"><div class="icon">Aa</div><h3>Label styles</h3><p>Set line order, SHX or TrueType fonts, text height and justification, saved as reusable styles so the labels match your CAD standards.</p></div>
+<div class="card"><div class="icon">ADJ</div><h3>Adjoiner table</h3><p>A table of adjoining owners with deed and plat references, placed in the drawing, with a CSV saved beside it.</p></div>
+<div class="card"><div class="icon">MAP</div><h3>Map layers</h3><p>State and county lines, road centerlines, survey monuments and FEMA flood zones, on their own layers, for a county or a picked area.</p></div>
+<div class="card"><div class="icon">BLD</div><h3>Building footprints <span class="beta-tag">Beta</span></h3><p>North Carolina only. Building outlines as closed polylines in the drawing's coordinate system, from NC Emergency Management statewide footprints on NC OneMap. Outlines only. Included in every plan.</p></div>
+<div class="card"><div class="icon">LTR</div><h3>Letters add-on</h3><p>Pick owners and a letter type (offer, mailer, notice of upcoming work) and produce letters outside of CAD. Optional add-on for any plan.</p></div>
 </div>
+<p class="cmd-jump"><a href="/commands.html">See the full command list</a></p>
 </section>
-<section id="commands">
-<div class="section-head"><h2>Commands</h2><p>BCS commands, with the original G2C and GIS2CAD names still working.</p></div>
-<table class="cmd-table">
-<tr><th>Command</th><th>Also works as</th><th>What it does</th></tr>
-<tr><td class="cmd">BCS</td><td class="cmd">G2C, GIS2CAD</td><td>Insert parcels: boundary + owner/deed/plat labels. Locate by Pick, Lat/Lon, State Plane N/E, Address or PIN; mode Single, Adjoiners, Radius or Window.</td></tr>
-<tr><td class="cmd">BCSTXT</td><td class="cmd">G2CTXT, GIS2CADTXT</td><td>Same as BCS but labels only, no parcel boundary.</td></tr>
-<tr><td class="cmd">BCSADJ</td><td class="cmd">G2CADJ, GIS2CADADJ</td><td>Adjoiner table placed in the drawing, plus a CSV saved beside the drawing.</td></tr>
-<tr><td class="cmd">BCSREF</td><td class="cmd">G2CREF, GIS2CADREF</td><td>Refresh every BIGCS label from county GIS by its stored PIN; updates text and date stamp and saves a CSV of changes.</td></tr>
-<tr><td class="cmd">BCSLTR</td><td class="cmd">G2CLTR, GIS2CADLTR</td><td>Open BIGCS Letters (separate window) using the drawing's adjoiner CSV.</td></tr>
-<tr><td class="cmd">BCSMAP</td><td class="cmd">BCSBND, G2CBND, GIS2CADBOUNDS</td><td>Map Layers window (formerly Boundaries): state/county borders, NGS and state monuments, road centerlines, easements/ROW and flood zones, by county or a picked area. Includes Draw Building Footprints (Beta).</td></tr>
-<tr><td class="cmd">BCSBLDG</td><td class="cmd"></td><td>Building footprints (Beta, NC only): Window or Parcel (50 ft buffer by default). Draws closed polylines on layer BIGCS-BLDG; set layer, color and linetype in BCSST.</td></tr>
-<tr><td class="cmd">BCSST</td><td class="cmd">G2CST, GIS2CADSTYLE</td><td>Label style editor: line order, wording, fonts, justification, layers, live preview.</td></tr>
-<tr><td class="cmd">BCSLOAD</td><td class="cmd">G2CLOAD, GIS2CADLOAD</td><td>Load an already-generated BIGCS result file (.lsp), e.g. from a batch run.</td></tr>
-</table>
-</section>
-<section class="tax-section">
-<div>
-<div class="stat-value">Coverage &amp; compatibility</div>
-<p style="color:#ddd;font-size:17px"><strong>Counties in 15 states today: NC, SC, GA, VA, TN, WV, TX, MS, AR, MO, NY, OH, AL, WI and MN, and more coming.</strong> Data comes as-is from each county's public GIS. BIGCS never adjusts or datum-shifts it.</p>
-<p style="color:#ddd;font-size:17px;margin-top:14px">Runs in <strong>Carlson, IntelliCAD and full AutoCAD</strong>.</p>
 </div>
-<div class="cad-preview"><div class="cad-text">N/F<br>JOHN D. SMITH<br>DB 14256 PG 198<br>MB 42 PG 12<br>PIN: 045-122-09<br>555 SAMPLE WAY<br>CHARLOTTE, NC 28202</div><p class="caption">Sample label with fictional data. Line order, fonts and justification are configurable.</p></div>
+<section id="how">
+<div class="section-head"><h2>How it works</h2><p>Three steps. The labels land in the drawing you already have open.</p></div>
+<ol class="steps">
+<li><span class="step-n">1</span><h3>Pick a parcel</h3><p>Click inside the parcel, or find it by address or PIN.</p></li>
+<li><span class="step-n">2</span><h3>Pull GIS</h3><p>BIGCS reads the county parcel and the owner, deed and plat records.</p></li>
+<li><span class="step-n">3</span><h3>Labels at true coordinates</h3><p>The boundary and the record text are drawn in your coordinate system, in your label style.</p></li>
+</ol>
+<div class="cad-preview how-sample"><div class="cad-text">N/F<br>JOHN D. SMITH<br>DB 14256 PG 198<br>MB 42 PG 12<br>PIN: 045-122-09<br>555 SAMPLE WAY<br>CHARLOTTE, NC 28202</div><p class="caption">Sample label with fictional data. Line order, fonts and justification are configurable.</p></div>
 </section>
-<section id="pricing" style="text-align:center">
-<div class="section-head"><h2>Pricing</h2><p>Per seat (one user on one computer). From $19.99/mo per seat, with 6 plans from 1 county up to 20 counties. Yearly is 2 months free.</p></div>
-<div class="pricing-grid">
-<div class="price-card"><div class="tier">1 County</div><div class="price">$19.99<span style="font-size:15px;color:#999">/mo</span></div><p>Per seat, 1 county. Or $199.90/yr.</p><a class="btn btn-primary" href="https://buy.stripe.com/fZu3cv3BhfLN0HhfV87Vm0u" rel="noopener" style="width:100%">Buy monthly</a><a class="btn btn-primary" href="https://buy.stripe.com/28E9AT3Bhart61B8sG7Vm0t" rel="noopener" style="width:100%;margin-top:8px">Buy yearly</a></div>
-<div class="price-card"><div class="tier">8 Counties</div><div class="price">$69.99<span style="font-size:15px;color:#999">/mo</span></div><p>Per seat, up to 8 counties. Or $699.90/yr.</p><a class="btn btn-primary" href="https://buy.stripe.com/7sYdR90p5dDFcpZ7oC7Vm0y" rel="noopener" style="width:100%">Buy monthly</a><a class="btn btn-primary" href="https://buy.stripe.com/3cIaEXefV43561BaAO7Vm0z" rel="noopener" style="width:100%;margin-top:8px">Buy yearly</a></div>
-<div class="price-card featured"><div class="tier">Whole State</div><div class="price" style="font-size:28px">Contact Sales</div><p>Interested in Whole State? Reach out to BIGCS Sales.</p><a class="btn btn-primary" href="mailto:sales@bigcsoftware.com?subject=BIGCS%20Whole%20State" style="width:100%">Email BIGCS Sales</a></div>
-</div>
-<p class="caption" style="margin-top:20px">Add <a href="/pricing.html#letters-addon">Letters &amp; Door Hangers</a> for $9.99/mo per seat.</p>
-<p class="caption" style="margin-top:8px">Counties in 15 states today: NC, SC, GA, VA, TN, WV, TX, MS, AR, MO, NY, OH, AL, WI and MN. <a href="/coverage.html">See what each county has</a>. <a href="/pricing.html">See all 6 plans</a>.</p>
-<p class="caption" style="margin-top:8px"><strong>Want to try it first?</strong> Trials are available on request. <a href="/trial.html"><span style="background:#FFEB3B;color:#1a1a1a;padding:1px 6px;border-radius:4px">Ask about a trial</span></a>.</p>
+<section id="coverage">
+<div class="section-head"><h2>Coverage</h2><p>Counties in 15 states today: North Carolina, South Carolina, Georgia, Virginia, Tennessee, West Virginia, Texas, Mississippi, Arkansas, Missouri, New York, Ohio, Alabama, Wisconsin and Minnesota. Data comes as-is from each county's public GIS. BIGCS never adjusts or datum-shifts it.</p></div>
+<ul class="state-chips">
+<li>NC</li><li>SC</li><li>GA</li><li>VA</li><li>TN</li><li>WV</li><li>TX</li><li>MS</li><li>AR</li><li>MO</li><li>NY</li><li>OH</li><li>AL</li><li>WI</li><li>MN</li>
+</ul>
+<div class="hero-ctas"><a href="/coverage.html" class="btn btn-primary">See full coverage</a><a href="/interest.html" class="btn btn-ghost">Request a county</a></div>
 </section>
-<section id="questions" style="text-align:center">
-<div class="section-head"><h2>Questions?</h2><p>Not sure which plan fits, or want to know if your county is covered? Send us a note and we will get back to you.</p><p>Don't see your state or county? Tell us where you work and we'll work on getting it into BIGCS.</p></div>
-<a class="btn btn-primary" href="/faq.html">Read the FAQ</a> <a class="btn btn-ghost" href="/interest.html">Ask a question</a> <a class="btn btn-ghost" href="/trial.html">Ask about a trial</a>
+<section id="pricing">
+<div class="section-head"><h2>Pricing</h2><p>Per seat: one user on one computer. Six plans, from 1 county up to 20 counties, from $19.99/mo per seat. Yearly billing is the price of 10 months. Whole State is arranged with sales. Letters &amp; Door Hangers is an add-on at $9.99/mo per seat.</p></div>
+<div class="hero-ctas"><a href="/pricing.html" class="btn btn-primary">See pricing</a></div>
+</section>
+<section id="questions">
+<div class="section-head"><h2>Questions?</h2><p>Not sure which plan fits, or whether your county is covered? Send a note and we will get back to you.</p></div>
+<div class="hero-ctas"><a class="btn btn-primary" href="/trial.html">Start trial</a><a class="btn btn-ghost" href="/faq.html">Read the FAQ</a><a class="btn btn-ghost" href="/interest.html">Request a county</a></div>
 </section>
 <section id="about" class="about">
-<div><div class="badge">About</div><h2>Tested by licensed surveyors</h2>
-<p style="color:#ddd;font-size:17px">BIGCS cuts out the research and retyping that comes with every boundary job. Tested by licensed surveyors.</p></div>
+<div><h2>Tested by licensed surveyors</h2>
+<p>BIGCS cuts out the research and retyping that comes with every boundary job. Tested by licensed surveyors.</p></div>
 <div class="notice"><h3>BIGCS is not a survey</h3><p>Parcel lines and record data come as-is from county GIS and are approximate. Always check recorded deeds and plats, and use a licensed surveyor when boundaries matter. <a href="/disclaimer.html">Full disclaimer</a></p></div>
 </section>
 </main>
 <footer>
 <div class="container">
-<div class="links"><a href="/">Home</a><a href="/pricing.html">Pricing</a><a href="/faq.html">FAQ</a><a href="/coverage.html">Coverage</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/install-help.html">Install help</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:sales@bigcsoftware.com">Contact</a></div>
+<div class="links"><a href="/">Home</a><a href="/commands.html">Commands</a><a href="/pricing.html">Pricing</a><a href="/faq.html">FAQ</a><a href="/coverage.html">Coverage</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/install-help.html">Install help</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:sales@bigcsoftware.com">Contact</a></div>
 <p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources and is not survey-grade. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
 <p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a></p>
 <p>AutoCAD and Civil 3D are trademarks of Autodesk, Inc. Carlson is a trademark of Carlson Software, Inc. IntelliCAD is a trademark of the IntelliCAD Technology Consortium. BIGCS is not affiliated with or endorsed by these companies.</p>
