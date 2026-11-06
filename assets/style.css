@@ -147,23 +147,24 @@ body.home{background:#f4f7fb;color:#1c2836}
 body.home .bg-layer{display:none}
 body.home nav{background:#0c2340;border-bottom:none}
 body.home h1,body.home h2,body.home h3{color:#0c2340;text-shadow:none;font-weight:800}
-body.home h1{font-size:40px;line-height:1.15;letter-spacing:-.03em;margin-bottom:14px}
-body.home h2{font-size:32px;margin-bottom:12px}
-body.home h3{font-size:18px}
-body.home section{margin-top:64px}
+body.home h1{font-size:36px;line-height:1.2;letter-spacing:-.02em;margin-bottom:16px;font-weight:800}
+body.home h2{font-size:28px;line-height:1.25;margin-bottom:10px}
+body.home h3{font-size:17px;line-height:1.35}
+body.home section{margin-top:88px}
 body.home .home-top section{margin-top:0}
-body.home .section-head{margin-bottom:22px}
-body.home .section-head p{color:#3e4e60;font-size:17px}
-body.home .hero-sub{color:#3e4e60;font-size:18px;text-shadow:none;margin:0 0 22px;max-width:36rem}
-body.home .hero-ctas{margin-bottom:0}
-body.home .home-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);grid-template-areas:"copy media" "proof proof" "cards cards";column-gap:36px;row-gap:28px;align-items:center;margin-top:28px}
+body.home .section-head{margin-bottom:32px}
+body.home .section-head p{color:#3e4e60;font-size:17px;line-height:1.55}
+body.home .hero-sub{color:#3e4e60;font-size:17px;line-height:1.55;text-shadow:none;margin:0 0 28px;max-width:36rem}
+body.home .hero-ctas{margin-bottom:0;gap:12px}
+body.home .home-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);grid-template-areas:"copy media" "proof proof" "cards cards";column-gap:40px;row-gap:40px;align-items:center;margin-top:40px}
 body.home .hero-copy{grid-area:copy;text-align:left}
 body.home .hero-copy .hero-ctas{justify-content:flex-start}
 body.home .home-top .demo{grid-area:media;margin:0;max-width:none;border-color:#d5deea;box-shadow:0 18px 40px rgba(12,35,64,.12)}
-body.home .proof{grid-area:proof;background:#e7eef6;border:1px solid #d3deea;border-radius:16px;padding:18px 18px 20px;text-align:center}
+body.home .proof{grid-area:proof;background:#e7eef6;border:1px solid #d3deea;border-radius:16px;padding:22px 24px 24px;text-align:center}
 body.home .proof-hosts{margin:0;font-size:17px;color:#0c2340}
 body.home .proof-note{margin:12px 0 0;color:#3e4e60;font-size:15px}
 body.home .outcomes{grid-area:cards}
+body.home .features-grid{gap:28px}
 body.home .state-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;list-style:none;padding:0;margin:14px 0 0}
 body.home .state-chips li{border:1px solid #c5d2e2;background:#fff;color:#0c2340;border-radius:999px;padding:4px 10px;font-size:13px;font-weight:600;letter-spacing:.04em}
 body.home .card{background:#fff;border:1px solid #d7e0ec;box-shadow:0 10px 24px rgba(12,35,64,.05);padding:22px}
@@ -171,11 +172,11 @@ body.home .card p{color:#3e4e60}
 body.home .icon{background:#0c2340;color:#fff;font-size:12px}
 body.home .beta-tag{display:inline-block;margin-left:6px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#6d5010;background:#f4e7c4;border-radius:999px;padding:2px 8px;vertical-align:middle}
 body.home .cmd-jump{text-align:center;margin-top:20px;font-weight:600}
-body.home .steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:0;margin:0}
+body.home .steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:0;margin:0}
 body.home .steps li{background:#fff;border:1px solid #d7e0ec;border-radius:16px;padding:22px}
 body.home .steps p{color:#3e4e60;font-size:15px}
 body.home .step-n{display:inline-flex;width:32px;height:32px;align-items:center;justify-content:center;border-radius:50%;background:#0c2340;color:#fff;font-weight:600;margin-bottom:12px}
-body.home .how-sample{max-width:440px;margin:28px auto 0}
+body.home .how-sample{max-width:440px;margin:36px auto 0}
 body.home #coverage .hero-ctas,body.home #pricing .hero-ctas,body.home #questions .hero-ctas{margin-top:22px}
 body.home .about p{color:#3e4e60;font-size:17px}
 body.home .notice{background:#fff;color:#1c2836;border-color:#c4a35a}
@@ -194,10 +195,25 @@ body.home footer{background:#0c2340;color:#d5deea;border-top:none;margin-top:72p
 body.home footer a{color:#fff}
 body.home #features,body.home #how,body.home #coverage,body.home #pricing,body.home #about,body.home #questions,body.home #demo{scroll-margin-top:110px}
 @media (max-width:900px){
-body.home .home-top{grid-template-columns:1fr;grid-template-areas:"copy" "media" "proof" "cards"}
+body.home .home-top{grid-template-columns:1fr;grid-template-areas:"copy" "media" "proof" "cards";row-gap:28px;margin-top:28px}
 body.home .hero-copy,body.home .hero-copy .hero-sub{text-align:center}
 body.home .hero-copy .hero-ctas,body.home .hero-copy .hero-sub{margin-left:auto;margin-right:auto}
 body.home .hero-copy .hero-ctas{justify-content:center}
 body.home .steps{grid-template-columns:1fr}
 body.home h1{font-size:32px}
+body.home section{margin-top:64px}
+}
+
+/* Header uses Brian's navy banner. The frame shows the seal, wordmark and tagline band. */
+.logo-banner-frame{display:block;position:relative;width:min(420px,38vw);aspect-ratio:1672/298;overflow:hidden;flex:0 1 auto;min-width:210px;border-radius:8px}
+.logo-banner{position:absolute;left:0;width:100%;height:calc(941 / 298 * 100%);max-width:none;top:calc(-291 / 298 * 100%)}
+.logo .logo-img{display:none}
+.logo .logo-text{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media (max-width:768px){
+.logo-banner-frame{width:min(420px,100%);min-width:0}
+}
+@media (max-width:520px){
+.logo-banner-frame{display:none}
+.logo .logo-img{display:block;width:48px;height:48px}
+.logo .logo-text{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto;white-space:normal}
 }
