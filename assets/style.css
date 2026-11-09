@@ -217,3 +217,51 @@ body.home section{margin-top:64px}
 .logo .logo-img{display:block;width:48px;height:48px}
 .logo .logo-text{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto;white-space:normal}
 }
+
+/* Trial page: same navy-on-white treatment as the home page. */
+body.trial{background:#f4f7fb;color:#1c2836}
+body.trial .bg-layer{display:none}
+body.trial nav{background:#0c2340;border-bottom:none}
+body.trial h1,body.trial h2,body.trial h3{color:#0c2340;text-shadow:none}
+body.trial a{color:#0c2340}
+body.trial .page-hero{text-align:left;padding:32px 0 0}
+body.trial .page-hero h1{font-size:34px;line-height:1.25;letter-spacing:-.02em;margin-bottom:16px;max-width:40rem}
+body.trial .hero-brand{color:#3e4e60;text-shadow:none;margin:0 0 8px;font-size:15px}
+body.trial .hero-brand strong{color:#0c2340}
+body.trial .badge{background:#0c2340;color:#fff;margin-bottom:14px}
+body.trial .trial-page{max-width:760px}
+body.trial section{margin-top:0}
+body.trial .trial-includes{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;max-width:40rem}
+body.trial .trial-includes li{position:relative;padding-left:18px;color:#1c2836;font-size:16px;line-height:1.45}
+body.trial .trial-includes li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:#0c2340}
+body.trial .trial-includes a{font-weight:600;text-decoration:underline}
+body.trial .demo{margin:22px 0 0;max-width:none;border:1px solid #d5deea;border-radius:16px;box-shadow:0 18px 40px rgba(12,35,64,.12)}
+body.trial .form-wrap{max-width:none;margin:22px 0 48px}
+body.trial .interest-form{background:#fff;border:1px solid #d7e0ec;box-shadow:0 10px 24px rgba(12,35,64,.05);color:#1c2836}
+body.trial .interest-form label{color:#0c2340}
+body.trial .interest-form input,body.trial .interest-form select{color:#1c2836;background:#fff;border:1px solid #c5d0de;font-size:16px}
+body.trial .interest-form select option{background:#fff;color:#1c2836}
+body.trial .interest-form select:disabled{color:#5c6b7a;background:#f4f7fb}
+body.trial .interest-form input:focus,body.trial .interest-form select:focus{border-color:#0c2340;box-shadow:0 0 0 3px rgba(12,35,64,.15)}
+body.trial .req{color:#0c2340}
+body.trial .opt{color:#5c6b7a}
+body.trial .trial-note{margin:0;color:#3e4e60;font-size:14px;font-weight:400;line-height:1.5}
+body.trial .trial-note a{font-weight:600;text-decoration:underline}
+body.trial .interest-form .btn{align-self:stretch}
+body.trial .btn-primary{background:#0c2340;box-shadow:none}
+body.trial .btn-primary:hover{background:#163a63}
+body.trial nav .btn-primary{background:#fff;color:#0c2340!important;box-shadow:none}
+body.trial nav .btn-primary:hover{background:#e7eef6;color:#0c2340!important}
+body.trial nav .btn-ghost{color:#fff!important;background:transparent;border-color:rgba(255,255,255,.55)}
+body.trial nav .nav-links a:not(.btn){color:#e7eef6}
+body.trial .f-fallback{color:#3e4e60}
+body.trial .f-fallback a{font-weight:600}
+body.trial .f-status.ok{color:#0d6b3d}
+body.trial .f-status.err{color:#9b2c2c}
+body.trial footer{background:#0c2340;color:#d5deea;border-top:none;margin-top:48px}
+body.trial footer a{color:#fff}
+@media (max-width:768px){
+body.trial .page-hero{padding-top:24px}
+body.trial .page-hero h1{font-size:28px}
+body.trial .trial-includes li{font-size:15px}
+}
