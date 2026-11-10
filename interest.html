@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="/js/internal.js"></script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-P3G3TB7T"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ68FN8YPT"></script>
@@ -8,6 +9,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  if (window.bigcsInternal) gtag('set', {traffic_type: 'internal'});
 
   gtag('config', 'G-TZ68FN8YPT');
 </script>
@@ -76,9 +78,10 @@ if(slug)[].forEach.call(sel.options,function(o){if(o.dataset.slug===slug)sel.val
 function upd(){subj.value="BIGCS interest: "+(sel.value||"general")}sel.onchange=upd;upd();
 f.addEventListener("submit",function(e){
   e.preventDefault();upd();btn.disabled=true;st.className="f-status";st.textContent="Sending...";
+  var fields={};new FormData(f).forEach(function(v,k){fields[k]=v});
   fetch(f.action,{method:"POST",headers:{"Accept":"application/json"},body:new FormData(f)})
   .then(function(r){return r.json().then(function(j){if(!r.ok||!j.success)throw 0})})
-  .then(function(){if(typeof window.gtag==="function")window.gtag("event","generate_lead",{form:"interest"});f.reset();upd();st.className="f-status ok";st.textContent="Thanks, we'll be in touch soon."})
+  .then(function(){if(typeof window.gtag==="function"&&!(window.bigcsSkipLead&&window.bigcsSkipLead(fields)))window.gtag("event","generate_lead",{form:"interest"});f.reset();upd();st.className="f-status ok";st.textContent="Thanks, we'll be in touch soon."})
   .catch(function(){st.className="f-status err";st.innerHTML='Sorry, that did not go through. Please email <a href="mailto:sales@bigcsoftware.com?subject=BIGCS%20interest">sales@bigcsoftware.com</a>.'})
   .then(function(){btn.disabled=false});
 });
