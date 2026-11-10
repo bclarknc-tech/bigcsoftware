@@ -243,17 +243,17 @@ body.home .section-head{margin-bottom:32px}
 body.home .section-head p{color:var(--muted);font-size:17px;line-height:1.55}
 body.home .hero-sub{color:var(--muted);font-size:17px;line-height:1.55;text-shadow:none;margin:0 0 28px;max-width:36rem}
 body.home .hero-ctas{margin-bottom:0;gap:12px}
-body.home .home-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);grid-template-areas:"copy media" "proof proof" "quote quote" "cards cards";column-gap:40px;row-gap:40px;align-items:center;margin-top:40px}
+body.home .home-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);grid-template-areas:"copy media" "quote quote" "proof proof" "cards cards";column-gap:40px;row-gap:40px;align-items:center;margin-top:40px}
 body.home .hero-copy{grid-area:copy;text-align:left}
 body.home .hero-copy .hero-ctas{justify-content:flex-start}
 body.home .home-top .demo{grid-area:media;margin:0;max-width:none}
 body.home .proof{grid-area:proof;background:var(--proof);border:1px solid #d3deea;border-radius:16px;padding:22px 24px 24px;text-align:center}
 body.home .proof-hosts{margin:0;font-size:17px;color:var(--navy)}
 body.home .proof-note{margin:12px 0 0;color:var(--muted);font-size:15px}
-body.home .testimonial{grid-area:quote;margin:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:22px 24px}
-body.home .testimonial blockquote{margin:0 auto;max-width:40rem}
-body.home .testimonial p{margin:0;color:var(--navy);font-size:17px;line-height:1.55;font-weight:400}
-body.home .testimonial figcaption{margin:12px auto 0;max-width:40rem;color:var(--muted);font-size:14px;line-height:1.45;font-weight:600}
+body.home .testimonial{grid-area:quote;justify-self:center;width:min(100%,42rem);margin:0;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:36px 40px}
+body.home .testimonial blockquote{margin:0}
+body.home .testimonial p{margin:0;color:var(--navy);font-size:1.5rem;line-height:1.45;font-weight:400}
+body.home .testimonial figcaption{margin:18px 0 0;color:var(--muted);font-size:15px;line-height:1.45;font-weight:600}
 body.home .outcomes{grid-area:cards}
 body.home .features-grid{gap:28px}
 body.home .state-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;list-style:none;padding:0;margin:14px 0 0}
@@ -270,7 +270,7 @@ body.home #coverage .hero-ctas,body.home #pricing .hero-ctas,body.home #question
 body.home .about p{color:var(--muted);font-size:17px}
 body.home #features,body.home #how,body.home #coverage,body.home #pricing,body.home #about,body.home #questions,body.home #demo{scroll-margin-top:110px}
 @media (max-width:900px){
-body.home .home-top{grid-template-columns:1fr;grid-template-areas:"copy" "media" "proof" "quote" "cards";row-gap:28px;margin-top:28px}
+body.home .home-top{grid-template-columns:1fr;grid-template-areas:"copy" "media" "quote" "proof" "cards";row-gap:28px;margin-top:28px}
 body.home .hero-copy,body.home .hero-copy .hero-sub{text-align:center}
 body.home .hero-copy .hero-ctas,body.home .hero-copy .hero-sub{margin-left:auto;margin-right:auto}
 body.home .hero-copy .hero-ctas{justify-content:center}
@@ -280,6 +280,8 @@ body.home .steps{grid-template-columns:1fr}
 body.home h1{font-size:32px}
 body.home h2{font-size:24px}
 body.home section{margin-top:64px}
+body.home .testimonial{padding:28px 22px}
+body.home .testimonial p{font-size:1.2rem}
 }
 
 /* Header uses the navy banner. The frame shows the seal, wordmark and tagline band. */
