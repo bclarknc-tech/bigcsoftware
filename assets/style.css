@@ -243,7 +243,7 @@ body.home .section-head{margin-bottom:32px}
 body.home .section-head p{color:var(--muted);font-size:17px;line-height:1.55}
 body.home .hero-sub{color:var(--muted);font-size:17px;line-height:1.55;text-shadow:none;margin:0 0 28px;max-width:36rem}
 body.home .hero-ctas{margin-bottom:0;gap:12px}
-body.home .home-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);grid-template-areas:"copy media" "quote quote" "proof proof" "cards cards";column-gap:40px;row-gap:40px;align-items:center;margin-top:40px}
+body.home .home-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);grid-template-areas:"copy media" "quote quote" "proof proof" "how how" "cards cards" "clip clip";column-gap:40px;row-gap:40px;align-items:center;margin-top:40px}
 body.home .hero-copy{grid-area:copy;text-align:left}
 body.home .hero-copy .hero-ctas{justify-content:flex-start}
 body.home .home-top .demo{grid-area:media;margin:0;max-width:none}
@@ -268,9 +268,9 @@ body.home .step-n{display:inline-flex;width:32px;height:32px;align-items:center;
 body.home .how-sample{max-width:440px;margin:36px auto 0}
 body.home #coverage .hero-ctas,body.home #pricing .hero-ctas,body.home #questions .hero-ctas{margin-top:22px}
 body.home .about p{color:var(--muted);font-size:17px}
-body.home #features,body.home #how,body.home #coverage,body.home #pricing,body.home #about,body.home #questions,body.home #demo{scroll-margin-top:110px}
+body.home #features,body.home #how,body.home #coverage,body.home #pricing,body.home #about,body.home #questions,body.home #demo,body.home #clip{scroll-margin-top:110px}
 @media (max-width:900px){
-body.home .home-top{grid-template-columns:1fr;grid-template-areas:"copy" "media" "quote" "proof" "cards";row-gap:28px;margin-top:28px}
+body.home .home-top{grid-template-columns:1fr;grid-template-areas:"copy" "media" "quote" "proof" "how" "cards" "clip";row-gap:28px;margin-top:28px}
 body.home .hero-copy,body.home .hero-copy .hero-sub{text-align:center}
 body.home .hero-copy .hero-ctas,body.home .hero-copy .hero-sub{margin-left:auto;margin-right:auto}
 body.home .hero-copy .hero-ctas{justify-content:center}
@@ -366,3 +366,8 @@ td.src{text-align:left!important;font-size:11px;color:var(--muted);min-width:160
 #howto{padding-top:24px}
 #howto h2{font-size:24px}
 }
+body.home .home-top > #how{grid-area:how;min-width:0}
+body.home .home-top > #clip{grid-area:clip;min-width:0}
+body.home .clip-points{max-width:720px;margin:0 auto;padding-left:1.25em;color:var(--muted);font-size:17px;line-height:1.55;text-align:left}
+body.home .clip-points li{margin:0 0 8px}
+body.home .clip-points li:last-child{margin-bottom:0}
