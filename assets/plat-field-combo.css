@@ -1,0 +1,154 @@
+/* Draft mockup: Plat/Blueprint + Field map combo. Homepage only. */
+:root {
+  --accent: #0E7C6B;
+  --accent-hover: #0C6A5C;
+  --layer-green: #157A4C;
+  --layer-blue: #1A5F8A;
+  --layer-orange: #C4451C;
+  --paper: #E8EEF4;
+}
+
+body.mock-combo {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(rgba(12,35,64,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(12,35,64,.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+body.home main.container { position: relative; display: flow-root; }
+body.home .home-top { margin-top: 0; padding-top: 40px; }
+@media (max-width: 900px) {
+  body.home .home-top { padding-top: 28px; }
+}
+
+/* Plat blueprint grid + parcel linework, over Field's navy-to-teal gradient */
+.mock-hero-band {
+  position: absolute;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  top: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: #0c2340;
+  background-image:
+    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.14) 1px, transparent 1px),
+    linear-gradient(135deg, #0c2340 0%, #123A56 52%, #0F5A68 100%);
+  background-size: 24px 24px, 24px 24px, 120px 120px, 120px 120px, auto;
+}
+.mock-hero-pattern {
+  position: absolute;
+  inset: -2%;
+  opacity: .28;
+}
+.mock-hero-pattern svg,
+.mock-hero-pattern img { width: 100%; height: 100%; display: block; object-fit: cover; }
+
+body.home .home-top,
+body.home main > section { position: relative; z-index: 1; }
+
+body.mock-combo .hero-copy h1 { color: #fff; font-size: 40px; }
+body.mock-combo .hero-copy .hero-sub { color: #d5deea; }
+body.mock-combo .hero-copy { padding-top: 8px; padding-bottom: 28px; }
+body.mock-combo .demo {
+  border-color: rgba(255,255,255,.22);
+  box-shadow: 0 22px 48px rgba(0,0,0,.35);
+}
+body.mock-combo .testimonial { margin-top: -36px; border-left: 4px solid var(--accent); }
+
+/* Field map CTA styles, copied exactly (selectors retargeted to mock-combo only). */
+body.mock-combo main .btn-primary { background: var(--accent); color: #fff !important; }
+body.mock-combo main .btn-primary:hover { background: var(--accent-hover); }
+body.mock-combo .hero-copy .btn-ghost {
+  background: transparent;
+  color: #fff !important;
+  border-color: rgba(255,255,255,.65);
+}
+body.mock-combo .hero-copy .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.08); color: #fff !important; }
+body.mock-combo main .btn-ghost:hover { border-color: var(--accent); color: var(--accent) !important; }
+body.mock-combo .hero-copy .btn-ghost:hover { color: #fff !important; border-color: #fff; }
+
+body.mock-combo .section-head h2::after,
+body.mock-combo #about h2::after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-top: 12px;
+}
+body.mock-combo .section-head h2::after { margin-left: auto; margin-right: auto; }
+
+/* Plat title-block proof strip */
+body.mock-combo .proof {
+  background: #0c2340;
+  border: 1px solid rgba(255,255,255,.16);
+  color: #fff;
+  box-shadow: none;
+}
+body.mock-combo .proof-hosts { color: #fff; }
+body.mock-combo .proof-note { color: #d5deea; }
+body.mock-combo .proof .state-chips li {
+  background: transparent;
+  border-color: rgba(255,255,255,.4);
+  color: #fff;
+}
+
+/* How it works stays on plat paper (neither Plat nor Field used a navy band). */
+body.mock-combo .step-n { background: var(--accent); color: #fff; }
+
+/* Sample label stays navy on white */
+body.mock-combo .how-sample .cad-text {
+  color: #0c2340 !important;
+  background: #fff !important;
+  border: 1px solid #d5deea !important;
+}
+
+/* Field map feature cards: colored top bars + matching icon tiles */
+body.mock-combo .features-grid .card { overflow: hidden; }
+body.mock-combo .features-grid .card::before {
+  content: "";
+  display: block;
+  height: 6px;
+  margin: -22px -22px 18px;
+  background: var(--layer);
+}
+body.mock-combo .features-grid .card:nth-child(3n+1) { --layer: var(--layer-green); }
+body.mock-combo .features-grid .card:nth-child(3n+2) { --layer: var(--layer-blue); }
+body.mock-combo .features-grid .card:nth-child(3n+3) { --layer: var(--layer-orange); }
+body.mock-combo .features-grid .card:nth-child(3n+1) .icon { background: var(--layer-green); color: #fff; }
+body.mock-combo .features-grid .card:nth-child(3n+2) .icon { background: var(--layer-blue); color: #fff; }
+body.mock-combo .features-grid .card:nth-child(3n+3) .icon { background: var(--layer-orange); color: #fff; }
+body.mock-combo .beta-tag { color: var(--layer-green); background: #e6f3ec; }
+
+/* Field map stronger footer, with a faint plat grid */
+body.mock-combo footer {
+  background-color: #081A30;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  padding: 56px 0;
+  position: relative;
+}
+body.mock-combo footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  height: 5px;
+  background: linear-gradient(90deg, var(--layer-green) 0 33.33%, var(--layer-blue) 33.33% 66.66%, var(--layer-orange) 66.66% 100%);
+}
+
+@media (max-width: 900px) {
+  body.mock-combo .hero-copy h1 { font-size: 34px; }
+  body.mock-combo .testimonial { margin-top: -24px; }
+}
