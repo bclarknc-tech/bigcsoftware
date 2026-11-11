@@ -341,6 +341,10 @@ body.trial .trial-includes li{font-size:15px}
 .cov-state thead th:first-child{text-align:left}
 td.y{color:var(--ok)}
 td.n,td.u{color:#8a96a3}
+/* Glyphs for coverage cells live in CSS so the HTML can stay compact. */
+.cov-state td.y::before{content:"\2713"}
+.cov-state td.n::before{content:"\2013"}
+.cov-state td.u::before{content:"?"}
 td.p{color:var(--navy);font-size:12px;font-weight:600}
 td.s{color:var(--navy-hover);font-size:12px;font-weight:600}
 td.dy{white-space:nowrap;color:var(--muted);font-size:12px}

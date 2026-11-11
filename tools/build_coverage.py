@@ -22,10 +22,10 @@ NOW = datetime.date.today().year
 
 def cell(v):
     v = (v or "").strip().lower()
-    if v == "yes": return '<td class="y" title="Yes">&#10003;</td>'
-    if v == "partial": return '<td class="p" title="Partial: some parcels or part of the county">Partial</td>'
-    if v == "no": return '<td class="n" title="No">&ndash;</td>'
-    return '<td class="u" title="Not reported">?</td>'
+    if v == "yes": return '<td class="y"></td>'
+    if v == "partial": return '<td class="p">Partial</td>'
+    if v == "no": return '<td class="n"></td>'
+    return '<td class="u"></td>'
 
 def srcs(rs, col, empty):
     c = collections.Counter((r.get(col) or "").strip() or empty for r in rs)
