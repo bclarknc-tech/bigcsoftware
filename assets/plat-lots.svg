@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" preserveAspectRatio="xMidYMid slice">
+<path d="M 20,30 L 250,24 L 262,190 L 48,210 L 20,120 Z" fill="none" stroke="white" stroke-width="1.1"/>
+<path d="M 250,24 L 490,40 L 470,205 L 262,190 Z" fill="none" stroke="white" stroke-width="1.1"/>
+<path d="M 490,40 L 720,18 L 745,198 L 470,205 Z" fill="none" stroke="white" stroke-width="1.1"/>
+<path d="M 720,18 L 980,36 L 1020,70 L 990,210 L 745,198 Z" fill="none" stroke="white" stroke-width="1.1"/>
+<path d="M 980,36 L 1180,24 L 1180,200 L 990,210 L 1020,70 Z" fill="none" stroke="white" stroke-width="1.1"/>
+<path d="M 48,210 L 262,190 L 250,360 L 30,380 Z" fill="none" stroke="white" stroke-width="1.1"/>
+<path d="M 262,190 L 470,205 L 490,250 L 455,400 L 250,360 Z" fill="none" stroke="white" stroke-width="1.1"/>
+<path d="M 470,205 L 745,198 L 760,390 L 455,400 L 490,250 Z" fill="none" stroke="white" stroke-width="1.1"/>
+<path d="M 745,198 L 990,210 L 1005,400 L 760,390 Z" fill="none" stroke="white" stroke-width="1.1"/>
+<path d="M 990,210 L 1180,200 L 1180,410 L 1005,400 Z" fill="none" stroke="white" stroke-width="1.1"/>
+<path d="M 30,380 L 250,360 L 240,560 L 80,600 L 20,500 Z" fill="none" stroke="white" stroke-width="1.1"/>
+<path d="M 250,360 L 455,400 L 440,580 L 240,560 Z" fill="none" stroke="white" stroke-width="1.1"/>
+<path d="M 455,400 L 760,390 L 780,420 L 750,600 L 440,580 Z" fill="none" stroke="white" stroke-width="1.1"/>
+<path d="M 760,390 L 1005,400 L 1010,590 L 750,600 L 780,420 Z" fill="none" stroke="white" stroke-width="1.1"/>
+<path d="M 1005,400 L 1180,410 L 1160,620 L 1010,590 Z" fill="none" stroke="white" stroke-width="1.1"/>
+<path d="M 0,320 C 180,290 340,345 520,330 S 880,280 1200,310" fill="none" stroke="white" stroke-width="2"/>
+<path d="M 0,100 L 400,88 L 700,130 L 1200,70" fill="none" stroke="white" stroke-width="0.8" stroke-dasharray="10 7"/>
+<path d="M 455,400 L 490,250" fill="none" stroke="white" stroke-width="0.8" stroke-dasharray="4 4"/>
+</svg>
