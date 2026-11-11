@@ -266,7 +266,9 @@ body.home .steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr
 body.home .steps li{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
 body.home .steps p{color:var(--muted);font-size:15px}
 body.home .step-n{display:inline-flex;width:32px;height:32px;align-items:center;justify-content:center;border-radius:50%;background:var(--navy);color:#fff;font-weight:600;margin-bottom:12px}
-body.home .how-sample{max-width:440px;margin:36px auto 0}
+body.home .how-sample{width:min(280px,100%);margin:20px auto 0;background:transparent;border:0;border-radius:0;padding:0;box-shadow:none;text-align:center}
+body.home .how-sample .cad-text{display:inline-block;text-align:left;font-family:Inter,system-ui,sans-serif;color:#0c2340;font-size:13px;font-weight:600;line-height:1.4;letter-spacing:.02em;background:#fff;border:1px solid #d5deea;border-radius:6px;padding:8px 12px}
+body.home .how-sample .caption{color:#5c6b7a;font-size:12px;line-height:1.4;margin-top:8px}
 body.home #coverage .hero-ctas,body.home #pricing .hero-ctas,body.home #questions .hero-ctas{margin-top:22px}
 body.home .about p{color:var(--muted);font-size:17px}
 body.home #features,body.home #how,body.home #coverage,body.home #pricing,body.home #about,body.home #questions,body.home #demo,body.home #clip{scroll-margin-top:110px}
