@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="/js/internal.js"></script>
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-P3G3TB7T"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ68FN8YPT"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  if (window.bigcsInternal) gtag('set', {traffic_type: 'internal'});
 
   gtag('config', 'G-TZ68FN8YPT');
 </script>
@@ -33,30 +36,44 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
-<body>
+<body class="trial">
 <div class="bg-layer"><div class="bg-hologram"></div><div class="bg-grid"></div></div>
 <nav>
 <div class="container nav-inner">
-<a href="/" class="logo"><span class="logo-banner-frame"><img class="logo-banner" src="/assets/bigcs-logo-banner.png" alt="" width="1672" height="941"></span><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
-<div class="nav-links"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/coverage.html">Coverage</a><a href="/faq.html">FAQ</a><a href="/trial.html" class="btn btn-primary" aria-current="page">Start trial</a><a href="/pricing.html" class="btn btn-ghost">Buy</a></div>
+<a href="/" class="logo"><span class="logo-banner-frame"><img class="logo-banner" src="/assets/bigcs-logo-banner.png" alt="BIGCS Software" width="1672" height="298" decoding="async" fetchpriority="high"></span><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">Menu</button>
+<div class="nav-links" id="site-nav"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/coverage.html">Coverage</a><a href="/faq.html">FAQ</a><a href="/trial.html" class="btn btn-primary" aria-current="page">Start trial</a><a href="/pricing.html" class="btn btn-ghost">Buy</a></div>
 </div>
 </nav>
-<main class="container"><section class="page-hero" style="padding-bottom:30px">
+<main class="container trial-page">
+<section class="page-hero">
 <div class="badge">Trial</div>
 <p class="hero-brand"><strong>BIGCS Software</strong> &middot; Boundary Intelligence for GIS, CAD &amp; Survey</p>
 <h1>Owner, deed book and page, and plat labels on every adjoiner. No typing.</h1>
-<p class="hero-sub">BIGCS pulls the recorded owner, deed book and page, and plat reference from county GIS and writes them on your adjoiners. Request a trial in your county. We review each request by hand and reply by email. No obligation. Sending this form doesn't sign you up for anything.</p>
-<p class="hero-sub">Want to see it first? <a href="/#demo">Watch the demo</a> or check <a href="/coverage.html">county coverage</a>.</p>
+<ul class="trial-includes">
+<li>BIGCS writes the recorded owner, deed book and page, and plat reference on your adjoiners, from county GIS.</li>
+<li>Counties in 15 states today: NC, SC, GA, VA, TN, WV, TX, MS, AR, MO, NY, OH, AL, WI and MN. <a href="/coverage.html">See county coverage</a>.</li>
+<li>Runs in Carlson, IntelliCAD and full AutoCAD.</li>
+<li>We review each request by hand and reply by email.</li>
+<li>No obligation. Sending this form doesn't sign you up for anything.</li>
+</ul>
 </section>
+<div class="demo" id="demo">
+<video controls playsinline preload="metadata" width="1280" height="720" poster="/assets/bigcs-demo-poster-v3.jpg">
+<source src="/assets/bigcs-demo-v3.mp4" type="video/mp4">
+Your browser can't play this video.
+</video>
+</div>
 <section class="form-wrap">
 <form id="trial-form" class="interest-form" method="POST" novalidate>
 <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-<div class="f-row"><label><span class="lt">Full name <span class="req">*</span></span><input type="text" name="name" id="t-name" maxlength="100" required autocomplete="name"></label>
-<label><span class="lt">Company name <span class="req">*</span></span><input type="text" name="company" id="t-company" maxlength="120" required autocomplete="organization"><small class="opt">If you work on your own, enter your business name.</small></label></div>
-<label><span class="lt">Work email <span class="req">*</span></span><input type="email" name="email" id="t-email" maxlength="254" required autocomplete="email"></label>
+<input type="checkbox" name="consent" id="t-consent" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" checked>
+<div class="f-row"><label><span class="lt">Name <span class="req">*</span></span><input type="text" name="name" id="t-name" maxlength="100" required autocomplete="name"></label>
+<label><span class="lt">Company or firm <span class="req">*</span></span><input type="text" name="company" id="t-company" maxlength="120" required autocomplete="organization"><small class="opt">If you work on your own, enter your business name.</small></label></div>
+<label><span class="lt">Email <span class="req">*</span></span><input type="email" name="email" id="t-email" maxlength="254" required autocomplete="email"></label>
 <div class="f-row"><label><span class="lt">State <span class="req">*</span></span><select name="state" id="t-state" required><option value="">Select a state</option><option>NC</option><option>SC</option><option>GA</option><option>VA</option><option>TN</option><option>WV</option><option>TX</option><option>MS</option><option>AR</option><option>MO</option><option>NY</option><option>OH</option><option>AL</option><option>WI</option><option>MN</option></select></label>
 <label><span class="lt">County <span class="req">*</span></span><select name="county" id="t-county" required disabled><option value="">Select a state first</option></select></label></div>
-<label class="f-check" style="display:flex;flex-direction:row;gap:10px;align-items:flex-start;font-weight:400"><input type="checkbox" name="consent" id="t-consent" required style="width:auto;margin-top:4px"><span>I agree that BIGCS Software may use these details to review my trial request and contact me about it. We don't sell or share your information. See our <a href="/privacy.html">Privacy Policy</a>.</span></label>
+<p class="trial-note">BIGCS Software uses these details only to review your trial request and email you about it. We don't sell or share your information. See our <a href="/privacy.html">Privacy Policy</a>.</p>
 <div class="cf-turnstile" id="t-turnstile"></div>
 <button type="submit" class="btn btn-primary" id="t-submit">Start trial</button>
 <p class="f-status" id="t-status" role="status" aria-live="polite"></p>
@@ -71,12 +88,13 @@
 <script src="/assets/trial-form.js"></script>
 <footer>
 <div class="container">
-<div class="links"><a href="/">Home</a><a href="/commands.html">Commands</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/install-help.html">Install help</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:sales@bigcsoftware.com">Contact</a></div>
+<div class="links"><a href="/">Home</a><a href="/commands.html">Commands</a><a href="/pricing.html">Pricing</a><a href="/faq.html">FAQ</a><a href="/coverage.html">Coverage</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/install-help.html">Install help</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:support@bigcsoftware.com">Support</a><a href="mailto:sales@bigcsoftware.com">Contact</a></div>
 <p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources and is not survey-grade. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
-<p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a></p>
+<p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a> &middot; <a href="mailto:support@bigcsoftware.com">support@bigcsoftware.com</a></p>
 <p>AutoCAD and Civil 3D are trademarks of Autodesk, Inc. Carlson is a trademark of Carlson Software, Inc. IntelliCAD is a trademark of the IntelliCAD Technology Consortium. BIGCS is not affiliated with or endorsed by these companies.</p>
 <p>&copy; 2026 BIGCS. All rights reserved.</p>
 </div>
 </footer>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>

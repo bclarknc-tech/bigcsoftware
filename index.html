@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="/js/internal.js"></script>
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-P3G3TB7T"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ68FN8YPT"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  if (window.bigcsInternal) gtag('set', {traffic_type: 'internal'});
 
   gtag('config', 'G-TZ68FN8YPT');
 </script>
@@ -20,12 +23,12 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BIGCS">
-<meta property="og:title" content="BIGCS | County GIS Parcels in Carlson &amp; IntelliCAD for Surveyors">
+<meta property="og:title" content="BIGCS | County GIS Parcels in Carlson, IntelliCAD &amp; AutoCAD for Surveyors">
 <meta property="og:description" content="BIGCS brings county GIS parcels, owner, deed and plat labels into Carlson, IntelliCAD and full AutoCAD. Built by licensed land surveyors. Counties in 15 states today: NC, SC, GA, VA, TN, WV, TX, MS, AR, MO, NY, OH, AL, WI and MN. See plans and pricing.">
 <meta property="og:url" content="https://bigcsoftware.com/">
 <meta property="og:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="BIGCS | County GIS Parcels in Carlson &amp; IntelliCAD for Surveyors">
+<meta name="twitter:title" content="BIGCS | County GIS Parcels in Carlson, IntelliCAD &amp; AutoCAD for Surveyors">
 <meta name="twitter:description" content="BIGCS brings county GIS parcels, owner, deed and plat labels into Carlson, IntelliCAD and full AutoCAD. Built by licensed land surveyors. Counties in 15 states today: NC, SC, GA, VA, TN, WV, TX, MS, AR, MO, NY, OH, AL, WI and MN. See plans and pricing.">
 <meta name="twitter:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,24 +61,40 @@
 <div class="bg-layer"><div class="bg-hologram"></div><div class="bg-grid"></div></div>
 <nav>
 <div class="container nav-inner">
-<a href="/" class="logo"><span class="logo-banner-frame"><img class="logo-banner" src="/assets/bigcs-logo-banner.png" alt="" width="1672" height="941"></span><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
-<div class="nav-links"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/coverage.html">Coverage</a><a href="/faq.html">FAQ</a><a href="/trial.html" class="btn btn-primary">Start trial</a><a href="/pricing.html" class="btn btn-ghost">Buy</a></div>
+<a href="/" class="logo"><span class="logo-banner-frame"><img class="logo-banner" src="/assets/bigcs-logo-banner.png" alt="BIGCS Software" width="1672" height="298" decoding="async" fetchpriority="high"></span><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">Menu</button>
+<div class="nav-links" id="site-nav"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/coverage.html">Coverage</a><a href="/faq.html">FAQ</a><a href="/trial.html" class="btn btn-primary">Start trial</a><a href="/pricing.html" class="btn btn-ghost">Buy</a></div>
 </div>
 </nav>
 <main class="container">
 <div class="home-top">
 <div class="hero-copy">
 <h1>County GIS parcels, straight into your CAD drawing.</h1>
-<p class="hero-sub">Owner, deed and plat labels at true coordinates, in your own CAD standards. No obligation.</p>
+<p class="hero-sub">14-day trial on 1 county. Owner, deed and plat labels at true coordinates, in your own CAD standards. No obligation.</p>
 <div class="hero-ctas"><a href="/trial.html" class="btn btn-primary">Start trial</a><a href="/pricing.html" class="btn btn-ghost">See pricing</a><a href="/coverage.html" class="btn btn-ghost">Coverage</a></div>
 </div>
-<div class="demo" id="demo"><video controls playsinline preload="metadata" poster="assets/bigcs-demo-poster-v3.jpg"><source src="assets/bigcs-demo-v3.mp4" type="video/mp4">Your browser can't play this video.</video></div>
+<div class="demo" id="demo"><video controls playsinline preload="metadata" width="1280" height="720" poster="/assets/bigcs-demo-poster-v3.jpg"><source src="/assets/bigcs-demo-v3.mp4" type="video/mp4">Your browser can't play this video.</video></div>
+<figure class="testimonial">
+<blockquote>
+<p>"BIGCS has been a game changer for my firm, BluAcres, LLC in South Carolina, by significantly speeding up recon and how I handle adjoiner data."</p>
+</blockquote>
+<figcaption>Christopher R. Clouser, PLS<br>BluAcres, LLC<br>Moncks Corner, South Carolina</figcaption>
+</figure>
 <section class="proof" aria-label="Where BIGCS runs">
 <p class="proof-hosts">Runs in <strong>Carlson</strong> · <strong>IntelliCAD</strong> · <strong>AutoCAD</strong></p>
 <ul class="state-chips">
 <li>NC</li><li>SC</li><li>GA</li><li>VA</li><li>TN</li><li>WV</li><li>TX</li><li>MS</li><li>AR</li><li>MO</li><li>NY</li><li>OH</li><li>AL</li><li>WI</li><li>MN</li>
 </ul>
 <p class="proof-note">Designed by surveyors, for surveyors. Counties in 15 states today.</p>
+</section>
+<section id="how">
+<div class="section-head"><h2>How it works</h2><p>Three steps. The labels land in the drawing you already have open.</p></div>
+<ol class="steps">
+<li><span class="step-n">1</span><h3>Pick a parcel</h3><p>Click inside the parcel, or find it by address or PIN.</p></li>
+<li><span class="step-n">2</span><h3>Pull GIS</h3><p>BIGCS reads the county parcel and the owner, deed and plat records.</p></li>
+<li><span class="step-n">3</span><h3>Labels at true coordinates</h3><p>The boundary and the record text are drawn in your coordinate system, in your label style.</p></li>
+</ol>
+<div class="cad-preview how-sample"><div class="cad-text">N/F<br>JOHN D. SMITH<br>DB 14256 PG 198<br>MB 42 PG 12<br>PIN: 045-122-09<br>555 SAMPLE WAY<br>YOUR CITY, NC</div><p class="caption">Sample label with fictional data. Line order, fonts and justification are configurable.</p></div>
 </section>
 <section id="features" class="outcomes">
 <div class="section-head"><h2>What you get</h2><p>Six outcomes for the drawing. Command names live on the <a href="/commands.html">command list</a>.</p></div>
@@ -89,16 +108,16 @@
 </div>
 <p class="cmd-jump"><a href="/commands.html">See the full command list</a></p>
 </section>
-</div>
-<section id="how">
-<div class="section-head"><h2>How it works</h2><p>Three steps. The labels land in the drawing you already have open.</p></div>
-<ol class="steps">
-<li><span class="step-n">1</span><h3>Pick a parcel</h3><p>Click inside the parcel, or find it by address or PIN.</p></li>
-<li><span class="step-n">2</span><h3>Pull GIS</h3><p>BIGCS reads the county parcel and the owner, deed and plat records.</p></li>
-<li><span class="step-n">3</span><h3>Labels at true coordinates</h3><p>The boundary and the record text are drawn in your coordinate system, in your label style.</p></li>
-</ol>
-<div class="cad-preview how-sample"><div class="cad-text">N/F<br>JOHN D. SMITH<br>DB 14256 PG 198<br>MB 42 PG 12<br>PIN: 045-122-09<br>555 SAMPLE WAY<br>YOUR CITY, NC</div><p class="caption">Sample label with fictional data. Line order, fonts and justification are configurable.</p></div>
+<section id="clip">
+<div class="section-head"><h2>Just what you need, in seconds</h2><p>Pick the parcel or the area you're working in. In seconds BIGCS brings in the property owner, the adjoiners and their deed and plat references, in your text and your label style. No more downloading the whole county and erasing what you don't need. Drawings stay smaller, and you save space on your servers.</p></div>
+<ul class="clip-points">
+<li>Property owners and adjoiners, with deed book/page and plat references</li>
+<li>Road centerlines, survey monuments, FEMA flood zones, and state and county lines</li>
+<li>Easements and right-of-way, where the county publishes them</li>
+<li>Building footprints in a window or around a parcel (North Carolina, beta)</li>
+</ul>
 </section>
+</div>
 <section id="coverage">
 <div class="section-head"><h2>Coverage</h2><p>Counties in 15 states today: North Carolina, South Carolina, Georgia, Virginia, Tennessee, West Virginia, Texas, Mississippi, Arkansas, Missouri, New York, Ohio, Alabama, Wisconsin and Minnesota. Data comes as-is from each county's public GIS. BIGCS never adjusts or datum-shifts it.</p></div>
 <ul class="state-chips">
@@ -122,13 +141,14 @@
 </main>
 <footer>
 <div class="container">
-<div class="links"><a href="/">Home</a><a href="/commands.html">Commands</a><a href="/pricing.html">Pricing</a><a href="/faq.html">FAQ</a><a href="/coverage.html">Coverage</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/install-help.html">Install help</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:sales@bigcsoftware.com">Contact</a></div>
+<div class="links"><a href="/">Home</a><a href="/commands.html">Commands</a><a href="/pricing.html">Pricing</a><a href="/faq.html">FAQ</a><a href="/coverage.html">Coverage</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/install-help.html">Install help</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:support@bigcsoftware.com">Support</a><a href="mailto:sales@bigcsoftware.com">Contact</a></div>
 <p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources and is not survey-grade. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
-<p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a></p>
+<p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a> &middot; <a href="mailto:support@bigcsoftware.com">support@bigcsoftware.com</a></p>
 <p>AutoCAD and Civil 3D are trademarks of Autodesk, Inc. Carlson is a trademark of Carlson Software, Inc. IntelliCAD is a trademark of the IntelliCAD Technology Consortium. BIGCS is not affiliated with or endorsed by these companies.</p>
 <p>&copy; 2026 BIGCS. All rights reserved.</p>
 </div>
 </footer>
 <script src="/assets/ga-events.js" defer></script>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>
