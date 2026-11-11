@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/js/internal.js"></script>
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-P3G3TB7T"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ68FN8YPT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (window.bigcsInternal) gtag('set', {traffic_type: 'internal'});
+
+  gtag('config', 'G-TZ68FN8YPT');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to label adjoiners in seconds | BIGCS Boundary Intelligence for GIS, CAD &amp; Survey</title>
+<meta name="description" content="Step by step: how BIGCS puts adjoiner owner, deed and plat labels, an adjoiner table and adjoiner letters into your Carlson, IntelliCAD or AutoCAD drawing.">
+<link rel="canonical" href="https://bigcsoftware.com/tutorial.html">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BIGCS">
+<meta property="og:title" content="How to label adjoiners in seconds | BIGCS">
+<meta property="og:description" content="Step by step: how BIGCS puts adjoiner owner, deed and plat labels, an adjoiner table and adjoiner letters into your Carlson, IntelliCAD or AutoCAD drawing.">
+<meta property="og:url" content="https://bigcsoftware.com/tutorial.html">
+<meta property="og:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to label adjoiners in seconds | BIGCS">
+<meta name="twitter:description" content="Step by step: how BIGCS puts adjoiner owner, deed and plat labels, an adjoiner table and adjoiner letters into your Carlson, IntelliCAD or AutoCAD drawing.">
+<meta name="twitter:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+.tut{max-width:var(--legal-max);margin:0 auto}
+.tut ol{list-style:none;padding:0;margin:0;counter-reset:s}
+.tut li{counter-increment:s;margin:0 0 28px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface);overflow:hidden;box-shadow:var(--shadow)}
+.tut h2{font-size:20px;margin:0;padding:14px 16px 4px;display:flex;gap:10px;align-items:center;color:var(--navy)}
+.tut h2:before{content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:16px}
+.tut li>p{margin:0;padding:4px 16px 12px;color:var(--muted);line-height:1.5}
+.tut img{display:block;width:100%;height:auto;border-top:1px solid var(--border)}
+.tut figcaption{font-size:12px;color:#5c6b7a;padding:6px 16px 10px}
+.tut .cmds{border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;background:var(--surface);margin:0 0 28px;box-shadow:var(--shadow)}
+.tut .cmds table{width:100%;border-collapse:collapse;font-size:14px}
+.tut .cmds td{padding:8px 6px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)}
+.tut .cmds td:first-child{white-space:nowrap;padding-right:16px}
+.tut .notice{margin-top:0}
+@media(max-width:600px){.tut h2{font-size:17px}.tut .cmds table{font-size:13px}}
+</style>
+</head>
+<body>
+<div class="bg-layer"><div class="bg-hologram"></div><div class="bg-grid"></div></div>
+<nav>
+<div class="container nav-inner">
+<a href="/" class="logo"><span class="logo-banner-frame"><img class="logo-banner" src="/assets/bigcs-logo-banner.png" alt="BIGCS Software" width="1672" height="298" decoding="async" fetchpriority="high"></span><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">Menu</button>
+<div class="nav-links" id="site-nav"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/coverage.html">Coverage</a><a href="/faq.html">FAQ</a><a href="/demo.html">Live demo</a><a href="/tutorial.html" aria-current="page">How it works</a><a class="nav-phone" href="tel:+18332442730">(833) 244-2730<span class="nav-phone-hint">Press 1 for Sales, 2 for Support</span></a><a href="/trial.html" class="btn btn-primary">Start trial</a><a href="/pricing.html" class="btn btn-ghost">Buy</a></div>
+</div>
+</nav>
+<main class="container">
+<section class="page-hero">
+<h1>Adjoiners in seconds: step by step</h1>
+<p class="hero-sub">This is exactly what you do in Carlson, IntelliCAD and AutoCAD to get every adjoiner's owner, deed and plat label, the adjoiner table and the letters. Real screens, no editing tricks.</p>
+</section>
+<div class="tut">
+<ol>
+<li><h2>Find your parcel</h2><p>Type <code>BCS</code>. At the prompt, choose <b>PIN</b> (or Address, or pick a point in the drawing). BIGCS pulls the parcel from the county GIS and draws it in the right place.</p><figure style="margin:0"><img src="/assets/tutorial/step1-parcel.jpg" alt="The subject parcel drawn in Carlson from county GIS" loading="lazy" width="1200" height="675"><figcaption>The subject parcel drawn in Carlson from county GIS</figcaption></figure></li>
+<li><h2>The owner label is already there</h2><p>The parcel comes in labeled: owner, deed book and page, plat reference and PIN. Nothing typed.</p><figure style="margin:0"><img src="/assets/tutorial/step2-label.jpg" alt="Owner, deed, plat and PIN label placed by BIGCS" loading="lazy" width="1200" height="675"><figcaption>Owner, deed, plat and PIN label placed by BIGCS</figcaption></figure></li>
+<li><h2>Get all the adjoiners at once</h2><p>Run <code>BCS</code> again and pick <b>Adjoiners</b> at the Mode prompt, then click inside the subject parcel. Every neighbor comes in with the same label.</p><figure style="margin:0"><img src="/assets/tutorial/step3-adjoiner-labels.jpg" alt="Adjoiner labels placed on neighboring parcels, with owner names blurred for privacy" loading="lazy" width="1200" height="675"><figcaption>Adjoiner labels placed on neighboring parcels (owner names blurred for privacy)</figcaption></figure></li>
+<li><h2>Every neighbor, done</h2><p>Here is the whole job: the subject and all its adjoiners, each labeled from county GIS.</p><figure style="margin:0"><img src="/assets/tutorial/step3b-adjoiners-all.jpg" alt="Subject parcel with every adjoiner labeled" loading="lazy" width="1200" height="675"><figcaption>Subject parcel with every adjoiner labeled</figcaption></figure></li>
+<li><h2>Drop in the adjoiner table</h2><p>Type <code>BCSADJ</code>, pick the subject parcel, then click where the table's top-left corner goes. You get owner, mailing address and site address for every adjoiner, plus a CSV saved next to your drawing.</p><figure style="margin:0"><img src="/assets/tutorial/step4-table.jpg" alt="Adjoiner table placed in the drawing, with names and addresses blurred for privacy" loading="lazy" width="1200" height="675"><figcaption>Adjoiner table placed in the drawing (names and addresses blurred for privacy)</figcaption></figure></li>
+<li><h2>Make the adjoiner letters</h2><p>Type <code>BCSLTR</code>. Pick the parcels, pick a template (letters or door hangers) and click <b>Create</b>.</p><figure style="margin:0"><img src="/assets/tutorial/step5-letters.jpg" alt="BIGCS Letters window (addresses blurred)" loading="lazy" width="1200" height="675"><figcaption>BIGCS Letters window (addresses blurred)</figcaption></figure></li>
+<li><h2>Letters ready to mail</h2><p>Letters come out as Word documents with your company info, plus mailing labels.</p><figure style="margin:0"><img src="/assets/tutorial/step5b-letter.jpg" alt="Sample letter with a sample surveying company letterhead" loading="lazy" width="1200" height="675"><figcaption>Sample letter with a sample surveying company letterhead</figcaption></figure></li>
+</ol>
+<div class="cmds"><strong>The commands</strong><table>
+<tr><td><code>BCS</code></td><td>Parcels with labels. Locate by Pick, LatLon, StatePlane, Address or PIN. Mode: Single, Adjoiners, Radius or Window.</td></tr>
+<tr><td><code>BCSTXT</code></td><td>Labels only, no parcel boundary.</td></tr>
+<tr><td><code>BCSADJ</code></td><td>Adjoiner table plus a CSV.</td></tr>
+<tr><td><code>BCSLTR</code></td><td>Adjoiner letters and door hangers.</td></tr>
+<tr><td><code>BCSST</code></td><td>Label style: how deeds and plats read.</td></tr>
+<tr><td><code>BCSREF</code></td><td>Refresh labels already in the drawing.</td></tr>
+</table></div>
+<div class="notice"><h3>BIGCS is not a survey</h3><p>Labels come as-is from county GIS records. Always confirm against the recorded deeds and plats. <a href="/disclaimer.html">Read the disclaimer</a>.</p></div>
+<div class="hero-ctas" style="margin:28px 0 40px;justify-content:flex-start"><a href="/trial.html" class="btn btn-primary">Start trial</a><a href="/coverage.html" class="btn btn-ghost">Check your county</a></div>
+</div>
+</main>
+<footer>
+<div class="container">
+<div class="links"><a href="/">Home</a><a href="/commands.html">Commands</a><a href="/pricing.html">Pricing</a><a href="/faq.html">FAQ</a><a href="/coverage.html">Coverage</a><a href="/demo.html">Live demo</a><a href="/tutorial.html">How it works</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/install-help.html">Install help</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:support@bigcsoftware.com">Support</a><a href="mailto:sales@bigcsoftware.com">Contact</a></div>
+<p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources and is not survey-grade. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
+<p>BIGCS Software &middot; North Carolina &middot; <a href="tel:+18332442730">(833) 244-2730</a> &middot; Press 1 for Sales, 2 for Support &middot; <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a> &middot; <a href="mailto:support@bigcsoftware.com">support@bigcsoftware.com</a></p>
+<p>AutoCAD and Civil 3D are trademarks of Autodesk, Inc. Carlson is a trademark of Carlson Software, Inc. IntelliCAD is a trademark of the IntelliCAD Technology Consortium. BIGCS is not affiliated with or endorsed by these companies.</p>
+<p>&copy; 2026 BIGCS. All rights reserved.</p>
+</div>
+</footer>
+<script src="/assets/ga-events.js" defer></script>
+<script src="/assets/nav.js" defer></script>
+</body>
+</html>
