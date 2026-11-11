@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="/js/internal.js"></script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-P3G3TB7T"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ68FN8YPT"></script>
@@ -8,6 +9,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  if (window.bigcsInternal) gtag('set', {traffic_type: 'internal'});
 
   gtag('config', 'G-TZ68FN8YPT');
 </script>
