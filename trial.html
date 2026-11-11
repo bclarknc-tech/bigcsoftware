@@ -42,7 +42,7 @@
 <div class="container nav-inner">
 <a href="/" class="logo"><span class="logo-banner-frame"><img class="logo-banner" src="/assets/bigcs-logo-banner.png" alt="BIGCS Software" width="1672" height="298" decoding="async" fetchpriority="high"></span><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
 <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">Menu</button>
-<div class="nav-links" id="site-nav"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/coverage.html">Coverage</a><a href="/faq.html">FAQ</a><a href="/trial.html" class="btn btn-primary" aria-current="page">Start trial</a><a href="/pricing.html" class="btn btn-ghost">Buy</a></div>
+<div class="nav-links" id="site-nav"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/coverage.html">Coverage</a><a href="/faq.html">FAQ</a><a class="nav-phone" href="tel:+18332442730">(833) 244-2730<span class="nav-phone-hint">Press 1 for Sales, 2 for Support</span></a><a href="/trial.html" class="btn btn-primary" aria-current="page">Start trial</a><a href="/pricing.html" class="btn btn-ghost">Buy</a></div>
 </div>
 </nav>
 <main class="container trial-page">
@@ -72,17 +72,29 @@ Your browser can't play this video.
 <div class="f-row"><label><span class="lt">Name <span class="req">*</span></span><input type="text" name="name" id="t-name" maxlength="100" required autocomplete="name"></label>
 <label><span class="lt">Company or firm <span class="req">*</span></span><input type="text" name="company" id="t-company" maxlength="120" required autocomplete="organization"><small class="opt">If you work on your own, enter your business name.</small></label></div>
 <label><span class="lt">Email <span class="req">*</span></span><input type="email" name="email" id="t-email" maxlength="254" required autocomplete="email"></label>
+<label><span class="lt">Mobile phone <span class="opt">(optional)</span></span><input type="tel" name="phone" id="t-phone" maxlength="40" autocomplete="tel"></label>
 <div class="f-row"><label><span class="lt">State <span class="req">*</span></span><select name="state" id="t-state" required><option value="">Select a state</option><option>NC</option><option>SC</option><option>GA</option><option>VA</option><option>TN</option><option>WV</option><option>TX</option><option>MS</option><option>AR</option><option>MO</option><option>NY</option><option>OH</option><option>AL</option><option>WI</option><option>MN</option></select></label>
 <label><span class="lt">County <span class="req">*</span></span><select name="county" id="t-county" required disabled><option value="">Select a state first</option></select></label></div>
-<p class="trial-note">BIGCS Software uses these details only to review your trial request and email you about it. We don't sell or share your information. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+<fieldset class="sms-consent">
+<legend>Text messages</legend>
+<label><input type="checkbox" name="sms_care" id="t-sms-care" value="yes"> Yes, I consent to receive customer care messages from BIGCS Software</label>
+<label><input type="checkbox" name="sms_marketing" id="t-sms-marketing" value="yes"> Yes, I consent to receive marketing text messages from BIGCS Software</label>
+<label><input type="checkbox" name="sms_none" id="t-sms-none" value="yes"> No, I do not want to receive any text messages from BIGCS Software</label>
+</fieldset>
+<p class="trial-note">BIGCS Software uses these details only to review your trial request and email you about it. We don't sell or share your information. See our <a href="/privacy.html">Privacy Policy and Messaging Terms and Conditions</a>.</p>
 <div class="cf-turnstile" id="t-turnstile"></div>
 <button type="submit" class="btn btn-primary" id="t-submit">Start trial</button>
 <p class="f-status" id="t-status" role="status" aria-live="polite"></p>
 </form>
+<div class="sms-disclose">
+<p>Big C's Products, LLC (doing business as BIGCS Software) would like your consent to send customer care and/or marketing text message communications from (833) 244-2730 to your mobile number listed above. Customer care messages may include responses to messages you send us, as well as information relevant to your relationship with us. Marketing messages may include discount codes, special deals or texts promoting our products/services.</p>
+<p>Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply 'STOP' to unsubscribe at any time. Reply 'HELP' for assistance or more information.</p>
+<p>We do not share your mobile opt-in information with anyone. Our combined Privacy Policy and Messaging Terms and Conditions are available at <a href="https://www.bigcsoftware.com/privacy">https://www.bigcsoftware.com/privacy</a>.</p>
+</div>
 <!-- Future customer quote goes here (add only after the customer approves the exact words in writing).
 <blockquote class="trial-quote"></blockquote>
 -->
-<p class="f-fallback">Prefer email? <a href="mailto:sales@bigcsoftware.com?subject=BIGCS%20trial%20request">sales@bigcsoftware.com</a></p>
+<p class="f-fallback">Prefer to call? <a href="tel:+18332442730">(833) 244-2730</a>. Press 1 for Sales, 2 for Support. Or email <a href="mailto:sales@bigcsoftware.com?subject=BIGCS%20trial%20request">sales@bigcsoftware.com</a></p>
 </section>
 </main>
 <script src="/assets/trial-counties.js"></script>
@@ -91,7 +103,7 @@ Your browser can't play this video.
 <div class="container">
 <div class="links"><a href="/">Home</a><a href="/commands.html">Commands</a><a href="/pricing.html">Pricing</a><a href="/faq.html">FAQ</a><a href="/coverage.html">Coverage</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/install-help.html">Install help</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:support@bigcsoftware.com">Support</a><a href="mailto:sales@bigcsoftware.com">Contact</a></div>
 <p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources and is not survey-grade. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
-<p>BIGCS Software &middot; North Carolina &middot; <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a> &middot; <a href="mailto:support@bigcsoftware.com">support@bigcsoftware.com</a></p>
+<p>BIGCS Software &middot; North Carolina &middot; <a href="tel:+18332442730">(833) 244-2730</a> &middot; Press 1 for Sales, 2 for Support &middot; <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a> &middot; <a href="mailto:support@bigcsoftware.com">support@bigcsoftware.com</a></p>
 <p>AutoCAD and Civil 3D are trademarks of Autodesk, Inc. Carlson is a trademark of Carlson Software, Inc. IntelliCAD is a trademark of the IntelliCAD Technology Consortium. BIGCS is not affiliated with or endorsed by these companies.</p>
 <p>&copy; 2026 BIGCS. All rights reserved.</p>
 </div>

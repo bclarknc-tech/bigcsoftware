@@ -10,6 +10,14 @@ var f=document.getElementById("trial-form"),st=document.getElementById("t-status
 var C=window.BIGCS_TRIAL_COUNTIES||{};
 sSel.addEventListener("change",function(){var l=C[sSel.value]||[];cSel.innerHTML='<option value="">'+(sSel.value?"Select a county":"Select a state first")+'</option>';
   l.forEach(function(n){var o=document.createElement("option");o.textContent=n;cSel.appendChild(o)});cSel.disabled=!l.length;});
+var smsCare=document.getElementById("t-sms-care"),smsMkt=document.getElementById("t-sms-marketing"),smsNone=document.getElementById("t-sms-none");
+function smsExclusive(src){
+  if(!smsCare||!smsMkt||!smsNone)return;
+  if(src===smsNone&&smsNone.checked){smsCare.checked=false;smsMkt.checked=false;}
+  if((src===smsCare||src===smsMkt)&&src.checked){smsNone.checked=false;}
+}
+[smsCare,smsMkt,smsNone].forEach(function(el){if(el)el.addEventListener("change",function(){smsExclusive(el)});});
+
 function msg(cls,h){st.className="f-status"+(cls?" "+cls:"");st.innerHTML=h}
 if(LIVE){window.bigcsTs=function(t){tsToken=t};var s=document.createElement("script");s.src="https://challenges.cloudflare.com/turnstile/v0/api.js";s.async=true;s.defer=true;
   var w=document.getElementById("t-turnstile");w.setAttribute("data-sitekey",TURNSTILE_SITE_KEY);w.setAttribute("data-size","invisible");w.setAttribute("data-callback","bigcsTs");document.head.appendChild(s);}
