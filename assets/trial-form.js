@@ -10,13 +10,6 @@ var f=document.getElementById("trial-form"),st=document.getElementById("t-status
 var C=window.BIGCS_TRIAL_COUNTIES||{};
 sSel.addEventListener("change",function(){var l=C[sSel.value]||[];cSel.innerHTML='<option value="">'+(sSel.value?"Select a county":"Select a state first")+'</option>';
   l.forEach(function(n){var o=document.createElement("option");o.textContent=n;cSel.appendChild(o)});cSel.disabled=!l.length;});
-var smsCare=document.getElementById("t-sms-care"),smsMkt=document.getElementById("t-sms-marketing"),smsNone=document.getElementById("t-sms-none");
-function smsExclusive(src){
-  if(!smsCare||!smsMkt||!smsNone)return;
-  if(src===smsNone&&smsNone.checked){smsCare.checked=false;smsMkt.checked=false;}
-  if((src===smsCare||src===smsMkt)&&src.checked){smsNone.checked=false;}
-}
-[smsCare,smsMkt,smsNone].forEach(function(el){if(el)el.addEventListener("change",function(){smsExclusive(el)});});
 
 function msg(cls,h){st.className="f-status"+(cls?" "+cls:"");st.innerHTML=h}
 // Bot check (Cloudflare Turnstile). If it errors, is blocked, or gives no token within TS_WAIT ms,
@@ -57,7 +50,7 @@ f.addEventListener("submit",function(ev){ev.preventDefault();
   if(recent().length>=3){msg("err","You've sent several requests already. We'll be in touch, or email "+MAIL+".");return}
   if(!tsToken){if(tsFailed){msg("err","The security check didn't finish. Use Retry below, or call or email us.");return}msg("err","Still checking your browser. Please wait a moment and try again.");tsWatch();return}
   btn.disabled=true;msg("","Sending...");
-  var data={};new FormData(f).forEach(function(v,k){data[k]=v});data.email=data.email.trim().toLowerCase();data["cf-turnstile-response"]=tsToken;
+  var data={};new FormData(f).forEach(function(v,k){data[k]=v});if(data.phone&&/^\d{7}$/.test(String(data.phone).replace(/[\s().+-]/g,"")))data.phone="";data.email=data.email.trim().toLowerCase();data["cf-turnstile-response"]=tsToken;
   var FAIL="Couldn't send that. Email "+MAIL+" to ask about a trial.";
   var LBL={name:"your full name",email:"your work email",company:"your company name",phone:"your phone number",state:"your state",county:"your county",consent:"your agreement to be contacted",source:"how you heard about us"};
   fetch(TRIAL_ENDPOINT_URL,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
