@@ -74,7 +74,7 @@
 <div class="f-row"><label><span class="lt">Name <span class="req">*</span></span><input type="text" name="name" id="t-name" maxlength="100" required autocomplete="name"></label>
 <label><span class="lt">Company or firm <span class="req">*</span></span><input type="text" name="company" id="t-company" maxlength="120" required autocomplete="organization"><small class="opt">If you work on your own, enter your business name.</small></label></div>
 <label><span class="lt">Email <span class="req">*</span></span><input type="email" name="email" id="t-email" maxlength="254" required autocomplete="email"></label>
-<label><span class="lt">Mobile phone <span class="opt">(optional)</span></span><input type="tel" name="phone" id="t-phone" maxlength="40" autocomplete="tel"></label>
+<label><span class="lt">Mobile phone <span class="opt">(optional)</span></span><input type="tel" name="phone" id="t-phone" maxlength="40" autocomplete="tel" aria-describedby="t-phone-err"><small class="f-err" id="t-phone-err" aria-live="polite" hidden></small></label>
 <div class="f-row"><label><span class="lt">State <span class="req">*</span></span><select name="state" id="t-state" required><option value="">Select a state</option><option>NC</option><option>SC</option><option>GA</option><option>VA</option><option>TN</option><option>WV</option><option>TX</option><option>MS</option><option>AR</option><option>MO</option><option>NY</option><option>OH</option><option>AL</option><option>WI</option><option>MN</option></select></label>
 <label><span class="lt">County <span class="req">*</span></span><select name="county" id="t-county" required disabled><option value="">Select a state first</option></select></label></div>
 <p class="trial-note">BIGCS Software uses these details only to review your trial request and email you about it. We don't sell or share your information. See our <a href="/privacy.html">Privacy Policy</a>.</p>
@@ -111,7 +111,7 @@ Your browser can't play this video.
 </section>
 </main>
 <script src="/assets/trial-counties.js"></script>
-<script src="/assets/trial-form.js"></script>
+<script src="/assets/trial-form.js?v=74"></script>
 <footer>
 <div class="container">
 <div class="links"><a href="/">Home</a><a href="/commands.html">Commands</a><a href="/pricing.html">Pricing</a><a href="/faq.html">FAQ</a><a href="/coverage.html">Coverage</a><a href="/demo.html">Live demo</a><a href="/tutorial.html">How it works</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/install-help.html">Install help</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:support@bigcsoftware.com">Support</a><a href="mailto:sales@bigcsoftware.com">Contact</a></div>

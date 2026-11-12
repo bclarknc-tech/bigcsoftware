@@ -215,6 +215,9 @@ section{margin-top:64px}
 .f-status{font-size:14px;min-height:1em}
 .f-status.ok{color:var(--ok)}
 .f-status.err{color:var(--err)}
+.f-err{display:block;color:var(--err);font-size:13px;margin-top:4px}
+.interest-form input[aria-invalid="true"]{border-color:var(--err)}
+.interest-form input[aria-invalid="true"]:focus{border-color:var(--err);box-shadow:0 0 0 3px rgba(155,44,44,.15)}
 .f-fallback{text-align:center;margin-top:16px;color:var(--muted);font-size:14px}
 @media (max-width:700px){
 .f-row{flex-direction:column}
