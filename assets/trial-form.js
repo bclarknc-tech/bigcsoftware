@@ -73,7 +73,10 @@ f.addEventListener("submit",function(ev){ev.preventDefault();
       msg("ok","Thanks. We've received your request. A confirmation email is on its way to "+em+", and we'll reply there. Check your spam folder if you don't see it.");
       sent=true;var went=false;function go(){if(went)return;went=true;window.location.assign(THANKS_URL)}
       if(typeof window.gtag==="function"&&!(window.bigcsSkipLead&&window.bigcsSkipLead(data))){
-        window.gtag("event","generate_lead",{form:"trial",state:String(data.state||""),event_callback:go,event_timeout:1500});setTimeout(go,1500)}
+        /* Don't pass event_callback:go — gtag can fire it before the Ads conversion
+           fetch (AW-18566210536/TyBICMWx1LUdEOjHh5VF) finishes, and the redirect aborts the hit. */
+        window.gtag("event","generate_lead",{form:"trial",state:String(data.state||"")});
+        setTimeout(go,1500)}
       else go();
       return}
     var s=j.status||"";
