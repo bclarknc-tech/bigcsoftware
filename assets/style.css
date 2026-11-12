@@ -38,8 +38,10 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-s
 a{color:var(--link)}
 .bg-layer,.bg-hologram,.bg-grid{display:none!important}
 .container{max-width:var(--max);margin:0 auto;padding:0 24px;position:relative;z-index:10}
-nav{min-height:76px;height:auto;display:flex;align-items:center;border-bottom:none;position:sticky;top:0;background:var(--header);z-index:100}
-.nav-inner{display:flex;width:100%;align-items:center;justify-content:flex-start;gap:12px;padding:8px 0;flex-wrap:wrap}
+nav{min-height:96px;height:auto;display:flex;align-items:center;border-bottom:none;position:sticky;top:0;background:#001d47;z-index:100}
+/* Full-width header bar so the banner can sit flush left and the nav can share one row. */
+nav > .container.nav-inner{max-width:none;width:100%;padding:0 24px}
+.nav-inner{display:flex;width:100%;align-items:center;justify-content:flex-start;gap:16px;padding:0;flex-wrap:nowrap}
 .logo{font-weight:600;font-size:18px;display:flex;align-items:center;gap:8px;text-decoration:none;color:#fff;margin-right:auto;min-width:0}
 .logo-box{width:24px;height:24px;background:var(--navy);border-radius:4px}
 .logo-img{width:64px;height:64px;border-radius:50%;flex-shrink:0;display:block}
@@ -287,13 +289,25 @@ body.home .testimonial{padding:28px 22px}
 body.home .testimonial p{font-size:1.2rem}
 }
 
-/* Header uses the navy banner. The frame shows the seal, wordmark and tagline band. */
-.logo-banner-frame{display:block;position:relative;width:min(420px,38vw);aspect-ratio:1672/298;overflow:hidden;flex:0 1 auto;min-width:210px;border-radius:8px}
-.logo-banner{position:absolute;left:0;top:0;width:100%;height:100%;max-width:none}
+/* Header uses the navy banner as a left-justified brand strip.
+   The frame is the full header height, no rounded box, no shadow.
+   The image is scaled to that height and clipped after the tagline; a right-edge
+   fade blends it into the header navy (#001d47, sampled from the banner field). */
+.logo-banner-frame{display:block;position:relative;height:96px;width:440px;overflow:hidden;flex:0 0 auto;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 48px),transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 48px),transparent 100%)}
+.logo-banner{display:block;position:static;left:auto;top:auto;height:100%;width:auto;max-width:none;aspect-ratio:1672/298}
 .logo .logo-img{display:none}
 .logo .logo-text{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media (min-width:1280px){
+.nav-inner{flex-wrap:nowrap;gap:16px}
+.nav-links{flex-wrap:nowrap;gap:12px}
+.logo-banner-frame{height:96px;width:440px;flex:0 0 440px}
+}
+@media (max-width:1279px){
+nav > .container.nav-inner{flex-wrap:wrap;padding:8px 24px;gap:12px}
+.logo-banner-frame{height:80px;width:min(400px,58vw);flex:0 1 auto}
+}
 @media (max-width:768px){
-.logo-banner-frame{width:min(420px,100%);min-width:0}
+.logo-banner-frame{height:56px;width:min(300px,100%);min-width:0;flex:0 1 auto;-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 32px),transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 32px),transparent 100%)}
 }
 @media (max-width:520px){
 .logo-banner-frame{display:none}
