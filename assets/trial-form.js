@@ -35,22 +35,36 @@ if(LIVE){window.bigcsTs=function(t){tsToken=t;clearTimeout(tsTimer);tsHideFallba
 else{msg("","Online trial requests open soon. Until then, email "+MAIL+" to ask about a trial.");}
 var RL="bigcsTrialSends",THANKS_URL="/thank-you.html?type=trial",sent=false;
 function recent(){try{return (JSON.parse(localStorage.getItem(RL))||[]).filter(function(t){return Date.now()-t<3600e3})}catch(e){return[]}}
+// Optional phone: empty is fine. Otherwise it must be a 10-digit US number (a leading 1 / +1 is allowed)
+// or an international number starting with + and 8-15 digits. Returns "" when OK, else the message to show.
+var ph=document.getElementById("t-phone"),phErr=document.getElementById("t-phone-err");
+function phoneProblem(raw){var p=String(raw||"").trim();if(!p)return "";
+  var d=p.replace(/\s*(x|ext\.?)\s*\d+$/i,"");
+  if(/[^\d\s().+-]/.test(d)||/.\+/.test(d))return "Please enter a valid phone number, or leave it blank.";
+  var dg=d.replace(/\D/g,"");
+  if(d.charAt(0)==="+"){if(dg.length>=8&&dg.length<=15&&(dg.charAt(0)!=="1"||dg.length===11))return "";}
+  else if(/^1?\d{10}$/.test(dg))return "";
+  if(dg.length===7&&d.charAt(0)!=="+")return "Please include your area code.";
+  return "Please enter a valid phone number, or leave it blank."}
+function phoneShow(m){if(!ph||!phErr)return;phErr.textContent=m;phErr.hidden=!m;if(m)ph.setAttribute("aria-invalid","true");else ph.removeAttribute("aria-invalid")}
+if(ph)ph.addEventListener("input",function(){if(phErr&&!phErr.hidden&&!phoneProblem(ph.value)){phoneShow("");if(st.className.indexOf("err")>=0)msg("","")}});
 function check(){var v=function(id){return document.getElementById(id).value.trim()},e=[];
   var n=v("t-name");if(n.length<2)e.push("your full name");
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v("t-email")))e.push("a valid work email");
   if(v("t-company").length<2)e.push("your company name");
-  var p=document.getElementById("t-phone")?v("t-phone"):"";if(p){var d=p.replace(/\s*(x|ext\.?)\s*\d+$/i,"");var dg=d.replace(/[\s().+-]/g,"");var ok=/^\+\d{8,15}$/.test(d.replace(/[\s().-]/g,""))||/^1?\d{10}$/.test(dg)||/^\d{7}$/.test(dg);if(!ok)e.push("a valid phone number, or leave it blank");}
   if(!sSel.value)e.push("a state");if(!cSel.value)e.push("a county");
   if(!document.getElementById("t-consent").checked)e.push("your agreement to be contacted");return e}
 f.addEventListener("submit",function(ev){ev.preventDefault();
+  var pm=ph?phoneProblem(ph.value):"";phoneShow(pm);
   var e=check();if(e.length){msg("err","Please enter "+e.join(", ")+".");return}
+  if(pm){msg("err",pm);ph.focus();return}
   if(f.website.value){msg("err","Sorry, that did not go through. Please email "+MAIL+".");return}
   if(Date.now()-t0<3000){msg("err","Please take a moment to check your details, then try again.");return}
   if(!LIVE){msg("","Online trial requests open soon. Until then, email "+MAIL+" to ask about a trial.");return}
   if(recent().length>=3){msg("err","You've sent several requests already. We'll be in touch, or email "+MAIL+".");return}
   if(!tsToken){if(tsFailed){msg("err","The security check didn't finish. Use Retry below, or call or email us.");return}msg("err","Still checking your browser. Please wait a moment and try again.");tsWatch();return}
   btn.disabled=true;msg("","Sending...");
-  var data={};new FormData(f).forEach(function(v,k){data[k]=v});if(data.phone&&/^\d{7}$/.test(String(data.phone).replace(/[\s().+-]/g,"")))data.phone="";data.email=data.email.trim().toLowerCase();data["cf-turnstile-response"]=tsToken;
+  var data={};new FormData(f).forEach(function(v,k){data[k]=v});data.email=data.email.trim().toLowerCase();data["cf-turnstile-response"]=tsToken;
   var FAIL="Couldn't send that. Email "+MAIL+" to ask about a trial.";
   var LBL={name:"your full name",email:"your work email",company:"your company name",phone:"your phone number",state:"your state",county:"your county",consent:"your agreement to be contacted",source:"how you heard about us"};
   fetch(TRIAL_ENDPOINT_URL,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
