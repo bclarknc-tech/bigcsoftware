@@ -58,13 +58,13 @@ f.addEventListener("submit",function(ev){ev.preventDefault();
   var pm=ph?phoneProblem(ph.value):"";phoneShow(pm);
   var e=check();if(e.length){msg("err","Please enter "+e.join(", ")+".");return}
   if(pm){msg("err",pm);ph.focus();return}
-  if(f.website.value){msg("err","Sorry, that did not go through. Please email "+MAIL+".");return}
+  /* Honeypot no longer blocks client-side: Chrome autofill was filling it and silently stopping real users. */
   if(Date.now()-t0<3000){msg("err","Please take a moment to check your details, then try again.");return}
   if(!LIVE){msg("","Online trial requests open soon. Until then, email "+MAIL+" to ask about a trial.");return}
   if(recent().length>=3){msg("err","You've sent several requests already. We'll be in touch, or email "+MAIL+".");return}
   if(!tsToken){if(tsFailed){msg("err","The security check didn't finish. Use Retry below, or call or email us.");return}msg("err","Still checking your browser. Please wait a moment and try again.");tsWatch();return}
   btn.disabled=true;msg("","Sending...");
-  var data={};new FormData(f).forEach(function(v,k){data[k]=v});data.email=data.email.trim().toLowerCase();data["cf-turnstile-response"]=tsToken;
+  var data={};new FormData(f).forEach(function(v,k){data[k]=v});delete data.hp_fax2;data.website="";data.email=data.email.trim().toLowerCase();data["cf-turnstile-response"]=tsToken;
   var FAIL="Couldn't send that. Email "+MAIL+" to ask about a trial.";
   var LBL={name:"your full name",email:"your work email",company:"your company name",phone:"your phone number",state:"your state",county:"your county",consent:"your agreement to be contacted",source:"how you heard about us"};
   fetch(TRIAL_ENDPOINT_URL,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
