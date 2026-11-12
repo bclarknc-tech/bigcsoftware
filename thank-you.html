@@ -47,13 +47,20 @@
 </div>
 </nav>
 <main class="container">
-<section class="page-hero">
+<section class="page-hero trial-thanks" hidden>
+<div class="badge">Trial request received</div>
+<h1>Thanks. We've received your trial request.</h1>
+<p class="hero-sub">We review each 14-day trial on 1 county by hand and reply by email from <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a>. A confirmation email is on its way now. Check your spam or junk folder if you don't see it.</p>
+<div class="hero-ctas"><a href="/demo.html" class="btn btn-primary">Watch the live demo</a><a href="/coverage.html" class="btn btn-ghost">See county coverage</a></div>
+<p>Questions? Call <a href="tel:+18332442730">(833) 244-2730</a> or email <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a>.</p>
+</section>
+<section class="page-hero purchase-thanks">
 <div class="badge">Thank you</div>
 <h1>Your license key is on its way.</h1>
 <p class="hero-sub">Thanks for purchasing BIGCS. Your license key and download link will be emailed from <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a>. Check the inbox for the address you used at checkout, including spam or junk.</p>
 <div class="hero-ctas"><a href="/" class="btn btn-primary">Back to BIGCS</a><a href="mailto:support@bigcsoftware.com?subject=BIGCS%20license%20key" class="btn btn-ghost">Email support</a></div>
 </section>
-<section class="thanks-panel">
+<section class="thanks-panel purchase-thanks">
 <div class="card">
 <h2>What to expect</h2>
 <p>The message comes from sales@bigcsoftware.com, subject "Your BIGCS license key and download link are ready". Each license key is tied to one computer. One seat is one user on one computer.</p>
@@ -62,6 +69,13 @@
 </div>
 </section>
 </main>
+<script>
+/* /thank-you.html?type=trial is the trial-request confirmation; with no type it stays the purchase page. */
+(function(){try{if(new URLSearchParams(location.search).get("type")!=="trial")return}catch(e){return}
+var t=document.querySelector(".trial-thanks");if(!t)return;t.hidden=false;
+document.querySelectorAll(".purchase-thanks").forEach(function(el){el.hidden=true});
+document.title="Trial request received | BIGCS";})();
+</script>
 <footer>
 <div class="container">
 <div class="links"><a href="/">Home</a><a href="/commands.html">Commands</a><a href="/pricing.html">Pricing</a><a href="/faq.html">FAQ</a><a href="/coverage.html">Coverage</a><a href="/demo.html">Live demo</a><a href="/tutorial.html">How it works</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/install-help.html">Install help</a><a href="/disclaimer.html">Disclaimer</a><a href="mailto:support@bigcsoftware.com">Support</a><a href="mailto:sales@bigcsoftware.com">Contact</a></div>
