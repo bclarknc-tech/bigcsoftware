@@ -332,6 +332,47 @@ body.trial .trial-note{margin:0;color:var(--muted);font-size:14px;font-weight:40
 body.trial .trial-note a{font-weight:600;text-decoration:underline}
 body.trial .interest-form .btn{align-self:stretch}
 body.trial .f-fallback a{font-weight:600}
+[hidden]{display:none!important}
+/* Trial page, first screen: what it does (left) + form (right). Stacks on narrow screens. */
+body.trial .trial-page{max-width:1160px}
+body.trial .trial-top{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:start;padding-top:24px}
+body.trial .trial-what h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin:0 0 16px}
+body.trial .trial-what .hero-brand{margin:0 0 8px}
+body.trial .trial-clip{margin:0;border:1px solid #d5deea;border-radius:12px;overflow:hidden;background:#000;box-shadow:var(--shadow-media)}
+body.trial .trial-clip video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+body.trial .trial-clip figcaption{background:var(--navy);color:#fff;font-size:13px;padding:8px 12px}
+body.trial .trial-jump{display:none;margin:16px 0 0}
+body.trial .trial-steps{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+body.trial .trial-steps li{display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.45;color:var(--text)}
+body.trial .trial-steps .step-n{flex:0 0 28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+body.trial .trial-facts{margin:16px 0 0;font-size:15px;color:var(--muted)}
+body.trial .trial-facts a{font-weight:600;text-decoration:underline}
+body.trial .trial-top .form-wrap{margin:0}
+body.trial #trial-form{scroll-margin-top:112px}
+body.trial .form-head h2{font-size:22px;margin:0 0 4px}
+body.trial .form-head p{margin:0;color:var(--muted);font-size:14px;font-weight:400}
+body.trial .sms-details{border:1px solid var(--border-strong);border-radius:8px;padding:10px 14px;background:#fff}
+body.trial .sms-details summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--navy)}
+body.trial .sms-details[open] summary{margin-bottom:12px}
+body.trial .sms-details .sms-disclose{margin-top:14px}
+body.trial .ts-fallback{border:1px solid var(--err);border-radius:8px;padding:12px 14px;background:#fff;font-size:14px;color:var(--text)}
+body.trial .ts-fallback p{margin:0 0 8px}
+body.trial .ts-fallback p:last-child{margin:0}
+body.trial .ts-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+body.trial .ts-actions .btn{align-self:auto;padding:8px 20px}
+body.trial .ts-actions a{font-weight:600}
+body.trial .trial-top .f-fallback{margin:12px 0 0;font-size:14px}
+body.trial .trial-more,body.trial .trial-walkthrough{margin-top:48px}
+body.trial .trial-more h2,body.trial .trial-walkthrough h2{font-size:24px;margin:0 0 16px}
+body.trial .trial-walkthrough{margin-bottom:64px}
+body.trial .trial-walkthrough .demo{margin:0}
+@media (max-width:900px){
+body.trial .trial-top{grid-template-columns:1fr;gap:28px;padding-top:16px}
+body.trial .trial-what h1{font-size:28px}
+body.trial .trial-jump{display:block}
+body.trial .trial-jump .btn{display:block;width:100%;text-align:center}
+body.trial #trial-form{scroll-margin-top:160px}
+}
 @media (max-width:768px){
 body.trial .page-hero{padding-top:24px}
 body.trial .page-hero h1{font-size:32px}
