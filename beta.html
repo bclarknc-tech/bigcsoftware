@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Start a trial | BIGCS</title>
-<meta http-equiv="refresh" content="0; url=/trial.html">
 <link rel="canonical" href="https://bigcsoftware.com/trial.html">
 <meta name="robots" content="noindex">
-<script>location.replace("/trial.html");</script>
+<script>location.replace("/trial.html"+location.search+location.hash);</script>
 </head>
 <body>
-<p>This page has moved to <a href="/trial.html">the BIGCS trial page</a>.</p>
+<p>This page has moved to <a href="/trial.html" id="beta-to-trial">the BIGCS trial page</a>.</p>
+<script>document.getElementById("beta-to-trial").href="/trial.html"+location.search+location.hash;</script>
 </body>
 </html>
