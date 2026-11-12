@@ -351,10 +351,6 @@ body.trial .trial-top .form-wrap{margin:0}
 body.trial #trial-form{scroll-margin-top:112px}
 body.trial .form-head h2{font-size:22px;margin:0 0 4px}
 body.trial .form-head p{margin:0;color:var(--muted);font-size:14px;font-weight:400}
-body.trial .sms-details{border:1px solid var(--border-strong);border-radius:8px;padding:10px 14px;background:#fff}
-body.trial .sms-details summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--navy)}
-body.trial .sms-details[open] summary{margin-bottom:12px}
-body.trial .sms-details .sms-disclose{margin-top:14px}
 body.trial .ts-fallback{border:1px solid var(--err);border-radius:8px;padding:12px 14px;background:#fff;font-size:14px;color:var(--text)}
 body.trial .ts-fallback p{margin:0 0 8px}
 body.trial .ts-fallback p:last-child{margin:0}
@@ -441,12 +437,3 @@ body.home .clip-points li:last-child{margin-bottom:0}
 nav.nav-open .nav-links a.nav-phone{display:flex;align-items:flex-start;white-space:normal;padding:10px 2px;min-height:44px;border-top:1px solid rgba(255,255,255,.16)}
 }
 
-/* Trial form: optional mobile phone, SMS consent, disclosure */
-.sms-consent{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;border:0}
-.sms-consent legend{font-size:14px;font-weight:600;color:var(--navy);margin:0 0 4px;padding:0}
-.interest-form .sms-consent label{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400;color:var(--text);line-height:1.45}
-.interest-form .sms-consent input[type="checkbox"]{width:auto;height:18px;min-width:18px;margin-top:2px;padding:0;flex-shrink:0;accent-color:var(--navy);box-shadow:none}
-.sms-disclose{margin-top:16px;color:var(--muted);font-size:12px;line-height:1.55}
-.sms-disclose p{margin:0 0 10px}
-.sms-disclose p:last-child{margin-bottom:0}
-.sms-disclose a{color:var(--navy);font-weight:600}
