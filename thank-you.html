@@ -54,6 +54,11 @@
 <div class="hero-ctas"><a href="/demo.html" class="btn btn-primary">Watch the live demo</a><a href="/coverage.html" class="btn btn-ghost">See county coverage</a></div>
 <p>Questions? Call <a href="tel:+18332442730">(833) 244-2730</a> or email <a href="mailto:sales@bigcsoftware.com">sales@bigcsoftware.com</a>.</p>
 </section>
+<section class="thanks-panel trial-thanks" hidden>
+<div class="card">
+<p><strong>Windows says it protected my PC. Is BIGCS safe?</strong> Yes. Windows shows this for newer programs it hasn't seen often. Click <strong>More info</strong>, then <strong>Run anyway</strong>. See <a href="/install-help.html">Install help</a>.</p>
+</div>
+</section>
 <section class="page-hero purchase-thanks">
 <div class="badge">Thank you</div>
 <h1>Your license key is on its way.</h1>
@@ -64,6 +69,7 @@
 <div class="card">
 <h2>What to expect</h2>
 <p>The message comes from sales@bigcsoftware.com, subject "Your BIGCS license key and download link are ready". Each license key is tied to one computer. One seat is one user on one computer.</p>
+<p><strong>Windows says it protected my PC. Is BIGCS safe?</strong> Yes. Windows shows this for newer programs it hasn't seen often. Click <strong>More info</strong>, then <strong>Run anyway</strong>. See <a href="/install-help.html">Install help</a>.</p>
 <p>If the key does not arrive, email <a href="mailto:support@bigcsoftware.com">support@bigcsoftware.com</a> and include the email you used at checkout.</p>
 <p><strong>BIGCS is not a survey.</strong> GIS data is shown as-is from county and government sources. <a href="/disclaimer.html">Read the disclaimer</a>.</p>
 </div>
@@ -72,7 +78,8 @@
 <script>
 /* /thank-you.html?type=trial is the trial-request confirmation; with no type it stays the purchase page. */
 (function(){try{if(new URLSearchParams(location.search).get("type")!=="trial")return}catch(e){return}
-var t=document.querySelector(".trial-thanks");if(!t)return;t.hidden=false;
+var t=document.querySelectorAll(".trial-thanks");if(!t.length)return;
+t.forEach(function(el){el.hidden=false});
 document.querySelectorAll(".purchase-thanks").forEach(function(el){el.hidden=true});
 document.title="Trial request received | BIGCS";})();
 </script>
