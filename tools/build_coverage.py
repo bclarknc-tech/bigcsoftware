@@ -40,7 +40,15 @@ def main(path):
     rows = list(csv.DictReader(open(path, newline="", encoding="utf-8-sig")))
     by = {}
     for r in rows:
-        r["buildings"] = "yes" if r["state"].strip() == "NC" else "no"   # footprints: NC only today
+        # Buildings come from the input CSV. Do not hardcode NC-only;
+        # rc31 covers all 28 Available states. If the column is missing,
+        # fail rather than invent a value.
+        b = (r.get("buildings") or "").strip().lower()
+        if not b:
+            raise SystemExit(
+                f'{r.get("state")}/{r.get("county")}: missing buildings field; will not invent a value'
+            )
+        r["buildings"] = b
         by.setdefault(r["state"].strip(), []).append(r)
     codes = [c for c in ORDER if c in by] + sorted((c for c in by if c not in ORDER), key=lambda c: NAMES.get(c, c))
     parts = []
