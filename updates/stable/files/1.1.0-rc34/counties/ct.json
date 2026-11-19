@@ -1,0 +1,952 @@
+{
+ "_meta": {
+  "state": "CT",
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PB {plat_book} PG {plat_page}",
+   "PID:{pid}"
+  ],
+  "default_epsg": 6434,
+  "epsg_choices": [
+   6434
+  ],
+  "target_options": {
+   "connecticut": 6434
+  },
+  "detect": {
+   "local": "CT"
+  },
+  "onemap_url": null,
+  "target_wkid": 6434,
+  "release": true
+ },
+ "counties": {
+  "Naugatuck Valley": {
+   "fips": "09140",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/arcgis/rest/services/Connecticut_CAMA_and_Parcel_Layer/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "Owner",
+     "Co_Owner"
+    ],
+    "deed_ref": "_deed_lookup",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Parcel_ID",
+    "acres": null,
+    "address": "Location"
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "CT OPM / CT GIS Office statewide Parcel + CAMA layer (built from each town's own submission); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "owner_lookup": {
+    "type": "vision",
+    "key_field": "Link",
+    "town_field": "Town_Name",
+    "suffix": "ct",
+    "fill": [
+     "deed"
+    ],
+    "verify_field": "Owner",
+    "timeout": 10
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>[0-9A-Z]+)\\s*/\\s*(?P<page>[0-9A-Z]+)\\s*$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "buildings_source": "none"
+  },
+  "Capitol": {
+   "fips": "09110",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/arcgis/rest/services/Connecticut_CAMA_and_Parcel_Layer/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "Owner",
+     "Co_Owner"
+    ],
+    "deed_ref": "_deed_lookup",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Parcel_ID",
+    "acres": null,
+    "address": "Location"
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "CT OPM / CT GIS Office statewide Parcel + CAMA layer (built from each town's own submission); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "owner_lookup": {
+    "type": "vision",
+    "key_field": "Link",
+    "town_field": "Town_Name",
+    "suffix": "ct",
+    "fill": [
+     "deed"
+    ],
+    "verify_field": "Owner",
+    "timeout": 10
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>[0-9A-Z]+)\\s*/\\s*(?P<page>[0-9A-Z]+)\\s*$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "buildings_source": "none"
+  },
+  "Southeastern Connecticut": {
+   "fips": "09180",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/arcgis/rest/services/Connecticut_CAMA_and_Parcel_Layer/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "Owner",
+     "Co_Owner"
+    ],
+    "deed_ref": "_deed_lookup",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Parcel_ID",
+    "acres": null,
+    "address": "Location"
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "CT OPM / CT GIS Office statewide Parcel + CAMA layer (built from each town's own submission); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "owner_lookup": {
+    "type": "vision",
+    "key_field": "Link",
+    "town_field": "Town_Name",
+    "suffix": "ct",
+    "fill": [
+     "deed"
+    ],
+    "verify_field": "Owner",
+    "timeout": 10
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>[0-9A-Z]+)\\s*/\\s*(?P<page>[0-9A-Z]+)\\s*$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "buildings_source": "none"
+  },
+  "South Central Connecticut": {
+   "fips": "09170",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/arcgis/rest/services/Connecticut_CAMA_and_Parcel_Layer/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "Owner",
+     "Co_Owner"
+    ],
+    "deed_ref": "_deed_lookup",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Parcel_ID",
+    "acres": null,
+    "address": "Location"
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "CT OPM / CT GIS Office statewide Parcel + CAMA layer (built from each town's own submission); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "owner_lookup": {
+    "type": "vision",
+    "key_field": "Link",
+    "town_field": "Town_Name",
+    "suffix": "ct",
+    "fill": [
+     "deed"
+    ],
+    "verify_field": "Owner",
+    "timeout": 10
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>[0-9A-Z]+)\\s*/\\s*(?P<page>[0-9A-Z]+)\\s*$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "buildings_source": "none"
+  },
+  "Lower Connecticut River Valley": {
+   "fips": "09130",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/arcgis/rest/services/Connecticut_CAMA_and_Parcel_Layer/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "Owner",
+     "Co_Owner"
+    ],
+    "deed_ref": "_deed_lookup",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Parcel_ID",
+    "acres": null,
+    "address": "Location"
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "CT OPM / CT GIS Office statewide Parcel + CAMA layer (built from each town's own submission); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "owner_lookup": {
+    "type": "vision",
+    "key_field": "Link",
+    "town_field": "Town_Name",
+    "suffix": "ct",
+    "fill": [
+     "deed"
+    ],
+    "verify_field": "Owner",
+    "timeout": 10
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>[0-9A-Z]+)\\s*/\\s*(?P<page>[0-9A-Z]+)\\s*$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "buildings_source": "none"
+  },
+  "Western Connecticut": {
+   "fips": "09190",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/arcgis/rest/services/Connecticut_CAMA_and_Parcel_Layer/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "Owner",
+     "Co_Owner"
+    ],
+    "deed_ref": "_deed_lookup",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Parcel_ID",
+    "acres": null,
+    "address": "Location"
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "CT OPM / CT GIS Office statewide Parcel + CAMA layer (built from each town's own submission); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "owner_lookup": {
+    "type": "vision",
+    "key_field": "Link",
+    "town_field": "Town_Name",
+    "suffix": "ct",
+    "fill": [
+     "deed"
+    ],
+    "verify_field": "Owner",
+    "timeout": 10
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>[0-9A-Z]+)\\s*/\\s*(?P<page>[0-9A-Z]+)\\s*$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "buildings_source": "none"
+  },
+  "Northeastern Connecticut": {
+   "fips": "09150",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/arcgis/rest/services/Connecticut_CAMA_and_Parcel_Layer/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "Owner",
+     "Co_Owner"
+    ],
+    "deed_ref": "_deed_lookup",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Parcel_ID",
+    "acres": null,
+    "address": "Location"
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "CT OPM / CT GIS Office statewide Parcel + CAMA layer (built from each town's own submission); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "owner_lookup": {
+    "type": "vision",
+    "key_field": "Link",
+    "town_field": "Town_Name",
+    "suffix": "ct",
+    "fill": [
+     "deed"
+    ],
+    "verify_field": "Owner",
+    "timeout": 10
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>[0-9A-Z]+)\\s*/\\s*(?P<page>[0-9A-Z]+)\\s*$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "buildings_source": "none"
+  },
+  "Greater Bridgeport": {
+   "fips": "09120",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/arcgis/rest/services/Connecticut_CAMA_and_Parcel_Layer/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "Owner",
+     "Co_Owner"
+    ],
+    "deed_ref": "_deed_lookup",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Parcel_ID",
+    "acres": null,
+    "address": "Location"
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "CT OPM / CT GIS Office statewide Parcel + CAMA layer (built from each town's own submission); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "owner_lookup": {
+    "type": "vision",
+    "key_field": "Link",
+    "town_field": "Town_Name",
+    "suffix": "ct",
+    "fill": [
+     "deed"
+    ],
+    "verify_field": "Owner",
+    "timeout": 10
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>[0-9A-Z]+)\\s*/\\s*(?P<page>[0-9A-Z]+)\\s*$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "buildings_source": "none"
+  },
+  "Northwest Hills": {
+   "fips": "09160",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services3.arcgis.com/3FL1kr7L4LvwA2Kb/arcgis/rest/services/Connecticut_CAMA_and_Parcel_Layer/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "Owner",
+     "Co_Owner"
+    ],
+    "deed_ref": "_deed_lookup",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Parcel_ID",
+    "acres": null,
+    "address": "Location"
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "CT OPM / CT GIS Office statewide Parcel + CAMA layer (built from each town's own submission); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "owner_lookup": {
+    "type": "vision",
+    "key_field": "Link",
+    "town_field": "Town_Name",
+    "suffix": "ct",
+    "fill": [
+     "deed"
+    ],
+    "verify_field": "Owner",
+    "timeout": 10
+   },
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>[0-9A-Z]+)\\s*/\\s*(?P<page>[0-9A-Z]+)\\s*$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "buildings_source": "none"
+  },
+  "Hartford": {
+   "status": "partial",
+   "url": "https://gis.hartford.gov/arcgis/rest/services/AssessorParcels/MapServer/3",
+   "layer_id": 3,
+   "source": "city_rest",
+   "source_type": "city ArcGIS Server (City of Hartford official GIS / Assessor)",
+   "source_name": "City of Hartford AssessorParcels layer 3 on gis.hartford.gov (official city GIS; parcels joined to CAMA property details). ParcelPolygons/MapServer/0 is the same join.",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102656,
+    "latestWkid": 2234,
+    "name": "NAD83 Connecticut State Plane ftUS (Esri 102656 / EPSG 2234), as served"
+   },
+   "fields": {
+    "owner": [
+     "GISADMIN.CAMAGIS_Property_Details_w_ObjectID.OwnerFullName"
+    ],
+    "deed_ref": "GISADMIN.CAMAGIS_Property_Details_w_ObjectID.LegalRef",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISADMIN.Parcels.GIS_PIN",
+    "pin": null,
+    "acres": null,
+    "address": null
+   },
+   "deed_format": "LegalRef is a combined book/page, written either as '03217 0262' or '07830-0326'. Queries must use the fully qualified join names in outFields (short names fail). TotAcreage is square feet, not acres (5,900 on the sample), so it is not mapped as acres. Situs is StreetNumberFrom + StreetName (e.g. 35 BRISTOL ST).",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 28582,
+   "sample_owner": "VELAZQUEZ LENNY",
+   "sample_xy_wgs84": [
+    -72.7112639041942,
+    41.725506542707734
+   ],
+   "onemap_filter": null,
+   "hold_reason": "town key in CT's planning-region file: a map pick resolves to the region, never this town (needs CT town detect); held 2026-11-12",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Bridgeport": {
+   "status": "partial",
+   "url": "https://maps.ctmetro.org/server/rest/services/Bridgeport/Bridgeport_Parcels_NAD83/MapServer/7",
+   "layer_id": 7,
+   "source": "regional_district",
+   "source_type": "city parcels hosted for Bridgeport by the official MetroCOG GIS server (maps.ctmetro.org), linked from the City of Bridgeport GIS Hub",
+   "source_name": "Bridgeport/Bridgeport_Parcels_NAD83 layer 7 (Parcels) on the Connecticut Metropolitan Council of Governments official GIS server",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102656,
+    "latestWkid": 2234,
+    "name": "NAD83 Connecticut State Plane ftUS (Esri 102656 / EPSG 2234), as served"
+   },
+   "fields": {
+    "owner": [
+     "SLH_OWN_NA",
+     "SLH_CO_OWN"
+    ],
+    "deed_ref": "SLH_BOOK_P",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Parcel_ID",
+    "pin": "GIS_ID",
+    "acres": null,
+    "address": "LOCATION"
+   },
+   "deed_format": "SLH_BOOK_P is slash book/page (e.g. 11410/275 or 8210/0210). Recommend DB/PG and dropping leading zeros on the page.",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 34367,
+   "sample_owner": "RUELLAN BRIAN",
+   "sample_xy_wgs84": [
+    -73.23017989701526,
+    41.14519817740165
+   ],
+   "onemap_filter": null,
+   "hold_reason": "town key in CT's planning-region file: a map pick resolves to the region, never this town (needs CT town detect); held 2026-11-12",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Fairfield": {
+   "status": "partial",
+   "url": "https://maps.ctmetro.org/server/rest/services/Fairfield/Fairfield_Parcels_NAD83/FeatureServer/2",
+   "layer_id": 2,
+   "source": "regional_district",
+   "source_type": "town parcels hosted for Fairfield by the official MetroCOG GIS server (maps.ctmetro.org)",
+   "source_name": "Fairfield/Fairfield_Parcels_NAD83 layer 2 (Parcels) on the Connecticut Metropolitan Council of Governments official GIS server",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102656,
+    "latestWkid": 2234,
+    "name": "NAD83 Connecticut State Plane ftUS (Esri 102656 / EPSG 2234), as served"
+   },
+   "fields": {
+    "owner": [
+     "OWNNAME"
+    ],
+    "deed_ref": "BOOK_PAGE",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PID",
+    "pin": null,
+    "acres": null,
+    "address": "ADDRESS"
+   },
+   "deed_format": "BOOK_PAGE is slash book/page (e.g. 6298/123 or 6434/0089), filled on 19,301 of 21,747 parcels (88.8%). Recommend DB/PG and dropping leading zeros on the page. PID is a numeric account ID.",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 21747,
+   "sample_owner": "PECK DAVIE D &",
+   "sample_xy_wgs84": [
+    -73.2329317529263,
+    41.20954979974337
+   ],
+   "onemap_filter": null,
+   "hold_reason": "town key in CT's planning-region file: a map pick resolves to the region, never this town (needs CT town detect); held 2026-11-12",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Stratford": {
+   "status": "partial",
+   "url": "https://maps.ctmetro.org/server/rest/services/Stratford/Stratford_Parcels_NAD83/MapServer/5",
+   "layer_id": 5,
+   "source": "regional_district",
+   "source_type": "town parcels hosted for Stratford by the official MetroCOG GIS server (maps.ctmetro.org)",
+   "source_name": "Stratford/Stratford_Parcels_NAD83 layer 5 (Parcels) on the Connecticut Metropolitan Council of Governments official GIS server",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102656,
+    "latestWkid": 2234,
+    "name": "NAD83 Connecticut State Plane ftUS (Esri 102656 / EPSG 2234), as served"
+   },
+   "fields": {
+    "owner": [
+     "SLH_OWN_NAME",
+     "SLH_CO_OWN_NAME"
+    ],
+    "deed_ref": "SLH_BOOK_PG",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "REALMAST_REM_GIS_ID",
+    "pin": null,
+    "acres": "GIS_Acres",
+    "address": "REALMAST_REM_PRCL_LOCN"
+   },
+   "deed_format": "SLH_BOOK_PG is slash book/page (e.g. 1723/0111). Recommend DB/PG and dropping leading zeros on the page. REALMAST_REM_OWN_NAME is the same owner as SLH_OWN_NAME on the samples.",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 19527,
+   "sample_owner": "DOYEN PHYLLIS A",
+   "sample_xy_wgs84": [
+    -73.10877736532527,
+    41.26159951516624
+   ],
+   "onemap_filter": null,
+   "hold_reason": "town key in CT's planning-region file: a map pick resolves to the region, never this town (needs CT town detect); held 2026-11-12",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Trumbull": {
+   "status": "partial",
+   "url": "https://maps.ctmetro.org/server/rest/services/Trumbull/Trumbull_Parcels_NAD83/MapServer/16",
+   "layer_id": 16,
+   "source": "regional_district",
+   "source_type": "town parcels hosted for Trumbull by the official MetroCOG GIS server (maps.ctmetro.org)",
+   "source_name": "Trumbull/Trumbull_Parcels_NAD83 layer 16 (Parcels) on the Connecticut Metropolitan Council of Governments official GIS server",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102656,
+    "latestWkid": 2234,
+    "name": "NAD83 Connecticut State Plane ftUS (Esri 102656 / EPSG 2234), as served"
+   },
+   "fields": {
+    "owner": [
+     "GIS_ASSESS_SLH_OWN_NAME",
+     "GIS_ASSESS_SLH_CO_OWN_NAME"
+    ],
+    "deed_ref": "GIS_ASSESS_SLH_BOOK_PG",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcel_polygon_GIS_ID_2",
+    "pin": "GIS_ASSESS_REM_GIS_ID",
+    "acres": null,
+    "address": "GIS_ASSESS_LOCATION"
+   },
+   "deed_format": "GIS_ASSESS_SLH_BOOK_PG is slash book/page (e.g. 1541/0321). Recommend DB/PG and dropping leading zeros on the page. PID is the map-block style ID (e.g. H12-149).",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 12152,
+   "sample_owner": "PHAIRE CLAUDINE C",
+   "sample_xy_wgs84": [
+    -73.18690312544669,
+    41.22148088655309
+   ],
+   "onemap_filter": null,
+   "hold_reason": "town key in CT's planning-region file: a map pick resolves to the region, never this town (needs CT town detect); held 2026-11-12",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Norwalk": {
+   "url": "https://services2.arcgis.com/HfsHDBmkGwb1UtID/arcgis/rest/services/Parcels_2015/FeatureServer/0",
+   "layer_id": 0,
+   "source": "city_agol",
+   "source_type": "city ArcGIS Online (official City of Norwalk GIS)",
+   "source_name": "City of Norwalk Parcels (service name Parcels_2015) on the official CityOfNorwalkCT / Norwalk_GIS org, layer 0. Despite the 2015 name, LegalReference dates run through 2027-03-28. Preferred over Assessor_BaseMap layer 2 of the same org, whose latest LegalRefDate and EditDate are from 2014.",
+   "native_sr": {
+    "wkid": 102656,
+    "latestWkid": 2234,
+    "name": "NAD83 Connecticut State Plane ftUS (Esri 102656 / EPSG 2234), as served"
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": "LegalReference",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "ParcelID",
+    "pin": "GIS_ID",
+    "acres": "TotalAcres",
+    "address": "Location"
+   },
+   "deed_format": "LegalReference is hyphen book-page (e.g. 8286-54 or 9263-157), filled on 29,790 of 30,200 parcels, though many of those values are a dash sentinel on records with no owner. Recommend split to book/page and print DB/PG. Owner1 is filled on only 18,470 of 30,200 parcels (61.2%); blank-owner rows often also have LegalReference '-'.",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 30200,
+   "sample_owner": "MOTIWALA ALTAF &",
+   "sample_xy_wgs84": [
+    -73.40058265326596,
+    41.14945869943425
+   ],
+   "status": "partial",
+   "county_filter": null,
+   "onemap_filter": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "hold_reason": "source is a city_agol copy, not the county's own layer (held for the reviewer)",
+   "buildings_source": "none"
+  },
+  "Waterbury": {
+   "status": "partial",
+   "url": "https://services5.arcgis.com/lQ8fWUjOAVyeAdVo/arcgis/rest/services/Waterbury_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "source": "city_agol",
+   "source_type": "city ArcGIS Online (official City of Waterbury GIS)",
+   "source_name": "City of Waterbury WTBY_Parcels_CAMA on Waterbury_Parcels layer 0, the service behind the official City of Waterbury GIS App (waterburyct.maps.arcgis.com / gis.waterburyct.org)",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102656,
+    "latestWkid": 2234,
+    "name": "NAD83 Connecticut State Plane ftUS (Esri 102656 / EPSG 2234), as served"
+   },
+   "fields": {
+    "owner": [
+     "OWNER",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": "VOLUME",
+    "deed_page": "PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "MBL",
+    "pin": "UNIQUE_ID",
+    "acres": "ACRES",
+    "address": "LOCATION"
+   },
+   "deed_format": "VOLUME / PAGE as served (sample 5220 / 146), filled on 33,835 of 34,292 parcels (98.7%). ACRES is a string acreage value (sample '0.21'), filled on all 34,292 parcels.",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 34292,
+   "sample_owner": "MOFFETT KENNETH & TOUCH SURV",
+   "sample_xy_wgs84": [
+    -73.02942654739408,
+    41.6096107725911
+   ],
+   "onemap_filter": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6434,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "hold_reason": "source is a city_agol copy, not the county's own layer (held for the reviewer)",
+   "buildings_source": "none"
+  }
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Same entry as SC/GA/VA/TN. Added 2026-11-12 (rc31); box DXF-parse tested, not tested in Carlson or IntelliCAD.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}

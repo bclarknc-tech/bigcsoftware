@@ -1,0 +1,6106 @@
+{
+ "_meta": {
+  "state": "WV",
+  "target_wkid": 6601,
+  "target_options": {
+   "north": 6601,
+   "south": 6603
+  },
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PB {plat_book} PG {plat_page}",
+   "PID:{pid}"
+  ],
+  "statewide_source": {
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "service": "WV_Parcels MapServer on services.wvgis.wvu.edu (WV GIS Technical Center for the WV State Tax Department Property Tax Division; the service behind the WV Property Viewer, mapwv.gov/parcel), no token needed",
+   "layers": {
+    "0 WVParcels": "parcel polygons, CleanParcelID/GISPID, OWNER1/OWNER2, CountyID",
+    "11 ParcelSummary": "tax-roll table (no geometry): Owner1/Owner2, DeedBook/DeedPage, NewOwner/NewBook/NewPage, TaxYear, DeededAcres, property class, appraisal",
+    "1 Districts": "tax districts",
+    "5 Site Address Points": "WVSAMS address points"
+   },
+   "join": "layer 0 CleanParcelID = table 11 CleanParcelID (20-char county+district+map+parcel+suffix)",
+   "county_filter": "layer 0: CountyID='01'..'55'; table 11: CountyCode=1..55 (alphabetical, McDowell=27 sorts before Mercer)",
+   "total_geometry": 1394081,
+   "total_table_rows": 1503439,
+   "owner_nonnull": 1492441,
+   "deed_nonnull": 1412914,
+   "new_book_nonnull": 39006,
+   "tax_year": 2026,
+   "max_record_count": 2000,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "caveats": [
+    "Layer 0 description says \"updated for Tax Year 2023\"; its OWNER1 differs from the 2026 table in 3 of 55 samples, so use table 11 for owner/deed.",
+    "DeedBook and DeedPage are 4-character fields; book type prefixes are packed in (e.g. WB5, 0WB5, AB13, EB 1, IS81, FB05, DB13, GB58, A542) so longer refs can be cut off.",
+    "Table has ~1.5M rows vs 1.39M polygons: tax parcels without mapped polygons plus a few multi-card duplicates (take the first row per CleanParcelID).",
+    "NewOwner/NewBook/NewPage populated on ~39,000 records (transfers recorded after the tax roll)."
+   ],
+   "use_terms": "Service description: provided as a public service, as is, without warranties; county assessor and clerk records should be consulted for verification."
+  },
+  "deed_formats": "DeedBook/DeedPage are separate 4-char strings. Most books are plain numbers (some zero-padded, e.g. 0539/0482). Many counties mix in book-type prefixes: WB (will book, all counties), AB, AP, FB/FD/FID (fiduciary), EB (Mason, Monongalia), IS (Morgan), HA (Marion), R (Raleigh), OR/AR (Tyler), A/W/E/M single-letter series (Cabell, Marion, Marshall, Monongalia, Preston, Wetzel, Wood), and junk values (NONE, XXXX, DEAT). Per-county prefix counts in wv_work/deed_formats.json.",
+  "excluded_false_hits": "None used. AGOL county copies seen in search (NicholasWV_AGOL, BraxtonAGOL, MingoAGOL, RitchieAGOL, McdowellWVAGOL) were not needed and not verified.",
+  "status_legend": {
+   "ok": "owner+deed+PID live-verified",
+   "partial": "owner+PID (no deed), geometry+PID only, or subset (city/project) coverage",
+   "missing": "no owner source found yet",
+   "unverified": "endpoint unreachable, token-locked, or attribute queries failing at test time"
+  },
+  "wv_complete": "first pass 2026-10-16",
+  "default_epsg": 6601,
+  "epsg_choices": [
+   6601,
+   6603,
+   26853,
+   26854
+  ],
+  "detect": {
+   "local": "WV"
+  },
+  "onemap_url": null,
+  "release": true
+ },
+ "counties": {
+  "Barbour": {
+   "fips": "54001",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 1,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='01'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=1",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 15407,
+   "table_rows": 15837,
+   "owner_nonnull": 15837,
+   "deed_nonnull": 15426,
+   "pid_nonnull": 15837,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='01'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=1",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Berkeley": {
+   "fips": "54003",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 2,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='02'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=2",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 62652,
+   "table_rows": 67426,
+   "owner_nonnull": 66575,
+   "deed_nonnull": 61788,
+   "pid_nonnull": 67426,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='02'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=2",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Boone": {
+   "fips": "54005",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 3,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='03'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=3",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 16389,
+   "table_rows": 21487,
+   "owner_nonnull": 20842,
+   "deed_nonnull": 17319,
+   "pid_nonnull": 21487,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='03'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=3",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Braxton": {
+   "fips": "54007",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 4,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='04'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=4",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 14212,
+   "table_rows": 16773,
+   "owner_nonnull": 16401,
+   "deed_nonnull": 15494,
+   "pid_nonnull": 16773,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='04'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=4",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Brooke": {
+   "fips": "54009",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 5,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='05'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=5",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 15216,
+   "table_rows": 15578,
+   "owner_nonnull": 15522,
+   "deed_nonnull": 15046,
+   "pid_nonnull": 15578,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='05'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=5",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Cabell": {
+   "fips": "54011",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 6,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='06'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=6",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 50947,
+   "table_rows": 51182,
+   "owner_nonnull": 51113,
+   "deed_nonnull": 49148,
+   "pid_nonnull": 51182,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='06'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=6",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Calhoun": {
+   "fips": "54013",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 7,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='07'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=7",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 7881,
+   "table_rows": 9173,
+   "owner_nonnull": 9087,
+   "deed_nonnull": 8590,
+   "pid_nonnull": 9173,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='07'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=7",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Clay": {
+   "fips": "54015",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 8,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='08'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=8",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 9033,
+   "table_rows": 10593,
+   "owner_nonnull": 10346,
+   "deed_nonnull": 9879,
+   "pid_nonnull": 10593,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='08'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=8",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Doddridge": {
+   "fips": "54017",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 9,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='09'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=9",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 7921,
+   "table_rows": 8428,
+   "owner_nonnull": 8332,
+   "deed_nonnull": 8002,
+   "pid_nonnull": 8428,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='09'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=9",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Fayette": {
+   "fips": "54019",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 10,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='10'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=10",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 39565,
+   "table_rows": 40305,
+   "owner_nonnull": 40184,
+   "deed_nonnull": 38697,
+   "pid_nonnull": 40305,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='10'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=10",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Gilmer": {
+   "fips": "54021",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 11,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='11'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=11",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 7671,
+   "table_rows": 8165,
+   "owner_nonnull": 8163,
+   "deed_nonnull": 7589,
+   "pid_nonnull": 8165,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='11'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=11",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Grant": {
+   "fips": "54023",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 12,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='12'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=12",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 12400,
+   "table_rows": 13142,
+   "owner_nonnull": 13060,
+   "deed_nonnull": 12553,
+   "pid_nonnull": 13142,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='12'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=12",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Greenbrier": {
+   "fips": "54025",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 13,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='13'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=13",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 30428,
+   "table_rows": 32543,
+   "owner_nonnull": 31940,
+   "deed_nonnull": 30978,
+   "pid_nonnull": 32543,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='13'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=13",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Hampshire": {
+   "fips": "54027",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 14,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='14'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=14",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 21826,
+   "table_rows": 23646,
+   "owner_nonnull": 23645,
+   "deed_nonnull": 21623,
+   "pid_nonnull": 23646,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='14'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=14",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Hancock": {
+   "fips": "54029",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 15,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='15'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=15",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 20828,
+   "table_rows": 21291,
+   "owner_nonnull": 21290,
+   "deed_nonnull": 20786,
+   "pid_nonnull": 21291,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='15'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=15",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Hardy": {
+   "fips": "54031",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 16,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='16'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=16",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 14845,
+   "table_rows": 15703,
+   "owner_nonnull": 15496,
+   "deed_nonnull": 14957,
+   "pid_nonnull": 15703,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='16'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=16",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Harrison": {
+   "fips": "54033",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 17,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='17'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=17",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 55116,
+   "table_rows": 56311,
+   "owner_nonnull": 56311,
+   "deed_nonnull": 53963,
+   "pid_nonnull": 56311,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='17'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=17",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Jackson": {
+   "fips": "54035",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 18,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='18'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=18",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 20124,
+   "table_rows": 22231,
+   "owner_nonnull": 22231,
+   "deed_nonnull": 20079,
+   "pid_nonnull": 22231,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='18'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=18",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Jefferson": {
+   "fips": "54037",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 19,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='19'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=19",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 33616,
+   "table_rows": 34815,
+   "owner_nonnull": 34809,
+   "deed_nonnull": 33900,
+   "pid_nonnull": 34815,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='19'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=19",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Kanawha": {
+   "fips": "54039",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 20,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='20'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=20",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 114951,
+   "table_rows": 128994,
+   "owner_nonnull": 128591,
+   "deed_nonnull": 122871,
+   "pid_nonnull": 128994,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='20'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=20",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Lewis": {
+   "fips": "54041",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 21,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='21'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=21",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 15874,
+   "table_rows": 17663,
+   "owner_nonnull": 17264,
+   "deed_nonnull": 16183,
+   "pid_nonnull": 17663,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='21'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=21",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Lincoln": {
+   "fips": "54043",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 22,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='22'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=22",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 15882,
+   "table_rows": 18805,
+   "owner_nonnull": 18531,
+   "deed_nonnull": 17438,
+   "pid_nonnull": 18805,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='22'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=22",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Logan": {
+   "fips": "54045",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 23,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='23'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=23",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 26083,
+   "table_rows": 31658,
+   "owner_nonnull": 31217,
+   "deed_nonnull": 29963,
+   "pid_nonnull": 31658,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='23'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=23",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Marion": {
+   "fips": "54049",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 24,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='24'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=24",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 39542,
+   "table_rows": 41183,
+   "owner_nonnull": 41179,
+   "deed_nonnull": 39781,
+   "pid_nonnull": 41183,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='24'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=24",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Marshall": {
+   "fips": "54051",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 25,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='25'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=25",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 24069,
+   "table_rows": 25082,
+   "owner_nonnull": 25030,
+   "deed_nonnull": 24522,
+   "pid_nonnull": 25082,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='25'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=25",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Mason": {
+   "fips": "54053",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 26,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='26'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=26",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 21050,
+   "table_rows": 21619,
+   "owner_nonnull": 21611,
+   "deed_nonnull": 20440,
+   "pid_nonnull": 21619,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='26'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=26",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "McDowell": {
+   "fips": "54047",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 27,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='27'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=27",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 31091,
+   "table_rows": 32877,
+   "owner_nonnull": 32817,
+   "deed_nonnull": 31757,
+   "pid_nonnull": 32877,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='27'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=27",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Mercer": {
+   "fips": "54055",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 28,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='28'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=28",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 45635,
+   "table_rows": 50787,
+   "owner_nonnull": 50767,
+   "deed_nonnull": 45835,
+   "pid_nonnull": 50787,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='28'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=28",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Mineral": {
+   "fips": "54057",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 29,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='29'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=29",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 19427,
+   "table_rows": 20229,
+   "owner_nonnull": 20228,
+   "deed_nonnull": 19103,
+   "pid_nonnull": 20229,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='29'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=29",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Mingo": {
+   "fips": "54059",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 30,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='30'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=30",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 25526,
+   "table_rows": 28870,
+   "owner_nonnull": 28673,
+   "deed_nonnull": 26325,
+   "pid_nonnull": 28870,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='30'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=30",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Monongalia": {
+   "fips": "54061",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 31,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='31'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=31",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 55287,
+   "table_rows": 65497,
+   "owner_nonnull": 60865,
+   "deed_nonnull": 54463,
+   "pid_nonnull": 65497,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='31'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=31",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Monroe": {
+   "fips": "54063",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 32,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='32'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=32",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 13666,
+   "table_rows": 13949,
+   "owner_nonnull": 13945,
+   "deed_nonnull": 13527,
+   "pid_nonnull": 13949,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='32'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=32",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Morgan": {
+   "fips": "54065",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 33,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='33'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=33",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 15462,
+   "table_rows": 16008,
+   "owner_nonnull": 16007,
+   "deed_nonnull": 15447,
+   "pid_nonnull": 16008,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='33'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=33",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Nicholas": {
+   "fips": "54067",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 34,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='34'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=34",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 24512,
+   "table_rows": 28913,
+   "owner_nonnull": 28910,
+   "deed_nonnull": 26711,
+   "pid_nonnull": 28913,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='34'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=34",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Ohio": {
+   "fips": "54069",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 35,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='35'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=35",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 26283,
+   "table_rows": 26774,
+   "owner_nonnull": 26767,
+   "deed_nonnull": 26277,
+   "pid_nonnull": 26774,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='35'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=35",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Pendleton": {
+   "fips": "54071",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 36,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='36'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=36",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 11048,
+   "table_rows": 11253,
+   "owner_nonnull": 11253,
+   "deed_nonnull": 10803,
+   "pid_nonnull": 11253,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='36'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=36",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Pleasants": {
+   "fips": "54073",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 37,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='37'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=37",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 6637,
+   "table_rows": 7172,
+   "owner_nonnull": 7172,
+   "deed_nonnull": 6718,
+   "pid_nonnull": 7172,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='37'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=37",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Pocahontas": {
+   "fips": "54075",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 38,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='38'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=38",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 14597,
+   "table_rows": 16881,
+   "owner_nonnull": 16880,
+   "deed_nonnull": 16369,
+   "pid_nonnull": 16881,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='38'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=38",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Preston": {
+   "fips": "54077",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 39,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='39'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=39",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 33749,
+   "table_rows": 35273,
+   "owner_nonnull": 35273,
+   "deed_nonnull": 33757,
+   "pid_nonnull": 35273,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='39'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=39",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Putnam": {
+   "fips": "54079",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 40,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='40'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=40",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 35627,
+   "table_rows": 37480,
+   "owner_nonnull": 37474,
+   "deed_nonnull": 35753,
+   "pid_nonnull": 37480,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='40'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=40",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Raleigh": {
+   "fips": "54081",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 41,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='41'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=41",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 60677,
+   "table_rows": 64238,
+   "owner_nonnull": 64226,
+   "deed_nonnull": 60572,
+   "pid_nonnull": 64238,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='41'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=41",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Randolph": {
+   "fips": "54083",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 42,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='42'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=42",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 23940,
+   "table_rows": 25593,
+   "owner_nonnull": 25588,
+   "deed_nonnull": 24006,
+   "pid_nonnull": 25593,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='42'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=42",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Ritchie": {
+   "fips": "54085",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 43,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='43'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=43",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 13260,
+   "table_rows": 13549,
+   "owner_nonnull": 13472,
+   "deed_nonnull": 13122,
+   "pid_nonnull": 13549,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='43'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=43",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Roane": {
+   "fips": "54087",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 44,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='44'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=44",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 14423,
+   "table_rows": 15088,
+   "owner_nonnull": 15084,
+   "deed_nonnull": 14654,
+   "pid_nonnull": 15088,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='44'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=44",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Summers": {
+   "fips": "54089",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 45,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='45'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=45",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 14093,
+   "table_rows": 15366,
+   "owner_nonnull": 15366,
+   "deed_nonnull": 14810,
+   "pid_nonnull": 15366,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='45'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=45",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Taylor": {
+   "fips": "54091",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 46,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='46'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=46",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 13442,
+   "table_rows": 14764,
+   "owner_nonnull": 14762,
+   "deed_nonnull": 13707,
+   "pid_nonnull": 14764,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='46'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=46",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Tucker": {
+   "fips": "54093",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 47,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='47'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=47",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 10359,
+   "table_rows": 10902,
+   "owner_nonnull": 10898,
+   "deed_nonnull": 10440,
+   "pid_nonnull": 10902,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='47'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=47",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Tyler": {
+   "fips": "54095",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 48,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='48'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=48",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 8973,
+   "table_rows": 9586,
+   "owner_nonnull": 9575,
+   "deed_nonnull": 8947,
+   "pid_nonnull": 9586,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='48'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=48",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Upshur": {
+   "fips": "54097",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 49,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='49'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=49",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 19286,
+   "table_rows": 20521,
+   "owner_nonnull": 20344,
+   "deed_nonnull": 19634,
+   "pid_nonnull": 20521,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='49'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=49",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Wayne": {
+   "fips": "54099",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 50,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='50'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=50",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 29392,
+   "table_rows": 32972,
+   "owner_nonnull": 32967,
+   "deed_nonnull": 31267,
+   "pid_nonnull": 32972,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='50'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=50",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Webster": {
+   "fips": "54101",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 51,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='51'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=51",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 10775,
+   "table_rows": 12128,
+   "owner_nonnull": 11800,
+   "deed_nonnull": 10963,
+   "pid_nonnull": 12128,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='51'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=51",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Wetzel": {
+   "fips": "54103",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 52,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='52'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=52",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 15705,
+   "table_rows": 16160,
+   "owner_nonnull": 16157,
+   "deed_nonnull": 15237,
+   "pid_nonnull": 16160,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='52'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=52",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Wirt": {
+   "fips": "54105",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 53,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='53'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=53",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 7111,
+   "table_rows": 7392,
+   "owner_nonnull": 7279,
+   "deed_nonnull": 6973,
+   "pid_nonnull": 7392,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='53'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=53",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Wood": {
+   "fips": "54107",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6601,
+   "wv_county_code": 54,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='54'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=54",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 58263,
+   "table_rows": 59696,
+   "owner_nonnull": 59666,
+   "deed_nonnull": 56383,
+   "pid_nonnull": 59696,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='54'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=54",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Wyoming": {
+   "fips": "54109",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6603,
+   "wv_county_code": 55,
+   "add_district": null,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "source_name": "WV GIS Technical Center / WV State Tax Department Property Tax Division statewide parcels (WV_Parcels MapServer: WVParcels geometry + ParcelSummary tax-roll table)",
+   "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "CountyID='55'",
+   "attribute_table_url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+   "attribute_table_filter": "CountyCode=55",
+   "join_field": "CleanParcelID",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GISPID",
+    "pid_display": "GISPID",
+    "acres": "DeededAcres",
+    "new_owner": "NewOwner",
+    "new_deed_book": "NewBook",
+    "new_deed_page": "NewPage",
+    "tax_year": "TaxYear",
+    "geometry_owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "geometry_acres": "CALC_ACRE",
+    "pin": "CleanParcelID",
+    "address": "FullPhysicalAddress"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 22307,
+   "table_rows": 23888,
+   "owner_nonnull": 23619,
+   "deed_nonnull": 22339,
+   "pid_nonnull": 23888,
+   "sample_in_county": true,
+   "data_year": 2026,
+   "source_checked": "2026-10-16",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "split": "wrap_lines",
+    "confirmed": false
+   },
+   "onemap_filter": "CountyID='55'",
+   "join": {
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/11",
+    "key": "CleanParcelID",
+    "where": "CountyCode=55",
+    "override": true,
+    "no_row": "drop_owner",
+    "prefer_new": {
+     "new_owner": "NewOwner",
+     "new_book": "NewBook",
+     "new_page": "NewPage",
+     "owner_fields": [
+      "Owner1",
+      "Owner2"
+     ],
+     "deed_fields": [
+      "DeedBook",
+      "DeedPage"
+     ]
+    }
+   },
+   "deed_sentinels": [
+    "NONE",
+    "XXXX",
+    "DEAT",
+    "N/A",
+    "NA"
+   ],
+   "statewide_retry": {
+    "field": "CountyID"
+   },
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  }
+ },
+ "control": {
+  "state_source": true,
+  "agency": "WVDOT (WV Real-Time Network CORS, location points hosted by WVGISTC) and NOAA NGS (datasheet feature service filtered to WV)",
+  "sources": [
+   {
+    "name": "WV CORS Location Points (WVDOT WV Real-Time Network, WVRTN)",
+    "type": "ArcGIS REST MapServer",
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Location/wv_CORS/MapServer/0",
+    "count": 24,
+    "native_sr": "EPSG:3857",
+    "fields": [
+     "Name",
+     "FolderPath"
+    ],
+    "stations": [
+     "WVAT",
+     "WVBR",
+     "WVBU",
+     "WVCH",
+     "WVCL",
+     "WVCV",
+     "WVEL",
+     "WVFL",
+     "WVFR",
+     "WVGB",
+     "WVHA",
+     "WVHU",
+     "WVKE",
+     "WVLE",
+     "WVMF",
+     "WVMZ",
+     "WVNR",
+     "WVOH",
+     "WVRA",
+     "WVRH",
+     "WVSA",
+     "WVSH",
+     "WVSW",
+     "WVTA"
+    ],
+    "live_test": "OK 2026-10-16: 24 stations (WVAT ... WVTA), FolderPath WVRTN_Sites.kml",
+    "note": "KML-derived points: station ID and location only, no published coordinates/datum attributes. Use NGS datasheets (CORS_ID) for positions; NGS feature service lists 23 CORS in WV.",
+    "data_year": "undated (service has no edit date)"
+   },
+   {
+    "name": "WV CORS 30-mile Buffer Polygons",
+    "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Location/wv_CORS/MapServer/1",
+    "native_sr": "EPSG:3857"
+   },
+   {
+    "name": "NGS Datasheets Feature Service (ALL_DATASHEETS), STATE='WV'",
+    "agency": "NOAA National Geodetic Survey",
+    "type": "ArcGIS Online FeatureServer",
+    "url": "https://services2.arcgis.com/C8EMgrsFcRFL6LrL/arcgis/rest/services/NGS_Datasheets_Feature_Service/FeatureServer/1",
+    "county_filter": "STATE='WV' AND COUNTY='<NAME UPPERCASE>'",
+    "count": 8497,
+    "native_sr": "wkid 104145 (GCS NAD83(2011))",
+    "breakdown": {
+     "NAD83(1986)": 7361,
+     "NAD83(1993)": 4,
+     "NAD83(1995) HARN": 948,
+     "NAD83(2011)": 184,
+     "NAVD88 heights": 8313,
+     "CORS": 23
+    },
+    "fields": {
+     "pid": "PID",
+     "designation": "NAME",
+     "county": "COUNTY",
+     "coordinates": "DEC_LAT/DEC_LON, POS_DATUM, DATUM_TAG",
+     "spc": "SPC_ZONE, SPC_NORTH, SPC_EAST",
+     "elevation": "ORTHO_HT, VERT_DATUM, GEOID_HT, GEOID_MOD",
+     "order": "POS_ORDER, VERT_ORDER",
+     "condition": "LAST_RECV, LAST_COND, STABILITY",
+     "datasheet": "DATA_SRCE",
+     "date": "DATA_DATE"
+    },
+    "live_test": "OK 2026-10-16: PID HW1411 '1', Pendleton, NAD 83 (1986) scaled, NAVD 88 585.656 m, GEOID18, SPC_ZONE 'WV S', LAST_COND MARK NOT FOUND",
+    "data_year": "DATA_DATE 2024-07-13 to 2026-07-25; layer last edited 2026-10-12",
+    "note": "Also used by the WV Property Viewer (mapwv.gov/parcel) as its NGS layer."
+   }
+  ],
+  "other": "No WV state geodetic monument layer found on WVGISTC, WVDOT (gis.transportation.wv.gov) or WVDEP hosts; WVDOT CORS_Districts service is only DOT district polygons.",
+  "checked": "2026-10-16",
+  "ngs": {
+   "ngs_datasheet_url": "https://www.ngs.noaa.gov/cgi-bin/ds_mark.prl?PidBox={PID}",
+   "note": "NGS datasheets are the coordinate source for both marks and CORS."
+  },
+  "datum_shifts_applied": false,
+  "data_year": "2026 (NGS datasheet extract through 2026-07; CORS list undated)",
+  "source_name": "WVDOT WVRTN CORS (via WVGISTC) + NOAA NGS Datasheets feature service",
+  "source_checked": "2026-10-16"
+ },
+ "roads": {
+  "name": "WV SAMS Road Centerlines (Statewide Addressing and Mapping System)",
+  "agency": "WV Division of Emergency Management (WVDHSEM) / WV Statewide Addressing and Mapping Board with county 911 addressing; hosted by WV GIS Technical Center",
+  "type": "ArcGIS REST MapServer",
+  "url": "https://wvsams.mapwv.org/arcgis/rest/services/SAMS/SAMSII_View_Service_Public/MapServer/8",
+  "layer": 8,
+  "native_sr": "EPSG:26917 (NAD83 UTM zone 17N, meters)",
+  "count": 277635,
+  "named_count": 229807,
+  "county_filter": "STCOFIPS = 5-digit county FIPS (e.g. '54039' = Kanawha). All 55 counties present; 0 segments outside WV. Per-county counts in wv_work/roads_by_county.json.",
+  "county_counts_min_max": "906 (Gilmer) to 28,216 (Wayne)",
+  "name_fields": [
+   "FULLNAME"
+  ],
+  "full_name_field": "FULLNAME",
+  "route_fields": [
+   "FEDROUTE",
+   "FEDRTETYPE",
+   "STROUTE",
+   "STRTETYPE",
+   "CTYROUTE"
+  ],
+  "route_note": "Route numbers are on the segment (e.g. STROUTE 50/12); 302 unnamed segments carry only a route number. WVDOT All_Routes (alt_sources[0]) has official LRS route labels.",
+  "fields": {
+   "county": [
+    "STCOFIPS"
+   ],
+   "msag": [
+    "MSAGLEFT",
+    "MSAGRIGHT"
+   ],
+   "class": "ROADCLASS",
+   "mtfcc": "MTFCC",
+   "id": "CENTERLINEID",
+   "date": "last_edited_date",
+   "address_range": [
+    "FROMLEFT",
+    "TOLEFT",
+    "FROMRIGHT",
+    "TORIGHT"
+   ],
+   "zip": [
+    "ZIPLEFT",
+    "ZIPRIGHT"
+   ],
+   "muni": [
+    "MUNILEFT",
+    "MUNIRIGHT"
+   ]
+  },
+  "data_year": 2026,
+  "vintage": "Live service: last_edited_date max 2026-10-14; 118,582 segments edited in 2026, 202,132 since 2025. Service description text still says 'Last updated January 2015' (stale text).",
+  "live_test": "OK 2026-10-16: FULLNAME 'SULLIVAN LN', STROUTE '50/12', ROADCLASS 'Minor Arterial', STCOFIPS 54017 (Doddridge); count 277,635 (229,807 with FULLNAME, 82.8%).",
+  "use_terms": "Service text: reference data used for this service is the property of the county (see WV question 7).",
+  "alt_sources": [
+   {
+    "name": "WVDOT All Routes (LRS county mile point network)",
+    "agency": "WV Department of Transportation",
+    "url": "https://services2.arcgis.com/xLpB90lOmCXYDAWo/arcgis/rest/services/All_Routes/FeatureServer/21",
+    "native_sr": "EPSG:26917",
+    "count": 98397,
+    "fields": [
+     "CO_RouteLabel",
+     "CO_ROUTEID",
+     "CO_CountyID",
+     "CO_SignSystem",
+     "CO_RouteNumber",
+     "CO_SubRoute"
+    ],
+    "live_test": "OK 2026-10-16: 'Logan CR 3/16', CO_ROUTEID 2340003160000",
+    "data_year": "current as of July 2026, published September 2026"
+   },
+   {
+    "name": "WVDOT State_Street_Names (LRS street name events)",
+    "url": "https://gis.transportation.wv.gov/arcgis/rest/services/Hosted/State_Street_Names/FeatureServer/0",
+    "count": 32753,
+    "native_sr": "EPSG:26917",
+    "note": "street names on state-route LRS only"
+   },
+   {
+    "name": "LocalRoadsWV (WVU CRC, Census-style local roads)",
+    "url": "https://services1.arcgis.com/cTNi34MxOdcfum3A/arcgis/rest/services/LocalRoadsWV/FeatureServer/0",
+    "count": 249085,
+    "native_sr": "EPSG:3857",
+    "note": "third-party, TIGER-style fields; not used"
+   }
+  ],
+  "source_name": "WVDHSEM / WVGISTC, WV SAMS Road Centerlines",
+  "source_checked": "2026-10-16"
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Same entry as SC/GA/VA/TN. Added 2026-11-12 (rc31); box DXF-parse tested, not tested in Carlson or IntelliCAD.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}

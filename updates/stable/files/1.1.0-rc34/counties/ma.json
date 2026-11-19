@@ -1,0 +1,672 @@
+{
+ "_meta": {
+  "state": "MA",
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PB {plat_book} PG {plat_page}",
+   "PID:{pid}"
+  ],
+  "default_epsg": 6490,
+  "epsg_choices": [
+   6490,
+   6492
+  ],
+  "target_options": {
+   "island": 6490,
+   "mainland": 6492
+  },
+  "detect": {
+   "local": "MA"
+  },
+  "onemap_url": null,
+  "target_wkid": 6490,
+  "release": true
+ },
+ "counties": {
+  "Essex": {
+   "fips": "25009",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "LS_BOOK",
+    "deed_page": "LS_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PROP_ID",
+    "acres": null,
+    "address": "LOCATION"
+   },
+   "sp_epsg_2011_ftus": 6492,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "MassGIS Level 3 standardized assessors' parcels (built from each town's own assessor data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Bristol": {
+   "fips": "25005",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "LS_BOOK",
+    "deed_page": "LS_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PROP_ID",
+    "acres": null,
+    "address": "LOCATION"
+   },
+   "sp_epsg_2011_ftus": 6492,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "MassGIS Level 3 standardized assessors' parcels (built from each town's own assessor data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Norfolk": {
+   "fips": "25021",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "LS_BOOK",
+    "deed_page": "LS_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PROP_ID",
+    "acres": null,
+    "address": "LOCATION"
+   },
+   "sp_epsg_2011_ftus": 6492,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "MassGIS Level 3 standardized assessors' parcels (built from each town's own assessor data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Dukes": {
+   "fips": "25007",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "LS_BOOK",
+    "deed_page": "LS_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PROP_ID",
+    "acres": null,
+    "address": "LOCATION"
+   },
+   "sp_epsg_2011_ftus": 6490,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "MassGIS Level 3 standardized assessors' parcels (built from each town's own assessor data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Middlesex": {
+   "fips": "25017",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "LS_BOOK",
+    "deed_page": "LS_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PROP_ID",
+    "acres": null,
+    "address": "LOCATION"
+   },
+   "sp_epsg_2011_ftus": 6492,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "MassGIS Level 3 standardized assessors' parcels (built from each town's own assessor data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Plymouth": {
+   "fips": "25023",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "LS_BOOK",
+    "deed_page": "LS_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PROP_ID",
+    "acres": null,
+    "address": "LOCATION"
+   },
+   "sp_epsg_2011_ftus": 6492,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "MassGIS Level 3 standardized assessors' parcels (built from each town's own assessor data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Franklin": {
+   "fips": "25011",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "LS_BOOK",
+    "deed_page": "LS_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PROP_ID",
+    "acres": null,
+    "address": "LOCATION"
+   },
+   "sp_epsg_2011_ftus": 6492,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "MassGIS Level 3 standardized assessors' parcels (built from each town's own assessor data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Hampshire": {
+   "fips": "25015",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "LS_BOOK",
+    "deed_page": "LS_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PROP_ID",
+    "acres": null,
+    "address": "LOCATION"
+   },
+   "sp_epsg_2011_ftus": 6492,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "MassGIS Level 3 standardized assessors' parcels (built from each town's own assessor data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Suffolk": {
+   "fips": "25025",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "LS_BOOK",
+    "deed_page": "LS_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PROP_ID",
+    "acres": null,
+    "address": "LOCATION"
+   },
+   "sp_epsg_2011_ftus": 6492,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "MassGIS Level 3 standardized assessors' parcels (built from each town's own assessor data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Hampden": {
+   "fips": "25013",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "LS_BOOK",
+    "deed_page": "LS_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PROP_ID",
+    "acres": null,
+    "address": "LOCATION"
+   },
+   "sp_epsg_2011_ftus": 6492,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "MassGIS Level 3 standardized assessors' parcels (built from each town's own assessor data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Barnstable": {
+   "fips": "25001",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "LS_BOOK",
+    "deed_page": "LS_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PROP_ID",
+    "acres": null,
+    "address": "LOCATION"
+   },
+   "sp_epsg_2011_ftus": 6492,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "MassGIS Level 3 standardized assessors' parcels (built from each town's own assessor data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Worcester": {
+   "fips": "25027",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "LS_BOOK",
+    "deed_page": "LS_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PROP_ID",
+    "acres": null,
+    "address": "LOCATION"
+   },
+   "sp_epsg_2011_ftus": 6492,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "MassGIS Level 3 standardized assessors' parcels (built from each town's own assessor data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Berkshire": {
+   "fips": "25003",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "LS_BOOK",
+    "deed_page": "LS_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PROP_ID",
+    "acres": null,
+    "address": "LOCATION"
+   },
+   "sp_epsg_2011_ftus": 6492,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "MassGIS Level 3 standardized assessors' parcels (built from each town's own assessor data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Nantucket": {
+   "fips": "25019",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "LS_BOOK",
+    "deed_page": "LS_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PROP_ID",
+    "acres": null,
+    "address": "LOCATION"
+   },
+   "sp_epsg_2011_ftus": 6490,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "MassGIS Level 3 standardized assessors' parcels (built from each town's own assessor data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Boston": {
+   "status": "partial",
+   "url": "https://gisportal.boston.gov/arcgis/rest/services/Assessing/PROPERTY_ASSESSMENT_PARCEL_JOIN_FY26/FeatureServer/0",
+   "layer_id": 0,
+   "source": "city_rest",
+   "source_type": "city ArcGIS Server (City of Boston Assessing official GIS)",
+   "source_name": "City of Boston Assessing PROPERTY_ASSESSMENT_PARCEL_JOIN_FY26 layer 0 on gisportal.boston.gov (official FY26 assessment parcels, BostonGIS)",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102686,
+    "latestWkid": 2249,
+    "name": "NAD83 Massachusetts Mainland State Plane ftUS (Esri 102686 / EPSG 2249), as served"
+   },
+   "fields": {
+    "owner": [
+     "OWNER"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PID",
+    "pin": "GIS_ID",
+    "acres": null,
+    "address": "FULL_ADDRESS"
+   },
+   "deed_format": "no deed book/page or instrument field on this official FY26 assessment join. LAND_SF is square feet, not acres. PID and GIS_ID match on the samples (e.g. 0100021000).",
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 184548,
+   "sample_owner": "CIOTO ROBERT M",
+   "sample_xy_wgs84": [
+    -71.03076809844978,
+    42.37990443704835
+   ],
+   "onemap_filter": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": null,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Arlington": {
+   "status": "partial",
+   "url": "https://services2.arcgis.com/s1Sh73K7qtP9JdrG/arcgis/rest/services/Parcels_with_Assessor_Info/FeatureServer/0",
+   "layer_id": 0,
+   "source": "city_agol",
+   "source_type": "city ArcGIS Online (official Town of Arlington GIS)",
+   "source_name": "Town of Arlington Parcels with Assessor Info layer 0 on the official ArlingtonMA_GIS org",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "name": "WGS 1984 Web Mercator (auxiliary sphere) (Esri 102100 / EPSG 3857), as served"
+   },
+   "fields": {
+    "owner": [
+     "Owner1",
+     "Owner2"
+    ],
+    "deed_ref": "LegalRef",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "ParcelID",
+    "pin": "CAMA_ID",
+    "acres": "CurrentAcres",
+    "address": "FullAddress"
+   },
+   "deed_format": "LegalRef is hyphen book-page (e.g. 84993-495 or 1295-130), filled on 15,746 of 15,747 parcels. Recommend split to book/page, drop leading zeros, print DB/PG. ParcelID and CAMA_ID match on the samples. CurrentAcres is acres (0 on some condo units).",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 15747,
+   "sample_owner": "MARTINI KATHERINE A & PETER P/ TRS",
+   "sample_xy_wgs84": [
+    -71.16058111106999,
+    42.4330594959883
+   ],
+   "onemap_filter": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": null,
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "hold_reason": "source is a city_agol copy, not the county's own layer (held for the reviewer)",
+   "buildings_source": "none"
+  }
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Same entry as SC/GA/VA/TN. Added 2026-11-12 (rc31); box DXF-parse tested, not tested in Carlson or IntelliCAD.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}

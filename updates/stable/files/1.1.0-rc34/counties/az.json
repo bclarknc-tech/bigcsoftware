@@ -1,0 +1,645 @@
+{
+ "_meta": {
+  "state": "AZ",
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PB {plat_book} PG {plat_page}",
+   "PID:{pid}"
+  ],
+  "default_epsg": 6405,
+  "epsg_choices": [
+   6405,
+   6407,
+   6409
+  ],
+  "target_options": {
+   "central": 6405,
+   "east": 6407,
+   "west": 6409
+  },
+  "detect": {
+   "local": "AZ"
+  },
+  "onemap_url": null,
+  "target_wkid": 6405,
+  "release": true
+ },
+ "counties": {
+  "Graham": {
+   "fips": "04009",
+   "status": "fixed_pending_review",
+   "source": "county_rest",
+   "url": "https://services.arcgis.com/rr5PkYU3R3HXxyDH/arcgis/rest/services/Graham_County_Parcels_New/FeatureServer/7",
+   "fields": {
+    "owner": [
+     "NAME1",
+     "NAME2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Parcel_No",
+    "pin": "PLink",
+    "acres": "GIS_Acre",
+    "address": null
+   },
+   "sp_epsg_2011_ftus": 6407,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 7,
+   "source_name": "Graham County official Graham_County_Parcels_New Parcels1 layer 7 on the county ArcGIS Online org (services.arcgis.com/rr5PkYU3R3HXxyDH, published in the official Graham County Parcels web map / Experience). Sibling Parcels layer 9 is APN/acres only (no owner) and was not used.",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 19240,
+   "sample_owner": "MICHAELS MARK DANIEL & SHELLEY ANNE CO-TRUSTEES",
+   "deed_plat_sample": null,
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Coconino": {
+   "fips": "04005",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services6.arcgis.com/2yF1BNcZtu43QAOt/arcgis/rest/services/coconino_county_arizona_parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNERNAME"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": null,
+    "acres": null
+   },
+   "sp_epsg_2011_ftus": 6405,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Coconino County layer 'coconino_county_arizona_parcels' (PWilliamsGIS)",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Yuma": {
+   "fips": "04027",
+   "status": "partial",
+   "source": "county_rest",
+   "url": "https://arcgis.yumacountyaz.gov/webgis/rest/services/Open_Gov/YC_Parcels/MapServer/30",
+   "fields": {
+    "owner": [
+     "OWNER_NAME"
+    ],
+    "deed_ref": "SALE_DOCMENT_NUMBER",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIDNUM",
+    "pin": "ACCOUNT_NUMBER",
+    "acres": "GIS_Acres",
+    "address": "STREET_ADDRESS"
+   },
+   "sp_epsg_2011_ftus": 6409,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 30,
+   "source_name": "Yuma County official Open_Gov/YC_Parcels YC_Parcels layer 30 on arcgis.yumacountyaz.gov (county GIS). outFields=* and some wider field lists return HTTP 400; narrowed outFields plus a geometry query worked. City of Yuma pan/Parcels was not used. 2026_Tax_Deed_Parcels is a tax-sale subset and was not used.",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102650,
+    "latestWkid": 102650
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 97954,
+   "sample_owner": "PUCKETT JIMMY D",
+   "deed_plat_sample": {
+    "SALE_DOCMENT_NUMBER": "2026-07691",
+    "BOOK_PAGE": null
+   },
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "La Paz": {
+   "fips": "04012",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "fields": {},
+   "sp_epsg_2011_ftus": 6409,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Apache": {
+   "fips": "04001",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services8.arcgis.com/KyZIQDOsXnGaTxj2/arcgis/rest/services/Apache_County_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OWNERNAME"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": null,
+    "acres": null
+   },
+   "sp_epsg_2011_ftus": 6407,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Apache County layer 'Apache County Parcels' (zpemberton)",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Maricopa": {
+   "fips": "04013",
+   "status": "fixed_pending_review",
+   "source": "county_rest",
+   "url": "https://gis.mcassessor.maricopa.gov/arcgis/rest/services/Parcels/MapServer/0",
+   "fields": {
+    "owner": [
+     "OWNER_NAME"
+    ],
+    "deed_ref": "DEED_NUMBER",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": "MCR_BOOK",
+    "plat_page": "MCR_PAGE",
+    "pid": "APN_DASH",
+    "pin": "APN",
+    "acres": null,
+    "address": "PHYSICAL_ADDRESS"
+   },
+   "sp_epsg_2011_ftus": 6409,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 0,
+   "source_name": "Maricopa County Assessor official Parcels service (gis.mcassessor.maricopa.gov), linked from maps.mcassessor.maricopa.gov and data-maricopa.opendata.arcgis.com",
+   "county_filter": null,
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": true
+   },
+   "record_count": 1762910,
+   "sample_owner": "RIVAS JOSUE/ANITA J",
+   "deed_plat_sample": {
+    "OWNER_NAME": "NGUYEN AN K/NHAN",
+    "APN_DASH": "101-01-019",
+    "DEED_NUMBER": "20100854730",
+    "MCR_BOOK": "673",
+    "MCR_PAGE": "16",
+    "PHYSICAL_ADDRESS": "702 S 114TH LN   AVONDALE  85323",
+    "SUBNAME": "C W RANCH"
+   },
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Gila": {
+   "fips": "04007",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "fields": {},
+   "sp_epsg_2011_ftus": 6407,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Pinal": {
+   "fips": "04021",
+   "status": "fixed_pending_review",
+   "source": "county_rest",
+   "url": "https://gis.pinal.gov/mapping/rest/services/TaxParcels/FeatureServer/3",
+   "fields": {
+    "owner": [
+     "OWNERNME1",
+     "OWNERNME2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GROSSAC",
+    "address": "SITEADDRESS"
+   },
+   "sp_epsg_2011_ftus": 6407,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 3,
+   "source_name": "Pinal County official TaxParcels (gis.pinal.gov), the service behind the county Assessor Parcel Viewer",
+   "county_filter": null,
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 288799,
+   "sample_owner": "IAPPINI CHARLES TR",
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Mohave": {
+   "fips": "04015",
+   "status": "fixed_pending_review",
+   "source": "county_rest",
+   "url": "https://mcgis.mohave.gov/arcgis/rest/services/PARCELS/MapServer/14",
+   "fields": {
+    "owner": [
+     "OWNER",
+     "OWNER_2"
+    ],
+    "deed_ref": "RECPTNO",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "TAXPIN",
+    "pin": "PARCEL",
+    "acres": "PARCEL_SIZE",
+    "address": "SITE_ADDRESS"
+   },
+   "sp_epsg_2011_ftus": 6409,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 14,
+   "source_name": "Mohave County official GIS ParcelQueryLayer (mcgis.mohave.gov / mohave.gov GIS Maps), the countywide query layer (not the scale-dependent display layers)",
+   "county_filter": null,
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 267503,
+   "sample_owner": "ANDERSON JENNIFER R",
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Yavapai": {
+   "fips": "04025",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "fields": {},
+   "sp_epsg_2011_ftus": 6405,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Greenlee": {
+   "fips": "04011",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "fields": {},
+   "sp_epsg_2011_ftus": 6407,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Navajo": {
+   "fips": "04017",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services.arcgis.com/cghC2lEIpJ2TRrs5/arcgis/rest/services/Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "APN",
+    "pin": "AccountNumber",
+    "acres": "Acreage",
+    "address": null
+   },
+   "sp_epsg_2011_ftus": 6407,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 0,
+   "source_name": "Navajo County official Parcels (open-data-ncaz.hub.arcgis.com / navajocountyaz.gov GIS)",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 4269,
+    "latestWkid": 4269
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 86925,
+   "sample_owner": "Busch Travis D & Brittany J  (Cprs)",
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Pima": {
+   "fips": "04019",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "fields": {},
+   "sp_epsg_2011_ftus": 6405,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Santa Cruz": {
+   "fips": "04023",
+   "status": "fixed_pending_review",
+   "source": "county_own",
+   "url": "https://mapservices.santacruzcountyaz.gov/wagis01/rest/services/ParcelSearch/parcels_kml/MapServer/0",
+   "fields": {
+    "owner": [
+     "OWNERNAME1",
+     "OWNERNAME2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "APN",
+    "pin": "PARCELNB",
+    "acres": "Legal_Acre",
+    "address": "SITEADDR"
+   },
+   "sp_epsg_2011_ftus": 6407,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 0,
+   "source_name": "Santa Cruz County official ParcelSearch parcels (mapservices.santacruzcountyaz.gov; daily updates)",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 2223,
+    "latestWkid": 2223
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 43231,
+   "sample_owner": "VINDIOLA & SONS TRUCKING INC",
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Cochise": {
+   "fips": "04003",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services6.arcgis.com/Yxem0VOcqSy8T6TE/arcgis/rest/services/Cad_Parcel_TaxInfo/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "owner_name1",
+     "owner_name2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "apn",
+    "pin": "accountno",
+    "acres": "acres",
+    "address": "situs_address"
+   },
+   "sp_epsg_2011_ftus": 6407,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 0,
+   "source_name": "Cochise County official Cad_Parcel_TaxInfo (county AGOL org Yxem0VOcqSy8T6TE; weekly cadastral, 122,970 parcels)",
+   "county_filter": null,
+   "native_sr": {
+    "wkt": "PROJCS[\"Cochise_County_Low_Distortion_Projection\",GEOGCS[\"GCS_North_American_Datum_1983\",DATUM[\"D_North_American_1983\",SPHEROID[\"Geodetic_Reference_System_of_1980\",6378137.0,298.257222100892]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"False_Easting\",240000.0],PARAMETER[\"False_Northing\",0.0],PARAMETER[\"Central_Meridian\",-109.75],PARAMETER[\"Scale_Factor\",1.000195],PARAMETER[\"Latitude_Of_Origin\",31.3166666666667],UNIT[\"Foot (International)\",0.3048]]",
+    "wkt2": "PROJCRS[\"Cochise_County_Low_Distortion_Projection\",BASEGEOGCRS[\"GCS_North_American_Datum_1983\",DATUM[\"D_North_American_1983\",ELLIPSOID[\"Geodetic_Reference_System_of_1980\",6378137.0,298.257222100892]],PRIMEM[\"Greenwich\",0.0],CS[ellipsoidal,2],ANGLEUNIT[\"Degree\",0.0174532925199433]],CONVERSION[\"Transverse_Mercator\",METHOD[\"Transverse_Mercator\"],PARAMETER[\"False_Easting\",240000.0,LENGTHUNIT[\"Foot (International)\",0.3048]],PARAMETER[\"False_Northing\",0.0,LENGTHUNIT[\"Foot (International)\",0.3048]],PARAMETER[\"Central_Meridian\",-109.75],PARAMETER[\"Scale_Factor\",1.000195],PARAMETER[\"Latitude_Of_Origin\",31.3166666666667]],CS[Cartesian,2],AXIS[\"Easting (X)\",east,ORDER[1]],AXIS[\"Northing (Y)\",north,ORDER[2]],LENGTHUNIT[\"Foot (International)\",0.3048]]"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 122970,
+   "sample_owner": "RUSH DAWN E & JODY L",
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  }
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Same entry as SC/GA/VA/TN. Added 2026-11-12 (rc31); box DXF-parse tested, not tested in Carlson or IntelliCAD.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}

@@ -1,0 +1,5160 @@
+{
+ "_meta": {
+  "state": "FL",
+  "target_wkid": 6438,
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PB {plat_book} PG {plat_page}",
+   "PID:{pid}"
+  ],
+  "statewide_source": {
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "service": "Florida Statewide Parcels (ArcGIS Online item efa909d6b1c841d298b0a649e7f71cf2, owner FloridaGIO, org Gh9awoU677aKree0), layer 0 CADASTRAL_DOR",
+   "publisher": "Florida Geographic Information Office (FGIO, FDEP) hosting; data compiled by Florida Department of Revenue, Property Tax Oversight (PTO) from all 67 county property appraisers",
+   "county_filter": "CO_NO = <FL DOR county number 11..77> (alphabetical; 23 = Miami-Dade). Exclude CO_NO=0 (~97k blank junk rows).",
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1 (used when book/page blank)",
+    "pid": "PARCEL_ID",
+    "alt_ids": [
+     "PARCELNO",
+     "ALT_KEY",
+     "STATE_PAR_ (state parcel no., e.g. C23-000-245-0129-8)"
+    ],
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL",
+    "acres": "none (LND_SQFOOT/43560)",
+    "sale": "SALE_YR1/SALE_MO1",
+    "assessment_year": "ASMNT_YR"
+   },
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "max_record_count": 2000,
+   "total_rows": 10950718,
+   "total_rows_valid": 10853474,
+   "data_year": 2026,
+   "vintage": "2026 tax roll (ASMNT_YR=2026 on every live query). DOR collects GIS from property appraisers each April/July; 'This GIS data was exported from these file submissions in August 2026'. AGOL item modified 2026-09-30; layer data last edit 2026-09-29. DOR updates annually every August, minor maintenance May and November.",
+   "terms": "DOR disclaimer: data owned by each county property appraiser; DOR does not guarantee accuracy/completeness; not a substitute for a professional survey. Confidential (Ch. 119 F.S.) records are redacted by counties.",
+   "query_tips": "Plain where CO_NO=n works for small/mid counties; for the biggest (Miami-Dade 23, Palm Beach 60, Broward 16) attribute-only where clauses time out (HTTP 400 'Unable to perform query'). Always query by envelope/polygon + CO_NO (returns in 1-6 s). Statewide group-by statistics also time out.",
+   "deed_caveat": "OR_BOOK1/OR_PAGE1 and CLERK_NO1 are the DOR NAL 'sale 1' fields: only parcels with a sale in the roll's sale window (2025-2026 in samples) have them, ~0-19% per county. They are NOT the current deed for unsold parcels. All 67 counties are therefore 'partial' (owner+PID full, deed sparse).",
+   "alt_mirror": "LABINS (FREAC) also mirrors DOR parcels: https://maps.freac.fsu.edu/arcgis/rest/services/LABINS/LABINS_Data_ccr_relate/MapServer/12 (10,266,498 rows, 3857, older roll)"
+  },
+  "status_legend": {
+   "ok": "owner+deed+PID live-verified",
+   "partial": "owner+PID (deed sparse/absent) or subset coverage",
+   "missing": "no owner source found yet",
+   "unverified": "endpoint unreachable at test time"
+  },
+  "checked": "2026-10-12",
+  "default_epsg": 6438,
+  "epsg_choices": [
+   6438,
+   6441,
+   6443,
+   2236,
+   2238,
+   2237
+  ],
+  "target_options": {
+   "east": 6438,
+   "north": 6441,
+   "west": 6443
+  },
+  "detect": {
+   "local": "FL"
+  },
+  "onemap_url": null,
+  "release": true
+ },
+ "counties": {
+  "Alachua": {
+   "fips": "12001",
+   "dor_co_no": 11,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=11",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.116,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 118535,
+   "owner_nonnull": 118535,
+   "pid_nonnull": 118535,
+   "deed_nonnull": 13750,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=11",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Baker": {
+   "fips": "12003",
+   "dor_co_no": 12,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=12",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.1,
+   "record_count": 13028,
+   "owner_nonnull": 13028,
+   "pid_nonnull": 13028,
+   "deed_nonnull": 1303,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=12",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Bay": {
+   "fips": "12005",
+   "dor_co_no": 13,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=13",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.1,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 133971,
+   "owner_nonnull": 133971,
+   "pid_nonnull": 133971,
+   "deed_nonnull": 13397,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=13",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Bradford": {
+   "fips": "12007",
+   "dor_co_no": 14,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=14",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.086,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 15591,
+   "owner_nonnull": 15591,
+   "pid_nonnull": 15591,
+   "deed_nonnull": 1341,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=14",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Brevard": {
+   "fips": "12009",
+   "dor_co_no": 15,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=15",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.124,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 349262,
+   "owner_nonnull": 349262,
+   "pid_nonnull": 349262,
+   "deed_nonnull": 43308,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=15",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Broward": {
+   "fips": "12011",
+   "dor_co_no": 16,
+   "status": "fixed_pending_review",
+   "source": "county_own",
+   "url": "https://services5.arcgis.com/wI5GZmCtnUU8ueya/ArcGIS/rest/services/Broward_County_Parcel_Boundary/FeatureServer/1",
+   "layer_id": 0,
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 6438,
+    "served_wkid": 103022
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELNO",
+    "acres": null,
+    "address": "PHY_ADDR1"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.09,
+   "record_count": 766819,
+   "owner_nonnull": 766819,
+   "pid_nonnull": 766819,
+   "deed_nonnull": 69014,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "source_name": "Broward County Property Appraiser GIS Team hosted 2025 parcels (DOR roll fields; BCPA's own public layer is FOLIO-only)",
+   "server_fallback": {
+    "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+    "onemap_filter": "CO_NO=16",
+    "source": "statewide_fallback",
+    "label": "the FL DOR statewide layer",
+    "fields": {
+     "owner": [
+      "OWN_NAME"
+     ],
+     "deed_book": "OR_BOOK1",
+     "deed_page": "OR_PAGE1",
+     "deed_ref": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCEL_ID",
+     "acres": null
+    }
+   },
+   "buildings_source": "none"
+  },
+  "Calhoun": {
+   "fips": "12013",
+   "dor_co_no": 17,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=17",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.088,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 11616,
+   "owner_nonnull": 11616,
+   "pid_nonnull": 11616,
+   "deed_nonnull": 1022,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=17",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Charlotte": {
+   "fips": "12015",
+   "dor_co_no": 18,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=18",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "West",
+    "epsg": 6443
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.124,
+   "record_count": 231568,
+   "owner_nonnull": 231568,
+   "pid_nonnull": 231568,
+   "deed_nonnull": 28714,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=18",
+   "sp_epsg_2011_ftus": 6443,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Citrus": {
+   "fips": "12017",
+   "dor_co_no": 19,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=19",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "West",
+    "epsg": 6443
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.156,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 147181,
+   "owner_nonnull": 147181,
+   "pid_nonnull": 147181,
+   "deed_nonnull": 22960,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=19",
+   "sp_epsg_2011_ftus": 6443,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Clay": {
+   "fips": "12019",
+   "dor_co_no": 20,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=20",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.106,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 104927,
+   "owner_nonnull": 104927,
+   "pid_nonnull": 104927,
+   "deed_nonnull": 11122,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=20",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Collier": {
+   "fips": "12021",
+   "dor_co_no": 21,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=21",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.086,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 368325,
+   "owner_nonnull": 368325,
+   "pid_nonnull": 368325,
+   "deed_nonnull": 31676,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=21",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Columbia": {
+   "fips": "12023",
+   "dor_co_no": 22,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=22",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.126,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 37405,
+   "owner_nonnull": 37405,
+   "pid_nonnull": 37405,
+   "deed_nonnull": 4713,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=22",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "DeSoto": {
+   "fips": "12027",
+   "dor_co_no": 24,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=24",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "West",
+    "epsg": 6443
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.044,
+   "record_count": 20427,
+   "owner_nonnull": 20427,
+   "pid_nonnull": 20427,
+   "deed_nonnull": 899,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=24",
+   "sp_epsg_2011_ftus": 6443,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Dixie": {
+   "fips": "12029",
+   "dor_co_no": 25,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=25",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.128,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 16322,
+   "owner_nonnull": 16322,
+   "pid_nonnull": 16322,
+   "deed_nonnull": 2089,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=25",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Duval": {
+   "fips": "12031",
+   "dor_co_no": 26,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=26",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.118,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 403813,
+   "owner_nonnull": 403813,
+   "pid_nonnull": 403813,
+   "deed_nonnull": 47650,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=26",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Escambia": {
+   "fips": "12033",
+   "dor_co_no": 27,
+   "status": "fixed_pending_review",
+   "source": "county_own",
+   "url": "https://gismaps.myescambia.com/arcgis/rest/services/Individual_Layers/parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 2883
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWNER"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "REFNUM",
+    "pin": "REFERENCE",
+    "acres": "LANDSIZE",
+    "address": "SITEADDR"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.138,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 164073,
+   "owner_nonnull": 161419,
+   "pid_nonnull": 161419,
+   "deed_nonnull": 22276,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "source_name": "Escambia County GIS parcels (gismaps.myescambia.com); parcel detail links go to the Escambia PA at escpa.org",
+   "server_fallback": {
+    "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+    "onemap_filter": "CO_NO=27",
+    "source": "statewide_fallback",
+    "label": "the FL DOR statewide layer",
+    "fields": {
+     "owner": [
+      "OWN_NAME"
+     ],
+     "deed_book": "OR_BOOK1",
+     "deed_page": "OR_PAGE1",
+     "deed_ref": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCEL_ID",
+     "acres": null
+    }
+   },
+   "sample_owner": "JOHNSON TERESA ELAINE",
+   "sample_xy_wgs84": [
+    -87.55794555046862,
+    30.987401632061157
+   ],
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Flagler": {
+   "fips": "12035",
+   "dor_co_no": 28,
+   "status": "fixed_pending_review",
+   "source": "county_own",
+   "url": "https://services3.arcgis.com/hSKL9bYjhP4rHxSD/arcgis/rest/services/Flagler_County_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 2236
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "file_as_name"
+    ],
+    "deed_ref": null,
+    "deed_book": "book1",
+    "deed_page": "page1",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELNO",
+    "acres": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.146,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 87997,
+   "owner_nonnull": 87955,
+   "pid_nonnull": 87997,
+   "deed_nonnull": 12848,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "source_name": "Flagler County GIS (FCMAPS) public parcels",
+   "server_fallback": {
+    "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+    "onemap_filter": "CO_NO=28",
+    "source": "statewide_fallback",
+    "label": "the FL DOR statewide layer",
+    "fields": {
+     "owner": [
+      "OWN_NAME"
+     ],
+     "deed_book": "OR_BOOK1",
+     "deed_page": "OR_PAGE1",
+     "deed_ref": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCEL_ID",
+     "acres": null
+    }
+   },
+   "buildings_source": "none"
+  },
+  "Franklin": {
+   "fips": "12037",
+   "dor_co_no": 29,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=29",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.142,
+   "record_count": 18506,
+   "owner_nonnull": 18504,
+   "pid_nonnull": 18506,
+   "deed_nonnull": 2628,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=29",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Gadsden": {
+   "fips": "12039",
+   "dor_co_no": 30,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=30",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.102,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 27290,
+   "owner_nonnull": 27285,
+   "pid_nonnull": 27290,
+   "deed_nonnull": 2784,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=30",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Gilchrist": {
+   "fips": "12041",
+   "dor_co_no": 31,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=31",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.106,
+   "record_count": 14626,
+   "owner_nonnull": 14626,
+   "pid_nonnull": 14626,
+   "deed_nonnull": 1550,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=31",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Glades": {
+   "fips": "12043",
+   "dor_co_no": 32,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=32",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.064,
+   "record_count": 11336,
+   "owner_nonnull": 11336,
+   "pid_nonnull": 11336,
+   "deed_nonnull": 726,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=32",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Gulf": {
+   "fips": "12045",
+   "dor_co_no": 33,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=33",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.098,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 19102,
+   "owner_nonnull": 19102,
+   "pid_nonnull": 19102,
+   "deed_nonnull": 1872,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=33",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Hamilton": {
+   "fips": "12047",
+   "dor_co_no": 34,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=34",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.082,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 13957,
+   "owner_nonnull": 13957,
+   "pid_nonnull": 13957,
+   "deed_nonnull": 1144,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=34",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Hardee": {
+   "fips": "12049",
+   "dor_co_no": 35,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=35",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "West",
+    "epsg": 6443
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.124,
+   "record_count": 14761,
+   "owner_nonnull": 14761,
+   "pid_nonnull": 14761,
+   "deed_nonnull": 1830,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=35",
+   "sp_epsg_2011_ftus": 6443,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Hendry": {
+   "fips": "12051",
+   "dor_co_no": 36,
+   "status": "fixed_pending_review",
+   "source": "county_own",
+   "url": "https://services7.arcgis.com/8l7Qq5t0CPLAJwJK/arcgis/rest/services/Hendry_County_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 2881,
+    "latestWkid": 2881
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWNAME"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELNO",
+    "acres": null,
+    "address": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.148,
+   "record_count": 35734,
+   "owner_nonnull": 35655,
+   "pid_nonnull": 35655,
+   "deed_nonnull": 5277,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "source_name": "Hendry County parcels (county AGOL)",
+   "server_fallback": {
+    "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+    "onemap_filter": "CO_NO=36",
+    "source": "statewide_fallback",
+    "label": "the FL DOR statewide layer",
+    "fields": {
+     "owner": [
+      "OWN_NAME"
+     ],
+     "deed_book": "OR_BOOK1",
+     "deed_page": "OR_PAGE1",
+     "deed_ref": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCEL_ID",
+     "acres": null
+    }
+   },
+   "sample_owner": "TURNER GROVES LTD PARTNERSHIP",
+   "sample_xy_wgs84": [
+    -81.49033612456394,
+    26.535387720036198
+   ],
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Hernando": {
+   "fips": "12053",
+   "dor_co_no": 37,
+   "status": "fixed_pending_review",
+   "source": "county_own",
+   "url": "https://services2.arcgis.com/x5zvhhxfUuRDntRe/arcgis/rest/services/HernandoBuilders/FeatureServer/1257",
+   "layer_id": 0,
+   "county_filter": null,
+   "native_sr": null,
+   "suggested_spcs": {
+    "zone": "West",
+    "epsg": 6443
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAME",
+     "OWNER_NAME2"
+    ],
+    "deed_ref": null,
+    "deed_book": "LSALE_ORBOOK",
+    "deed_page": "LSALE_ORPAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCEL_NUMBER",
+    "acres": null,
+    "address": "SITUS_ADDRESS"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.118,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 120187,
+   "owner_nonnull": 120187,
+   "pid_nonnull": 120187,
+   "deed_nonnull": 14182,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6443,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "source_name": "Hernando County Property Appraiser parcels",
+   "server_fallback": {
+    "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+    "onemap_filter": "CO_NO=37",
+    "source": "statewide_fallback",
+    "label": "the FL DOR statewide layer",
+    "fields": {
+     "owner": [
+      "OWN_NAME"
+     ],
+     "deed_book": "OR_BOOK1",
+     "deed_page": "OR_PAGE1",
+     "deed_ref": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCEL_ID",
+     "acres": null
+    }
+   },
+   "buildings_source": "none"
+  },
+  "Highlands": {
+   "fips": "12055",
+   "dor_co_no": 38,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=38",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.16,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 112722,
+   "owner_nonnull": 112718,
+   "pid_nonnull": 112722,
+   "deed_nonnull": 18036,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=38",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Hillsborough": {
+   "fips": "12057",
+   "dor_co_no": 39,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=39",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "West",
+    "epsg": 6443
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.102,
+   "record_count": 536349,
+   "owner_nonnull": 536349,
+   "pid_nonnull": 536349,
+   "deed_nonnull": 54708,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=39",
+   "sp_epsg_2011_ftus": 6443,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Holmes": {
+   "fips": "12059",
+   "dor_co_no": 40,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=40",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.1,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 14897,
+   "owner_nonnull": 14897,
+   "pid_nonnull": 14897,
+   "deed_nonnull": 1490,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=40",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Indian River": {
+   "fips": "12061",
+   "dor_co_no": 41,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=41",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.116,
+   "record_count": 95226,
+   "owner_nonnull": 95225,
+   "pid_nonnull": 95226,
+   "deed_nonnull": 11046,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=41",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Jackson": {
+   "fips": "12063",
+   "dor_co_no": 42,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=42",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.094,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 42997,
+   "owner_nonnull": 42997,
+   "pid_nonnull": 42997,
+   "deed_nonnull": 4042,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=42",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Jefferson": {
+   "fips": "12065",
+   "dor_co_no": 43,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=43",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.1,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 11927,
+   "owner_nonnull": 11927,
+   "pid_nonnull": 11927,
+   "deed_nonnull": 1193,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=43",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Lafayette": {
+   "fips": "12067",
+   "dor_co_no": 44,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=44",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.145,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 7402,
+   "owner_nonnull": 7402,
+   "pid_nonnull": 7402,
+   "deed_nonnull": 1073,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=44",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Lake": {
+   "fips": "12069",
+   "dor_co_no": 45,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=45",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.076,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 216436,
+   "owner_nonnull": 216250,
+   "pid_nonnull": 216436,
+   "deed_nonnull": 16449,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=45",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Lee": {
+   "fips": "12071",
+   "dor_co_no": 46,
+   "status": "fixed_pending_review",
+   "source": "county_own",
+   "url": "https://gismapserver.leegov.com/gisserver910/rest/services/Layers/ParcelAddress/MapServer/0",
+   "layer_id": 0,
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102659,
+    "latestWkid": 2237
+   },
+   "suggested_spcs": {
+    "zone": "West",
+    "epsg": 6443
+   },
+   "fields": {
+    "owner": [
+     "O_NAME"
+    ],
+    "deed_ref": "S_1OR_NUM",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "STRAP",
+    "acres": "GISACRES",
+    "address": "SITEADDR"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.13,
+   "record_count": 565345,
+   "owner_nonnull": 559682,
+   "pid_nonnull": 559682,
+   "deed_nonnull": 72759,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6443,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "source_name": "Lee County Government GIS / Lee County Property Appraiser, Parcel Address layer (nightly)",
+   "server_fallback": {
+    "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+    "onemap_filter": "CO_NO=46",
+    "source": "statewide_fallback",
+    "label": "the FL DOR statewide layer",
+    "fields": {
+     "owner": [
+      "OWN_NAME"
+     ],
+     "deed_book": "OR_BOOK1",
+     "deed_page": "OR_PAGE1",
+     "deed_ref": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCEL_ID",
+     "acres": null
+    }
+   },
+   "sample_owner": "LOPEZ LEONEL",
+   "sample_xy_wgs84": [
+    -81.75341889998157,
+    26.33464459819833
+   ],
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Leon": {
+   "fips": "12073",
+   "dor_co_no": 47,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=47",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.108,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 111037,
+   "owner_nonnull": 111037,
+   "pid_nonnull": 111037,
+   "deed_nonnull": 11992,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=47",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Levy": {
+   "fips": "12075",
+   "dor_co_no": 48,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=48",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "West",
+    "epsg": 6443
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.096,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 48171,
+   "owner_nonnull": 48171,
+   "pid_nonnull": 48171,
+   "deed_nonnull": 4624,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=48",
+   "sp_epsg_2011_ftus": 6443,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Liberty": {
+   "fips": "12077",
+   "dor_co_no": 49,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=49",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.066,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 6347,
+   "owner_nonnull": 6345,
+   "pid_nonnull": 6347,
+   "deed_nonnull": 419,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=49",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Madison": {
+   "fips": "12079",
+   "dor_co_no": 50,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=50",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.116,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 16401,
+   "owner_nonnull": 16401,
+   "pid_nonnull": 16401,
+   "deed_nonnull": 1903,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=50",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Manatee": {
+   "fips": "12081",
+   "dor_co_no": 51,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=51",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "West",
+    "epsg": 6443
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.1,
+   "record_count": 233929,
+   "owner_nonnull": 233929,
+   "pid_nonnull": 233929,
+   "deed_nonnull": 23393,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=51",
+   "sp_epsg_2011_ftus": 6443,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Marion": {
+   "fips": "12083",
+   "dor_co_no": 52,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=52",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.188,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 286275,
+   "owner_nonnull": 286275,
+   "pid_nonnull": 286275,
+   "deed_nonnull": 53820,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=52",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Martin": {
+   "fips": "12085",
+   "dor_co_no": 53,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=53",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.184,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 97565,
+   "owner_nonnull": 97564,
+   "pid_nonnull": 97565,
+   "deed_nonnull": 17952,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=53",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Miami-Dade": {
+   "fips": "12086",
+   "dor_co_no": 23,
+   "status": "fixed_pending_review",
+   "source": "county_own",
+   "url": "https://gisweb.miamidade.gov/arcgis/rest/services/MD_LandInformation/MapServer/26",
+   "layer_id": 0,
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 2236,
+    "served_wkid": 102658
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "TRUE_OWNER1",
+     "TRUE_OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "FOLIO",
+    "acres": null,
+    "address": "TRUE_SITE_ADDR"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.075,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 591103,
+   "owner_nonnull": 588853,
+   "pid_nonnull": 591103,
+   "deed_nonnull": 44333,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "source_name": "Miami-Dade Property Appraiser, Parcels @ PaParcel (MD_LandInformation layer 26)",
+   "server_fallback": {
+    "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+    "onemap_filter": "CO_NO=23",
+    "source": "statewide_fallback",
+    "label": "the FL DOR statewide layer",
+    "fields": {
+     "owner": [
+      "OWN_NAME"
+     ],
+     "deed_book": "OR_BOOK1",
+     "deed_page": "OR_PAGE1",
+     "deed_ref": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCEL_ID",
+     "acres": null
+    }
+   },
+   "buildings_source": "none"
+  },
+  "Monroe": {
+   "fips": "12087",
+   "dor_co_no": 54,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=54",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.054,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 88557,
+   "owner_nonnull": 88556,
+   "pid_nonnull": 88557,
+   "deed_nonnull": 4782,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=54",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Nassau": {
+   "fips": "12089",
+   "dor_co_no": 55,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=55",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "both",
+   "deed_fill_rate_sample": 0.136,
+   "clerk_fill_rate_sample": 0.008,
+   "record_count": 59545,
+   "owner_nonnull": 59545,
+   "pid_nonnull": 59545,
+   "deed_nonnull": 8574,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=55",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Okaloosa": {
+   "fips": "12091",
+   "dor_co_no": 56,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=56",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.096,
+   "record_count": 112382,
+   "owner_nonnull": 112382,
+   "pid_nonnull": 112382,
+   "deed_nonnull": 10789,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=56",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Okeechobee": {
+   "fips": "12093",
+   "dor_co_no": 57,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=57",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.132,
+   "record_count": 31304,
+   "owner_nonnull": 31304,
+   "pid_nonnull": 31304,
+   "deed_nonnull": 4132,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=57",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Orange": {
+   "fips": "12095",
+   "dor_co_no": 58,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=58",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.095,
+   "record_count": 492806,
+   "owner_nonnull": 492806,
+   "pid_nonnull": 492806,
+   "deed_nonnull": 46817,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=58",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Osceola": {
+   "fips": "12097",
+   "dor_co_no": 59,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=59",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.09,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 212171,
+   "owner_nonnull": 212171,
+   "pid_nonnull": 212171,
+   "deed_nonnull": 19095,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=59",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Palm Beach": {
+   "fips": "12099",
+   "dor_co_no": 60,
+   "status": "fixed_pending_review",
+   "source": "county_own",
+   "url": "https://maps.co.palm-beach.fl.us/arcgis/rest/services/Parcels/labels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 3857,
+    "served_wkid": 102100
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "PAO.PROPINFO_PUB.OWNER_NAME1",
+     "PAO.PROPINFO_PUB.OWNER_NAME2"
+    ],
+    "deed_ref": null,
+    "deed_book": "PAO.PROPINFO_PUB.BOOK",
+    "deed_page": "PAO.PROPINFO_PUB.PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PAO.PROPINFO_PUB.PARCEL_NUMBER",
+    "acres": "PAO.PROPINFO_PUB.ACRES",
+    "address": "PAO.PROPINFO_PUB.SITE_ADDR_STR"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.105,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": null,
+   "owner_nonnull": 687099,
+   "pid_nonnull": 687099,
+   "deed_nonnull": 72145,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "source_name": "Palm Beach County Property Appraiser parcels joined to PROPINFO_PUB (Parcels/labels)",
+   "server_fallback": {
+    "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+    "onemap_filter": "CO_NO=60",
+    "source": "statewide_fallback",
+    "label": "the FL DOR statewide layer",
+    "fields": {
+     "owner": [
+      "OWN_NAME"
+     ],
+     "deed_book": "OR_BOOK1",
+     "deed_page": "OR_PAGE1",
+     "deed_ref": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCEL_ID",
+     "acres": null
+    }
+   },
+   "sample_owner": "NEWPORT COVE HOMEOWNERS ASSN INC",
+   "deed_sample": {
+    "PAO.PROPINFO_PUB.OWNER_NAME1": "CORNER LAKE LLC",
+    "PAO.PROPINFO_PUB.PARCEL_NUMBER": "73414411090000282",
+    "PAO.PROPINFO_PUB.BOOK": "13685",
+    "PAO.PROPINFO_PUB.PAGE": "1806",
+    "PAO.PROPINFO_PUB.INSTRUMENT": "WD",
+    "PAO.PROPINFO_PUB.SUBDIV_NAME": "PARK PLACE OF WELLINGTON"
+   },
+   "sample_xy_wgs84": [
+    -80.17091969758931,
+    26.466204153512543
+   ],
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Pasco": {
+   "fips": "12101",
+   "dor_co_no": 61,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=61",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "West",
+    "epsg": 6443
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.132,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 317865,
+   "owner_nonnull": 317861,
+   "pid_nonnull": 317865,
+   "deed_nonnull": 41958,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=61",
+   "sp_epsg_2011_ftus": 6443,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Pinellas": {
+   "fips": "12103",
+   "dor_co_no": 62,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=62",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "West",
+    "epsg": 6443
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.016,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 433519,
+   "owner_nonnull": 433519,
+   "pid_nonnull": 433519,
+   "deed_nonnull": 6936,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=62",
+   "sp_epsg_2011_ftus": 6443,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Polk": {
+   "fips": "12105",
+   "dor_co_no": 63,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=63",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "West",
+    "epsg": 6443
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.09,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 434004,
+   "owner_nonnull": 434004,
+   "pid_nonnull": 434004,
+   "deed_nonnull": 39060,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=63",
+   "sp_epsg_2011_ftus": 6443,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Putnam": {
+   "fips": "12107",
+   "dor_co_no": 64,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=64",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.154,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 97316,
+   "owner_nonnull": 97316,
+   "pid_nonnull": 97316,
+   "deed_nonnull": 14987,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=64",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Santa Rosa": {
+   "fips": "12113",
+   "dor_co_no": 67,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=67",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.12,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 112747,
+   "owner_nonnull": 112747,
+   "pid_nonnull": 112747,
+   "deed_nonnull": 13530,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=67",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Sarasota": {
+   "fips": "12115",
+   "dor_co_no": 68,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=68",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "West",
+    "epsg": 6443
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "clerk_no",
+   "deed_fill_rate_sample": 0.0,
+   "clerk_fill_rate_sample": 0.156,
+   "record_count": 307173,
+   "owner_nonnull": 307173,
+   "pid_nonnull": 307173,
+   "deed_nonnull": 47919,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=68",
+   "sp_epsg_2011_ftus": 6443,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Seminole": {
+   "fips": "12117",
+   "dor_co_no": 69,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=69",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.096,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 179442,
+   "owner_nonnull": 179442,
+   "pid_nonnull": 179442,
+   "deed_nonnull": 17226,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=69",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "St. Johns": {
+   "fips": "12109",
+   "dor_co_no": 65,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=65",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.116,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 208280,
+   "owner_nonnull": 208280,
+   "pid_nonnull": 208280,
+   "deed_nonnull": 24160,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=65",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "St. Lucie": {
+   "fips": "12111",
+   "dor_co_no": 66,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=66",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.074,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 190201,
+   "owner_nonnull": 190201,
+   "pid_nonnull": 190201,
+   "deed_nonnull": 14075,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=66",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Sumter": {
+   "fips": "12119",
+   "dor_co_no": 70,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=70",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.16,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 104146,
+   "owner_nonnull": 104146,
+   "pid_nonnull": 104146,
+   "deed_nonnull": 16663,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=70",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Suwannee": {
+   "fips": "12121",
+   "dor_co_no": 71,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=71",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.116,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 32138,
+   "owner_nonnull": 32138,
+   "pid_nonnull": 32138,
+   "deed_nonnull": 3728,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=71",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Taylor": {
+   "fips": "12123",
+   "dor_co_no": 72,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=72",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.114,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 18756,
+   "owner_nonnull": 18712,
+   "pid_nonnull": 18756,
+   "deed_nonnull": 2138,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=72",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Union": {
+   "fips": "12125",
+   "dor_co_no": 73,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=73",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.078,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 7324,
+   "owner_nonnull": 7324,
+   "pid_nonnull": 7324,
+   "deed_nonnull": 571,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=73",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Volusia": {
+   "fips": "12127",
+   "dor_co_no": 74,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=74",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "East",
+    "epsg": 6438
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.096,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 308858,
+   "owner_nonnull": 308858,
+   "pid_nonnull": 308858,
+   "deed_nonnull": 29650,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=74",
+   "sp_epsg_2011_ftus": 6438,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Wakulla": {
+   "fips": "12129",
+   "dor_co_no": 75,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=75",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.13,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 26612,
+   "owner_nonnull": 26612,
+   "pid_nonnull": 26612,
+   "deed_nonnull": 3460,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=75",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Walton": {
+   "fips": "12131",
+   "dor_co_no": 76,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=76",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.138,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 95375,
+   "owner_nonnull": 95375,
+   "pid_nonnull": 95375,
+   "deed_nonnull": 13162,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=76",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  },
+  "Washington": {
+   "fips": "12133",
+   "dor_co_no": 77,
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": "CO_NO=77",
+   "native_sr": {
+    "wkid": 102967,
+    "latestWkid": 6439,
+    "name": "NAD83(2011) Florida GDL Albers (meters)"
+   },
+   "suggested_spcs": {
+    "zone": "North",
+    "epsg": 6441
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "acres": null,
+    "deed_book": "OR_BOOK1",
+    "deed_page": "OR_PAGE1",
+    "clerk_instrument": "CLERK_NO1",
+    "plat_book": null,
+    "plat_page": null,
+    "address": "PHY_ADDR1",
+    "legal": "S_LEGAL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "deed_mode": "book_page",
+   "deed_fill_rate_sample": 0.09,
+   "clerk_fill_rate_sample": 0.0,
+   "record_count": 43762,
+   "owner_nonnull": 43761,
+   "pid_nonnull": 43762,
+   "deed_nonnull": 3939,
+   "deed_nonnull_is_estimate": true,
+   "data_year": 2026,
+   "vintage": "FL DOR 2026 tax-roll GIS submission (ASMNT_YR 2026), DOR export Aug 2026; AGOL data last edited 2026-09-29",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "CO_NO=77",
+   "sp_epsg_2011_ftus": 6441,
+   "deed_sentinels": [
+    "0",
+    " ",
+    "",
+    "-"
+   ],
+   "deed_instrument_print": true,
+   "buildings_source": "none"
+  }
+ },
+ "control": {
+  "state_source": true,
+  "agency": "FDEP Division of State Lands, Bureau of Survey and Mapping (LABINS, hosted by FREAC/FSU); district control from SFWMD and SWFWMD",
+  "sources": [
+   {
+    "name": "LABINS Certified Corners (FDEP Bureau of Survey and Mapping CCRs)",
+    "type": "ArcGIS REST MapServer",
+    "url": "https://maps.freac.fsu.edu/arcgis/rest/services/LABINS/LABINS_Data_ccr_relate/MapServer/2",
+    "sr": "EPSG:3857 (Web Mercator, as served)",
+    "count": 222877,
+    "fields": {
+     "designation": "blmid (BLM PLSS corner id, e.g. T07NR10W600700), blmid2-4",
+     "quad": "tile_name",
+     "documents": "is_image + image1..image50 (links to CCR scans on ftp.labins.org)",
+     "coordinates": "geometry only"
+    },
+    "live_test": "OK 2026-10-12: corner T07NR10W600700 (GRANGEBURG (AL)), image1 http://ftp.labins.org/ccr/bydocno/ccp06/00611041.tif",
+    "vintage": "Records 1977/1983-present; LABINS states updates every 4-6 weeks",
+    "terms": "FDEP/FREAC public data, no warranty",
+    "note": "Florida-specific and high value for boundary work (PLSS corner records). Point = corner location, not a geodetic coordinate."
+   },
+   {
+    "name": "LABINS Preliminary NGS Points (FDEP horizontal control extension)",
+    "type": "ArcGIS REST MapServer",
+    "url": "https://maps.freac.fsu.edu/arcgis/rest/services/LABINS/LABINS_Data_ccr_relate/MapServer/1",
+    "sr": "EPSG:3857 (as served); latdecdeg/londecdeg attributes",
+    "count": 8822,
+    "fields": {
+     "designation": "designatio",
+     "pid": "pid (NGS datasheet URL)",
+     "county": "cname / county_",
+     "condition": "cond",
+     "coordinates": "latdecdeg/londecdeg",
+     "elevation": "elevation",
+     "plss": "twnrngsec",
+     "date": "rptdate"
+    },
+    "live_test": "OK 2026-10-12: LEO 120 (Leon), 30.583083,-84.244083, cond G, T02NR01E09",
+    "vintage": "latest rptdate 2011-09-02",
+    "terms": "FDEP disclaimer: coordinates PRELIMINARY; final adjusted positions are published by NGS",
+    "caution": "Preliminary coordinates; use NGS datasheet values for final."
+   },
+   {
+    "name": "LABINS NGS Control Points (state mirror of NGS marks)",
+    "type": "ArcGIS REST MapServer",
+    "url": "https://maps.freac.fsu.edu/arcgis/rest/services/LABINS/LABINS_Data_ccr_relate/MapServer/0",
+    "sr": "EPSG:3857 (as served); dec_lat/dec_long attributes",
+    "count": 52195,
+    "fields": {
+     "designation": "name",
+     "pid": "pid",
+     "county": "county",
+     "condition": "last_cond",
+     "coordinates": "dec_lat/dec_long, latitude/longitude DMS, pos_datum+datum_tag, pos_order",
+     "elevation": "elevation, elev_datum, elev_order/elev_class, ellip_ht",
+     "datasheet": "datasheet_ (NGS link)",
+     "plss": "section/township/range"
+    },
+    "live_test": "OK 2026-10-12: PID AI7631 '1488 15', ALACHUA, NAD 83 (1986), elev 20.584 NAVD 88, cond GOOD",
+    "vintage": "NGS snapshot dated 2019-08-19 (data_date) - stale; prefer live NGS datasheets",
+    "terms": "public",
+    "caution": "Copy of NGS as of Aug 2019; recoveries after 2019 are missing."
+   },
+   {
+    "name": "LABINS R-Monuments (FDEP coastal range monuments)",
+    "type": "ArcGIS REST MapServer",
+    "url": "https://maps.freac.fsu.edu/arcgis/rest/services/LABINS/LABINS_Data_ccr_relate/MapServer/6",
+    "sr": "EPSG:3857 (as served); easting/northing in FL State Plane (zone in state_plane_zone)",
+    "count": 4457,
+    "fields": {
+     "designation": "monument_name / unique_id",
+     "county": "county",
+     "coordinates": "easting/northing (+state_plane_zone), latitude/longitude"
+    },
+    "live_test": "OK 2026-10-12: BE R-100 BREVARD, E 790449.83 N 1387791.97 (East_Zone)",
+    "vintage": "not stated in service",
+    "terms": "FDEP public",
+    "note": "Coastal (beach) counties only; datum of easting/northing not stated in the layer."
+   }
+  ],
+  "district_sources": [
+   {
+    "name": "SFWMD Survey Control (All SFWMD Control)",
+    "agency": "South Florida Water Management District",
+    "type": "ArcGIS REST FeatureServer",
+    "url": "https://geoweb.sfwmd.gov/agsext2/rest/services/LandSurveyAndControl/SurveyControl/FeatureServer/6",
+    "sr": "EPSG:2881 NAD83(HARN) Florida East ftUS (as served)",
+    "count": 11399,
+    "fields": {
+     "designation": "DESIGNATION",
+     "type": "TYPE (H, V, H/V)",
+     "stamp": "BENCHMARK_STAMP",
+     "condition": "BENCHMARK_STATUS",
+     "coordinates": "NAD83_XCOORD/NAD83_YCOORD (SPCS ft), LAT_DD_83/LONG_DD_83, NAD27_XCOORD/YCOORD, HORIZONTAL_DATUM, NAD83_ADJUSTMENT_YEAR",
+     "elevation": "NAVD_ELEV, NGVD_ELEV, VERTICAL_DATUM, orders/classes",
+     "description": "HOW_TO_REACH, DESCRIPTION",
+     "ngs": "NGS_SOURCE_PIDS"
+    },
+    "live_test": "OK 2026-10-12: MAKO3 (BM MAKO-3 1998), NAVD 75.517, X 582807.305 Y 1432571.829",
+    "vintage": "actively edited; last edit 2026-10-08",
+    "coverage": "16 south-FL counties (SFWMD district)",
+    "other_layers": "0 horizontal 1,471; 1 H/V 5,308; 2 vertical 4,592; 3-5 NGS copies"
+   },
+   {
+    "name": "SWFWMD Survey Benchmarks",
+    "agency": "Southwest Florida Water Management District (and Tampa Bay Water)",
+    "type": "ArcGIS REST MapServer",
+    "url": "https://www25.swfwmd.state.fl.us/arcgis12/rest/services/BaseVector/SurveyBM/MapServer/0",
+    "sr": "EPSG:3857 (as served); LATITUDE/LONGITUDE DMS text",
+    "count": 3968,
+    "fields": {
+     "designation": "BENCHMARK_NAME",
+     "elevation": "ELEVATION_88 (NAVD88)",
+     "quality": "BM_VERT_QUALITY_CODE_ID",
+     "verified": "LASTVERIFIED_DT",
+     "retired": "RETIRED_DT",
+     "sheet": "FILE_NAME (PDF)"
+    },
+    "live_test": "OK 2026-10-12: CYP016, NAVD88 70.36, 28 18 22.76 / 82 22 59.54, sheet Cyp 016.pdf",
+    "vintage": "GIS_UPDATE_DT max 2026-10-08",
+    "coverage": "16 west-central FL counties (SWFWMD district)"
+   }
+  ],
+  "other": "FDOT Florida Permanent Reference Network (FPRN) = GNSS CORS/RTN (gis.fdot.gov FPRN_GPS MapServer, live status only, query not supported) - reference stations, not monuments. NWFWMD, SRWMD, SJRWMD survey control not found as public REST this run. NGS covers all states.",
+  "tried": "LABINS site + FREAC/LABINS GitHub (service URLs), ca.dep.state.fl.us OpenData/Map_Direct/External_Services, gis.fdot.gov services root, SFWMD agsext2, SWFWMD arcgis12, ArcGIS Online search.",
+  "checked": "2026-10-12",
+  "ngs": {
+   "ngs_datasheet_url": "https://www.ngs.noaa.gov/cgi-bin/ds_mark.prl?PidBox={PID}",
+   "note": "NGS covers all states; PID links state records to NGS datasheets. Not re-surveyed here."
+  },
+  "datum_shifts_applied": false
+ },
+ "roads": {
+  "name": "FDOT Unified LRS (Unified_LRS_Merged_2025)",
+  "agency": "Florida Department of Transportation, Transportation Data & Analytics (TDA) - Unified LRS / ARNOLD all-public-roads network",
+  "type": "ArcGIS REST FeatureServer (ArcGIS Online, FDOT org O1JpcwDW8sjYuddV)",
+  "url": "https://services1.arcgis.com/O1JpcwDW8sjYuddV/arcgis/rest/services/Unified_LRS/FeatureServer/0",
+  "layer": "V-ROAD-CNTR",
+  "color": 8,
+  "native_sr": "EPSG:4326 (WGS84 geographic, as served)",
+  "count": 617779,
+  "named_count": 597198,
+  "county_filter": "CO_NUM_FIPS = 5-digit FIPS (e.g. 12001 Alachua). COUNTY/CO_NUM are FDOT 2-digit county codes, not DOR or FIPS.",
+  "name_fields": [
+   "FULLNAME"
+  ],
+  "route_fields": [
+   "ROADWAY",
+   "ROUTEID",
+   "ROAD_ID"
+  ],
+  "fields": {
+   "id": "ROADWAY / ROUTEID",
+   "cls": "FSYSTEM (functional system)",
+   "ownership": "OWNERSHIP",
+   "lanes": "THROUGHLANES",
+   "surface": "SURFACETYPE / GENSURFACE",
+   "source": "SOURCEAGENCY",
+   "year": "ULRS_YEAR",
+   "county_fips": "CO_NUM_FIPS"
+  },
+  "source_mix": {
+   "US CENSUS BUREAU": 234965,
+   "OSM": 80583,
+   "MIAMI-DADE COUNTY": 64622,
+   "LEE COUNTY": 34950,
+   "PALM BEACH COUNTY": 23230,
+   "FDOT": 20581,
+   "CHARLOTTE COUNTY": 16829,
+   "CITRUS COUNTY": 16094
+  },
+  "source_agencies": 33,
+  "data_year": 2025,
+  "vintage": "ULRS_YEAR 2025 on all 617,779 segments; layer data last edited 2026-10-05",
+  "live_test": "OK 2026-10-12: FULLNAME LIKE '%MAIN ST%' -> 'MAIN ST' ROADWAY 01_L_MAIN ST_2, CO_NUM_FIPS 12015, source CHARLOTTE COUNTY, FSYSTEM 7, geometry returned (WGS84)",
+  "terms": "FDOT open data, no warranty (FDOT GIS disclaimer)",
+  "caution": "Local streets are a merge of TIGER (US Census ~235k segs), OSM (~81k), county centerlines (~25 counties) and FDOT RCI (~21k). Names are present on 96.7% of segments. Not survey-grade; good for labeling.",
+  "alt_sources": [
+   {
+    "name": "FDOT RCI Roadways with Local Names",
+    "url": "https://gis.fdot.gov/arcgis/rest/services/RCI_Layers/FeatureServer/13",
+    "native_sr": "EPSG:26917 NAD83 UTM 17N",
+    "count": 23638,
+    "name_field": "NAME",
+    "county_field": "COUNTY (name)",
+    "note": "State-highway/RCI roads only, weekly; names from RCI LOCALNAM"
+   },
+   {
+    "name": "FDOT ARNOLD 2024 (RCI LRS + 2024 local roads)",
+    "url": "https://services1.arcgis.com/O1JpcwDW8sjYuddV/arcgis/rest/services/ARNOLD_LATEST/FeatureServer/0",
+    "native_sr": "EPSG:4326",
+    "count": 483065,
+    "name_field": "FULLNAME",
+    "note": "Previous-year version of the Unified LRS"
+   },
+   {
+    "name": "FDOT LRS Basemap Routes",
+    "url": "https://gis.fdot.gov/arcgis/rest/services/LRS_Routes/MapServer/0",
+    "native_sr": "NAD83 UTM 17N",
+    "note": "Route IDs only, no street names"
+   }
+  ],
+  "confirm_over": 20000,
+  "verified": "2026-10-12",
+  "notes": "Statewide, named, current-year. Use CO_NUM_FIPS (or a county polygon) to clip per county."
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Same entry as SC/GA/VA/TN. Added 2026-11-12 (rc31); box DXF-parse tested, not tested in Carlson or IntelliCAD.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}

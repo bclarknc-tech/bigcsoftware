@@ -1,0 +1,4203 @@
+{
+ "_meta": {
+  "state": "PA",
+  "target_wkid": 6565,
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PID:{pid}"
+  ],
+  "statewide_geometry_layer": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+  "status_legend": {
+   "ok": "owner+deed+PID live-verified",
+   "partial": "owner+PID (no deed) or subset coverage",
+   "missing": "no owner source found yet",
+   "unverified": "endpoint unreachable at test time"
+  },
+  "localities": 67,
+  "pass_summary": "First pass 2026-10-13: 24/67 with owner (35.8%), 19 ok, 5 partial, 43 missing. Control + roads done.",
+  "default_epsg": 6565,
+  "epsg_choices": [
+   6563,
+   6565,
+   2271,
+   2272
+  ],
+  "target_options": {
+   "north": 6563,
+   "south": 6565
+  },
+  "detect": {
+   "local": "PA"
+  },
+  "onemap_url": null,
+  "release": true
+ },
+ "counties": {
+  "Adams County": {
+   "fips": "42001",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://mapping.adamscountypa.gov/arcgis/rest/services/AGOL/CAMA_Parcels/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272
+   },
+   "fields": {
+    "owner": [
+     "SHORT_NAME"
+    ],
+    "deed_ref": "DEED_REF",
+    "deed_book": "Deed_Book",
+    "deed_page": "Deed_Page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Parcel_ID",
+    "pin": "Parcel_ID",
+    "acres": "DEEDED_ACRES",
+    "address": "COMBINED_SITUS"
+   },
+   "verified_full": true,
+   "record_count": 46944,
+   "source_name": "Adams County, PA GIS — official AGOL/CAMA_Parcels MapServer layer 0 (mapping.adamscountypa.gov; also published as Parcel_Owners FeatureServer/0 with the same owner/plat fields but without split Deed_Book/Deed_Page)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "county_filter": null,
+   "onemap_filter": null,
+   "owner_nonnull": 46707,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Allegheny County": {
+   "fips": "42003",
+   "status": "missing",
+   "source": "pasda",
+   "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/AlleghenyCounty/MapServer/25",
+   "layer_id": 25,
+   "native_sr": {
+    "wkid": 4269,
+    "latestWkid": 4269,
+    "xyTolerance": 8.983152841195215e-09,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -400,
+    "falseY": -400,
+    "xyUnits": 999999999.9999999,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 587044,
+   "data_year": "2026-10",
+   "source_name": "PASDA / Allegheny County Parcels 20261012 (geometry only)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Allegheny'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Armstrong County": {
+   "fips": "42005",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "record_count": null,
+   "data_year": null,
+   "source_name": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Beaver County": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.beavercountypa.gov/server/rest/services/InfoAtlas/Parcels_with_Owner/MapServer/22",
+   "layer_id": 22,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272
+   },
+   "fields": {
+    "owner": [
+     "Owner_Name1",
+     "Owner_Name2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "deed_book": "Book",
+    "deed_page": "Page",
+    "acres": "GIS_Ac",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 94093,
+   "data_year": "2026 (live county layer)",
+   "source_name": "Beaver County GIS - InfoAtlas Parcels_with_Owner",
+   "fips": "42007",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Bedford County": {
+   "fips": "42009",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services2.arcgis.com/tXFMtuwRfEDEFdnG/arcgis/rest/services/April2023Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "vcsWkid": 105790,
+    "latestVcsWkid": 3855
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAME",
+     "OWNER_NA_1"
+    ],
+    "deed_ref": null,
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "taxidnum"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 34225,
+   "data_year": "2023-07",
+   "source_name": "Bedford County PA Planning - Online Parcel Viewer tax parcels (April 2023 layer)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Bedford'",
+   "owner_nonnull": 34212,
+   "deed_nonnull": 33056,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_year_inst": "any",
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Berks County": {
+   "status": "fixed_pending_review",
+   "source": "pasda",
+   "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/BerksCounty/MapServer/6",
+   "layer_id": 6,
+   "native_sr": {
+    "wkid": 4269,
+    "latestWkid": 4269
+   },
+   "fields": {
+    "owner": [
+     "NAME1"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "deed_book": "DEEDBOOK",
+    "deed_page": "DEEDPAGE",
+    "acres": "ACREAGE",
+    "propid": "PROPID",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 156838,
+   "owner_nonnull": 156838,
+   "pid_nonnull": 156838,
+   "deed_nonnull": 156838,
+   "data_year": "2026-01 (layer Berks County - Parcels 202601)",
+   "source_name": "PASDA / Berks County - Parcels 202601",
+   "fips": "42011",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Berks'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_year_inst": "long",
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Blair County": {
+   "fips": "42013",
+   "status": "missing",
+   "source": "pasda",
+   "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/BlairCounty/MapServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 4269,
+    "latestWkid": 4269,
+    "xyTolerance": 8.983152841195215e-09,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -400,
+    "falseY": -400,
+    "xyUnits": 999999999.9999999,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 66128,
+   "data_year": "2026-06",
+   "source_name": "PASDA / Blair County Parcels 202606 (geometry only)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Blair'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Bradford County": {
+   "fips": "42015",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://bcmaps.bradfordco.org/arcgis/rest/services/Parcel/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102728,
+    "latestWkid": 2271,
+    "xyTolerance": 0.0032808333333333335,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -118829700,
+    "falseY": -96587800,
+    "xyUnits": 3048.0060960121914,
+    "falseZ": 0,
+    "zUnits": 1,
+    "falseM": 0,
+    "mUnits": 1
+   },
+   "fields": {
+    "owner": [
+     "NAME"
+    ],
+    "deed_ref": "Instrument",
+    "deed_book": "DEEDBOOK",
+    "deed_page": "DEEDPAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "ParcelJoin"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 34935,
+   "data_year": "2025-11",
+   "source_name": "Bradford County PA Community Planning & Mapping - TaxParcels",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Bradford'",
+   "owner_nonnull": 34918,
+   "deed_nonnull": 15575,
+   "deed_ref_format": "Instrument number preferred when DEEDBOOK blank e.g. '2016119250'; DEEDBOOK sometimes holds instrument",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Bucks County": {
+   "fips": "42017",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services3.arcgis.com/SP47Tddf7RK32lBU/arcgis/rest/services/Bucks_County_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272
+   },
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCEL_NUM"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 237546,
+   "data_year": "2026-05",
+   "source_name": "Bucks County Parcels (BucksCountyGIS AGOL)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Bucks'",
+   "owner_nonnull": 237270,
+   "pid_nonnull": 237545,
+   "deed_nonnull": 216025,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Butler County": {
+   "fips": "42019",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://geo.co.butler.pa.us/server/rest/services/PAT/ParcelAndBoundary/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272,
+    "xyTolerance": 0.003280833333333333,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -119214200,
+    "falseY": -96198500,
+    "xyUnits": 3048.0060960121928,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": "DeedInfo",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "TaxMapNumber"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 96584,
+   "data_year": "2023-04",
+   "source_name": "Butler County PAT ParcelAndBoundary (county)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Butler'",
+   "owner_nonnull": 95470,
+   "pid_nonnull": 96584,
+   "deed_nonnull": 95386,
+   "deed_ref_format": "Instruno instrument number e.g. '201006160013079'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<n>(?:19|20)\\d{10,})\\s*$",
+     "book": "INST",
+     "page": "{n}",
+     "format": "tx_inst"
+    },
+    {
+     "re": "^\\s*(?P<book>\\d{1,4})\\s*[-/ ]\\s*(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "buildings_source": "none"
+  },
+  "Cambria County": {
+   "fips": "42021",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services1.arcgis.com/Fw15y9AZK02r2ZNA/arcgis/rest/services/GIS_Layers/FeatureServer/8",
+   "layer_id": 8,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAME_1",
+     "OWNER_NAME_2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "TxControlID",
+    "pin": "TxControlID",
+    "acres": "ACREAGE",
+    "address": "SITUS_DESC_1"
+   },
+   "verified_full": true,
+   "record_count": 85345,
+   "source_name": "Cambria County, PA GIS Center — official GIS_Layers FeatureServer layer 8 Surface Owners (org Fw15y9AZK02r2ZNA / cambriapa.maps.arcgis.com). Layer 7 Tax Parcels is geometry + PARCELID only; layer 9 is mineral owners, not used.",
+   "template": "default",
+   "plat_prefix": "PB",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "county_filter": null,
+   "onemap_filter": null,
+   "owner_nonnull": 85345,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Cameron County": {
+   "fips": "42023",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services5.arcgis.com/NN66N9nlzcCXJ9he/arcgis/rest/services/Parcels_(September_2025)/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OwnerName1",
+     "OwnerName2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIN"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "record_count": null,
+   "data_year": null,
+   "source_name": "Cameron County Parcels (September 2025) (county AGOL)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Carbon County": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.carboncounty.com/arcgis/rest/services/Parcels_Universal/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272
+   },
+   "fields": {
+    "owner": [
+     "Owner",
+     "SecondOwner"
+    ],
+    "deed_ref": "DeedBook",
+    "plat_ref": null,
+    "pid": "PIN",
+    "deed_book": null,
+    "deed_page": null,
+    "acres": "DeedAcr",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "deed_ref_format": "'book-page' e.g. '2278-604' in DeedBook field",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 48665,
+   "data_year": "2026 (live county Parcels_Universal)",
+   "source_name": "Carbon County GIS - Parcels_Universal",
+   "fips": "42025",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Centre County": {
+   "fips": "42027",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gissites4.centrecountypa.gov/arcgis/rest/services/DataScoutParcels/MapServer/10",
+   "layer_id": 10,
+   "native_sr": {
+    "wkid": 102728,
+    "latestWkid": 2271
+   },
+   "fields": {
+    "owner": [
+     "Name"
+    ],
+    "deed_ref": "DeedBook",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "TAXIDNUM",
+    "pin": "TAXIDNUM",
+    "acres": "Cama_acres",
+    "address": "Location"
+   },
+   "verified_full": true,
+   "record_count": 62287,
+   "source_name": "Centre County, PA GIS — official DataScoutParcels MapServer layer 10 Parcels (gissites4.centrecountypa.gov). PublicParcelViewer/65 and OpenData ParcelsPlus strip or omit owner names.",
+   "template": "default",
+   "plat_prefix": "PB",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "county_filter": null,
+   "onemap_filter": null,
+   "join": {
+    "url": "https://gissites4.centrecountypa.gov/arcgis/rest/services/OpenData/MapServer/0",
+    "key": "TAXIDNUM",
+    "table_key": "TAXIDNUM"
+   },
+   "owner_nonnull": 61372,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Chester County": {
+   "fips": "42029",
+   "status": "fixed_pending_review",
+   "source": "pasda",
+   "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/ChesterCounty/MapServer/11",
+   "layer_id": 11,
+   "native_sr": {
+    "wkid": 4269,
+    "latestWkid": 4269,
+    "xyTolerance": 8.983152841195215e-09,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -400,
+    "falseY": -400,
+    "xyUnits": 999999999.9999999,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "OWN1",
+     "OWN2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN_MAP",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 194767,
+   "data_year": "2026-10",
+   "source_name": "PASDA / Chester County Parcels 202610",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Chester'",
+   "owner_nonnull": 193293,
+   "pid_nonnull": 194767,
+   "deed_nonnull": 190553,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Clarion County": {
+   "fips": "42031",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services1.arcgis.com/vPnMbqTxbhNgGUqs/arcgis/rest/services/Parcels/FeatureServer/6",
+   "layer_id": 6,
+   "native_sr": {
+    "wkid": 102728,
+    "latestWkid": 2271
+   },
+   "fields": {
+    "owner": [
+     "Current_Owner"
+    ],
+    "deed_ref": null,
+    "deed_book": "Book",
+    "deed_page": "Page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Parcel_Number",
+    "pin": "Parcel_Number",
+    "acres": "Deed_Acres",
+    "address": "Situs_Address"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 26057,
+   "source_name": "Clarion County GIS — Parcels / Parcel_Permanent (official Clarion County Parcel Viewer Experience layer, owner eshearer_cc)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "source_type": "official_public_parcel_viewer",
+   "county_filter": null,
+   "owner_nonnull": 25978,
+   "sample_owner": "GOLBA DONALD P",
+   "sample_xy_wgs84": [
+    -79.29189895059787,
+    41.3580271300222
+   ],
+   "deed_plat_sample": "Book 705, Page 72 (GOLBA DONALD P / 10-004210)",
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Clearfield County": {
+   "fips": "42033",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://arcgis.clearfieldco.org/ccserver/rest/services/Hosted/ClearfieldParcels/FeatureServer/249",
+   "layer_id": 249,
+   "native_sr": {
+    "wkid": 102728,
+    "latestWkid": 2271
+   },
+   "fields": {
+    "owner": [
+     "full_name"
+    ],
+    "deed_ref": "deed",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "pin",
+    "pin": "pin",
+    "acres": "deed_acres",
+    "address": "situs"
+   },
+   "verified_full": true,
+   "record_count": 70216,
+   "source_name": "Clearfield County, PA GIS — official Hosted/ClearfieldParcels FeatureServer layer 249 (arcgis.clearfieldco.org/ccserver), the parcel layer in the county Online Mapping Viewer 7 (item 293f2854dbd9410386c9a8ba376f5c6c). Prefer this over Web_Viewer_Update_2025/MapServer/3 ClearfieldParcels2_25 (70,037 records, fewer owners/deeds, no pagination) and over clearfieldco.org/arcgis which returns HTTP 500.",
+   "template": "default",
+   "plat_prefix": "PB",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "county_filter": null,
+   "onemap_filter": null,
+   "owner_nonnull": 70216,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Clinton County": {
+   "fips": "42035",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://maps.clintoncountypa.gov/arcgis/rest/services/Testing/PARCELS417/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102728,
+    "latestWkid": 2271
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": "BookPage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCEL_ID",
+    "pin": "PARCEL_ID",
+    "acres": "ACREAGE",
+    "address": "ADDRESS"
+   },
+   "verified_full": true,
+   "record_count": 33359,
+   "source_name": "Clinton County, PA GIS — official PARCELS417 MapServer layer 0 on maps.clintoncountypa.gov (same attributes as Testing/VISION_SERVICE_FEATURE layer 3 VISION_SERVICE_PARCEL)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "county_filter": null,
+   "onemap_filter": null,
+   "owner_nonnull": 33234,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Columbia County": {
+   "fips": "42037",
+   "status": "missing",
+   "source": "pasda",
+   "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/ColumbiaCounty/MapServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 4269,
+    "latestWkid": 4269,
+    "xyTolerance": 8.983152841195215e-09,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -400,
+    "falseY": -400,
+    "xyUnits": 999999999.9999999,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 34249,
+   "data_year": "2024-02",
+   "source_name": "PASDA / Columbia County Tax Parcels 202402 (geometry only)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Columbia'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Crawford County": {
+   "fips": "42039",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.crawfordcountypa.net/arcgis/rest/services/CivQuest_Public/MapServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "xyTolerance": 0.001,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -20037700,
+    "falseY": -30241100,
+    "xyUnits": 10000,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME1",
+     "OWN_NAME2"
+    ],
+    "deed_ref": null,
+    "deed_book": "SLH_BOOK",
+    "deed_page": "SLH_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "CAMA_PIN"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 59209,
+   "data_year": "2024-03",
+   "source_name": "Crawford County CivQuest_Public Tax Parcels (county)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Crawford'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Cumberland County": {
+   "fips": "42041",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services1.arcgis.com/1Cfo0re3un0w6a30/arcgis/rest/services/Tax_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272
+   },
+   "fields": {
+    "owner": [
+     "OWNER"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIN"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 104747,
+   "data_year": "2026-01",
+   "source_name": "Cumberland County Tax Parcels (gis_ccpa AGOL)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Cumberland'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Dauphin County": {
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services2.arcgis.com/EEtiX55QzkHKYQKY/arcgis/rest/services/DC_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272
+   },
+   "fields": {
+    "owner": [
+     "last_name"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PID",
+    "owner_last_first_pairs": [
+     [
+      "last_name",
+      "first_name",
+      "middle_initial"
+     ]
+    ]
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 116764,
+   "owner_nonnull": 116764,
+   "pid_nonnull": 116764,
+   "data_year": "2022-05 (layer DauphinCountyParcels202205)",
+   "source_name": "Dauphin County GIS - DC_Parcels + Tax_Roll_Table (county AGOL)",
+   "fips": "42043",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Dauphin'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "join": {
+    "url": "https://services2.arcgis.com/EEtiX55QzkHKYQKY/arcgis/rest/services/Tax_Roll_Table/FeatureServer/0",
+    "key": "PID",
+    "table_key": "property_id",
+    "override": true
+   },
+   "buildings_source": "none"
+  },
+  "Delaware County": {
+   "fips": "42045",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "record_count": null,
+   "data_year": null,
+   "source_name": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Elk County": {
+   "fips": "42047",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "record_count": null,
+   "data_year": null,
+   "source_name": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Erie County": {
+   "fips": "42049",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.eriecountypa.gov/server/rest/services/Hosted/TaxParcel049_Final_WFL1/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "owner1",
+     "owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "book",
+    "deed_page": "page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "taxpin",
+    "pin": "taxpin",
+    "acres": "acres",
+    "address": "fullstreet"
+   },
+   "verified_full": true,
+   "record_count": 113168,
+   "source_name": "Erie County, PA GIS — Hosted TaxParcel049_Final_WFL1 layer 1 (official TaxParcel049 Final web map, owner ErieCoGIS / gis.eriecountypa.gov)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "county_filter": null,
+   "onemap_filter": null,
+   "owner_nonnull": 113168,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Fayette County": {
+   "fips": "42051",
+   "status": "missing",
+   "source": "pasda",
+   "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/FayetteCounty/MapServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 4269,
+    "latestWkid": 4269,
+    "xyTolerance": 8.983152841195215e-09,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -400,
+    "falseY": -400,
+    "xyUnits": 999999999.9999999,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "TAXIDNUM",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 78007,
+   "data_year": "2026-02",
+   "source_name": "PASDA / Fayette County Parcels region 202602 (TAXIDNUM only)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Fayette'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Forest County": {
+   "fips": "42053",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services8.arcgis.com/3SC5aoxCO7AZDldv/arcgis/rest/services/10_12_26/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "BOOK",
+    "deed_page": "PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCEL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 11320,
+   "data_year": "2026-02",
+   "source_name": "Forest County parcels 10-12-26 (county viewer AGOL)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Forest'",
+   "owner_nonnull": 11280,
+   "pid_nonnull": 11270,
+   "deed_nonnull": 4182,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Franklin County": {
+   "status": "fixed_pending_review",
+   "source": "pasda",
+   "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/FranklinCounty/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 4269,
+    "latestWkid": 4269
+   },
+   "fields": {
+    "owner": [
+     "FULL_OWNER",
+     "SECOND_OWN"
+    ],
+    "deed_ref": "SLH_DEED_B",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "CONTROL_NU",
+    "pin": "CONTROL_NU",
+    "acres": "BASE_ACRES",
+    "address": "FULL_SITUS"
+   },
+   "deed_ref_format": "'book-page' e.g. '0848-0320' in SLH_DEED_B",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 69390,
+   "data_year": "2026-06 (layer Franklin County Parcels 202606)",
+   "source_name": "PASDA / Franklin County Parcels 202606 (official county CAMA attributes published on PASDA). County tax-parcel PLUS at fcgis.franklincountypa.gov is subscription; no public county REST root was found on this pass.",
+   "fips": "42055",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Franklin'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_year_inst": "long",
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "owner_nonnull": 69098,
+   "buildings_source": "none"
+  },
+  "Fulton County": {
+   "fips": "42057",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services6.arcgis.com/pcp4UiBBXQK2kACC/arcgis/rest/services/Fulton_Parcels/FeatureServer/6",
+   "layer_id": 6,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272
+   },
+   "fields": {
+    "owner": [
+     "Deeded_Nam"
+    ],
+    "deed_ref": "Deed_Book_",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Parcel_Num"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 20313,
+   "data_year": "2021-10",
+   "source_name": "Fulton County Fulton_Parcels (county map.php viewer AGOL)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Fulton'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*0*(?P<book>\\d+)\\s*-\\s*0*(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Greene County": {
+   "fips": "42059",
+   "status": "fixed_pending_review",
+   "source": "county_vgsi",
+   "url": "https://arcgis.vgsi.com/server/rest/services/Greene_County_PA/GreeneCountyPAPropMap/MapServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "owner_1",
+     "owner_2"
+    ],
+    "deed_ref": "deed_bk_pg",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "taxid"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "record_count": null,
+   "data_year": null,
+   "source_name": "Greene County PA property map (Vision Government Solutions host)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Huntingdon County": {
+   "fips": "42061",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services3.arcgis.com/liWtJPxLI3mlx8pH/arcgis/rest/services/Property_Lines/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272
+   },
+   "fields": {
+    "owner": [
+     "Owner_Name"
+    ],
+    "deed_ref": null,
+    "deed_book": "Deed_Book",
+    "deed_page": "Deed_Page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Tax_Map"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "record_count": null,
+   "data_year": null,
+   "source_name": "Huntingdon County ParcelswithCAMA (county AGOL)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Indiana County": {
+   "status": "fixed_pending_review",
+   "source": "pasda",
+   "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/IndianaCounty/MapServer/5",
+   "layer_id": 5,
+   "native_sr": {
+    "wkid": 4269,
+    "latestWkid": 4269
+   },
+   "fields": {
+    "owner": [
+     "LAST_NAME",
+     "FIRST_NAME"
+    ],
+    "deed_ref": "DEED_REF",
+    "plat_ref": null,
+    "pid": "PARCEL_ID",
+    "deed_book": null,
+    "deed_page": null,
+    "gis_pin": "GIS_PIN",
+    "plat_book": null,
+    "plat_page": null,
+    "owner_last_first_pairs": [
+     [
+      "LAST_NAME",
+      "FIRST_NAME"
+     ]
+    ]
+   },
+   "deed_ref_format": "'book-page' e.g. '1141-000027' (some rows blank)",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 43993,
+   "owner_nonnull": 43993,
+   "data_year": "2023-11 (layer Indiana County - Parcels 202311)",
+   "source_name": "PASDA / Indiana County Parcels 202311",
+   "fips": "42063",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Indiana'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_year_inst": "long",
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Jefferson County": {
+   "status": "fixed_pending_review",
+   "source": "agol",
+   "url": "https://services1.arcgis.com/qXvbYftT9ld1YWzi/arcgis/rest/services/Jefferson_County_Parcels_View/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ParcelId",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 33556,
+   "owner_nonnull": 32794,
+   "data_year": "2026 (AGOL Jefferson_County_Parcels_View)",
+   "source_name": "Jefferson County Parcels View (AGOL)",
+   "fips": "42065",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Juniata County": {
+   "fips": "42067",
+   "status": "fixed_pending_review",
+   "source": "pasda",
+   "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/JuniataCounty/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 4269,
+    "latestWkid": 4269,
+    "xyTolerance": 8.070135787284281e-09,
+    "zTolerance": 2,
+    "mTolerance": 2,
+    "falseX": -400,
+    "falseY": -400,
+    "xyUnits": 11258999068426.24,
+    "falseZ": 0,
+    "zUnits": 1,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "Owners_Nam"
+    ],
+    "deed_ref": "Instrument",
+    "plat_ref": null,
+    "pid": "PIN",
+    "deed_book": "Deed_Book",
+    "deed_page": "Deed_Page",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 13624,
+   "data_year": "2024-08",
+   "source_name": "PASDA / Juniata County - Parcels 202408",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Juniata'",
+   "owner_nonnull": 13620,
+   "pid_nonnull": 13623,
+   "deed_nonnull": 13350,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Lackawanna County": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.lackawannacounty.org/arcgis/rest/services/Tyler/LandRecords_Tyler/MapServer/110",
+   "layer_id": 110,
+   "native_sr": {
+    "wkt": "NAD_1983_StatePlane_Pennsylvania_North_FIPS_3701_Feet"
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ParcelPIN",
+    "deed_book": "DEEDBOOKNO",
+    "deed_page": "DeedPageNo",
+    "acres": "ASSESSEDACRES",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 101884,
+   "data_year": "2026 (live Tyler LandRecords)",
+   "source_name": "Lackawanna County GIS - Tyler LandRecords_Tyler Parcels",
+   "fips": "42069",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Lancaster County": {
+   "fips": "42071",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services1.arcgis.com/I6XnrlnguPDoEObn/arcgis/rest/services/Parcels_HUBnew/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAME"
+    ],
+    "deed_ref": "DEED_BK_PG",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIN",
+    "pin": "PIN",
+    "acres": "DEED_ACRES",
+    "address": "ADDRESS"
+   },
+   "verified_full": true,
+   "record_count": 189152,
+   "source_name": "Lancaster County GIS — Parcels_HUBnew (official LanCo View 2.0 Properties layer, owner emirth_lancastercountypa)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_sentinels": [
+    "J-999-999"
+   ],
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "county_filter": null,
+   "onemap_filter": null,
+   "owner_nonnull": 189106,
+   "plat_format": null,
+   "name_rules": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Lawrence County": {
+   "fips": "42073",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "record_count": null,
+   "data_year": null,
+   "source_name": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Lebanon County": {
+   "fips": "42075",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://utility.arcgis.com/usrsvcs/servers/7072ca11c43c43feb1ab453851e847b9/rest/services/LandRecords/TaxParcels/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "xyTolerance": 0.001,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -20037700,
+    "falseY": -30241100,
+    "xyUnits": 10000,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "OWNER",
+     "SECOND_LIS"
+    ],
+    "deed_ref": "DEED_BOOK_",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "MAP_NUMBER"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "record_count": null,
+   "data_year": null,
+   "source_name": "Lebanon County GIS - Property Lines (county lccgis service)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_ref_patterns": [
+    {
+     "re": "^0*(?P<book>[1-9]\\d*)-0*(?P<page>\\d+)$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Lehigh County": {
+   "fips": "42077",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services1.arcgis.com/XWDNR4PQlDQwrRCL/arcgis/rest/services/ATestParcel/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272
+   },
+   "fields": {
+    "owner": [
+     "NAMOWN"
+    ],
+    "deed_ref": "INSTNUM",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIN",
+    "pin": "PIN",
+    "acres": "ACRES",
+    "address": "ADDRESS"
+   },
+   "verified_full": true,
+   "record_count": 127035,
+   "source_name": "Lehigh County GIS — official Assessment Parcels (ATestParcel): polygon boundaries joined to Owner/assessment points on PIN (owner LehighCountyPA; used by the county Parcel Viewer)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "county_filter": null,
+   "onemap_filter": null,
+   "join": {
+    "url": "https://services1.arcgis.com/XWDNR4PQlDQwrRCL/arcgis/rest/services/ATestParcel/FeatureServer/0",
+    "key": "PIN",
+    "table_key": "PIN",
+    "override": true,
+    "no_row": "drop_owner"
+   },
+   "owner_nonnull": 135936,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Luzerne County": {
+   "fips": "42079",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.luzernecounty.org/server/rest/services/PublicMap/MapServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "xyTolerance": 0.001,
+    "zTolerance": 2,
+    "mTolerance": 2,
+    "falseX": -20037700,
+    "falseY": -30241100,
+    "xyUnits": 148923141.92838538,
+    "falseZ": 0,
+    "zUnits": 1,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "PUB_OWNER"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIN"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "record_count": null,
+   "data_year": null,
+   "source_name": "Luzerne County PublicMap TAX PARCELS (county)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Lycoming County": {
+   "fips": "42081",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.lyco.org/arcgis/rest/services/Parcels/FeatureServer/4",
+   "layer_id": 4,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "xyTolerance": 0.001,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -20037700,
+    "falseY": -30241100,
+    "xyUnits": 10000,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "FULL_NAME"
+    ],
+    "deed_ref": "DEED",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "TXID_NMBR"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 51439,
+   "data_year": "2026-03",
+   "source_name": "Lycoming County LycoMap Parcels (county)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Lycoming'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*0*(?P<book>\\d+)\\s*-\\s*0*(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "McKean County": {
+   "fips": "42083",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.mckeancountypa.gov/server/rest/services/ParcelViewer/BPV3_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102728,
+    "latestWkid": 2271
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": "DeedBookPage",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "pin",
+    "pin": "pin",
+    "acres": "Acres",
+    "address": "SitusDescription"
+   },
+   "verified_full": true,
+   "record_count": 27527,
+   "source_name": "McKean County, PA GIS — official Parcel Viewer BPV3_Parcels: Parcels_Publishing polygons joined to CAMA_08_2025 on pin = GISParcelID (gis.mckeancountypa.gov)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "county_filter": null,
+   "onemap_filter": null,
+   "join": {
+    "url": "https://gis.mckeancountypa.gov/server/rest/services/ParcelViewer/BPV3_Parcels/FeatureServer/2",
+    "key": "pin",
+    "table_key": "GISParcelID",
+    "override": true,
+    "no_row": "drop_owner"
+   },
+   "owner_nonnull": 28581,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Mercer County": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.mercercountypa.gov/mercserver/rest/services/Land_Records_Publishing/FeatureServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 102728,
+    "latestWkid": 2271,
+    "vcsWkid": 105703,
+    "latestVcsWkid": 6360,
+    "xyTolerance": 0.003280833333333333,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -118829700,
+    "falseY": -96587800,
+    "xyUnits": 3048.0060960121928,
+    "falseZ": -100000,
+    "zUnits": 3048.006096012192,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "Owner_Name_1",
+     "Owner_Name_2"
+    ],
+    "deed_ref": null,
+    "deed_book": "Deed_Book",
+    "deed_page": "Deed_Page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Parcel_Id"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 58006,
+   "owner_nonnull": 58006,
+   "pid_nonnull": 58006,
+   "data_year": "2026-03 (Mercer County Tax Parcels 202603)",
+   "source_name": "Mercer County Land_Records_Publishing Surface Owners (county)",
+   "fips": "42085",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Mercer'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Mifflin County": {
+   "fips": "42087",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.mifflincountypa.gov/arcgis/rest/services/Hosted/parcels_102126/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "short_name",
+     "name_2"
+    ],
+    "deed_ref": "deedbook",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "account",
+    "pin": "account",
+    "acres": "deed_acres",
+    "address": "situs_comb"
+   },
+   "verified_full": true,
+   "record_count": 24600,
+   "source_name": "Mifflin County, PA GIS — official Hosted/parcels_102126 FeatureServer layer 0 (gis.mifflincountypa.gov, used by the county Experience Builder parcel viewer; dated 2026-10-21)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "county_filter": null,
+   "onemap_filter": null,
+   "owner_nonnull": 24600,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Monroe County": {
+   "fips": "42089",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://www.monroegis.org/webadaptor/rest/services/Tylers_IAS/Parcels_PublicView/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNER"
+    ],
+    "deed_ref": null,
+    "deed_book": "DEEDBOOK",
+    "deed_page": "DEEDPAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARID",
+    "pin": "PARID",
+    "acres": "ACREAGE",
+    "address": "LOCATION"
+   },
+   "verified_full": true,
+   "record_count": 98206,
+   "source_name": "Monroe County, PA GIS — official Tylers_IAS/Parcels_PublicView MapServer layer 0 Tax Parcels (monroegis.org). The broader public/full Parcels layers include extra GIS-only polygons without PARID/deed; this public assessment view is the county-first owner+deed source.",
+   "template": "default",
+   "plat_prefix": "PB",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "county_filter": null,
+   "onemap_filter": null,
+   "owner_nonnull": 98079,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Montgomery County": {
+   "fips": "42091",
+   "status": "fixed_pending_review",
+   "source": "pasda",
+   "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/MontgomeryCounty/MapServer/14",
+   "layer_id": 14,
+   "native_sr": {
+    "wkid": 4269,
+    "latestWkid": 4269,
+    "xyTolerance": 8.983152841195215e-09,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -400,
+    "falseY": -400,
+    "xyUnits": 999999999.9999999,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "OWN1",
+     "OWN2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "TAXPIN",
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE",
+    "parcel": "PARCEL",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 309732,
+   "data_year": "2025-12",
+   "source_name": "PASDA / Montgomery County - Parcels 202512",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Montgomery'",
+   "owner_nonnull": 301864,
+   "deed_nonnull": 296741,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Montour County": {
+   "fips": "42093",
+   "status": "missing",
+   "source": "pasda",
+   "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/MontourCounty/MapServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 4269,
+    "latestWkid": 4269,
+    "xyTolerance": 8.983152841195215e-09,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -400,
+    "falseY": -400,
+    "xyUnits": 999999999.9999999,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 8983,
+   "data_year": "2024-02",
+   "source_name": "PASDA / Montour County Tax Parcels 202402 (geometry only)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Montour'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Northampton County": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.northamptoncounty.org/arcgisweb/rest/services/Assessment_Services/Land_Records_LGM/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272,
+    "xyTolerance": 0.003280833333333333,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -119214200,
+    "falseY": -96198500,
+    "xyUnits": 3048.0060960121928,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "OWNERS_NAME_1",
+     "OWNERS_NAME_2"
+    ],
+    "deed_ref": "DEED",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCEL_ID"
+   },
+   "deed_ref_format": "instrument-style e.g. '2021-1 119595' in DEED field",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 122379,
+   "data_year": "2026 (AGOL Northampton_Parcels)",
+   "source_name": "Northampton County Land_Records_LGM Parcels (county)",
+   "fips": "42095",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_year_inst": "any",
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<y>(?:19|20)\\d{2})-?(?P<v>\\d)\\s+(?P<n>\\d+)\\s*$",
+     "book": "INST",
+     "page": "{y}-{v} {n}",
+     "format": "tx_inst"
+    },
+    {
+     "re": "^\\s*(?P<book>\\d{1,4})\\s+0*(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "buildings_source": "none"
+  },
+  "Northumberland County": {
+   "fips": "42097",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "record_count": null,
+   "data_year": null,
+   "source_name": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Perry County": {
+   "fips": "42099",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services.arcgis.com/b1rOZp0BNgsXJwyv/arcgis/rest/services/Perry_County_Web_Map_WFL1/FeatureServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "SLH_DEEDED"
+    ],
+    "deed_ref": "SLH_BOOK",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIN"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 24691,
+   "data_year": "2021-08",
+   "source_name": "Perry County PA GIS - Web Map parcels",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Perry'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_ref_patterns": [
+    {
+     "re": "^(?P<n>(?:19|20)\\d{7,})$",
+     "book": "INST",
+     "page": "{n}",
+     "format": "tx_inst"
+    },
+    {
+     "re": "^(?P<n>(?:19|20)\\d\\d-0*\\d+)$",
+     "book": "INST",
+     "page": "{n}",
+     "format": "tx_inst"
+    },
+    {
+     "re": "^0*(?P<book>[1-9]\\d*)-0*(?P<page>\\d+)$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Philadelphia": {
+   "status": "fixed_pending_review",
+   "source": "city_dor_parcels+opa_join",
+   "url": "https://services.arcgis.com/fLeGjb7u4uXqeF9q/arcgis/rest/services/DOR_Parcel/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "owner_1",
+     "owner_2"
+    ],
+    "deed_ref": "book_and_page",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcel_number",
+    "pin": "pin"
+   },
+   "deed_ref_format": "OPA book_and_page combined string e.g. '54591973' (parse per OPA convention)",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 583713,
+   "data_year": "2026 (OPA_PROPERTIES_PUBLIC live)",
+   "source_name": "City of Philadelphia Department of Records parcels (active) joined to OPA property records on PIN",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "alt_pasda": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/CityPhilly/MapServer/14",
+   "fips": "42101",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": "status=1",
+   "onemap_filter": "status=1",
+   "join": {
+    "url": "https://services.arcgis.com/fLeGjb7u4uXqeF9q/arcgis/rest/services/OPA_PROPERTIES_PUBLIC/FeatureServer/0",
+    "key": "pin",
+    "table_key": "pin",
+    "override": true,
+    "no_row": "drop_owner"
+   },
+   "buildings_source": "none"
+  },
+  "Pike County": {
+   "fips": "42103",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.pikepa.org/arcgis/rest/services/PikeCo_Parcels/MapServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "xyTolerance": 0.001,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -20037700,
+    "falseY": -30241100,
+    "xyUnits": 148923141.92838538,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "Name"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "MAP_JOIN"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "record_count": null,
+   "data_year": null,
+   "source_name": "Pike County PikeCo_Parcels (county)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Potter County": {
+   "fips": "42105",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://maps.pottercountypa.net/arcgis/rest/services/TaxParcel/TaxParcels/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102728,
+    "latestWkid": 2271,
+    "xyTolerance": 0.003280833333333333,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -118829700,
+    "falseY": -96587800,
+    "xyUnits": 3048.0060960121928,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "Owner_Name_1",
+     "Owner_Name_2"
+    ],
+    "deed_ref": null,
+    "deed_book": "Deed_Book",
+    "deed_page": "Deed_Page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Map_Number"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "record_count": null,
+   "data_year": null,
+   "source_name": "Potter County TaxParcels (county)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Schuylkill County": {
+   "fips": "42107",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services.co.schuylkill.pa.us/arcgis/rest/services/ParcelLocator/Parcel_CAMA_View/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "falseM": -100000,
+    "xyTolerance": 0.003280833333333333,
+    "mUnits": 10000,
+    "zUnits": 10000,
+    "latestWkid": 2272,
+    "zTolerance": 0.001,
+    "wkid": 102729,
+    "xyUnits": 3048.0060960121928,
+    "mTolerance": 0.001,
+    "falseX": -119214200,
+    "falseY": -96198500,
+    "falseZ": -100000
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAME_1",
+     "OWNER_NAME_2"
+    ],
+    "deed_ref": "DEED_REFERENCE",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCEL_NUMBER"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "record_count": null,
+   "data_year": null,
+   "source_name": "Schuylkill County ParcelLocator Parcel_CAMA_View (county)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>\\d+)\\s*-\\s*(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Snyder County": {
+   "fips": "42109",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services1.arcgis.com/oX0kbxItOpLtURFa/arcgis/rest/services/SnyderOnlineParcels_July302025/FeatureServer/2",
+   "layer_id": 2,
+   "native_sr": {
+    "wkid": 102728,
+    "latestWkid": 2271
+   },
+   "fields": {
+    "owner": [
+     "Owner",
+     "Owner2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIN"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 24192,
+   "data_year": "2026-05",
+   "source_name": "Union/Snyder joint county GIS - Snyder online parcels (maintained by Union County GIS for Snyder)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Snyder'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Somerset County": {
+   "fips": "42111",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services7.arcgis.com/3t8a8pNihhGS6bDO/arcgis/rest/services/Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272
+   },
+   "fields": {
+    "owner": [
+     "NAME1",
+     "NAME2"
+    ],
+    "deed_ref": "DEEDBP",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "MAPNUM"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "record_count": null,
+   "data_year": null,
+   "source_name": "Somerset County Parcels (somersetpa AGOL, county temporary viewer)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>\\d+)\\s*/\\s*(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Sullivan County": {
+   "fips": "42113",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "layer_id": null,
+   "native_sr": null,
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "record_count": null,
+   "data_year": null,
+   "source_name": null,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Susquehanna County": {
+   "fips": "42115",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services5.arcgis.com/lmuC4NmaSm4GH9h5/arcgis/rest/services/Parcel/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102728,
+    "latestWkid": 2271
+   },
+   "fields": {
+    "owner": [
+     "LAST_NAME",
+     "FIRST_NAME"
+    ],
+    "deed_ref": "DEED_REF",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIN",
+    "owner_last_first_pairs": [
+     [
+      "LAST_NAME",
+      "FIRST_NAME"
+     ]
+    ]
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "record_count": null,
+   "data_year": null,
+   "source_name": "Susquehanna County Parcel (SusqCoGIS AGOL)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<n>(?:19|20)\\d{7})\\s*$",
+     "book": "INST",
+     "page": "{n}",
+     "format": "tx_inst"
+    },
+    {
+     "re": "^\\s*(?P<book>\\d{1,4})\\s*[-/ ]\\s*(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Tioga County": {
+   "fips": "42117",
+   "status": "fixed_pending_review",
+   "source": "county_vgsi",
+   "url": "https://arcgis.vgsi.com/server/rest/services/Tioga_County_PA/TiogaCountyPAPropMap/MapServer/5",
+   "layer_id": 5,
+   "native_sr": {
+    "wkid": 2271
+   },
+   "fields": {
+    "owner": [
+     "slh_own_name",
+     "slh_co_own_name"
+    ],
+    "deed_ref": "slh_book_pg",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": false
+   },
+   "verified_full": false,
+   "record_count": null,
+   "data_year": null,
+   "source_name": "Tioga County PA property map (Vision Government Solutions host)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Union County": {
+   "fips": "42119",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.unionco.org/server/rest/services/LandRecords/Union_Land_Records_3_6_26_Update/MapServer/9",
+   "layer_id": 9,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "xyTolerance": 0.001,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -20037700,
+    "falseY": -30241100,
+    "xyUnits": 10000,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "OwnName"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "ParcelNumber"
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 20405,
+   "data_year": "2026-05",
+   "source_name": "Union County PA GIS - Union Land Records",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Union'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Venango County": {
+   "fips": "42121",
+   "status": "missing",
+   "source": "pasda",
+   "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/VenangoCounty/MapServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 4269,
+    "latestWkid": 4269,
+    "xyTolerance": 8.983152841195213e-09,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -400,
+    "falseY": -400,
+    "xyUnits": 11258999068426.24,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ParcelNumb",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 38479,
+   "data_year": "2023-06",
+   "source_name": "PASDA / Venango Parcels 202306 (geometry only)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Venango'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Warren County": {
+   "fips": "42123",
+   "status": "missing",
+   "source": "pasda",
+   "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/WarrenCounty/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 4269,
+    "latestWkid": 4269,
+    "xyTolerance": 8.983152841195213e-09,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -400,
+    "falseY": -400,
+    "xyUnits": 11258999068426.24,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 31234,
+   "data_year": "2020-03",
+   "source_name": "PASDA / Warren County Tax Parcels 202003 (geometry only)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Warren'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Washington County": {
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services2.arcgis.com/LgK9DpUhNjdU0HLy/arcgis/rest/services/Parcel_Boundaries_of_Washington_County_PA/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272
+   },
+   "fields": {
+    "owner": [
+     "owndat_own1",
+     "owndat_own2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIN"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 121949,
+   "owner_nonnull": 121276,
+   "pid_nonnull": 121949,
+   "data_year": "2026-08 (Washington County Parcels 20260816)",
+   "source_name": "Washington County PA GIS Hub - Parcel Boundaries",
+   "fips": "42125",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Washington'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Wayne County": {
+   "status": "fixed_pending_review",
+   "source": "agol",
+   "url": "https://services1.arcgis.com/VMKRr2Ecl6EFwJpm/arcgis/rest/services/TaxParcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "FullName"
+    ],
+    "deed_ref": null,
+    "plat_ref": "MBPAGE",
+    "pid": "CONTROL",
+    "deed_book": "RecordBook",
+    "deed_page": "PageInDeedBook",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "deed_ref_format": "DBPAGE e.g. 'DB 0250-0914'; also RecordBook/PageInDeedBook",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 57597,
+   "data_year": "2026 (AGOL TaxParcels / Wayne County)",
+   "source_name": "Wayne County TaxParcels (AGOL VMKRr2Ecl6EFwJpm)",
+   "fips": "42127",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": "MB {book} PG {page}",
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "plat_ref_patterns": [
+    {
+     "re": "^MB\\s*0*(?P<book>\\d+)\\s*-\\s*0*(?P<page>\\d+)$"
+    }
+   ],
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Westmoreland County": {
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.westmorelandcountypa.gov/arcgis/rest/services/Upgrade/Parcels_Anno_Pro/MapServer/72",
+   "layer_id": 72,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272,
+    "served": 3857
+   },
+   "fields": {
+    "owner": [
+     "NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PARCELID",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 191739,
+   "owner_nonnull": 191196,
+   "data_year": "2026 (live Westmoreland PARCELS_WITH_FULLADD_CAMA)",
+   "source_name": "Westmoreland County GIS - PARCELS_WITH_FULLADD_CAMA",
+   "fips": "42129",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_ref_dropped": "DBOOK1: DBOOK1/DPAGE1 hold 2-digit years and 5-digit numbers (25 / 12208), not book/page; split unknown (PA 4)",
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "buildings_source": "none"
+  },
+  "Wyoming County": {
+   "fips": "42131",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services.arcgis.com/0POQ0PQT9pHLMnL2/arcgis/rest/services/WyomingCountyParcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner",
+     "Owner_2"
+    ],
+    "deed_ref": "Deed_Book_",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Pin"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 16688,
+   "data_year": "2024-05",
+   "source_name": "Wyoming County PA GIS (wycopa) - WyomingCountyParcels",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='Wyoming'",
+   "owner_nonnull": 16524,
+   "pid_nonnull": 16524,
+   "deed_ref_format": "'book-page' e.g. '522-329' in Deed_BookP",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6563,
+   "deed_instrument_print": true,
+   "deed_year_inst": "any",
+   "deed_ref_split": "mo_ref",
+   "deed_book_page_rescue": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_ref_patterns": [
+    {
+     "re": "^(?P<n>(?:19|20)\\d\\d-\\d+)$",
+     "book": "INST",
+     "page": "{n}",
+     "format": "tx_inst"
+    },
+    {
+     "re": "^0*(?P<book>[1-9]\\d*)[-/ ]0*(?P<page>\\d+)$"
+    }
+   ],
+   "buildings_source": "none"
+  },
+  "York County": {
+   "fips": "42133",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://arcweb1.ycpc.org/server/rest/services/OPEN_DATA/Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102729,
+    "latestWkid": 2272,
+    "xyTolerance": 0.003280833333333333,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -119214200,
+    "falseY": -96198500,
+    "xyUnits": 3048.0060960121928,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "OWN_NAME1",
+     "OWN_NAME2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DEED_BK",
+    "deed_page": "DEED_PG",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIDN"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 174066,
+   "data_year": "2022-09",
+   "source_name": "York County OPEN_DATA Parcels (county, weekly)",
+   "geometry_fallback": "https://maps.pasda.psu.edu/arcgis/rest/services/PA_Parcels/MapServer/1",
+   "county_filter_statewide": "Source='York'",
+   "owner_nonnull": 173294,
+   "pid_nonnull": 174066,
+   "deed_nonnull": 170581,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6565,
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "-"
+   ],
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  }
+ },
+ "control": {
+  "state_source": true,
+  "agency": "PennDOT (boundary monuments via PASDA) + NGS PA monumentation mirror on PASDA",
+  "sources": [
+   {
+    "name": "PennDOT PA Boundary Monument",
+    "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/PennDOT/MapServer/35",
+    "count": 1807,
+    "native_sr": "EPSG:4269",
+    "fields": [
+     "ID",
+     "COUNTY_NAM",
+     "MONUMENT_T",
+     "STATUS",
+     "LATITUDE",
+     "LONGITUDE",
+     "DESCRIPTIO",
+     "YEARESTABL"
+    ],
+    "live_test": "OK 2026-10-13: FRANKLIN / ID 28-00031 / MONUMENT_T Line / STATUS Active",
+    "note": "County/municipal boundary monuments — not full geodetic control network. Layer name dated 013124 (Jan 31, 2024 vintage stamp)."
+   },
+   {
+    "name": "NGS_PA_Monumentation (PASDA mirror)",
+    "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/NGS_PA_Monumentation/MapServer/0",
+    "count": 16198,
+    "native_sr": "EPSG:4269",
+    "fields": [
+     "PID",
+     "NAME",
+     "COUNTY",
+     "DEC_LAT",
+     "DEC_LONG",
+     "POS_DATUM",
+     "ELEVATION",
+     "ELEV_DATUM",
+     "DATA_SRCE"
+    ],
+    "live_test": "OK 2026-10-13: PID AJ3333 / BLAIR / NAD 83 / NAVD 88; DATA_DATE 20180611",
+    "note": "PASDA republish of NGS marks in PA. Vintage DATA_DATE 20180611 — prefer live NGS datasheets for survey use."
+   }
+  ],
+  "finding": "PennDOT publishes boundary monuments (1,807) on PASDA PennDOT MapServer/35. PASDA also hosts NGS_PA_Monumentation (16,198 marks, 2018 mirror). No separate PennDOT survey-control network REST beyond boundary monuments found in this pass.",
+  "live_test": "OK 2026-10-13 both layers",
+  "checked": "2026-10-13",
+  "ngs": {
+   "ngs_datasheet_url": "https://www.ngs.noaa.gov/cgi-bin/ds_mark.prl?PidBox={PID}",
+   "note": "NGS covers all states. Not re-surveyed here beyond PASDA mirror check."
+  },
+  "datum_shifts_applied": false
+ },
+ "roads": {
+  "name": "PennDOT Pa Local Roads 2026_07 (PASDA)",
+  "agency": "Pennsylvania Department of Transportation (PennDOT) via PASDA",
+  "type": "ArcGIS REST MapServer",
+  "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/PennDOT/MapServer/3",
+  "layer": "V-ROAD-CNTR",
+  "color": 8,
+  "native_sr": "EPSG:4269 (NAD83 geographic; service wkid 4269)",
+  "count": 590700,
+  "named_count": 568745,
+  "county_filter": "CTY_CODE = PennDOT 2-digit county code (not FIPS; e.g. map via PennDOT county table)",
+  "name_fields": [
+   "LR_NAME",
+   "LR_TYPE"
+  ],
+  "full_name_field": null,
+  "route_fields": [
+   "LR_RT_NO",
+   "RTE_TNUM"
+  ],
+  "fields": {
+   "id": "LR_ID",
+   "county": "CTY_CODE",
+   "name": "LR_NAME",
+   "type": "LR_TYPE",
+   "route": "LR_RT_NO",
+   "owner": "ROAD_OWNER",
+   "muni": "MUNICIPAL1"
+  },
+  "sibling_layers": {
+   "Pa State Roads 2026_07 (MapServer/4)": {
+    "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/PennDOT/MapServer/4",
+    "count": 113828,
+    "note": "State-maintained; STREET_NAM + ST_RT_NO/TRAF_RT_NO in schema. Count OK 2026-10-13; attribute return queries failed (400) at test time — use Local Roads for labeled centerlines or retry State later."
+   },
+   "Pa Administrative State Roads 2026_07 (MapServer/2)": {
+    "url": "https://mapservices.pasda.psu.edu/server/rest/services/pasda/PennDOT/MapServer/2",
+    "count": 234915,
+    "note": "Administrative state roads layer; count verified."
+   }
+  },
+  "max_record_count": 1000,
+  "pagination": true,
+  "data_year": 2026,
+  "vintage": "PennDOT extract dated 2026_07 (July 2026) on PASDA PennDOT MapServer",
+  "live_test": "OK 2026-10-13: LR_NAME=QUARRY LR_TYPE=ROAD CTY_CODE=09 LR_RT_NO=BBMJ; count 590700 (568745 named)",
+  "use_terms": "PennDOT / PASDA public data; provided as-is. Cite PennDOT and PASDA.",
+  "datum_shifts_applied": false
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Same entry as SC/GA/VA/TN. Added 2026-11-12 (rc31); box DXF-parse tested, not tested in Carlson or IntelliCAD.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}

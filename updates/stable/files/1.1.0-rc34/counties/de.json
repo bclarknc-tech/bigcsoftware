@@ -1,0 +1,303 @@
+{
+ "_meta": {
+  "state": "DE",
+  "target_wkid": 6436,
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PB {plat_book} PG {plat_page}",
+   "PID:{pid}"
+  ],
+  "statewide_geometry_layer": "https://enterprise.firstmap.delaware.gov/arcgis/rest/services/PlanningCadastre/DE_StateParcels/FeatureServer/0",
+  "status_legend": {
+   "ok": "owner+deed+PID live-verified",
+   "partial": "owner+PID (no deed) or subset coverage",
+   "missing": "no owner source found yet",
+   "unverified": "endpoint unreachable at test time"
+  },
+  "localities": 3,
+  "default_epsg": 6436,
+  "epsg_choices": [
+   6436
+  ],
+  "target_options": {
+   "delaware": 6436
+  },
+  "detect": {
+   "local": "DE"
+  },
+  "onemap_url": null,
+  "release": true
+ },
+ "counties": {
+  "New Castle County": {
+   "fips": "10003",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.nccde.org/agsserver/rest/services/BaseMaps/Base_Layers/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102657,
+    "latestWkid": 2235
+   },
+   "fields": {
+    "owner": [
+     "CNTCTLAST"
+    ],
+    "deed_ref": null,
+    "plat_ref": "PLANMEDIA",
+    "pid": "PRCLID",
+    "acres": "LOTSZ",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null,
+    "subdivision": "SUBDIV",
+    "lot": "LOT"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://enterprise.firstmap.delaware.gov/arcgis/rest/services/PlanningCadastre/DE_StateParcels/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='New Castle'",
+   "record_count": 203822,
+   "owner_nonnull": 203815,
+   "pid_nonnull": 203822,
+   "deed_nonnull": 0,
+   "data_year": "2026 (live county layer; last_edited_date per record)",
+   "source_name": "New Castle County GIS - Base_Layers Parcels",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6436,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Kent County": {
+   "fips": "10001",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.kentcountyde.gov/server/rest/services/Parcels/Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNERNAME",
+     "SECONDARYOWNER"
+    ],
+    "deed_ref": "DEEDREFERENCE",
+    "plat_ref": "Plat_Book",
+    "pid": "Name",
+    "acres": "DEEDACREAGE",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null,
+    "lot": "Lot_Number"
+   },
+   "deed_ref_format": "'<letter> <book>/<page>' e.g. 'D 305/291', 'T 54/83' (letter = recorder book series). Parse book/page by splitting on space and '/'.",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://enterprise.firstmap.delaware.gov/arcgis/rest/services/PlanningCadastre/DE_StateParcels/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='Kent'",
+   "record_count": 83143,
+   "owner_nonnull": 82869,
+   "pid_nonnull": 83143,
+   "deed_nonnull": 82869,
+   "data_year": "2026 (live county layer)",
+   "source_name": "Kent County Levy Court GIS - Parcels",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6436,
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Sussex County": {
+   "fips": "10005",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://map.sussexcountyde.gov/trdserver/rest/services/Geographic_Information_Office/Parcels_PIN_With_Assessment_Unit/MapServer/0",
+   "layer_id": 0,
+   "owner_table_url": "https://map.sussexcountyde.gov/trdserver/rest/services/Geographic_Information_Office/Parcels_PIN_With_Assessment_Unit/MapServer/1",
+   "join": {
+    "url": "https://map.sussexcountyde.gov/trdserver/rest/services/Geographic_Information_Office/Parcels_PIN_With_Assessment_Unit/MapServer/1",
+    "key": "Name",
+    "table_key": "PINWASSEMENTUNIT",
+    "override": true,
+    "no_row": "keep"
+   },
+   "native_sr": {
+    "wkid": 26957,
+    "latestWkid": 26957,
+    "served": 3857
+   },
+   "fields": {
+    "owner": [
+     "FULLNAME",
+     "Second_Owner_Name"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": "Acreage",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE",
+    "plat_book": null,
+    "plat_page": null,
+    "legal": [
+     "DESCRIPTION",
+     "DESCRIPTION2",
+     "DESCRIPTION3"
+    ]
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://enterprise.firstmap.delaware.gov/arcgis/rest/services/PlanningCadastre/DE_StateParcels/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='Sussex'",
+   "record_count": 167633,
+   "owner_table_rows": 208124,
+   "owner_nonnull": 208124,
+   "pid_nonnull": 208124,
+   "deed_nonnull": 196990,
+   "data_year": "2026 (live county layer)",
+   "source_name": "Sussex County Geographic Information Office - Parcels_PIN_With_Assessment_Unit",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6436,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  }
+ },
+ "control": {
+  "state_source": false,
+  "agency": "DelDOT Survey Section (project GPS control only); FirstMap has no geodetic-control layer",
+  "sources": [],
+  "finding": "No public statewide Delaware survey-control REST layer. The Delaware Geospatial Strategic Plan states geodetic control is maintained by NOAA/NGS and is not part of the state DataMIL; DelDOT's Survey Guidebook says NGS monuments are preferred and DelDOT sets project-specific control (GPS Control Point Reports per project, not published as a layer). FirstMap Transportation/DE_Boundary_and_Point has facilities, soil borings and traffic devices, no monuments.",
+  "live_test": "n/a (no statewide source); FirstMap folders Location/Transportation/Boundaries/Elevation enumerated 2026-10-13",
+  "checked": "2026-10-13",
+  "ngs": {
+   "ngs_datasheet_url": "https://www.ngs.noaa.gov/cgi-bin/ds_mark.prl?PidBox={PID}",
+   "note": "NGS covers all states. Not re-surveyed here."
+  },
+  "datum_shifts_applied": false
+ },
+ "roads": {
+  "name": "DelDOT Roadways Main - CENTER LINE (FirstMap)",
+  "agency": "Delaware Department of Transportation (DelDOT) via FirstMap",
+  "type": "ArcGIS REST FeatureServer",
+  "url": "https://enterprise.firstmap.delaware.gov/arcgis/rest/services/Transportation/DE_Roadways_Main/FeatureServer/1",
+  "layer": "V-ROAD-CNTR",
+  "color": 8,
+  "native_sr": "EPSG:3857 (Web Mercator; service wkid 102100 / latestWkid 3857)",
+  "count": 78543,
+  "named_count": 67109,
+  "county_filter": "CTY = DelDOT county code string ('1'=Kent, '2'=New Castle, '3'=Sussex per DelDOT convention; '0' and null also present - verify mapping before use)",
+  "name_fields": [
+   "PRE_DIR",
+   "STREET_NAME",
+   "STREET_TYPE",
+   "SUF_DIR"
+  ],
+  "full_name_field": null,
+  "route_fields": [
+   "RDWAY_ID",
+   "MAINT_RD"
+  ],
+  "fields": {
+   "id": "RDWAY_ID",
+   "county": "CTY",
+   "maint_road_no": "MAINT_RD",
+   "name": "STREET_NAME",
+   "type": "STREET_TYPE",
+   "pre_dir": "PRE_DIR",
+   "suf_dir": "SUF_DIR",
+   "paper_street": "PAPER_STREET",
+   "updated": "UPDATEDATE",
+   "beg_mp": "BEG_MP",
+   "end_mp": "END_MP"
+  },
+  "route_layer": {
+   "url": "https://enterprise.firstmap.delaware.gov/arcgis/rest/services/Transportation/DE_Roadways_Main/FeatureServer/8",
+   "fields": [
+    "ROAD",
+    "ROUTE_ID",
+    "ROUTE_TYPE",
+    "ROUTE_NUMBER"
+   ],
+   "note": "Signed routes (DE/US/I) for route labels"
+  },
+  "max_record_count": 2000,
+  "pagination": true,
+  "data_year": 2026,
+  "vintage": "Live from DelDOT TSDM (service note: 'changes are reflected when they are posted in TSDM'); max UPDATEDATE 2026-10-12. Includes state-maintained and local/subdivision streets (PAPER_STREET flag marks unbuilt).",
+  "alternate_url": "https://enterprise.firstmap.delaware.gov/arcgis/rest/services/Transportation/DE_Centerline_Routable_ALL/MapServer/7",
+  "alternate_note": "Centerline_All_Vehicles (routable) has STREET_NAME, ROUTE_NO, COUNTY, ISSTATEMAINT. County alt: New Castle Base_Layers MapServer/8 Roads (LABEL, ADDR_SN).",
+  "live_test": "OK 2026-10-13: where CTY='3' AND STREET_NAME IS NOT NULL -> {\"RDWAY_ID\": 2313, \"CTY\": \"3\", \"MAINT_RD\": \"03050\", \"STREET_NAME\": \"MAPLEWOOD STREET\", \"STREET_TYPE\": \"STREET\"}; count 78543 (67109 named).",
+  "use_terms": "DelDOT/FirstMap public data; copyright DelDOT; provided as-is without warranty (FirstMap disclaimer).",
+  "datum_shifts_applied": false
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Same entry as SC/GA/VA/TN. Added 2026-11-12 (rc31); box DXF-parse tested, not tested in Carlson or IntelliCAD.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}

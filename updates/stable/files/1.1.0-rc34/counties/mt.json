@@ -1,0 +1,2362 @@
+{
+ "_meta": {
+  "state": "MT",
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PB {plat_book} PG {plat_page}",
+   "PID:{pid}"
+  ],
+  "default_epsg": 6515,
+  "epsg_choices": [
+   6515
+  ],
+  "target_options": {
+   "montana": 6515
+  },
+  "detect": {
+   "local": "MT"
+  },
+  "onemap_url": null,
+  "target_wkid": 6515,
+  "release": true
+ },
+ "counties": {
+  "Beaverhead": {
+   "fips": "30001",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services6.arcgis.com/4Q5KtBdRdkRWZXQ9/arcgis/rest/services/BeaverheadOwners/FeatureServer/5",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "pin": "PropertyID",
+    "acres": "GISAcres",
+    "address": "AddressLin"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Beaverhead County official BeaverheadOwners layer (BeaverheadGIS org)",
+   "county_filter": null,
+   "server_fallback": {
+    "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+    "onemap_filter": "CountyName='Beaverhead'",
+    "source": "statewide_fallback",
+    "label": "the Montana State Library / DOR cadastral layer",
+    "fields": {
+     "owner": [
+      "OwnerName"
+     ],
+     "deed_ref": null,
+     "deed_book": null,
+     "deed_page": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCELID",
+     "acres": "GISAcres"
+    }
+   },
+   "layer_id": 5,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 16142,
+   "sample_owner": "SENSIBAR NOAH C & JUDITH R TRUSTEES",
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Valley": {
+   "fips": "30105",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Valley'",
+   "onemap_filter": "CountyName='Valley'",
+   "buildings_source": "none"
+  },
+  "Powell": {
+   "fips": "30077",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services2.arcgis.com/mBg9n9aKqrhON2E8/arcgis/rest/services/Powell_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": null,
+    "acres": null
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Powell County layer 'Powell_Parcels' (chamming_PCGISPlanning)",
+   "county_filter": null,
+   "server_fallback": {
+    "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+    "onemap_filter": "CountyName='Powell'",
+    "source": "statewide_fallback",
+    "label": "the Montana State Library / DOR cadastral layer",
+    "fields": {
+     "owner": [
+      "OwnerName"
+     ],
+     "deed_ref": null,
+     "deed_book": null,
+     "deed_page": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCELID",
+     "acres": "GISAcres"
+    }
+   },
+   "buildings_source": "none"
+  },
+  "Gallatin": {
+   "fips": "30031",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services9.arcgis.com/6EuFgO4fLTqfNOhu/arcgis/rest/services/Gallatin_County_Parcel_Data/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": null,
+    "acres": null
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Gallatin County layer 'Gallatin County Parcel Data' (ekl5689_pennstate)",
+   "county_filter": null,
+   "server_fallback": {
+    "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+    "onemap_filter": "CountyName='Gallatin'",
+    "source": "statewide_fallback",
+    "label": "the Montana State Library / DOR cadastral layer",
+    "fields": {
+     "owner": [
+      "OwnerName"
+     ],
+     "deed_ref": null,
+     "deed_book": null,
+     "deed_page": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCELID",
+     "acres": "GISAcres"
+    }
+   },
+   "buildings_source": "none"
+  },
+  "Meagher": {
+   "fips": "30059",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Meagher'",
+   "onemap_filter": "CountyName='Meagher'",
+   "buildings_source": "none"
+  },
+  "Sanders": {
+   "fips": "30089",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services.arcgis.com/lyaiBovac00Ony4j/arcgis/rest/services/PARCELS_PLAT_SANDERS/FeatureServer/521",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": null,
+    "acres": null
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Sanders County layer 'PARCELS_PLAT_SANDERS_TOBEDEPRECATED' (tvanicek1125)",
+   "county_filter": null,
+   "server_fallback": {
+    "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+    "onemap_filter": "CountyName='Sanders'",
+    "source": "statewide_fallback",
+    "label": "the Montana State Library / DOR cadastral layer",
+    "fields": {
+     "owner": [
+      "OwnerName"
+     ],
+     "deed_ref": null,
+     "deed_book": null,
+     "deed_page": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCELID",
+     "acres": "GISAcres"
+    }
+   },
+   "buildings_source": "none"
+  },
+  "Broadwater": {
+   "fips": "30007",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Broadwater'",
+   "onemap_filter": "CountyName='Broadwater'",
+   "buildings_source": "none"
+  },
+  "Deer Lodge": {
+   "fips": "30023",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services8.arcgis.com/GsIKSroHaZl9sPL9/arcgis/rest/services/Deer_Lodge_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": null,
+    "acres": null
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Deer Lodge County layer 'Deer Lodge Parcels' (GCSO_MT)",
+   "county_filter": null,
+   "server_fallback": {
+    "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+    "onemap_filter": "CountyName='Deer Lodge'",
+    "source": "statewide_fallback",
+    "label": "the Montana State Library / DOR cadastral layer",
+    "fields": {
+     "owner": [
+      "OwnerName"
+     ],
+     "deed_ref": null,
+     "deed_book": null,
+     "deed_page": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCELID",
+     "acres": "GISAcres"
+    }
+   },
+   "buildings_source": "none"
+  },
+  "Big Horn": {
+   "fips": "30003",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Big Horn'",
+   "onemap_filter": "CountyName='Big Horn'",
+   "buildings_source": "none"
+  },
+  "Ravalli": {
+   "fips": "30081",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services8.arcgis.com/M9lBa5KYtuKzdhNy/arcgis/rest/services/Ravalli_County_Parcels/FeatureServer/42",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "pin": "PropertyID",
+    "acres": "GISAcres",
+    "address": "AddressLin"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Ravalli County official Ravalli_County_Parcels layer Ravalli_Parcels_Nov2025 (hamiltonplanner org)",
+   "county_filter": null,
+   "server_fallback": {
+    "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+    "onemap_filter": "CountyName='Ravalli'",
+    "source": "statewide_fallback",
+    "label": "the Montana State Library / DOR cadastral layer",
+    "fields": {
+     "owner": [
+      "OwnerName"
+     ],
+     "deed_ref": null,
+     "deed_book": null,
+     "deed_page": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCELID",
+     "acres": "GISAcres"
+    }
+   },
+   "layer_id": 42,
+   "native_sr": {
+    "wkid": 32100,
+    "latestWkid": 32100
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 33123,
+   "sample_owner": "STILTNER PEGGY DIANE",
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Phillips": {
+   "fips": "30071",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Phillips'",
+   "onemap_filter": "CountyName='Phillips'",
+   "buildings_source": "none"
+  },
+  "Blaine": {
+   "fips": "30005",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services8.arcgis.com/lc8uIACZfrvb7Y11/arcgis/rest/services/BlaineCountyParcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": null,
+    "acres": null
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Blaine County layer 'BlaineCountyParcels' (katalogmaps)",
+   "county_filter": null,
+   "server_fallback": {
+    "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+    "onemap_filter": "CountyName='Blaine'",
+    "source": "statewide_fallback",
+    "label": "the Montana State Library / DOR cadastral layer",
+    "fields": {
+     "owner": [
+      "OwnerName"
+     ],
+     "deed_ref": null,
+     "deed_book": null,
+     "deed_page": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCELID",
+     "acres": "GISAcres"
+    }
+   },
+   "buildings_source": "none"
+  },
+  "Roosevelt": {
+   "fips": "30085",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Roosevelt'",
+   "onemap_filter": "CountyName='Roosevelt'",
+   "buildings_source": "none"
+  },
+  "Richland": {
+   "fips": "30083",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Richland'",
+   "onemap_filter": "CountyName='Richland'",
+   "buildings_source": "none"
+  },
+  "Silver Bow": {
+   "fips": "30093",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services7.arcgis.com/wxQbFtpJFGMg80Mb/arcgis/rest/services/Silver_Bow_cadastral_data/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": null,
+    "acres": null
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Silver Bow County layer 'Silver Bow cadastral data' (yli@mtech.edu_MT_TECH)",
+   "county_filter": null,
+   "server_fallback": {
+    "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+    "onemap_filter": "CountyName='Silver Bow'",
+    "source": "statewide_fallback",
+    "label": "the Montana State Library / DOR cadastral layer",
+    "fields": {
+     "owner": [
+      "OwnerName"
+     ],
+     "deed_ref": null,
+     "deed_book": null,
+     "deed_page": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCELID",
+     "acres": "GISAcres"
+    }
+   },
+   "buildings_source": "none"
+  },
+  "Daniels": {
+   "fips": "30019",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Daniels'",
+   "onemap_filter": "CountyName='Daniels'",
+   "buildings_source": "none"
+  },
+  "Carbon": {
+   "fips": "30009",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Carbon'",
+   "onemap_filter": "CountyName='Carbon'",
+   "buildings_source": "none"
+  },
+  "McCone": {
+   "fips": "30055",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='McCone'",
+   "onemap_filter": "CountyName='McCone'",
+   "buildings_source": "none"
+  },
+  "Lake": {
+   "fips": "30047",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services2.arcgis.com/qQ6tqy9VSUry3ySt/arcgis/rest/services/9_1_2020_Lake_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "pin": "PropertyID",
+    "acres": "GISAcres",
+    "address": "AddressLin"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "source_name": "Lake County official 'Lake County Parcels: Updated Monthly' on the Lake County MT ArcGIS org (qQ6tqy9VSUry3ySt / dwallace_Lake_County_MT), used by the official Address and Parcel Map. Service item name is still 9_1_2020_Lake_Parcels but live TaxYear is 2026.",
+   "county_filter": null,
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 103093,
+    "latestWkid": 6514
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 23696,
+   "sample_owner": "TORGERSON HOLDEN & DANIELLE",
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Cascade": {
+   "fips": "30013",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Cascade'",
+   "onemap_filter": "CountyName='Cascade'",
+   "buildings_source": "none"
+  },
+  "Chouteau": {
+   "fips": "30015",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Chouteau'",
+   "onemap_filter": "CountyName='Chouteau'",
+   "buildings_source": "none"
+  },
+  "Petroleum": {
+   "fips": "30069",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Petroleum'",
+   "onemap_filter": "CountyName='Petroleum'",
+   "buildings_source": "none"
+  },
+  "Rosebud": {
+   "fips": "30087",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Rosebud'",
+   "onemap_filter": "CountyName='Rosebud'",
+   "buildings_source": "none"
+  },
+  "Garfield": {
+   "fips": "30033",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Garfield'",
+   "onemap_filter": "CountyName='Garfield'",
+   "buildings_source": "none"
+  },
+  "Mineral": {
+   "fips": "30061",
+   "status": "partial",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Mineral'",
+   "onemap_filter": "CountyName='Mineral'",
+   "buildings_source": "none"
+  },
+  "Lincoln": {
+   "fips": "30053",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services.arcgis.com/M8seqoJdDgYgyFge/arcgis/rest/services/ParcelOwnership/FeatureServer/251",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "pin": "PropertyID",
+    "acres": "GISAcres",
+    "address": null
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Lincoln County official ParcelOwnership layer Lincoln_Parcels (lincolncounty56 org)",
+   "county_filter": null,
+   "server_fallback": {
+    "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+    "onemap_filter": "CountyName='Lincoln'",
+    "source": "statewide_fallback",
+    "label": "the Montana State Library / DOR cadastral layer",
+    "fields": {
+     "owner": [
+      "OwnerName"
+     ],
+     "deed_ref": null,
+     "deed_book": null,
+     "deed_page": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCELID",
+     "acres": "GISAcres"
+    }
+   },
+   "layer_id": 251,
+   "native_sr": {
+    "wkid": 103093,
+    "latestWkid": 6514
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 23321,
+   "sample_owner": "THOMPSON CONTRACTING INC",
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Missoula": {
+   "fips": "30063",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Missoula'",
+   "onemap_filter": "CountyName='Missoula'",
+   "buildings_source": "none"
+  },
+  "Liberty": {
+   "fips": "30051",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Liberty'",
+   "onemap_filter": "CountyName='Liberty'",
+   "buildings_source": "none"
+  },
+  "Lewis and Clark": {
+   "fips": "30049",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Lewis and Clark'",
+   "onemap_filter": "CountyName='Lewis and Clark'",
+   "buildings_source": "none"
+  },
+  "Pondera": {
+   "fips": "30073",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services7.arcgis.com/rRSNuoHt1mUvAdds/arcgis/rest/services/Pondera_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": null,
+    "acres": null
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Pondera County layer 'PONDERA PARCELS' (PonderaDES)",
+   "county_filter": null,
+   "server_fallback": {
+    "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+    "onemap_filter": "CountyName='Pondera'",
+    "source": "statewide_fallback",
+    "label": "the Montana State Library / DOR cadastral layer",
+    "fields": {
+     "owner": [
+      "OwnerName"
+     ],
+     "deed_ref": null,
+     "deed_book": null,
+     "deed_page": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCELID",
+     "acres": "GISAcres"
+    }
+   },
+   "buildings_source": "none"
+  },
+  "Flathead": {
+   "fips": "30029",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Flathead'",
+   "onemap_filter": "CountyName='Flathead'",
+   "buildings_source": "none"
+  },
+  "Teton": {
+   "fips": "30099",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services2.arcgis.com/CSJxiUjasbdZXxL3/arcgis/rest/services/Teton_Parcel/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": null,
+    "acres": null
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Teton County layer 'Teton_Parcel' (Colesworthy)",
+   "county_filter": null,
+   "server_fallback": {
+    "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+    "onemap_filter": "CountyName='Teton'",
+    "source": "statewide_fallback",
+    "label": "the Montana State Library / DOR cadastral layer",
+    "fields": {
+     "owner": [
+      "OwnerName"
+     ],
+     "deed_ref": null,
+     "deed_book": null,
+     "deed_page": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCELID",
+     "acres": "GISAcres"
+    }
+   },
+   "buildings_source": "none"
+  },
+  "Judith Basin": {
+   "fips": "30045",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Judith Basin'",
+   "onemap_filter": "CountyName='Judith Basin'",
+   "buildings_source": "none"
+  },
+  "Glacier": {
+   "fips": "30035",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Glacier'",
+   "onemap_filter": "CountyName='Glacier'",
+   "buildings_source": "none"
+  },
+  "Fergus": {
+   "fips": "30027",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Fergus'",
+   "onemap_filter": "CountyName='Fergus'",
+   "buildings_source": "none"
+  },
+  "Granite": {
+   "fips": "30039",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services8.arcgis.com/GsIKSroHaZl9sPL9/arcgis/rest/services/Granite_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": null,
+    "acres": null
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Granite County layer 'Granite Parcels' (GCSO_MT)",
+   "county_filter": null,
+   "server_fallback": {
+    "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+    "onemap_filter": "CountyName='Granite'",
+    "source": "statewide_fallback",
+    "label": "the Montana State Library / DOR cadastral layer",
+    "fields": {
+     "owner": [
+      "OwnerName"
+     ],
+     "deed_ref": null,
+     "deed_book": null,
+     "deed_page": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCELID",
+     "acres": "GISAcres"
+    }
+   },
+   "buildings_source": "none"
+  },
+  "Park": {
+   "fips": "30067",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Park'",
+   "onemap_filter": "CountyName='Park'",
+   "buildings_source": "none"
+  },
+  "Treasure": {
+   "fips": "30103",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Treasure'",
+   "onemap_filter": "CountyName='Treasure'",
+   "buildings_source": "none"
+  },
+  "Wheatland": {
+   "fips": "30107",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Wheatland'",
+   "onemap_filter": "CountyName='Wheatland'",
+   "buildings_source": "none"
+  },
+  "Dawson": {
+   "fips": "30021",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Dawson'",
+   "onemap_filter": "CountyName='Dawson'",
+   "buildings_source": "none"
+  },
+  "Custer": {
+   "fips": "30017",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Custer'",
+   "onemap_filter": "CountyName='Custer'",
+   "buildings_source": "none"
+  },
+  "Powder River": {
+   "fips": "30075",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Powder River'",
+   "onemap_filter": "CountyName='Powder River'",
+   "buildings_source": "none"
+  },
+  "Toole": {
+   "fips": "30101",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Toole'",
+   "onemap_filter": "CountyName='Toole'",
+   "buildings_source": "none"
+  },
+  "Yellowstone": {
+   "fips": "30111",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Yellowstone'",
+   "onemap_filter": "CountyName='Yellowstone'",
+   "buildings_source": "none"
+  },
+  "Musselshell": {
+   "fips": "30065",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Musselshell'",
+   "onemap_filter": "CountyName='Musselshell'",
+   "buildings_source": "none"
+  },
+  "Wibaux": {
+   "fips": "30109",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Wibaux'",
+   "onemap_filter": "CountyName='Wibaux'",
+   "buildings_source": "none"
+  },
+  "Hill": {
+   "fips": "30041",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Hill'",
+   "onemap_filter": "CountyName='Hill'",
+   "buildings_source": "none"
+  },
+  "Golden Valley": {
+   "fips": "30037",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Golden Valley'",
+   "onemap_filter": "CountyName='Golden Valley'",
+   "buildings_source": "none"
+  },
+  "Carter": {
+   "fips": "30011",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Carter'",
+   "onemap_filter": "CountyName='Carter'",
+   "buildings_source": "none"
+  },
+  "Prairie": {
+   "fips": "30079",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Prairie'",
+   "onemap_filter": "CountyName='Prairie'",
+   "buildings_source": "none"
+  },
+  "Sweet Grass": {
+   "fips": "30097",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Sweet Grass'",
+   "onemap_filter": "CountyName='Sweet Grass'",
+   "buildings_source": "none"
+  },
+  "Stillwater": {
+   "fips": "30095",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Stillwater'",
+   "onemap_filter": "CountyName='Stillwater'",
+   "buildings_source": "none"
+  },
+  "Fallon": {
+   "fips": "30025",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Fallon'",
+   "onemap_filter": "CountyName='Fallon'",
+   "buildings_source": "none"
+  },
+  "Jefferson": {
+   "fips": "30043",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Jefferson'",
+   "onemap_filter": "CountyName='Jefferson'",
+   "buildings_source": "none"
+  },
+  "Madison": {
+   "fips": "30057",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services9.arcgis.com/6EuFgO4fLTqfNOhu/arcgis/rest/services/Madison_County_Parcel_Data/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": null,
+    "acres": null
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Madison County layer 'Madison County Parcel Data' (ekl5689_pennstate)",
+   "county_filter": null,
+   "server_fallback": {
+    "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+    "onemap_filter": "CountyName='Madison'",
+    "source": "statewide_fallback",
+    "label": "the Montana State Library / DOR cadastral layer",
+    "fields": {
+     "owner": [
+      "OwnerName"
+     ],
+     "deed_ref": null,
+     "deed_book": null,
+     "deed_page": null,
+     "plat_ref": null,
+     "plat_book": null,
+     "plat_page": null,
+     "pid": "PARCELID",
+     "acres": "GISAcres"
+    }
+   },
+   "buildings_source": "none"
+  },
+  "Sheridan": {
+   "fips": "30091",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://gisservice.mt.gov/ArcGIS/rest/services/msdi_cadastral_map_v1/MapServer/1",
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "acres": "GISAcres"
+   },
+   "sp_epsg_2011_ftus": 6515,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Montana Cadastral Framework (MT State Library from MT Dept. of Revenue ORION), state backup: no county layer found",
+   "county_filter": "CountyName='Sheridan'",
+   "onemap_filter": "CountyName='Sheridan'",
+   "buildings_source": "none"
+  }
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Same entry as SC/GA/VA/TN. Added 2026-11-12 (rc31); box DXF-parse tested, not tested in Carlson or IntelliCAD.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}

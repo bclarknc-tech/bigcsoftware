@@ -1,0 +1,6181 @@
+{
+ "_meta": {
+  "state": "AR",
+  "unit": "county",
+  "target_wkid": 6411,
+  "target_options": {
+   "north": 6411,
+   "south": 6413
+  },
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PB {plat_book} PG {plat_page}",
+   "PID:{pid}"
+  ],
+  "statewide_source": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+  "deed_formats": "sourceref is the deed reference from the assessor. Most counties use book/page (\"649/895\"); many use year/instrument (\"2020/13954\", \"2016/R000894\"); some add letters (\"D116/535\", \"E15/67\", \"N-169/299\", \"2026R/5087\"); Ashley and Drew pack the chain of deeds in one string separated by \" --- \". sourcedate is the deed date. Placeholders \"0\", \"0/0\", \"/\" are not counted.",
+  "plat_formats": "No plat book/page field in the statewide layer; subdivision name is in subdivision and the legal in parcellgl.",
+  "excluded_false_hits": "ArcGIS Online parcel layers from cities, NWARPC, Garver, Metroplan, Tontitown, Centerton, Pea Ridge, UARK, SWU and survey firms: copies of the AGISO or county data, not used. Desha \"MISSING_PARCEL\" and Dallas \"RSR study area\" are partial-area extracts.",
+  "status_legend": {
+   "ok": "owner+deed+PID live-verified countywide, deed reference filled on at least 50% of parcels",
+   "partial": "owner+PID with no deed, or deed under 50%",
+   "missing": "no public countywide owner source found"
+  },
+  "ar_complete": "first pass 2026-10-19",
+  "status_counts": {
+   "ok": 72,
+   "partial": 3
+  },
+  "default_epsg": 6411,
+  "epsg_choices": [
+   6411,
+   6413,
+   3433,
+   3434
+  ],
+  "detect": {
+   "local": "AR"
+  },
+  "onemap_url": null,
+  "release": true
+ },
+ "counties": {
+  "Arkansas": {
+   "fips": "05001",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 299,
+   "ardot_gps_marks": 21,
+   "acf_road_segments": 4430,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Arkansas'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 16078,
+   "owner_nonnull": 16078,
+   "pid_nonnull": 16078,
+   "deed_nonnull": 14806,
+   "deed_placeholder": 62,
+   "deed_pct": 92.1,
+   "legal_nonnull": 15612,
+   "data_year": 2026,
+   "camadate": "2026-07-16",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Arkansas'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Ashley": {
+   "fips": "05003",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 88,
+   "ardot_gps_marks": 69,
+   "acf_road_segments": 4442,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Ashley'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 19468,
+   "owner_nonnull": 19467,
+   "pid_nonnull": 19468,
+   "deed_nonnull": 19451,
+   "deed_placeholder": 0,
+   "deed_pct": 99.9,
+   "legal_nonnull": 19466,
+   "data_year": 2026,
+   "camadate": "2026-09-07",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Ashley'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Baxter": {
+   "fips": "05005",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 73,
+   "ardot_gps_marks": 48,
+   "acf_road_segments": 10753,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Baxter'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 38086,
+   "owner_nonnull": 38086,
+   "pid_nonnull": 38086,
+   "deed_nonnull": 35692,
+   "deed_placeholder": 19,
+   "deed_pct": 93.7,
+   "legal_nonnull": 38085,
+   "data_year": 2026,
+   "camadate": "2026-07-05",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Baxter'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Benton": {
+   "fips": "05007",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 131,
+   "ardot_gps_marks": 172,
+   "acf_road_segments": 29290,
+   "status": "fixed_pending_review",
+   "source": "county_rest",
+   "source_type": "county assessor ArcGIS Server",
+   "source_name": "Benton County Assessor ArcGIS Server (gis.bentoncountyar.gov), Assessor/ParcelPopUps layer 0 \"Parcels\"",
+   "url": "https://gis.bentoncountyar.gov/arcgis/rest/services/Assessor/ParcelPopUps/MapServer/0",
+   "layer_id": 0,
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 3433,
+    "name": "NAD83 Arkansas North ftUS (EPSG 3433; served as ESRI 102651)"
+   },
+   "fields": {
+    "owner": [
+     "OW_NAME"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "ppin": null,
+    "acres": "ACRE_AREA",
+    "subdivision": "SUBDIVNAME",
+    "str": "S_T_R"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 176779,
+   "owner_nonnull": 174250,
+   "pid_nonnull": 176186,
+   "deed_nonnull": null,
+   "deed_pct": null,
+   "data_year": 2026,
+   "sample_in_county": true,
+   "alt_sources": [
+    {
+     "name": "AGISO statewide PARCEL_POLYGON_CAMP (Benton)",
+     "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+     "county_filter": "county='Benton'",
+     "record_count": 175795,
+     "owner_nonnull": 175795,
+     "deed_nonnull": 0,
+     "camadate": "2026-09-14"
+    }
+   ],
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "pid_search_also": [],
+   "buildings_source": "none"
+  },
+  "Boone": {
+   "fips": "05009",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 96,
+   "ardot_gps_marks": 132,
+   "acf_road_segments": 5765,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Boone'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 29462,
+   "owner_nonnull": 29462,
+   "pid_nonnull": 29462,
+   "deed_nonnull": 28092,
+   "deed_placeholder": 48,
+   "deed_pct": 95.3,
+   "legal_nonnull": 28590,
+   "data_year": 2026,
+   "camadate": "2026-08-25",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Boone'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Bradley": {
+   "fips": "05011",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 55,
+   "ardot_gps_marks": 39,
+   "acf_road_segments": 3105,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Bradley'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 12566,
+   "owner_nonnull": 12564,
+   "pid_nonnull": 12566,
+   "deed_nonnull": 6323,
+   "deed_placeholder": 1,
+   "deed_pct": 50.3,
+   "legal_nonnull": 9054,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Bradley'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Calhoun": {
+   "fips": "05013",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 55,
+   "ardot_gps_marks": 35,
+   "acf_road_segments": 2627,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Calhoun'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mixed year/instrument and book/page",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 9849,
+   "owner_nonnull": 9849,
+   "pid_nonnull": 9849,
+   "deed_nonnull": 4982,
+   "deed_placeholder": 0,
+   "deed_pct": 50.6,
+   "legal_nonnull": 9683,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Calhoun'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Carroll": {
+   "fips": "05015",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 100,
+   "ardot_gps_marks": 69,
+   "acf_road_segments": 5703,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Carroll'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mixed year/instrument and book/page",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 25764,
+   "owner_nonnull": 25761,
+   "pid_nonnull": 25764,
+   "deed_nonnull": 24760,
+   "deed_placeholder": 6,
+   "deed_pct": 96.1,
+   "legal_nonnull": 25719,
+   "data_year": 2026,
+   "camadate": "2026-08-30",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Carroll'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Chicot": {
+   "fips": "05017",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 181,
+   "ardot_gps_marks": 39,
+   "acf_road_segments": 2020,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Chicot'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 10940,
+   "owner_nonnull": 10940,
+   "pid_nonnull": 10940,
+   "deed_nonnull": 7351,
+   "deed_placeholder": 0,
+   "deed_pct": 67.2,
+   "legal_nonnull": 10911,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Chicot'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Clark": {
+   "fips": "05019",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 196,
+   "ardot_gps_marks": 64,
+   "acf_road_segments": 6201,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Clark'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 20377,
+   "owner_nonnull": 20376,
+   "pid_nonnull": 20377,
+   "deed_nonnull": 17671,
+   "deed_placeholder": 0,
+   "deed_pct": 86.7,
+   "legal_nonnull": 20370,
+   "data_year": 2026,
+   "camadate": "2026-08-30",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Clark'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Clay": {
+   "fips": "05021",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 119,
+   "ardot_gps_marks": 24,
+   "acf_road_segments": 3355,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Clay'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 16324,
+   "owner_nonnull": 16324,
+   "pid_nonnull": 16324,
+   "deed_nonnull": 13801,
+   "deed_placeholder": 5,
+   "deed_pct": 84.5,
+   "legal_nonnull": 10595,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Clay'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Cleburne": {
+   "fips": "05023",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 84,
+   "ardot_gps_marks": 48,
+   "acf_road_segments": 4713,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Cleburne'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 31075,
+   "owner_nonnull": 31075,
+   "pid_nonnull": 31075,
+   "deed_nonnull": 29588,
+   "deed_placeholder": 0,
+   "deed_pct": 95.2,
+   "legal_nonnull": 21144,
+   "data_year": 2026,
+   "camadate": "2026-08-26",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Cleburne'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Cleveland": {
+   "fips": "05025",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 38,
+   "ardot_gps_marks": 32,
+   "acf_road_segments": 2021,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Cleveland'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 8215,
+   "owner_nonnull": 8215,
+   "pid_nonnull": 8215,
+   "deed_nonnull": 3788,
+   "deed_placeholder": 1,
+   "deed_pct": 46.1,
+   "legal_nonnull": 8212,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Cleveland'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Columbia": {
+   "fips": "05027",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 171,
+   "ardot_gps_marks": 36,
+   "acf_road_segments": 2580,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Columbia'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mixed year/instrument and book/page",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 20085,
+   "owner_nonnull": 20085,
+   "pid_nonnull": 20085,
+   "deed_nonnull": 11597,
+   "deed_placeholder": 18,
+   "deed_pct": 57.7,
+   "legal_nonnull": 20085,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Columbia'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Conway": {
+   "fips": "05029",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 122,
+   "ardot_gps_marks": 29,
+   "acf_road_segments": 3294,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Conway'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 19518,
+   "owner_nonnull": 19518,
+   "pid_nonnull": 19518,
+   "deed_nonnull": 17857,
+   "deed_placeholder": 0,
+   "deed_pct": 91.5,
+   "legal_nonnull": 17483,
+   "data_year": 2026,
+   "camadate": "2026-08-30",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Conway'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Craighead": {
+   "fips": "05031",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 238,
+   "ardot_gps_marks": 77,
+   "acf_road_segments": 10752,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Craighead'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 54896,
+   "owner_nonnull": 54896,
+   "pid_nonnull": 54896,
+   "deed_nonnull": 43705,
+   "deed_placeholder": 215,
+   "deed_pct": 79.6,
+   "legal_nonnull": 54844,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Craighead'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Crawford": {
+   "fips": "05033",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 148,
+   "ardot_gps_marks": 78,
+   "acf_road_segments": null,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Crawford'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 37749,
+   "owner_nonnull": 37749,
+   "pid_nonnull": 37749,
+   "deed_nonnull": 34793,
+   "deed_placeholder": 0,
+   "deed_pct": 92.2,
+   "legal_nonnull": 36351,
+   "data_year": 2026,
+   "camadate": "2026-09-13",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Crawford'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Crittenden": {
+   "fips": "05035",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 291,
+   "ardot_gps_marks": 54,
+   "acf_road_segments": 5446,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Crittenden'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 27488,
+   "owner_nonnull": 27488,
+   "pid_nonnull": 27488,
+   "deed_nonnull": 22224,
+   "deed_placeholder": 23,
+   "deed_pct": 80.8,
+   "legal_nonnull": 24961,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Crittenden'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Cross": {
+   "fips": "05037",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 154,
+   "ardot_gps_marks": 35,
+   "acf_road_segments": 3121,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Cross'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 12219,
+   "owner_nonnull": 12219,
+   "pid_nonnull": 12219,
+   "deed_nonnull": 11219,
+   "deed_placeholder": 0,
+   "deed_pct": 91.8,
+   "legal_nonnull": 12213,
+   "data_year": 2026,
+   "camadate": "2026-08-30",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Cross'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Dallas": {
+   "fips": "05039",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 58,
+   "ardot_gps_marks": 31,
+   "acf_road_segments": 2354,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Dallas'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 10867,
+   "owner_nonnull": 10867,
+   "pid_nonnull": 10867,
+   "deed_nonnull": 5558,
+   "deed_placeholder": 0,
+   "deed_pct": 51.1,
+   "legal_nonnull": 10856,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Dallas'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Desha": {
+   "fips": "05041",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 230,
+   "ardot_gps_marks": 49,
+   "acf_road_segments": 2231,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Desha'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 9663,
+   "owner_nonnull": 9663,
+   "pid_nonnull": 9663,
+   "deed_nonnull": 8821,
+   "deed_placeholder": 1,
+   "deed_pct": 91.3,
+   "legal_nonnull": 5814,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Desha'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Drew": {
+   "fips": "05043",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 100,
+   "ardot_gps_marks": 79,
+   "acf_road_segments": 3650,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Drew'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 13338,
+   "owner_nonnull": 13338,
+   "pid_nonnull": 13338,
+   "deed_nonnull": 13331,
+   "deed_placeholder": 0,
+   "deed_pct": 99.9,
+   "legal_nonnull": 12318,
+   "data_year": 2026,
+   "camadate": "2026-09-10",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Drew'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Faulkner": {
+   "fips": "05045",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 198,
+   "ardot_gps_marks": 71,
+   "acf_road_segments": 10306,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Faulkner'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 66634,
+   "owner_nonnull": 66634,
+   "pid_nonnull": 66634,
+   "deed_nonnull": 53136,
+   "deed_placeholder": 21,
+   "deed_pct": 79.7,
+   "legal_nonnull": 65688,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Faulkner'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Franklin": {
+   "fips": "05047",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 175,
+   "ardot_gps_marks": 28,
+   "acf_road_segments": 4888,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Franklin'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 15498,
+   "owner_nonnull": 15490,
+   "pid_nonnull": 15498,
+   "deed_nonnull": 14427,
+   "deed_placeholder": 0,
+   "deed_pct": 93.1,
+   "legal_nonnull": 15078,
+   "data_year": 2026,
+   "camadate": "2026-08-23",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Franklin'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Fulton": {
+   "fips": "05049",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 88,
+   "ardot_gps_marks": 37,
+   "acf_road_segments": 5078,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Fulton'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 33900,
+   "owner_nonnull": 33900,
+   "pid_nonnull": 33900,
+   "deed_nonnull": 26528,
+   "deed_placeholder": 7,
+   "deed_pct": 78.3,
+   "legal_nonnull": 14824,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Fulton'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Garland": {
+   "fips": "05051",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 147,
+   "ardot_gps_marks": 71,
+   "acf_road_segments": 14650,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Garland'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 76870,
+   "owner_nonnull": 76870,
+   "pid_nonnull": 76870,
+   "deed_nonnull": 74414,
+   "deed_placeholder": 0,
+   "deed_pct": 96.8,
+   "legal_nonnull": 76850,
+   "data_year": 2026,
+   "camadate": "2026-08-30",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Garland'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Grant": {
+   "fips": "05053",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 65,
+   "ardot_gps_marks": 37,
+   "acf_road_segments": 2538,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Grant'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 16133,
+   "owner_nonnull": 16133,
+   "pid_nonnull": 16133,
+   "deed_nonnull": 10064,
+   "deed_placeholder": 14,
+   "deed_pct": 62.4,
+   "legal_nonnull": 14737,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Grant'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Greene": {
+   "fips": "05055",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 111,
+   "ardot_gps_marks": 58,
+   "acf_road_segments": 5323,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Greene'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 27784,
+   "owner_nonnull": 27784,
+   "pid_nonnull": 27784,
+   "deed_nonnull": 25597,
+   "deed_placeholder": 2083,
+   "deed_pct": 92.1,
+   "legal_nonnull": 26827,
+   "data_year": 2026,
+   "camadate": "2026-08-16",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Greene'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Hempstead": {
+   "fips": "05057",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 118,
+   "ardot_gps_marks": 59,
+   "acf_road_segments": 3690,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Hempstead'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 18624,
+   "owner_nonnull": 18623,
+   "pid_nonnull": 18624,
+   "deed_nonnull": 17329,
+   "deed_placeholder": 0,
+   "deed_pct": 93.0,
+   "legal_nonnull": 18617,
+   "data_year": 2026,
+   "camadate": "2026-08-26",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Hempstead'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Hot Spring": {
+   "fips": "05059",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 98,
+   "ardot_gps_marks": 25,
+   "acf_road_segments": 5625,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Hot Spring'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 23635,
+   "owner_nonnull": 23635,
+   "pid_nonnull": 23635,
+   "deed_nonnull": 21859,
+   "deed_placeholder": 0,
+   "deed_pct": 92.5,
+   "legal_nonnull": 23619,
+   "data_year": 2026,
+   "camadate": "2026-08-27",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Hot Spring'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Howard": {
+   "fips": "05061",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 75,
+   "ardot_gps_marks": 10,
+   "acf_road_segments": 5015,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Howard'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mixed year/instrument and book/page",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 10275,
+   "owner_nonnull": 10275,
+   "pid_nonnull": 10275,
+   "deed_nonnull": 6806,
+   "deed_placeholder": 4,
+   "deed_pct": 66.2,
+   "legal_nonnull": 10274,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Howard'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Independence": {
+   "fips": "05063",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 126,
+   "ardot_gps_marks": 67,
+   "acf_road_segments": 4743,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Independence'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 29574,
+   "owner_nonnull": 29574,
+   "pid_nonnull": 29574,
+   "deed_nonnull": 28725,
+   "deed_placeholder": 0,
+   "deed_pct": 97.1,
+   "legal_nonnull": 24644,
+   "data_year": 2026,
+   "camadate": "2026-08-30",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Independence'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Izard": {
+   "fips": "05065",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 127,
+   "ardot_gps_marks": 30,
+   "acf_road_segments": 4165,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Izard'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 30448,
+   "owner_nonnull": 30448,
+   "pid_nonnull": 30448,
+   "deed_nonnull": 29841,
+   "deed_placeholder": 12,
+   "deed_pct": 98.0,
+   "legal_nonnull": 14483,
+   "data_year": 2026,
+   "camadate": "2026-08-27",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Izard'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Jackson": {
+   "fips": "05067",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 138,
+   "ardot_gps_marks": 26,
+   "acf_road_segments": 4352,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Jackson'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 13999,
+   "owner_nonnull": 13999,
+   "pid_nonnull": 13999,
+   "deed_nonnull": 13158,
+   "deed_placeholder": 0,
+   "deed_pct": 94.0,
+   "legal_nonnull": 13870,
+   "data_year": 2026,
+   "camadate": "2026-08-29",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Jackson'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Jefferson": {
+   "fips": "05069",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 369,
+   "ardot_gps_marks": 70,
+   "acf_road_segments": 10257,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Jefferson'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 54576,
+   "owner_nonnull": 54576,
+   "pid_nonnull": 54576,
+   "deed_nonnull": 51511,
+   "deed_placeholder": 0,
+   "deed_pct": 94.4,
+   "legal_nonnull": 54573,
+   "data_year": 2026,
+   "camadate": "2026-08-27",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Jefferson'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Johnson": {
+   "fips": "05071",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 194,
+   "ardot_gps_marks": 31,
+   "acf_road_segments": 4820,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Johnson'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 18100,
+   "owner_nonnull": 18100,
+   "pid_nonnull": 18100,
+   "deed_nonnull": 11717,
+   "deed_placeholder": 6,
+   "deed_pct": 64.7,
+   "legal_nonnull": 17986,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Johnson'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Lafayette": {
+   "fips": "05073",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 140,
+   "ardot_gps_marks": 35,
+   "acf_road_segments": 1957,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Lafayette'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 11319,
+   "owner_nonnull": 11319,
+   "pid_nonnull": 11319,
+   "deed_nonnull": 760,
+   "deed_placeholder": 0,
+   "deed_pct": 6.7,
+   "legal_nonnull": 11311,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Lafayette'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Lawrence": {
+   "fips": "05075",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 120,
+   "ardot_gps_marks": 36,
+   "acf_road_segments": 4121,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Lawrence'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 10403,
+   "owner_nonnull": 10403,
+   "pid_nonnull": 10403,
+   "deed_nonnull": 6687,
+   "deed_placeholder": 0,
+   "deed_pct": 64.3,
+   "legal_nonnull": 9530,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Lawrence'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Lee": {
+   "fips": "05077",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 142,
+   "ardot_gps_marks": 30,
+   "acf_road_segments": 2008,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Lee'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 10191,
+   "owner_nonnull": 10190,
+   "pid_nonnull": 10191,
+   "deed_nonnull": 5941,
+   "deed_placeholder": 3,
+   "deed_pct": 58.3,
+   "legal_nonnull": 7643,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Lee'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Lincoln": {
+   "fips": "05079",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 81,
+   "ardot_gps_marks": 52,
+   "acf_road_segments": 1581,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Lincoln'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 10164,
+   "owner_nonnull": 10164,
+   "pid_nonnull": 10164,
+   "deed_nonnull": 9474,
+   "deed_placeholder": 0,
+   "deed_pct": 93.2,
+   "legal_nonnull": 10145,
+   "data_year": 2026,
+   "camadate": "2026-08-30",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Lincoln'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Little River": {
+   "fips": "05081",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 103,
+   "ardot_gps_marks": 21,
+   "acf_road_segments": 2688,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Little River'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 14550,
+   "owner_nonnull": 14550,
+   "pid_nonnull": 14550,
+   "deed_nonnull": 13306,
+   "deed_placeholder": 0,
+   "deed_pct": 91.5,
+   "legal_nonnull": 14549,
+   "data_year": 2026,
+   "camadate": "2026-08-30",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Little River'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Logan": {
+   "fips": "05083",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 83,
+   "ardot_gps_marks": 18,
+   "acf_road_segments": 3149,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Logan'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mixed year/instrument and book/page",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 20207,
+   "owner_nonnull": 20207,
+   "pid_nonnull": 20207,
+   "deed_nonnull": 12866,
+   "deed_placeholder": 13,
+   "deed_pct": 63.7,
+   "legal_nonnull": 15937,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Logan'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Lonoke": {
+   "fips": "05085",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 244,
+   "ardot_gps_marks": 36,
+   "acf_road_segments": 6994,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Lonoke'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 39015,
+   "owner_nonnull": 39015,
+   "pid_nonnull": 39015,
+   "deed_nonnull": 32286,
+   "deed_placeholder": 26,
+   "deed_pct": 82.8,
+   "legal_nonnull": 18281,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Lonoke'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Madison": {
+   "fips": "05087",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 159,
+   "ardot_gps_marks": 70,
+   "acf_road_segments": 3639,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Madison'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mixed year/instrument and book/page",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 20830,
+   "owner_nonnull": 20830,
+   "pid_nonnull": 20830,
+   "deed_nonnull": 19693,
+   "deed_placeholder": 0,
+   "deed_pct": 94.5,
+   "legal_nonnull": 20166,
+   "data_year": 2026,
+   "camadate": "2026-08-27",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Madison'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Marion": {
+   "fips": "05089",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 37,
+   "ardot_gps_marks": 15,
+   "acf_road_segments": 4941,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Marion'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 12892,
+   "owner_nonnull": 12892,
+   "pid_nonnull": 12892,
+   "deed_nonnull": 11595,
+   "deed_placeholder": 328,
+   "deed_pct": 89.9,
+   "legal_nonnull": 12823,
+   "data_year": 2026,
+   "camadate": "2026-07-30",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Marion'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Miller": {
+   "fips": "05091",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 246,
+   "ardot_gps_marks": 80,
+   "acf_road_segments": 2293,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Miller'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 27190,
+   "owner_nonnull": 27190,
+   "pid_nonnull": 27190,
+   "deed_nonnull": 26586,
+   "deed_placeholder": 0,
+   "deed_pct": 97.8,
+   "legal_nonnull": 27181,
+   "data_year": 2026,
+   "camadate": "2026-08-30",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Miller'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Mississippi": {
+   "fips": "05093",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 320,
+   "ardot_gps_marks": 50,
+   "acf_road_segments": 8312,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Mississippi'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 31005,
+   "owner_nonnull": 31005,
+   "pid_nonnull": 31005,
+   "deed_nonnull": 21229,
+   "deed_placeholder": 5,
+   "deed_pct": 68.5,
+   "legal_nonnull": 31000,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Mississippi'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Monroe": {
+   "fips": "05095",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 154,
+   "ardot_gps_marks": 46,
+   "acf_road_segments": 2609,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Monroe'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 8809,
+   "owner_nonnull": 8809,
+   "pid_nonnull": 8809,
+   "deed_nonnull": 4522,
+   "deed_placeholder": 7,
+   "deed_pct": 51.3,
+   "legal_nonnull": 7590,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Monroe'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Montgomery": {
+   "fips": "05097",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 120,
+   "ardot_gps_marks": 27,
+   "acf_road_segments": 6251,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Montgomery'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 11213,
+   "owner_nonnull": 11213,
+   "pid_nonnull": 11213,
+   "deed_nonnull": 9141,
+   "deed_placeholder": 0,
+   "deed_pct": 81.5,
+   "legal_nonnull": 10769,
+   "data_year": 2026,
+   "camadate": "2026-08-20",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Montgomery'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Nevada": {
+   "fips": "05099",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 39,
+   "ardot_gps_marks": 16,
+   "acf_road_segments": 1837,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Nevada'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 12119,
+   "owner_nonnull": 12119,
+   "pid_nonnull": 12119,
+   "deed_nonnull": 11254,
+   "deed_placeholder": 0,
+   "deed_pct": 92.9,
+   "legal_nonnull": 12108,
+   "data_year": 2026,
+   "camadate": "2026-08-30",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Nevada'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Newton": {
+   "fips": "05101",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 185,
+   "ardot_gps_marks": 35,
+   "acf_road_segments": 5080,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Newton'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 5971,
+   "owner_nonnull": 5971,
+   "pid_nonnull": 5971,
+   "deed_nonnull": 4380,
+   "deed_placeholder": 0,
+   "deed_pct": 73.4,
+   "legal_nonnull": 5778,
+   "data_year": 2026,
+   "camadate": "2026-09-16",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Newton'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Ouachita": {
+   "fips": "05103",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 163,
+   "ardot_gps_marks": 19,
+   "acf_road_segments": 4256,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Ouachita'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 16720,
+   "owner_nonnull": 16719,
+   "pid_nonnull": 16720,
+   "deed_nonnull": 16300,
+   "deed_placeholder": 0,
+   "deed_pct": 97.5,
+   "legal_nonnull": 16706,
+   "data_year": 2026,
+   "camadate": "2026-09-13",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Ouachita'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Perry": {
+   "fips": "05105",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 110,
+   "ardot_gps_marks": 31,
+   "acf_road_segments": 3390,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Perry'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mixed year/instrument and book/page",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 10267,
+   "owner_nonnull": 10267,
+   "pid_nonnull": 10267,
+   "deed_nonnull": 9485,
+   "deed_placeholder": 0,
+   "deed_pct": 92.4,
+   "legal_nonnull": 10126,
+   "data_year": 2026,
+   "camadate": "2026-08-20",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Perry'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Phillips": {
+   "fips": "05107",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 221,
+   "ardot_gps_marks": 35,
+   "acf_road_segments": 3266,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Phillips'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 19590,
+   "owner_nonnull": 19590,
+   "pid_nonnull": 19590,
+   "deed_nonnull": 18018,
+   "deed_placeholder": 0,
+   "deed_pct": 92.0,
+   "legal_nonnull": 19584,
+   "data_year": 2026,
+   "camadate": "2026-07-20",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Phillips'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Pike": {
+   "fips": "05109",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 92,
+   "ardot_gps_marks": 8,
+   "acf_road_segments": 5427,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Pike'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 11442,
+   "owner_nonnull": 11442,
+   "pid_nonnull": 11442,
+   "deed_nonnull": 7047,
+   "deed_placeholder": 0,
+   "deed_pct": 61.6,
+   "legal_nonnull": 11418,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Pike'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Poinsett": {
+   "fips": "05111",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 174,
+   "ardot_gps_marks": 40,
+   "acf_road_segments": 4244,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Poinsett'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 17899,
+   "owner_nonnull": 17899,
+   "pid_nonnull": 17899,
+   "deed_nonnull": 14841,
+   "deed_placeholder": 0,
+   "deed_pct": 82.9,
+   "legal_nonnull": 17652,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Poinsett'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Polk": {
+   "fips": "05113",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 249,
+   "ardot_gps_marks": 29,
+   "acf_road_segments": 6351,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Polk'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mixed year/instrument and book/page",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 19280,
+   "owner_nonnull": 19280,
+   "pid_nonnull": 19280,
+   "deed_nonnull": 17686,
+   "deed_placeholder": 0,
+   "deed_pct": 91.7,
+   "legal_nonnull": 19225,
+   "data_year": 2026,
+   "camadate": "2026-08-30",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Polk'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Pope": {
+   "fips": "05115",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 244,
+   "ardot_gps_marks": 74,
+   "acf_road_segments": 5995,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Pope'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mixed year/instrument and book/page",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 32489,
+   "owner_nonnull": 32488,
+   "pid_nonnull": 32489,
+   "deed_nonnull": 23507,
+   "deed_placeholder": 2,
+   "deed_pct": 72.4,
+   "legal_nonnull": 32485,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Pope'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Prairie": {
+   "fips": "05117",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 213,
+   "ardot_gps_marks": 26,
+   "acf_road_segments": 2893,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Prairie'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 10097,
+   "owner_nonnull": 10097,
+   "pid_nonnull": 10097,
+   "deed_nonnull": 9326,
+   "deed_placeholder": 1,
+   "deed_pct": 92.4,
+   "legal_nonnull": 10093,
+   "data_year": 2026,
+   "camadate": "2026-08-06",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Prairie'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Pulaski": {
+   "fips": "05119",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 461,
+   "ardot_gps_marks": 136,
+   "acf_road_segments": 35978,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Pulaski'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 180229,
+   "owner_nonnull": 180229,
+   "pid_nonnull": 180229,
+   "deed_nonnull": 166165,
+   "deed_placeholder": 77,
+   "deed_pct": 92.2,
+   "legal_nonnull": 86952,
+   "data_year": 2026,
+   "camadate": "2026-09-10",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "alt_sources": [
+    {
+     "name": "PAgis OperationalLayers/MapServer/52 \"Parcels\"",
+     "url": "https://www.pagis.org/ArcGIS/rest/services/APPS/OperationalLayers/MapServer/52",
+     "status": "HTTP 500 on 2026-10-19"
+    }
+   ],
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Pulaski'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Randolph": {
+   "fips": "05121",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 62,
+   "ardot_gps_marks": 15,
+   "acf_road_segments": 4314,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Randolph'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 18122,
+   "owner_nonnull": 18122,
+   "pid_nonnull": 18122,
+   "deed_nonnull": 17486,
+   "deed_placeholder": 0,
+   "deed_pct": 96.5,
+   "legal_nonnull": 16452,
+   "data_year": 2026,
+   "camadate": "2026-08-26",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Randolph'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Saline": {
+   "fips": "05125",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 182,
+   "ardot_gps_marks": 71,
+   "acf_road_segments": 13004,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Saline'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 80143,
+   "owner_nonnull": 80142,
+   "pid_nonnull": 80143,
+   "deed_nonnull": 67484,
+   "deed_placeholder": 26,
+   "deed_pct": 84.2,
+   "legal_nonnull": 78535,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Saline'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Scott": {
+   "fips": "05127",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 99,
+   "ardot_gps_marks": 25,
+   "acf_road_segments": 2567,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Scott'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 10881,
+   "owner_nonnull": 10881,
+   "pid_nonnull": 10881,
+   "deed_nonnull": 6905,
+   "deed_placeholder": 2,
+   "deed_pct": 63.5,
+   "legal_nonnull": 10563,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Scott'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Searcy": {
+   "fips": "05129",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 166,
+   "ardot_gps_marks": 33,
+   "acf_road_segments": 5777,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Searcy'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 11763,
+   "owner_nonnull": 11763,
+   "pid_nonnull": 11763,
+   "deed_nonnull": 11389,
+   "deed_placeholder": 288,
+   "deed_pct": 96.8,
+   "legal_nonnull": 11762,
+   "data_year": 2026,
+   "camadate": "2026-09-16",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Searcy'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Sebastian": {
+   "fips": "05131",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 176,
+   "ardot_gps_marks": 92,
+   "acf_road_segments": 17895,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Sebastian'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mixed year/instrument and book/page",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 60283,
+   "owner_nonnull": 60283,
+   "pid_nonnull": 60283,
+   "deed_nonnull": 49382,
+   "deed_placeholder": 764,
+   "deed_pct": 81.9,
+   "legal_nonnull": 53349,
+   "data_year": 2026,
+   "camadate": "2026-09-15",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Sebastian'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Sevier": {
+   "fips": "05133",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 104,
+   "ardot_gps_marks": 45,
+   "acf_road_segments": 3685,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Sevier'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 11700,
+   "owner_nonnull": 11700,
+   "pid_nonnull": 11700,
+   "deed_nonnull": 11416,
+   "deed_placeholder": 0,
+   "deed_pct": 97.6,
+   "legal_nonnull": 11700,
+   "data_year": 2026,
+   "camadate": "2026-08-27",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Sevier'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Sharp": {
+   "fips": "05135",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 142,
+   "ardot_gps_marks": 31,
+   "acf_road_segments": 4509,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Sharp'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 46357,
+   "owner_nonnull": 46357,
+   "pid_nonnull": 46357,
+   "deed_nonnull": 42071,
+   "deed_placeholder": 2,
+   "deed_pct": 90.8,
+   "legal_nonnull": 10799,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Sharp'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "St. Francis": {
+   "fips": "05123",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 178,
+   "ardot_gps_marks": 28,
+   "acf_road_segments": 3899,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='St. Francis'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mixed year/instrument and book/page",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 17941,
+   "owner_nonnull": 17941,
+   "pid_nonnull": 17941,
+   "deed_nonnull": 12541,
+   "deed_placeholder": 16,
+   "deed_pct": 69.9,
+   "legal_nonnull": 17763,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='St. Francis'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Stone": {
+   "fips": "05137",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 28,
+   "ardot_gps_marks": 19,
+   "acf_road_segments": 3144,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Stone'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 15494,
+   "owner_nonnull": 15493,
+   "pid_nonnull": 15494,
+   "deed_nonnull": 12210,
+   "deed_placeholder": 0,
+   "deed_pct": 78.8,
+   "legal_nonnull": 15492,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Stone'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Union": {
+   "fips": "05139",
+   "sp_zone": "SOUTH",
+   "sp_epsg_2011_ftus": 6413,
+   "ngs_marks": 160,
+   "ardot_gps_marks": 68,
+   "acf_road_segments": 7886,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Union'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 31636,
+   "owner_nonnull": 31636,
+   "pid_nonnull": 31636,
+   "deed_nonnull": 27697,
+   "deed_placeholder": 1,
+   "deed_pct": 87.5,
+   "legal_nonnull": 31635,
+   "data_year": 2026,
+   "camadate": "2026-08-25",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Union'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Van Buren": {
+   "fips": "05141",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 229,
+   "ardot_gps_marks": 40,
+   "acf_road_segments": 4978,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Van Buren'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 32187,
+   "owner_nonnull": 32187,
+   "pid_nonnull": 32187,
+   "deed_nonnull": 30126,
+   "deed_placeholder": 28,
+   "deed_pct": 93.6,
+   "legal_nonnull": 32164,
+   "data_year": 2026,
+   "camadate": "2026-07-22",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Van Buren'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Washington": {
+   "fips": "05143",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 163,
+   "ardot_gps_marks": 115,
+   "acf_road_segments": 18996,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Washington'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 114791,
+   "owner_nonnull": 114791,
+   "pid_nonnull": 114791,
+   "deed_nonnull": 113730,
+   "deed_placeholder": 18,
+   "deed_pct": 99.1,
+   "legal_nonnull": 67604,
+   "data_year": 2026,
+   "camadate": "2026-08-26",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "alt_sources": [
+    {
+     "name": "Washington County Assessor/Parcel_Sales",
+     "url": "https://arcserv.co.washington.ar.us/server/rest/services/Assessor/Parcel_Sales/FeatureServer",
+     "status": "TLS connection refused from this machine 2026-10-19"
+    }
+   ],
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Washington'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "White": {
+   "fips": "05145",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 272,
+   "ardot_gps_marks": 85,
+   "acf_road_segments": 8825,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='White'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly year/instrument (e.g. \"2020/13954\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 49889,
+   "owner_nonnull": 49888,
+   "pid_nonnull": 49889,
+   "deed_nonnull": 37347,
+   "deed_placeholder": 36,
+   "deed_pct": 74.9,
+   "legal_nonnull": 39566,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='White'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Woodruff": {
+   "fips": "05147",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 70,
+   "ardot_gps_marks": 15,
+   "acf_road_segments": 2052,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Woodruff'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 9238,
+   "owner_nonnull": 9238,
+   "pid_nonnull": 9238,
+   "deed_nonnull": 8409,
+   "deed_placeholder": 0,
+   "deed_pct": 91.0,
+   "legal_nonnull": 9238,
+   "data_year": 2026,
+   "camadate": "2026-08-25",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Woodruff'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  },
+  "Yell": {
+   "fips": "05149",
+   "sp_zone": "NORTH",
+   "sp_epsg_2011_ftus": 6411,
+   "ngs_marks": 104,
+   "ardot_gps_marks": 46,
+   "acf_road_segments": 5781,
+   "status": "fixed_pending_review",
+   "source": "statewide",
+   "source_type": "state agency compilation of county assessor CAMA (AGISO)",
+   "source_name": "Arkansas GIS Office (AGISO) statewide PARCEL_POLYGON_CAMP (Arkansas Spatial Data Infrastructure)",
+   "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/6",
+   "layer_id": 6,
+   "county_filter": "county='Yell'",
+   "native_sr": {
+    "wkid": 26915,
+    "name": "NAD83 UTM zone 15N (EPSG 26915)"
+   },
+   "fields": {
+    "owner": [
+     "ownername"
+    ],
+    "deed_ref": "sourceref",
+    "deed_date": "sourcedate",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "parcelid",
+    "ppin": "countyid",
+    "acres": null,
+    "subdivision": "subdivision",
+    "str": "str",
+    "legal": "parcellgl",
+    "pin": "countyid"
+   },
+   "deed_format": "mostly book/page (e.g. \"649/895\")",
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 19260,
+   "owner_nonnull": 19260,
+   "pid_nonnull": 19260,
+   "deed_nonnull": 9954,
+   "deed_placeholder": 6,
+   "deed_pct": 51.7,
+   "legal_nonnull": 19257,
+   "data_year": 2026,
+   "camadate": "2026-09-09",
+   "pubdate": "2026-09-30",
+   "sample_in_county": true,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "county='Yell'",
+   "deed_ref_split": "ar_ref",
+   "deed_ref_chain_sep": "---",
+   "deed_instrument_print": true,
+   "deed_sentinels": [
+    "0",
+    "0/0",
+    "/",
+    "-"
+   ],
+   "pid_search_also": [
+    "pin"
+   ],
+   "buildings_source": "none"
+  }
+ },
+ "control": {
+  "state_source": true,
+  "agency": "NOAA NGS; Arkansas DOT (ARDOT) Surveys Division GPS control and ARDOT CORS/RTN; AGISO-hosted PLSS corner control (Arkansas Land Survey records)",
+  "sources": [
+   {
+    "name": "NGS Datasheets Feature Service (ALL_DATASHEETS), STATE='AR'",
+    "agency": "NOAA National Geodetic Survey",
+    "type": "ArcGIS Online FeatureServer",
+    "url": "https://services2.arcgis.com/C8EMgrsFcRFL6LrL/arcgis/rest/services/NGS_Datasheets_Feature_Service/FeatureServer/1",
+    "county_filter": "STATE='AR' AND COUNTY='<COUNTY UPPERCASE, no periods>' (e.g. 'ST FRANCIS', 'HOT SPRING')",
+    "count": 11291,
+    "native_sr": "wkid 104145 (GCS NAD83(2011))",
+    "breakdown": {
+     "NAD 83 (1986)": 8727,
+     "NAD 83 (1997)": 2057,
+     "NAD 83 (2011)": 506,
+     "NAD 83 (CORS)": 1,
+     "NAVD88 heights": 10931,
+     "CORS": 26
+    },
+    "data_year": "DATA_DATE 20240712 to 20260905",
+    "live_test": "OK 2026-10-19: 11,291 AR marks, 26 with CORS_ID; every county's marks are in one zone"
+   },
+   {
+    "name": "ARDOT GPS control (AGISO Location/ARDOT_GPS_CONTROL)",
+    "agency": "Arkansas Department of Transportation, Surveys Division",
+    "type": "ArcGIS Server FeatureServer",
+    "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Location/FeatureServer/25",
+    "count": 3630,
+    "native_sr": "EPSG:26915 (NAD83 UTM 15N); lat/long, ellipsoid and geoid heights in attributes",
+    "breakdown": {
+     "NAD 83 (1986)": 584,
+     "NAVD 88": 1,
+     "NAD 83 (1997)": 2322,
+     "NAD83 (2011)": 7,
+     "(blank)": 58,
+     "NAD83 (1997)": 2,
+     "NAD 83 (2002)": 1,
+     "NAD 83 (2011)": 655
+    },
+    "data_year": "latest date_monumented 2020-05-18",
+    "note": "Layer looks older than ARDOT's own downloads: ARDOT posts \"ARDOT GPS & BM's\" PDFs (zip) updated September 2026 at https://ardot.gov/divisions/surveys/control-surveys/. Many marks carry Geoid 12A heights. County names in the layer are mixed case and include out-of-state ties (e.g. \"MO / TANEY\").",
+    "live_test": "OK 2026-10-19: 3,630 marks"
+   },
+   {
+    "name": "PLSS corner control points (AGISO Planning_Cadastre/PLSS_CORNER_CONTROL_POINTS)",
+    "agency": "Arkansas Land Survey corner records (Commissioner of State Lands), hosted by AGISO",
+    "type": "ArcGIS Server FeatureServer",
+    "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Planning_Cadastre/FeatureServer/18",
+    "count": 35412,
+    "native_sr": "EPSG:26915; lat/long attributes",
+    "data_year": "recorded through 2026 (y_rec)",
+    "note": "Section and quarter corners with surveyor, plat number and record date; useful for PLSS ties. cnty is the alphabetical county number (1 Arkansas ... 75 Yell).",
+    "live_test": "OK 2026-10-19: 35,412 corners"
+   }
+  ],
+  "cors_network": {
+   "name": "ARDOT CORS / ARDOT RTN",
+   "stations": "39 ARDOT CORS in Arkansas (ARBT Batesville ... ARWY Wynne), plus partner MoDOT and LA DOTD border stations",
+   "page": "https://ardot.gov/divisions/surveys/control-surveys/",
+   "rtn": "http://gps.ardot.gov/ (NTRIP, account and user agreement required; offered free as a public service per the ARCORS user agreement)",
+   "raw_data": "Reference Data Shop at gps.ardot.gov for stations not published with NGS",
+   "note": "not signed up; no account created"
+  },
+  "checked": "2026-10-19",
+  "ngs": {
+   "ngs_datasheet_url": "https://www.ngs.noaa.gov/cgi-bin/ds_mark.prl?PidBox={PID}"
+  },
+  "datum_shifts_applied": false,
+  "data_year": "2026 (NGS extract through 20260905)",
+  "source_name": "NOAA NGS Datasheets (AR) + ARDOT GPS control + PLSS corners",
+  "source_checked": "2026-10-19"
+ },
+ "roads": {
+  "name": "Arkansas Centerline File (ACF), AGISO Transportation/ROADS_ACF",
+  "agency": "Arkansas GIS Office with county 911 addressing (ACF statewide road centerline program)",
+  "type": "ArcGIS Server FeatureServer",
+  "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Transportation/FeatureServer/18",
+  "native_sr": "EPSG:26915 (NAD83 UTM zone 15N)",
+  "count": 458050,
+  "named_count": 458048,
+  "county_filter": "cn_l_fips = '<3-digit county FIPS>' (or cn_r_fips); comm_l/comm_r hold names like 'Arkansas County'",
+  "name_fields": [
+   "pstr_fulnam",
+   "pstr_nam",
+   "pstr_type"
+  ],
+  "route_fields": [
+   "ah_route",
+   "ah_section",
+   "rd_class"
+  ],
+  "schema": "Address ranges (pl_add_f/t, pr_add_f/t), city/zip by side, ARDOT route keys (ah_*)",
+  "data_year": 2026,
+  "vintage": "date_ed 2024-01-04 to 2026-07-01 (a few typo dates of 2028-05-01); per-county latest date in roads_by_fips.json",
+  "live_test": "OK 2026-10-19: 458,050 segments, 458,048 with pstr_fulnam; 75 counties present (17,864 segments with no county FIPS)",
+  "why": "Statewide public named centerline layer for all 75 counties, kept current from county 911 addressing.",
+  "alt_sources": [
+   {
+    "name": "US Census TIGERweb 2026 roads (fallback)",
+    "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Transportation/MapServer/8",
+    "native_sr": "EPSG:3857",
+    "data_year": 2026
+   }
+  ],
+  "source_name": "AGISO Arkansas Centerline File (ROADS_ACF)",
+  "source_checked": "2026-10-19"
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Same entry as SC/GA/VA/TN. Added 2026-11-12 (rc31); box DXF-parse tested, not tested in Carlson or IntelliCAD.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}

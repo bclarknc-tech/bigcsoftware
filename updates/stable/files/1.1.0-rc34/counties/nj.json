@@ -1,0 +1,1173 @@
+{
+ "_meta": {
+  "state": "NJ",
+  "target_wkid": 6527,
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PID:{pid}"
+  ],
+  "statewide_geometry_layer": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+  "status_legend": {
+   "ok": "owner+deed+PID live-verified",
+   "partial": "owner+PID (no deed) or subset coverage",
+   "missing": "no owner source found yet",
+   "unverified": "endpoint unreachable at test time"
+  },
+  "localities": 21,
+  "pass_summary": "First pass 2026-10-14: 5/21 with owner (23.8%), 4 ok, 1 partial (Bergen), 16 missing. Statewide owners redacted (Daniel's Law). Control: coastal tidal BM only (no statewide survey control). Roads: NJGIN NG911 centerlines done.",
+  "default_epsg": 6527,
+  "epsg_choices": [
+   6527
+  ],
+  "target_options": {
+   "jersey": 6527
+  },
+  "detect": {
+   "local": "NJ"
+  },
+  "onemap_url": null,
+  "release": true
+ },
+ "counties": {
+  "Atlantic County": {
+   "fips": "34001",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://ags.civilsolutions.biz/server/rest/services/myiDV/AtlanticCo/MapServer/4",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBkNum",
+    "deed_page": "DeedBkPg",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PAMS_PIN",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 144352,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "Atlantic County parcels + MOD-IV, county myiDV parcel viewer (CivilSolutions host)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='ATLANTIC'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "county_filter": null,
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Bergen County": {
+   "fips": "34003",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://bchapeweb.co.bergen.nj.us/arcgis/rest/services/Parcel_idtLookup/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 103106,
+    "latestWkid": 6527
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PAMS_PIN",
+    "deed_book": null,
+    "deed_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 300083,
+   "data_year": "2026 (live county BERGENPARCELS)",
+   "source_name": "Bergen County GIS - Parcel_idtLookup / BERGENPARCELS",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='BERGEN'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Burlington County": {
+   "fips": "34005",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://ags.civilsolutions.biz/server/rest/services/myiDV/BurlingtonCo/MapServer/3",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner_Name"
+    ],
+    "deed_ref": null,
+    "deed_book": "Sale_Book",
+    "deed_page": "Sale_Page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PAMS_PIN",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 174852,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "Burlington County parcels + MOD-IV, county myiDV parcel viewer (CivilSolutions host)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='BURLINGTON'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "county_filter": null,
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Camden County": {
+   "fips": "34007",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://ags.civilsolutions.biz/server/rest/services/myiDV/CamdenCounty_IDV/MapServer/3",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "M4_Owner"
+    ],
+    "deed_ref": null,
+    "deed_book": "M4_DeedBkNum",
+    "deed_page": "M4_DeedBkPg",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "M4_PAMSPIN",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 191292,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "Camden County parcels + MOD-IV, county myiDV parcel viewer (CivilSolutions host)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='CAMDEN'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "county_filter": null,
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Cape May County": {
+   "fips": "34009",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://ags.civilsolutions.biz/server/rest/services/myiDV/CapeMayCo/MapServer/3",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBkNum",
+    "deed_page": "DeedBkPg",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PAMS_PIN",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 95290,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "Cape May County parcels + MOD-IV, county myiDV parcel viewer (CivilSolutions host)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='CAPE MAY'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "county_filter": null,
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Cumberland County": {
+   "fips": "34011",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://ags.civilsolutions.biz/server/rest/services/myiDV/CumberlandCo/MapServer/3",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner_Name"
+    ],
+    "deed_ref": null,
+    "deed_book": "Sale_Book",
+    "deed_page": "Sale_Page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PAMS_PIN",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 63411,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "Cumberland County parcels + MOD-IV, county myiDV parcel viewer (CivilSolutions host)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='CUMBERLAND'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "county_filter": null,
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Essex County": {
+   "fips": "34013",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://ags.civilsolutions.biz/server/rest/services/myiDV/EssexCo/MapServer/3",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBkNum",
+    "deed_page": "DeedBkPg",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PAMS_PIN",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 178089,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "Essex County parcels + MOD-IV, county myiDV parcel viewer (CivilSolutions host)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='ESSEX'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "county_filter": null,
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Gloucester County": {
+   "fips": "34015",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services8.arcgis.com/CBiB2HwHGXUi8D4Y/arcgis/rest/services/Gloucester_County_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PAMS_PIN",
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 104787,
+   "data_year": "2026 (live county AGOL republish of MOD-IV join)",
+   "source_name": "Gloucester County Parcels (AGOL CBiB2HwHGXUi8D4Y)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='GLOUCESTER'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Hudson County": {
+   "fips": "34017",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://ags.civilsolutions.biz/server/rest/services/myiDV/HudsonCo/MapServer/3",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner_Name"
+    ],
+    "deed_ref": null,
+    "deed_book": "Sale_Book",
+    "deed_page": "Sale_Page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PAMS_PIN",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 143305,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "Hudson County parcels + MOD-IV, county myiDV parcel viewer (CivilSolutions host)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='HUDSON'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "county_filter": null,
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Hunterdon County": {
+   "fips": "34019",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://ags.civilsolutions.biz/server/rest/services/myiDV/HunterdonCo/MapServer/4",
+   "layer_id": 73,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBkNum",
+    "deed_page": "DeedBkPg",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PAMS_PIN",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 54927,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "Hunterdon County parcels + MOD-IV, county myiDV parcel viewer (CivilSolutions host)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='HUNTERDON'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "county_filter": null,
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Mercer County": {
+   "fips": "34021",
+   "status": "missing",
+   "source": "njgin_statewide",
+   "url": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PAMS_PIN",
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE"
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 127186,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "NJOGIS / NJGIN Parcels and MOD-IV Composite of NJ (Parcels_Composite_NJ_WM) (geometry+deed+PIN; owners redacted)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='MERCER'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Middlesex County": {
+   "fips": "34023",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services.arcgis.com/BnY3izA2Kwu6jVHq/arcgis/rest/services/Middlesex_County_NJ_Parcel_data/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102711,
+    "latestWkid": 3424
+   },
+   "fields": {
+    "owner": [
+     "OwnersName"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PAMS_PIN",
+    "deed_book": "DeedBook",
+    "deed_page": "DeedPage"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 275590,
+   "data_year": "2026 (live county AGOL)",
+   "source_name": "Middlesex County NJ Parcel data (AGOL BnY3izA2Kwu6jVHq)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='MIDDLESEX'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Monmouth County": {
+   "fips": "34025",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services1.arcgis.com/PsDtSYIjNsyfjwcX/arcgis/rest/services/Monmouth_County_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102711,
+    "latestWkid": 3424
+   },
+   "fields": {
+    "owner": [
+     "Owner_Name"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PAMSPIN",
+    "deed_book": "Sale_Book",
+    "deed_page": "Sale_Page"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 265257,
+   "data_year": "2026 (live MonmouthNJGIS AGOL)",
+   "source_name": "Monmouth County Parcels (MonmouthNJGIS AGOL)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='MONMOUTH'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Morris County": {
+   "fips": "34027",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.co.morris.nj.us/server/rest/services/Parcels/ParcelMap/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102711,
+    "latestWkid": 3424
+   },
+   "fields": {
+    "owner": [
+     "OwnersName"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PAMS_PIN",
+    "deed_book": "DeedBookNumber",
+    "deed_page": "DeedBookPage"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 182946,
+   "data_year": "2026 (live Morris County Parcels_ModIV)",
+   "source_name": "Morris County GIS - Parcels/ParcelMap FeatureServer/1 (Parcels_ModIV)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='MORRIS'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Ocean County": {
+   "fips": "34029",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://ags.civilsolutions.biz/server/rest/services/myiDV/OceanCo/MapServer/3",
+   "layer_id": 9,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBkNum",
+    "deed_page": "DeedBkPg",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PAMSPIN",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 134615,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "Ocean County parcels + MOD-IV, county myiDV parcel viewer (CivilSolutions host)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='OCEAN'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "county_filter": null,
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Passaic County": {
+   "fips": "34031",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://ags.civilsolutions.biz/server/rest/services/myiDV/PassaicCo/MapServer/3",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner_Name"
+    ],
+    "deed_ref": null,
+    "deed_book": "Sale_Book",
+    "deed_page": "Sale_Page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PAMS_PIN",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 125785,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "Passaic County parcels + MOD-IV, county myiDV parcel viewer (CivilSolutions host)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='PASSAIC'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "county_filter": null,
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Salem County": {
+   "fips": "34033",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://ags.civilsolutions.biz/server/rest/services/myiDV/SalemCo/MapServer/4",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner_Name"
+    ],
+    "deed_ref": null,
+    "deed_book": "Sale_Book",
+    "deed_page": "Sale_Page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PAMS_PIN",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 31223,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "Salem County parcels + MOD-IV, county myiDV parcel viewer (CivilSolutions host)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='SALEM'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "county_filter": null,
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Somerset County": {
+   "fips": "34035",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://ags.civilsolutions.biz/server/rest/services/myiDV/SomersetCo/MapServer/3",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner"
+    ],
+    "deed_ref": null,
+    "deed_book": "DeedBkNum",
+    "deed_page": "DeedBkPg",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PAMS_PIN",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 132895,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "Somerset County parcels + MOD-IV, county myiDV parcel viewer (CivilSolutions host)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='SOMERSET'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "county_filter": null,
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Sussex County": {
+   "fips": "34037",
+   "status": "missing",
+   "source": "njgin_statewide",
+   "url": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PAMS_PIN",
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE"
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 74214,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "NJOGIS / NJGIN Parcels and MOD-IV Composite of NJ (Parcels_Composite_NJ_WM) (geometry+deed+PIN; owners redacted)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='SUSSEX'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Union County": {
+   "fips": "34039",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://oms.ucnj.org/server/rest/services/Public_Map/Public_Map_Service/MapServer/17",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "Owner_Name"
+    ],
+    "deed_ref": null,
+    "deed_book": "Sale_Book",
+    "deed_page": "Sale_Page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PAMS_PIN",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 147628,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "Union County parcels + MOD-IV, oms.ucnj.org (Union County server)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='UNION'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "county_filter": null,
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Warren County": {
+   "fips": "34041",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services3.arcgis.com/4mb1fO9eRe47EZZx/arcgis/rest/services/WarrenCo_ParcelModIV_wOwner/FeatureServer/75",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAME"
+    ],
+    "deed_ref": null,
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": null,
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 46932,
+   "data_year": "2024 MOD-IV tax attrs (NJ Treasury); geometry updates through 2025-11 (NJGIN)",
+   "source_name": "Warren County County layer 'WarrenCo_ParcelModIV_wOwner' (mwalton_warrencountynj)",
+   "geometry_fallback": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+   "county_filter_statewide": "COUNTY='WARREN'",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6527,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "county_filter": null,
+   "buildings_source": "none"
+  }
+ },
+ "control": {
+  "state_source": true,
+  "agency": "NJDEP (Tidal Benchmark Network only) — no statewide land survey-control FeatureServer found",
+  "sources": [
+   {
+    "name": "NJDEP Tidal Benchmark Network",
+    "url": "https://mapsdep.nj.gov/arcgis/rest/services/Features/Geodetic/MapServer/118",
+    "count": 216,
+    "native_sr": "EPSG:3857 (service); source described as NJSPC NAD83",
+    "fields": [
+     "STN_NAME",
+     "STN_NUM",
+     "ID",
+     "COUNTY",
+     "NOAA_INFO",
+     "NGS_INFO",
+     "PAGE"
+    ],
+    "live_test": "OK 2026-10-14: STN_NAME=Sunset Beach / STN_NUM=853-8479 / ID=8479; count 216",
+    "note": "215–216 station groupings representing ~1,200 coastal tidal benchmarks (not a full geodetic control network). Hyperlinked to tidal datum sheets. Features/Geodetic MapServer exposes only this layer publicly."
+   }
+  ],
+  "finding": "No NJGIN/NJOIT or NJDOT statewide survey monument / geodetic control REST found beyond NJDEP's coastal Tidal Benchmark Network (216 groupings). Prefer live NGS datasheets for inland control.",
+  "live_test": "OK 2026-10-14 NJDEP Tidal Benchmark Network",
+  "checked": "2026-10-14",
+  "ngs": {
+   "ngs_datasheet_url": "https://www.ngs.noaa.gov/cgi-bin/ds_mark.prl?PidBox={PID}",
+   "note": "NGS covers all states. Not re-surveyed here beyond confirming no separate NJ land-control REST."
+  },
+  "datum_shifts_applied": false
+ },
+ "roads": {
+  "name": "NJGIN Statewide Road Centerlines (Next Generation 9-1-1 Format)",
+  "agency": "NJ Office of GIS (NJOGIS) / NJDOT / local partners via NJGIN",
+  "type": "ArcGIS REST MapServer",
+  "url": "https://maps.nj.gov/arcgis/rest/services/Framework/Transportation/MapServer/14",
+  "layer": "Roads (Tran_road / NG9-1-1)",
+  "color": 8,
+  "native_sr": "EPSG:3424 (NAD83 NJ ftUS; service wkid 102711 / latestWkid 3424)",
+  "count": 489140,
+  "named_count": 488621,
+  "county_filter": "COUNTY_L / COUNTY_R (GNIS-style codes, e.g. 882279) — not FIPS; use carefully",
+  "name_fields": [
+   "PRIMENAME",
+   "ST_NAME",
+   "ST_POSTYP",
+   "LST_PNAME",
+   "LST_NAME"
+  ],
+  "full_name_field": "PRIMENAME",
+  "route_fields": [
+   "SHLD_NUM",
+   "SHLD_TYPE",
+   "SRI"
+  ],
+  "fields": {
+   "id": "RCL_NGUID",
+   "name": "PRIMENAME",
+   "st_name": "ST_NAME",
+   "st_type": "ST_POSTYP",
+   "route": "SHLD_NUM",
+   "sri": "SRI",
+   "county_l": "COUNTY_L",
+   "county_r": "COUNTY_R",
+   "roadclass": "ROADCLASS"
+  },
+  "sibling_layers": {
+   "NJDOT Roadway Network 2023 SLD (FeatureServer/0)": {
+    "url": "https://services.arcgis.com/HggmsDF7UJsNN1FK/arcgis/rest/services/New_Jersey_DOT_Roadway_Network/FeatureServer/0",
+    "count": 105838,
+    "note": "State/US/Interstate/NHS/STP/County routes from 2023 SLDs; SLD_NAME + SRI; NJSPC 3424. Prefer NG911 layer for local street names."
+   },
+   "NJDOT Major Routes (FeatureServer/1)": {
+    "url": "https://services.arcgis.com/HggmsDF7UJsNN1FK/arcgis/rest/services/New_Jersey_DOT_Roadway_Network/FeatureServer/1",
+    "note": "Major routes sibling of NJDOT Roadway Network."
+   }
+  },
+  "max_record_count": 1000,
+  "pagination": true,
+  "data_year": 2026,
+  "vintage": "Live NJGIN NG9-1-1 road centerlines (DATEUPDATE present; sample Oct 2026 editor stamp); replaces older Tran_road_centerline_NJ linear-ref model",
+  "live_test": "OK 2026-10-14: PRIMENAME=Laurel Place ST_NAME=Laurel ST_POSTYP=Place COUNTY_L=882279; count 489140 (488621 named)",
+  "use_terms": "NJGIN / NJOGIS public framework data; cite NJOGIS and contributing counties/NJDOT. Provided as-is.",
+  "datum_shifts_applied": false
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Same entry as SC/GA/VA/TN. Added 2026-11-12 (rc31); box DXF-parse tested, not tested in Carlson or IntelliCAD.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}

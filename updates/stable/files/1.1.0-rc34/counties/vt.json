@@ -1,0 +1,567 @@
+{
+ "_meta": {
+  "state": "VT",
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PB {plat_book} PG {plat_page}",
+   "PID:{pid}"
+  ],
+  "default_epsg": 6590,
+  "epsg_choices": [
+   6590
+  ],
+  "target_options": {
+   "vermont": 6590
+  },
+  "detect": {
+   "local": "VT"
+  },
+  "onemap_url": null,
+  "target_wkid": 6590,
+  "release": true
+ },
+ "counties": {
+  "Essex": {
+   "fips": "50009",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1",
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "SPAN",
+    "acres": null,
+    "address": "LOCAPROP"
+   },
+   "sp_epsg_2011_ftus": 6590,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "VCGI statewide standardized parcels with town Grand List (built from each town's own data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Windsor": {
+   "fips": "50027",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1",
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "SPAN",
+    "acres": null,
+    "address": "LOCAPROP"
+   },
+   "sp_epsg_2011_ftus": 6590,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "VCGI statewide standardized parcels with town Grand List (built from each town's own data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Lamoille": {
+   "fips": "50015",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1",
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "SPAN",
+    "acres": null,
+    "address": "LOCAPROP"
+   },
+   "sp_epsg_2011_ftus": 6590,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "VCGI statewide standardized parcels with town Grand List (built from each town's own data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Windham": {
+   "fips": "50025",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1",
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "SPAN",
+    "acres": null,
+    "address": "LOCAPROP"
+   },
+   "sp_epsg_2011_ftus": 6590,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "VCGI statewide standardized parcels with town Grand List (built from each town's own data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Addison": {
+   "fips": "50001",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1",
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "SPAN",
+    "acres": null,
+    "address": "LOCAPROP"
+   },
+   "sp_epsg_2011_ftus": 6590,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "VCGI statewide standardized parcels with town Grand List (built from each town's own data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Bennington": {
+   "fips": "50003",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1",
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "SPAN",
+    "acres": null,
+    "address": "LOCAPROP"
+   },
+   "sp_epsg_2011_ftus": 6590,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "VCGI statewide standardized parcels with town Grand List (built from each town's own data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Rutland": {
+   "fips": "50021",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1",
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "SPAN",
+    "acres": null,
+    "address": "LOCAPROP"
+   },
+   "sp_epsg_2011_ftus": 6590,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "VCGI statewide standardized parcels with town Grand List (built from each town's own data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Franklin": {
+   "fips": "50011",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1",
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "SPAN",
+    "acres": null,
+    "address": "LOCAPROP"
+   },
+   "sp_epsg_2011_ftus": 6590,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "VCGI statewide standardized parcels with town Grand List (built from each town's own data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Orleans": {
+   "fips": "50019",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1",
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "SPAN",
+    "acres": null,
+    "address": "LOCAPROP"
+   },
+   "sp_epsg_2011_ftus": 6590,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "VCGI statewide standardized parcels with town Grand List (built from each town's own data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Chittenden": {
+   "fips": "50007",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1",
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "SPAN",
+    "acres": null,
+    "address": "LOCAPROP"
+   },
+   "sp_epsg_2011_ftus": 6590,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "VCGI statewide standardized parcels with town Grand List (built from each town's own data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Grand Isle": {
+   "fips": "50013",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1",
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "SPAN",
+    "acres": null,
+    "address": "LOCAPROP"
+   },
+   "sp_epsg_2011_ftus": 6590,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "VCGI statewide standardized parcels with town Grand List (built from each town's own data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Orange": {
+   "fips": "50017",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1",
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "SPAN",
+    "acres": null,
+    "address": "LOCAPROP"
+   },
+   "sp_epsg_2011_ftus": 6590,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "VCGI statewide standardized parcels with town Grand List (built from each town's own data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Washington": {
+   "fips": "50023",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1",
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "SPAN",
+    "acres": null,
+    "address": "LOCAPROP"
+   },
+   "sp_epsg_2011_ftus": 6590,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "VCGI statewide standardized parcels with town Grand List (built from each town's own data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Caledonia": {
+   "fips": "50005",
+   "status": "fixed_pending_review",
+   "source": "state_agency",
+   "url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_VTPARCELS_WM_NOCACHE_v2/FeatureServer/1",
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "SPAN",
+    "acres": null,
+    "address": "LOCAPROP"
+   },
+   "sp_epsg_2011_ftus": 6590,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "VCGI statewide standardized parcels with town Grand List (built from each town's own data); state layer used because towns, not counties, keep parcels and a county entry holds one source",
+   "county_filter": null,
+   "buildings_source": "none"
+  }
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Same entry as SC/GA/VA/TN. Added 2026-11-12 (rc31); box DXF-parse tested, not tested in Carlson or IntelliCAD.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}

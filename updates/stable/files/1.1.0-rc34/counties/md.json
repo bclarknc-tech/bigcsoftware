@@ -1,0 +1,1417 @@
+{
+ "_meta": {
+  "state": "MD",
+  "target_wkid": 6488,
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PB {plat_book} PG {plat_page}",
+   "PID:{pid}"
+  ],
+  "statewide_geometry_layer": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+  "status_legend": {
+   "ok": "owner+deed+PID live-verified",
+   "partial": "owner+PID (no deed) or subset coverage",
+   "missing": "no owner source found yet",
+   "unverified": "endpoint unreachable at test time"
+  },
+  "localities": 24,
+  "default_epsg": 6488,
+  "epsg_choices": [
+   6488
+  ],
+  "target_options": {
+   "maryland": 6488
+  },
+  "detect": {
+   "local": "MD",
+   "name_field": "namelsad"
+  },
+  "onemap_url": null,
+  "release": true
+ },
+ "counties": {
+  "Allegany County": {
+   "fips": "24001",
+   "jurs_code": "ALLE",
+   "status": "missing",
+   "source": "statewide_imap",
+   "url": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "JURSCODE='ALLE'",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ACCTID",
+    "acres": "ACRES",
+    "deed_book": "DR1LIBER",
+    "deed_page": "DR1FOLIO",
+    "plat_book": "PLTLIBER",
+    "plat_page": "PLTFOLIO"
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 41405,
+   "owner_nonnull": 0,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (SDAT May 2026 attrs; polygon vintage ~2024JAN)",
+   "source_name": "MD iMAP / MDP / SDAT — MD_ParcelBoundaries",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "JURSCODE='ALLE'",
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Anne Arundel County": {
+   "fips": "24003",
+   "jurs_code": "ANNE",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.aacounty.org/arcgis/rest/services/OpenData/Planning_OpenData/MapServer/34",
+   "layer_id": 34,
+   "native_sr": {
+    "wkid": 2893,
+    "latestWkid": 2893
+   },
+   "fields": {
+    "owner": [
+     "ASST_FIRST_OWNER",
+     "ASST_SECND_OWNER"
+    ],
+    "deed_ref": "ASST_DEED_REF_1",
+    "plat_ref": null,
+    "pid": "ASST_ACCOUNT_NO",
+    "acres": "ASST_PROP_SIZE",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 267562,
+   "owner_nonnull": 267562,
+   "pid_nonnull": 267562,
+   "deed_nonnull": null,
+   "data_year": "2026 (live county layer)",
+   "source_name": "Anne Arundel County OPZ GIS — Planning_OpenData Parcels",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6488,
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Baltimore City": {
+   "fips": "24510",
+   "jurs_code": "BACI",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://baltegis.baltimorecity.gov/mapping/rest/services/CityView/RealProperty_OB/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNER_1",
+     "OWNER_2",
+     "OWNER_3"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PIN",
+    "acres": null,
+    "deed_book": "DEEDBOOK",
+    "deed_page": "DEEDPAGE",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 237734,
+   "owner_nonnull": 237734,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (live city)",
+   "source_name": "Baltimore City EGIS — CityView RealProperty_OB",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Baltimore County": {
+   "fips": "24005",
+   "jurs_code": "BACO",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://bcgis.baltimorecountymd.gov/arcgis/rest/services/Property/Property/MapServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 2893,
+    "latestWkid": 2893
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NA1",
+     "OWNER_NA2"
+    ],
+    "deed_ref": "DEED_REF",
+    "plat_ref": null,
+    "pid": "TAXPIN",
+    "acres": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 374957,
+   "owner_nonnull": 350687,
+   "pid_nonnull": null,
+   "deed_nonnull": 344618,
+   "data_year": "2026 (live county)",
+   "source_name": "Baltimore County BCGIS — Property/Property Tax parcel",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6488,
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>\\d+)\\s*:\\s*(?P<page>\\d+)\\s*$"
+    }
+   ],
+   "buildings_source": "none"
+  },
+  "Calvert County": {
+   "fips": "24009",
+   "jurs_code": "CALV",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.calvertcountymd.gov/server/rest/services/Countywide/Parcels/MapServer/0",
+   "layer_id": 0,
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNNAME1",
+     "OWNNAME2"
+    ],
+    "deed_ref": null,
+    "deed_book": "LIBER",
+    "deed_page": "FOLIO",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "ACCTID",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 44461,
+   "owner_nonnull": 0,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (SDAT May 2026 attrs; polygon vintage ~2024JAN)",
+   "source_name": "Calvert County Countywide/Parcels MapServer",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": null,
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Caroline County": {
+   "fips": "24011",
+   "jurs_code": "CARO",
+   "status": "missing",
+   "source": "statewide_imap",
+   "url": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "JURSCODE='CARO'",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ACCTID",
+    "acres": "ACRES",
+    "deed_book": "DR1LIBER",
+    "deed_page": "DR1FOLIO",
+    "plat_book": "PLTLIBER",
+    "plat_page": "PLTFOLIO"
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 16891,
+   "owner_nonnull": 0,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (SDAT May 2026 attrs; polygon vintage ~2024JAN)",
+   "source_name": "MD iMAP / MDP / SDAT — MD_ParcelBoundaries",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "JURSCODE='CARO'",
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Carroll County": {
+   "fips": "24013",
+   "jurs_code": "CARR",
+   "status": "missing",
+   "source": "statewide_imap",
+   "url": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "JURSCODE='CARR'",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ACCTID",
+    "acres": "ACRES",
+    "deed_book": "DR1LIBER",
+    "deed_page": "DR1FOLIO",
+    "plat_book": "PLTLIBER",
+    "plat_page": "PLTFOLIO"
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 76249,
+   "owner_nonnull": 0,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (SDAT May 2026 attrs; polygon vintage ~2024JAN)",
+   "source_name": "MD iMAP / MDP / SDAT — MD_ParcelBoundaries",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "JURSCODE='CARR'",
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Cecil County": {
+   "fips": "24015",
+   "jurs_code": "CECI",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://cecilmaps.org/arcgis/rest/services/Hosted/Parcels_forPrintWidget/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "ownname1",
+     "ownname2"
+    ],
+    "deed_ref": "deedreference",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "acctid",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 49644,
+   "owner_nonnull": 0,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (SDAT May 2026 attrs; polygon vintage ~2024JAN)",
+   "source_name": "Cecil County cecilmaps.org Parcels (2020 build)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": null,
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "deed_ref_patterns": [
+    {
+     "re": "^[A-Z]{0,4}(?P<book>\\d{5})(?P<page>\\d{4})$"
+    }
+   ],
+   "deed_ref_split": "mo_ref",
+   "buildings_source": "none"
+  },
+  "Charles County": {
+   "fips": "24017",
+   "jurs_code": "CHAR",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services7.arcgis.com/3BMWkdyrt45RNCrq/arcgis/rest/services/Tax_Parcels_(View)/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNNAME1",
+     "OWNNAME2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ACCTID",
+    "acres": null,
+    "deed_book": "DR1LIBER",
+    "deed_page": "DR1FOLIO",
+    "plat_book": "PLTLIBER",
+    "plat_page": "PLTFOLIO"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 73637,
+   "owner_nonnull": 73637,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (live AGOL; sibling CCG_tax_parcels_06242026 also present)",
+   "source_name": "Charles County GIS — Tax_Parcels_(View)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Dorchester County": {
+   "fips": "24019",
+   "jurs_code": "DORC",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services7.arcgis.com/yqhlYKSnzjiOzQig/arcgis/rest/services/PropParcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNNAME1",
+     "OWNNAME2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ACCTID",
+    "acres": "ACRES",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_book": "PLTLIBER",
+    "plat_page": "PLTFOLIO"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 23581,
+   "owner_nonnull": 23580,
+   "pid_nonnull": null,
+   "deed_nonnull": 0,
+   "data_year": "2025 (layer name DORCPOLY25)",
+   "source_name": "Dorchester County Planning — PropParcels FeatureServer",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Frederick County": {
+   "fips": "24021",
+   "jurs_code": "FRED",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://fcgis.frederickcountymd.gov/server_pub/rest/services/Basemap/Parcels/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OwnersName",
+     "OwnersName2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": "Book",
+    "plat_page": "Page",
+    "pid": "TAX_ACCT",
+    "acres": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 123317,
+   "owner_nonnull": 123317,
+   "pid_nonnull": null,
+   "deed_nonnull": 0,
+   "data_year": "2026 (live county)",
+   "source_name": "Frederick County Basemap/Parcels polygons + Property_Information address-point owners (TAX_ACCT join)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "join": {
+    "url": "https://fcgis.frederickcountymd.gov/server_pub/rest/services/Basemap/Property_Information_WGS/MapServer/0",
+    "key": "TAX_ACCT"
+   },
+   "buildings_source": "none"
+  },
+  "Garrett County": {
+   "fips": "24023",
+   "jurs_code": "GARR",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.garrettcounty.org/server/rest/services/Tax_Parcel_View/MapServer/9",
+   "layer_id": 0,
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNNAME1",
+     "OWNNAME2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DR1LIBER",
+    "deed_page": "DR1FOLIO",
+    "plat_ref": null,
+    "plat_book": "PLTLIBER",
+    "plat_page": "PLTFOLIO",
+    "pid": "ACCTID",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 31642,
+   "owner_nonnull": 0,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (SDAT May 2026 attrs; polygon vintage ~2024JAN)",
+   "source_name": "Garrett County Tax_Parcel_View MapServer",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": null,
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Harford County": {
+   "fips": "24025",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://hcggis.harfordcountymd.gov/arcgis/rest/services/County_Data/Cadastral/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102685,
+    "latestWkid": 2248
+   },
+   "fields": {
+    "owner": [
+     "OWN_1",
+     "OWN_2"
+    ],
+    "deed_ref": null,
+    "deed_book": "LIBER_1",
+    "deed_page": "FOLIO_1",
+    "plat_ref": "PLAT",
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "FEATURE",
+    "pin": "FEATURE",
+    "acres": "Shape_Acre",
+    "address": "P_ST_NAME"
+   },
+   "verified_full": true,
+   "record_count": 104258,
+   "owner_nonnull": 103404,
+   "source_name": "Harford County, MD GIS — official County_Data/Cadastral FeatureServer layer 0 Cadastral (hcggis.harfordcountymd.gov). Promoted from partial: the previously configured Planning/Cadastral MapServer/0 on the /public/ site now publishes zero layers.",
+   "template": "default",
+   "plat_prefix": "PB",
+   "sp_epsg_2011_ftus": 6488,
+   "county_filter": null,
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Howard County": {
+   "fips": "24027",
+   "jurs_code": "HOWA",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://bou.howardcountymd.gov/server/rest/services/AccelaGIS/MapServer/1",
+   "layer_id": 0,
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNNAME1",
+     "OWNNAME2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DR1LIBER",
+    "deed_page": "DR1FOLIO",
+    "plat_ref": null,
+    "plat_book": "PLTLIBER",
+    "plat_page": "PLTFOLIO",
+    "pid": "ACCTID",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 100460,
+   "owner_nonnull": 0,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (SDAT May 2026 attrs; polygon vintage ~2024JAN)",
+   "source_name": "Howard County AccelaGIS Property layer",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": null,
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Kent County": {
+   "fips": "24029",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services6.arcgis.com/RWHujKM5TItecIqp/arcgis/rest/services/Parcel_Viewer_experience_builder/FeatureServer/0",
+   "layer_id": 0,
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 26985,
+    "latestWkid": 26985,
+    "name": "NAD83 Maryland State Plane meters (EPSG 26985), as served"
+   },
+   "fields": {
+    "owner": [
+     "OWNNAME1",
+     "OWNNAME2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DR1LIBER",
+    "deed_page": "DR1FOLIO",
+    "plat_ref": null,
+    "plat_book": "PLTLIBER",
+    "plat_page": "PLTFOLIO",
+    "pid": "ACCTID",
+    "pin": null,
+    "acres": "ACRES",
+    "address": "ADDRESS"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": true
+   },
+   "record_count": 13758,
+   "source_name": "Kent County Parcels_2024 on Parcel_Viewer_experience_builder layer 0, the owner+deed parcel layer in the official Kent County Parcel Viewer (publisher tarnold_kcmd). The viewer's newer Parcel_Boundaries_Feb_2026 layer has slightly more polygons (13,780 vs 13,758) but no owner names, so this 2024 layer is used.",
+   "template": "default",
+   "plat_prefix": "PB",
+   "onemap_filter": null,
+   "sp_epsg_2011_ftus": 6488,
+   "source_type": "county ArcGIS Online (official Kent County MD parcel service)",
+   "deed_format": "Maryland liber/folio as served in DR1LIBER / DR1FOLIO. Values are often zero-padded; drop leading zeros on print.",
+   "sample_owner": "SHIELDS JOHN A",
+   "sample_xy_wgs84": [
+    -75.82115660475506,
+    39.30917666661455
+   ],
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Montgomery County": {
+   "fips": "24031",
+   "jurs_code": "MONT",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis4.montgomerycountymd.gov/arcgis/rest/services/general/property/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNERS_NAME",
+     "OWNERS_NAME2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ACCT",
+    "acres": null,
+    "deed_book": "LIBER",
+    "deed_page": "FOLIO",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 288203,
+   "owner_nonnull": 280661,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (live county; weekly sync from M-NCPPC/SDAT per county docs)",
+   "source_name": "Montgomery County TEBS-GIS — general/property",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Prince George's County": {
+   "fips": "24033",
+   "jurs_code": "PRIN",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services1.arcgis.com/qS7AYixGtf3sv8B6/arcgis/rest/services/Property_Flattened_Py/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 103069,
+    "latestWkid": 6488
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAME"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ACCOUNT",
+    "acres": null,
+    "deed_book": "LIBER",
+    "deed_page": "FOLIO",
+    "plat_book": null,
+    "plat_page": null
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 353445,
+   "owner_nonnull": 353412,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (live AGOL)",
+   "source_name": "Prince George's County — Property_Flattened_Py FeatureServer",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Queen Anne's County": {
+   "fips": "24035",
+   "jurs_code": "QUEE",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.qac.org/arcgis/rest/services/QAC_PUBLIC/DataDownload/MapServer/6",
+   "layer_id": 0,
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "OWNNAME1",
+     "OWNNAME2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DR1LIBER",
+    "deed_page": "DR1FOLIO",
+    "plat_ref": null,
+    "plat_book": "PLTLIBER",
+    "plat_page": "PLTFOLIO",
+    "pid": "ACCTID",
+    "acres": null
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 27842,
+   "owner_nonnull": 0,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (SDAT May 2026 attrs; polygon vintage ~2024JAN)",
+   "source_name": "Queen Anne's County QAC_PUBLIC DataDownload Parcels",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": null,
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Somerset County": {
+   "fips": "24039",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services1.arcgis.com/X3lKekbdaBmNjCHu/arcgis/rest/services/Somerset_County_GIS/FeatureServer/1",
+   "layer_id": 1,
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102685,
+    "latestWkid": 2248,
+    "name": "NAD83 Maryland State Plane ftUS (Esri 102685 / EPSG 2248), as served"
+   },
+   "fields": {
+    "owner": [
+     "OWNNAME1",
+     "OWNNAME2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DR1LIBER",
+    "deed_page": "DR1FOLIO",
+    "plat_ref": null,
+    "plat_book": "PLTLIBER",
+    "plat_page": "PLTFOLIO",
+    "pid": "ACCTID",
+    "pin": null,
+    "acres": "ACRES",
+    "address": "ADDRESS"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 17432,
+   "source_name": "Somerset County LANDUSE_Parcel_Poly on Somerset_County_GIS layer 1, the parcel layer used by the official Somerset County GIS Viewer (https://experience.arcgis.com/experience/73f671409bc0411b99163702a2e8b5fb, publisher ESRGCoop).",
+   "template": "default",
+   "plat_prefix": "PB",
+   "onemap_filter": null,
+   "sp_epsg_2011_ftus": 6488,
+   "source_type": "county ArcGIS Online (official Somerset County MD parcel service)",
+   "deed_format": "Maryland liber/folio as served in DR1LIBER / DR1FOLIO. Values are often zero-padded; drop leading zeros on print.",
+   "sample_owner": "EVANS WILLIAM ROSS ETAL",
+   "sample_xy_wgs84": [
+    -75.83530733163936,
+    37.98405172858165
+   ],
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "St. Mary's County": {
+   "fips": "24037",
+   "jurs_code": "STMA",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.stmaryscountymd.gov/server/rest/services/Public/Primary/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "SDE.IT_SDAT.ownersname1",
+     "SDE.IT_SDAT.ownersname2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "SDE.IT_Parcels.ACCTID",
+    "acres": null,
+    "deed_book": "SDE.IT_SDAT.Liber",
+    "deed_page": "SDE.IT_SDAT.Folio",
+    "plat_book": "SDE.IT_SDAT.platreferenceliber",
+    "plat_page": "SDE.IT_SDAT.platreferencefolio"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 53924,
+   "owner_nonnull": 50993,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (live county)",
+   "source_name": "St. Mary's County IT GIS — Public/Primary Parcels",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Talbot County": {
+   "fips": "24041",
+   "jurs_code": "TALB",
+   "status": "missing",
+   "source": "statewide_imap",
+   "url": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "JURSCODE='TALB'",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ACCTID",
+    "acres": "ACRES",
+    "deed_book": "DR1LIBER",
+    "deed_page": "DR1FOLIO",
+    "plat_book": "PLTLIBER",
+    "plat_page": "PLTFOLIO"
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 22368,
+   "owner_nonnull": 0,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (SDAT May 2026 attrs; polygon vintage ~2024JAN)",
+   "source_name": "MD iMAP / MDP / SDAT — MD_ParcelBoundaries",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "JURSCODE='TALB'",
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Washington County": {
+   "fips": "24043",
+   "jurs_code": "WASH",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services2.arcgis.com/uxxyl33jRTSmjre5/arcgis/rest/services/Property_view/FeatureServer/42",
+   "layer_id": 42,
+   "native_sr": {
+    "wkid": 102685,
+    "latestWkid": 2248
+   },
+   "fields": {
+    "owner": [
+     "OwnName1",
+     "OwnName2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "TaxAccNo",
+    "acres": null,
+    "deed_book": "DR1Liber",
+    "deed_page": "DR1Folio",
+    "plat_book": "PlatRefLiber",
+    "plat_page": "PlatRefFolio"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 63365,
+   "owner_nonnull": 61075,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (live AGOL)",
+   "source_name": "Washington County MD — Property_view Parcels",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Wicomico County": {
+   "fips": "24045",
+   "jurs_code": "WICO",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services6.arcgis.com/Hx8jJ6McXQ0jnqLk/arcgis/rest/services/Parcels1/FeatureServer/12",
+   "layer_id": 12,
+   "native_sr": {
+    "wkid": 26985,
+    "latestWkid": 26985
+   },
+   "fields": {
+    "owner": [
+     "ownname1",
+     "ownname2"
+    ],
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "acctid",
+    "acres": null,
+    "deed_book": "dr1liber",
+    "deed_page": "dr1folio",
+    "plat_book": "pltliber",
+    "plat_page": "pltfolio"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 48656,
+   "owner_nonnull": 47149,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (live AGOL; synced from MD iMAP)",
+   "source_name": "Wicomico County / City of Salisbury AGOL — Parcels1/12",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Worcester County": {
+   "fips": "24047",
+   "jurs_code": "WORC",
+   "status": "missing",
+   "source": "statewide_imap",
+   "url": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "layer_id": 0,
+   "county_filter": "JURSCODE='WORC'",
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "ACCTID",
+    "acres": "ACRES",
+    "deed_book": "DR1LIBER",
+    "deed_page": "DR1FOLIO",
+    "plat_book": "PLTLIBER",
+    "plat_page": "PLTFOLIO"
+   },
+   "checks": {
+    "owner": false,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "geometry_fallback": "https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_ParcelBoundaries/MapServer/0",
+   "record_count": 57542,
+   "owner_nonnull": 0,
+   "pid_nonnull": null,
+   "deed_nonnull": null,
+   "data_year": "2026 (SDAT May 2026 attrs; polygon vintage ~2024JAN)",
+   "source_name": "MD iMAP / MDP / SDAT — MD_ParcelBoundaries",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "onemap_filter": "JURSCODE='WORC'",
+   "sp_epsg_2011_ftus": 6488,
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  }
+ },
+ "control": {
+  "state_source": false,
+  "agency": "MDOT SHA Survey (HARN / project GPS control); MD iMAP imagery control points are photogrammetric ground control, not survey monument networks",
+  "sources": [],
+  "finding": "No public statewide MD survey-control FeatureServer/MapServer found for cadastral/geodetic monuments. MDOT SHA Surveyors Information page offers NGS links, a HARN map, and a downloadable KML of MDOT SHA GPS control (contact survey@mdot.maryland.gov for point details) — not a queryable REST layer. Local leads (not used as state source): Anne Arundel Survey Monuments (gis.aacounty.org OpenData/Utility_Survey_OpenData/MapServer/0, 3,346 marks with SPC83 + Year_Set + Card_Link); Harford SurveyControlPoints (hcggis Hosted/Survey_Control_Points_Webmap_Map_WFL1). MD iMAP ImageryAcquisitionFlightInformation control points are orthophoto GCPs, not NGS/HARN monuments.",
+  "live_test": "n/a for statewide; AA Survey Monuments count=3346 live_ok 2026-10-13",
+  "checked": "2026-10-13",
+  "ngs": {
+   "ngs_datasheet_url": "https://www.ngs.noaa.gov/cgi-bin/ds_mark.prl?PidBox={PID}",
+   "note": "NGS covers all states; PID links state records to NGS datasheets. Not re-surveyed here."
+  },
+  "datum_shifts_applied": false
+ },
+ "roads": {
+  "name": "MD iMAP / MDOT SHA Road Centerlines Comprehensive",
+  "agency": "MDOT SHA OPPE Data Services Division / Maryland iMap (with counties & municipalities)",
+  "type": "ArcGIS REST MapServer",
+  "url": "https://mdgeodata.md.gov/imap/rest/services/Transportation/MD_RoadCenterlinesComprehensive/MapServer/0",
+  "layer": "V-ROAD-CNTR",
+  "color": 8,
+  "native_sr": "EPSG:3857 (Web Mercator; service wkid 102100 / latestWkid 3857)",
+  "count": 143182,
+  "county_filter": "COUNTY = MDOT county code integer (e.g. 15=Montgomery, 3=Anne Arundel, 24=Worcester). Same schema as MD_RoadCenterlines layers 0–3 combined.",
+  "name_fields": [
+   "ROADNAMESHA"
+  ],
+  "full_name_field": "ROADNAMESHA",
+  "route_fields": [
+   "ID_PREFIX",
+   "ID_RTE_NO",
+   "MP_SUFFIX",
+   "ROUTEID_RH",
+   "ROUTEID"
+  ],
+  "fields": {
+   "id": "CENTERLINEID",
+   "county": "COUNTY",
+   "name": "ROADNAMESHA",
+   "route_prefix": "ID_PREFIX",
+   "route_no": "ID_RTE_NO",
+   "route_id": "ROUTEID_RH",
+   "legacy_route_id": "ROUTEID",
+   "cardinality": "CARDINALITY",
+   "mainline": "MAIN_LINE",
+   "ramp": "RAMP_NUMBER",
+   "exit": "EXIT_NUMBER",
+   "mun": "MUN_SORT"
+  },
+  "max_record_count": 1000,
+  "pagination": true,
+  "data_year": 2025,
+  "vintage": "MDOT SHA publishes Road Centerlines annually for the prior year. Comprehensive layer count 143,182 (= Interstates 1,661 + US 896 + MD Routes 4,816 + Local/Other 135,809 from sibling MD_RoadCenterlines MapServer). Prefer this over OMOCNetwork (LRS routes, no street names) and over SHA Roadway Centerline FeatureServer alone (96,055 — subset).",
+  "alternate_url": "https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_Roadway_Centerline/FeatureServer/0",
+  "alternate_note": "MDOT SHA Roadway Centerline FeatureServer: same schema plus ROAD_NAME and COUNTY_NAME text fields; native NAD83(HARN) MD State Plane ftUS (WKID 2893-class WKT). Count 96,055. AGOL item modified 2025-12-17 ET.",
+  "live_test": "OK 2026-10-13: Comprehensive where COUNTY=15 AND ROADNAMESHA IS NOT NULL -> MCINTYRE RD / ID_PREFIX MU / ID_RTE_NO 2060 / ROUTEID_RH 15130MU02060--1----- / CENTERLINEID {...}; count 143182. SHA FeatureServer Montgomery sample: REDGATE DR / COUNTY_NAME MONTGOMERY / CO 3953.",
+  "use_terms": "MDOT SHA geospatial disclaimer: no warranty of merchantability/fitness; data from public sources; not liable for consequential damages. Copyright MDOT / MDOT SHA OPPE DSD / MDiMAP. Contact GIS@mdot.maryland.gov / DSD@mdot.maryland.gov.",
+  "omoc_note": "OMOCNetwork_Maryland_MDOTSHA FeatureServer is the authoritative LRS (ROUTE_ID, RTE_NO, daily updates) but has no ROAD_NAME — keep for linear referencing, not street labels.",
+  "datum_shifts_applied": false
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Same entry as SC/GA/VA/TN. Added 2026-11-12 (rc31); box DXF-parse tested, not tested in Carlson or IntelliCAD.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}

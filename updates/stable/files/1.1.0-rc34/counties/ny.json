@@ -1,0 +1,3626 @@
+{
+ "_meta": {
+  "state": "NY",
+  "target_wkid": 6537,
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "L {deed_book} PG {deed_page}",
+   "SBL:{pid}"
+  ],
+  "statewide_geometry_layer": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+  "statewide_points_layer": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+  "status_legend": {
+   "ok": "owner+deed+PID live-verified on parcel polygons",
+   "partial": "owner+PID (no deed), points only, or unofficial/old polygons",
+   "missing": "no owner source found yet",
+   "unverified": "endpoint unreachable at test time"
+  },
+  "localities": 62,
+  "pass_summary": "First pass 2026-10-14: owner+PID text for 62/62 (100%) via statewide polygons/centroids; 35 ok, 27 partial, 0 missing. Parcel polygons publicly available for 42/62; 20 counties points-only. Control: no statewide survey-control REST (NYSNet CORS only; Ithaca city monuments local). Roads: NYS Streets done.",
+  "default_epsg": 6537,
+  "epsg_choices": [
+   6537,
+   6535,
+   6541,
+   6539,
+   2260,
+   2261,
+   2262,
+   2263
+  ],
+  "target_options": {
+   "east": 6537,
+   "central": 6535,
+   "west": 6541,
+   "long_island": 6539
+  },
+  "detect": {
+   "local": "NY"
+  },
+  "onemap_url": null,
+  "release": true
+ },
+ "counties": {
+  "Albany County": {
+   "fips": "36001",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Albany'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services6.arcgis.com/mBzcjj7yrA6fBe9F/arcgis/rest/services/Albany_County_Parcels_2024/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102715,
+    "latestWkid": 2260
+   },
+   "fields": {
+    "owner": [
+     "OWNERNAME"
+    ],
+    "deed_ref": "DEEDREF",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIN_SBL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 112804,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Albany County Parcels 2026 (county AGOL)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<n>[A-Z]?\\d{4}-\\d+)",
+     "book": "INST",
+     "page": "{n}",
+     "format": "tx_inst"
+    }
+   ],
+   "buildings_source": "none"
+  },
+  "Allegany County": {
+   "fips": "36003",
+   "spcs_zone": "NY West",
+   "spcs_epsg_nad83_ftus": 2262,
+   "spcs_epsg_nad83_2011_ftus": 6541,
+   "county_filter_statewide": "COUNTY_NAME='Allegany'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "third_party_polygons+nys_centroid_join",
+   "url": "https://services6.arcgis.com/qyLy0Pw7CFSXRo4A/arcgis/rest/services/Facilities_Assessment_for_Allegany_County__NY_WFL1/FeatureServer/4",
+   "layer_id": 4,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 33683,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "Facilities Assessment for Allegany County NY (AGOL osp-eng_HUNT, 2023)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6541,
+   "county_filter": null,
+   "source_third_party": true,
+   "polygon_source": {
+    "url": "https://services6.arcgis.com/qyLy0Pw7CFSXRo4A/arcgis/rest/services/Facilities_Assessment_for_Allegany_County__NY_WFL1/FeatureServer/4",
+    "record_count": 29583,
+    "data_year": "2023 copy",
+    "statewide_points": 33683
+   },
+   "join": {
+    "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+    "table_key": "SWIS_SBL_ID",
+    "where": "COUNTY_NAME='Allegany'",
+    "override": true,
+    "no_row": "drop_owner",
+    "key": "SwisParID"
+   },
+   "buildings_source": "none"
+  },
+  "Bronx County": {
+   "fips": "36005",
+   "spcs_zone": "NY Long Island",
+   "spcs_epsg_nad83_ftus": 2263,
+   "spcs_epsg_nad83_2011_ftus": 6539,
+   "county_filter_statewide": "COUNTY_NAME='Bronx'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/MAPPLUTO/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102718,
+    "latestWkid": 2263
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "BBL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 89229,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYC DCP MapPLUTO (city's own tax lot layer)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6539,
+   "county_filter": "Borough='BX'",
+   "onemap_filter": "Borough='BX'",
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Broome County": {
+   "fips": "36007",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Broome'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.broomecountyny.gov/arcgis/rest/services/parcels/br_parcels/MapServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102716,
+    "latestWkid": 2261,
+    "vcsWkid": 5703,
+    "latestVcsWkid": 5703
+   },
+   "fields": {
+    "owner": [
+     "NAME",
+     "NAME2"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "ID"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 85058,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Broome County br_parcels (county)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Cattaraugus County": {
+   "fips": "36009",
+   "spcs_zone": "NY West",
+   "spcs_epsg_nad83_ftus": 2262,
+   "spcs_epsg_nad83_2011_ftus": 6541,
+   "county_filter_statewide": "COUNTY_NAME='Cattaraugus'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://maps2.cattco.org/arcgiswebadaptor/rest/services/AddressRequestForm/Merged/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "xyTolerance": 0.001,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -20037700,
+    "falseY": -30241100,
+    "xyUnits": 10000,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "OWNER1"
+    ],
+    "deed_ref": null,
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "TAX_MAP_NO"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 50459,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "Cattaraugus County Parcels (county maps2.cattco.org)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6541,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Cayuga County": {
+   "fips": "36011",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Cayuga'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "nys_statewide",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 39127,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYS ITS Geospatial Services NYS_Tax_Parcels_Public (statewide, 38 sharing counties)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": "COUNTY_NAME='Cayuga'",
+   "onemap_filter": "COUNTY_NAME='Cayuga'",
+   "buildings_source": "none"
+  },
+  "Chautauqua County": {
+   "fips": "36013",
+   "spcs_zone": "NY West",
+   "spcs_epsg_nad83_ftus": 2262,
+   "spcs_epsg_nad83_2011_ftus": 6541,
+   "county_filter_statewide": "COUNTY_NAME='Chautauqua'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "nys_statewide",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 88396,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYS ITS Geospatial Services NYS_Tax_Parcels_Public (statewide, 38 sharing counties)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6541,
+   "county_filter": "COUNTY_NAME='Chautauqua'",
+   "onemap_filter": "COUNTY_NAME='Chautauqua'",
+   "buildings_source": "none"
+  },
+  "Chemung County": {
+   "fips": "36015",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Chemung'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://ccgcportal.chemungcountyny.gov/production/rest/services/viewers/Parcels/MapServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102113,
+    "latestWkid": 3785
+   },
+   "fields": {
+    "owner": [
+     "RPS_OWNER"
+    ],
+    "deed_ref": null,
+    "deed_book": "DEED_BK_1",
+    "deed_page": "PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PrintKey"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 39390,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "Chemung County viewers/Parcels (county)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Chenango County": {
+   "fips": "36017",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Chenango'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "third_party_polygons+nys_centroid_join",
+   "url": "https://services6.arcgis.com/krSNOBBGf8rF7cNp/arcgis/rest/services/Chenango_Tax_Map_WFL1/FeatureServer/4",
+   "layer_id": 4,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 32232,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "Chenango Tax Map (AGOL Eric.Hughes)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": null,
+   "source_third_party": true,
+   "polygon_source": {
+    "url": "https://services6.arcgis.com/krSNOBBGf8rF7cNp/arcgis/rest/services/Chenango_Tax_Map_WFL1/FeatureServer/4",
+    "record_count": 34526,
+    "data_year": "copy (book 2022 seen)",
+    "statewide_points": "see live log"
+   },
+   "join": {
+    "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+    "table_key": "SWIS_PRINT_KEY_ID",
+    "where": "COUNTY_NAME='Chenango'",
+    "override": true,
+    "no_row": "drop_owner",
+    "key_concat": [
+     "swiscode",
+     "printkey"
+    ],
+    "key": "SWIS_PRINT_KEY_ID"
+   },
+   "buildings_source": "none"
+  },
+  "Clinton County": {
+   "fips": "36019",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Clinton'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services3.arcgis.com/33FPYaVQYNa7sFJ5/arcgis/rest/services/Parcels_ClintonWeb1_view/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102715,
+    "latestWkid": 2260
+   },
+   "fields": {
+    "owner": [
+     "OWNER"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PRINT_KEY"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 38741,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "Clinton County Parcels 07-22-2026 web view (county AGOL)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Columbia County": {
+   "fips": "36021",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Columbia'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "third_party_polygons+nys_centroid_join",
+   "url": "https://services.arcgis.com/3RiQsDoOeneF0Q0P/arcgis/rest/services/ColumbiaCounty_Basemap/FeatureServer/23",
+   "layer_id": 23,
+   "native_sr": {
+    "wkid": 102715,
+    "latestWkid": 2260
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 35973,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "ColumbiaCounty_Basemap (AGOL AFreudenberg, Feb 2024)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": null,
+   "source_third_party": true,
+   "polygon_source": {
+    "url": "https://services.arcgis.com/3RiQsDoOeneF0Q0P/arcgis/rest/services/ColumbiaCounty_Basemap/FeatureServer/23",
+    "record_count": 35844,
+    "data_year": "2024 copy",
+    "statewide_points": 35973
+   },
+   "join": {
+    "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+    "table_key": "SWIS_PRINT_KEY_ID",
+    "where": "COUNTY_NAME='Columbia'",
+    "override": true,
+    "no_row": "drop_owner",
+    "key_concat": [
+     "SWIS",
+     "Parcel"
+    ],
+    "key": "SWIS_PRINT_KEY_ID"
+   },
+   "buildings_source": "none"
+  },
+  "Cortland County": {
+   "fips": "36023",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Cortland'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services2.arcgis.com/fRWb1mz1huf3Aqyy/arcgis/rest/services/Cortland_County_Parcels_WFL1/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "C_OWNER"
+    ],
+    "deed_ref": "BOOK",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PRINTKEY_1"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 22662,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Cortland County Parcels (cortlandplanning AGOL)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<n>\\d{6,})\\s*$",
+     "book": "INST",
+     "page": "{n}",
+     "format": "tx_inst"
+    }
+   ],
+   "buildings_source": "none"
+  },
+  "Delaware County": {
+   "fips": "36025",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Delaware'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://spatialags.vhb.com/arcgis/rest/services/29822_Delaware/NY_County_Delaware/MapServer/25",
+   "layer_id": 25,
+   "native_sr": {
+    "wkid": 102715,
+    "latestWkid": 2260,
+    "xyTolerance": 0.003280833333333333,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -17954600,
+    "falseY": -46918100,
+    "xyUnits": 3048.0060960121928,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PRINT_KEY"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 43000,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "Delaware County COMIT parcels (county's VHB-hosted service)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Dutchess County": {
+   "fips": "36027",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Dutchess'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "third_party_polygons+nys_centroid_join",
+   "url": "https://services7.arcgis.com/bArMqVntXvGojzII/arcgis/rest/services/Dutchess_County_4_WFL1/FeatureServer/3",
+   "layer_id": 3,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 110364,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "Dutchess County 4 (AGOL Thomas_FS2023, 2023; repeats some parcels)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": null,
+   "source_third_party": true,
+   "polygon_source": {
+    "url": "https://services7.arcgis.com/bArMqVntXvGojzII/arcgis/rest/services/Dutchess_County_4_WFL1/FeatureServer/3",
+    "record_count": 170130,
+    "data_year": "2023 copy",
+    "statewide_points": "110,364"
+   },
+   "join": {
+    "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+    "table_key": "SWIS_PRINT_KEY_ID",
+    "where": "COUNTY_NAME='Dutchess'",
+    "override": true,
+    "no_row": "drop_owner",
+    "key_concat": [
+     "Parcels_Swis",
+     "Parcels_PrintKey"
+    ],
+    "key": "SWIS_PRINT_KEY_ID"
+   },
+   "buildings_source": "none"
+  },
+  "Erie County": {
+   "fips": "36029",
+   "spcs_zone": "NY West",
+   "spcs_epsg_nad83_ftus": 2262,
+   "spcs_epsg_nad83_2011_ftus": 6541,
+   "county_filter_statewide": "COUNTY_NAME='Erie'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.erie.gov/server/rest/services/DSM/DSM_Basemap_2025/MapServer/123",
+   "layer_id": 123,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "xyTolerance": 0.001,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -20037700,
+    "falseY": -33265069.15422476,
+    "xyUnits": 135385247.70505473,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": "BOOK",
+    "deed_page": "PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "SBL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 370424,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Erie County DSM Parcels 2025 (county)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6541,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Essex County": {
+   "fips": "36031",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Essex'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "third_party_polygons+nys_centroid_join",
+   "url": "https://services6.arcgis.com/YMCiEBhA0TNgGZ2c/arcgis/rest/services/Parcels_2022_OwnerType_2_view/FeatureServer/13",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 37213,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "NYS ITS NYS_Tax_Parcel_Centroid_Points (all 62 counties; points only)",
+   "polygon_source": {
+    "url": "https://services6.arcgis.com/YMCiEBhA0TNgGZ2c/arcgis/rest/services/Parcels_2022_OwnerType_2_view/FeatureServer/13",
+    "record_count": 35908,
+    "native_sr": {
+     "wkid": 102100,
+     "latestWkid": 3857
+    },
+    "name": "Parcels_2022_OwnerType",
+    "data_year": "2022 roll"
+   },
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": null,
+   "source_third_party": true,
+   "join": {
+    "key": "SBL",
+    "table_key": "SWIS_SBL_ID",
+    "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+    "where": "COUNTY_NAME='Essex'",
+    "override": true,
+    "no_row": "drop_owner"
+   },
+   "buildings_source": "none"
+  },
+  "Franklin County": {
+   "fips": "36033",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "status": "fixed_pending_review",
+   "source": "regional_rest",
+   "url": "https://maps.dancgis.org/server/rest/services/Parcel_Model/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102716,
+    "latestWkid": 2261
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OW",
+     "ADD_OWNER"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PRINT_KEY",
+    "pin": "PRINT_KEY",
+    "acres": "ACRES",
+    "address": "PARCEL_ADD"
+   },
+   "verified_full": true,
+   "record_count": 34620,
+   "source_name": "Development Authority of the North Country (DANC) — official Parcel_Model MapServer layer 0 Parcels (maps.dancgis.org), the public IMA parcel service used by North Country counties. Do not use the JEFFERSON - Watertown slice (9,217 records, IMPORT_DATE 2021-10-28, messy ADD_OWNER values). Query this MapServer with resultRecordCount/objectIds; a bare 1=1 count without pagination can 400. Promoted from partial NYS centroid-only coverage.",
+   "template": "default",
+   "plat_prefix": "PB",
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": "COUNTY='FRANKLIN'",
+   "onemap_filter": null,
+   "owner_nonnull": 34176,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "none"
+  },
+  "Fulton County": {
+   "fips": "36035",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Fulton'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "partial",
+   "source": "nys_centroid_points",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 33209,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "NYS ITS NYS_Tax_Parcel_Centroid_Points (all 62 counties; points only)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "buildings_source": "none"
+  },
+  "Genesee County": {
+   "fips": "36037",
+   "spcs_zone": "NY West",
+   "spcs_epsg_nad83_ftus": 2262,
+   "spcs_epsg_nad83_2011_ftus": 6541,
+   "county_filter_statewide": "COUNTY_NAME='Genesee'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gisp.geneseeny.gov/arcgis/rest/services/GC_Public/BaseMap_Public/MapServer/29",
+   "layer_id": 29,
+   "native_sr": {
+    "wkid": 102717,
+    "latestWkid": 2262
+   },
+   "fields": {
+    "owner": [
+     "FULL_OWNER_NAME"
+    ],
+    "deed_ref": null,
+    "deed_book": "Book",
+    "deed_page": "Page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIN"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 28266,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Genesee County 2026 Tax Parcels (county)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6541,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Greene County": {
+   "fips": "36039",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Greene'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "nys_statewide",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 38418,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYS ITS Geospatial Services NYS_Tax_Parcels_Public (statewide, 38 sharing counties)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": "COUNTY_NAME='Greene'",
+   "onemap_filter": "COUNTY_NAME='Greene'",
+   "buildings_source": "none"
+  },
+  "Hamilton County": {
+   "fips": "36041",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Hamilton'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "nys_statewide",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 12947,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYS ITS Geospatial Services NYS_Tax_Parcels_Public (statewide, 38 sharing counties)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": "COUNTY_NAME='Hamilton'",
+   "onemap_filter": "COUNTY_NAME='Hamilton'",
+   "buildings_source": "none"
+  },
+  "Herkimer County": {
+   "fips": "36043",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Herkimer'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "partial",
+   "source": "nys_centroid_points",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 41442,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "NYS ITS NYS_Tax_Parcel_Centroid_Points (all 62 counties; points only)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "buildings_source": "none"
+  },
+  "Jefferson County": {
+   "fips": "36045",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "status": "fixed_pending_review",
+   "source": "regional_rest",
+   "url": "https://maps.dancgis.org/server/rest/services/Parcel_Model/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102716,
+    "latestWkid": 2261
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OW",
+     "ADD_OWNER"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PRINT_KEY",
+    "pin": "PRINT_KEY",
+    "acres": "ACRES",
+    "address": "PARCEL_ADD"
+   },
+   "verified_full": true,
+   "record_count": 49382,
+   "source_name": "Development Authority of the North Country (DANC) — official Parcel_Model MapServer layer 0 Parcels (maps.dancgis.org), the public IMA parcel service used by North Country counties. Do not use the JEFFERSON - Watertown slice (9,217 records, IMPORT_DATE 2021-10-28, messy ADD_OWNER values). Query this MapServer with resultRecordCount/objectIds; a bare 1=1 count without pagination can 400. Promoted from partial NYS centroid-only coverage. Filter is case-sensitive: COUNTY='Jefferson' is the May 2025 town/county set; do not use COUNTY='JEFFERSON - Watertown'.",
+   "template": "default",
+   "plat_prefix": "PB",
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": "COUNTY='Jefferson'",
+   "onemap_filter": null,
+   "owner_nonnull": 49381,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "none"
+  },
+  "Kings County (Brooklyn)": {
+   "fips": "36047",
+   "spcs_zone": "NY Long Island",
+   "spcs_epsg_nad83_ftus": 2263,
+   "spcs_epsg_nad83_2011_ftus": 6539,
+   "county_filter_statewide": "COUNTY_NAME='Kings'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/MAPPLUTO/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102718,
+    "latestWkid": 2263
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "BBL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 275680,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYC DCP MapPLUTO (city's own tax lot layer)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6539,
+   "county_filter": "Borough='BK'",
+   "onemap_filter": "Borough='BK'",
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Lewis County": {
+   "fips": "36049",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Lewis'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services8.arcgis.com/Rdf0jwT8BdHIlQ88/arcgis/rest/services/Lewis_County_Parcel_Data/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "owner_name"
+    ],
+    "deed_ref": null,
+    "deed_book": "book",
+    "deed_page": "page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "print_key"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 24688,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Lewis County Parcel Data (county AGOL)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Livingston County": {
+   "fips": "36051",
+   "spcs_zone": "NY West",
+   "spcs_epsg_nad83_ftus": 2262,
+   "spcs_epsg_nad83_2011_ftus": 6541,
+   "county_filter_statewide": "COUNTY_NAME='Livingston'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.livingstoncountyny.gov/arcgis/rest/services/Hosted/Parcel_View/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "falseM": -100000,
+    "xyTolerance": 0.003280833333333333,
+    "mUnits": 10000,
+    "zUnits": 10000,
+    "latestWkid": 2262,
+    "zTolerance": 0.001,
+    "wkid": 102717,
+    "xyUnits": 3048.0060960121928,
+    "mTolerance": 0.001,
+    "falseX": -17299100,
+    "falseY": -47344700,
+    "falseZ": -100000
+   },
+   "fields": {
+    "owner": [
+     "owner_name"
+    ],
+    "deed_ref": null,
+    "deed_book": "deed_book",
+    "deed_page": "deed_page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "printkey"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 28780,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Livingston County Parcel_View (county)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6541,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Madison County": {
+   "fips": "36053",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Madison'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "partial",
+   "source": "nys_centroid_points",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 37627,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "NYS ITS NYS_Tax_Parcel_Centroid_Points (all 62 counties; points only)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "buildings_source": "none"
+  },
+  "Monroe County": {
+   "fips": "36055",
+   "spcs_zone": "NY West",
+   "spcs_epsg_nad83_ftus": 2262,
+   "spcs_epsg_nad83_2011_ftus": 6541,
+   "county_filter_statewide": "COUNTY_NAME='Monroe'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://services1.arcgis.com/yisUfwZZ4fyubK3R/arcgis/rest/services/Monroe_County_Parcels/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "OWNERNAME2",
+    "deed_ref": null,
+    "plat_ref": "DESCRIPTION2",
+    "pid": "PRINT_KEY",
+    "pid_full": "COUNTYSBL",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 265902,
+   "data_year": "2020 roll attrs on polygons (Monroe County Planning AGOL, last edit Jan 2024); current 2025 owner/deed via statewide centroids",
+   "source_name": "Monroe County Parcels (AGOL yisUfwZZ4fyubK3R, Monroe County Planning & Development)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6541,
+   "join": {
+    "key": "COUNTYSBL",
+    "table_key": "SWIS_SBL_ID",
+    "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+    "where": "COUNTY_NAME='Monroe'",
+    "override": true,
+    "no_row": "drop_owner"
+   },
+   "buildings_source": "none"
+  },
+  "Montgomery County": {
+   "fips": "36057",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Montgomery'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "nys_statewide",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 25260,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYS ITS Geospatial Services NYS_Tax_Parcels_Public (statewide, 38 sharing counties)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": "COUNTY_NAME='Montgomery'",
+   "onemap_filter": "COUNTY_NAME='Montgomery'",
+   "buildings_source": "none"
+  },
+  "Nassau County": {
+   "fips": "36059",
+   "spcs_zone": "NY Long Island",
+   "spcs_epsg_nad83_ftus": 2263,
+   "spcs_epsg_nad83_2011_ftus": 6539,
+   "county_filter_statewide": "COUNTY_NAME='Nassau'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "third_party_polygons+nys_centroid_join",
+   "url": "https://services6.arcgis.com/dptt3Slw4IV02m0l/arcgis/rest/services/Nassau_County_Parcels_v2/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102718,
+    "latestWkid": 2263
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 423430,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "Nassau County Parcels v2 (AGOL tcorcoran_Peconic, Aug 2024)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6539,
+   "county_filter": null,
+   "source_third_party": true,
+   "polygon_source": {
+    "url": "https://services6.arcgis.com/dptt3Slw4IV02m0l/arcgis/rest/services/Nassau_County_Parcels_v2/FeatureServer/0",
+    "record_count": 420594,
+    "data_year": "2024 copy",
+    "statewide_points": 423430
+   },
+   "join": {
+    "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+    "table_key": "SBL",
+    "where": "COUNTY_NAME='Nassau'",
+    "override": true,
+    "no_row": "drop_owner",
+    "key": "SBL"
+   },
+   "buildings_source": "none"
+  },
+  "New York County (Manhattan)": {
+   "fips": "36061",
+   "spcs_zone": "NY Long Island",
+   "spcs_epsg_nad83_ftus": 2263,
+   "spcs_epsg_nad83_2011_ftus": 6539,
+   "county_filter_statewide": "COUNTY_NAME='NewYork'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/MAPPLUTO/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102718,
+    "latestWkid": 2263
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "BBL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 42061,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYC DCP MapPLUTO (city's own tax lot layer)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6539,
+   "county_filter": "Borough='MN'",
+   "onemap_filter": "Borough='MN'",
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Niagara County": {
+   "fips": "36063",
+   "spcs_zone": "NY West",
+   "spcs_epsg_nad83_ftus": 2262,
+   "spcs_epsg_nad83_2011_ftus": 6541,
+   "county_filter_statewide": "COUNTY_NAME='Niagara'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.niagaracounty.gov/server/rest/services/PublicViewer/Public_Viewer/FeatureServer/4",
+   "layer_id": 4,
+   "native_sr": {
+    "wkid": 102717,
+    "latestWkid": 2262,
+    "xyTolerance": 0.003280833333333333,
+    "zTolerance": 2,
+    "mTolerance": 0.001,
+    "falseX": -17299100,
+    "falseY": -47344700,
+    "xyUnits": 137250050.35703713,
+    "falseZ": 0,
+    "zUnits": 1,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "OwnrName"
+    ],
+    "deed_ref": null,
+    "deed_book": "Book",
+    "deed_page": "Page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PrintKey"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 93673,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "Niagara County Public_Viewer Parcel (county)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6541,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Oneida County": {
+   "fips": "36065",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Oneida'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://maps.oneidacountyny.gov/arcgis/rest/services/PARCELS/MASTER_PARCELS_NEW/MapServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26918,
+    "latestWkid": 26918,
+    "xyTolerance": 0.001,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -5120900,
+    "falseY": -9998100,
+    "xyUnits": 10000,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "OWNER_FULL"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PRINT_KEY"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 105058,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Oneida County Master Parcels (county)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Onondaga County": {
+   "fips": "36067",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Onondaga'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://spatialags.vhb.com/arcgis/rest/services/29821_Syr_Onondaga/Onondaga_Service/MapServer/7",
+   "layer_id": 7,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "xyTolerance": 0.001,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -20037700,
+    "falseY": -30241100,
+    "xyUnits": 10000,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAME"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PRINTKEY"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 181909,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Onondaga County Parcels (county's VHB-hosted service)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Ontario County": {
+   "fips": "36069",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Ontario'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "nys_statewide",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 51318,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYS ITS Geospatial Services NYS_Tax_Parcels_Public (statewide, 38 sharing counties)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": "COUNTY_NAME='Ontario'",
+   "onemap_filter": "COUNTY_NAME='Ontario'",
+   "buildings_source": "none"
+  },
+  "Orange County": {
+   "fips": "36071",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Orange'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "nys_statewide",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 145694,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYS ITS Geospatial Services NYS_Tax_Parcels_Public (statewide, 38 sharing counties)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": "COUNTY_NAME='Orange'",
+   "onemap_filter": "COUNTY_NAME='Orange'",
+   "buildings_source": "none"
+  },
+  "Orleans County": {
+   "fips": "36073",
+   "spcs_zone": "NY West",
+   "spcs_epsg_nad83_ftus": 2262,
+   "spcs_epsg_nad83_2011_ftus": 6541,
+   "county_filter_statewide": "COUNTY_NAME='Orleans'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "partial",
+   "source": "nys_centroid_points",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 20538,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "NYS ITS NYS_Tax_Parcel_Centroid_Points (all 62 counties; points only)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6541,
+   "buildings_source": "none"
+  },
+  "Oswego County": {
+   "fips": "36075",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Oswego'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services3.arcgis.com/0dC3T96jvK0z64NH/arcgis/rest/services/parcelsActive_view/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102716,
+    "latestWkid": 2261
+   },
+   "fields": {
+    "owner": [
+     "OWNER1",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PRINT_KEY"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 59567,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Oswego County Active Tax Parcels (county AGOL)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Otsego County": {
+   "fips": "36077",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Otsego'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "nys_statewide",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 39706,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYS ITS Geospatial Services NYS_Tax_Parcels_Public (statewide, 38 sharing counties)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": "COUNTY_NAME='Otsego'",
+   "onemap_filter": "COUNTY_NAME='Otsego'",
+   "buildings_source": "none"
+  },
+  "Putnam County": {
+   "fips": "36079",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Putnam'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services2.arcgis.com/dU6jdOIkCUj2UDe9/arcgis/rest/services/Putnam_parcels_2024/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102715,
+    "latestWkid": 2260
+   },
+   "fields": {
+    "owner": [
+     "Owner_Name_1",
+     "Owner_Name_2"
+    ],
+    "deed_ref": null,
+    "deed_book": "Deed_Book",
+    "deed_page": "Deed_Page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PRINT_KEY"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 42291,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Putnam County Tax Parcels 2024 (Putnam_County_NY AGOL)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Queens County": {
+   "fips": "36081",
+   "spcs_zone": "NY Long Island",
+   "spcs_epsg_nad83_ftus": 2263,
+   "spcs_epsg_nad83_2011_ftus": 6539,
+   "county_filter_statewide": "COUNTY_NAME='Queens'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/MAPPLUTO/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102718,
+    "latestWkid": 2263
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "BBL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 324164,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYC DCP MapPLUTO (city's own tax lot layer)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6539,
+   "county_filter": "Borough='QN'",
+   "onemap_filter": "Borough='QN'",
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Rensselaer County": {
+   "fips": "36083",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Rensselaer'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "nys_statewide",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 64346,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYS ITS Geospatial Services NYS_Tax_Parcels_Public (statewide, 38 sharing counties)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": "COUNTY_NAME='Rensselaer'",
+   "onemap_filter": "COUNTY_NAME='Rensselaer'",
+   "buildings_source": "none"
+  },
+  "Richmond County (Staten Island)": {
+   "fips": "36085",
+   "spcs_zone": "NY Long Island",
+   "spcs_epsg_nad83_ftus": 2263,
+   "spcs_epsg_nad83_2011_ftus": 6539,
+   "county_filter_statewide": "COUNTY_NAME='Richmond'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/MAPPLUTO/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102718,
+    "latestWkid": 2263
+   },
+   "fields": {
+    "owner": [
+     "OwnerName"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "BBL"
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true
+   },
+   "record_count": 125536,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYC DCP MapPLUTO (city's own tax lot layer)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6539,
+   "county_filter": "Borough='SI'",
+   "onemap_filter": "Borough='SI'",
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Rockland County": {
+   "fips": "36087",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Rockland'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "nys_statewide",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 92620,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYS ITS Geospatial Services NYS_Tax_Parcels_Public (statewide, 38 sharing counties)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": "COUNTY_NAME='Rockland'",
+   "onemap_filter": "COUNTY_NAME='Rockland'",
+   "buildings_source": "none"
+  },
+  "St. Lawrence County": {
+   "fips": "36089",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='StLawrence'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.stlawco.gov/arcgis/rest/services/Hosted/SLC_TaxParcels_2025/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "falseM": -100000,
+    "xyTolerance": 0.003280833333333333,
+    "mUnits": 10000,
+    "zUnits": 10000,
+    "latestWkid": 6537,
+    "zTolerance": 0.001,
+    "wkid": 103117,
+    "xyUnits": 3048.0060960121928,
+    "mTolerance": 0.001,
+    "falseX": -17954600,
+    "falseY": -46918100,
+    "falseZ": -100000
+   },
+   "fields": {
+    "owner": [
+     "owner_name"
+    ],
+    "deed_ref": null,
+    "deed_book": "pcl_book",
+    "deed_page": "pcl_page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "print_key"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 67717,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "St. Lawrence County SLC_TaxParcels_2025 (county)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Saratoga County": {
+   "fips": "36091",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Saratoga'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://services3.arcgis.com/DvTqoyLKkslnGFR5/arcgis/rest/services/Saratoga081225/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102715,
+    "latestWkid": 2260
+   },
+   "fields": {
+    "owner": [
+     "OWNER"
+    ],
+    "owner2": null,
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SBL",
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 102415,
+   "data_year": "2025 roll (ROLL_YEAR 2025; published Aug 2025)",
+   "source_name": "Saratoga081225 (AGOL DvTqoyLKkslnGFR5, Spatial Data Logic)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "buildings_source": "none"
+  },
+  "Schenectady County": {
+   "fips": "36093",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Schenectady'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_vendor",
+   "url": "https://spatialags.vhb.com/arcgis/rest/services/29816_SIMS/SIMS_03262026/MapServer/6",
+   "layer_id": 6,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "xyTolerance": 0.001,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -20037700,
+    "falseY": -30241100,
+    "xyUnits": 10000,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "deed_ref": null,
+    "deed_book": "BOOK",
+    "deed_page": "PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PRINT_KEY"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 58472,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "Schenectady SIMS 03-26-2026 Parcels (county intermunicipal GIS, VHB-hosted)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "join": {
+    "key_concat": [
+     "SWIS",
+     "PRINT_KEY"
+    ],
+    "key": "SWIS_PRINT_KEY_ID",
+    "table_key": "SWIS_PRINT_KEY_ID",
+    "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+    "where": "COUNTY_NAME='Schenectady'",
+    "override": true,
+    "no_row": "drop_owner"
+   },
+   "buildings_source": "none"
+  },
+  "Schoharie County": {
+   "fips": "36095",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services7.arcgis.com/fScJUugRnMdg5KWv/ArcGIS/rest/services/Parcels/FeatureServer/5",
+   "layer_id": 5,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "name": "WGS 1984 Web Mercator Auxiliary Sphere (Esri 102100 / 3857), as served"
+   },
+   "fields": {
+    "owner": [
+     "OWNER",
+     "OWNER2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PRINT_KEY",
+    "pin": "SBL",
+    "acres": "ACRES_1",
+    "address": "PROP_ADDR"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 23123,
+   "source_name": "Schoharie County Parcels layer 5 on the public FeatureServer used by the official Schoharie County, NY Parcel Viewer at https://spatial.vhb.com/SchoharieMapViewer/ (publisher VHB_RPTO). All SWIS codes are county 43.",
+   "template": "default",
+   "plat_prefix": "PB",
+   "sp_epsg_2011_ftus": 6537,
+   "source_type": "county ArcGIS Online (official Schoharie County parcel service, VHB)",
+   "county_filter": null,
+   "deed_format": "DEED_BOOK / DEED_PAGE as served. PRINT_KEY is the short display ID; SBL is the full parcel identifier.",
+   "sample_owner": "BURTON FAMILY IRREV TRUST",
+   "sample_xy_wgs84": [
+    -74.44157250207294,
+    42.701898180520104
+   ],
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "buildings_source": "none"
+  },
+  "Schuyler County": {
+   "fips": "36097",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Schuyler'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services9.arcgis.com/wGGTeQ7ADSSKDWnb/arcgis/rest/services/Schuyler_County_Parcels_2024/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102716,
+    "latestWkid": 2261
+   },
+   "fields": {
+    "owner": [
+     "Cur_Own"
+    ],
+    "deed_ref": "DEED",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "NEW_TAX_NU"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 13274,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Schuyler County Parcels (SchuylerCoPlanning AGOL)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_ref_patterns": [
+    {
+     "re": "^\\s*(?P<book>\\d+)\\s*/\\s*(?P<page>\\d+)"
+    }
+   ],
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Seneca County": {
+   "fips": "36099",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Seneca'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "partial",
+   "source": "nys_centroid_points",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 17737,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "NYS ITS NYS_Tax_Parcel_Centroid_Points (all 62 counties; points only)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "buildings_source": "none"
+  },
+  "Steuben County": {
+   "fips": "36101",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Steuben'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services2.arcgis.com/NZkLeERo9XICXiuy/arcgis/rest/services/Tax_Parcels_SteubenCoNY/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102716,
+    "latestWkid": 2261
+   },
+   "fields": {
+    "owner": [
+     "TM_OWNAM"
+    ],
+    "deed_ref": null,
+    "deed_book": "TM_RECLIB",
+    "deed_page": "TM_RECPG",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PRINTKEY"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 55384,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Tax_Parcels_SteubenCoNY (county AGOL)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Suffolk County": {
+   "fips": "36103",
+   "spcs_zone": "NY Long Island",
+   "spcs_epsg_nad83_ftus": 2263,
+   "spcs_epsg_nad83_2011_ftus": 6539,
+   "county_filter_statewide": "COUNTY_NAME='Suffolk'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "nys_statewide",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 586600,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYS ITS Geospatial Services NYS_Tax_Parcels_Public (statewide, 38 sharing counties)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6539,
+   "county_filter": "COUNTY_NAME='Suffolk'",
+   "onemap_filter": "COUNTY_NAME='Suffolk'",
+   "buildings_source": "none"
+  },
+  "Sullivan County": {
+   "fips": "36105",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Sullivan'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "nys_statewide",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 67340,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYS ITS Geospatial Services NYS_Tax_Parcels_Public (statewide, 38 sharing counties)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": "COUNTY_NAME='Sullivan'",
+   "onemap_filter": "COUNTY_NAME='Sullivan'",
+   "buildings_source": "none"
+  },
+  "Tioga County": {
+   "fips": "36107",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Tioga'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services3.arcgis.com/PvkAiSMFS7cpxnJP/arcgis/rest/services/ParcelProperties2024/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102716,
+    "latestWkid": 2261
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAME",
+     "OWNER_NAME_2"
+    ],
+    "deed_ref": null,
+    "deed_book": "DEED_BOOK",
+    "deed_page": "DEED_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "CURRENT_PRINT_KEY"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 26133,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Tioga County ParcelProperties2024 (county AGOL)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Tompkins County": {
+   "fips": "36109",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Tompkins'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "nys_statewide",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 35369,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYS ITS Geospatial Services NYS_Tax_Parcels_Public (statewide, 38 sharing counties)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": "COUNTY_NAME='Tompkins'",
+   "onemap_filter": "COUNTY_NAME='Tompkins'",
+   "buildings_source": "none"
+  },
+  "Ulster County": {
+   "fips": "36111",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Ulster'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.ulstercountyny.gov/server/rest/services/Hosted/Tax_Parcels_Feature_Service/FeatureServer/41",
+   "layer_id": 41,
+   "native_sr": {
+    "falseM": -100000,
+    "xyTolerance": 0.001,
+    "mUnits": 10000,
+    "zUnits": 10000,
+    "latestWkid": 3857,
+    "zTolerance": 0.001,
+    "wkid": 102100,
+    "xyUnits": 10000,
+    "mTolerance": 0.001,
+    "falseX": -20037700,
+    "falseY": -30241100,
+    "falseZ": -100000
+   },
+   "fields": {
+    "owner": [
+     "owner_1",
+     "owner_2"
+    ],
+    "deed_ref": null,
+    "deed_book": "book",
+    "deed_page": "page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "printkey_1"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 88260,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Ulster County Tax Parcels feature service (county)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Warren County": {
+   "fips": "36113",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Warren'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "nys_statewide",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 45869,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYS ITS Geospatial Services NYS_Tax_Parcels_Public (statewide, 38 sharing counties)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": "COUNTY_NAME='Warren'",
+   "onemap_filter": "COUNTY_NAME='Warren'",
+   "buildings_source": "none"
+  },
+  "Washington County": {
+   "fips": "36115",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Washington'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "partial",
+   "source": "nys_centroid_points",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": false,
+   "record_count": 35431,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "NYS ITS NYS_Tax_Parcel_Centroid_Points (all 62 counties; points only)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "buildings_source": "none"
+  },
+  "Wayne County": {
+   "fips": "36117",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Wayne'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gis.co.wayne.ny.us/arcgis/rest/services/Parcels_2026/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 26918,
+    "latestWkid": 26918,
+    "xyTolerance": 0.001,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -5120900,
+    "falseY": -9998100,
+    "xyUnits": 10000,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+   },
+   "fields": {
+    "owner": [
+     "own_owner_",
+     "own_addl_o"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "print_key"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 43900,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Wayne County Parcels_2026 (county)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "buildings_source": "none"
+  },
+  "Westchester County": {
+   "fips": "36119",
+   "spcs_zone": "NY East",
+   "spcs_epsg_nad83_ftus": 2260,
+   "spcs_epsg_nad83_2011_ftus": 6537,
+   "county_filter_statewide": "COUNTY_NAME='Westchester'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "nys_statewide",
+   "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcels_Public/FeatureServer/1",
+   "layer_id": 1,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "fields": {
+    "owner": [
+     "PRIMARY_OWNER",
+     "ADD_OWNER"
+    ],
+    "owner2": "ADD_OWNER",
+    "deed_ref": null,
+    "plat_ref": null,
+    "pid": "PRINT_KEY",
+    "pid_full": "SWIS_SBL_ID",
+    "deed_book": "BOOK",
+    "deed_page": "PAGE"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "verified_full": true,
+   "record_count": 258145,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "NYS ITS Geospatial Services NYS_Tax_Parcels_Public (statewide, 38 sharing counties)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6537,
+   "county_filter": "COUNTY_NAME='Westchester'",
+   "onemap_filter": "COUNTY_NAME='Westchester'",
+   "buildings_source": "none"
+  },
+  "Wyoming County": {
+   "fips": "36121",
+   "spcs_zone": "NY West",
+   "spcs_epsg_nad83_ftus": 2262,
+   "spcs_epsg_nad83_2011_ftus": 6541,
+   "county_filter_statewide": "COUNTY_NAME='Wyoming'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services3.arcgis.com/Sq7KUOgahdDkqoAp/arcgis/rest/services/Wyco_Parcels_9_2021/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "vcsWkid": 105790,
+    "latestVcsWkid": 3855
+   },
+   "fields": {
+    "owner": [
+     "OWNER_NAME"
+    ],
+    "deed_ref": null,
+    "deed_book": "PCL_BOOK",
+    "deed_page": "PCL_PAGE",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PRINT_KEY"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 23530,
+   "data_year": "2025 assessment roll (ORPTS) + 2025 county geometry; NYS ITS publication May 2026, updated annually",
+   "source_name": "Wyoming County Parcels (county AGOL; layer named 9_2021, CC_DATE 2026)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6541,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  },
+  "Yates County": {
+   "fips": "36123",
+   "spcs_zone": "NY Central",
+   "spcs_epsg_nad83_ftus": 2261,
+   "spcs_epsg_nad83_2011_ftus": 6535,
+   "county_filter_statewide": "COUNTY_NAME='Yates'",
+   "centroid_points_fallback": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Tax_Parcel_Centroid_Points/FeatureServer/0",
+   "status": "fixed_pending_review",
+   "source": "county",
+   "url": "https://gisportal.yatescounty.org/server/rest/services/Hosted/2026_Parcel/FeatureServer/0",
+   "layer_id": 0,
+   "native_sr": {
+    "falseM": -100000,
+    "xyTolerance": 0.001,
+    "mUnits": 10000,
+    "zUnits": 10000,
+    "latestWkid": 3857,
+    "zTolerance": 0.001,
+    "wkid": 102100,
+    "xyUnits": 148923141.92838538,
+    "mTolerance": 0.001,
+    "falseX": -20037700,
+    "falseY": -30241100,
+    "falseZ": -100000
+   },
+   "fields": {
+    "owner": [
+     "owner"
+    ],
+    "deed_ref": null,
+    "deed_book": "deed_book",
+    "deed_page": "deed_page",
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "print_key"
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true
+   },
+   "record_count": 15902,
+   "data_year": "2025 assessment roll (ORPTS), NYS ITS publication May 2026",
+   "source_name": "Yates County 2026_Parcel (county)",
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "sp_epsg_2011_ftus": 6535,
+   "county_filter": null,
+   "onemap_filter": null,
+   "layer_filter": null,
+   "deed_year_inst": "any",
+   "buildings_source": "none"
+  }
+ },
+ "control": {
+  "state_source": true,
+  "agency": "NYSDOT NYSNet (CORS) — no statewide survey monument / geodetic control REST found",
+  "sources": [
+   {
+    "name": "City of Ithaca GIS Survey Monuments (local only)",
+    "url": "https://services5.arcgis.com/R1JbITZvSQHJsl5r/arcgis/rest/services/Survey_Monuments/FeatureServer/0",
+    "count": 92,
+    "native_sr": "EPSG:3857 (service); EAST/NORTH attrs in NY Central ftUS",
+    "fields": [
+     "PNTNO",
+     "PNTDES",
+     "PNTELV",
+     "ELEVATION",
+     "EAST",
+     "NORTH",
+     "TYPE",
+     "ACCURACY",
+     "YEAR",
+     "MUNICIPALI",
+     "NOTES"
+    ],
+    "live_test": "OK 2026-10-14: PNTNO 1001 EL=764.66 E 835725.79 N 894456.64 YEAR 1991; count 92",
+    "data_year": "1991+ monuments; layer last edited Sep 2024",
+    "note": "Municipal only (Ithaca, Tompkins County). Not statewide."
+   }
+  ],
+  "reference": {
+   "NYSNet CORS": "https://www.dot.ny.gov/nysnet",
+   "note": "NYSDOT real-time CORS network (station list/coords, not a monument feature service)"
+  },
+  "finding": "No NYS ITS, NYSDOT, or county-wide public survey control FeatureServer found in first pass. Use NGS datasheets statewide; NYSNet for RTK base positions.",
+  "live_test": "OK 2026-10-14 Ithaca Survey Monuments",
+  "checked": "2026-10-14",
+  "ngs": {
+   "ngs_datasheet_url": "https://www.ngs.noaa.gov/cgi-bin/ds_mark.prl?PidBox={PID}",
+   "note": "NGS covers all states."
+  },
+  "datum_shifts_applied": false
+ },
+ "roads": {
+  "name": "NYS Streets (Streets and Address Maintenance program, SAM)",
+  "agency": "NYS ITS Geospatial Services",
+  "type": "ArcGIS REST MapServer",
+  "url": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Streets/MapServer/4",
+  "layer": "StreetSegments 1:1 to 1:2,200 (full-detail segments)",
+  "color": 8,
+  "native_sr": "EPSG:3857 (wkid 102100)",
+  "count": 1097338,
+  "county_filter": "LeftCountyName / RightCountyName (e.g. 'Cattaraugus')",
+  "name_fields": [
+   "CompleteStreetName",
+   "PreDirectional",
+   "PreType",
+   "StreetName",
+   "PostType",
+   "PostDirectional",
+   "Label"
+  ],
+  "full_name_field": "CompleteStreetName",
+  "route_fields": [
+   "HighwayNumber",
+   "SHIELD",
+   "JURISDICTION"
+  ],
+  "fields": {
+   "id": "NYSStreetID",
+   "name": "CompleteStreetName",
+   "st_name": "StreetName",
+   "st_type": "PostType",
+   "route": "HighwayNumber",
+   "shield": "SHIELD",
+   "county_l": "LeftCountyName",
+   "county_r": "RightCountyName",
+   "fips_l": "LeftFIPS",
+   "roadclass": "FCC",
+   "modified": "DateModified"
+  },
+  "max_record_count": 1000,
+  "pagination": true,
+  "data_year": 2026,
+  "vintage": "Live NYS SAM streets (continuously maintained; DateModified per segment, sample 2018 edit stamp)",
+  "live_test": "OK 2026-10-14: CompleteStreetName=Wolf Run Road LeftCountyName=Cattaraugus NYSStreetID=442346995; count 1,097,338",
+  "use_terms": "NYS ITS public data; provided as-is with disclaimer (copyrightText). Cite NYS ITS Geospatial Services.",
+  "sibling_layers": {
+   "Streets (layer 3, group)": "https://gisservices.its.ny.gov/arcgis/rest/services/NYS_Streets/MapServer/3"
+  },
+  "datum_shifts_applied": false
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Same entry as SC/GA/VA/TN. Added 2026-11-12 (rc31); box DXF-parse tested, not tested in Carlson or IntelliCAD.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}

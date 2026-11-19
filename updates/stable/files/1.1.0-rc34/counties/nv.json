@@ -1,0 +1,738 @@
+{
+ "_meta": {
+  "state": "NV",
+  "text": {
+   "layer": "S-PL_TEXT",
+   "height": 3.2,
+   "style": "L80",
+   "attachment": 5
+  },
+  "parcel_layer": "GIS-PARCEL",
+  "no_deed_text": "No Deed Book Found or Provided",
+  "default_template": [
+   "N/F",
+   "{owner1}",
+   "& {owner2}",
+   "DB {deed_book} PG {deed_page}",
+   "PB {plat_book} PG {plat_page}",
+   "PID:{pid}"
+  ],
+  "default_epsg": 6519,
+  "epsg_choices": [
+   6519,
+   6521,
+   6523
+  ],
+  "target_options": {
+   "central": 6519,
+   "east": 6521,
+   "west": 6523
+  },
+  "detect": {
+   "local": "NV"
+  },
+  "onemap_url": null,
+  "target_wkid": 6519,
+  "release": true
+ },
+ "counties": {
+  "White Pine": {
+   "fips": "32033",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services9.arcgis.com/ihyPHe2KRRmOsTPa/arcgis/rest/services/WhitePineNVFeatures/FeatureServer/4",
+   "fields": {
+    "owner": [
+     "TSC_assess_name"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "GIS_Parcel_Number",
+    "pin": "TSC_Parcel_Number",
+    "acres": "TSC_Acreage",
+    "address": "TSC_Site_Address"
+   },
+   "sp_epsg_2011_ftus": 6521,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 4,
+   "source_name": "Official White Pine County Assessor ArcGIS org (WPASSESSOR, whitepinenv.maps.arcgis.com). Layer WhitePineNVFeatures / Parcel (id 4) on org ihyPHe2KRRmOsTPa. The older Sidwell/4YineAQdtmx0tv46 WhitePineNVFeatures URL used by an older Wells_App webmap is invalid and must not be used. The county homepage also points at whitepinenv.devnetwedge.com, which was not scraped.",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 7763,
+   "sample_owner": "HORSLEY RONALD JAY",
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Churchill": {
+   "fips": "32001",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "fields": {},
+   "sp_epsg_2011_ftus": 6523,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Lander": {
+   "fips": "32015",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services9.arcgis.com/pO52tJVU1A7DeQKH/arcgis/rest/services/Lander_County_Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "owner_name"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "dsp_strap",
+    "pin": "APN",
+    "acres": "ACRES",
+    "address": null
+   },
+   "sp_epsg_2011_ftus": 6523,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Lander County official Lander_County_Parcels layer on the lcassessor ArcGIS org (pO52tJVU1A7DeQKH). Previously partial because TOWN was mis-mapped as owner and live owner was empty; owner_name is now populated on the same official layer.",
+   "county_filter": null,
+   "layer_id": 0,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 7777,
+   "sample_owner": "GANDOLFO. WILLIAM JAY",
+   "onemap_filter": null,
+   "buildings_source": "none"
+  },
+  "Eureka": {
+   "fips": "32011",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services7.arcgis.com/npQRqzUHX9auAwvE/arcgis/rest/services/Tax_Parcels_1/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "PANAME"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "Name",
+    "pin": "YPNO",
+    "acres": "PACRES",
+    "address": null
+   },
+   "sp_epsg_2011_ftus": 6519,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 0,
+   "source_name": "Official Eureka County GIS Parcel Location Map (eucogis.maps.arcgis.com webapp a07b87e8854c4d0997c6876d5ce93a00) linked from the county Assessor Parcel Finder page at eurekacountynv.gov. Layer Tax_Parcels_1 on org npQRqzUHX9auAwvE.",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 4554,
+   "sample_owner": "WHITE, JERRY R.",
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Washoe": {
+   "fips": "32031",
+   "status": "fixed_pending_review",
+   "source": "county_rest",
+   "url": "https://gisenterprise.washoecounty.gov/server/rest/services/WashoeGIS/Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "LASTNAME",
+     "FIRSTNAME"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIN",
+    "pin": "APN",
+    "acres": "ACREAGE",
+    "address": "FullAddress"
+   },
+   "sp_epsg_2011_ftus": 6523,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 0,
+   "source_name": "Washoe County official WashoeGIS/Parcels on gisenterprise.washoecounty.gov (Open Data / Assessor, updated daily)",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102709,
+    "latestWkid": 3423
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 194395,
+   "sample_owner": "MONTOYA BRENDA S",
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Clark": {
+   "fips": "32003",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "fields": {},
+   "sp_epsg_2011_ftus": 6521,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Lyon": {
+   "fips": "32019",
+   "status": "fixed_pending_review",
+   "source": "county_rest",
+   "url": "https://gis.lyon-county.org/server/rest/services/Landbase/Parcels/MapServer/1",
+   "fields": {
+    "owner": [
+     "PTOWN"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": null,
+    "acres": null
+   },
+   "sp_epsg_2011_ftus": 6523,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "source_name": "Lyon County layer 'Lyon County NV Parcels' (storey_admin@dowl)",
+   "county_filter": null,
+   "buildings_source": "none"
+  },
+  "Carson City": {
+   "fips": "32510",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "fields": {},
+   "sp_epsg_2011_ftus": 6523,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Esmeralda": {
+   "fips": "32009",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "fields": {},
+   "sp_epsg_2011_ftus": 6523,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Douglas": {
+   "fips": "32005",
+   "status": "fixed_pending_review",
+   "source": "county_rest",
+   "url": "https://gisservices.douglasnv.us/server/rest/services/OpenData/Parcels_Open_Data/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "PANAME"
+    ],
+    "deed_ref": "Document_Number",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIN",
+    "pin": "TAG",
+    "acres": "PACRES",
+    "address": "STREETADDRESS"
+   },
+   "sp_epsg_2011_ftus": 6523,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 0,
+   "source_name": "Douglas County official OpenData/Parcels_Open_Data on gisservices.douglasnv.us (Douglas County Open Data)",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 30962,
+   "sample_owner": "PARK, DAVID W LLC",
+   "deed_plat_sample": {
+    "PANAME": "ROGERS, DAVID PATRICK JR & FUERHERM, KAREN J",
+    "PIN": "0923-07-000-018",
+    "TAG": "092307000018",
+    "PACRES": 38.7,
+    "STREETADDRESS": "2750 FENCE LINE RD",
+    "Document_Number": "2025-1023129"
+   },
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Humboldt": {
+   "fips": "32013",
+   "status": "fixed_pending_review",
+   "source": "county_rest",
+   "url": "https://services7.arcgis.com/cbx6hozJyAREK9DB/arcgis/rest/services/County_Maintained_Roads_WFL1/FeatureServer/6",
+   "fields": {
+    "owner": [
+     "PANAME"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PIN",
+    "pin": null,
+    "acres": "PACRES",
+    "address": null
+   },
+   "sp_epsg_2011_ftus": 6523,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 6,
+   "source_name": "Humboldt County official HCNV_MasterParcels layer 6, published on the county Hub (humboldt-county-hub-humboldtnv.hub.arcgis.com) as the GeoService for HCNV MasterParcels, hosted in County_Maintained_Roads_WFL1 on the county ArcGIS Online org (services7.arcgis.com/cbx6hozJyAREK9DB, owner on the official Humboldt County Hub). A dedicated HCNV_MasterParcels FeatureServer on the same org is an older January 2022 copy (YYEAR 2022) and was not used. Assessment-year field YYEAR is 2023 on the live sample.",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 17790,
+   "sample_owner": "ZEITLER JOSEPH & EMILY",
+   "deed_plat_sample": null,
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Storey": {
+   "fips": "32029",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "fields": {},
+   "sp_epsg_2011_ftus": 6523,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Lincoln": {
+   "fips": "32017",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services7.arcgis.com/zEd0UM6DWpfqnURg/arcgis/rest/services/Tax_Parcels_Viewer/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "owner_name"
+    ],
+    "deed_ref": "DOCNUM",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "dsp_strap",
+    "pin": "APN",
+    "acres": "acreage",
+    "address": "site_addr"
+   },
+   "sp_epsg_2011_ftus": 6521,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 0,
+   "source_name": "Official Lincoln County, Nevada Tax Parcel Viewer (experience ccf138160c3841bbab71a6c0020cc15d, owner mfree1) linked from the county Assessor page at lincolncountynv.org. Layer Tax_Parcels_Viewer / Tax Parcels on org zEd0UM6DWpfqnURg. This is Lincoln County, Nevada, not Lincoln County, Montana (already staged tonight), Lincoln County, New Mexico, or Lincoln County, Wyoming (already in the West file).",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 26911,
+    "latestWkid": 26911
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 5199,
+   "sample_owner": "YOUNG, PHILLIP S.",
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Mineral": {
+   "fips": "32021",
+   "status": "missing",
+   "source": "none",
+   "url": null,
+   "fields": {},
+   "sp_epsg_2011_ftus": 6523,
+   "template": "default",
+   "plat_prefix": "PB",
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Nye": {
+   "fips": "32023",
+   "status": "fixed_pending_review",
+   "source": "county_agol",
+   "url": "https://services.arcgis.com/4YineAQdtmx0tv46/arcgis/rest/services/Parcel_Nye/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "assess_name"
+    ],
+    "deed_ref": "deed_number",
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "PARCELID",
+    "pin": "PIN",
+    "acres": "py_mapped_acres",
+    "address": "phys_addr"
+   },
+   "sp_epsg_2011_ftus": 6519,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 0,
+   "source_name": "Official Nye County GIS page (nyecountynv.gov GIS) links the public Tax Parcel experience 4b813ebe616e4693bb963650a8328192, which uses Parcel_Nye on org 4YineAQdtmx0tv46. The experience item is authored by pabitra_Magnasoft, but it is the map the county itself publishes.",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "checks": {
+    "owner": true,
+    "deed": true,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 60510,
+   "sample_owner": "WELLESLEY CHARLES EDWIN II & MICHELLE LANEEN",
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_ref_split": "mo_ref",
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Elko": {
+   "fips": "32007",
+   "status": "fixed_pending_review",
+   "source": "county_rest",
+   "url": "https://gis.elkocountynv.net/server/rest/services/Reference/Parcels/FeatureServer/0",
+   "fields": {
+    "owner": [
+     "PANAME"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "YPNO",
+    "pin": null,
+    "acres": "PACRES",
+    "address": "ADDRESS"
+   },
+   "sp_epsg_2011_ftus": 6521,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 0,
+   "source_name": "Elko County official Reference/Parcels (elkogisadmin; used by the official Elko County GIS Parcel Viewer)",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 45492,
+   "sample_owner": "ROBINSON, ELMER & ZELMA",
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  },
+  "Pershing": {
+   "fips": "32027",
+   "status": "fixed_pending_review",
+   "source": "county_rest",
+   "url": "https://services9.arcgis.com/qOD0sKAJC4zVpWPR/arcgis/rest/services/Landbase/FeatureServer/5",
+   "fields": {
+    "owner": [
+     "legal_name"
+    ],
+    "deed_ref": null,
+    "deed_book": null,
+    "deed_page": null,
+    "plat_ref": null,
+    "plat_book": null,
+    "plat_page": null,
+    "pid": "APN_TOTAL",
+    "pin": "APN_NODASH",
+    "acres": "py_mapped_acres",
+    "address": "phys_addr"
+   },
+   "sp_epsg_2011_ftus": 6523,
+   "template": "default",
+   "plat_prefix": "PB",
+   "layer_id": 5,
+   "source_name": "Pershing County official Landbase Parcel Boundary layer 5 on the county GIS ArcGIS Online org (services9.arcgis.com/qOD0sKAJC4zVpWPR, owner pershing_gisadmin@dowl), the parcel layer in the official Pershing County Landbase map. The Landbase_view Parcel Boundary layer is geometry-only and was not used. Statewide NDWR County_Parcels_in_Nevada was not used.",
+   "county_filter": null,
+   "native_sr": {
+    "wkid": 102100,
+    "latestWkid": 3857
+   },
+   "checks": {
+    "owner": true,
+    "deed": false,
+    "pid": true,
+    "plat": false
+   },
+   "record_count": 12156,
+   "sample_owner": "HINKLEY VERN M",
+   "deed_plat_sample": null,
+   "onemap_filter": null,
+   "plat_format": null,
+   "name_rules": null,
+   "plat_sentinels": null,
+   "owner_format": {
+    "sep": null,
+    "order": "last_first",
+    "confirmed": false
+   },
+   "deed_instrument_print": true,
+   "deed_book_page_rescue": true,
+   "buildings_source": "none"
+  }
+ },
+ "buildings": {
+  "name": "USA Structures (FEMA / ORNL)",
+  "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/USA_Structures_View/FeatureServer/0",
+  "fields": {
+   "id": "BUILD_ID"
+  },
+  "page": 1000,
+  "info": "https://www.arcgis.com/home/item.html?id=0ec8512ad21e4bb987d7e848d14e7e24",
+  "status": "fixed_pending_review",
+  "license": "CC BY 4.0 (credit: ORNL; FEMA Geospatial Response Office)",
+  "notes": "Live national FeatureServer (Esri Living Atlas, polygons, native 3857; server projects to drawing EPSG via outSR, no datum shift). maxRecordCount 2000. Same entry as SC/GA/VA/TN. Added 2026-11-12 (rc31); box DXF-parse tested, not tested in Carlson or IntelliCAD.",
+  "attribution": "USA Structures, ORNL/FEMA, CC BY 4.0"
+ }
+}
