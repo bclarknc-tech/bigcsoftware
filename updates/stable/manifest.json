@@ -1,501 +1,81 @@
 {
  "product": "BIGCS",
- "version": "1.1.0-rc34",
- "min_version": "1.1.0-rc22",
- "released": "2026-11-19",
- "notes": "County data for your licensed counties now comes signed from the BIGCS license server; program-file check; engine brought up to the current release.",
+ "version": "1.1.0-rc36",
+ "min_version": "1.1.0-rc34",
+ "released": "2026-11-20",
+ "notes": "Improves PIN search when dashes are left out (for example Williamsburg 45001001) and adds address search for counties that store the street number and name in separate fields (Charleston, Greenville, and Lexington).",
  "files": [
   {
-   "path": "cad/BIGCS_menu.lsp",
-   "sha256": "2acd2e9a7e69b7253801f44e3440ffddc8c9b212173b973342782a4a48618587",
-   "size": 9281,
-   "url": "files/1.1.0-rc34/cad/BIGCS_menu.lsp"
+   "path": "gis2cad/ssltls.pyc",
+   "sha256": "8b4eaffc87f52f760b7d2602ca9cb5032e43bf1003ac494bc2bdaa065b475cbd",
+   "size": 10418,
+   "url": "files/1.1.0-rc36/gis2cad/ssltls.pyc"
   },
   {
-   "path": "cad/gis2cad.lsp",
-   "sha256": "d122f7036cb6b2e8f6bf962ba64103264bee113b97bcb074cec963ed215755a9",
-   "size": 37646,
-   "url": "files/1.1.0-rc34/cad/gis2cad.lsp"
+   "path": "gis2cad/_ts_api.pyc",
+   "sha256": "efc98b76e10dd22f657ba62dd5fd1e7ecfeaa35f02f7659d1882b869db5eede7",
+   "size": 18992,
+   "url": "files/1.1.0-rc36/gis2cad/_ts_api.pyc"
   },
   {
-   "path": "counties/ar.json",
-   "sha256": "2cf48943f9d618d177a35b5e4ab1c27e3ea6c6f7600cdc3b3359edb848f66ef4",
-   "size": 160010,
-   "url": "files/1.1.0-rc34/counties/ar.json"
+   "path": "gis2cad/_ts_windows.pyc",
+   "sha256": "394c7524ce9a97ced0475681bac918c10e277b66b75f4b4056802d857c482e09",
+   "size": 16117,
+   "url": "files/1.1.0-rc36/gis2cad/_ts_windows.pyc"
   },
   {
-   "path": "counties/az.json",
-   "sha256": "64fc18f59b36e7278d624a464e4014ff0fcd8423c78a75e17a9a68afd56165db",
-   "size": 17891,
-   "url": "files/1.1.0-rc34/counties/az.json"
+   "path": "gis2cad/_ts_openssl.pyc",
+   "sha256": "21baaa08316f6d05479a79d729294c67ab453bb80e43c1b13511b42b6e65da7d",
+   "size": 2376,
+   "url": "files/1.1.0-rc36/gis2cad/_ts_openssl.pyc"
   },
   {
-   "path": "counties/ct.json",
-   "sha256": "828cdb23fbef4d219ce23655ac0ee34edcbd9c407f4ca3e65742fa1e53456fd8",
-   "size": 28587,
-   "url": "files/1.1.0-rc34/counties/ct.json"
-  },
-  {
-   "path": "counties/dc.json",
-   "sha256": "e8921dc8fcd34b609b9835d08f28540b7bfa9f6076c055a4abc61f62073e7c30",
-   "size": 2580,
-   "url": "files/1.1.0-rc34/counties/dc.json"
-  },
-  {
-   "path": "counties/de.json",
-   "sha256": "8b0a1b4b9ae7ebe983f5f6a1c7375a096fa4c607c399fea0cfaba46a7ccb9636",
-   "size": 10244,
-   "url": "files/1.1.0-rc34/counties/de.json"
-  },
-  {
-   "path": "counties/fl.json",
-   "sha256": "6a5472eb53c8b124a4bc2bfdc1b7a7dcb4a25716f56fa805b423a16788c8310d",
-   "size": 133806,
-   "url": "files/1.1.0-rc34/counties/fl.json"
-  },
-  {
-   "path": "counties/il.json",
-   "sha256": "bd37aceebbf62a81a28a21dbb1dc64c681d1c2f437d2ad902e6bf8c7b0ac34ae",
-   "size": 183644,
-   "url": "files/1.1.0-rc34/counties/il.json"
-  },
-  {
-   "path": "counties/ma.json",
-   "sha256": "91ee374101a3e6e48bbdb11c15820e40d32a0b8f113aa8411642cc7b679bf014",
-   "size": 20257,
-   "url": "files/1.1.0-rc34/counties/ma.json"
-  },
-  {
-   "path": "counties/md.json",
-   "sha256": "6393316437d675298b3750b6302520269d0190436444db21b19e9a9d7fc46b39",
-   "size": 41108,
-   "url": "files/1.1.0-rc34/counties/md.json"
-  },
-  {
-   "path": "counties/mn.json",
-   "sha256": "05ea48e7362943ebfe498d9b8e89fc175cb6640a5e48fcedb256237d43652085",
-   "size": 318724,
-   "url": "files/1.1.0-rc34/counties/mn.json"
-  },
-  {
-   "path": "counties/mo.json",
-   "sha256": "ab29e0eadcfcbf0731f6add99eecd9ff91b3c0d1243ce019267bc7c23f542984",
-   "size": 207422,
-   "url": "files/1.1.0-rc34/counties/mo.json"
-  },
-  {
-   "path": "counties/ms.json",
-   "sha256": "e2c31cb1ca545199eaaaa900e18a26604990d4947e97fcd58736e4c66978b29c",
-   "size": 297676,
-   "url": "files/1.1.0-rc34/counties/ms.json"
-  },
-  {
-   "path": "counties/mt.json",
-   "sha256": "923962e44c89eb59d5bf1b6af821fac6a2a888e3599c8ba5571812822736d558",
-   "size": 65164,
-   "url": "files/1.1.0-rc34/counties/mt.json"
-  },
-  {
-   "path": "counties/nc.json",
-   "sha256": "7ef033ac0df4d72fa413f6f680fbdb28e8ffb768b42b8ba121836f4248b83013",
-   "size": 255709,
-   "url": "files/1.1.0-rc34/counties/nc.json"
-  },
-  {
-   "path": "counties/nd.json",
-   "sha256": "552eb02ff263497ead7deae22e9875f666cee9495d397f5f3744444d173b0fb7",
-   "size": 138365,
-   "url": "files/1.1.0-rc34/counties/nd.json"
-  },
-  {
-   "path": "counties/nj.json",
-   "sha256": "39968a53ecde7d394542cd54005e136ce410e1086caa55e7dc5b03815427fb4d",
-   "size": 34940,
-   "url": "files/1.1.0-rc34/counties/nj.json"
-  },
-  {
-   "path": "counties/nv.json",
-   "sha256": "f3ad74d4204c4fdf6af6644b095405594738b5b6300694a0600e69433739f27a",
-   "size": 19939,
-   "url": "files/1.1.0-rc34/counties/nv.json"
-  },
-  {
-   "path": "counties/ny.json",
-   "sha256": "e3500b17f8df224faa5dcd61389866b7db97e749cb450bff886f47fc59c3f5db",
-   "size": 106312,
-   "url": "files/1.1.0-rc34/counties/ny.json"
-  },
-  {
-   "path": "counties/oh.json",
-   "sha256": "f1306314f74cb0f3286431680d1569508836e25a77818accca3b9719bce32a6e",
-   "size": 198531,
-   "url": "files/1.1.0-rc34/counties/oh.json"
-  },
-  {
-   "path": "counties/pa.json",
-   "sha256": "978de2449f31d416bc29942ddd51e1b84e835ffe8128a84139cd42965006d570",
-   "size": 104143,
-   "url": "files/1.1.0-rc34/counties/pa.json"
-  },
-  {
-   "path": "counties/sc.json",
-   "sha256": "90d0e588d097b1385ba5c783d5c40b51a93e7a30abf2ce33750cbc2152759ff6",
-   "size": 96351,
-   "url": "files/1.1.0-rc34/counties/sc.json"
-  },
-  {
-   "path": "counties/sd.json",
-   "sha256": "64e4c53a5a5017a18fb4ad07ef81953146f83fa504f31e5959a3032f057fc706",
-   "size": 141468,
-   "url": "files/1.1.0-rc34/counties/sd.json"
-  },
-  {
-   "path": "counties/tx.json",
-   "sha256": "b39cb2298b42321fcb2ed41e3df0103f18ca3fb0d4eb0ca433cbbf78114b2758",
-   "size": 430217,
-   "url": "files/1.1.0-rc34/counties/tx.json"
-  },
-  {
-   "path": "counties/vt.json",
-   "sha256": "4fbc9ecf10384b556ee5304982472c7ccde1ce013ca6657e9ed5ede2cb8af2cc",
-   "size": 16575,
-   "url": "files/1.1.0-rc34/counties/vt.json"
-  },
-  {
-   "path": "counties/wi.json",
-   "sha256": "5899bf2f61f6ca9c72b9970cef68d20d08b6e177cbf6af077a3d07db50419ffc",
-   "size": 180624,
-   "url": "files/1.1.0-rc34/counties/wi.json"
-  },
-  {
-   "path": "counties/wv.json",
-   "sha256": "fcf0b0d574fc63e3643067ffab62aef3aa5b087d5c06cf60d3694a97b368fd5a",
-   "size": 158563,
-   "url": "files/1.1.0-rc34/counties/wv.json"
-  },
-  {
-   "path": "data/boundaries/counties_AR.json",
-   "sha256": "83688a1e70665cd8e87c2511a84b64307007b6f8c5e9f452993f1930a440808e",
-   "size": 548218,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_AR.json"
-  },
-  {
-   "path": "data/boundaries/counties_AZ.json",
-   "sha256": "8293b59dd2c68af33271180a8eee4e45b4d4aac3786165f0daf5009b04163017",
-   "size": 247464,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_AZ.json"
-  },
-  {
-   "path": "data/boundaries/counties_CT.json",
-   "sha256": "528342a153a630df43661d99debdfac6cb577c2348da1ac2272be453276f1823",
-   "size": 69716,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_CT.json"
-  },
-  {
-   "path": "data/boundaries/counties_DC.json",
-   "sha256": "ae920bb32c5391fb8cf631b968c84a1d0e6e5d5febdd7c5c69e8b4657140bc3c",
-   "size": 5425,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_DC.json"
-  },
-  {
-   "path": "data/boundaries/counties_DE.json",
-   "sha256": "b16c4578fa7cdcb771b8691069f2e41b5f3d1884c4bed9ff16e7a18500a3c305",
-   "size": 23388,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_DE.json"
-  },
-  {
-   "path": "data/boundaries/counties_FL.json",
-   "sha256": "c69e25daaedae80de12cef7db49d6449339a729c47ff443017f0eee6b90e9289",
-   "size": 643794,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_FL.json"
-  },
-  {
-   "path": "data/boundaries/counties_IL.json",
-   "sha256": "631b62dcc8f48a9588ad2e0f95c30c80922cbe5465bab8c64e4ed99918c4f32b",
-   "size": 427575,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_IL.json"
-  },
-  {
-   "path": "data/boundaries/counties_MA.json",
-   "sha256": "0403dd323a329e850ccc6aecf6e9309aacfb6398a0c00d467f042de6a03942fe",
-   "size": 128638,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_MA.json"
-  },
-  {
-   "path": "data/boundaries/counties_MD.json",
-   "sha256": "0f23737943d4b7721d40f48d67b03eba5a50ed87b2103e249a29b74645508f4b",
-   "size": 295713,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_MD.json"
-  },
-  {
-   "path": "data/boundaries/counties_MN.json",
-   "sha256": "cf75b3963c4b9ce4e10e75d4ea0813cdecbe8e9d794bee7df79901ff36e970e3",
-   "size": 451208,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_MN.json"
-  },
-  {
-   "path": "data/boundaries/counties_MO.json",
-   "sha256": "023eae69c2ef9cc109f77a7643f75dd08f16b1f6faae5313974a494a84bc396e",
-   "size": 477183,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_MO.json"
-  },
-  {
-   "path": "data/boundaries/counties_MS.json",
-   "sha256": "9acab6cec8fc625c30ce712383a6d2021601c4c5e13f84583b5aae7f8c018fb8",
-   "size": 392732,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_MS.json"
-  },
-  {
-   "path": "data/boundaries/counties_MT.json",
-   "sha256": "9221cc0346a543ddbec7346506b5834e5a189ea4e1fc63585960c2843424ffc3",
-   "size": 649058,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_MT.json"
-  },
-  {
-   "path": "data/boundaries/counties_ND.json",
-   "sha256": "0e8e7623b99a31323e7fde88ab7049de7dca974a8a850737138c6480e2fed9d8",
-   "size": 284603,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_ND.json"
-  },
-  {
-   "path": "data/boundaries/counties_NJ.json",
-   "sha256": "9e19f0f2f600be51154d2f19da4a7e3187d1871dbc2c16864e1ace02c647bcf7",
-   "size": 184306,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_NJ.json"
-  },
-  {
-   "path": "data/boundaries/counties_NV.json",
-   "sha256": "fd901386f8a17fd9049de328218ecf051e15a150af85f8f855d0de5000d2bbcf",
-   "size": 94207,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_NV.json"
-  },
-  {
-   "path": "data/boundaries/counties_NY.json",
-   "sha256": "2ef4e4195a8377c148e09fbf3813dc3b510f901970ef51f26dec37f10329952e",
-   "size": 419575,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_NY.json"
-  },
-  {
-   "path": "data/boundaries/counties_OH.json",
-   "sha256": "113adeb8270a6c07f8b285dc7ca35a20bb341820b854eae7ac2d48b1085f43af",
-   "size": 286579,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_OH.json"
-  },
-  {
-   "path": "data/boundaries/counties_PA.json",
-   "sha256": "6becee85ce3db734348d3e2c89454d7aac72bb21d92dc3967f8b90ced133b732",
-   "size": 418314,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_PA.json"
-  },
-  {
-   "path": "data/boundaries/counties_SD.json",
-   "sha256": "f826f9d3346217cf6e5efb5fdb281db46a037d65b51488a84f03c63562c2e287",
-   "size": 295400,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_SD.json"
-  },
-  {
-   "path": "data/boundaries/counties_TX.json",
-   "sha256": "26715ebb182ee526cab9573e18bdc7688fbd43b158f36de7d3af93ced72b233c",
-   "size": 1653685,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_TX.json"
-  },
-  {
-   "path": "data/boundaries/counties_VT.json",
-   "sha256": "62c26afad7205421a949c55f77886b50ae0ebb23cbd06379654bee6faaacdd0f",
-   "size": 63391,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_VT.json"
-  },
-  {
-   "path": "data/boundaries/counties_WI.json",
-   "sha256": "eee1caa8710398a7a60d3a78d57a3414baec0cf0b87a37ec470578d89eb895ff",
-   "size": 328115,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_WI.json"
-  },
-  {
-   "path": "data/boundaries/counties_WV.json",
-   "sha256": "d80d40cce307695133d320ab2c11a54714bcfcf73cc8ace56231ee506e181db2",
-   "size": 474976,
-   "url": "files/1.1.0-rc34/data/boundaries/counties_WV.json"
-  },
-  {
-   "path": "gis2cad/__init__.pyc",
-   "sha256": "fe4f02647afed4a798555c127ec1a7ca298410efaf953c72268c28e4bc836732",
-   "size": 1464,
-   "url": "files/1.1.0-rc34/gis2cad/__init__.pyc"
-  },
-  {
-   "path": "gis2cad/adapters.pyc",
-   "sha256": "bda278309f3b5038b74db1f23dbd6fa9c8abfe5b5fcecf53c8a831fdfe03ca5c",
-   "size": 18371,
-   "url": "files/1.1.0-rc34/gis2cad/adapters.pyc"
-  },
-  {
-   "path": "gis2cad/arcgis.pyc",
-   "sha256": "2e30649d15b1eaaaa8b0a87b589b9e4810bc72465eccd647191a12582bc8efa6",
-   "size": 14380,
-   "url": "files/1.1.0-rc34/gis2cad/arcgis.pyc"
-  },
-  {
-   "path": "gis2cad/area.pyc",
-   "sha256": "f50fc05f77565965d933ae30a73f159806550cbdc9f404baa23f62b33c5759d0",
-   "size": 17593,
-   "url": "files/1.1.0-rc34/gis2cad/area.pyc"
-  },
-  {
-   "path": "gis2cad/bounds.pyc",
-   "sha256": "16680970f8ebec1949b257fe5ff119c1d4271c18ce04f5ecedd78d61a6906e52",
-   "size": 34639,
-   "url": "files/1.1.0-rc34/gis2cad/bounds.pyc"
-  },
-  {
-   "path": "gis2cad/bounds_gui.pyc",
-   "sha256": "2c6a93dfbabff91d562a636b7424a75888f3d821a9ea06e94fdf4fe026b0fcf8",
-   "size": 33240,
-   "url": "files/1.1.0-rc34/gis2cad/bounds_gui.pyc"
-  },
-  {
-   "path": "gis2cad/buildings.pyc",
-   "sha256": "f18cd19ddbc6e577d97d7b207b2fa3538758fc6841e91492dec3ab2734729b6f",
-   "size": 11623,
-   "url": "files/1.1.0-rc34/gis2cad/buildings.pyc"
-  },
-  {
-   "path": "gis2cad/cfgstore.pyc",
-   "sha256": "2074802ef53e97515b3d26b0ca8d518575864a54a8bd02c816d3cb898b73b55a",
-   "size": 31077,
-   "url": "files/1.1.0-rc34/gis2cad/cfgstore.pyc"
-  },
-  {
-   "path": "gis2cad/cli.pyc",
-   "sha256": "6f22c9d2790919f35ebeff3a7ceadea478c6f077528fd7fe3887b1dbb441a09d",
-   "size": 56844,
-   "url": "files/1.1.0-rc34/gis2cad/cli.pyc"
-  },
-  {
-   "path": "gis2cad/config.pyc",
-   "sha256": "beb8053d34b6d66079ae7bac54d71ca9ed9fd102e935cb0002934810ab539fe4",
-   "size": 22061,
-   "url": "files/1.1.0-rc34/gis2cad/config.pyc"
-  },
-  {
-   "path": "gis2cad/control.pyc",
-   "sha256": "2d31be68b83fbdc1de4131fbccd48c9b0b5ce4d08906a13135a6a837d282d03b",
-   "size": 20583,
-   "url": "files/1.1.0-rc34/gis2cad/control.pyc"
-  },
-  {
-   "path": "gis2cad/dxf.pyc",
-   "sha256": "af8d269e62270beb1e821dbf53035b28f52fff5968a834fd5524f3407d9d60bc",
-   "size": 5426,
-   "url": "files/1.1.0-rc34/gis2cad/dxf.pyc"
-  },
-  {
-   "path": "gis2cad/engine.pyc",
-   "sha256": "71e2193724da853612ca65ca155cef8c8f59658f9413d305acf0d3e9ce9ecd77",
-   "size": 109701,
-   "url": "files/1.1.0-rc34/gis2cad/engine.pyc"
-  },
-  {
-   "path": "gis2cad/find.pyc",
-   "sha256": "cd8d744f97e2bdf67676ad59eead2a424ec57b518d289b69dca94401e498c2cd",
-   "size": 31413,
-   "url": "files/1.1.0-rc34/gis2cad/find.pyc"
-  },
-  {
-   "path": "gis2cad/hydro.pyc",
-   "sha256": "43e79af4d15f547522108c3f18a9122677823707c6ffa334a8ed814fa7a68976",
-   "size": 18280,
-   "url": "files/1.1.0-rc34/gis2cad/hydro.pyc"
-  },
-  {
-   "path": "gis2cad/integrity.json",
-   "sha256": "bc4e2918031f7ab75be49cdddb07db09cc3b7e28dbfa360ea36c51e4279d2677",
-   "size": 4115,
-   "url": "files/1.1.0-rc34/gis2cad/integrity.json"
+   "path": "gis2cad/_ts_ssl_constants.pyc",
+   "sha256": "4285837d5b2b57fec1d75907dc10691b88eb33a3b05fe55ee3d653bb77e7f41d",
+   "size": 973,
+   "url": "files/1.1.0-rc36/gis2cad/_ts_ssl_constants.pyc"
   },
   {
    "path": "gis2cad/licsrv.pyc",
-   "sha256": "198ae6aa5d80f46203340ee587a12df466b7ab14e6a4e302855d11ec0688fa6c",
-   "size": 20715,
-   "url": "files/1.1.0-rc34/gis2cad/licsrv.pyc"
+   "sha256": "3fef1d20369a5927d6d1ff2eef6a020d964ba358d539ea9ac2c844b54427ab4f",
+   "size": 20881,
+   "url": "files/1.1.0-rc36/gis2cad/licsrv.pyc"
   },
   {
-   "path": "gis2cad/lisp.pyc",
-   "sha256": "dbda621730f1f3e9e7f7c3f8632e53589d17aa11c7684379d4b7d8fa516f70eb",
-   "size": 13439,
-   "url": "files/1.1.0-rc34/gis2cad/lisp.pyc"
+   "path": "gis2cad/update.pyc",
+   "sha256": "3e33656aa103d77c47511cbcd9e11a1c2dd1f335e669bb4c246baf81eb5a45a5",
+   "size": 19246,
+   "url": "files/1.1.0-rc36/gis2cad/update.pyc"
   },
   {
-   "path": "gis2cad/lock.pyc",
-   "sha256": "80257ca64a438d362b65d7d9bd6a90904e2f12f50ab5dfbb1d5cb1f4c1bd3b75",
-   "size": 34110,
-   "url": "files/1.1.0-rc34/gis2cad/lock.pyc"
+   "path": "gis2cad/__init__.pyc",
+   "sha256": "1f9d8d5159051eb966da45a077aacb5f488f5b3b26703bc8ea98d2599c61d38b",
+   "size": 1607,
+   "url": "files/1.1.0-rc36/gis2cad/__init__.pyc"
   },
   {
-   "path": "gis2cad/lookup.pyc",
-   "sha256": "a95d6063011cd0aab56a87968b4d6c0e1a3f7f14a729e6a4c087f0a37381846d",
-   "size": 18918,
-   "url": "files/1.1.0-rc34/gis2cad/lookup.pyc"
+   "path": "gis2cad/find.pyc",
+   "sha256": "7a60d5871b1cead811ce0fafccd3b8ddaecd26bde4d02c8122cf1272db895976",
+   "size": 36078,
+   "url": "files/1.1.0-rc36/gis2cad/find.pyc"
   },
   {
-   "path": "gis2cad/overlay.pyc",
-   "sha256": "5049e2dd8291519504ecece67be830e7369b73ff78f771ace89cd978044a602c",
-   "size": 7429,
-   "url": "files/1.1.0-rc34/gis2cad/overlay.pyc"
-  },
-  {
-   "path": "gis2cad/pin_formats.json",
-   "sha256": "66a3e4e1b05a9630de03b552d1f373bf98658ec4d88248fee6ab23a4e89dcf01",
-   "size": 971956,
-   "url": "files/1.1.0-rc34/gis2cad/pin_formats.json"
-  },
-  {
-   "path": "gis2cad/roads.pyc",
-   "sha256": "b45121b16dea804a269374e32da07367db202172cf7015a6f328a9c79f5b1212",
-   "size": 29090,
-   "url": "files/1.1.0-rc34/gis2cad/roads.pyc"
-  },
-  {
-   "path": "gis2cad/scr.pyc",
-   "sha256": "8c74e496e178f2d9d6a34b67badd9565756db66d571724536176a72049f77c26",
-   "size": 19494,
-   "url": "files/1.1.0-rc34/gis2cad/scr.pyc"
-  },
-  {
-   "path": "gis2cad/stamp.pyc",
-   "sha256": "9136189f50247b2d00b5569c3e793ab3400feb2f24201d2dca07c033bc5a2dd7",
-   "size": 4421,
-   "url": "files/1.1.0-rc34/gis2cad/stamp.pyc"
-  },
-  {
-   "path": "gis2cad/standalone.pyc",
-   "sha256": "12061766c8a67be9a2d6b33d21f01597cc19e9e9cae0df7c0908cf90f7e08059",
-   "size": 68248,
-   "url": "files/1.1.0-rc34/gis2cad/standalone.pyc"
+   "path": "gis2cad/adapters.pyc",
+   "sha256": "050de286855e4b448106ef6ca59e2f418ab384fb7e6daa56d4232aa2f0d3694d",
+   "size": 19793,
+   "url": "files/1.1.0-rc36/gis2cad/adapters.pyc"
   },
   {
    "path": "gis2cad/style.pyc",
-   "sha256": "032f304c7c3b57816f92c05e8b7c8e411594fb7f35c9f7a614bd1becfa692a19",
-   "size": 41137,
-   "url": "files/1.1.0-rc34/gis2cad/style.pyc"
+   "sha256": "9acb5aa083b2b3197636a9b85fb5eea9eef6a6ca04127bb1536f4171ee55671d",
+   "size": 41920,
+   "url": "files/1.1.0-rc36/gis2cad/style.pyc"
   },
   {
-   "path": "gis2cad/style_fields.pyc",
-   "sha256": "7b35d3c120615c9a00219a6097274fd4953b4558e2114f0b78b9a2fa0652a1ce",
-   "size": 12073,
-   "url": "files/1.1.0-rc34/gis2cad/style_fields.pyc"
-  },
-  {
-   "path": "gis2cad/style_gui.pyc",
-   "sha256": "2d2787d143dd92af7cf248f89da3ff40328c16ffc15c79fcd17349aeb2322f8d",
-   "size": 65439,
-   "url": "files/1.1.0-rc34/gis2cad/style_gui.pyc"
-  },
-  {
-   "path": "gis2cad/zoning.pyc",
-   "sha256": "44ea845cf05032cbbd4de558fa998f712d25ac02672b4746e33d1c77a83d2706",
-   "size": 20450,
-   "url": "files/1.1.0-rc34/gis2cad/zoning.pyc"
+   "path": "gis2cad/integrity.json",
+   "sha256": "aadff547ec07c3228e909c7c9cbe48540a51e4756c019f3bf8df3398ecb31b66",
+   "size": 4547,
+   "url": "files/1.1.0-rc36/gis2cad/integrity.json"
   }
  ]
 }
