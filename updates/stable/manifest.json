@@ -1,81 +1,93 @@
 {
  "product": "BIGCS",
- "version": "1.1.0-rc36",
+ "version": "1.1.0-rc37",
  "min_version": "1.1.0-rc34",
- "released": "2026-11-20",
- "notes": "Improves PIN search when dashes are left out (for example Williamsburg 45001001) and adds address search for counties that store the street number and name in separate fields (Charleston, Greenville, and Lexington).",
+ "released": "2026-11-23",
+ "notes": "The BIGCS Window now lists every state the program can run in, including Colorado, Hawaii, New Mexico, Oregon, Utah and Washington.",
  "files": [
   {
    "path": "gis2cad/ssltls.pyc",
    "sha256": "8b4eaffc87f52f760b7d2602ca9cb5032e43bf1003ac494bc2bdaa065b475cbd",
    "size": 10418,
-   "url": "files/1.1.0-rc36/gis2cad/ssltls.pyc"
+   "url": "files/1.1.0-rc37/gis2cad/ssltls.pyc"
   },
   {
    "path": "gis2cad/_ts_api.pyc",
    "sha256": "efc98b76e10dd22f657ba62dd5fd1e7ecfeaa35f02f7659d1882b869db5eede7",
    "size": 18992,
-   "url": "files/1.1.0-rc36/gis2cad/_ts_api.pyc"
+   "url": "files/1.1.0-rc37/gis2cad/_ts_api.pyc"
   },
   {
    "path": "gis2cad/_ts_windows.pyc",
    "sha256": "394c7524ce9a97ced0475681bac918c10e277b66b75f4b4056802d857c482e09",
    "size": 16117,
-   "url": "files/1.1.0-rc36/gis2cad/_ts_windows.pyc"
+   "url": "files/1.1.0-rc37/gis2cad/_ts_windows.pyc"
   },
   {
    "path": "gis2cad/_ts_openssl.pyc",
    "sha256": "21baaa08316f6d05479a79d729294c67ab453bb80e43c1b13511b42b6e65da7d",
    "size": 2376,
-   "url": "files/1.1.0-rc36/gis2cad/_ts_openssl.pyc"
+   "url": "files/1.1.0-rc37/gis2cad/_ts_openssl.pyc"
   },
   {
    "path": "gis2cad/_ts_ssl_constants.pyc",
    "sha256": "4285837d5b2b57fec1d75907dc10691b88eb33a3b05fe55ee3d653bb77e7f41d",
    "size": 973,
-   "url": "files/1.1.0-rc36/gis2cad/_ts_ssl_constants.pyc"
+   "url": "files/1.1.0-rc37/gis2cad/_ts_ssl_constants.pyc"
   },
   {
    "path": "gis2cad/licsrv.pyc",
    "sha256": "3fef1d20369a5927d6d1ff2eef6a020d964ba358d539ea9ac2c844b54427ab4f",
    "size": 20881,
-   "url": "files/1.1.0-rc36/gis2cad/licsrv.pyc"
+   "url": "files/1.1.0-rc37/gis2cad/licsrv.pyc"
   },
   {
    "path": "gis2cad/update.pyc",
    "sha256": "3e33656aa103d77c47511cbcd9e11a1c2dd1f335e669bb4c246baf81eb5a45a5",
    "size": 19246,
-   "url": "files/1.1.0-rc36/gis2cad/update.pyc"
+   "url": "files/1.1.0-rc37/gis2cad/update.pyc"
   },
   {
    "path": "gis2cad/__init__.pyc",
    "sha256": "1f9d8d5159051eb966da45a077aacb5f488f5b3b26703bc8ea98d2599c61d38b",
    "size": 1607,
-   "url": "files/1.1.0-rc36/gis2cad/__init__.pyc"
+   "url": "files/1.1.0-rc37/gis2cad/__init__.pyc"
   },
   {
    "path": "gis2cad/find.pyc",
    "sha256": "7a60d5871b1cead811ce0fafccd3b8ddaecd26bde4d02c8122cf1272db895976",
    "size": 36078,
-   "url": "files/1.1.0-rc36/gis2cad/find.pyc"
+   "url": "files/1.1.0-rc37/gis2cad/find.pyc"
   },
   {
    "path": "gis2cad/adapters.pyc",
    "sha256": "050de286855e4b448106ef6ca59e2f418ab384fb7e6daa56d4232aa2f0d3694d",
    "size": 19793,
-   "url": "files/1.1.0-rc36/gis2cad/adapters.pyc"
+   "url": "files/1.1.0-rc37/gis2cad/adapters.pyc"
   },
   {
    "path": "gis2cad/style.pyc",
    "sha256": "9acb5aa083b2b3197636a9b85fb5eea9eef6a6ca04127bb1536f4171ee55671d",
    "size": 41920,
-   "url": "files/1.1.0-rc36/gis2cad/style.pyc"
+   "url": "files/1.1.0-rc37/gis2cad/style.pyc"
+  },
+  {
+   "path": "gis2cad/standalone.pyc",
+   "sha256": "cefd4172f990aa2f089629c67420d6b255204b5ddc448a75d60d14103330d516",
+   "size": 79665,
+   "url": "files/1.1.0-rc37/gis2cad/standalone.pyc"
+  },
+  {
+   "path": "gis2cad/license.pyc",
+   "sha256": "dc7c2e7da9637e69c95c4817529e3a93e01f5e508207237fca4d7cf0d3636618",
+   "size": 15383,
+   "url": "files/1.1.0-rc37/gis2cad/license.pyc"
   },
   {
    "path": "gis2cad/integrity.json",
-   "sha256": "aadff547ec07c3228e909c7c9cbe48540a51e4756c019f3bf8df3398ecb31b66",
+   "sha256": "e2ec8f24f6986195b6e888110d2270cb445744b818b82f5728bab0216d9ca355",
    "size": 4547,
-   "url": "files/1.1.0-rc36/gis2cad/integrity.json"
+   "url": "files/1.1.0-rc37/gis2cad/integrity.json"
   }
  ]
 }
