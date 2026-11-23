@@ -15,18 +15,25 @@ States in AVAILABLE are badged Available. Any other state in the CSV is
 badged Coming soon. Sections already on coverage.html for states that are
 not in the CSV (Coming soon lists) are kept. Counties already listed there
 but absent from the CSV stay on the page, except four Virginia town rows
-that are not Census county-equivalents.
+that are not Census county-equivalents and Quay County, New Mexico, which
+is no longer ready.
+
+Alabama, Louisiana, Michigan, and Nebraska listed every county while they
+were Coming soon. A county on those lists that is absent from the CSV stays
+on the page, labeled Not ready yet. Owner, PIN, deed, plat, and building
+marks on that row are cleared. Roads and control marks already on the row
+stay.
 
 Where a county already has a source name on the page, that name is kept.
 """
 import csv, html, sys, pathlib, re, collections
 
 NAMES = {
-    "AL": "Alabama", "AR": "Arkansas", "AZ": "Arizona", "CO": "Colorado",
-    "CT": "Connecticut", "DC": "District of Columbia", "DE": "Delaware",
-    "FL": "Florida", "GA": "Georgia", "HI": "Hawaii", "IA": "Iowa",
-    "IL": "Illinois", "IN": "Indiana", "KS": "Kansas", "KY": "Kentucky",
-    "LA": "Louisiana", "MA": "Massachusetts", "MD": "Maryland",
+    "AK": "Alaska", "AL": "Alabama", "AR": "Arkansas", "AZ": "Arizona",
+    "CO": "Colorado", "CT": "Connecticut", "DC": "District of Columbia",
+    "DE": "Delaware", "FL": "Florida", "GA": "Georgia", "HI": "Hawaii",
+    "IA": "Iowa", "IL": "Illinois", "IN": "Indiana", "KS": "Kansas",
+    "KY": "Kentucky", "LA": "Louisiana", "MA": "Massachusetts", "MD": "Maryland",
     "MI": "Michigan", "MN": "Minnesota", "MO": "Missouri", "MS": "Mississippi",
     "MT": "Montana", "NC": "North Carolina", "ND": "North Dakota",
     "NE": "Nebraska", "NJ": "New Jersey", "NM": "New Mexico", "NV": "Nevada",
@@ -34,23 +41,30 @@ NAMES = {
     "PA": "Pennsylvania", "SC": "South Carolina", "SD": "South Dakota",
     "TN": "Tennessee", "TX": "Texas", "UT": "Utah", "VA": "Virginia",
     "VT": "Vermont", "WA": "Washington", "WI": "Wisconsin", "WV": "West Virginia",
+    "WY": "Wyoming",
 }
 # Census county or county-equivalent counts. CT is 9 planning regions.
 CENSUS = {
-    "AR": 75, "AZ": 15, "CO": 64, "CT": 9, "DC": 1, "DE": 3, "FL": 67,
-    "HI": 5, "IL": 102, "MA": 14, "MD": 24, "MN": 87, "MO": 115, "MS": 82,
-    "MT": 56, "NC": 100, "ND": 53, "NJ": 21, "NM": 33, "NV": 17, "NY": 62,
-    "OH": 88, "OR": 36, "PA": 67, "SC": 46, "SD": 66, "TN": 95, "TX": 254,
-    "UT": 29, "VA": 133, "VT": 14, "WA": 39, "WI": 72, "WV": 55,
+    "AK": 30, "AL": 67, "AR": 75, "AZ": 15, "CO": 64, "CT": 9, "DC": 1,
+    "DE": 3, "FL": 67, "HI": 5, "IL": 102, "LA": 64, "MA": 14, "MD": 24,
+    "MI": 83, "MN": 87, "MO": 115, "MS": 82, "MT": 56, "NC": 100, "ND": 53,
+    "NE": 93, "NJ": 21, "NM": 33, "NV": 17, "NY": 62, "OH": 88, "OR": 36,
+    "PA": 67, "SC": 46, "SD": 66, "TN": 95, "TX": 254, "UT": 29, "VA": 133,
+    "VT": 14, "WA": 39, "WI": 72, "WV": 55, "WY": 23,
 }
 AVAILABLE = {
-    "AR", "AZ", "CO", "CT", "DC", "DE", "FL", "HI", "IL", "MA", "MD", "MN",
-    "MO", "MS", "MT", "NC", "ND", "NJ", "NM", "NV", "NY", "OH", "OR", "PA",
-    "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV",
+    "AK", "AL", "AR", "AZ", "CO", "CT", "DC", "DE", "FL", "HI", "IL", "LA",
+    "MA", "MD", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NJ", "NM",
+    "NV", "NY", "OH", "OR", "PA", "SC", "SD", "TN", "TX", "UT", "VA", "VT",
+    "WA", "WI", "WV", "WY",
 }
 PREFIX = ["NC", "SC", "GA", "VA", "TN"]
 # Towns on the old Virginia table that are not Census county-equivalents.
 VA_DROP = {"Bedford Town", "Colonial Beach Town", "Culpeper Town", "Farmville Town"}
+# Ready county removed after a failed live re-test. It does not stay as a row.
+DROPPED = {("NM", "quay")}
+# Coming soon states that listed every county and are Available now.
+PROMOTED = {"AL", "LA", "MI", "NE"}
 AGENCY = {("NE", "statewide copy"): "University of Nebraska", ("OH", "gis.ohiodnr.gov"): "Ohio DNR"}
 COLS = [("owner", "Owner"), ("PIN", "PIN"), ("deed", "Deed"), ("plat", "Plat"),
         ("roads", "Roads"), ("buildings", "Buildings"),
@@ -178,6 +192,25 @@ def keep_control_line(existing, rs):
     return control_line(rs)
 
 
+def as_not_ready(row):
+    tds = re.findall(r"<td class=\"[^\"]*\">.*?</td>", row["raw"], re.S)
+    if len(tds) != 9:
+        raise SystemExit(f"{row['name']}: expected 9 cells to relabel, found {len(tds)}")
+    cleared = {0, 1, 2, 3, 5}
+    new_tds = []
+    for i, td in enumerate(tds):
+        if i in cleared:
+            new_tds.append('<td class="n"></td>')
+        elif i == 8:
+            new_tds.append('<td class="src">Not ready yet</td>')
+        else:
+            new_tds.append(td)
+    display = row["name"]
+    return (f'<tr data-c="{html.escape(display.lower())}">'
+            f'<th scope="row">{html.escape(display)}<span class="old">Not ready yet</span></th>'
+            + "".join(new_tds) + "</tr>")
+
+
 def row_html(code, display, r, source, note=""):
     m = re.search(r"\((\d{4})\)", r.get("older_copy") or "")
     old = m.group(1) if m else ""
@@ -225,7 +258,13 @@ def section_html(code, csv_rows, prev):
             continue
         if code == "VA" and row["name"] in VA_DROP:
             continue
+        if (code, norm(row["name"])) in DROPPED:
+            continue
         if not row["not_ready"]:
+            if code in PROMOTED:
+                body.append((row["name"], as_not_ready(row)))
+                kept += 1
+                continue
             raise SystemExit(f"{code}: existing ready county {row['name']!r} is not in the CSV")
         body.append((row["name"], row["raw"]))
         kept += 1
@@ -282,8 +321,8 @@ def main(path):
         print(f"{code} ready {ready} rows {nrows} kept_not_ready {kept} census {CENSUS.get(code, '-')} added {len(missing)}")
         if code == "VA" and nrows != 133:
             raise SystemExit(f"VA has {nrows} rows, expected 133")
-    if available_n != 34:
-        raise SystemExit(f"expected 34 Available states, built {available_n}")
+    if available_n != 40:
+        raise SystemExit(f"expected 40 Available states, built {available_n}")
     tpl = (root / "tools" / "coverage_template.html").read_text(encoding="utf-8")
     if "<!--STATES-->" not in tpl:
         raise SystemExit("coverage template is missing <!--STATES-->")
