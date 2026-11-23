@@ -1,0 +1,25 @@
+{
+  "generated": "2026-11-23T03:50:00-05:00",
+  "states": 40,
+  "ready_counties": 2005,
+  "dropped_from_34": [
+    [
+      "NM",
+      "Quay",
+      "live re-test failed 2026-11-23"
+    ]
+  ],
+  "added_or": [
+    "Klamath"
+  ],
+  "new_states": {
+    "AK": 19,
+    "AL": 58,
+    "LA": 43,
+    "MI": 52,
+    "NE": 92,
+    "WY": 15
+  },
+  "missing_cfg": [],
+  "missing_fips": []
+}
