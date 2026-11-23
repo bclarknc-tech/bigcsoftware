@@ -339,7 +339,8 @@ body.trial .f-fallback a{font-weight:600}
 /* Trial page, first screen: what it does (left) + form (right). Stacks on narrow screens. */
 body.trial .trial-page{max-width:1160px}
 body.trial .trial-top{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:start;padding-top:24px}
-body.trial .trial-what h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin:0 0 16px}
+body.trial .logo-banner-frame picture{display:block;height:100%}
+body.trial .trial-what h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin:0 0 8px}
 body.trial .trial-what .hero-brand{margin:0 0 8px}
 body.trial .trial-clip{margin:0;border:1px solid #d5deea;border-radius:12px;overflow:hidden;background:#000;box-shadow:var(--shadow-media)}
 body.trial .trial-clip video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
@@ -348,7 +349,7 @@ body.trial .trial-jump{display:none;margin:16px 0 0}
 body.trial .trial-steps{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
 body.trial .trial-steps li{display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.45;color:var(--text)}
 body.trial .trial-steps .step-n{flex:0 0 28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
-body.trial .trial-facts{margin:16px 0 0;font-size:15px;color:var(--muted)}
+body.trial .trial-facts{margin:0 0 16px;font-size:15px;color:var(--text)}
 body.trial .trial-facts a{font-weight:600;text-decoration:underline}
 body.trial .trial-top .form-wrap{margin:0}
 body.trial #trial-form{scroll-margin-top:112px}
@@ -366,11 +367,24 @@ body.trial .trial-more h2,body.trial .trial-walkthrough h2{font-size:24px;margin
 body.trial .trial-walkthrough{margin-bottom:64px}
 body.trial .trial-walkthrough .demo{margin:0}
 @media (max-width:900px){
-body.trial .trial-top{grid-template-columns:1fr;gap:28px;padding-top:16px}
-body.trial .trial-what h1{font-size:28px}
-body.trial .trial-jump{display:block}
-body.trial .trial-jump .btn{display:block;width:100%;text-align:center}
-body.trial #trial-form{scroll-margin-top:160px}
+body.trial .trial-top{display:flex;flex-direction:column;gap:12px;padding-top:12px}
+body.trial .trial-what{display:contents}
+body.trial .trial-what .badge{order:1;margin-bottom:0}
+body.trial .trial-what .hero-brand{order:2;margin:0}
+body.trial .trial-what h1{order:3;margin:0;font-size:26px;line-height:1.15}
+body.trial .trial-facts{order:4;margin:0}
+body.trial .trial-jump{order:5;display:block;margin:0}
+body.trial .trial-jump .btn{display:block;width:100%;text-align:center;min-height:44px}
+body.trial .trial-top .form-wrap{order:6}
+body.trial .trial-clip{order:7}
+body.trial .trial-steps{order:8;margin:0}
+body.trial #trial-form{scroll-margin-top:132px}
+}
+@media (max-width:700px){
+body.trial{padding-bottom:96px}
+}
+@media (max-width:520px){
+body.trial .trial-facts{min-height:4.7em}
 }
 @media (max-width:768px){
 body.trial .page-hero{padding-top:24px}
