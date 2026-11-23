@@ -31,6 +31,9 @@
 <meta name="twitter:title" content="Start a trial | BIGCS">
 <meta name="twitter:description" content="Request a 14-day trial on 1 county: owner, deed book and page, and plat labels on every adjoiner from county GIS. No obligation. Each request is reviewed by hand.">
 <meta name="twitter:image" content="https://bigcsoftware.com/assets/demo-poster.jpg">
+<link rel="preload" as="image" href="/assets/trial-labels-poster.jpg" media="(min-width: 901px)" fetchpriority="high">
+<link rel="preload" as="video" href="/assets/trial-labels.mp4" media="(min-width: 901px)" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/bigcs-logo-banner.png" media="(min-width: 521px)" fetchpriority="low">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
@@ -40,7 +43,7 @@
 <div class="bg-layer"><div class="bg-hologram"></div><div class="bg-grid"></div></div>
 <nav>
 <div class="container nav-inner">
-<a href="/" class="logo"><span class="logo-banner-frame"><img class="logo-banner" src="/assets/bigcs-logo-banner.png" alt="BIGCS Software" width="1672" height="298" decoding="async" fetchpriority="high"></span><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
+<a href="/" class="logo"><span class="logo-banner-frame"><picture><source media="(max-width: 520px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><img class="logo-banner" src="/assets/bigcs-logo-banner.png" alt="BIGCS Software" width="1672" height="298" decoding="async"></picture></span><img class="logo-img" src="/assets/bigcs-logo-256.png" alt="" width="40" height="40"><span class="logo-text">BIGCS<small>Boundary Intelligence for GIS, CAD &amp; Survey</small></span></a>
 <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">Menu</button>
 <div class="nav-links" id="site-nav"><a href="/#features">Features</a><a href="/pricing.html">Pricing</a><a href="/coverage.html">Coverage</a><a href="/faq.html">FAQ</a><a href="/demo.html">Live demo</a><a href="/tutorial.html">How it works</a><a class="nav-phone" href="tel:+18332442730">(833) 244-2730</a><a href="#trial-form" class="btn btn-primary" aria-current="page">Start trial</a><a href="/pricing.html" class="btn btn-ghost">Buy</a></div>
 </div>
@@ -51,10 +54,9 @@
 <div class="badge">Trial</div>
 <p class="hero-brand"><strong>BIGCS Software</strong> &middot; Designed by surveyors, for surveyors.</p>
 <h1 id="trial-h1">Click a parcel. BIGCS writes the adjoiner labels.</h1>
+<p class="trial-facts">Runs in Carlson, IntelliCAD and full AutoCAD. Counties in 28 states today. <a href="/coverage.html">Check your county</a>.</p>
 <figure class="trial-clip">
-<video autoplay muted loop playsinline preload="metadata" width="1280" height="720" poster="/assets/trial-labels-poster.jpg" aria-label="BIGCS placing owner, deed book and page, and plat labels on adjoiners in CAD">
-<source src="/assets/trial-labels.mp4" type="video/mp4">
-</video>
+<video id="trial-clip-video" muted loop playsinline preload="none" width="1280" height="720" aria-label="BIGCS placing owner, deed book and page, and plat labels on adjoiners in CAD"></video>
 <figcaption>Adjoiner labels placed from county GIS, in CAD.</figcaption>
 </figure>
 <p class="trial-jump"><a class="btn btn-primary" href="#trial-form">Start my 14-day trial on 1 county &darr;</a></p>
@@ -63,7 +65,6 @@
 <li><span class="step-n">2</span><span>Click the adjoiners in your drawing.</span></li>
 <li><span class="step-n">3</span><span>Owner, deed book and page, and plat labels land at true coordinates, in your label style.</span></li>
 </ol>
-<p class="trial-facts">Runs in Carlson, IntelliCAD and full AutoCAD. Counties in 28 states today. <a href="/coverage.html">Check your county</a>.</p>
 </section>
 <section class="form-wrap" aria-labelledby="trial-form-h">
 <form id="trial-form" class="interest-form" method="POST" novalidate>
@@ -103,10 +104,30 @@
 <section class="trial-walkthrough" aria-labelledby="trial-walk-h">
 <h2 id="trial-walk-h">Full walkthrough</h2>
 <div class="demo" id="demo">
-<video controls playsinline preload="none" width="1280" height="720" poster="/assets/bigcs-demo-poster-v3.jpg">
+<video id="trial-walk-video" controls playsinline preload="none" width="1280" height="720">
 <source src="/assets/bigcs-demo-v3.mp4" type="video/mp4">
 Your browser can't play this video.
 </video>
+<script>
+(function () {
+  var v = document.getElementById("trial-walk-video");
+  if (!v) return;
+  var poster = "/assets/bigcs-demo-poster-v3.jpg";
+  function showPoster() { v.poster = poster; }
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        showPoster();
+        io.disconnect();
+      });
+    }, { rootMargin: "160px" });
+    io.observe(v);
+  } else {
+    showPoster();
+  }
+})();
+</script>
 </div>
 </section>
 </main>
@@ -121,6 +142,59 @@ Your browser can't play this video.
 <p>&copy; 2026 BIGCS. All rights reserved.</p>
 </div>
 </footer>
+<script>
+(function () {
+  var v = document.getElementById("trial-clip-video");
+  if (!v) return;
+  var poster = "/assets/trial-labels-poster.jpg";
+  var src = "/assets/trial-labels.mp4";
+  function addSource() {
+    if (v.querySelector("source")) return;
+    var s = document.createElement("source");
+    s.src = src;
+    s.type = "video/mp4";
+    v.appendChild(s);
+  }
+  if (window.matchMedia("(min-width: 901px)").matches) {
+    v.poster = poster;
+    v.preload = "metadata";
+    v.autoplay = true;
+    v.muted = true;
+    v.setAttribute("fetchpriority", "high");
+    addSource();
+    var play = v.play();
+    if (play && play.catch) play.catch(function () {});
+    return;
+  }
+  v.controls = true;
+  v.preload = "none";
+  v.muted = true;
+  function prime() {
+    if (v.getAttribute("poster")) return;
+    v.poster = poster;
+    addSource();
+  }
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        prime();
+        io.disconnect();
+      });
+    }, { rootMargin: "160px" });
+    io.observe(v);
+  } else {
+    prime();
+  }
+  v.addEventListener("click", function () {
+    prime();
+    if (v.paused) {
+      var again = v.play();
+      if (again && again.catch) again.catch(function () {});
+    }
+  });
+})();
+</script>
 <script src="/assets/nav.js" defer></script>
 <script src="/assets/mail-chooser.js" defer></script>
 <!--Start of Tawk.to Script-->
@@ -129,16 +203,46 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 Tawk_API.customStyle = {
   visibility: {
     desktop: { position: 'br', xOffset: 20, yOffset: 20 },
-    mobile: { position: 'br', xOffset: 10, yOffset: 10 }
+    mobile: { position: 'br', xOffset: 12, yOffset: 16 }
   }
 };
 (function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6af912918e6f59d4de494b3d/1k7ef129l';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
+var phone=window.matchMedia("(max-width: 700px)").matches;
+Tawk_API.onLoad=function(){
+  if(!phone)return;
+  var form=document.getElementById("trial-form");
+  var steps=document.querySelector(".trial-steps");
+  var clip=document.querySelector(".trial-clip");
+  var walk=document.querySelector(".trial-walkthrough");
+  function hitsCorner(el){
+    if(!el)return false;
+    var r=el.getBoundingClientRect();
+    var h=window.innerHeight;
+    return r.top<h-8&&r.bottom>h-96;
+  }
+  function place(){
+    var cover=hitsCorner(form)||hitsCorner(steps)||hitsCorner(clip)||hitsCorner(walk);
+    if(cover&&Tawk_API.hideWidget)Tawk_API.hideWidget();
+    else if(Tawk_API.showWidget)Tawk_API.showWidget();
+  }
+  place();
+  window.addEventListener("scroll",place,{passive:true});
+  window.addEventListener("resize",place);
+};
+function load(){
+  if(window.__bigcsTawk)return;
+  window.__bigcsTawk=1;
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/6af912918e6f59d4de494b3d/1k7ef129l';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+}
+if(!phone){load();return;}
+var armed=false;
+function arm(){if(armed)return;armed=true;load();}
+window.addEventListener("scroll",function(){if(window.scrollY>200)arm();},{passive:true});
 })();
 </script>
 <!--End of Tawk.to Script-->
