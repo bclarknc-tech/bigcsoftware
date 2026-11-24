@@ -1,0 +1,73 @@
+BIGCS 1.1 - Quick Start
+Parcel owner labels, adjoiners and deed info from county GIS, right in your CAD drawing.
+States: North Carolina, South Carolina, Georgia, Virginia and Tennessee (other states on request).
+Works in Carlson (IntelliCAD) and full AutoCAD. AutoCAD LT is not supported.
+
+1. BIGCS loads automatically in every drawing
+   - Carlson / IntelliCAD: the installer adds a line to icaddoc.lsp in your Carlson support folder.
+   - AutoCAD: the installer adds a line to acaddoc.lsp in your AutoCAD user Support folder
+     (%APPDATA%\Autodesk\AutoCAD <year>\R<ver>\enu\Support).
+   - Close and reopen your CAD program after installing. The command line says "BIGCS loaded".
+   - AutoCAD may show "Security - Unsigned Executable File" for BIGCS.lsp. Choose "Always load".
+   - The BIGCS toolbar and menu load the first time. If the toolbar is hidden, right-click any toolbar and check BIGCS.
+   - If BIGCS doesn't load (for example you installed your CAD program after BIGCS): type APPLOAD and
+     load BIGCS.lsp from the install folder (default C:\Users\<you>\AppData\Local\Programs\BIGCS\BIGCS.lsp),
+     or simply run the BIGCS installer again. Don't also add BIGCS.lsp to the Startup Suite.
+
+2. Activate your license
+   - Your Computer ID: type BCSLIC and press Enter (Status is the default). It shows "BIGCS computer ID: XXXX-XXXX-XXXX-XXXX".
+   - Type BCSLIC, choose Enter key, and paste the key from your email (it starts with BCS- or BIGCS1.).
+     You enter your key once. Each seat works on one computer.
+   - Subscription keys (BCS-) renew by themselves: while your subscription is paid, BIGCS keeps working.
+     Nothing to re-enter, ever. BIGCS re-checks online about once a day in the background.
+   - If a payment fails, BIGCS keeps working for 10 days and shows how many days are left. Update your card,
+     and BIGCS carries on by itself. After 10 days without payment the license goes inactive until you pay.
+   - If you cancel, BIGCS keeps working until the end of the time you've paid for, then stops.
+   - Your counties: BCSLIC > Status. To change counties or plans, email sales@bigcsoftware.com.
+   - Trial keys (BCS-) cover one county for 40 uses or 14 days, whichever comes first. BCSLIC > Status shows the uses left
+     and the end date. Each parcel pull, adjoiner run, radius or window pull, refresh or map-layer pull uses 1, and each one
+     needs an internet connection. A pull that finds no parcel, fails or is cancelled does not use one. Batch/CSV pulls and
+     Letters & Door Hangers are not part of the trial. To keep using BIGCS, email sales@bigcsoftware.com.
+   - Keys from your welcome email that start with BIGCS1. (made for one Computer ID) show an end date;
+     for those we email a renewal key after each payment.
+   - BIGCS sets the drawing coordinate system to your state's State Plane (NAD83(2011), feet) when you activate:
+       NC 6543   SC 6570 (intl ft)   TN 6576   GA East 6445 / West 6447   VA North 6593 / South 6595
+     To use another one, type BCSCRS (or pick it in BCSBND). Each drawing keeps its own coordinate system;
+     parcels and map layers from another state are converted into it, so they line up.
+   - Offline: BIGCS works up to 14 days without internet (never past your paid time). It needs the internet to pull county data.
+   - Updates: BIGCS checks bigcsoftware.com for county and style updates about once a day and installs them for you.
+
+3. Your first parcel
+   - Type BCS, choose Single, and click inside a parcel in a drawing that is in State Plane.
+     BIGCS draws the parcel and places the owner, deed book/page and PID label.
+   - The first time, a "BIGCS - Disclaimer" window opens. Read it and click I Agree. It does not ask again.
+   - Not in State Plane yet? Type BCSBND, draw your county boundary, and zoom to your area.
+   - Commands:
+     BCS      Get Parcels (single, adjoiners, radius, window)
+     BCSTXT   Labels only
+     BCSADJ   Adjoiner table + CSV
+     BCSREF   Refresh labels
+     BCSLTR   Letters and door hangers (Letters add-on)
+     BCSMAP   Map Layers: borders, monuments, roads, flood zones, easements, buildings (also BCSBND)
+     BCSBLDG  Building footprints (NC, SC, GA, VA, TN) in a window or around a parcel
+     BCSLINK  Open an object's deed / datasheet link
+     BCSCRS   This drawing's coordinate system (show / change)
+     BCSROT   Turn existing labels to a line you pick
+     BCSST    Label style editor
+     BCSLIC   License (Status shows your Computer ID, Enter key, Deactivate)
+
+4. Moving to a new computer
+   - Your key works only on the computer (and Windows user) it was made for. Another computer refuses it.
+   - On the old computer: BCSLIC > Deactivate. Then install BIGCS on the new computer and enter the same BCS- key.
+     (2 moves in any 30 days per seat. Old computer not available? Email support@bigcsoftware.com.)
+   - BIGCS1. keys: email support@bigcsoftware.com the new Computer ID (BCSLIC > Status). We send a key for it.
+
+5. Uninstall
+   - Windows Settings > Apps > BIGCS > Uninstall. It removes the BIGCS lines from icaddoc.lsp / acaddoc.lsp
+     and leaves your own lines in those files alone. In CAD, type MENUUNLOAD and pick BIGCS.
+
+Building footprints available in NC, SC, GA, VA and TN (BCSBLDG, or Map Layers > Draw Building Footprints).
+Footprint data: NC Emergency Management (NC); USA Structures, ORNL/FEMA, CC BY 4.0 (SC, GA, VA, TN).
+
+BIGCS is not a survey. County GIS data can be wrong or out of date. Read DISCLAIMER.txt and EULA.txt in the install folder.
+Help: support@bigcsoftware.com - bigcsoftware.com
