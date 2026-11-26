@@ -224,10 +224,16 @@ section{margin-top:64px}
 .interest-form{padding:20px}
 .interest-form .btn{align-self:stretch}
 .tier-table thead{display:none}
-.tier-table tr{display:grid;grid-template-columns:1fr auto auto;align-items:center;border-bottom:1px solid var(--border)}
-.tier-table th,.tier-table td{border:0}
+.tier-table tr{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;border-bottom:1px solid var(--border)}
+.tier-table th,.tier-table td{border:0;min-width:0}
 .tier-table td.act{grid-column:1/-1;padding:0 10px 14px}
 .tier-table td.act .btn{width:100%;margin:8px 0 0}
+}
+/* Narrow phones: plan name on its own row so /mo and /yr stay fully visible. */
+@media (max-width:480px){
+.tier-table tr{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.tier-table th[scope="row"]{grid-column:1/-1;padding-bottom:2px}
+.tier-table td:not(.act){display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:baseline;padding-top:0;max-width:100%}
 }
 
 @media (max-width:980px){
